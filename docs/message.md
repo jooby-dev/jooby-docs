@@ -103,7 +103,7 @@ There can be 3 types of headers in commands.
     </thead>
     <tbody>
         <tr>
-            <td colspan="8" align="center">0x1f</td>
+            <td colspan="8" align="center"><code>0x1f</code></td>
         </tr>
         <tr>
             <td colspan="8" align="center">command id</td>

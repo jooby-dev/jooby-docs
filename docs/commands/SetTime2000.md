@@ -1,19 +1,19 @@
-# CorrectTimeSmall
+# SetTime2000
 
 Time correction command.
-It is used when the time difference is up to `127` seconds.
+It is used when the time difference is more than `127` seconds.
 
 
 ## Request
 
 ### Format
 
->  Size | Type | Field
-> ------|------|-------
->  1    | byte | command id = `0x0c`
->  1    | byte | command size = `2`
->  1    | byte | [sequence number](#sequence-number)
->  1    | byte | [seconds](#seconds)
+>  Size | Type     | Field
+> ------|----------|-------
+>  1    | byte     | command id = `0x02`
+>  1    | byte     | command size = `5`
+>  1    | byte     | [sequence number](#sequence-number)
+>  4    | int32_be | [seconds](#seconds)
 
 ### Parameters
 
@@ -33,12 +33,12 @@ The new device time will equal the current device time plus the sent value.
 
 ### Examples
 
- Field           | Value  | Dump
------------------|--------|------
- command id      | `12`   | `0x0c`
- command size    | `2`    | `0x02`
- sequence number | `45`   | `0x2d`
- seconds         | `-120` | `0x88`
+ Field           | Value    | Dump
+-----------------|----------|------
+ command id      | `2`      | `0x02`
+ command size    | `5`      | `0x05`
+ sequence number | `78`     | `0x4e`
+ seconds         | `123456` | `0x00 0x01 0xe2 0x40`
 
 
 ## Response
@@ -47,7 +47,7 @@ The new device time will equal the current device time plus the sent value.
 
 >  Size | Type | Field
 > ------|------|-------
->  1    | byte | command id = `0x0c`
+>  1    | byte | command id = `0x02`
 >  1    | byte | length = `1`
 >  1    | byte | [status](#status)
 
@@ -64,7 +64,7 @@ success:
 
  Field        | Value | Dump
 --------------|-------|------
- command id   | `12`  | `0x0c`
+ command id   | `2`   | `0x02`
  command size | `1`   | `0x01`
  status       | `1`   | `0x01`
 
@@ -72,7 +72,7 @@ failure:
 
  Field        | Value | Dump
 --------------|-------|------
- command id   | `12`  | `0x0c`
+ command id   | `2`   | `0x02`
  command size | `1`   | `0x01`
  status       | `0`   | `0x00`
 
@@ -80,5 +80,5 @@ failure:
 ## See also
 
 * [Device time management](../basics.md#device-time-management)
-* [Downlink command CorrectTime](../commands/CorrectTime.md)
-* [Uplink event Time2000](../commands/Time2000.md)
+* [Downlink command CorrectTime2000](../commands/CorrectTime2000.md)
+* [Uplink event Time2000](../commands/uplink/Time2000.md)

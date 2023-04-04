@@ -10,4 +10,5 @@ This time should be corrected periodically with one of the following commands: [
 
 [CorrectTime2000](./commands/CorrectTime2000.md) is for minor time corrections (less than `127` seconds).
 
+There may be some hour values loss in case of negative time correction.
 It is recommended to maintain time lag no more than 30 seconds.

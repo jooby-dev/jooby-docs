@@ -2,6 +2,7 @@
 
 Time correction command.
 It is used when the time difference is more than `127` seconds.
+A device should apply it immediately.
 
 
 ## Request

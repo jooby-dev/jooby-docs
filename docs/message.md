@@ -1,6 +1,6 @@
-# General message format
+# Message format
 
-The sensor sends and receives messages in the following format:
+Devices send and receive messages in the following format:
 
 <table>
     <tbody>
@@ -24,7 +24,7 @@ The sensor sends and receives messages in the following format:
 
 The `LRC` is calculated by performing an XOR operation on the content of the message with the start value `0x55`.
 
-Each command consists of header and data body.
+Each [command](./commands/readme.md) consists of header and optional data body.
 
 There can be 3 types of headers in commands.
 

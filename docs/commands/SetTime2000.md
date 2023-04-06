@@ -54,7 +54,7 @@ The new device time will equal the current device time plus the sent value.
 
 ### Parameters
 
-#### Status
+#### **status**
 
 `1` - the time setting was successful <br>
 `0` - time setting failed (the [sequence number](#sequence-number) parameter was not changed)

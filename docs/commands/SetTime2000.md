@@ -1,6 +1,7 @@
 # SetTime2000
 
 Time correction command.
+
 It is used when the time difference is more than `127` seconds.
 A device should apply it immediately.
 
@@ -11,10 +12,10 @@ A device should apply it immediately.
 
 >  Size | Type     | Field
 > ------|----------|-------
->  1    | byte     | command id = `0x02`
->  1    | byte     | command size = `5`
->  1    | byte     | [sequence number](#sequence-number)
->  4    | int32_be | [seconds](#seconds)
+>  `1`  | byte     | command id = `0x02`
+>  `1`  | byte     | command size = `5`
+>  `1`  | byte     | [sequence number](#sequence-number)
+>  `4`  | int32_be | [seconds](#seconds)
 
 ### Parameters
 
@@ -48,9 +49,9 @@ The new device time will equal the current device time plus the sent value.
 
 >  Size | Type | Field
 > ------|------|-------
->  1    | byte | command id = `0x02`
->  1    | byte | length = `1`
->  1    | byte | [status](#status)
+>  `1`  | byte | command id = `0x02`
+>  `1`  | byte | length = `1`
+>  `1`  | byte | [status](#status)
 
 ### Parameters
 

@@ -11,8 +11,8 @@ A device restarts in `~30` seconds with new LoRaWAN parameters.
 
 >  Size | Type | Field
 > ------|------|-------
->  1    | byte | command id = `0x19`
->  1    | byte | command size = `0`
+>  `1`  | byte | command id = `0x19`
+>  `1`  | byte | command size = `0`
 
 ### Parameters
 
@@ -36,8 +36,8 @@ It's a mandatory confirmation to [SoftRestart request](./SoftRestart.md#request)
 
 >  Size | Type | Field
 > ------|------|-------
->  1    | byte | command id = `0x19`
->  1    | byte | length = `0`
+>  `1`  | byte | command id = `0x19`
+>  `1`  | byte | length = `0`
 
 ### Parameters
 

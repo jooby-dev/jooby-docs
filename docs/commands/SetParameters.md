@@ -1,6 +1,8 @@
 # SetParameters
 
-Parameters setup command. The sensor confirms the execution of the command with [response](#response)
+Parameters setup command.
+
+The sensor confirms the execution of the command with [response](#response)
 
 
 ## Request
@@ -23,17 +25,6 @@ See [available parameter types](../parameter-types.md)
 #### **parameter data**
 
 Type-specific structures.
-
-### Examples
-
-Set [reporting data type](../parameter-types.md#reporting-data-type) parameter to `day`:
-
- Field        | Value | Dump
---------------|-------|------
- command id   | `3`   | `0x03`
- command size | `2`   | `0x02`
- type         | `5`   | `0x05`
- data         | `1`   | `0x01`
 
 
 ## Response

@@ -12,10 +12,10 @@ Parameter of that type used to setup type of values received from device.
 
 > Size | Type | Field
 > -----|------|-------
-> 1    | byte | type - 5
-> 1    | byte | [reporting-data-type](#data-type)
+> 1    | byte | type = `5`
+> 1    | byte | [type](#data-type)
 
-### Data type
+#### **data type**
 
  Value | Description
 -------|-------------
@@ -26,7 +26,7 @@ Parameter of that type used to setup type of values received from device.
 
 ### Example
 
-[SetParameter](./commands/SetParameters.md) to [reporting data type](#reporting-data-type) to "current"
+[SetParameter](./commands/SetParameters.md) the [reporting data type](#reporting-data-type) to `current`
 
  Field        | Value | Dump
 --------------|-------|------

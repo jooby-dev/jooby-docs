@@ -1,4 +1,4 @@
-# SetParameters
+# SetParameter
 
 Parameters setup command.
 
@@ -29,7 +29,7 @@ Type-specific structures.
 
 ## Response
 
-It's a mandatory confirmation to [SetParameters request](./SetParameters.md#request).
+It's a mandatory confirmation to [SetParameter request](./SetParameter.md#request).
 
 ### Format
 

@@ -1,4 +1,4 @@
-# Parameter Types
+# Parameter types
 
 Command body structures for [SetParameters](./commands/SetParameters.md).
 Attention! Parameter types is not fully documented!
@@ -6,15 +6,19 @@ Attention! Parameter types is not fully documented!
 
 ## Reporting data type
 
-Type = `5`.
 Parameter of that type used to setup type of values received from device.
-Reporting data type.
 
-Data
-Size - **byte**.
+### Format
+
+> Size | Type | Field
+> -----|------|-------
+> 1    | byte | type - 5
+> 1    | byte | [reporting-data-type](#data-type)
+
+### Data type
 
  Value | Description
- ------|------------
+-------|-------------
  `0`   | hour
  `1`   | day
  `2`   | current

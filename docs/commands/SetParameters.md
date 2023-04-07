@@ -11,22 +11,22 @@ Parameters setup command. The sensor confirms the execution of the command with 
 > -----|------|-------
 > 1    | byte | command id = `0x03`
 > 1    | byte | command dynamic size
-> 1    | byte | [parameter type](#type)
-> 1+   | byte | [parameter data](#data)
+> 1    | byte | [parameter type](#parameter-type)
+> 1+   | byte | [parameter data](#parameter-data)
 
 ### Parameters
 
-#### **type**
+#### **parameter type**
 
-[Available parameter types](../parameter-types.md)
+See [available parameter types](../parameter-types.md)
 
-#### **data**
+#### **parameter data**
 
 Type-specific structures.
 
 ### Examples
 
-Set parameter [reporting data type](../parameter-types.md#reporting-data-type) to "day"
+Set [reporting data type](../parameter-types.md#reporting-data-type) parameter to `day`:
 
  Field        | Value | Dump
 --------------|-------|------
@@ -46,10 +46,14 @@ It's a mandatory confirmation to [SetParameters request](./SetParameters.md#requ
 > -----|------|-------
 > 1    | byte | command id = `0x03`
 > 1    | byte | length = `2`
-> 1    | byte | [type](#type)
+> 1    | byte | [parameter type](#parameter-type)
 > 1    | byte | [status](#status)
 
 ### Parameters
+
+#### **parameter type**
+
+See [available parameter types](../parameter-types.md)
 
 #### **status**
 
@@ -74,4 +78,4 @@ failure:
  command id   | `3`   | `0x03`
  command size | `2`   | `0x02`
  type         | `5`   | `0x05`
- status       | `1`   | `0x01`
+ status       | `0`   | `0x00`

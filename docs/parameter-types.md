@@ -1,6 +1,6 @@
 # Parameter types
 
-Command body structures for [SetParameters](./commands/SetParameters.md).
+Command body structures for [SetParameter](./commands/SetParameter.md).
 Attention! Parameter types is not fully documented!
 
 
@@ -26,7 +26,7 @@ Parameter of that type used to setup type of values received from device.
 
 ### Examples
 
-[SetParameter](./commands/SetParameters.md) the [reporting data type](#reporting-data-type) to `current`
+[SetParameter](./commands/SetParameter.md) the [reporting data type](#reporting-data-type) to `current`
 
  Field        | Value | Dump
 --------------|-------|------

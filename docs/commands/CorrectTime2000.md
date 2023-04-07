@@ -1,6 +1,7 @@
 # CorrectTime2000
 
 Time correction command.
+
 It is used when the time difference is up to `127` seconds.
 A device may apply it with a delay.
 
@@ -11,10 +12,10 @@ A device may apply it with a delay.
 
 >  Size | Type | Field
 > ------|------|-------
->  1    | byte | command id = `0x0c`
->  1    | byte | command size = `2`
->  1    | byte | [sequence number](#sequence-number)
->  1    | byte | [seconds](#seconds)
+>  `1`  | byte | command id = `0x0c`
+>  `1`  | byte | command size = `2`
+>  `1`  | byte | [sequence number](#sequence-number)
+>  `1`  | byte | [seconds](#seconds)
 
 ### Parameters
 
@@ -48,13 +49,13 @@ The new device time will equal the current device time plus the sent value.
 
 >  Size | Type | Field
 > ------|------|-------
->  1    | byte | command id = `0x0c`
->  1    | byte | length = `1`
->  1    | byte | [status](#status)
+>  `1`  | byte | command id = `0x0c`
+>  `1`  | byte | length = `1`
+>  `1`  | byte | [status](#status)
 
 ### Parameters
 
-#### Status
+#### **status**
 
 `1` - the time setting was successful <br>
 `0` - time setting failed (the [sequence number](#sequence-number) parameter was not changed)

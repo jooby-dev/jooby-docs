@@ -20,7 +20,7 @@ alternative for MTX devices:
 >  Size | Type | Field
 > ------|------|-------
 >  `1`  | byte | command id + size = `0x60-0x7f`
->  `1`  | byte | [sequence number](#sequence-number-1)
+>  `1`  | byte | [sequence number](#sequence-number)
 >  `2`  | byte | [status](#status-1)
 
 It's a command with a [one-byte header](../../message.md#command-with-a-one-byte-header).<br>

@@ -13,7 +13,7 @@ Parameter of that type used to setup type of values received from device.
 > Size | Type | Field
 > -----|------|-------
 > 1    | byte | type = `5`
-> 1    | byte | [type](#data-type)
+> 1    | byte | [data-type](#data-type)
 
 #### **data type**
 

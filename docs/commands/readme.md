@@ -12,6 +12,7 @@ There are 2 types of command direction:
 --------|-------------------------------------------------|-------------
  `0x02` | [SetTime2000](./SetTime2000.md#request)         | Request to correct device time.
  `0x0c` | [CorrectTime2000](./CorrectTime2000.md#request) | Request to correct device time by up to 127 seconds.
+ `0x03` | [SetParameter](./SetParameter.md#request)       | Request to change device parameter.
 
 
 ## Uplink commands
@@ -24,3 +25,4 @@ There are 2 types of command direction:
  `0x16` | [DataDayMul](./uplink/DataDayMul.md)             | Pulse counter data of the multichannel sensor on billing hour.
  `0x17` | [DataHourMul](./uplink/DataHourMul.md)           | Pulse counter data of the multichannel sensor, accumulated on a hour basis.
  `0x18` | [GetCurrentMul](./uplink/GetCurrentMul.md)       | Current pulse counter value for multichannel devices.
+ `0x03` | [SetParameter](./SetParameter.md#response)       | Response to [SetParameter](./SetParameter.md#request) downlink command.

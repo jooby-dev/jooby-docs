@@ -17,6 +17,8 @@ A device should apply it immediately.
 >  `1`  | byte     | [sequence number](#sequence-number)
 >  `4`  | int32_be | [seconds](#seconds)
 
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+
 ### Parameters
 
 #### **sequence number**
@@ -52,6 +54,8 @@ The new device time will equal the current device time plus the sent value.
 >  `1`  | byte | command id = `0x02`
 >  `1`  | byte | length = `1`
 >  `1`  | byte | [status](#status)
+
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
 ### Parameters
 

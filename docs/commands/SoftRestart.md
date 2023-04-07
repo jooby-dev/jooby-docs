@@ -14,6 +14,8 @@ A device restarts in `~30` seconds with new LoRaWAN parameters.
 >  `1`  | byte | command id = `0x19`
 >  `1`  | byte | command size = `0`
 
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+
 ### Parameters
 
 The command has no parameters.
@@ -38,6 +40,8 @@ It's a mandatory confirmation to [SoftRestart request](./SoftRestart.md#request)
 > ------|------|-------
 >  `1`  | byte | command id = `0x19`
 >  `1`  | byte | length = `0`
+
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
 ### Parameters
 

@@ -1,0 +1,93 @@
+# LastEvent
+
+This command will be added to all commands that the device transmits without a request,
+except for the [GetNewStatus](../GetNewStatus.md) command, since the data is inside the command.
+The command transmits the sequence number of the last device event and the status bits.
+The status bits may differ for different device types.
+
+## Event
+
+### Format
+
+>  Size | Type | Field
+> ------|------|-------
+>  `1`  | byte | command id + size = `0x60-0x7f`
+>  `1`  | byte | [sequence number](#sequence-number)
+>  `1+` | byte | [status](#status) as [extended value](???)
+
+alternative for MTX devices:
+
+>  Size | Type | Field
+> ------|------|-------
+>  `1`  | byte | command id + size = `0x60-0x7f`
+>  `1`  | byte | [sequence number](#sequence-number-1)
+>  `2`  | byte | [status](#status-1)
+
+It's a command with a [one-byte header](../../message.md#command-with-a-one-byte-header).<br>
+Max command size is `31` bytes.
+
+### Parameters
+
+#### **sequence number**
+
+It's the last generated event number.
+
+#### **status**
+
+#### for gas devices `1` byte:
+
+ Bit    | Name     | Description
+--------|----------|-------------
+ `0`    | `BAT`    | `1` - the battery voltage has dropped below the set threshold
+ `1`    | `MAGNET` | `1` - there is a magnetic field influence
+ `2`    | `BUTTON` | `0` - button is pressed <br> `1` - button is release (device is unmounted)
+ `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server
+ `4..6` | `RES`    | reserved for future use
+
+#### for 2-channel devices `1` byte:
+
+ Bit    | Name     | Description
+--------|----------|-------------
+ `0`    | `BAT`    | `1` - the battery voltage has dropped below the set threshold
+ `1..2` | `RES`    | reserved for future use
+ `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server
+ `4`    | `CHN0`   | `1` - the first channel is not active
+ `5`    | `CHN1`   | `1` - the second channel is not active
+ `6`    | `RES`    | reserved for future use
+
+#### for 4-channel devices `2` bytes:
+
+ Bit     | Name     | Description
+---------|----------|-------------
+ `0`     | `BAT`    | `1` - the battery voltage has dropped below the set threshold
+ `1..2`  | `RES`    | reserved for future use
+ `3`     | `DOWN`   | `1` - the device has detected a loss of connection to the server
+ `4`     | `CHN0`   | `1` - the first channel is not active
+ `5`     | `CHN1`   | `1` - the second channel is not active
+ `6`     | `CHN2`   | `1` - the third channel is not active
+ `8`     | `CHN3`   | `1` - the forth channel is not active
+ `9..14` | `RES`    | reserved for future use
+
+#### for MTX devices `2` bytes:
+
+ Bit      | Description
+----------|-------------
+ `0`      | `1` - meter case is open
+ `1`      | `1` - presence of magnetic influence is detected
+ `2`      | `1` - parameters set remotely
+ `3`      | `1` - parameters set locally
+ `4`      | `1` - meter program restart
+ `5`      | `1` - incorrect password and lockout
+ `6`      | `1` - time set
+ `7`      | `1` - time correction
+ `8`      | `1` - meter failure
+ `9`      | `1` - meter terminal box is open
+ `10`     | `1` - meter module compartment is open
+ `11`     | `1` - tariff plan changed
+ `12`     | `1` - new tariff plan received
+ `13..15` | reserved for future use
+
+
+## See also
+
+* [Device events](../../basics.md#device-events)

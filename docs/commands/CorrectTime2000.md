@@ -17,6 +17,8 @@ A device may apply it with a delay.
 >  `1`  | byte | [sequence number](#sequence-number)
 >  `1`  | byte | [seconds](#seconds)
 
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+
 ### Parameters
 
 #### **sequence number**
@@ -52,6 +54,8 @@ The new device time will equal the current device time plus the sent value.
 >  `1`  | byte | command id = `0x0c`
 >  `1`  | byte | length = `1`
 >  `1`  | byte | [status](#status)
+
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
 ### Parameters
 

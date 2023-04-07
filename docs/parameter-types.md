@@ -24,7 +24,7 @@ Parameter of that type used to setup type of values received from device.
  `2`   | current
  `3`   | hour and day
 
-### Example
+### Examples
 
 [SetParameter](./commands/SetParameters.md) the [reporting data type](#reporting-data-type) to `current`
 

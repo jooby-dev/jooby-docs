@@ -24,11 +24,14 @@ Devices send and receive messages in the following format:
 
 The `LRC` is calculated by performing an XOR operation on the content of the message with the start value `0x55`.
 
+
+## Commands
+
 Each [command](./commands/readme.md) consists of header and optional data body.
 
 There can be 3 types of headers in commands.
 
-1. Command with a one-byte header:
+### Command with a one-byte header
 
 <table>
     <thead>
@@ -54,7 +57,7 @@ There can be 3 types of headers in commands.
     </tbody>
 </table>
 
-2. Command with a two-bytes header:
+### Command with a two-bytes header
 
 <table>
     <thead>
@@ -85,8 +88,7 @@ There can be 3 types of headers in commands.
     </tbody>
 </table>
 
-
-3. Command with a three-bytes header:
+### Command with a three-bytes header
 
 <table>
     <thead>

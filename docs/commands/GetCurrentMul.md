@@ -1,9 +1,10 @@
 # GetCurrentMul
 
-Command to request\receive current values from device channels.
+Command to request/receive current values from device channels.
 Periodically sended if [device report data parameter](../parameter-types.md#reporting-data-type) set to
-[current](../parameter-types.md#data-type) i.e. = 2.
+[current](../parameter-types.md#data-type) i.e. = `2`.
 Time of values - time of receive.
+
 
 ## Request
 
@@ -27,6 +28,8 @@ The command has no parameters.
  command id   | `24`  | `0x18`
  command size | `0`   | `0x00`
 
+Command dump: `0x18 0x00`
+
 
 ## Response
 
@@ -45,7 +48,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 #### **channels**
 
-[Extended bit unsigned value](../types.md#extended-bit-value). Maximum 14 channels (16 - 2 EXTENDED bits), size - 2 bytes.
+[Extended bit unsigned value](../types.md#extended-bit-value). Maximum `14` channels (`16` - `2` EXTENDED bit), size - `2` bytes.
 Describe channels which exists in command. Each bit represents one channel.
 If bits 0, 1, 2, 3 are set - this means that values from that channels in that order exists in command.
 
@@ -57,7 +60,6 @@ If bits 0, 1, 2, 3 are set - this means that values from that channels in that o
 
 
 4 channels with values
-Command dump: `18 06 0F 83 01 08 0A 0C`
 
  Field            | Value | Dump
 ------------------|-------|------
@@ -69,9 +71,10 @@ Command dump: `18 06 0F 83 01 08 0A 0C`
  channel #2 value | `10`  | `0A`
  channel #3 value | `12`  | `0C`
 
+Command dump: `18 06 0F 83 01 08 0A 0C`
 
-only channel #1 with value
-Command dump: `18 02 01 32`
+
+Only channel #1 with value
 
  Field            | Value | Dump
 ------------------|-------|------
@@ -80,6 +83,7 @@ Command dump: `18 02 01 32`
  channels         | `1`   | `0x01`
  channel #1 value | `50`  | `0x32`
 
+Command dump: `18 02 01 32`
 
 ## See also
 

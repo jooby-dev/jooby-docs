@@ -9,19 +9,11 @@ The status bits may differ for different device types.
 
 ### Format
 
->  Size | Type | Field
-> ------|------|-------
->  `1`  | byte | command id + size = `0x60-0x7f`
->  `1`  | byte | [sequence number](#sequence-number)
->  `1+` | byte | [status](#status) as [extended value](???)
-
-alternative for MTX devices:
-
->  Size | Type | Field
-> ------|------|-------
->  `1`  | byte | command id + size = `0x60-0x7f`
->  `1`  | byte | [sequence number](#sequence-number)
->  `2`  | byte | [status](#status-1)
+>  Size  | Type | Field
+> -------|------|-------
+>  `1`   | byte | command id + size = `0x60-0x7f`
+>  `1`   | byte | [sequence number](#sequence-number)
+>  `1-2` | byte | [status](#status) (can be an extended value for some devices)
 
 It's a command with a [one-byte header](../../message.md#command-with-a-one-byte-header).<br>
 Max command size is `31` bytes.
@@ -34,7 +26,9 @@ It's the last generated event number.
 
 #### **status**
 
-#### for gas devices `1` byte:
+Bit set with current device states.
+
+#### for `GAS*` devices (`1` byte):
 
  Bit    | Name     | Description
 --------|----------|-------------
@@ -42,9 +36,9 @@ It's the last generated event number.
  `1`    | `MAGNET` | `1` - there is a magnetic field influence
  `2`    | `BUTTON` | `0` - button is pressed <br> `1` - button is release (device is unmounted)
  `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server
- `4..6` | `RES`    | reserved for future use
+ `4..7` | `RES`    | reserved for future use
 
-#### for 2-channel devices `1` byte:
+#### for `IMP2AS`, `IMP2EU`, `IMP2IN`, `NOVATOR` 2-channel devices (`1` byte):
 
  Bit    | Name     | Description
 --------|----------|-------------
@@ -53,9 +47,26 @@ It's the last generated event number.
  `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server
  `4`    | `CHN0`   | `1` - the first channel is not active
  `5`    | `CHN1`   | `1` - the second channel is not active
- `6`    | `RES`    | reserved for future use
+ `6..7` | `RES`    | reserved for future use
 
-#### for 4-channel devices `2` bytes:
+#### for `ELIMP` devices (`1` byte):
+
+ Bit    | Name     | Description
+--------|----------|-------------
+ `0..2` | `RES`    | reserved for future use
+ `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server
+ `4..7` | `RES`    | reserved for future use
+
+#### for `WATER` devices (`1` byte):
+
+ Bit    | Name     | Description
+--------|----------|-------------
+ `0`    | `BAT`    | `1` - the battery voltage has dropped below the set threshold
+ `1..2` | `RES`    | reserved for future use
+ `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server
+ `4..7` | `RES`    | reserved for future use
+
+#### for `IMP4EU`, `IMP4IN` 4-channel devices (`2` extended bytes):
 
  Bit     | Name     | Description
 ---------|----------|-------------
@@ -65,10 +76,11 @@ It's the last generated event number.
  `4`     | `CHN0`   | `1` - the first channel is not active
  `5`     | `CHN1`   | `1` - the second channel is not active
  `6`     | `CHN2`   | `1` - the third channel is not active
+ `7`     | `EXTEND` | always `1`
  `8`     | `CHN3`   | `1` - the forth channel is not active
  `9..14` | `RES`    | reserved for future use
 
-#### for MTX devices `2` bytes:
+#### for `MTXLORA` devices (`2` bytes):
 
  Bit      | Description
 ----------|-------------

@@ -1,4 +1,4 @@
-# GetCurrentMul
+# GetCurrentMC
 
 Command to request/receive current values from device channels.
 Periodically sended if [device report data parameter](../parameter-types.md#reporting-data-type) set to

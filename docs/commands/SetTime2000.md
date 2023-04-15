@@ -10,12 +10,12 @@ A device should apply it immediately.
 
 ### Format
 
->  Size | Type     | Field
-> ------|----------|-------
->  `1`  | byte     | command id = `0x02`
->  `1`  | byte     | command size = `5`
->  `1`  | byte     | [sequence number](#sequence-number)
->  `4`  | int32_be | [seconds](#seconds)
+| Size | Type     | Field                               |
+| ---- | -------- | ----------------------------------- |
+| `1`  | byte     | command id = `0x02`                 |
+| `1`  | byte     | command size = `5`                  |
+| `1`  | byte     | [sequence number](#sequence-number) |
+| `4`  | int32_be | [seconds](#seconds)                 |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -37,23 +37,25 @@ The new device time will equal the current device time plus the sent value.
 
 ### Examples
 
- Field           | Value    | Dump
------------------|----------|------
- command id      | `2`      | `0x02`
- command size    | `5`      | `0x05`
- sequence number | `78`     | `0x4e`
- seconds         | `123456` | `0x00 0x01 0xe2 0x40`
+| Field           | Value    | Hex                   |
+| --------------- | -------- | --------------------- |
+| command id      | `2`      | `0x02`                |
+| command size    | `5`      | `0x05`                |
+| sequence number | `78`     | `0x4e`                |
+| seconds         | `123456` | `0x00 0x01 0xe2 0x40` |
+
+Message hex dump with LRC: `02 05 4e 00 01 e2 40 bf`
 
 
 ## Response
 
 ### Format
 
->  Size | Type | Field
-> ------|------|-------
->  `1`  | byte | command id = `0x02`
->  `1`  | byte | length = `1`
->  `1`  | byte | [status](#status)
+| Size | Type | Field               |
+| ---- | ---- | ------------------- |
+| `1`  | byte | command id = `0x02` |
+| `1`  | byte | length = `1`        |
+| `1`  | byte | [status](#status)   |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -66,21 +68,25 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Examples
 
-success:
+#### success:
 
- Field        | Value | Dump
---------------|-------|------
- command id   | `2`   | `0x02`
- command size | `1`   | `0x01`
- status       | `1`   | `0x01`
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
+| status       | `1`   | `0x01` |
 
-failure:
+Message hex dump with LRC: `02 02 01 54`
 
- Field        | Value | Dump
---------------|-------|------
- command id   | `2`   | `0x02`
- command size | `1`   | `0x01`
- status       | `0`   | `0x00`
+#### failure:
+
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
+| status       | `0`   | `0x00` |
+
+Message hex dump with LRC: `02 02 00 55`
 
 
 ## See also

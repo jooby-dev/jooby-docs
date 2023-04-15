@@ -11,23 +11,23 @@ It is used for data without fixed size using the minimum number of bytes with th
 
 Structure of a single byte with `extend bit`:
 
- 8            | 7     | 6     | 5     | 4     | 3     | 2     | 1
---------------|-------|-------|-------|-------|-------|-------|---
- `extend bit` | value | value | value | value | value | value | value
+| 8            | 7     | 6     | 5     | 4     | 3     | 2     | 1     |
+| ------------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| `extend bit` | value | value | value | value | value | value | value |
 
 When `extend bit` is set to `1` it means that the next byte will contain the next `7` most significant bits of the number.
 On the other hand, when the `extend bit` is set to `0` it signifies that the current byte is the last byte containing the remaining data of the number.
 
 To store a value bigger than `1` byte a sequence of bytes with `extend bit` is required.
-For example `5` bytes are necessary for `32`-bit integer value (each line is a byte):
+For example `5` bytes are necessary for `32-bit` integer value (each line is a byte):
 
- `Extend bit` | Data bits range
---------------|-----------------
- `1`          | `6..0`
- `1`          | `13..7`
- `1`          | `20..14`
- `1`          | `27..21`
- `0`          | `31..28`
+| Extend bit | Data bits range |
+| ---------- | --------------- |
+| `1`        | `6..0`          |
+| `1`        | `13..7`         |
+| `1`        | `20..14`        |
+| `1`        | `27..21`        |
+| `0`        | `31..28`        |
 
 ### Examples
 
@@ -45,28 +45,40 @@ The second full byte now is `0b00000100` or `0x04`.
 
 The same in a table (each line is a byte):
 
- `Extend bit` | Data bits | Hex
---------------|-----------|-----
- `1`          | `0010011` | `0x93`
- `0`          | `0000100` | `0x04`
+| Extend bit | Data bits | Hex    |
+| ---------- | --------- | ------ |
+| `1`        | `0010011` | `0x93` |
+| `0`        | `0000100` | `0x04` |
 
-So `531` in extended value format is `0b0000010010010011` or `0x0493`.
+Please note that processing of the original value is done from right to left so to get the final value it's necessary to collect all bytes in reverse order.
 
-Another example - `48` integer value which is `0b00110000` or `0x30`.
+Result: `531` in extended value format is `0x9304`.
 
- `Extend bit` | Data bits | Hex
---------------|-----------|-----
- `0`          | `0110000` | `0x30`
+Another example - `48` integer value which is `0x30`.
+
+| Extend bit | Data bits | Hex    |
+| ---------- | --------- | ------ |
+| `0`        | `0110000` | `0x30` |
 
 As this value is less than `127` no extension is necessary and extended value is identical to the original one.
 
 More complex example - `24214124` which is `0b00000001011100010111101001101100` or `0x01717a6c`.
 
- `Extend bit` | Data bits | Hex
---------------|-----------|-----
- `1`          | `1101100` | `0xec`
- `1`          | `1110100` | `0xf4`
- `1`          | `1000101` | `0xc5`
- `0`          | `0001011` | `0x0b`
+| Extend bit | Data bits | Hex    |
+| ---------- | --------- | ------ |
+| `1`        | `1101100` | `0xec` |
+| `1`        | `1110100` | `0xf4` |
+| `1`        | `1000101` | `0xc5` |
+| `0`        | `0001011` | `0x0b` |
 
-Extended value is `0b00001011110001011111010011101100` or `0x0bc5f4ec`
+Extended value is `0xecf4c50b`.
+
+
+## Time 2000
+
+Seconds since year 2000.
+
+### Examples
+
+Time `2023-04-03T14:01:17.000Z` is `1680530477` in [Unix time](https://en.wikipedia.org/wiki/Unix_time) representation.
+Unix time for year 2000 is `946684800` so seconds since year 2000 is `1680530477` - `946684800` = `733845677`.

@@ -10,27 +10,29 @@ Parameter of that type used to setup type of values received from device.
 
 ### Format
 
-> Size | Type | Field
-> -----|------|-------
-> 1    | byte | type = `5`
-> 1    | byte | [data-type](#data-type)
+| Size | Type | Field                   |
+| ---- | ---- | ----------------------- |
+| 1    | byte | parameter type = `5`    |
+| 1    | byte | [data type](#data-type) |
 
 #### **data type**
 
- Value | Description
--------|-------------
- `0`   | hour
- `1`   | day
- `2`   | current
- `3`   | hour and day
+| Value | Description  |
+| ----- | ------------ |
+| `0`   | hour         |
+| `1`   | day          |
+| `2`   | current      |
+| `3`   | hour and day |
 
 ### Examples
 
-[SetParameter](./commands/SetParameter.md) the [reporting data type](#reporting-data-type) to `current`
+[SetParameter](./commands/SetParameter.md) the [reporting data type](#reporting-data-type) to `current`:
 
- Field        | Value | Dump
---------------|-------|------
- command id   | `3`   | `0x03`
- command size | `2`   | `0x02`
- type         | `5`   | `0x05`
- data         | `2`   | `0x01`
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `3`   | `0x03` |
+| command size | `2`   | `0x02` |
+| type         | `5`   | `0x05` |
+| data         | `2`   | `0x01` |
+
+Message hex dump with LRC: `03 02 05 01 50`

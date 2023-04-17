@@ -1,20 +1,20 @@
 # SetParameter
 
-Parameters setup command.
+Device parameters setup command.
 
-The sensor confirms the execution of the command with [response](#response)
+The sensor confirms the execution of the command with [response](#response).
 
 
 ## Request
 
 ### Format
 
-> Size | Type | Field
-> -----|------|-------
-> 1    | byte | command id = `0x03`
-> 1    | byte | command dynamic size
-> 1    | byte | [parameter type](#parameter-type)
-> 1+   | byte | [parameter data](#parameter-data)
+| Size | Type | Field                             |
+| ---- | ---- | --------------------------------- |
+| 1    | byte | command id = `0x03`               |
+| 1    | byte | command dynamic size              |
+| 1    | byte | [parameter type](#parameter-type) |
+| 1+   | byte | [parameter data](#parameter-data) |
 
 ### Parameters
 
@@ -33,12 +33,12 @@ It's a mandatory confirmation to [SetParameter request](./SetParameter.md#reques
 
 ### Format
 
-> Size | Type | Field
-> -----|------|-------
-> 1    | byte | command id = `0x03`
-> 1    | byte | length = `2`
-> 1    | byte | [parameter type](#parameter-type)
-> 1    | byte | [status](#status)
+| Size | Type | Field                             |
+| ---- | ---- | --------------------------------- |
+| 1    | byte | command id = `0x03`               |
+| 1    | byte | length = `2`                      |
+| 1    | byte | [parameter type](#parameter-type) |
+| 1    | byte | [status](#status)                 |
 
 ### Parameters
 
@@ -53,20 +53,24 @@ See [available parameter types](../parameter-types.md)
 
 ### Examples
 
-success:
+#### success:
 
- Field        | Value | Dump
---------------|-------|------
- command id   | `3`   | `0x03`
- command size | `2`   | `0x02`
- type         | `5`   | `0x05`
- status       | `1`   | `0x01`
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `3`   | `0x03` |
+| command size | `2`   | `0x02` |
+| type         | `5`   | `0x05` |
+| status       | `1`   | `0x01` |
 
-failure:
+Message hex dump with LRC: `03 02 05 01 50`
 
- Field        | Value | Dump
---------------|-------|------
- command id   | `3`   | `0x03`
- command size | `2`   | `0x02`
- type         | `5`   | `0x05`
- status       | `0`   | `0x00`
+#### failure:
+
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `3`   | `0x03` |
+| command size | `2`   | `0x02` |
+| type         | `5`   | `0x05` |
+| status       | `0`   | `0x00` |
+
+Message hex dump with LRC: `03 02 05 00 51`

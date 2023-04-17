@@ -10,12 +10,12 @@ A device may apply it with a delay.
 
 ### Format
 
->  Size | Type | Field
-> ------|------|-------
->  `1`  | byte | command id = `0x0c`
->  `1`  | byte | command size = `2`
->  `1`  | byte | [sequence number](#sequence-number)
->  `1`  | byte | [seconds](#seconds)
+| Size | Type | Field                               |
+| ---- | ---- | ----------------------------------- |
+| `1`  | byte | command id = `0x0c`                 |
+| `1`  | byte | command size = `2`                  |
+| `1`  | byte | [sequence number](#sequence-number) |
+| `1`  | byte | [seconds](#seconds)                 |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -37,23 +37,25 @@ The new device time will equal the current device time plus the sent value.
 
 ### Examples
 
- Field           | Value  | Dump
------------------|--------|------
- command id      | `12`   | `0x0c`
- command size    | `2`    | `0x02`
- sequence number | `45`   | `0x2d`
- seconds         | `-120` | `0x88`
+| Field           | Value  | Hex    |
+| --------------- | ------ | ------ |
+| command id      | `12`   | `0x0c` |
+| command size    | `2`    | `0x02` |
+| sequence number | `45`   | `0x2d` |
+| seconds         | `-120` | `0x88` |
+
+Message hex dump with LRC: `0c 02 2d 88 fe`
 
 
 ## Response
 
 ### Format
 
->  Size | Type | Field
-> ------|------|-------
->  `1`  | byte | command id = `0x0c`
->  `1`  | byte | length = `1`
->  `1`  | byte | [status](#status)
+| Size | Type | Field               |
+| ---- | ---- | ------------------- |
+| `1`  | byte | command id = `0x0c` |
+| `1`  | byte | length = `1`        |
+| `1`  | byte | [status](#status)   |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -66,21 +68,25 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Examples
 
-success:
+#### success:
 
- Field        | Value | Dump
---------------|-------|------
- command id   | `12`  | `0x0c`
- command size | `1`   | `0x01`
- status       | `1`   | `0x01`
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `12`  | `0x0c` |
+| command size | `1`   | `0x01` |
+| status       | `1`   | `0x01` |
 
-failure:
+Message hex dump with LRC: `0c 01 01 59`
 
- Field        | Value | Dump
---------------|-------|------
- command id   | `12`  | `0x0c`
- command size | `1`   | `0x01`
- status       | `0`   | `0x00`
+#### failure:
+
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `12`  | `0x0c` |
+| command size | `1`   | `0x01` |
+| status       | `0`   | `0x00` |
+
+Message hex dump with LRC: `0c 01 00 58`
 
 
 ## See also

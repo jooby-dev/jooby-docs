@@ -29,6 +29,7 @@ It's the last generated event number.
 #### **status**
 
 Bit set with current device states.
+It depends on the device [hardware type](../../basics.md#hardware-types).
 
 #### for `GAS*` devices (`1` byte):
 
@@ -162,3 +163,4 @@ Message hex dump with LRC: `63 30 83 0a 8f`
 ## See also
 
 * [Device events](../../basics.md#device-events)
+* [Hardware types](../../basics.md#hardware-types)

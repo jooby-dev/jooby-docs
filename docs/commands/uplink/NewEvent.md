@@ -34,7 +34,7 @@ It's the last generated event number.
 
 Event data specific for the event type.
 
-`MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIVATE`, `CAN_OFF`, `INSERT`, `REMOVE`, `COUNTER_OVER`, `EV_OPTOLOW`, `EV_OPTOFLASH`, `EV_REJOIN`
+`MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIVATE`, `CAN_OFF`, `INSERT`, `REMOVE`, `COUNTER_OVER`, `OPTOLOW`, `OPTOFLASH`, `JOIN_ACCEPT`
 
 | Size | Type      | Field                                            |
 | ---- | --------- | ------------------------------------------------ |

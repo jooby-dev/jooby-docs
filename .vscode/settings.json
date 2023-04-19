@@ -4,8 +4,14 @@
         "depassivation",
         "ELIMP",
         "GAZM",
+        "JOINACCEPT",
         "Jooby",
         "MTXLORA",
-        "NOVATOR"
+        "NOVATOR",
+        "OPTOFLASH",
+        "OPTOLOW",
+        "OPTOSENSOR",
+        "OTAA",
+        "photodiode"
     ]
 }

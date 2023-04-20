@@ -3,7 +3,7 @@
 Transmits the sequence number of the last device event and the status bits.
 
 This command will be added to all commands that the device transmits without a request,
-except for the [GetNewStatus](../GetNewStatus.md) command, since the data is inside the command.
+except for the [GetStatus](../GetStatus.md) command, since the data is inside the command.
 The status bits may differ for different device types.
 
 

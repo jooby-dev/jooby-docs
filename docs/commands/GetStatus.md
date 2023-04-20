@@ -1,8 +1,6 @@
-# NewStatus
+# GetStatus
 
 The command to request status information from the sensor.
-
-It's a new command version.
 
 
 ## Request
@@ -32,7 +30,7 @@ Message hex dump with LRC: `14 0c 4d`
 
 ## Response
 
-It's a mandatory confirmation to [NewStatus request](./NewStatus.md#request).
+It's a mandatory confirmation to [GetStatus request](./GetStatus.md#request).
 It is also sent by the sensor without a request once a day.
 
 ### Format

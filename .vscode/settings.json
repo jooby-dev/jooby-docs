@@ -4,14 +4,17 @@
         "depassivation",
         "ELIMP",
         "GAZM",
+        "GAZWLE",
         "JOINACCEPT",
         "Jooby",
+        "Lmic",
         "MTXLORA",
         "NOVATOR",
         "OPTOFLASH",
         "OPTOLOW",
         "OPTOSENSOR",
         "OTAA",
-        "photodiode"
+        "photodiode",
+        "Rozhok"
     ]
 }

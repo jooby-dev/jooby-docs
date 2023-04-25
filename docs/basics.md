@@ -51,19 +51,125 @@ Archives can be requested for the latest events, the oldest events, and events s
 
 ## Hardware types
 
-| ID     | Name     | Description                                                                             |
-| ------ | -------- | --------------------------------------------------------------------------------------- |
-| `0x01` | GAZM3    | GAS RM on cpu STM32L15x - no longer in production.                                      |
-| `0x02` | GAZM0    | GAS RM on cpu STM32L05x - no longer in production.                                      |
-| `0x03` | GAZM0NEW | GAS RM on cpu STM32L05x - test batch.                                                   |
-| `0x04` | NOVATOR  | RM for novator. <br> (2 channels)                                                       |
-| `0x05` | IMP2EU   | RM with 2 ports, no longer in production. <br> (2 channels)                             |
-| `0x06` | IMP4EU   | RM with 4 ports, EU868. <br> (4 channels)                                               |
-| `0x07` | MTXLORA  | RM installed inside MTX meters.                                                         |
-| `0x08` | IMP2AS   | RM with 2 ports for the Asian region, AS923, no longer in production. <br> (2 channels) |
-| `0x09` | IMP2IN   | RM with 2 ports for the Asian region, IN865, no longer in production. <br> (2 channels) |
-| `0x0a` | IMP4IN   | RM with 4 ports for the Asian region, IN865, no longer in production. <br> (4 channels) |
-| `0x0b` | ELIMP    | Single-port module with supply 220 V. Class C. <br> (1 channel)                         |
-| `0x0c` | GAZWLE   | GAS RM on cpu STM32WLE5.                                                                |
-| `0x0d` | WATER    | RM for ultrasonic water meter (Rozhok laboratory).                                      |
-| `0x0e` | PLC2LORA | Combined PLC2 & LORA RM for MTX electric energy meter.                                  |
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Model</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>0x01</code></td>
+            <td><code>GAZI1</code></td>
+            <td>
+                <code>Jooby RM GM-E</code> <br>
+                <code>Jooby RM GM-M</code>
+            </td>
+            <td>Based on CPU <code>STM32L15x</code> (no longer in production).</td>
+        </tr>
+        <tr>
+            <td><code>0x02</code></td>
+            <td><code>GAZI2</code></td>
+            <td>
+                <code>Jooby RM GM-E</code>
+            </td>
+            <td>Based on CPU <code>STM32L05x</code> (no longer in production).</td>
+        </tr>
+        <tr>
+            <td><code>0x03</code></td>
+            <td><code>GAZI3</code></td>
+            <td>
+                <code>Jooby RM GM-E</code> <br>
+                <code>Jooby RM GM-M</code> <br>
+                <code>Jooby RM GM-S</code> <br>
+                <code>Jooby RM GM-E_ext</code> <br>
+                <code>Jooby RM GM-M_ext</code> <br>
+                <code>Jooby EPHIR RMS LoRaWAN GMSG10 105 EU</code>
+            </td>
+            <td>Based on CPU <code>STM32L05x</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>0x04</code></td>
+            <td><code>NOVATOR</code></td>
+            <td>
+                <code>Jooby RM O-WM-N</code> <br>
+                <code>Jooby Aquaris RMS LoRaWAN WONO10 203 EU</code>
+            </td>
+            <td>Based on CPU <code>STM32WLE5</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x05</code></td>
+            <td><code>IMP2EU</code></td>
+            <td>
+                Radio module with 2 pulse inputs
+            </td>
+            <td>Based on CPU <code>STM32L051</code> (no longer in production).</td>
+        </tr>
+        <tr>
+            <td><code>0x06</code></td>
+            <td><code>IMP4EU</code></td>
+            <td>
+                <code>Jooby RM 4PI</code> <br>
+                <code>Jooby OMNI RM LoRaWAN 4PI 200 EU</code> <br>
+                <code>Jooby OMNI RM LoRaWAN 4PI 202 EU</code>
+            </td>
+            <td>Based on CPU <code>STM32WLE5</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x07</code></td>
+            <td><code>MTXLORA</code></td>
+            <td></td>
+            <td>
+                RM installed inside MTX meters. <br>
+                Based on <code>STM32L051</code>, <code>STM32L071</code> (no longer in production) and <code>STM32WLE5</code>.
+            </td>
+        </tr>
+        <tr>
+            <td><code>0x08</code></td>
+            <td><code>IMP2AS</code></td>
+            <td></td>
+            <td>RM with 2 ports for the Asian region, <code>AS923</code> (no longer in production).</td>
+        </tr>
+        <tr>
+            <td><code>0x09</code></td>
+            <td><code>IMP2IN</code></td>
+            <td></td>
+            <td>RM with 2 ports for the Indian region, <code>IN865</code> (no longer in production).</td>
+        </tr>
+        <tr>
+            <td><code>0x0a</code></td>
+            <td><code>IMP4IN</code></td>
+            <td></td>
+            <td>RM with 4 ports for the Indian region, <code>IN865</code> (no longer in production).</td>
+        </tr>
+        <tr>
+            <td><code>0x0b</code></td>
+            <td><code>ELIMP</code></td>
+            <td>
+                <code>Jooby ELECTRA RM LoRaWAN 1PI 100 EU</code>
+            </td>
+            <td>Single-port module with supply <code>220V</code>. Class <code>C</code>. Based on CPU <code>STM32WLE5</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x0c</code></td>
+            <td><code>GAZIC</code></td>
+            <td>
+                <code>Jooby RM GM-E</code> <br>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 100 EU</code> <br>
+                <code>Jooby RM GM-M</code> <br>
+                <code>Jooby EPHIR RMS LoRaWAN GMME10 103 EU</code> <br>
+                <code>Jooby RM GM-E_ext</code> <br>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 102 EU</code> <br>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 106 EU</code> <br>
+                <code>Jooby RM GM-M_ext</code> <br>
+                <code>Jooby EPHIR RMS LoRaWAN GMME10 104 EU</code> <br>
+                <code>Jooby EPHIR RMS LoRaWAN GMME10 107 EU</code>
+            </td>
+            <td>Based on CPU <code>STM32WLE5</code>.</td>
+        </tr>
+    </tbody>
+</table>

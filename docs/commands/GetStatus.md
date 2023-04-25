@@ -7,10 +7,10 @@ The command to request status information from the sensor.
 
 ### Format
 
-| Size | Type | Field               |
-| ---- | ---- | ------------------- |
-| `1`  | byte | command id = `0x14` |
-| `1`  | byte | command size = `0`  |
+| Size | Type   | Field               |
+| ---- | ------ | ------------------- |
+| `1`  | `byte` | command id = `0x14` |
+| `1`  | `byte` | command size = `0`  |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -35,19 +35,19 @@ It is also sent by the sensor without a request once a day.
 
 ### Format
 
-| Size | Type   | Field                                                                 |
-| ---- | ------ | --------------------------------------------------------------------- |
-| `1`  | byte   | command id = `0x14`                                                   |
-| `1`  | byte   | command size = `12`                                                   |
-| `1`  | byte   | [software type](#software-type) = `2`                                 |
-| `1`  | byte   | [software version](#software-version)                                 |
-| `1`  | byte   | [hardware type](#hardware-type)                                       |
-| `1`  | byte   | [hardware version](#hardware-version)                                 |
-| `3`  | byte   | [battery voltage](#battery-voltage) in `mV`                           |
-| `2`  | uint16 | [battery internal resistance](#battery-internal-resistance) in `mΩ`   |
-| `1`  | byte   | [temperature](#temperature) in degrees Celsius                        |
-| `1`  | byte   | [remaining battery capacity](#remaining-battery-capacity) in percents |
-| `1`  | byte   | [sequence number](#sequence-number)                                   |
+| Size | Type     | Field                                                                 |
+| ---- | -------- | --------------------------------------------------------------------- |
+| `1`  | `byte`   | command id = `0x14`                                                   |
+| `1`  | `byte`   | command size = `12`                                                   |
+| `1`  | `byte`   | [software type](#software-type) = `2`                                 |
+| `1`  | `byte`   | [software version](#software-version)                                 |
+| `1`  | `byte`   | [hardware type](#hardware-type)                                       |
+| `1`  | `byte`   | [hardware version](#hardware-version)                                 |
+| `3`  | `byte`   | [battery voltage](#battery-voltage) in `mV`                           |
+| `2`  | `uint16` | [battery internal resistance](#battery-internal-resistance) in `mΩ`   |
+| `1`  | `byte`   | [temperature](#temperature) in degrees Celsius                        |
+| `1`  | `byte`   | [remaining battery capacity](#remaining-battery-capacity) in percents |
+| `1`  | `byte`   | [sequence number](#sequence-number)                                   |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -133,7 +133,7 @@ After reading the sensor status, this field is also reset.
 | command size                | `12`                          |                                                  | `0x0c`     |
 | software type               | `2`                           |                                                  | `0x02`     |
 | software version            | `10`                          |                                                  | `0x0a`     |
-| hardware type               | `GAZM0NEW` = `3`              |                                                  | `0x03`     |
+| hardware type               | `GAZI3` = `3`                 |                                                  | `0x03`     |
 | hardware version            | `1`                           |                                                  | `0x01`     |
 | battery voltage             | low: `3158` <br> high: `3522` | `0b11000101` <br> `0b01101101` <br> `0b11000010` | `0xc56dc2` |
 | battery internal resistance | `10034`                       |                                                  | `0x2732`   |

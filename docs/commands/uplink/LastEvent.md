@@ -11,11 +11,11 @@ The status bits may differ for different device types.
 
 ### Format
 
-| Size  | Type | Field                                                         |
-| ----- | ---- | ------------------------------------------------------------- |
-| `1`   | byte | command id + size = `0x60-0x7f`                               |
-| `1`   | byte | [sequence number](#sequence-number)                           |
-| `1-2` | byte | [status](#status) (can be an extended value for some devices) |
+| Size  | Type   | Field                                                                                          |
+| ----- | ------ | ---------------------------------------------------------------------------------------------- |
+| `1`   | `byte` | command id + size = `0x60-0x7f`                                                                |
+| `1`   | `byte` | [sequence number](#sequence-number)                                                            |
+| `1-2` | `byte` | [status](#status) (can be an [extended value](../../types.md#extended-value) for some devices) |
 
 It's a command with a [one-byte header](../../message.md#command-with-a-one-byte-header).<br>
 Max command size is `31` bytes.
@@ -57,15 +57,6 @@ It depends on the device [hardware type](../../basics.md#hardware-types).
 | Bit    | Name   | Description                                                      |
 | ------ | ------ | ---------------------------------------------------------------- |
 | `0..2` | `RES`  | reserved for future use                                          |
-| `3`    | `DOWN` | `1` - the device has detected a loss of connection to the server |
-| `4..7` | `RES`  | reserved for future use                                          |
-
-#### for `WATER` devices (`1` byte):
-
-| Bit    | Name   | Description                                                      |
-| ------ | ------ | ---------------------------------------------------------------- |
-| `0`    | `BAT`  | `1` - the battery voltage has dropped below the set threshold    |
-| `1..2` | `RES`  | reserved for future use                                          |
 | `3`    | `DOWN` | `1` - the device has detected a loss of connection to the server |
 | `4..7` | `RES`  | reserved for future use                                          |
 
@@ -114,7 +105,7 @@ It depends on the device [hardware type](../../basics.md#hardware-types).
 
 ### Examples
 
-#### for `GAZM0NEW`:
+#### for `GAZI3`:
 
 | Field             | Value                            | Hex    |
 | ----------------- | -------------------------------- | ------ |

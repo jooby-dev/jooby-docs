@@ -10,10 +10,10 @@ This command can be sent periodically if [device report data parameter](../param
 
 ### Format
 
-| Size | Type | Field               |
-| ---- | ---- | ------------------- |
-| `1`  | byte | command id = `0x18` |
-| `1`  | byte | command size = `0`  |
+| Size | Type   | Field               |
+| ---- | ------ | ------------------- |
+| `1`  | `byte` | command id = `0x18` |
+| `1`  | `byte` | command size = `0`  |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -37,12 +37,12 @@ Message hex dump with LRC: `18 00 4d`
 
 ### Format
 
-| Size | Type | Field                                                                                    |
-| ---- | ---- | ---------------------------------------------------------------------------------------- |
-| `1`  | byte | command id = `0x18`                                                                      |
-| `1`  | byte | command size (dynamic, `2+`)                                                             |
-| `1+` | byte | [channels bit set](#channels-bit-set) ([extended bit value](../types.md#extended-value)) |
-| `1+` | byte | [channel values](#channel-values) ([extended bit value](../types.md#extended-value))     |
+| Size   | Type                                         | Field                                      |
+| ------ | -------------------------------------------- | ------------------------------------------ |
+| `1`    | `byte`                                       | command id = `0x18`                        |
+| `1`    | `byte`                                       | command size (dynamic, `2+`)               |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](#channels-bit-set)      |
+| `1+`   | [extended value](../types.md#extended-value) | [channel values sequence](#channel-values) |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -50,16 +50,11 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 #### **channels bit set**
 
-[Extended value](../types.md#extended-value) that stores bit set of all channels in command.
-Each bit represents one channel.
-If bits `0`, `1`, `2`, `3` are set - this means that values from that channels in that order exists in command.
-The data for channel at `0` position comes first, then the second, the third and so on.
-To store up to `7` channels `1` byte is required. To store up to `14` - `2` bytes and so on.
+[See details](../types.md#channels-bit-set).
 
 #### **channel values**
 
-Sequence of [extended values](../types.md#extended-value) to store channel values.
-Each value is `32-bit` unsigned integer.
+[See details](../types.md#channel-values).
 
 ### Examples
 
@@ -105,4 +100,4 @@ Message hex dump with LRC: `18 07 e0 20 d2 3f a4 01 4b 89`
 ## See also
 
 * [Device report data parameter](../parameter-types.md#reporting-data-type)
-* [Extended bit value](../types.md#extended-value)
+* [Extended value](../types.md#extended-value)

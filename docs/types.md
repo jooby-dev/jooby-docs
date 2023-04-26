@@ -82,3 +82,121 @@ Seconds since year 2000.
 
 Time `2023-04-03T14:01:17.000Z` is `1680530477` in [Unix time](https://en.wikipedia.org/wiki/Unix_time) representation.
 Unix time for year 2000 is `946684800` so seconds since year 2000 is `1680530477` - `946684800` = `733845677`.
+
+
+## Packed date
+
+It's a date value packed in `2` bytes.
+Format (each line is a byte):
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="7" align="center">Year [<code>7..0</code>]</td>
+            <td align="center">Month [<code>3</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">Month [<code>2..0<code>]</td>
+            <td colspan="5" align="center">Date [<code>4..0</code>]</td>
+        </tr>
+    </tbody>
+</table>
+
+### Examples
+
+
+Let's pack the date `2023.12.23 00:00:00 GMT`.
+<br>
+The year part is `2023` but we need only the value since the year `2000`.
+It's `23` which is `0b10111`.
+Pad this value with zeros till the necessary size of `7` bits.
+Now it's `0b0010111` as the highest `7` bits of the first byte of the result.
+<br>
+The month part `12` is `0b1100`.
+The highest one bit should be placed to the position `0` of the first byte of the result. The rest `3` bits will be the highest bits of the second byte.
+<br>
+The day part `23` is `0b10111`. It should be placed from the start of the first byte.
+<br>
+Combine it all together to get `0b00101111` in the first byte and `0b10010111` in the second. The final value is `0x2f97`.
+
+The same in a table form:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="7" align="center"><code>0010111</code></td>
+            <td align="center"><code>1</code></td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center"><code>100<code></td>
+            <td colspan="5" align="center"><code>10111</code></td>
+        </tr>
+    </tbody>
+</table>
+
+
+## Channels bit set
+
+[Extended value](#extended-value) that stores bit set of all channels indexes in command.
+Each bit represents one channel. If in some position some bit is `1` data is present.
+If bits `0`, `1`, `2`, `3` are set - this means that values from that channels in that order are stored in the command.
+The data for channel at `0` position comes first, then the second, the third and so on.
+To store up to `7` channels `1` byte is required. To store up to `14` - `2` bytes and so on.
+Usually this bit set takes from `1` to `5` bytes.
+
+### Examples
+
+#### 4 first channels:
+
+One byte `0b00001111` which is the same with extended bits or `0x0f`.
+
+#### channels #5, #6, #12:
+
+Two bytes `0b0001000001100000`. It becomes `0b0010000011100000` with extended bits or `0xe020`.
+
+
+## Channel values
+
+It's a sequence of [extended values](#extended-value) to store channel values.
+Each value usually is `32-bit` integer.
+
+### Examples
+
+#### 4 channels with values `131`, `8`, `10`, `12`
+
+The first value `131` is `0b0000000010000011` with extended bits becomes `0b0000000110000011` or `0x8301`.
+All the rest values are simple (extended bit is `0`) and take one byte each.
+<br>
+The final sequence is `83 01 08 0a 0c`.
+
+#### 3 channels with values `8146`, `164`, `75`
+
+The first value `8146` is `0b0001111111010010` with extended bits becomes `0b0011111111010010` or `0xd23f`.
+The second value `164` is `0b0000000010100100` with extended bits becomes `0b0000000110100100` or `0xa401`.
+The last value `75` is simple (no extension) `0x4b`.
+<br>
+The final sequence is `e0 20 d2 3f a4 01 4b`.

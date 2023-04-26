@@ -10,13 +10,13 @@ Whether to transmit with a confirmation request or not is determined by the set 
 
 ### Format
 
-| Size | Type | Field                               |
-| ---- | ---- | ----------------------------------- |
-| `1`  | byte | command id = `0x15`                 |
-| `1`  | byte | command dynamic size                |
-| `1`  | byte | [event id](#event-id)               |
-| `1`  | byte | [sequence number](#sequence-number) |
-| `1+` | byte | [event data](#event-data)           |
+| Size | Type   | Field                               |
+| ---- | ------ | ----------------------------------- |
+| `1`  | `byte` | command id = `0x15`                 |
+| `1`  | `byte` | command dynamic size                |
+| `1`  | `byte` | [event id](#event-id)               |
+| `1`  | `byte` | [sequence number](#sequence-number) |
+| `1+` | `byte` | [event data](#event-data)           |
 
 It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
 
@@ -55,10 +55,10 @@ Event data specific for the event type.
 
 `CONNECT`, `DISCONNECT`
 
-| Size | Type | Field                                                                   |
-| ---- | ---- | ----------------------------------------------------------------------- |
-| `1`  | byte | channel number                                                          |
-| `1+` | byte | channel value in [extended value](../../types.md#extended-value) format |
+| Size | Type | Field                                                            |
+| ---- | ---- | ---------------------------------------------------------------- |
+| `1`  | byte | channel number                                                   |
+| `1+` | byte | channel value as [extended value](../../types.md#extended-value) |
 
 `EV_MTX`
 

@@ -10,10 +10,10 @@ Parameter of that type used to setup type of values received from device.
 
 ### Format
 
-| Size | Type | Field                   |
-| ---- | ---- | ----------------------- |
-| 1    | byte | parameter type = `5`    |
-| 1    | byte | [data type](#data-type) |
+| Size | Type   | Field                   |
+| ---- | ------ | ----------------------- |
+| 1    | `byte` | parameter type = `5`    |
+| 1    | `byte` | [data type](#data-type) |
 
 #### **data type**
 

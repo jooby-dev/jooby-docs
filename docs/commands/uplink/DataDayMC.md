@@ -25,7 +25,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 #### **date**
 
-The command contains channel values data for this date.
+The command contains pulse counter of channels for this date.
 <br>
 [See details](../../types.md#packed-date).
 

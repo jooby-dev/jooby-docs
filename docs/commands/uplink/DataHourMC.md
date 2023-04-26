@@ -18,7 +18,7 @@ The command contains the total value of the pulse counter for the specified hour
 | `[1..5]*n*h` | sequence of [extended values](../../types.md#extended-value) | [channel values with diffs sequence](#channel-values-with-diffs) |
 
 > `n` - amount of selected channels. <br>
-> `h` - amount of diffs for each channel.
+> `h` - amount of hourly diffs for each channel.
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -26,7 +26,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 #### **date**
 
-The command contains channel values data for this date.
+The command contains pulse counter of channels for this date.
 <br>
 [See details](../../types.md#packed-date).
 

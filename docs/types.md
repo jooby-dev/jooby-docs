@@ -116,7 +116,6 @@ Format (each line is a byte):
 
 ### Examples
 
-
 Let's pack the date `2023.12.23 00:00:00 GMT`.
 <br>
 The year part is `2023` but we need only the value since the year `2000`.
@@ -159,14 +158,75 @@ The same in a table form:
 </table>
 
 
+## Packed hours
+
+It's a start hour value and the total hours amount packed in `1` byte.
+The hours value `0` means `1` hours.
+Format:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="3" align="center">Hours [<code>2..0</code>]</td>
+            <td colspan="5" align="center">Hour [<code>4..0</code>]</td>
+        </tr>
+    </tbody>
+</table>
+
+### Examples
+
+Let's pack the start hour `13:00` and hour amount `2`.
+<br>
+Hours `2` decreased by `1` (`0b1`) becomes `0b001` to have the size of `3` bits.
+<br>
+Hour `13` (`0b1101`) becomes `0b01101` to have the size of `5` bits.
+<br>
+Combine it all together to get `0b00101101` or `0x2d`.
+
+The same in a table form:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="3" align="center"><code>010</code></td>
+            <td colspan="5" align="center"><code>01101</code></td>
+        </tr>
+    </tbody>
+</table>
+
 ## Channels bit set
 
 [Extended value](#extended-value) that stores bit set of all channels indexes in command.
-Each bit represents one channel. If in some position some bit is `1` data is present.
+Each bit represents one channel.
+If in some position some bit is `1` then data is present.
 If bits `0`, `1`, `2`, `3` are set - this means that values from that channels in that order are stored in the command.
 The data for channel at `0` position comes first, then the second, the third and so on.
 To store up to `7` channels `1` byte is required. To store up to `14` - `2` bytes and so on.
-Usually this bit set takes from `1` to `5` bytes.
+Usually this bit set takes from `1` to `5` bytes as there are 4 channels max available.
 
 ### Examples
 
@@ -182,7 +242,7 @@ Two bytes `0b0001000001100000`. It becomes `0b0010000011100000` with extended bi
 ## Channel values
 
 It's a sequence of [extended values](#extended-value) to store channel values.
-Each value usually is `32-bit` integer.
+Each value usually is up to `32-bit` integer.
 
 ### Examples
 
@@ -200,3 +260,25 @@ The second value `164` is `0b0000000010100100` with extended bits becomes `0b000
 The last value `75` is simple (no extension) `0x4b`.
 <br>
 The final sequence is `e0 20 d2 3f a4 01 4b`.
+
+
+## Channel values with diffs
+
+Similarly to [channel values](#channel-values) it's a sequence of [extended values](#extended-value) to store channel values with additional diff value for each hour.
+<br>
+Format (each line is an [extended value](#extended-value) which takes [`1..5`] bytes):
+
+| Data               |
+| ------------------ |
+| channel #0 value   |
+| channel #0 diff #0 |
+| channel #0 diff #1 |
+| channel #1 value   |
+| channel #1 diff #0 |
+| channel #1 diff #1 |
+| ...                |
+| channel #N value   |
+| channel #N diff #0 |
+| channel #N diff #1 |
+
+Here it's a structure for `N` channels with for example `2` hours diff values.

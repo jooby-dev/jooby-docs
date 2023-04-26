@@ -37,12 +37,14 @@ Message hex dump with LRC: `18 00 4d`
 
 ### Format
 
-| Size   | Type                                         | Field                                      |
-| ------ | -------------------------------------------- | ------------------------------------------ |
-| `1`    | `byte`                                       | command id = `0x18`                        |
-| `1`    | `byte`                                       | command size (dynamic, `2+`)               |
-| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](#channels-bit-set)      |
-| `1+`   | [extended value](../types.md#extended-value) | [channel values sequence](#channel-values) |
+| Size       | Type                                                         | Field                                      |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------ |
+| `1`        | `byte`                                                       | command id = `0x18`                        |
+| `1`        | `byte`                                                       | command size (dynamic, `2+`)               |
+| `1..5`     | [extended value](../types.md#extended-value)                 | [channels bit set](#channels-bit-set)      |
+| `[1..5]*n` | sequence of [extended values](../../types.md#extended-value) | [channel values sequence](#channel-values) |
+
+> `n` - amount of selected channels.
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -54,6 +56,8 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 #### **channel values**
 
+It's pulse counter's values for selected channels.
+<br>
 [See details](../types.md#channel-values).
 
 ### Examples

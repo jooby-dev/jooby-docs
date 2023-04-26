@@ -161,6 +161,7 @@ The same in a table form:
 ## Packed hours
 
 It's a start hour value and the total hours amount packed in `1` byte.
+The hours value `0` means `1` hours.
 Format:
 
 <table>
@@ -188,11 +189,11 @@ Format:
 
 Let's pack the start hour `13:00` and hour amount `2`.
 <br>
-Hours `3` (`0b10`) becomes `0b010` to have the size of `3` bits.
+Hours `2` decreased by `1` (`0b1`) becomes `0b001` to have the size of `3` bits.
 <br>
 Hour `13` (`0b1101`) becomes `0b01101` to have the size of `5` bits.
 <br>
-Combine it all together to get `0b01001101` or `0x4d`.
+Combine it all together to get `0b00101101` or `0x2d`.
 
 The same in a table form:
 

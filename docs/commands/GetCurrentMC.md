@@ -68,7 +68,7 @@ It's pulse counter's values for selected channels.
 | ---------------- | ----- | ----------------------------------------------------------------------- | -------- |
 | command id       | `24`  |                                                                         | `0x18`   |
 | command size     | `6`   |                                                                         | `0x06`   |
-| channels         |       | `0b00001111`                                                            | `0x0f`   |
+| channels         | #4    | `0b00001111`                                                            | `0x0f`   |
 | channel #0 value | `131` | `0b0000000010000011` <br> with extended bits: <br> `0b0000000110000011` | `0x8301` |
 | channel #1 value | `8`   |                                                                         | `08`     |
 | channel #2 value | `10`  |                                                                         | `0a`     |
@@ -82,21 +82,21 @@ Message hex dump with LRC: `18 06 0f 83 01 08 0a 0c c8`
 | ---------------- | ----- | ------------ | ------ |
 | command id       | `12`  |              | `0x18` |
 | command size     | `2`   |              | `0x02` |
-| channels         |       | `0b00000100` | `0x04` |
+| channels         | #2    | `0b00000100` | `0x04` |
 | channel #1 value | `50`  |              | `0x32` |
 
 Message hex dump with LRC: `18 02 04 32 79`
 
 #### channels #5, #6, #12:
 
-| Field             | Value  | Bits                                                                    | Hex      |
-| ----------------- | ------ | ----------------------------------------------------------------------- | -------- |
-| command id        | `12`   |                                                                         | `0x18`   |
-| command size      | `2`    |                                                                         | `0x07`   |
-| channels          |        | `0b0001000001100000` <br> with extended bits: <br> `0b0010000011100000` | `0xe020` |
-| channel #5 value  | `8146` | `0b0001111111010010` <br> with extended bits: <br> `0b0011111111010010` | `0xd23f` |
-| channel #6 value  | `164`  | `0b0000000010100100` <br> with extended bits: <br> `0b0000000110100100` | `0xa401` |
-| channel #12 value | `75`   |                                                                         | `0x4b`   |
+| Field             | Value       | Bits                                                                    | Hex      |
+| ----------------- | ----------- | ----------------------------------------------------------------------- | -------- |
+| command id        | `12`        |                                                                         | `0x18`   |
+| command size      | `2`         |                                                                         | `0x07`   |
+| channels          | #5, #6, #12 | `0b0001000001100000` <br> with extended bits: <br> `0b0010000011100000` | `0xe020` |
+| channel #5 value  | `8146`      | `0b0001111111010010` <br> with extended bits: <br> `0b0011111111010010` | `0xd23f` |
+| channel #6 value  | `164`       | `0b0000000010100100` <br> with extended bits: <br> `0b0000000110100100` | `0xa401` |
+| channel #12 value | `75`        |                                                                         | `0x4b`   |
 
 Message hex dump with LRC: `18 07 e0 20 d2 3f a4 01 4b 89`
 

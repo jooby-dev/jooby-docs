@@ -56,7 +56,7 @@ It's pulse counter's values with diff value for each hour for selected channels.
 | command size     | `15`                      |                                                                         | `0x0f`   |
 | date             | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                    | `0x2f97` |
 | hours            | hour: `12:00`, hours: `1` | `0b00001100`                                                            | `0x0c`   |
-| channels         |                           | `0b00001111` <br> the same with extended bits                           | `0x0f`   |
+| channels         | #0, #1, #2, #3            | `0b00001111` <br> the same with extended bits                           | `0x0f`   |
 | channel #0 value | `131`                     | `0b0000000010000011` <br> with extended bits: <br> `0b0000000110000011` | `0x8301` |
 | channel #0 diff  | `10`                      |                                                                         | `0x0a`   |
 | channel #1 value | `832`                     | `0b0000001101000000` <br> with extended bits: <br> `0b0000011011000000` | `0xc006` |

@@ -48,7 +48,7 @@ It's pulse counter's values for selected channels.
 | command id       | `22`                      |                                                                         | `0x16`   |
 | command size     | `9`                       |                                                                         | `0x09`   |
 | date             | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                    | `0x2f97` |
-| channels         |                           | `0b0000000010101010` <br> with extended bits: <br> `0b0000000110101010` | `0xaa01` |
+| channels         | #1, #3, #5, #7            | `0b0000000010101010` <br> with extended bits: <br> `0b0000000110101010` | `0xaa01` |
 | channel #1 value | `12`                      |                                                                         | `0c`     |
 | channel #3 value | `131`                     | `0b0000000010000011` <br> with extended bits: <br> `0b0000000110000011` | `0x8301` |
 | channel #5 value | `8`                       |                                                                         | `08`     |

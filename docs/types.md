@@ -282,3 +282,20 @@ Format (each line is an [extended value](#extended-value) which takes [`1..5`] b
 | channel #N diff #1 |
 
 Here it's a structure for `N` channels with for example `2` hours diff values.
+
+
+## Channel values with pulse coefficient
+
+Similarly to [channel values](#channel-values) it's a sequence of [extended values](#extended-value) to store channel values with additional pulse coefficient for each channel.
+<br>
+Format (for `N` channels):
+
+| Type                              | Field                        |
+| --------------------------------- | ---------------------------- |
+| `byte`                            | channel #0 pulse coefficient |
+| [extended value](#extended-value) | channel #0 value             |
+| `byte`                            | channel #1 pulse coefficient |
+| [extended value](#extended-value) | channel #1 value             |
+|                                   | ...                          |
+| `byte`                            | channel #N pulse coefficient |
+| [extended value](#extended-value) | channel #N value             |

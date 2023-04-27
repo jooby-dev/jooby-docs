@@ -45,7 +45,7 @@ This field is the device's pulse coefficient that determines the correspondence 
 
 ### Examples
 
-#### channels `1` for `2023.03.10 00:00:00 GMT`:
+#### channel `1` for `2023.03.10 00:00:00 GMT`:
 
 | Field                         | Value                     | Bits                                                                    | Hex      |
 | ----------------------------- | ------------------------- | ----------------------------------------------------------------------- | -------- |

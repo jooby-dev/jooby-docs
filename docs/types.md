@@ -223,7 +223,8 @@ The same in a table form:
 [Extended value](#extended-value) that stores bit set of all channels indexes in command.
 Each bit represents one channel.
 If in some position some bit is `1` then data is present.
-If bits `0`, `1`, `2`, `3` are set - this means that values from that channels in that order are stored in the command.
+Note that bit position `0` is for channel number `1`.
+If bits `0`, `1`, `2`, `3` are set - this means that values from that channels in that order are stored in the command (channels `1`, `2`, `3`, `4`).
 The data for channel at `0` position comes first, then the second, the third and so on.
 To store up to `7` channels `1` byte is required. To store up to `14` - `2` bytes and so on.
 Usually this bit set takes from `1` to `5` bytes as there are 4 channels max available.
@@ -234,7 +235,7 @@ Usually this bit set takes from `1` to `5` bytes as there are 4 channels max ava
 
 One byte `0b00001111` which is the same with extended bits or `0x0f`.
 
-#### channels #5, #6, #12:
+#### channels `6`, `7`, `13`:
 
 Two bytes `0b0001000001100000`. It becomes `0b0010000011100000` with extended bits or `0xe020`.
 
@@ -268,34 +269,17 @@ Similarly to [channel values](#channel-values) it's a sequence of [extended valu
 <br>
 Format (each line is an [extended value](#extended-value) which takes [`1..5`] bytes):
 
-| Data               |
-| ------------------ |
-| channel #0 value   |
-| channel #0 diff #0 |
-| channel #0 diff #1 |
-| channel #1 value   |
-| channel #1 diff #0 |
-| channel #1 diff #1 |
-| ...                |
-| channel #N value   |
-| channel #N diff #0 |
-| channel #N diff #1 |
+| Data                 |
+| -------------------- |
+| channel `1` value    |
+| channel `1` diff `1` |
+| channel `1` diff `2` |
+| channel `2` value    |
+| channel `2` diff `1` |
+| channel `2` diff `2` |
+| ...                  |
+| channel `N` value    |
+| channel `N` diff `1` |
+| channel `N` diff `2` |
 
 Here it's a structure for `N` channels with for example `2` hours diff values.
-
-
-## Channel values with pulse coefficient
-
-Similarly to [channel values](#channel-values) it's a sequence of [extended values](#extended-value) to store channel values with additional pulse coefficient for each channel.
-<br>
-Format (for `N` channels):
-
-| Type                              | Field                        |
-| --------------------------------- | ---------------------------- |
-| `byte`                            | channel #0 pulse coefficient |
-| [extended value](#extended-value) | channel #0 value             |
-| `byte`                            | channel #1 pulse coefficient |
-| [extended value](#extended-value) | channel #1 value             |
-|                                   | ...                          |
-| `byte`                            | channel #N pulse coefficient |
-| [extended value](#extended-value) | channel #N value             |

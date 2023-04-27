@@ -37,13 +37,13 @@ Message hex dump with LRC: `1f 0f 00 45`
 
 ### Format
 
-| Size           | Type                                                                   | Field                                                                                             |
-| -------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `1`            | `byte`                                                                 | extra flag = `0x1f`                                                                               |
-| `1`            | `byte`                                                                 | command id = `0x0f`                                                                               |
-| `1`            | `byte`                                                                 | command size (dynamic, `3+`)                                                                      |
-| `1..5`         | [extended value](../types.md#extended-value)                           | [channels bit set](#channels-bit-set)                                                             |
-| `[1..5]*n + n` | sequence of bytes and [extended values](../../types.md#extended-value) | [channel values sequence with pulse coefficient](#channel-values-sequence-with-pulse-coefficient) |
+| Size           | Type                                                           | Field                                                                                             |
+| -------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `1`            | `byte`                                                         | extra flag = `0x1f`                                                                               |
+| `1`            | `byte`                                                         | command id = `0x0f`                                                                               |
+| `1`            | `byte`                                                         | command size (dynamic, `3+`)                                                                      |
+| `1..5`         | [extended value](../types.md#extended-value)                   | [channels bit set](#channels-bit-set)                                                             |
+| `[1..5]*n + n` | [type info](../types.md#channel-values-with-pulse-coefficient) | [channel values sequence with pulse coefficient](#channel-values-sequence-with-pulse-coefficient) |
 
 > `n` - amount of selected channels.
 

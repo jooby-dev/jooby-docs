@@ -37,15 +37,19 @@ Message hex dump with LRC: `1f 0f 00 45`
 
 ### Format
 
-| Size           | Type                                                           | Field                                                                                             |
-| -------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `1`            | `byte`                                                         | extra flag = `0x1f`                                                                               |
-| `1`            | `byte`                                                         | command id = `0x0f`                                                                               |
-| `1`            | `byte`                                                         | command size (dynamic, `3+`)                                                                      |
-| `1..5`         | [extended value](../types.md#extended-value)                   | [channels bit set](#channels-bit-set)                                                             |
-| `[1..5]*n + n` | [type info](../types.md#channel-values-with-pulse-coefficient) | [channel values sequence with pulse coefficient](#channel-values-sequence-with-pulse-coefficient) |
-
-> `n` - amount of selected channels.
+| Size   | Type                                         | Field                                 |
+| ------ | -------------------------------------------- | ------------------------------------- |
+| `1`    | `byte`                                       | extra flag = `0x1f`                   |
+| `1`    | `byte`                                       | command id = `0x0f`                   |
+| `1`    | `byte`                                       | command size (dynamic, `3+`)          |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](#channels-bit-set) |
+| `1`    | `byte`                                       | channel `1` pulse coefficient         |
+| `1..5` | [extended value](#extended-value)            | channel `1` value                     |
+| `1`    | `byte`                                       | channel `2` pulse coefficient         |
+| `1..5` | [extended value](#extended-value)            | channel `2` value                     |
+| ...    | ...                                          | ...                                   |
+| `1`    | `byte`                                       | channel `N` pulse coefficient         |
+| `1..5` | [extended value](#extended-value)            | channel `N` value                     |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -55,24 +59,18 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 [See details](../types.md#channels-bit-set).
 
-#### **channel values sequence with pulse coefficient**
-
-It's current consumption absolute values for selected channels.
-<br>
-[See details](../types.md#channel-values-with-pulse-coefficient).
-
 ### Examples
 
-#### absolute current values from channel #3:
+#### absolute current values from channel `4`:
 
-| Field                        | Value | Bits                                                                    | Hex      |
-| ---------------------------- | ----- | ----------------------------------------------------------------------- | -------- |
-| extra flag                   | `31`  |                                                                         | `0x1f`   |
-| command id                   | `15`  |                                                                         | `0x0f`   |
-| command size                 | `4`   |                                                                         | `0x04`   |
-| channels                     | #3    | `0b00001000`                                                            | `0x08`   |
-| channel #3 pulse coefficient | `100` |                                                                         | `0x64`   |
-| channel #3 value             | `342` | `0b0000000101010110` <br> with extended bits: <br> `0b0000001011010110` | `0xd602` |
+| Field                         | Value | Bits                                                                    | Hex      |
+| ----------------------------- | ----- | ----------------------------------------------------------------------- | -------- |
+| extra flag                    | `31`  |                                                                         | `0x1f`   |
+| command id                    | `15`  |                                                                         | `0x0f`   |
+| command size                  | `4`   |                                                                         | `0x04`   |
+| channels                      | `4`   | `0b00001000`                                                            | `0x08`   |
+| channel `4` pulse coefficient | `100` |                                                                         | `0x64`   |
+| channel `4` value             | `342` | `0b0000000101010110` <br> with extended bits: <br> `0b0000001011010110` | `0xd602` |
 
 Message hex dump with LRC: `1f 0f 04 08 64 d6 02 f9`
 
@@ -82,4 +80,3 @@ Message hex dump with LRC: `1f 0f 04 08 64 d6 02 f9`
 * [Device report data parameter](../parameter-types.md#reporting-data-type)
 * [Extended value](../types.md#extended-value)
 * [Channels bit set](../types.md#channels-bit-set)
-* [Channel values with pulse coefficient](../types.md#channel-values-with-pulse-coefficient)

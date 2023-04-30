@@ -121,6 +121,7 @@ It depends on the device [hardware type](../../basics.md#hardware-types).
     "isMagneticInfluence": false
 }
 ```
+
 Message hex dump with LRC: `62 20 09 1e`
 
 #### for `MTXLORA`:
@@ -148,6 +149,7 @@ Message hex dump with LRC: `62 20 09 1e`
     "isNewTariffPlanReceived": false
 }
 ```
+
 Message hex dump with LRC: `63 30 83 0a 8f`
 
 

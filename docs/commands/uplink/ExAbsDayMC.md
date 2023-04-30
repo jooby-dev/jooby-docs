@@ -18,12 +18,12 @@ The parameter `23` is used for this behavior.
 | `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
 | `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../types.md#channels-bit-set) |
 | `1`    | `byte`                                          | channel `1` pulse coefficient                       |
-| `1..5` | [extended value](#extended-value)               | channel `1` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                   |
 | `1`    | `byte`                                          | channel `2` pulse coefficient                       |
-| `1..5` | [extended value](#extended-value)               | channel `2` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `2` value                                   |
 | ...    | ...                                             | ...                                                 |
 | `1`    | `byte`                                          | channel `N` pulse coefficient                       |
-| `1..5` | [extended value](#extended-value)               | channel `N` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `N` value                                   |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

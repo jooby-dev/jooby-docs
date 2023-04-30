@@ -7,13 +7,13 @@ Command to request/receive day pulse counter's values from device archive.
 
 ### Format
 
-| Size       | Type                                                         | Field                                      |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------ |
-| `1`        | `byte`                                                       | command id = `0x1b`                        |
-| `1`        | `byte`                                                       | command size = `4`                         |
-| `2`        | [packed date](../types.md#packed-date)                       | [start date](#date)                        |
-| `1..5`     | [extended value](../types.md#extended-value)                 | [channels bit set](#channels-bit-set)      |
-| `1`        | `byte`                                                       | [amount of days](#days)                    |
+| Size   | Type                                         | Field                                 |
+| ------ | -------------------------------------------- | ------------------------------------- |
+| `1`    | `byte`                                       | command id = `0x1b`                   |
+| `1`    | `byte`                                       | command size = `4+`                   |
+| `2`    | [packed date](../types.md#packed-date)       | [start date](#date)                   |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](#channels-bit-set) |
+| `1`    | `byte`                                       | [amount of days](#days)               |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -31,7 +31,7 @@ Start date for requested day pulse counter's values.
 
 #### **days**
 
-Amount of days from archive.
+Amount of days to get data from archive.
 
 ### Examples
 
@@ -45,24 +45,27 @@ Amount of days from archive.
 | channels     | `1`, `3`, `4`             | `0b00001101`         | `0x0d`   |
 | days         | `2`                       |                      | `0x02`   |
 
-Message hex dump with LRC: `1b 04 2f 97 0d 02`
+Message hex dump with LRC: `1b 04 2f 97 0d 02 fd`
 
 
 ## Response
 
 ### Format
 
-| Size         | Type                                                      | Field                                                          |
-| ------------ | --------------------------------------------------------- | -------------------------------------------------------------- |
-| `1`          | `byte`                                                    | command id = `0x1b`                                            |
-| `1`          | `byte`                                                    | command size (dynamic, `5+`)                                   |
-| `2`          | [packed date](../types.md#packed-date)                    | [start date](#date)                                            |
-| `1..5`       | [extended value](../types.md#extended-value)              | [channels bit set](#channels-bit-set)                          |
-| `1`          | `byte`                                                    | [amount of days](#days)                                        |
-| `[1..5]*d*n` | sequence of [extended values](../types.md#extended-value) | [sequence of channel values by days ](#channel-values-by-days) |
-
-> `d` - amount of days for each channel. <br>
-> `n` - amount of selected channels.
+| Size         | Type                                         | Field                                 |
+| ------------ | -------------------------------------------- | ------------------------------------- |
+| `1`          | `byte`                                       | command id = `0x1b`                   |
+| `1`          | `byte`                                       | command size (dynamic, `5+`)          |
+| `2`          | [packed date](../types.md#packed-date)       | [start date](#date)                   |
+| `1..5`       | [extended value](../types.md#extended-value) | [channels bit set](#channels-bit-set) |
+| `1`          | `byte`                                       | [amount of days](#days)               |
+| `1..5`       | [extended value](../types.md#extended-value) | channel `1` day `1` value             |
+| `1..5`       | [extended value](../types.md#extended-value) | channel `1` day `2` value             |
+| `1..5`       | [extended value](../types.md#extended-value) | channel `2` day `1` value             |
+| `1..5`       | [extended value](../types.md#extended-value) | channel `2` day `2` value             |
+| ...          | ...                                          | ...                                   |
+| `1..5`       | [extended value](../types.md#extended-value) | channel `N` day `D` value             |
+| `1..5`       | [extended value](../types.md#extended-value) | channel `N` day `D` value             |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -102,7 +105,7 @@ It's pulse counter's values by days for each channel.
 | channel `1` day `1` value | `234`                     | `0b0000000011101010`<br>with extended bits:<br>`0b1110101000000001` | `0xea01` |
 | channel `1` day `2` value | `332`                     | `0b0000000101001100`<br>with extended bits:<br>`0b1100110000000010` | `0xcc02` |
 
-Message hex dump with LRC: `1b 08 a9 6d 01 02 ea 01 cc 02`
+Message hex dump with LRC: `1b 08 a9 6d 01 02 ea 01 cc 02 a4`
 
 #### 4 first channels:
 
@@ -122,7 +125,7 @@ Message hex dump with LRC: `1b 08 a9 6d 01 02 ea 01 cc 02`
 | channel `4` day `1` value | `221`                     | `0b0000000011011101`<br>with extended bits:<br>`0b0000110111010001` | `0xdd01` |
 | channel `4` day `2` value | `786`                     | `0b0000001100010010`<br>with extended bits:<br>`0b0000100100100110` | `0x9206` |
 
-Message hex dump with LRC: `1b 13 2e fb 0f 02 7b d9 02 c7 03 fa 06 ce 02 9c 03 dd 01 92 06`
+Message hex dump with LRC: `1b 13 2e fb 0f 02 7b d9 02 c7 03 fa 06 ce 02 9c 03 dd 01 92 06 06`
 
 
 ## See also

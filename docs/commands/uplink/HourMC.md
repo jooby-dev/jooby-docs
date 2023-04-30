@@ -15,16 +15,16 @@ The command contains the total value of the pulse counter for the specified hour
 | `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
 | `1`    | [packed hours](../../types.md#packed-hours)     | [hours](#hours)                                     |
 | `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../types.md#channels-bit-set) |
-| `1..5` | [extended value](#extended-value)               | channel `1` value                                   |
-| `1..5` | [extended value](#extended-value)               | channel `1` diff `1`                                |
-| `1..5` | [extended value](#extended-value)               | channel `1` diff `2`                                |
-| `1..5` | [extended value](#extended-value)               | channel `2` value                                   |
-| `1..5` | [extended value](#extended-value)               | channel `2` diff `1`                                |
-| `1..5` | [extended value](#extended-value)               | channel `2` diff `2`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `2`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `2` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `2`                                |
 | ...    | ...                                             | ...                                                 |
-| `1..5` | [extended value](#extended-value)               | channel `N` value                                   |
-| `1..5` | [extended value](#extended-value)               | channel `N` diff `1`                                |
-| `1..5` | [extended value](#extended-value)               | channel `N` diff `2`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `N` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

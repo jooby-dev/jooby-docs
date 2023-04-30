@@ -1,9 +1,6 @@
 # GetCurrentMC
 
-Command to request/receive current values from device channels.
-
-This command can be sent periodically if [device report data parameter](../parameter-types.md#reporting-data-type) set to
-[current](../parameter-types.md#data-type) i.e. = `2`.
+Command to request current values from device channels.
 
 
 ## Request
@@ -35,14 +32,17 @@ Message hex dump with LRC: `18 00 4d`
 
 ## Response
 
+This command can be sent periodically if [device report data parameter](../parameter-types.md#reporting-data-type) set to
+[current](../parameter-types.md#data-type) i.e. = `2`.
+
 ### Format
 
-| Size       | Type                                                         | Field                                      |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------ |
-| `1`        | `byte`                                                       | command id = `0x18`                        |
-| `1`        | `byte`                                                       | command size (dynamic, `2+`)               |
-| `1..5`     | [extended value](../types.md#extended-value)                 | [channels bit set](#channels-bit-set)      |
-| `[1..5]*n` | sequence of [extended values](../../types.md#extended-value) | [channel values sequence](#channel-values) |
+| Size       | Type                                                      | Field                                            |
+| ---------- | --------------------------------------------------------- | ------------------------------------------------ |
+| `1`        | `byte`                                                    | command id = `0x18`                              |
+| `1`        | `byte`                                                    | command size (dynamic, `2+`)                     |
+| `1..5`     | [extended value](../types.md#extended-value)              | [channels bit set](../types.md#channels-bit-set) |
+| `[1..5]*n` | sequence of [extended values](../types.md#extended-value) | [channel values sequence](#channel-values)       |
 
 > `n` - amount of selected channels.
 

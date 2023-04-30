@@ -261,25 +261,3 @@ The second value `164` is `0b0000000010100100` with extended bits becomes `0b000
 The last value `75` is simple (no extension) `0x4b`.
 <br>
 The final sequence is `e0 20 d2 3f a4 01 4b`.
-
-
-## Channel values with diffs
-
-Similarly to [channel values](#channel-values) it's a sequence of [extended values](#extended-value) to store channel values with additional diff value for each hour.
-<br>
-Format (each line is an [extended value](#extended-value) which takes [`1..5`] bytes):
-
-| Data                 |
-| -------------------- |
-| channel `1` value    |
-| channel `1` diff `1` |
-| channel `1` diff `2` |
-| channel `2` value    |
-| channel `2` diff `1` |
-| channel `2` diff `2` |
-| ...                  |
-| channel `N` value    |
-| channel `N` diff `1` |
-| channel `N` diff `2` |
-
-Here it's a structure for `N` channels with for example `2` hours diff values.

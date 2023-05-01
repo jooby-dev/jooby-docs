@@ -10,7 +10,7 @@ Command to request/receive hour pulse counter's values from device archive.
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
 | `1`    | `byte`                                       | command id = `0x1b`                              |
-| `1`    | `byte`                                       | command size = `4+`                              |
+| `1`    | `byte`                                       | command size (dynamic, `4+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1`    | [packed hours](../types.md#packed-hours)     | [hours](#hours)                                  |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
@@ -40,7 +40,7 @@ It's a start hour value and the total hours amount (one diff value for each hour
 #### channels `1`, `3`, `4`:
 
 | Field        | Value                     | Bits                 | Hex      |
-|--------------|---------------------------|----------------------|----------|
+| ------------ | ------------------------- | -------------------- | -------- |
 | command id   | `26`                      |                      | `0x1a`   |
 | command size | `4`                       |                      | `0x04`   |
 | start date   | `2023.12.23 00:00:00 GMT` | `0b0010111110010111` | `0x2f97` |
@@ -57,7 +57,7 @@ Message hex dump with LRC: `1a 04 2f 97 4c 01 be`
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
 | `1`    | `byte`                                       | command id = `0x1b`                              |
-| `1`    | `byte`                                       | command size (dynamic, `5+`)                     |
+| `1`    | `byte`                                       | command size (dynamic, `6+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1`    | [packed hours](../types.md#packed-hours)     | [hours](#hours)                                  |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
@@ -97,7 +97,7 @@ It's a start hour value and the total hours amount (one diff value for each hour
 #### first `4` channels:
 
 | Field                      | Value                     | Bits                                                                | Hex      |
-|--------------------------- |---------------------------|---------------------------------------------------------------------|----------|
+| -------------------------- | ------------------------- | ------------------------------------------------------------------- | -------- |
 | command id                 | `26`                      |                                                                     | `0x1a`   |
 | command size               | `13`                      |                                                                     | `0x0d`   |
 | start date                 | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                | `0x2f97` |

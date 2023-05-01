@@ -68,7 +68,7 @@ Type-specific structures.
 | command size      | `10`   | `0x0a`       |
 | parameter type    | `23`   | `0x17`       |
 | meter value       | `204`  | `0x000000cc` |
-| pulse coefficient | `100`  | `0x82`       |
+| pulse coefficient | `100`  | `0x83`       |
 | value             | `2023` | `0x000007e7` |
 
-Message hex dump with LRC: `04 0a 17 00 00 00 cc 82 00 00 07 e7 e2`
+Message hex dump with LRC: `04 0a 17 00 00 00 cc 83 00 00 07 e7 e2`

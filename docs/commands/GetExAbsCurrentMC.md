@@ -37,19 +37,19 @@ This command can be sent periodically if [device report data parameter](../param
 
 ### Format
 
-| Size   | Type                                            | Field                                            |
-| ------ | ----------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                          | extra flag = `0x1f`                              |
-| `1`    | `byte`                                          | command id = `0x0f`                              |
-| `1`    | `byte`                                          | command size (dynamic, `3+`)                     |
-| `1..5` | [extended value](../types.md#extended-value)    | [channels bit set](../types.md#channels-bit-set) |
-| `1`    | `byte`                                          | channel `1` pulse coefficient                    |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                |
-| `1`    | `byte`                                          | channel `2` pulse coefficient                    |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` value                                |
-| ...    | ...                                             | ...                                              |
-| `1`    | `byte`                                          | channel `N` pulse coefficient                    |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` value                                |
+| Size   | Type                                               | Field                                            |
+| ------ | -------------------------------------------------- | ------------------------------------------------ |
+| `1`    | `byte`                                             | extra flag = `0x1f`                              |
+| `1`    | `byte`                                             | command id = `0x0f`                              |
+| `1`    | `byte`                                             | command size (dynamic, `3+`)                     |
+| `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../types.md#channels-bit-set) |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                    |
+| `1..5` | [extended value](../../types.md#extended-value)    | channel `1` value                                |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `2` pulse coefficient                    |
+| `1..5` | [extended value](../../types.md#extended-value)    | channel `2` value                                |
+| ...    | ...                                                | ...                                              |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `N` pulse coefficient                    |
+| `1..5` | [extended value](../../types.md#extended-value)    | channel `N` value                                |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 

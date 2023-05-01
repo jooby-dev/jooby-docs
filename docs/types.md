@@ -262,3 +262,21 @@ The second value `164` is `0b0000000010100100` with extended bits becomes `0b000
 The last value `75` is simple (no extension) `0x4b`.
 <br>
 The final sequence is `e0 20 d2 3f a4 01 4b`.
+
+
+# Pulse coefficient
+
+It's `1`-byte value of the pulse coefficient for a metering device, which determines the correspondence of consumed resources to 1 pulse.
+If the most significant bit is `0`, then the remaining `7` bits represent the value of the pulse coefficient,
+i.e. `0x0A` (`10`) for `10` cubic decimeters = `10` liters = `0.01` cubic meters per pulse.
+If the most significant bit is `1` then the value of pulse coefficient is determined from the table:
+
+| Pulse coefficient | dm<sup>3</sup> | m<sup>3</sup> |
+| ----------------- | -------------- | ------------- |
+| `0х80`            | `1`            | `0.001`      |
+| `0х81`            | `5`            | `0.005`      |
+| `0х82`            | `10`           | `0.01`       |
+| `0х83`            | `100`          | `0.1`        |
+| `0х84`            | `1000`         | `1`          |
+| `0х85`            | `10000`        | `10`         |
+| `0х86`            | `100000`       | `100`        |

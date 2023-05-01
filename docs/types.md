@@ -36,7 +36,8 @@ Let's represent a value of `531` in this format.
 
 Normal binary representation is `0b0000001000010011`. The same but in hex: `0x0213`.
 
-To pack this value to extended value format it's necessary to take the first most right `7` bits - `0010011` and fill the first `7` bytes of the target byte. The `8`-th bit is the `extend bit` which shows there is more data to fill. So it should be `1`.
+To pack this value to extended value format it's necessary to take the first most right `7` bits - `0010011` and fill the first `7` bytes of the target byte.
+The `8`-th bit is the `extend bit` which shows there is more data to fill. So it should be `1`.
 The first full byte now is `0b10010011` or `0x93`.
 
 The next `7` bits are `0000100` and should be placed to the second target byte.

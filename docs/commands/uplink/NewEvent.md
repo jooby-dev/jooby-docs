@@ -146,6 +146,7 @@ Message hex dump with LRC: `15 05 0c 02 00 83 01 c9`
     "isNewTariffPlanReceived": false
 }
 ```
+
 Message hex dump with LRC: `15 04 11 02 83 0a de`
 
 

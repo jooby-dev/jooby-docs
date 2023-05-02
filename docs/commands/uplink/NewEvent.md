@@ -13,7 +13,7 @@ Whether to transmit with a confirmation request or not is determined by the set 
 | Size | Type   | Field                               |
 | ---- | ------ | ----------------------------------- |
 | `1`  | `byte` | command id = `0x15`                 |
-| `1`  | `byte` | command dynamic size                |
+| `1`  | `byte` | command size (dynamic, `3+`)        |
 | `1`  | `byte` | [event id](#event-id)               |
 | `1`  | `byte` | [sequence number](#sequence-number) |
 | `1+` | `byte` | [event data](#event-data)           |
@@ -117,7 +117,6 @@ Message hex dump with LRC: `15 0e 0b 02 2b c0 31 60 00 1a 79 88 17 01 23 56 75`
 | channel value   | `131` | `0b0000000010000011` <br> with extended bits: <br> `0b0000000110000011` | `0x8301` |
 
 Message hex dump with LRC: `15 05 0c 02 00 83 01 c9`
-
 
 #### for `EV_MTX`:
 

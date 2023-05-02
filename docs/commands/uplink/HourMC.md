@@ -11,7 +11,7 @@ The command contains the total value of the pulse counter for the specified hour
 | Size   | Type                                            | Field                                               |
 | ------ | ----------------------------------------------- | --------------------------------------------------- |
 | `1`    | `byte`                                          | command id = `0x16`                                 |
-| `1`    | `byte`                                          | command size (dynamic, `5+`)                        |
+| `1`    | `byte`                                          | command size (dynamic, `6+`)                        |
 | `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
 | `1`    | [packed hours](../../types.md#packed-hours)     | [hours](#hours)                                     |
 | `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../types.md#channels-bit-set) |

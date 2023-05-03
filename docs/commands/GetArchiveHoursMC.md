@@ -9,7 +9,7 @@ Command to request/receive hour pulse counter's values from device archive.
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                       | command id = `0x1b`                              |
+| `1`    | `byte`                                       | command id = `0x1a`                              |
 | `1`    | `byte`                                       | command size = `4+`                              |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1`    | [packed hours](../types.md#packed-hours)     | [hours](#hours)                                  |
@@ -56,7 +56,7 @@ Message hex dump with LRC: `1a 04 2f 97 4c 01 be`
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                       | command id = `0x1b`                              |
+| `1`    | `byte`                                       | command id = `0x1a`                              |
 | `1`    | `byte`                                       | command size (dynamic, `5+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1`    | [packed hours](../types.md#packed-hours)     | [hours](#hours)                                  |

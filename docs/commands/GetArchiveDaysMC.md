@@ -10,7 +10,7 @@ Command to request/receive day pulse counter's values from device archive.
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
 | `1`    | `byte`                                       | command id = `0x1b`                              |
-| `1`    | `byte`                                       | command size = `4+`                              |
+| `1`    | `byte`                                       | command size (dynamic, `4+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
 | `1`    | `byte`                                       | [amount of days](#days)                          |
@@ -38,7 +38,7 @@ Amount of days to get data from archive.
 #### channels `1`, `3`, `4`:
 
 | Field        | Value                     | Bits                 | Hex      |
-|--------------|---------------------------|----------------------|----------|
+| ------------ | ------------------------- | -------------------- | -------- |
 | command id   | `27`                      |                      | `0x1b`   |
 | command size | `4`                       |                      | `0x04`   |
 | start date   | `2023.12.23 00:00:00 GMT` | `0b0010111110010111` | `0x2f97` |
@@ -92,7 +92,7 @@ It's pulse counter's values by days for each channel.
 #### single channel `1`:
 
 | Field                     | Value                     | Bits                                                                | Hex      |
-|---------------------------|---------------------------|---------------------------------------------------------------------|----------|
+| ------------------------- | ------------------------- | ------------------------------------------------------------------- | -------- |
 | command id                | `27`                      |                                                                     | `0x1b`   |
 | command size              | `8`                       |                                                                     | `0x08`   |
 | start date                | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                | `0x2f97` |
@@ -106,7 +106,7 @@ Message hex dump with LRC: `1b 08 a9 6d 01 02 ea 01 cc 02 a4`
 #### 4 first channels:
 
 | Field                     | Value                     | Bits                                                                | Hex      |
-|---------------------------|---------------------------|---------------------------------------------------------------------|----------|
+| ------------------------- | ------------------------- | ------------------------------------------------------------------- | -------- |
 | command id                | `27`                      |                                                                     | `0x1b`   |
 | command size              | `19`                      |                                                                     | `0x13`   |
 | start date                | `2023.07.07 00:00:00 GMT` | `0b10111011111011`                                                  | `0x2efb` |

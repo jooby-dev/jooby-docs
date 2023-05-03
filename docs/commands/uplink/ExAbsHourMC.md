@@ -11,27 +11,27 @@ The parameter `23` is used for this behavior.
 
 ### Format
 
-| Size   | Type                                            | Field                                               |
-| ------ | ----------------------------------------------- | --------------------------------------------------- |
-| `1`    | `byte`                                          | extra flag = `0x1f`                                 |
-| `1`    | `byte`                                          | command id = `0x0a`                                 |
-| `1`    | `byte`                                          | command size (dynamic, `7+`)                        |
-| `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
-| `1`    | [packed hours](../../types.md#packed-hours)     | [hours](#hours)                                     |
-| `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../types.md#channels-bit-set) |
-| `1`    | `byte`                                          | channel `1` pulse coefficient                       |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                   |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `1`                                |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `2`                                |
-| `1`    | `byte`                                          | channel `2` pulse coefficient                       |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` value                                   |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `1`                                |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `2`                                |
-| ...    | ...                                             | ...                                                 |
-| `1`    | `byte`                                          | channel `N` pulse coefficient                       |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` value                                   |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                |
+| Size   | Type                                                  | Field                                               |
+| ------ | ----------------------------------------------------- | --------------------------------------------------- |
+| `1`    | `byte`                                                | extra flag = `0x1f`                                 |
+| `1`    | `byte`                                                | command id = `0x0a`                                 |
+| `1`    | `byte`                                                | command size (dynamic, `7+`)                        |
+| `2`    | [packed date](../../types.md#packed-date)             | [date](#date)                                       |
+| `1`    | [packed hours](../../types.md#packed-hours)           | [hours](#hours)                                     |
+| `1..5` | [extended value](../../types.md#extended-value)       | [channels bit set](../../types.md#channels-bit-set) |
+| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `1` pulse coefficient                       |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `1` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `1` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `1` diff `2`                                |
+| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `2` pulse coefficient                       |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `2` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `2` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `2` diff `2`                                |
+| ...    | ...                                                   | ...                                                 |
+| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `N` pulse coefficient                       |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `N` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `N` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `N` diff `2`                                |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

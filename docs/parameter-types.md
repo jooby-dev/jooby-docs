@@ -4,6 +4,73 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 Attention! Parameter types is not fully documented!
 
 
+## Reporting data interval
+
+Setting time parameters of operation. Applicable to all types of modules.
+
+### Format
+
+| Size | Type   | Field                              |
+| ---- | ------ | ---------------------------------- |
+| 1    | `byte` | parameter type = `1`               |
+| 3    | `byte` | [reserved](#reserved) = `0x000000` |
+| 1    | `byte` | [period](#period)                  |
+
+#### **reserved**
+
+Obsolete parameter. This field is no longer used.
+
+#### **period**
+
+This parameter defines the periodicity of sending data from the sensor.
+<br>
+It is a `1`-byte value with a resolution of `600` seconds plus a pseudo-random value of up to `511` seconds.
+If the parameter is not set, the data transmission period will be `13320` seconds plus a pseudo-random value of up to `2551` seconds.
+
+### Examples
+
+#### set `reporting data interval` to `600` seconds:
+
+| Field          | Value | Hex        |
+| -------------- | ----- | ---------- |
+| command id     | `3`   | `0x03`     |
+| command size   | `5`   | `0x05`     |
+| parameter type | `1`   | `0x01`     |
+| reserved       |       | `0x000000` |
+| period         | `1`   | `0x01`     |
+
+Message hex dump with LRC: `03 05 01 00 00 00 01 53`
+
+
+## Day checkout hour
+
+The parameter defines the hour of the day by which the daily consumption is calculated.
+
+### Format
+
+| Size | Type   | Field                |
+| ---- | ------ | -------------------- |
+| 1    | `byte` | parameter type = `4` |
+| 1    | `byte` | [hour](#hour)        |
+
+#### **hour**
+
+The value from `0` to `23`. The default calculation hour is `0`.
+
+### Examples
+
+#### set `day checkout hour` to `12:00`:
+
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `2`   | `0x02` |
+| parameter type | `4`   | `0x04` |
+| hour           | `12`  | `0x0c` |
+
+Message hex dump with LRC: `03 02 04 0c 5c`
+
+
 ## Reporting data type
 
 Parameter of that type used to setup type of values received from device.
@@ -26,13 +93,13 @@ Parameter of that type used to setup type of values received from device.
 
 ### Examples
 
-[SetParameter](./commands/SetParameter.md) the [reporting data type](#reporting-data-type) to `current`:
+#### set `reporting data type` to `current`:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `3`   | `0x03` |
-| command size | `2`   | `0x02` |
-| type         | `5`   | `0x05` |
-| data         | `2`   | `0x01` |
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `2`   | `0x02` |
+| parameter type | `5`   | `0x05` |
+| data type      | `2`   | `0x01` |
 
 Message hex dump with LRC: `03 02 05 01 50`

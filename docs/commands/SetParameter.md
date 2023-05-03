@@ -12,7 +12,7 @@ The sensor confirms the execution of the command with [response](#response).
 | Size | Type   | Field                             |
 | ---- | ------ | --------------------------------- |
 | 1    | `byte` | command id = `0x03`               |
-| 1    | `byte` | command dynamic size              |
+| 1    | `byte` | command size  (dynamic, `2+`)     |
 | 1    | `byte` | [parameter type](#parameter-type) |
 | 1+   | `byte` | [parameter data](#parameter-data) |
 
@@ -20,7 +20,7 @@ The sensor confirms the execution of the command with [response](#response).
 
 #### **parameter type**
 
-See [available parameter types](../parameter-types.md)
+See [available parameter types](../parameter-types.md).
 
 #### **parameter data**
 
@@ -44,7 +44,7 @@ It's a mandatory confirmation to [SetParameter request](./SetParameter.md#reques
 
 #### **parameter type**
 
-See [available parameter types](../parameter-types.md)
+See [available parameter types](../parameter-types.md).
 
 #### **status**
 

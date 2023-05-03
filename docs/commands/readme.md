@@ -12,6 +12,7 @@ There are 2 types of command direction:
 | -------- | --------------------------------------------------- | ---------------------------------------------------------------------------- |
 | `0x02`   | [SetTime2000](./SetTime2000.md#request)             | Request to correct device time.                                              |
 | `0x03`   | [SetParameter](./SetParameter.md#request)           | Request to change device parameter.                                          |
+| `0x04`   | [GetParameter](./GetParameter.md#request)           | Request to get device parameter.                                             |
 | `0x0b`   | [GetArchiveEvents](./GetArchiveEvents.md#request)   | Request to get a events from archive.                                        |
 | `0x0c`   | [CorrectTime2000](./CorrectTime2000.md#request)     | Request to correct device time by up to 127 seconds.                         |
 | `0x14`   | [GetStatus](./GetStatus.md#request)                 | Request to get status information from the sensor.                           |
@@ -29,6 +30,7 @@ There are 2 types of command direction:
 | -------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `0x02`   | [SetTime2000](./SetTime2000.md#response)             | Response to the [SetTime2000](./SetTime2000.md#request) downlink command.                                                                         |
 | `0x03`   | [SetParameter](./SetParameter.md#response)           | Response to [SetParameter](./SetParameter.md#request) downlink command.                                                                           |
+| `0x04`   | [GetParameter](./GetParameter.md#response)           | Response to [GetParameter](./GetParameter.md#request) downlink command.                                                                           |
 | `0x09`   | [Time2000](./uplink/Time2000.md)                     | Current device time.                                                                                                                              |
 | `0x0b`   | [GetArchiveEvents](./GetArchiveEvents.md#response)   | Response to the [GetArchiveEvents](./GetArchiveEvents.md#request) downlink command.                                                               |
 | `0x0c`   | [CorrectTime2000](./CorrectTime2000.md#response)     | Response to the [CorrectTime2000](./CorrectTime2000.md#request) downlink command.                                                                 |

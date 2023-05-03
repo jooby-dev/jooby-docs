@@ -73,7 +73,7 @@ Message hex dump with LRC: `03 02 04 0c 5c`
 
 ## Reporting data type
 
-Parameter of that type used to setup type of values received from device.
+Parameter is used to setup type of values received from device.
 
 ### Format
 
@@ -141,7 +141,7 @@ Message hex dump with LRC: `03 02 08 00 5c`
 
 ## Activation method
 
-Parameter of that type used to setup activation method in LoRaWAN network.
+Parameter is used to setup activation method in LoRaWAN network.
 [Comparison and description of methods](https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/).
 
 ### Format
@@ -223,7 +223,7 @@ Message hex dump with LRC: `03 07 0a 00 64 0c 96 00 e9 4c`
 
 ## RX2 config
 
-Parameter of that type used to setup `RX2` window configuration
+Parameter is used to setup `RX2` window configuration
 
 ### Format
 
@@ -276,7 +276,7 @@ Message hex dump with LRC: `03 05 12 05 00 00 c8 8c`
 
 ## Absolute data
 
-Parameter of that type used to setup absolute data for not multichannel device
+Parameter is used to setup absolute data for not multichannel device
 
 ### Format
 
@@ -295,7 +295,7 @@ It is a `4`-byte unsigned int BE.
 
 #### **pulse coefficient**
 
-[Pulse coefficient](./types.md#pulse-coefficient)
+[See details](./types.md#pulse-coefficient)
 
 #### **pulse counter's value**
 
@@ -355,7 +355,7 @@ Message hex dump with LRC: `03 03 1c 10 0e 57`
 
 ## Absolute data multi channel
 
-Parameter of that type used to setup absolute data for multichannel device
+Parameter is used to setup absolute data for multichannel device
 
 ### Format
 
@@ -367,7 +367,7 @@ Parameter of that type used to setup absolute data for multichannel device
 | 3    | `byte` | [pulse coefficient](#pulse-coefficient)        |
 | 3    | `byte` | [pulse counter's value](#pulse-counters-value) |
 
-#### **channel-index**
+#### **channel index**
 
 Channel index number.
 <br>
@@ -381,7 +381,7 @@ It is a `4`-byte unsigned int BE.
 
 #### **pulse coefficient**
 
-[Pulse coefficient](./types.md#pulse-coefficient)
+[See details](./types.md#pulse-coefficient).
 
 #### **pulse counter's value**
 

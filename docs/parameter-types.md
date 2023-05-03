@@ -305,7 +305,7 @@ It is a `4`-byte unsigned int BE.
 
 ### Examples
 
-#### set absolute data (not multichannel device):
+#### set absolute data:
 
 | Field                 | Value  | Hex          |
 | --------------------- | ------ | ------------ |
@@ -391,7 +391,7 @@ It is a `4`-byte unsigned int BE.
 
 ### Examples
 
-#### set absolute data (not multichannel device):
+#### set absolute data:
 
 | Field                 | Value  | Hex          |
 | --------------------- | ------ | ------------ |

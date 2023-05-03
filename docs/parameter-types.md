@@ -104,6 +104,41 @@ Parameter of that type used to setup type of values received from device.
 
 Message hex dump with LRC: `03 02 05 01 50`
 
+
+## Priority data delivery type
+
+Data delivery method for priority data.
+Can be with acknowledgment or not.
+This parameter applies to all types of modules.
+
+### Format
+
+| Size | Type   | Field                           |
+| ---- | ------ | ------------------------------- |
+| 1    | `byte` | parameter type = `8`            |
+| 1    | `byte` | [delivery type](#delivery-type) |
+
+#### **delivery type**
+
+| Value | Description                                    |
+| ----- | ---------------------------------------------- |
+| `0`   | data with delivery confirmation                |
+| `1`   | data transmitted without delivery confirmation |
+
+### Examples
+
+#### set `priority data delivery type` to `data with delivery confirmation`:
+
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `2`   | `0x02` |
+| parameter type | `8`   | `0x08` |
+| delivery type  | `0`   | `0x00` |
+
+Message hex dump with LRC: `03 02 08 00 5c`
+
+
 ## Activation method
 
 Parameter of that type used to setup activation method in LoRaWAN network.

@@ -103,3 +103,35 @@ Parameter of that type used to setup type of values received from device.
 | data type      | `2`   | `0x01` |
 
 Message hex dump with LRC: `03 02 05 01 50`
+
+## Activation method
+
+Parameter of that type used to setup activation method in LoRaWAN network.
+[Comparison and description of methods](https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/).
+
+### Format
+
+| Size | Type   | Field                                             |
+| ---- | ------ | ------------------------------------------------- |
+| 1    | `byte` | parameter type = `9`                              |
+| 1    | `byte` | [activation method type](#activation-method-type) |
+
+#### **activation method type**
+
+| Value | Description       |
+| ----- | ----------------- |
+| `0`   | OTAA (by default) |
+| `1`   | ABP               |
+
+### Examples
+
+#### set `activation method` to `ABP`:
+
+| Field                  | Value | Hex    |
+| ---------------------- | ----- | ------ |
+| command id             | `3`   | `0x03` |
+| command size           | `2`   | `0x02` |
+| parameter type         | `9`   | `0x09` |
+| activation method type | `1`   | `0x01` |
+
+Message hex dump with LRC: `03 02 09 01 5c`

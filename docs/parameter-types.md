@@ -172,6 +172,55 @@ Parameter of that type used to setup activation method in LoRaWAN network.
 Message hex dump with LRC: `03 02 09 01 5c`
 
 
+## Battery depassivation info
+
+Defines battery depassivation parameters for all module types except `MTXLora`.
+
+### Format
+
+| Size | Type   | Field                                       |
+| ---- | ------ | ------------------------------------------- |
+| 1    | `byte` | parameter type = `10`                       |
+| 2    | `byte` | [load time](#load-time)                     |
+| 2    | `byte` | [internal resistance](#internal-resistance) |
+| 2    | `byte` | [low voltage](#low-voltage)                 |
+
+#### **load time**
+
+Represents the battery load time in milliseconds.
+The first byte is the most significant byte of the number.
+The default value is `2` seconds.
+
+#### **internal resistance**
+
+Represents the internal resistance threshold of the battery.
+When this threshold is exceeded, depassivation is enabled.
+The value is in `mOhms` and the first byte is the most significant byte of the number.
+The default value is `18432` `mOhms`.
+
+#### **low voltage**
+
+Represents the battery voltage without load.
+If the voltage drops below this threshold, depassivation is not enabled.
+The value is in `mV` and the first byte is the most significant byte of the number.
+The default value is `3200` `mV`.
+
+### Examples
+
+#### set `battery depassivation info`:
+
+| Field               | Value  | Hex      |
+| ------------------- | ------ | -------- |
+| command id          | `3`    | `0x03`   |
+| command size        | `7`    | `0x07`   |
+| parameter type      | `10`   | `0x0a`   |
+| load time           | `100`  | `0x0064` |
+| internal resistance | `3222` | `0x0c96` |
+| low voltage         | `233`  | `0x00e9` |
+
+Message hex dump with LRC: `03 07 0a 00 64 0c 96 00 e9 4c`
+
+
 ## RX2 config
 
 Parameter of that type used to setup `RX2` window configuration

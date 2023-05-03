@@ -11,6 +11,7 @@
         "GMME",
         "GMSG",
         "JOINACCEPT",
+        "JOINREQ",
         "Jooby",
         "Lmic",
         "MTXLORA",

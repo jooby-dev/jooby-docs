@@ -180,7 +180,7 @@ Parameter of that type used to setup `RX2` window configuration
 
 | Size | Type   | Field                           |
 | ---- | ------ | ------------------------------- |
-| 1    | `byte` | parameter type = `18`          |
+| 1    | `byte` | parameter type = `18`           |
 | 1    | `byte` | [spread factor](#spread-factor) |
 | 3    | `byte` | [frequency](#frequency)         |
 
@@ -191,15 +191,15 @@ Making the spreading factor `1` step lower (from `SF10` to `SF9`) allows you to 
 Lowering the spreading factor makes it more difficult for the gateway to receive a transmission, as it will be more sensitive to noise.
 [More info.](https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/)
 
-| Value | Description   |
-| ----- | ------------- |
-| `0`   | `SF12B125`    |
-| `1`   | `SF11B125`    |
-| `2`   | `SF10B125`    |
-| `3`   | `SF9B125`     |
-| `4`   | `SF8B125`     |
-| `5`   | `SF7B125`     |
-| `6`   | `SF7B250`     |
+| Value | Description |
+| ----- | ----------- |
+| `0`   | `SF12B125`  |
+| `1`   | `SF11B125`  |
+| `2`   | `SF10B125`  |
+| `3`   | `SF9B125`   |
+| `4`   | `SF8B125`   |
+| `5`   | `SF7B125`   |
+| `6`   | `SF7B250`   |
 
 #### **frequency**
 
@@ -223,3 +223,37 @@ It is a `3`-byte unsigned int BE, real frequency value divided by `100`.
 | frequency      | `200` | `0x0000c8` |
 
 Message hex dump with LRC: `03 05 12 05 00 00 c8 8c`
+
+
+## Extra frame interval
+
+`ExtraFrames` handling parameter.
+
+### Format
+
+| Size | Type   | Field                 |
+| ---- | ------ | --------------------- |
+| 1    | `byte` | parameter type = `28` |
+| 2    | `byte` | [interval](#interval) |
+
+#### **interval**
+
+The parameter is `2` bytes long and measured in seconds.
+Its value must not be less than `90` seconds.
+If the parameter is set to `0`, it means that the issuance of `ExtraFrames` will be prohibited.
+GazMoldova modules provide for issuing `ExtraFrame` `UPLINK` frames in case of loss of communication with `NS`.
+This will happen after transmitting `16` standard `UPLINK` frames without receiving a confirmation from `NS`.
+In `OTAA` connection mode, after more than `5` unsuccessful attempts to connect via `JOINREQ`, the `ExtraFrame` `UPLINK` frame transmission mode will be initiated.
+
+### Examples
+
+#### set `extra frame interval` to `3600` seconds:
+
+| Field          | Value  | Hex      |
+| -------------- | ------ | -------- |
+| command id     | `3`    | `0x03`   |
+| command size   | `3`    | `0x03`   |
+| parameter type | `28`   | `0x1c`   |
+| interval       | `3600` | `0x100e` |
+
+Message hex dump with LRC: `03 03 1c 10 0e 57`

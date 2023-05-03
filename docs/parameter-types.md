@@ -73,7 +73,7 @@ Message hex dump with LRC: `03 02 04 0c 5c`
 
 ## Reporting data type
 
-Parameter of that type used to setup type of values received from device.
+Parameter is used to setup type of values received from device.
 
 ### Format
 
@@ -141,7 +141,7 @@ Message hex dump with LRC: `03 02 08 00 5c`
 
 ## Activation method
 
-Parameter of that type used to setup activation method in LoRaWAN network.
+Parameter is used to setup activation method in LoRaWAN network.
 [Comparison and description of methods](https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/).
 
 ### Format
@@ -223,7 +223,7 @@ Message hex dump with LRC: `03 07 0a 00 64 0c 96 00 e9 4c`
 
 ## RX2 config
 
-Parameter of that type used to setup `RX2` window configuration
+Parameter is used to setup `RX2` window configuration.
 
 ### Format
 
@@ -274,6 +274,51 @@ It is a `3`-byte unsigned int BE, real frequency value divided by `100`.
 Message hex dump with LRC: `03 05 12 05 00 00 c8 8c`
 
 
+## Absolute data
+
+Parameter is used to setup absolute data for not multichannel device.
+
+### Format
+
+| Size | Type   | Field                                          |
+| ---- | ------ | ---------------------------------------------- |
+| 1    | `byte` | parameter type = `23`                          |
+| 1    | `byte` | [meter value](#meter-value)                    |
+| 3    | `byte` | [pulse coefficient](#pulse-coefficient)        |
+| 3    | `byte` | [pulse counter's value](#pulse-counters-value) |
+
+#### **meter value**
+
+Base absolute meter value.
+<br>
+It is a `4`-byte unsigned int BE.
+
+#### **pulse coefficient**
+
+[See details](./types.md#pulse-coefficient)
+
+#### **pulse counter's value**
+
+Base pulse counter's value.
+<br>
+It is a `4`-byte unsigned int BE.
+
+### Examples
+
+#### set absolute data:
+
+| Field                 | Value  | Hex          |
+| --------------------- | ------ | ------------ |
+| command id            | `3`    | `0x03`       |
+| command size          | `10`   | `0x0a`       |
+| parameter type        | `23`   | `0x17`       |
+| meter value           | `204`  | `0x000000cc` |
+| pulse coefficient     | `100`  | `0x83`       |
+| pulse counter's value | `2023` | `0x000007e7` |
+
+Message hex dump with LRC: `03 0a 17 00 00 00 cc 83 00 00 07 e7 e4`
+
+
 ## Extra frame interval
 
 `ExtraFrames` handling parameter.
@@ -306,3 +351,56 @@ In `OTAA` connection mode, after more than `5` unsuccessful attempts to connect 
 | interval       | `3600` | `0x100e` |
 
 Message hex dump with LRC: `03 03 1c 10 0e 57`
+
+
+## Absolute data multi channel
+
+Parameter is used to setup absolute data for multichannel device.
+
+### Format
+
+| Size | Type   | Field                                          |
+| ---- | ------ | ---------------------------------------------- |
+| 1    | `byte` | parameter type = `29`                          |
+| 1    | `byte` | [channel index](#channel-index)                |
+| 1    | `byte` | [meter value](#meter-value)                    |
+| 3    | `byte` | [pulse coefficient](#pulse-coefficient)        |
+| 3    | `byte` | [pulse counter's value](#pulse-counters-value) |
+
+#### **channel index**
+
+Channel index number.
+<br>
+It is a `1`-byte unsigned int.
+
+#### **meter value**
+
+Base absolute meter value.
+<br>
+It is a `4`-byte unsigned int BE.
+
+#### **pulse coefficient**
+
+[See details](./types.md#pulse-coefficient).
+
+#### **pulse counter's value**
+
+Base pulse counter's value.
+<br>
+It is a `4`-byte unsigned int BE.
+
+### Examples
+
+#### set absolute data:
+
+| Field                 | Value  | Hex          |
+| --------------------- | ------ | ------------ |
+| command id            | `3`    | `0x03`       |
+| command size          | `11`   | `0x0b`       |
+| parameter type        | `29`   | `0x1d`       |
+| channel index number  | `1`    | `0x00`       |
+| meter value           | `402`  | `0x00000192` |
+| pulse coefficient     | `1000` | `0x84`       |
+| pulse counter's value | `2032` | `0x000007f0` |
+
+Message hex dump with LRC: `03 0b 1d 00 00 00 01 92 84 00 00 07 f0 a0`

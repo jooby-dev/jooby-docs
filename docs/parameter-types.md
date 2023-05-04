@@ -429,15 +429,15 @@ Parameter is used to set device geolocation.
 
 #### **latitude**
 
-It is a `4`-byte float LE.
+It is a `4`-byte float.
 
 #### **longitude**
 
-It is a `4`-byte float LE.
+It is a `4`-byte float.
 
 #### **altitude**
 
-It is a `2`-byte int LE.
+It is a `2`-byte int.
 
 ### Examples
 

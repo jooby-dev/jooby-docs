@@ -351,6 +351,37 @@ Parameter is used to enable absolute data for not multichannel device.
 Message hex dump with LRC: `03 02 18 01 4d`
 
 
+## Serial number
+
+Parameter is used to set device serial number.
+
+### Format
+
+| Size | Type   | Field                           |
+| ---- | ------ | ------------------------------- |
+| 1    | `byte` | parameter type = `25`           |
+| 6    | `byte` | [serial number](#serial-number) |
+
+#### **serial number**
+
+Device serial number.
+<br>
+It is a `6`-byte hex value.
+
+### Examples
+
+#### set serial number to `1b 0a 3e dc 3e 22`:
+
+| Field          | Value               | Hex              |
+| -------------- | ------------------- | ---------------- |
+| command id     | `3`                 | `0x03`           |
+| command size   | `2`                 | `0x07`           |
+| parameter type | `25`                | `0x19`           |
+| serial number  | `1b 0a 3e dc 3e 22` | `0x1b0a3edc3e22` |
+
+Message hex dump with LRC: `03 07 19 1b 0a 3e dc 3e 22 a7`
+
+
 ## Extra frame interval
 
 `ExtraFrames` handling parameter.

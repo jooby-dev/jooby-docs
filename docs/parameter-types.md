@@ -318,6 +318,37 @@ It is a `4`-byte unsigned int BE.
 
 Message hex dump with LRC: `03 0a 17 00 00 00 cc 83 00 00 07 e7 e4`
 
+## Enable absolute data
+
+Parameter is used to enable absolute data for not multichannel device.
+
+### Format
+
+| Size | Type   | Field                                       |
+| ---- | ------ | ------------------------------------------- |
+| 1    | `byte` | parameter type = `24`                       |
+| 1    | `byte` | [absolute data state](#absolute-data-state) |
+
+#### **absolute data state**
+
+| Value | Description                       |
+| ----- | --------------------------------- |
+| `0`   | device send pulse counter's value |
+| `1`   | device send absolute value        |
+
+### Examples
+
+#### enable absolute data:
+
+| Field               | Value | Hex          |
+| ------------------- | ----- | ------------ |
+| command id          | `3`   | `0x03`       |
+| command size        | `2`   | `0x02`       |
+| parameter type      | `24`  | `0x18`       |
+| absolute data state | `1`   | `0x01`       |
+
+Message hex dump with LRC: `03 02 18 01 4d`
+
 
 ## Extra frame interval
 
@@ -404,3 +435,43 @@ It is a `4`-byte unsigned int BE.
 | pulse counter's value | `2032` | `0x000007f0` |
 
 Message hex dump with LRC: `03 0b 1d 00 00 00 01 92 84 00 00 07 f0 a0`
+
+
+## Enable absolute data multichannel
+
+Parameter is used to enable absolute data for multichannel device.
+
+### Format
+
+| Size | Type   | Field                                       |
+| ---- | ------ | ------------------------------------------- |
+| 1    | `byte` | parameter type = `30`                       |
+| 1    | `byte` | [channel index](#channel-index)             |
+| 1    | `byte` | [absolute data state](#absolute-data-state) |
+
+#### **channel index**
+
+Channel index number.
+<br>
+It is a `1`-byte unsigned int.
+
+#### **absolute data state**
+
+| Value | Description                                    |
+| ----- | ---------------------------------------------- |
+| `0`   | device send pulse counter's value from channel |
+| `1`   | device send absolute value from channel        |
+
+### Examples
+
+#### enable absolute data for 2 channel:
+
+| Field               | Value | Hex          |
+| ------------------- | ----- | ------------ |
+| command id          | `3`   | `0x03`       |
+| command size        | `3`   | `0x02`       |
+| parameter type      | `30`  | `0x1e`       |
+| absolute data state | `1`   | `0x01`       |
+| absolute data state | `1`   | `0x01`       |
+
+Message hex dump with LRC: `03 03 1e 01 01 4b`

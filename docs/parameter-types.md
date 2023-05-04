@@ -318,6 +318,7 @@ It is a `4`-byte unsigned int BE.
 
 Message hex dump with LRC: `03 0a 17 00 00 00 cc 83 00 00 07 e7 e4`
 
+
 ## Enable absolute data
 
 Parameter is used to enable absolute data for not multichannel device.
@@ -469,9 +470,9 @@ It is a `1`-byte unsigned int.
 | Field               | Value | Hex          |
 | ------------------- | ----- | ------------ |
 | command id          | `3`   | `0x03`       |
-| command size        | `3`   | `0x02`       |
+| command size        | `3`   | `0x03`       |
 | parameter type      | `30`  | `0x1e`       |
-| absolute data state | `1`   | `0x01`       |
+| channel index       | `1`   | `0x01`       |
 | absolute data state | `1`   | `0x01`       |
 
 Message hex dump with LRC: `03 03 1e 01 01 4b`

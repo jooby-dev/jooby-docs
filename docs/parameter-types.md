@@ -221,6 +221,38 @@ The default value is `3200` `mV`.
 Message hex dump with LRC: `03 07 0a 00 64 0c 96 00 e9 4c`
 
 
+## Battery minimal load time
+
+This parameter is related to the minimum necessary active time of the battery per day to prevent battery deactivation.
+It applies to all module types except `MTXLora`.
+
+### Format
+
+| Size | Type   | Field                   |
+| ---- | ------ | ----------------------- |
+| 1    | `byte` | parameter type = `11`   |
+| 4    | `byte` | [load time](#load-time) |
+
+#### **load time**
+
+It is a `4`-byte value in `32768` `Hz` intervals.
+The most significant byte comes first.
+By default, the value is `655360` (`20` seconds).
+
+### Examples
+
+#### set `battery minimal load time` to `100` seconds:
+
+| Field          | Value | Hex          |
+| -------------- | ----- | ------------ |
+| command id     | `3`   | `0x03`       |
+| command size   | `5`   | `0x05`       |
+| parameter type | `11`  | `0x0b`       |
+| load time      | `100` | `0x00000064` |
+
+Message hex dump with LRC: `03 05 0b 00 00 00 64 3c`
+
+
 ## RX2 config
 
 Parameter is used to setup `RX2` window configuration.
@@ -341,12 +373,12 @@ Parameter is used to enable absolute data for not multichannel device.
 
 #### enable absolute data:
 
-| Field               | Value | Hex          |
-| ------------------- | ----- | ------------ |
-| command id          | `3`   | `0x03`       |
-| command size        | `2`   | `0x02`       |
-| parameter type      | `24`  | `0x18`       |
-| absolute data state | `1`   | `0x01`       |
+| Field               | Value | Hex    |
+| ------------------- | ----- | ------ |
+| command id          | `3`   | `0x03` |
+| command size        | `2`   | `0x02` |
+| parameter type      | `24`  | `0x18` |
+| absolute data state | `1`   | `0x01` |
 
 Message hex dump with LRC: `03 02 18 01 4d`
 
@@ -539,12 +571,12 @@ It is a `1`-byte unsigned int.
 
 #### enable absolute data for 2 channel:
 
-| Field               | Value | Hex          |
-| ------------------- | ----- | ------------ |
-| command id          | `3`   | `0x03`       |
-| command size        | `3`   | `0x03`       |
-| parameter type      | `30`  | `0x1e`       |
-| channel index       | `1`   | `0x01`       |
-| absolute data state | `1`   | `0x01`       |
+| Field               | Value | Hex    |
+| ------------------- | ----- | ------ |
+| command id          | `3`   | `0x03` |
+| command size        | `3`   | `0x03` |
+| parameter type      | `30`  | `0x1e` |
+| channel index       | `1`   | `0x01` |
+| absolute data state | `1`   | `0x01` |
 
 Message hex dump with LRC: `03 03 1e 01 01 4b`

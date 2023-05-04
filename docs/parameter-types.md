@@ -382,6 +382,47 @@ It is a `6`-byte hex value.
 Message hex dump with LRC: `03 07 19 1b 0a 3e dc 3e 22 a7`
 
 
+## Geolocation
+
+Parameter is used to set device geolocation.
+
+### Format
+
+| Size | Type   | Field                   |
+| ---- | ------ | ----------------------- |
+| 1    | `byte` | parameter type = `26`   |
+| 4    | `byte` | [latitude](#latitude)   |
+| 4    | `byte` | [longitude](#longitude) |
+| 2    | `byte` | [altitude](#altitude)   |
+
+#### **latitude**
+
+It is a `4`-byte float LE.
+
+#### **longitude**
+
+It is a `4`-byte float LE.
+
+#### **altitude**
+
+It is a `2`-byte int LE.
+
+### Examples
+
+#### set latitude: `34.43`, longitude: `43.43`, altitude: `23`:
+
+| Field          | Value   | Hex          |
+| -------------- | ------- | ------------ |
+| command id     | `3`     | `0x03`       |
+| command size   | `11`    | `0x0b`       |
+| parameter type | `26`    | `0x1a`       |
+| latitude       | `34.43` | `0x4209b852` |
+| longitude      | `43.43` | `0x422db852` |
+| altitude       | `23`    | `0x1700`     |
+
+Message hex dump with LRC: `03 0b 1a 52 b8 09 42 52 b8 2d 42 17 00 74`
+
+
 ## Extra frame interval
 
 `ExtraFrames` handling parameter.

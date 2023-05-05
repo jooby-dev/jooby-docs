@@ -13,7 +13,7 @@ Command to request/receive day pulse counter's values from device archive.
 | `1`    | `byte`                                       | command size (dynamic, `4+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
-| `1`    | `byte`                                       | [amount of days](#days)                          |
+| `1`    | `byte`                                       | [days](#days)                                    |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -31,7 +31,7 @@ Start date for requested day pulse counter's values.
 
 #### **days**
 
-Amount of days to get data from archive.
+The number of days to get data from archive.
 
 ### Examples
 
@@ -58,7 +58,7 @@ Message hex dump with LRC: `1b 04 2f 97 0d 02 fd`
 | `1`    | `byte`                                       | command size (dynamic, `5+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
-| `1`    | `byte`                                       | [amount of days](#days)                          |
+| `1`    | `byte`                                       | [days](#days)                                    |
 | `1..5` | [extended value](../types.md#extended-value) | channel `1` day `1` value                        |
 | `1..5` | [extended value](../types.md#extended-value) | channel `1` day `2` value                        |
 | `1..5` | [extended value](../types.md#extended-value) | channel `2` day `1` value                        |
@@ -83,7 +83,7 @@ Start date for requested day pulse counter's values.
 
 #### **days**
 
-Amount of days from archive.
+The number of days from archive.
 
 It's pulse counter's values by days for each channel.
 

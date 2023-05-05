@@ -161,7 +161,7 @@ The same in a table form:
 
 ## Packed hours
 
-It's a start hour value and the total hours amount packed in `1` byte.
+It's a start hour value and the total number of hours packed in `1` byte.
 The hours value `0` means `1` hours.
 Format:
 
@@ -188,7 +188,7 @@ Format:
 
 ### Examples
 
-Let's pack the start hour `13:00` and hour amount `2`.
+Let's pack the start hour `13:00` and the number of hour `2`.
 <br>
 Hours `2` decreased by `1` (`0b1`) becomes `0b001` to have the size of `3` bits.
 <br>
@@ -273,10 +273,10 @@ If the most significant bit is `1` then the value of pulse coefficient is determ
 
 | Pulse coefficient | dm<sup>3</sup> | m<sup>3</sup> |
 | ----------------- | -------------- | ------------- |
-| `0х80`            | `1`            | `0.001`      |
-| `0х81`            | `5`            | `0.005`      |
-| `0х82`            | `10`           | `0.01`       |
-| `0х83`            | `100`          | `0.1`        |
-| `0х84`            | `1000`         | `1`          |
-| `0х85`            | `10000`        | `10`         |
-| `0х86`            | `100000`       | `100`        |
+| `0х80`            | `1`            | `0.001`       |
+| `0х81`            | `5`            | `0.005`       |
+| `0х82`            | `10`           | `0.01`        |
+| `0х83`            | `100`          | `0.1`         |
+| `0х84`            | `1000`         | `1`           |
+| `0х85`            | `10000`        | `10`          |
+| `0х86`            | `100000`       | `100`         |

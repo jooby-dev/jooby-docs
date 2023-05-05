@@ -30,7 +30,7 @@ It should be done to avoid double processing of the request.
 
 #### **seconds**
 
-Amount of seconds to correct device time.
+The number of seconds to correct device time.
 Use positive values to shift time to the future. Negative - to the past.
 The new device time will equal the current device time plus the sent value.
 

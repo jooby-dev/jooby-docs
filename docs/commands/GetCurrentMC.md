@@ -44,7 +44,7 @@ This command can be sent periodically if [device report data parameter](../param
 | `1..5`     | [extended value](../types.md#extended-value)              | [channels bit set](../types.md#channels-bit-set) |
 | `[1..5]*n` | sequence of [extended values](../types.md#extended-value) | [channel values sequence](#channel-values)       |
 
-> `n` - amount of selected channels.
+> `n` - the number of selected channels.
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

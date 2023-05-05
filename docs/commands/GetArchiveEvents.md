@@ -7,12 +7,12 @@ Command to request/receive events from device archive.
 
 ### Format
 
-| Size   | Type        | Field                                  |
-| ------ | ----------- | -------------------------------------- |
-| `1`    | `byte`      | command id = `0x0b`                    |
-| `1`    | `byte`      | command size = `5`                     |
-| `4`    | `uint32_be` | [start time](#start-time) |
-| `1`    | `byte`      | [events](#events)                      |
+| Size | Type        | Field                     |
+| ---- | ----------- | ------------------------- |
+| `1`  | `byte`      | command id = `0x0b`       |
+| `1`  | `byte`      | command size = `5`        |
+| `4`  | `uint32_be` | [start time](#start-time) |
+| `1`  | `byte`      | [events](#events)         |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -24,14 +24,14 @@ Start time in seconds to read from archive (in [time 2000](../types.md#time-2000
 
 #### **events**
 
-Amount of events to get from archive.
+The number of events to get from archive.
 
 ### Examples
 
 #### request `4` events from `2023.04.03 14:01:17 GMT`:
 
 | Field        | Value                                            | Hex          |
-| ------------ | ------------------------------------------------ | -----------  |
+| ------------ | ------------------------------------------------ | ------------ |
 | command id   | `11`                                             | `0x0b`       |
 | command size | `5`                                              | `0x05`       |
 | start time   | `733845677` seconds or `2023.04.03 14:01:17 GMT` | `0x2bbd98ad` |
@@ -44,20 +44,20 @@ Message hex dump with LRC: `0b 05 2b bd 98 ad 04 fc`
 
 ### Format
 
-| Size   | Type        | Field                                         |
-| ------ | ----------- | --------------------------------------------- |
-| `1`    | `byte`      | command id = `0x0b`                           |
-| `1`    | `byte`      | command size = `6+`                           |
-| `4`    | `uint32_be` | [event `1` time](#event-time)                 |
-| `1`    | `byte`      | [event `1` id](#event-id)                     |
-| `1`    | `byte`      | [event `1` sequence number](#sequence-number) |
-| `4`    | `uint32_be` | [event `2` time](#event-time)                 |
-| `1`    | `byte`      | [event `2` id](#event-id)                     |
-| `1`    | `byte`      | [event `2` sequence number](#sequence-number) |
-| ...    | ...         | ...                                           |
-| `4`    | `uint32_be` | [event `N` time](#event-time)                 |
-| `1`    | `byte`      | [event `N` id](#event-id)                     |
-| `1`    | `byte`      | [event `N` sequence number](#sequence-number) |
+| Size | Type        | Field                                         |
+| ---- | ----------- | --------------------------------------------- |
+| `1`  | `byte`      | command id = `0x0b`                           |
+| `1`  | `byte`      | command size = `6+`                           |
+| `4`  | `uint32_be` | [event `1` time](#event-time)                 |
+| `1`  | `byte`      | [event `1` id](#event-id)                     |
+| `1`  | `byte`      | [event `1` sequence number](#sequence-number) |
+| `4`  | `uint32_be` | [event `2` time](#event-time)                 |
+| `1`  | `byte`      | [event `2` id](#event-id)                     |
+| `1`  | `byte`      | [event `2` sequence number](#sequence-number) |
+| ...  | ...         | ...                                           |
+| `4`  | `uint32_be` | [event `N` time](#event-time)                 |
+| `1`  | `byte`      | [event `N` id](#event-id)                     |
+| `1`  | `byte`      | [event `N` sequence number](#sequence-number) |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

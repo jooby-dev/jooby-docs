@@ -171,5 +171,14 @@ Archives can be requested for the latest events, the oldest events, and events s
             </td>
             <td>Based on CPU <code>STM32WLE5</code>.</td>
         </tr>
+        <tr>
+            <td><code>0x0f</code></td>
+            <td><code>IMP4AS</code></td>
+            <td>
+                <code>Jooby RM 4PI</code> <br>
+                <code>Jooby OMNI RM LoRaWAN 4PI 200 AS</code> <br>
+                <code>Jooby OMNI RM LoRaWAN 4PI 202 AS</code>
+            </td>
+        </tr>
     </tbody>
 </table>

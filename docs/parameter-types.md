@@ -600,7 +600,7 @@ hardware type - `0x06` hardware version - `0x0a`
 | 1    | `byte` | [pull up time](#pull-up-time)         |
 | 1    | `byte` | [scan time](#scan-time)               |
 
-#### ***channels bit set*
+#### **channels bit set**
 
 [Channels to set configuration](../types.md#channels-bit-set).
 
@@ -608,7 +608,7 @@ hardware type - `0x06` hardware version - `0x0a`
 
 Channel pull up time in microseconds.
 <br>
-Minimal value - 17 μs, maximum - 255 μs, 18 μs by default.
+Minimal value - `17` `μs`, maximum - `255` `μs`, `18` `μs` by default.
 <br>
 It is a `1`-byte unsigned int.
 
@@ -647,10 +647,10 @@ hardware type - `0x06` hardware version - `0x0a`
 
 ### Format
 
-| Size | Type   | Field                                 |
-| ---- | ------ | ------------------------------------- |
-| 1    | `byte` | parameter type = `32`                 |
-| 1    | `byte` | [channels bit set](#channels-bit-set) |
+| Size | Type   | Field                                            |
+| ---- | ------ | ------------------------------------------------ |
+| 1    | `byte` | parameter type = `32`                            |
+| 1    | `byte` | [channels bit set](../types.md#channels-bit-set) |
 
 #### ***channels bit set*
 

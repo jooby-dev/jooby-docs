@@ -1,4 +1,4 @@
-# Jooby OBIS message documentation
+# Jooby OBIS observer message documentation
 
 - [Basics](./basics.md) (TODO)
 - [Message format](./message.md)

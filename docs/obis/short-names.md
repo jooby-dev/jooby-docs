@@ -6,7 +6,9 @@ Short name is a one-byte number that will be used in all messages to represent t
 `210`-`235` - reassignable names.
 
 
-## General
+## Static
+
+### General
 
 | Short name | OBIS     | Description                                                             |
 | ---------- | -------- | ----------------------------------------------------------------------- |
@@ -144,8 +146,7 @@ Short name is a one-byte number that will be used in all messages to represent t
 | `132`      | `52.5.0` | voltage phase `L2` average                                              |
 | `133`      | `72.5.0` | voltage phase `L3` average                                              |
 
-
-## Instantaneous
+### Instantaneous
 
 | Short name | OBIS        | Description                                             |
 | ---------- | ----------- | ------------------------------------------------------- |
@@ -208,6 +209,11 @@ Short name is a one-byte number that will be used in all messages to represent t
 | `190`      | `81.7.1`    | angle of U(`L2`) - U(`L1`)                              |
 | `191`      | `81.7.2`    | angle of U(`L3`) - U(`L2`)                              |
 | `192`      | `91.7.0`    | `L0` current (neutral)                                  |
+
+### Abstract
+
+| Short name | OBIS        | Description                                             |
+| ---------- | ----------- | ------------------------------------------------------- |
 | `193`      | `0.0.0`     | device ID                                               |
 | `194`      | `0.2.0`     | active firmware identifier                              |
 | `195`      | `0.2.1`     | active firmware version                                 |
@@ -217,7 +223,7 @@ Short name is a one-byte number that will be used in all messages to represent t
 | `199`      | `F.F.0*255` | fatal error meter status                                |
 
 
-## Events
+## Reassignable
 
 | Short name | OBIS      | Description                                                                        |
 | ---------- | --------- | ---------------------------------------------------------------------------------- |

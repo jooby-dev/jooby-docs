@@ -1,6 +1,6 @@
 # Jooby message documentation
 
-- [Basics](./docs/basics.md)
-- [Message format](./docs/message.md)
-- [Data types](./docs/types.md)
-- [Available commands](./docs/commands/readme.md)
+At the moment there are two classes of devices:
+
+- [Analog](./docs/analog/readme.md)
+- [OBIS](./docs/obis/readme.md)

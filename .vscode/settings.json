@@ -22,6 +22,8 @@
         "OPTOSENSOR",
         "OTAA",
         "photodiode",
+        "QIII",
+        "reassignable",
         "WONO"
     ]
 }

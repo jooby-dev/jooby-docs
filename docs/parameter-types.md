@@ -580,3 +580,91 @@ It is a `1`-byte unsigned int.
 | absolute data state | `1`   | `0x01` |
 
 Message hex dump with LRC: `03 03 1e 01 01 4b`
+
+
+## Pulse channels scan configuration
+
+Parameter is used to set scan configuration for pulse devices.
+Available from software version = `0x6C` for:<br>
+hardware type - `0x0f` hardware version - `0x02`<br>
+hardware type - `0x06` hardware version - `0x0a`
+
+[Hardware types](../../basics.md#hardware-types)
+
+### Format
+
+| Size | Type   | Field                                 |
+| ---- | ------ | ------------------------------------- |
+| 1    | `byte` | parameter type = `31`                 |
+| 1    | `byte` | [channels bit set](#channels-bit-set) |
+| 1    | `byte` | [pull up time](#pull-up-time)         |
+| 1    | `byte` | [scan time](#scan-time)               |
+
+#### **channels bit set**
+
+[Channels to set configuration](../types.md#channels-bit-set).
+
+#### **pull up time**
+
+Channel pull up time in microseconds.
+<br>
+Minimal value - `17` `μs`, maximum - `255` `μs`, `18` `μs` by default.
+<br>
+It is a `1`-byte unsigned int.
+
+#### **scan time**
+
+Channel scan time in microseconds `μs`.
+<br>
+Minimal value - `15` `μs`, maximum - `255` `μs`, `50` `μs` by default.
+<br>
+It is a `1`-byte unsigned int.
+
+### Examples
+
+#### set pulse channels configuration:
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `4`      | `0x04` |
+| parameter type | `31`     | `0x1f` |
+| channels       | `1`, `4` | `0x09` |
+| pull up time   | `18`     | `0x12` |
+| scan time      | `23`     | `0x17` |
+
+Message hex dump with LRC: `03 04 1f 09 12 17 41`
+
+
+## Pulse channels set config
+
+Parameter is used to set channels for pulse devices.
+Available from software version = `0x6C` for:<br>
+hardware type - `0x0f` hardware version - `0x02`<br>
+hardware type - `0x06` hardware version - `0x0a`
+
+[Hardware types](../../basics.md#hardware-types)
+
+### Format
+
+| Size | Type   | Field                                   |
+| ---- | ------ | --------------------------------------- |
+| 1    | `byte` | parameter type = `32`                   |
+| 1    | `byte` | [channels bit set](#channels-bit-set-1) |
+
+#### **channels bit set**
+
+[Channels to set](../types.md#channels-bit-set).
+
+### Examples
+
+#### enable channels: 1, 2, disable channels: 3, 4:
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `2`      | `0x02` |
+| parameter type | `32`     | `0x20` |
+| channels       | `1`, `2` | `0x03` |
+
+Message hex dump with LRC: `03 02 20 03 77`

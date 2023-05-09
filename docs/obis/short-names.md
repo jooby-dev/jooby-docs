@@ -2,8 +2,8 @@
 
 Short name is a one-byte number that will be used in all messages to represent the OBIS code.
 
-`1`-`199` - static names that can't be changed.
-`210`-`235` - reassignable names.
+`1`-`199` - [static names](#static) that can't be changed.
+`210`-`235` - [reassignable names](#reassignable).
 
 
 ## Static

@@ -647,12 +647,12 @@ hardware type - `0x06` hardware version - `0x0a`
 
 ### Format
 
-| Size | Type   | Field                                            |
-| ---- | ------ | ------------------------------------------------ |
-| 1    | `byte` | parameter type = `32`                            |
-| 1    | `byte` | [channels bit set](../types.md#channels-bit-set) |
+| Size | Type   | Field                                   |
+| ---- | ------ | --------------------------------------- |
+| 1    | `byte` | parameter type = `32`                   |
+| 1    | `byte` | [channels bit set](#channels-bit-set-1) |
 
-#### ***channels bit set*
+#### **channels bit set**
 
 [Channels to set](../types.md#channels-bit-set).
 

@@ -614,7 +614,7 @@ It is a `1`-byte unsigned int.
 
 #### **scan time**
 
-Channel scan time in microseconds (μs).
+Channel scan time in microseconds `μs`.
 <br>
 Minimal value - `15` `μs`, maximum - `255` `μs`, `50` `μs` by default.
 <br>

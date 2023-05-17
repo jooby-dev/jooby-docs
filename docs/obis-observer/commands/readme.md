@@ -27,7 +27,7 @@ There are 2 types of command direction:
 
 | ID     | Name                                                            | Description                                                                                                       |
 | ------ | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `0x01` | [GetShortName](./GetShortName#response)                         | Response to the [GetShortName](./GetShortName.md#request) downlink command.                                       |
+| `0x02` | [GetShortName](./GetShortName#response)                         | Response to the [GetShortName](./GetShortName.md#request) downlink command.                                       |
 | `0x02` | [SetShortName](./SetShortName#response)                         | Response to the [SetShortName](./SetShortName.md#request) downlink command.                                       |
 | `0x03` | [AddShortNameProfile](./AddShortNameProfile#response)           | Response to the [AddShortNameProfile](./AddShortNameProfile.md#request) downlink command.                         |
 | `0x04` | [RemoveShortNameProfile](./RemoveShortNameProfile#response)     | Response to the [RemoveShortNameProfile](./RemoveShortNameProfile.md#request) downlink command.                   |

@@ -17,8 +17,8 @@ Request/response the short name list of the specific OBIS code.
 
 #### **request id**
 
-It's a unique number for pair device and GetShortName correction request.
-Then increment this value for each following request.
+It's a unique number to link request with response.
+It should be incremented for each request.
 It should be done to avoid double processing of the request.
 
 #### **obis**
@@ -58,9 +58,7 @@ Message hex dump: `01 03 02 00 09 01`
 
 #### **request id**
 
-It's a unique number for pair device and GetShortName correction request.
-Then increment this value for each following request.
-It should be done to avoid double processing of the request.
+It's a unique number to link request with response.
 
 #### **obis**
 

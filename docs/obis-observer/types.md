@@ -6,7 +6,7 @@ This document describes these types and structuring principles.
 
 ## OBIS
 
-It's a OBIS code packed in `3-7` bytes.
+It's an OBIS code packed in `3-7` bytes.
 <br>
 OBIS code contain 1 byte number (0-255) for 6 groups: A, B, C, D, E, F.
 <br>
@@ -72,7 +72,7 @@ The group values:
 | `A`   | `1`   | `0x01` | `0b1`      |
 | `B`   | `0`   |        |            |
 | `C`   | `11`  | `0x0b` | `0b1011`   |
-| `D`   | `1`   | `0x23` | `0b100011` |
+| `D`   | `35`  | `0x23` | `0b100011` |
 | `E`   | `0`   |        |            |
 | `F`   | `0`   |        |            |
 
@@ -193,7 +193,14 @@ Bytes representation in table form:
             <td><code>1</code></td>
         </tr>
         <tr>
-            <td colspan="8" align="center"><code>0</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
         </tr>
         <tr>
             <td><code>1</code></td>

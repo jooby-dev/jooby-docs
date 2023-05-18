@@ -1,6 +1,6 @@
 # Commands
 
-There are 2 types of command direction:
+There are `2` types of command direction:
 
 - `downlink` - request (sent from server to device)
 - `uplink` - response or event (sent from device to server)

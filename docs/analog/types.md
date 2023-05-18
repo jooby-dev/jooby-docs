@@ -77,7 +77,7 @@ Extended value is `0xecf4c50b`.
 
 ## Time 2000
 
-Seconds since year 2000.
+A `4`-byte value that indicates the number of seconds that have elapsed since the year `2000`.
 
 ### Examples
 

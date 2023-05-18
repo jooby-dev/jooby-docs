@@ -11,7 +11,7 @@ There are `2` types of command direction:
 | ID     | Name                                                          | Description                                                      |
 | ------ | ------------------------------------------------------------- | ---------------------------------------------------------------- |
 | `0x01` | [GetShortName](./GetShortName.md#request)                     | Request to get the short name of the specific OBIS code.         |
-| `0x02` | [SetShortName](./SetShortName.md#request)                     | Request to set the short name for the specific OBIS code.        |
+| `0x03` | [SetShortName](./SetShortName.md#request)                     | Request to set the short name for the specific OBIS code.        |
 | `0x03` | [AddShortNameProfile](./AddShortNameProfile.md#request)       | Request to add ShortName profile.                                |
 | `0x04` | [RemoveShortNameProfile](./RemoveShortNameProfile.md#request) | Request to remove ShortName profile.                             |
 | `0x05` | [GetShortNameProfile](./GetShortNameProfile.md#request)       | Request to get ShortName profile.                                |
@@ -28,7 +28,7 @@ There are `2` types of command direction:
 | ID     | Name                                                            | Description                                                                                                       |
 | ------ | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `0x02` | [GetShortName](./GetShortName#response)                         | Response to the [GetShortName](./GetShortName.md#request) downlink command.                                       |
-| `0x02` | [SetShortName](./SetShortName#response)                         | Response to the [SetShortName](./SetShortName.md#request) downlink command.                                       |
+| `0x04` | [SetShortName](./SetShortName#response)                         | Response to the [SetShortName](./SetShortName.md#request) downlink command.                                       |
 | `0x03` | [AddShortNameProfile](./AddShortNameProfile#response)           | Response to the [AddShortNameProfile](./AddShortNameProfile.md#request) downlink command.                         |
 | `0x04` | [RemoveShortNameProfile](./RemoveShortNameProfile#response)     | Response to the [RemoveShortNameProfile](./RemoveShortNameProfile.md#request) downlink command.                   |
 | `0x05` | [GetShortNameProfile](./GetShortNameProfile#response)           | Response to the [GetShortNameProfile](./GetShortNameProfile.md#request) downlink command.                         |

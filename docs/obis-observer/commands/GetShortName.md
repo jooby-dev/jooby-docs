@@ -7,11 +7,11 @@ Request/response the short name list of the specific OBIS code.
 
 ### Format
 
-| Size  | Type   | Field                     |
-| ----- | ------ | ------------------------- |
-| `1`   | `byte` | command id = `0x01`       |
-| `1`   | `byte` | [request id](#request-id) |
-| `3-7` | `byte` | [obis](#obis)             |
+| Size  | Type                     | Field                     |
+| ----- | ------------------------ | ------------------------- |
+| `1`   | `byte`                   | command id = `0x01`       |
+| `1`   | `byte`                   | [request id](#request-id) |
+| `3-7` | [OBIS](../types.md#obis) | [obis](#obis)             |
 
 ### Parameters
 
@@ -20,12 +20,6 @@ Request/response the short name list of the specific OBIS code.
 It's a unique number to link request with response.
 It should be incremented for each request.
 It should be done to avoid double processing of the request.
-
-#### **obis**
-
-Obis code.
-<br>
-[See details](../types.md#obis).
 
 ### Examples
 
@@ -44,27 +38,21 @@ Message hex dump: `01 03 02 00 09 01`
 
 ### Format
 
-| Size  | Type   | Field                        |
-| ----- | ------ | ---------------------------- |
-| `1`   | `byte` | command id = `0x02`          |
-| `1`   | `byte` | command size (dynamic, `4+`) |
-| `1`   | `byte` | [request id](#request-id)    |
-| `3-7` | `byte` | [obis](#obis)                |
-| `1`   | `byte` | short name `1`               |
-| ...   | ...    | ...                          |
-| `1`   | `byte` | short name `N`               |
+| Size  | Type                                 | Field                        |
+| ----- | ------------------------------------ | ---------------------------- |
+| `1`   | `byte`                               | command id = `0x02`          |
+| `1`   | `byte`                               | command size (dynamic, `4+`) |
+| `1`   | `byte`                               | [request id](#request-id)    |
+| `3-7` | [OBIS](../types.md#obis)             | OBIS code                    |
+| `1`   | [short name](../types.md#short-name) | short name `1`               |
+| ...   | ...                                  | ...                          |
+| `1`   | [short name](../types.md#short-name) | short name `N`               |
 
 ### Parameters
 
 #### **request id**
 
 It's a unique number to link request with response.
-
-#### **obis**
-
-Obis code.
-<br>
-[See details](../types.md#obis).
 
 ### Examples
 
@@ -94,4 +82,5 @@ Message hex dump with: `02 07 03 02 00 09 01 c5 c6`
 
 ## See also
 
-* [OBIS code](../types.md#obis)
+* [Short name](../types.md#short-name)
+* [OBIS](../types.md#obis)

@@ -11,7 +11,7 @@ Request/response the short name list of the specific OBIS code.
 | ----- | ------------------------ | ------------------------- |
 | `1`   | `byte`                   | command id = `0x01`       |
 | `1`   | `byte`                   | [request id](#request-id) |
-| `3-7` | [OBIS](../types.md#obis) | [obis](#obis)             |
+| `3-7` | [OBIS](../types.md#obis) | OBIS code                 |
 
 ### Parameters
 
@@ -28,7 +28,7 @@ It should be done to avoid double processing of the request.
 | Field      | Value | Hex          |
 | ---------- | ----- | ------------ |
 | command id | `1`   | `0x01`       |
-| request id | `2`   | `0x03`       |
+| request id | `3`   | `0x03`       |
 | obis       |       | `0x02000901` |
 
 Message hex dump: `01 03 02 00 09 01`

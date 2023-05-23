@@ -28,6 +28,12 @@ Unix time for year 2000 is `946684800` so seconds since year 2000 is `1680530477
 | `1+` | `byte` | string content |
 
 
+## Request ID
+
+It's a unique `1`-byte number to link request with response.
+It should be incremented for each request to avoid double processing of the request.
+
+
 ## OBIS
 
 It's an OBIS code packed in `3-7` bytes.

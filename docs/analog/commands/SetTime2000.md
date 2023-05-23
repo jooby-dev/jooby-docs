@@ -36,12 +36,12 @@ The new device time will equal the current device time plus the sent value.
 
 ### Examples
 
-| Field           | Value    | Hex                   |
-| --------------- | -------- | --------------------- |
-| command id      | `2`      | `0x02`                |
-| command size    | `5`      | `0x05`                |
-| sequence number | `78`     | `0x4e`                |
-| seconds         | `123456` | `0x00 0x01 0xe2 0x40` |
+| Field           | Value    | Hex          |
+| --------------- | -------- | ------------ |
+| command id      | `2`      | `0x02`       |
+| command size    | `5`      | `0x05`       |
+| sequence number | `78`     | `0x4e`       |
+| seconds         | `123456` | `0x0001e240` |
 
 Message hex dump with LRC: `02 05 4e 00 01 e2 40 bf`
 

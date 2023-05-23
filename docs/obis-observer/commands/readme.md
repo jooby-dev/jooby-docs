@@ -21,7 +21,8 @@ There are `2` types of command direction:
 | `0x11` | [ReadArchive](./ReadArchive.md#request)                       | Request to read the archive.                                     |
 | `0x13` | [SetSerialPort](./SetSerialPort.md#request)                   | Request to set serial port parameters.                           |
 | `0x15` | [GetContentByObis](./GetContentByObis.md#request)             | Request to get OBIS content.                                     |
-| `0x17` | [GetContentByShortName](./GetContentByShortName.md#request)   | Request to get OBIS content.                                     |
+| `0x17` | [GetContentByShortName](./GetContentByShortName.md#request)   | Request to restart the device.                                   |
+| `0x1c` | [Reboot](./Reboot.md#request)                                 | Request to get OBIS content.                                     |
 
 
 ## Uplink commands
@@ -43,6 +44,7 @@ There are `2` types of command direction:
 | `0x19` | [GetContentByShortNameString](./GetContentByShortName#response-with-string-content) | Response to the [GetContentByShortName](./GetContentByShortName.md#request) downlink command with string content. |
 | `0x1a` | [ObservationReport](./uplink/ObservationReport.md#event-with-float-content)         | Content of the OBIS codes that were captured with float content.                                                  |
 | `0x1b` | [ObservationReportString](./uplink/ObservationReport.md#event-with-string-content)  | Content of the OBIS codes that were captured with string content.                                                 |
+| `0x1d` | [Reboot](./Reboot.md#response)                                                      | Response to the [Reboot](./Reboot.md#request) downlink command.                                                   |
 
 **Note**
 

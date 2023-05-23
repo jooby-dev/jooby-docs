@@ -16,7 +16,7 @@ Request/response to restart the device.
 
 | Field      | Value | Hex    |
 | ---------- | ----- | ------ |
-| command id | `5`   | `0x1c` |
+| command id | `28`  | `0x1c` |
 | request id | `3`   | `0x03` |
 
 Message hex dump: `1c 03`
@@ -35,10 +35,10 @@ Message hex dump: `1c 03`
 
 #### success:
 
-| Field       | Value | Hex    |
-| ----------- | ----- | ------ |
-| command id  | `6`   | `0x1d` |
-| request id  | `3`   | `0x03` |
+| Field      | Value | Hex    |
+| ---------- | ----- | ------ |
+| command id | `29`  | `0x1d` |
+| request id | `3`   | `0x03` |
 
 Message hex dump: `1d 03`
 

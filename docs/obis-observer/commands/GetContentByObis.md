@@ -17,11 +17,11 @@ Request/response to get the OBIS code content from the metering device.
 
 #### get content for OBIS code `0.9.1` - local time:
 
-| Field      | Value                  | Hex             |
-| ---------- | ---------------------- | --------------- |
-| command id | `21`                   | `0x15`          |
-| request id | `3`                    | `0x03`          |
-| OBIS code  | C: `0`, D: `9`, E: `1` | `0x02 00 09 01` |
+| Field      | Value                  | Hex          |
+| ---------- | ---------------------- | ------------ |
+| command id | `21`                   | `0x15`       |
+| request id | `3`                    | `0x03`       |
+| OBIS code  | C: `0`, D: `9`, E: `1` | `0x02000901` |
 
 Message hex dump: `15 03 02 00 09 01`
 

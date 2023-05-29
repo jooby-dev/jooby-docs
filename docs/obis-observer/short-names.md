@@ -48,18 +48,18 @@ Short name is a one-byte number that will be used in all messages to represent t
 | `34`       | `3.8.2`   | reactive power+ (`QI`+`QII`), tariff `T2`                               |
 | `35`       | `3.8.3`   | reactive power+ (`QI`+`QII`), tariff `T3`                               |
 | `36`       | `3.8.4`   | reactive power+ (`QI`+`QII`), tariff `T4`                               |
-| `37`       | `4.4.0`   | reactive power– (`QIII`+`QIV`), current avg. `1`                        |
-| `38`       | `4.5.0`   | reactive power– (`QIII`+`QIV`), average                                 |
-| `39`       | `4.6.0`   | reactive power– (`QIII`+`QIV`), maximum, total                          |
-| `40`       | `4.6.1`   | reactive power– (`QIII`+`QIV`), maximum, tariff `T1`                    |
-| `41`       | `4.6.2`   | reactive power– (`QIII`+`QIV`), maximum, tariff `T2`                    |
-| `42`       | `4.6.3`   | reactive power– (`QIII`+`QIV`), maximum, tariff `T3`                    |
-| `43`       | `4.6.4`   | reactive power– (`QIII`+`QIV`), maximum, tariff `T4`                    |
-| `44`       | `4.8.0`   | reactive power– (`QIII`+`QIV`), total                                   |
-| `45`       | `4.8.1`   | reactive power– (`QIII`+`QIV`), tariff `T1`                             |
-| `46`       | `4.8.2`   | reactive power– (`QIII`+`QIV`), tariff `T2`                             |
-| `47`       | `4.8.3`   | reactive power– (`QIII`+`QIV`), tariff `T3`                             |
-| `48`       | `4.8.4`   | reactive power– (`QIII`+`QIV`), tariff `T4`                             |
+| `37`       | `4.4.0`   | reactive power- (`QIII`+`QIV`), current avg. `1`                        |
+| `38`       | `4.5.0`   | reactive power- (`QIII`+`QIV`), average                                 |
+| `39`       | `4.6.0`   | reactive power- (`QIII`+`QIV`), maximum, total                          |
+| `40`       | `4.6.1`   | reactive power- (`QIII`+`QIV`), maximum, tariff `T1`                    |
+| `41`       | `4.6.2`   | reactive power- (`QIII`+`QIV`), maximum, tariff `T2`                    |
+| `42`       | `4.6.3`   | reactive power- (`QIII`+`QIV`), maximum, tariff `T3`                    |
+| `43`       | `4.6.4`   | reactive power- (`QIII`+`QIV`), maximum, tariff `T4`                    |
+| `44`       | `4.8.0`   | reactive power- (`QIII`+`QIV`), total                                   |
+| `45`       | `4.8.1`   | reactive power- (`QIII`+`QIV`), tariff `T1`                             |
+| `46`       | `4.8.2`   | reactive power- (`QIII`+`QIV`), tariff `T2`                             |
+| `47`       | `4.8.3`   | reactive power- (`QIII`+`QIV`), tariff `T3`                             |
+| `48`       | `4.8.4`   | reactive power- (`QIII`+`QIV`), tariff `T4`                             |
 | `49`       | `5.4.0`   | reactive power `QI`, current avg. `1`                                   |
 | `50`       | `5.5.0`   | reactive power `QI`, average                                            |
 | `51`       | `5.6.0`   | reactive power `QI`, maximum, total                                     |
@@ -110,8 +110,8 @@ Short name is a one-byte number that will be used in all messages to represent t
 | `96`       | `8.8.4`   | reactive power `QIV`, tariff `T4`                                       |
 | `97`       | `9.5.0`   | apparent power+ (`QI`+`QIV`), average                                   |
 | `98`       | `9.8.0`   | apparent power+ (`QI`+`QIV`), total                                     |
-| `99`       | `10.5.0`  | apparent power– (`QII`+`QIII`), average                                 |
-| `100`      | `10.8.0`  | apparent power– (`QII`+`QIII`), total                                   |
+| `99`       | `10.5.0`  | apparent power- (`QII`+`QIII`), average                                 |
+| `100`      | `10.8.0`  | apparent power- (`QII`+`QIII`), total                                   |
 | `101`      | `15.4.0`  | active power (abs(`QI`+`QIV`)+(abs(`QII`+`QIII`)), current avg. `1`     |
 | `102`      | `15.5.0`  | active power (abs(`QI`+`QIV`)+(abs(`QII`+`QIII`)), average              |
 | `103`      | `15.6.0`  | active power (abs(`QI`+`QIV`)+(abs(`QII`+`QIII`)), maximum, total       |

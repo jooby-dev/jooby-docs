@@ -35,19 +35,19 @@ Message hex dump: `1e 03`
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier              |
 | `8`  | `byte`                               | device EUI                                      |
 | `8`  | `byte`                               | application EUI                                 |
-| `1`  | [Connection method](../types.md#LoRaWAN-connection-method) | LoRaWAN connection method |
+| `1`  | [Connection method](../types.md#lorawan-connection-method) | LoRaWAN connection method |
 
 ### Examples
 
 #### LoRaWAN information:
 
-| Field                 | Value | Hex    |
-| --------------------- | ----- | ------ |
-| command id            | `31   | `0x1f` |
-| request id            | `7`   | `0x07` |
-| device EUI            | `[0x00, 0x1a, 0x79, 0x88, 0x16, 0xaa, 0x55, 0x61]` | |
-| application EUI       | `[0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]` | |
-| Connection method `1` | `1`   | `0x01` |
+| Field                 | Value              | Hex                  |
+| --------------------- | ------------------ | -------------------- |
+| command id            | `31`               | `0x1f`               |
+| request id            | `7`                | `0x07`               |
+| device EUI            | `001a798816aa5561` | `0x001a798816aa5561` |
+| application EUI       | `0011223344556677` | `0x0011223344556677` | 
+| connection method     | `1`                | `0x01`               |
 
 Message hex dump: `1f 07 00 1a 79 88 16 aa 55 61 00 11 22 33 44 55 66 77 01`
 

@@ -1,4 +1,4 @@
-# GetLorawanInfo
+# GetDeviceInfo
 
 Request/response the information about device, like name, software and hardware version.
 

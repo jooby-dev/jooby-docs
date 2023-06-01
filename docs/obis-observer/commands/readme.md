@@ -24,6 +24,7 @@ There are `2` types of command direction:
 | `0x17` | [GetContentByShortName](./GetContentByShortName.md#request)   | Request to restart the device.                                   |
 | `0x1c` | [Reboot](./Reboot.md#request)                                 | Request to get OBIS content.                                     |
 | `0x1e` | [GetLorawanInfo](./GetLorawanInfo.md#request)                 | Request to get LoRaWAN information.                              |
+| `0x20` | [GetDeviceInfo](./GetDeviceInfo.md#request)                   | Request to get information about device.                         |
 
 
 ## Uplink commands
@@ -47,6 +48,7 @@ There are `2` types of command direction:
 | `0x1b` | [ObservationReportString](./uplink/ObservationReport.md#event-with-string-content)  | Content of the OBIS codes that were captured with string content.                                                 |
 | `0x1d` | [Reboot](./Reboot.md#response)                                                      | Response to the [Reboot](./Reboot.md#request) downlink command.                                                   |
 | `0x1f` | [GetLorawanInfo](./GetLorawanInfo.md#response)                                      | Response to the [GetLorawanInfo](./GetLorawanInfo.md#request) downlink command.                                   |
+| `0x21` | [GetDeviceInfo](./GetDeviceInfo.md#response)                                        | Response to the [GetDeviceInfo](./GetDeviceInfo.md#request) downlink command.                                     |
 
 **Note**
 

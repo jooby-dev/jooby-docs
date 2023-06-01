@@ -32,7 +32,7 @@ Message hex dump: `20 03`
 | Size | Type                                 | Field                                           |
 | ---- | ------------------------------------ | ----------------------------------------------- |
 | `1`  | `byte`                               | command id = `0x21`                             |
-| `1`  | `byte`                               | command size (dynamic, `3+`)                    |
+| `1`  | `byte`                               | command size (dynamic, `6+`)                    |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier              |
 | `2`  | `byte`                               | [software version](#version)                    |
 | `2`  | `byte`                               | [hardware version](#version)                    |
@@ -41,8 +41,6 @@ Message hex dump: `20 03`
 ### Parameters
 
 #### **version**
-
-Version.
 
 | Size | Type    | Field                |
 | ---- | ------- | -------------------- |

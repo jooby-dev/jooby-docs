@@ -100,9 +100,9 @@ Parameter is used to setup type of values received from device.
 | command id     | `3`   | `0x03` |
 | command size   | `2`   | `0x02` |
 | parameter type | `5`   | `0x05` |
-| data type      | `2`   | `0x01` |
+| data type      | `2`   | `0x02` |
 
-Message hex dump with LRC: `03 02 05 01 50`
+Message hex dump with LRC: `03 02 05 02 53`
 
 
 ## Priority data delivery type
@@ -237,20 +237,20 @@ It applies to all module types except `MTXLora`.
 
 It is a `4`-byte value in `32768` `Hz` intervals.
 The most significant byte comes first.
-By default, the value is `655360` (`20` seconds).
+By default, the value is `327680` or `0x50000` (`10` seconds).
 
 ### Examples
 
 #### set `battery minimal load time` to `100` seconds:
 
-| Field          | Value | Hex          |
-| -------------- | ----- | ------------ |
-| command id     | `3`   | `0x03`       |
-| command size   | `5`   | `0x05`       |
-| parameter type | `11`  | `0x0b`       |
-| load time      | `100` | `0x00000064` |
+| Field          | Value                     | Hex          |
+| -------------- | ------------------------- | ------------ |
+| command id     | `3`                       | `0x03`       |
+| command size   | `5`                       | `0x05`       |
+| parameter type | `11`                      | `0x0b`       |
+| load time      | `100` seconds = `3276800` | `0x00320000` |
 
-Message hex dump with LRC: `03 05 0b 00 00 00 64 3c`
+Message hex dump with LRC: `03 05 0b 00 32 00 00 6a`
 
 
 ## RX2 config
@@ -308,7 +308,7 @@ Message hex dump with LRC: `03 05 12 05 00 00 c8 8c`
 
 ## Absolute data
 
-Parameter is used to setup absolute data for not multichannel device.
+Parameter is used to setup absolute data for device.
 
 ### Format
 
@@ -353,7 +353,7 @@ Message hex dump with LRC: `03 0a 17 00 00 00 cc 83 00 00 07 e7 e4`
 
 ## Enable absolute data
 
-Parameter is used to enable absolute data for not multichannel device.
+Parameter is used to enable absolute data for device.
 
 ### Format
 

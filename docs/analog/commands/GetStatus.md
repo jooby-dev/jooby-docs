@@ -23,9 +23,9 @@ The command has no parameters.
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `20`  | `0x14` |
-| command size | `12`  | `0x0c` |
+| command size | `0`   | `0x00` |
 
-Message hex dump with LRC: `14 0c 4d`
+Message hex dump with LRC: `14 00 41`
 
 
 ## Response

@@ -311,7 +311,7 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
 | `5`   | Profile not found.                                               |
 
 
-## LoRaWAN connection method
+## LoRaWAN activation method
 
 | Value | Description |
 | ----- | ----------- |

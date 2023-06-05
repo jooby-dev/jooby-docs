@@ -315,5 +315,5 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
 
 | Value | Description |
 | ----- | ----------- |
-| `0`   | OTTA        |
+| `0`   | OTAA        |
 | `1`   | ABP         |

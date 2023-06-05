@@ -1,7 +1,24 @@
 # Parameter types
 
 Command body structures for [SetParameter](./commands/SetParameter.md).
-Attention! Parameter types is not fully documented!
+
+* [Reporting data interval](#reporting-data-interval)
+* [Day checkout hour](#day-checkout-hour)
+* [Reporting data type](#reporting-data-type)
+* [Priority data delivery type](#priority-data-delivery-type)
+* [Activation method](#activation-method)
+* [Battery depassivation info](#battery-depassivation-info)
+* [Battery minimal load time](#battery-minimal-load-time)
+* [RX2 config](#rx2-config)
+* [Absolute data](#absolute-data)
+* [Enable absolute data](#enable-absolute-data)
+* [Serial number](#serial-number)
+* [Geolocation](#geolocation)
+* [Extra frame interval](#extra-frame-interval)
+* [Absolute data multi channel](#absolute-data-multi-channel)
+* [Enable absolute data multichannel](#enable-absolute-data-multichannel)
+* [Pulse channels scan configuration](#pulse-channels-scan-configuration)
+* [Pulse channels set config](#pulse-channels-set-config)
 
 
 ## Reporting data interval

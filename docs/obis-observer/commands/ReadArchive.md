@@ -11,18 +11,16 @@ Request/response to get archive data.
 | ---- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1`  | `byte`                               | command id = `0x11`                                                                                                                                                                                                                                        |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                                                                                                                                                                                         |
-| `1`  | `byte`                               | archive type <br> `1` - detailed archive <br> `2` - summary archive                                                                                                                                                                                        |
+| `1`  | `byte`                               | archive type: <br> `1` - profile 1 <br> `2` - profile 2                                                                                                                                                                                                     |
 | `4`  | [Time 2000](../types.md#time-2000)   | The field specifies a specific time within a day. For example, if the field indicates `14:10`, the response will include all the archived data captured from the start of the nearest archive period to `14:10` until the end of that same archive period. |
 
 ### Examples
-
-#### request detailed archive:
 
 | Field        | Value                     | Hex          |
 | ------------ | ------------------------- | ------------ |
 | command id   | `17`                      | `0x11`       |
 | request id   | `33`                      | `0x21`       |
-| archive type | `DETAILED`                | `0x01`       |
+| archive type | `Profile 1`               | `0x01`       |
 | time         | `2023.12.23 00:00:00 GMT` | `0x2d18df80` |
 
 Message hex dump: `11 21 01 2d 18 df 80`
@@ -45,8 +43,6 @@ Message hex dump: `11 21 01 2d 18 df 80`
 | `4`  | `float32`                            | OBIS content `N`                                                                                                 |
 
 ### Examples
-
-#### summary archive data:
 
 | Field            | Value                     | Hex          |
 | ---------------- | ------------------------- | ------------ |

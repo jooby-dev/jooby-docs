@@ -276,8 +276,9 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
         <tr>
             <td colspan="3"><code>0</code></td>
             <td colspan="2"><a href="#contenttype">ContentType</a></td>
-            <td>sendingOnlyIfChange</td>
-            <td colspan="2"><a href="#archivetype">ArchiveType</a></td>
+            <td>SendOnChange</td>
+            <td><a href="#archiveprofile2">ArchiveProfile2</a></td>
+            <td><a href="#archiveprofile1">ArchiveProfile1</a></td>
         </tr>
     </tbody>
 </table>
@@ -290,13 +291,15 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
 | `1`   | float                      |
 | `2`   | string                     |
 
-### ArchiveType
+### ArchiveProfile1
 
-| Value | Description                                                                                                                                                                         |
-| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `0`   | No archive. The data will not be archived.                                                                                                                                          |
-| `1`   | Detailed archive. This archive contains data that is captured at a highly detailed level, providing a granular view of performance. By default, the archive period is `15` minutes. |
-| `2`   | Summary archive. The archive contains data that has been collected over a long interval. By default, the archive period is one day.                                                 |
+The archive contains data that has been collected over a long interval.
+By default, the archive period is one day.                                                |
+
+### ArchiveProfile2
+
+This archive contains data that is captured at a highly detailed level, providing a granular view of performance.
+By default, the archive period is `15` minutes. |
 
 
 ## Result code

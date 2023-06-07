@@ -18,12 +18,12 @@ Request/response to set up the OBIS profile for the specific short name.
 
 #### add profile for short name `32`:
 
-| Field        | Value                                                                                                                                                 | Hex              |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| command id   | `5`                                                                                                                                                   | `0x05`           |
-| request id   | `3`                                                                                                                                                   | `0x03`           |
-| short name   | `32`                                                                                                                                                  | `0x20`           |
-| OBIS profile | capturePeriod: `244` <br> sendingPeriod: `132` <br> sendingCounter: `38` <br> contentType: `AUTO` <br> sendOnlyOnChange: `1` <br> archiveType: `NONE` | `0x00f400842604` |
+| Field        | Value                                                                                                                                                                                | Hex              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| command id   | `5`                                                                                                                                                                                  | `0x05`           |
+| request id   | `3`                                                                                                                                                                                  | `0x03`           |
+| short name   | `32`                                                                                                                                                                                 | `0x20`           |
+| OBIS profile | capturePeriod: `244` <br> sendingPeriod: `132` <br> sendingCounter: `38` <br> contentType: `AUTO` <br> sendOnChange: `1` <br> archiveProfile1: `false` <br> archiveProfile2: `false` | `0x00f400842604` |
 
 Message hex dump: `05 03 20 00 f4 00 84 26 04`
 

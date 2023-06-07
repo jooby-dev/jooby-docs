@@ -43,13 +43,13 @@ Message hex dump: `0b 03 2c`
 
 #### short name info for OBIS `0.9.1`:
 
-| Field        | Value                                                                                                                                                       | Hex              |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| command id   | `12`                                                                                                                                                        | `0x0c`           |
-| command size | `11`                                                                                                                                                        | `0x0b`           |
-| request id   | `3`                                                                                                                                                         | `0x03`           |
-| OBIS code    | C: `0`, D: `9`, E: `1`                                                                                                                                      | `0x02000901`     |
-| OBIS profile | capturePeriod: `344` <br> sendingPeriod: `532` <br> sendingCounter: `61` <br> contentType: `STRING` <br> sendOnlyOnChange: `0` <br> archiveType: `DETAILED` | `0x015802143d0a` |
+| Field        | Value                                                                                                                                                                                 | Hex              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| command id   | `12`                                                                                                                                                                                  | `0x0c`           |
+| command size | `11`                                                                                                                                                                                  | `0x0b`           |
+| request id   | `3`                                                                                                                                                                                   | `0x03`           |
+| OBIS code    | C: `0`, D: `9`, E: `1`                                                                                                                                                                | `0x02000901`     |
+| OBIS profile | capturePeriod: `344` <br> sendingPeriod: `532` <br> sendingCounter: `61` <br> contentType: `STRING` <br> sendOnChange: `0` <br> archiveProfile1: `false` <br> archiveProfile2: `true` | `0x015802143d0a` |
 
 Message hex dump: `0c 0b 03 02 00 09 01 01 58 02 14 3d 0a`
 

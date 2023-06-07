@@ -275,15 +275,15 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
     <tbody>
         <tr>
             <td colspan="3"><code>0</code></td>
-            <td colspan="2"><a href="#contenttype">ContentType</a></td>
-            <td>SendOnChange</td>
-            <td><a href="#archiveprofile2">ArchiveProfile2</a></td>
-            <td><a href="#archiveprofile1">ArchiveProfile1</a></td>
+            <td colspan="2"><a href="#contenttype">Content type</a></td>
+            <td>Send on change</td>
+            <td><a href="#archive-profile-2">Archive profile 2</a></td>
+            <td><a href="#archive-profile-1">Archive profile 1</a></td>
         </tr>
     </tbody>
 </table>
 
-### ContentType
+### Content type
 
 | Value | Description                |
 | ----- | -------------------------- |
@@ -291,12 +291,12 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
 | `1`   | float                      |
 | `2`   | string                     |
 
-### ArchiveProfile1
+### Archive profile 1
 
 The archive contains data that has been collected over a long interval.
 By default, the archive period is one day.                                                |
 
-### ArchiveProfile2
+### Archive profile 2
 
 This archive contains data that is captured at a highly detailed level, providing a granular view of performance.
 By default, the archive period is `15` minutes. |

@@ -320,3 +320,13 @@ By default, the archive period is `15` minutes. |
 | ----- | ----------- |
 | `0`   | OTAA        |
 | `1`   | ABP         |
+
+
+## LoRaWAN device classes
+
+| Value | Class |
+| ----- | ----- |
+| `0`   | A     |
+| `1`   | B     |
+| `2`   | C     |
+| `3`   | AC    |

@@ -1,11 +1,15 @@
 name: telegram
 
 on:
-    - push
-    - pull_request
-    - issues
-    - issue_comment
-    - release
+    push:
+        branches:
+          - 'main'
+    pull_request:
+        types: [opened]
+    issues:
+        types: [opened]
+    release:
+        types: [published]
 
 jobs:
     notify:

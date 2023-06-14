@@ -25,7 +25,7 @@ The parameter `23` is used for this behavior.
 | `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `N` pulse coefficient                       |
 | `1..5` | [extended value](../../types.md#extended-value)       | channel `N` value                                   |
 
-It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
 
 ### Parameters
 

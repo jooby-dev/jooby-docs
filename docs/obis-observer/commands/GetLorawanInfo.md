@@ -57,4 +57,5 @@ Message hex dump: `1f 07 00 1a 79 88 16 aa 55 61 00 11 22 33 44 55 66 77 02 01`
 ## See also
 
 * [Request ID](../types.md#request-id)
+* [Device class](../types.md#lorawan-device-classes)
 * [Activation method](../types.md#lorawan-activation-method)

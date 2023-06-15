@@ -26,7 +26,7 @@ The command contains the total value of the pulse counter for the specified hour
 | `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                |
 | `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                |
 
-It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
 
 ### Parameters
 

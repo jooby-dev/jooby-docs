@@ -219,6 +219,141 @@ The same in a table form:
     </tbody>
 </table>
 
+
+## Packed magnetic influence and hour
+
+It's a magnetic influence flag and start hour value packed in `1` byte.
+Format:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>magnetic influence</td>
+            <td>reserved</td>
+            <td>reserved</td>
+            <td colspan="5" align="center">Hour [<code>4..0</code>]</td>
+        </tr>
+    </tbody>
+</table>
+
+### Examples
+
+Let's pack the presence of magnetic influence and the start hour `09:00`.
+<br>
+The presence of magnetic influence becomes `1` as the highest bit.
+<br>
+Hour `09` (`0b1001`) becomes `0b01001` to have the size of `5` bits.
+<br>
+Combine it all together to get `0b10001001` or `0x89`.
+
+The same in a table form:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>1</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td colspan="5" align="center"><code>01001</code></td>
+        </tr>
+    </tbody>
+</table>
+
+
+## Packed magnetic influence and diff
+
+It's a magnetic influence flag and hourly difference in readings packed in `2` bytes.
+Format:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>magnetic influence</td>
+            <td>reserved</td>
+            <td>reserved</td>
+            <td colspan="5" align="center">diff value [<code>12..8</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">diff value [<code>7..0</code>]</td>
+        </tr>
+    </tbody>
+</table>
+
+### Examples
+
+Let's pack the presence of magnetic influence and the hourly difference value `348`.
+<br>
+The presence of magnetic influence becomes `1` as the highest bit.
+<br>
+Value `348` (`0b101011100`) splits to two bytes `0b1` and `0b01011100`.
+<br>
+Combine it all together to get `0b1000000101011100` or `0x815c`.
+
+The same in a table form:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>1</code></td>
+            <td><code>0</code></td>
+            <td><code>0</code></td>
+            <td colspan="5" align="center"><code>00001</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center"><code>01011100</code></td>
+        </tr>
+    </tbody>
+</table>
+
+
 ## Channels bit set
 
 [Extended value](#extended-value) that stores bit set of all channels indexes in command.

@@ -1,6 +1,6 @@
 # GetLorawanState
 
-Request/response to get the Lorawan related statistic on the device.
+Request/response to get the Lorawan related state and statistic.
 
 
 ## Request
@@ -31,8 +31,8 @@ Message hex dump: `24 12`
 | `1`  | `byte`                               | command id = `0x25`                |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `1`  | `byte`                               | downlink quality in percent        |
-| `1`  | `byte`                               | rssi of the last frame             |
-| `1`  | `byte`                               | snr of the last frame              |
+| `1`  | `byte`                               | RSSI of the last frame             |
+| `1`  | `byte`                               | SNR of the last frame              |
 | `1`  | `byte`                               | device's margin                    |
 | `1`  | `byte`                               | gate's margin                      |
 | `1`  | `byte`                               | reset flag                         |
@@ -41,15 +41,13 @@ Message hex dump: `24 12`
 
 ### Examples
 
-#### Device information:
-
 | Field                              | Value                   | Hex    |
 | ---------------------------------- | ----------------------- | ------ |
 | command id                         | `37`                    | `0x25` |
 | request id                         | `1`                     | `0x01` |
 | downlink quality in percent        | `1`                     | `0x01` |
-| rssi of the last frame             | `193`                   | `0xc1` |
-| snr of the last frame              | `5`                     | `0x05` |
+| RSSI of the last frame             | `193`                   | `0xc1` |
+| SNR of the last frame              | `5`                     | `0x05` |
 | device's margin                    | `6`                     | `0x06` |
 | gate's margin                      | `0`                     | `0x00` |
 | reset flag                         | `0`                     | `0x00` |

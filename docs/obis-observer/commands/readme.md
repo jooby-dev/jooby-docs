@@ -53,8 +53,8 @@ There are `2` types of command direction:
 | `0x1f` | [GetLorawanInfo](./GetLorawanInfo.md#response)                                      | Response to the [GetLorawanInfo](./GetLorawanInfo.md#request) downlink command.                                   |
 | `0x21` | [GetDeviceInfo](./GetDeviceInfo.md#response)                                        | Response to the [GetDeviceInfo](./GetDeviceInfo.md#request) downlink command.                                     |
 | `0x23` | [GetDate](./GetDate.md#response)                                                    | Response to the [GetDate](./GetDate.md#request) downlink command.                                     |
-| `0x24` | [GetLorawanState](./GetLorawanState.md#response)                                    | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                                     |
-| `0x26` | [GetReadoutState](./GetReadoutState.md#response)                                    | Response to the [GetReadoutState](./GetReadoutState.md#request) downlink command.                                     |
+| `0x25` | [GetLorawanState](./GetLorawanState.md#response)                                    | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                                     |
+| `0x27` | [GetReadoutState](./GetReadoutState.md#response)                                    | Response to the [GetReadoutState](./GetReadoutState.md#request) downlink command.                                     |
 
 **Note**
 

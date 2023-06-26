@@ -46,7 +46,7 @@ Message hex dump: `26 12`
 
 | Field                                                                                                   | Value | Hex          |
 | ------------------------------------------------------------------------------------------------------- | ----- | ------------ |
-| command id                                                                                              | `37`  | `0x25`       |
+| command id                                                                                              | `39`  | `0x27`       |
 | request id                                                                                              | `3`   | `0x03`       |
 | elapsed time in seconds since the start of the device when the last successful readout attempt occurred | `127` | `0x0000007f` |
 | elapsed time in seconds since the start of the device when the last failed readout attempt occurred     | `193` | `0x00000000` |

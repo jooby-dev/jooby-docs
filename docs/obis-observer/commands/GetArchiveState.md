@@ -41,7 +41,7 @@ Message hex dump: `28 79 02`
 
 | Field              | Value                 | Hex          |
 | ------------------ | --------------------- | ------------ |
-| command id         | `29`                  | `0x29`       |
+| command id         | `41`                  | `0x29`       |
 | command size       | `13`                  | `0x0d`       |
 | request id         | `2`                   | `0x02`       |
 | records count      | `81`                  | `0x51`       |

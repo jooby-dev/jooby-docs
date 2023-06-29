@@ -28,6 +28,7 @@ There are `2` types of command direction:
 | `0x22` | [GetDate](./GetDate.md#request)                               | to get the current date and time on the device.                  |
 | `0x24` | [GetLorawanState](./GetLorawanState.md#request)               | Request to get LoRaWAN state.                                    |
 | `0x26` | [GetReadoutState](./GetReadoutState.md#request)               | Request to get readout state.                                    |
+| `0x28` | [GetArchiveState](./GetArchiveState.md#request)               | Request to get archive state.                                    |
 
 
 ## Uplink commands
@@ -55,6 +56,7 @@ There are `2` types of command direction:
 | `0x23` | [GetDate](./GetDate.md#response)                                                    | Response to the [GetDate](./GetDate.md#request) downlink command.                                     |
 | `0x25` | [GetLorawanState](./GetLorawanState.md#response)                                    | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                                     |
 | `0x27` | [GetReadoutState](./GetReadoutState.md#response)                                    | Response to the [GetReadoutState](./GetReadoutState.md#request) downlink command.                                     |
+| `0x29` | [GetArchiveState](./GetArchiveState.md#response)                                    | Response to the [GetArchiveState](./GetArchiveState.md#request) downlink command.                                     |
 
 **Note**
 

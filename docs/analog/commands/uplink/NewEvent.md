@@ -36,9 +36,9 @@ Event data specific for the event type.
 
 `MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIVATE`, `CAN_OFF`, `INSERT`, `REMOVE`, `COUNTER_OVER`, `OPTOLOW`, `OPTOFLASH`, `JOIN_ACCEPT`
 
-| Size | Type      | Field                                            |
-| ---- | --------- | ------------------------------------------------ |
-| `4`  | uint32_be | [time 2000](../../types.md#time-2000) in seconds |
+| Size | Type        | Field                                            |
+| ---- | ----------- | ------------------------------------------------ |
+| `4`  | `uint32_be` | [time 2000](../../types.md#time-2000) in seconds |
 
 `BATTERY_ALARM`
 
@@ -48,10 +48,10 @@ Event data specific for the event type.
 
 `ACTIVATE_MTX`
 
-| Size | Type      | Field                                            |
-| ---- | --------- | ------------------------------------------------ |
-| `4`  | uint32_be | [time 2000](../../types.md#time-2000) in seconds |
-| `8`  | byte      | device id (MAC address)                          |
+| Size | Type        | Field                                            |
+| ---- | ----------- | ------------------------------------------------ |
+| `4`  | `uint32_be` | [time 2000](../../types.md#time-2000) in seconds |
+| `8`  | byte        | device id (MAC address)                          |
 
 `CONNECT`, `DISCONNECT`
 

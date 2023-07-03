@@ -52,4 +52,4 @@ Message hex dump: `23 07 31 cd 2f 73 00 00 0f b0`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [String](../types.md#time-2000)
+* [Time 2000](../types.md#time-2000)

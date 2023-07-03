@@ -49,7 +49,7 @@ Message hex dump: `11 21 01 2d 18 df 80`
 | command id       | `18`                      | `0x12`       |
 | command size     | `15`                      | `0x0f`       |
 | request id       | `34`                      | `0x22`       |
-| time             | `2023-12-23 04:00:00 GMT` | `0x2d1917c0` |
+| time             | `2023.12.23 04:00:00 GMT` | `0x2d1917c0` |
 | short name `1`   | `50`                      | `0x32`       |
 | OBIS content `1` | `22.27`                   | `0x41b228f6` |
 | short name `2`   | `56`                      | `0x38`       |

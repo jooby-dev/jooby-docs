@@ -7,10 +7,10 @@ Request/response to get the readout related state and statistic.
 
 ### Format
 
-| Size  | Type                                 | Field                              |
-| ----- | ------------------------------------ | ---------------------------------- |
-| `1`   | `byte`                               | command id = `0x26`                |
-| `1`   | [Request ID](../types.md#request-id) | request/response unique identifier |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x26`                |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 ### Examples
 
@@ -30,15 +30,15 @@ Message hex dump: `26 12`
 | ---- | ------------------------------------ | ------------------------------------------------------------------------------------------------------- |
 | `1`  | `byte`                               | command id = `0x27`                                                                                     |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                                      |
-| `4`  | uint32_be                            | elapsed time in seconds since the start of the device when the last successful readout attempt occurred |
-| `4`  | uint32_be                            | elapsed time in seconds since the start of the device when the last failed readout attempt occurred     |
-| `2`  | uint16_be                            | the count of the readout attempts                                                                       |
-| `2`  | uint16_be                            | the count of the successful readout attempts                                                            |
-| `2`  | uint16_be                            | the count of the failed readout attempts                                                                |
-| `1`  | `byte`                               | the count of the 'WAIT NEXT SYMBOL' errors                                                              |
-| `1`  | `byte`                               | the count of the 'WAIT ID' errors                                                                       |
-| `1`  | `byte`                               | the count of the 'WAIT NEXT STATE' errors                                                               |
-| `1`  | `byte`                               | the count of the 'WRONG BCC' errors                                                                     |
+| `4`  | `uint32_be`                          | elapsed time in seconds since the start of the device when the last successful readout attempt occurred |
+| `4`  | `uint32_be`                          | elapsed time in seconds since the start of the device when the last failed readout attempt occurred     |
+| `2`  | `uint16_be`                          | the count of the readout attempts                                                                       |
+| `2`  | `uint16_be`                          | the count of the successful readout attempts                                                            |
+| `2`  | `uint16_be`                          | the count of the failed readout attempts                                                                |
+| `1`  | `byte`                               | the count of the `WAIT NEXT SYMBOL` errors                                                              |
+| `1`  | `byte`                               | the count of the `WAIT ID` errors                                                                       |
+| `1`  | `byte`                               | the count of the `WAIT NEXT STATE` errors                                                               |
+| `1`  | `byte`                               | the count of the `WRONG BCC` errors                                                                     |
 | `1`  | `byte`                               | the count of the parity errors                                                                          |
 | `1`  | `byte`                               | the count of the frame errors                                                                           |
 | `1`  | `byte`                               | the count of the overrun errors                                                                         |
@@ -52,13 +52,13 @@ Message hex dump: `26 12`
 | request id                                                                                              | `3`   | `0x03`       |
 | elapsed time in seconds since the start of the device when the last successful readout attempt occurred | `127` | `0x0000007f` |
 | elapsed time in seconds since the start of the device when the last failed readout attempt occurred     | `193` | `0x000000c1` |
-| the count of the readout attempts                                                                       | `14`  | `0x0e`       |     
-| the count of the successful readout attempts                                                            | `12`  | `0x0c`       |     
-| the count of the failed readout attempts                                                                | `2`   | `0x02`       |     
-| the count of the 'WAIT NEXT SYMBOL' errors                                                              | `0`   | `0x00`       |
-| the count of the 'WAIT ID' errors                                                                       | `0`   | `0x00`       |
-| the count of the 'WAIT NEXT STATE' errors                                                               | `0`   | `0x00`       |
-| the count of the 'WRONG BCC' errors                                                                     | `0`   | `0x00`       |
+| the count of the readout attempts                                                                       | `14`  | `0x0e`       |
+| the count of the successful readout attempts                                                            | `12`  | `0x0c`       |
+| the count of the failed readout attempts                                                                | `2`   | `0x02`       |
+| the count of the `WAIT NEXT SYMBOL` errors                                                              | `0`   | `0x00`       |
+| the count of the `WAIT ID` errors                                                                       | `0`   | `0x00`       |
+| the count of the `WAIT NEXT STATE` errors                                                               | `0`   | `0x00`       |
+| the count of the `WRONG BCC` errors                                                                     | `0`   | `0x00`       |
 | the count of the parity errors                                                                          | `0`   | `0x00`       |
 | the count of the frame errors                                                                           | `0`   | `0x00`       |
 | the count of the overrun errors                                                                         | `0`   | `0x00`       |

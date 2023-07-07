@@ -29,6 +29,7 @@
         "photodiode",
         "QIII",
         "reassignable",
+        "RSSI",
         "WONO"
     ]
 }

@@ -29,7 +29,9 @@ There are `2` types of command direction:
 | `0x24` | [GetLorawanState](./GetLorawanState.md#request)               | Request to get LoRaWAN state.                                    |
 | `0x26` | [GetReadoutState](./GetReadoutState.md#request)               | Request to get readout state.                                    |
 | `0x28` | [GetArchiveState](./GetArchiveState.md#request)               | Request to get archive state.                                    |
-
+| `0x2a` | [UpdateImageWrite](./UpdateImageWrite.md#request)             | Request to write the block of the new image to the device.       |
+| `0x2c` | [UpdateImageVerify](./UpdateImageVerify.md#request)           | Request to verify the update image on the device.                |
+| `0x2e` | [UpdateRun](./UpdateRun.md#request)                           | Request to run the update on the device.                         |
 
 ## Uplink commands
 
@@ -57,6 +59,10 @@ There are `2` types of command direction:
 | `0x25` | [GetLorawanState](./GetLorawanState.md#response)                                    | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                                 |
 | `0x27` | [GetReadoutState](./GetReadoutState.md#response)                                    | Response to the [GetReadoutState](./GetReadoutState.md#request) downlink command.                                 |
 | `0x29` | [GetArchiveState](./GetArchiveState.md#response)                                    | Response to the [GetArchiveState](./GetArchiveState.md#request) downlink command.                                 |
+| `0x2b` | [UpdateImageWrite](./UpdateImageWrite.md#response)                                  | Response to the [UpdateImageWrite](./UpdateImageWrite.md#request) downlink command.                               |
+| `0x2d` | [UpdateImageVerify](./UpdateImageVerify.md#response)                                | Response to the [UpdateImageVerify](./UpdateImageVerify.md#request) downlink command.                             |
+| `0x2f` | [UpdateRun](./UpdateRun.md#response)                                                | Response to the [UpdateRun](./UpdateRun.md#request) downlink command.                                             |
+
 
 **Note**
 

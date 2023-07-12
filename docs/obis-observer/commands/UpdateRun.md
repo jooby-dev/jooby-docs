@@ -13,7 +13,6 @@ This command is part of update procedure.
 | `1`  | `byte`                               | command id = `0x2e`                 |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique  identifier |
 
-
 ### Examples
 
 | Field      | Value | Hex    |
@@ -33,7 +32,6 @@ Message hex dump: `2e 21`
 | `1`  | `byte`                                 | command id = `0x2f`                |
 | `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
 | `1`  | [Result code](../types.md#result-code) | operation result code              |
-
 
 ### Examples
 

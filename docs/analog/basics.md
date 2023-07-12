@@ -27,14 +27,14 @@ Archives can be requested for the latest events, the oldest events, and events s
 
 | ID     | Name                | Description                                                                       |
 | ------ | ------------------- | --------------------------------------------------------------------------------- |
-| `0x01` | `MAGNET_ON`         | Magnet is used for more than 20 seconds.                                          |
+| `0x01` | `MAGNET_ON`         | The magnetic interference continues for more than 20 seconds.                     |
 | `0x02` | `MAGNET_OFF`        | Magnetic interference is removed.                                                 |
 | `0x03` | `ACTIVATE`          | The device has been activated.                                                    |
 | `0x04` | `DEACTIVATE`        | Device deactivation. Termination of frame transmission over the air.              |
 | `0x05` | `BATTERY_ALARM`     | The sensor has reset due to low battery voltage. Outdated.                        |
 | `0x06` | `CAN_OFF`           | The container has tipped over. Outdated.                                          |
-| `0x07` | `INSERT`            | Device installation in the gas meter.                                             |
-| `0x08` | `REMOVE`            | Device removal from gas meter.                                                    |
+| `0x07` | `INSERT`            | Fixing the installation of the module in the gas meter.                           |
+| `0x08` | `REMOVE`            | Fixing the removal of the module from the gas meter.                              |
 | `0x09` | `COUNTER_OVER`      | The pulse counter has overflowed. The number of pulses has exceeded `4294967295`. |
 | `0x0a` | `SET_TIME`          | Setting the device time.                                                          |
 | `0x0b` | `ACTIVATE_MTX`      | Activation of the module in the electric energy meter (restart or power supply).  |
@@ -48,6 +48,7 @@ Archives can be requested for the latest events, the oldest events, and events s
 | `0x13` | `WATER_EVENT`       | Ultrasonic water meter event.                                                     |
 | `0x14` | `WATER_NO_RESPONSE` | No response from ultrasonic water meter.                                          |
 | `0x15` | `OPTOSENSOR_ERROR`  | Optical sensor error.                                                             |
+
 
 ## Hardware types
 

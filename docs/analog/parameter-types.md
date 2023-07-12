@@ -16,7 +16,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [Geolocation](#geolocation)
 * [Extra frame interval](#extra-frame-interval)
 * [Absolute data multi channel](#absolute-data-multi-channel)
-* [Enable absolute data multichannel](#enable-absolute-data-multichannel)
+* [Enable absolute data](#enable-absolute-data)
 * [Pulse channels scan configuration](#pulse-channels-scan-configuration)
 * [Pulse channels set config](#pulse-channels-set-config)
 
@@ -101,12 +101,12 @@ Parameter is used to setup type of values received from device.
 
 #### **data type**
 
-| Value | Description  |
-| ----- | ------------ |
-| `0`   | hour         |
-| `1`   | day          |
-| `2`   | current      |
-| `3`   | hour and day |
+| Value | Description                                |
+| ----- | ------------------------------------------ |
+| `0`   | hour                                       |
+| `1`   | day                                        |
+| `2`   | current                                    |
+| `3`   | hour and day (since software version `98`) |
 
 ### Examples
 
@@ -508,7 +508,7 @@ Message hex dump with LRC: `03 03 1c 10 0e 57`
 
 ## Absolute data multi channel
 
-Parameter is used to setup absolute data for multichannel device.
+Parameter is used to setup absolute data for device.
 
 ### Format
 
@@ -559,9 +559,9 @@ It is a `4`-byte unsigned int BE.
 Message hex dump with LRC: `03 0b 1d 00 00 00 01 92 84 00 00 07 f0 a0`
 
 
-## Enable absolute data multichannel
+## Enable absolute data
 
-Parameter is used to enable absolute data for multichannel device.
+Parameter is used to enable absolute data for device.
 
 ### Format
 
@@ -606,7 +606,7 @@ Available from software version = `0x6C` for:<br>
 hardware type - `0x0f` hardware version - `0x02`<br>
 hardware type - `0x06` hardware version - `0x0a`
 
-[Hardware types](../../basics.md#hardware-types)
+[Hardware types](./basics.md#hardware-types)
 
 ### Format
 
@@ -619,7 +619,7 @@ hardware type - `0x06` hardware version - `0x0a`
 
 #### **channels bit set**
 
-[Channels to set configuration](../types.md#channels-bit-set).
+[Channels to set configuration](./types.md#channels-bit-set).
 
 #### **pull up time**
 
@@ -660,7 +660,7 @@ Available from software version = `0x6C` for:<br>
 hardware type - `0x0f` hardware version - `0x02`<br>
 hardware type - `0x06` hardware version - `0x0a`
 
-[Hardware types](../../basics.md#hardware-types)
+[Hardware types](./basics.md#hardware-types)
 
 ### Format
 
@@ -671,7 +671,7 @@ hardware type - `0x06` hardware version - `0x0a`
 
 #### **channels bit set**
 
-[Channels to set](../types.md#channels-bit-set).
+[Channels to set](./types.md#channels-bit-set).
 
 ### Examples
 

@@ -119,7 +119,7 @@ Format (each line is a byte):
 
 Let's pack the date `2023.12.23 00:00:00 GMT`.
 <br>
-The year part is `2023` but we need only the value since the year `2000`.
+In order to set the year to `2023`, we need to calculate the difference between `2000` and `2023`.
 It's `23` which is `0b10111`.
 Pad this value with zeros till the necessary size of `7` bits.
 Now it's `0b0010111` as the highest `7` bits of the first byte of the result.

@@ -19,7 +19,7 @@ There are `2` types of command direction:
 | `0x0b`   | [GetArchiveEvents](./GetArchiveEvents.md#request)   | Request to get a events from archive.                                        |
 | `0x0c`   | [CorrectTime2000](./CorrectTime2000.md#request)     | Request to correct device time by up to 127 seconds.                         |
 | `0x14`   | [GetStatus](./GetStatus.md#request)                 | Request to get status information from the sensor.                           |
-| `0x18`   | [GetCurrentMC](./GetCurrentMC.md#request)           | Request to get current pulse counter value for multichannel devices.         |
+| `0x18`   | [GetCurrentMC](./GetCurrentMC.md#request)           | Request to get current pulse counter value.                                  |
 | `0x19`   | [SoftRestart](./SoftRestart.md#request)             | Request to restart a device.                                                 |
 | `0x1a`   | [GetArchiveHoursMC](./GetArchiveHoursMC.md#request) | Request to get a hour values from archive.                                   |
 | `0x1b`   | [GetArchiveDaysMC](./GetArchiveDaysMC.md#request)   | Request to get a day values from archive.                                    |
@@ -41,9 +41,9 @@ There are `2` types of command direction:
 | `0x0b`   | [GetArchiveEvents](./GetArchiveEvents.md#response)   | Response to the [GetArchiveEvents](./GetArchiveEvents.md#request) downlink command.                                                               |
 | `0x0c`   | [CorrectTime2000](./CorrectTime2000.md#response)     | Response to the [CorrectTime2000](./CorrectTime2000.md#request) downlink command.                                                                 |
 | `0x14`   | [Status](./GetStatus.md#response)                    | Response to the [GetStatus](./GetStatus.md#request) downlink command or current device status information.                                        |
-| `0x16`   | [DayMC](./uplink/DayMC.md)                           | Pulse counter data of a multichannel sensor on billing hour.                                                                                      |
-| `0x17`   | [HourMC](./uplink/HourMC.md)                         | Pulse counter data of a multichannel sensor, accumulated on a hour basis.                                                                         |
-| `0x18`   | [CurrentMC](./GetCurrentMC.md#response)              | Response to the [GetCurrentMC](./GetCurrentMC.md#request) downlink command or current pulse counter value for multichannel devices.               |
+| `0x16`   | [DayMC](./uplink/DayMC.md)                           | Pulse counter data on billing hour.                                                                                                               |
+| `0x17`   | [HourMC](./uplink/HourMC.md)                         | Pulse counter data, accumulated on a hour basis.                                                                                                  |
+| `0x18`   | [CurrentMC](./GetCurrentMC.md#response)              | Response to the [GetCurrentMC](./GetCurrentMC.md#request) downlink command or current pulse counter value.                                        |
 | `0x19`   | [SoftRestart](./SoftRestart.md#response)             | Response to the [SoftRestart](./SoftRestart.md#request) downlink command.                                                                         |
 | `0x1a`   | [GetArchiveHoursMC](./GetArchiveHoursMC.md#response) | Response to the [GetArchiveHoursMC](./GetArchiveHoursMC.md#request) downlink command.                                                             |
 | `0x1b`   | [GetArchiveDaysMC](./GetArchiveDaysMC.md#response)   | Response to the [GetArchiveDaysMC](./GetArchiveDaysMC.md#request) downlink command.                                                               |

@@ -8,26 +8,33 @@ This command is part of update procedure.
 
 ### Format
 
-| Size  | Type                                 | Field                                                            |
-| ----- | ------------------------------------ | ---------------------------------------------------------------- |
-| `1`   | `byte`                               | command id = `0x2a`                                              |
-| `1`   | `byte`                               | command size (dynamic, `21+`)                                    |
-| `1`   | [Request ID](../types.md#request-id) | request/response unique  identifier                              |
-| `4`   | `uint32_be`                          | offset to write image block                                      |
-| `16+` | `byte`                               | image content (the image content size should be divisible by 16) |
+| Size  | Type                                 | Field                               |
+| ----- | ------------------------------------ | ----------------------------------- |
+| `1`   | `byte`                               | command id = `0x2a`                 |
+| `1`   | `byte`                               | command size (dynamic, `21+`)       |
+| `1`   | [Request ID](../types.md#request-id) | request/response unique  identifier |
+| `4`   | `uint32_be`                          | offset to write image block         |
+| `16+` | `byte`                               | [image content](#image-content)     |
 
+### Parameters
+
+#### **image content**
+
+The image content size should be a multiple of `16`.
+<br>
+In case there is less data it should be padded with zeros.
 
 ### Examples
 
-| Field         | Value                                | Hex                                  |
-| ------------- | ------------------------------------ | ------------------------------------ |
-| command id    | `42`                                 | `0x2a`                               |
-| command size  | `21`                                 | `0x15`                               |
-| request id    | `33`                                 | `0x21`                               |
-| offset        | `2112`                               | `0x0840`                             |
-| image content | `0x000102030405060708090a0b0c0d0e0f` | `0x000102030405060708090a0b0c0d0e0f` |
+| Field         | Value                    | Hex                                  |
+| ------------- | ------------------------ | ------------------------------------ |
+| command id    | `42`                     | `0x2a`                               |
+| command size  | `21`                     | `0x15`                               |
+| request id    | `33`                     | `0x21`                               |
+| offset        | `2112`                   | `0x0840`                             |
+| image content | `0x00010203040506070809` | `0x00010203040506070809000000000000` |
 
-Message hex dump: `2a 15 21 00 00 08 40 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0e 0f`
+Message hex dump: `2a 15 21 00 00 08 40 00 01 02 03 04 05 06 07 08 09 00 00 00 00 00 00`
 
 
 ## Response

@@ -35,33 +35,33 @@ There are `2` types of command direction:
 
 ## Uplink commands
 
-| ID     | Name                                                                                | Description                                                                                                       |
-| ------ | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `0x02` | [GetShortNames](./GetShortNames#response)                                           | Response to the [GetShortNames](./GetShortNames.md#request) downlink command.                                     |
-| `0x04` | [SetShortName](./SetShortName#response)                                             | Response to the [SetShortName](./SetShortName.md#request) downlink command.                                       |
-| `0x06` | [AddShortNameProfile](./AddShortNameProfile#response)                               | Response to the [AddShortNameProfile](./AddShortNameProfile.md#request) downlink command.                         |
-| `0x08` | [RemoveShortNameProfile](./RemoveShortNameProfile#response)                         | Response to the [RemoveShortNameProfile](./RemoveShortNameProfile.md#request) downlink command.                   |
-| `0x0a` | [GetShortNameProfile](./GetShortNameProfile#response)                               | Response to the [GetShortNameProfile](./GetShortNameProfile.md#request) downlink command.                         |
-| `0x0c` | [GetShortNameInfo](./GetShortNameInfo#response)                                     | Response to the [GetShortNameInfo](./GetShortNameInfo.md#request) downlink command.                               |
-| `0x0e` | [GetArchiveProfile](./GetArchiveProfile#response)                                   | Response to the [GetArchiveProfile](./GetArchiveProfile.md#request) downlink command.                             |
-| `0x10` | [SetArchiveProfile](./SetArchiveProfile#response)                                   | Response to the [SetArchiveProfile](./SetArchiveProfile.md#request) downlink command.                             |
-| `0x12` | [ReadArchive](./ReadArchive#response)                                               | Response to the [ReadArchive](./ReadArchive.md#request) downlink command.                                         |
-| `0x14` | [SetSerialPort](./SetSerialPort#response)                                           | Response to the [SetSerialPort](./SetSerialPort.md#request) downlink command.                                     |
-| `0x16` | [GetContentByObis](./GetContentByObis#response)                                     | Response to the [GetContentByObis](./GetContentByObis.md#request) downlink command.                               |
-| `0x18` | [GetContentByShortName](./GetContentByShortName#response-with-float-content)        | Response to the [GetContentByShortName](./GetContentByShortName.md#request) downlink command with float content.  |
-| `0x19` | [GetContentByShortNameString](./GetContentByShortName#response-with-string-content) | Response to the [GetContentByShortName](./GetContentByShortName.md#request) downlink command with string content. |
-| `0x1a` | [ObservationReport](./uplink/ObservationReport.md#event-with-float-content)         | Content of the OBIS codes that were captured with float content.                                                  |
-| `0x1b` | [ObservationReportString](./uplink/ObservationReport.md#event-with-string-content)  | Content of the OBIS codes that were captured with string content.                                                 |
-| `0x1d` | [Reboot](./Reboot.md#response)                                                      | Response to the [Reboot](./Reboot.md#request) downlink command.                                                   |
-| `0x1f` | [GetLorawanInfo](./GetLorawanInfo.md#response)                                      | Response to the [GetLorawanInfo](./GetLorawanInfo.md#request) downlink command.                                   |
-| `0x21` | [GetDeviceInfo](./GetDeviceInfo.md#response)                                        | Response to the [GetDeviceInfo](./GetDeviceInfo.md#request) downlink command.                                     |
-| `0x23` | [GetDate](./GetDate.md#response)                                                    | Response to the [GetDate](./GetDate.md#request) downlink command.                                                 |
-| `0x25` | [GetLorawanState](./GetLorawanState.md#response)                                    | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                                 |
-| `0x27` | [GetReadoutState](./GetReadoutState.md#response)                                    | Response to the [GetReadoutState](./GetReadoutState.md#request) downlink command.                                 |
-| `0x29` | [GetArchiveState](./GetArchiveState.md#response)                                    | Response to the [GetArchiveState](./GetArchiveState.md#request) downlink command.                                 |
-| `0x2b` | [UpdateImageWrite](./UpdateImageWrite.md#response)                                  | Response to the [UpdateImageWrite](./UpdateImageWrite.md#request) downlink command.                               |
-| `0x2d` | [UpdateImageVerify](./UpdateImageVerify.md#response)                                | Response to the [UpdateImageVerify](./UpdateImageVerify.md#request) downlink command.                             |
-| `0x2f` | [UpdateRun](./UpdateRun.md#response)                                                | Response to the [UpdateRun](./UpdateRun.md#request) downlink command.                                             |
+| ID     | Name                                                                                   | Description                                                                                                       |
+| ------ | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `0x02` | [GetShortNames](./GetShortNames.md#response)                                           | Response to the [GetShortNames](./GetShortNames.md#request) downlink command.                                     |
+| `0x04` | [SetShortName](./SetShortName.md#response)                                             | Response to the [SetShortName](./SetShortName.md#request) downlink command.                                       |
+| `0x06` | [AddShortNameProfile](./AddShortNameProfile.md#response)                               | Response to the [AddShortNameProfile](./AddShortNameProfile.md#request) downlink command.                         |
+| `0x08` | [RemoveShortNameProfile](./RemoveShortNameProfile.md#response)                         | Response to the [RemoveShortNameProfile](./RemoveShortNameProfile.md#request) downlink command.                   |
+| `0x0a` | [GetShortNameProfile](./GetShortNameProfile.md#response)                               | Response to the [GetShortNameProfile](./GetShortNameProfile.md#request) downlink command.                         |
+| `0x0c` | [GetShortNameInfo](./GetShortNameInfo.md#response)                                     | Response to the [GetShortNameInfo](./GetShortNameInfo.md#request) downlink command.                               |
+| `0x0e` | [GetArchiveProfile](./GetArchiveProfile.md#response)                                   | Response to the [GetArchiveProfile](./GetArchiveProfile.md#request) downlink command.                             |
+| `0x10` | [SetArchiveProfile](./SetArchiveProfile.md#response)                                   | Response to the [SetArchiveProfile](./SetArchiveProfile.md#request) downlink command.                             |
+| `0x12` | [ReadArchive](./ReadArchive.md#response)                                               | Response to the [ReadArchive](./ReadArchive.md#request) downlink command.                                         |
+| `0x14` | [SetSerialPort](./SetSerialPort.md#response)                                           | Response to the [SetSerialPort](./SetSerialPort.md#request) downlink command.                                     |
+| `0x16` | [GetContentByObis](./GetContentByObis.md#response)                                     | Response to the [GetContentByObis](./GetContentByObis.md#request) downlink command.                               |
+| `0x18` | [GetContentByShortName](./GetContentByShortName.md#response-with-float-content)        | Response to the [GetContentByShortName](./GetContentByShortName.md#request) downlink command with float content.  |
+| `0x19` | [GetContentByShortNameString](./GetContentByShortName.md#response-with-string-content) | Response to the [GetContentByShortName](./GetContentByShortName.md#request) downlink command with string content. |
+| `0x1a` | [ObservationReport](./uplink/ObservationReport.md#event-with-float-content)            | Content of the OBIS codes that were captured with float content.                                                  |
+| `0x1b` | [ObservationReportString](./uplink/ObservationReport.md#event-with-string-content)     | Content of the OBIS codes that were captured with string content.                                                 |
+| `0x1d` | [Reboot](./Reboot.md#response)                                                         | Response to the [Reboot](./Reboot.md#request) downlink command.                                                   |
+| `0x1f` | [GetLorawanInfo](./GetLorawanInfo.md#response)                                         | Response to the [GetLorawanInfo](./GetLorawanInfo.md#request) downlink command.                                   |
+| `0x21` | [GetDeviceInfo](./GetDeviceInfo.md#response)                                           | Response to the [GetDeviceInfo](./GetDeviceInfo.md#request) downlink command.                                     |
+| `0x23` | [GetDate](./GetDate.md#response)                                                       | Response to the [GetDate](./GetDate.md#request) downlink command.                                                 |
+| `0x25` | [GetLorawanState](./GetLorawanState.md#response)                                       | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                                 |
+| `0x27` | [GetReadoutState](./GetReadoutState.md#response)                                       | Response to the [GetReadoutState](./GetReadoutState.md#request) downlink command.                                 |
+| `0x29` | [GetArchiveState](./GetArchiveState.md#response)                                       | Response to the [GetArchiveState](./GetArchiveState.md#request) downlink command.                                 |
+| `0x2b` | [UpdateImageWrite](./UpdateImageWrite.md#response)                                     | Response to the [UpdateImageWrite](./UpdateImageWrite.md#request) downlink command.                               |
+| `0x2d` | [UpdateImageVerify](./UpdateImageVerify.md#response)                                   | Response to the [UpdateImageVerify](./UpdateImageVerify.md#request) downlink command.                             |
+| `0x2f` | [UpdateRun](./UpdateRun.md#response)                                                   | Response to the [UpdateRun](./UpdateRun.md#request) downlink command.                                             |
 
 
 **Note**

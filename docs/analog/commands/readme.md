@@ -41,6 +41,7 @@ There are `2` types of command direction:
 | `0x0b`   | [GetArchiveEvents](./GetArchiveEvents.md#response)   | Response to the [GetArchiveEvents](./GetArchiveEvents.md#request) downlink command.                                                               |
 | `0x0c`   | [CorrectTime2000](./CorrectTime2000.md#response)     | Response to the [CorrectTime2000](./CorrectTime2000.md#request) downlink command.                                                                 |
 | `0x14`   | [Status](./GetStatus.md#response)                    | Response to the [GetStatus](./GetStatus.md#request) downlink command or current device status information.                                        |
+| `0x15`   | [NewEvent](./uplink/NewEvent.md)                     | Info of the device event.                                                                                                                         |
 | `0x16`   | [DayMC](./uplink/DayMC.md)                           | Pulse counter data on billing hour.                                                                                                               |
 | `0x17`   | [HourMC](./uplink/HourMC.md)                         | Pulse counter data, accumulated on a hour basis.                                                                                                  |
 | `0x18`   | [CurrentMC](./GetCurrentMC.md#response)              | Response to the [GetCurrentMC](./GetCurrentMC.md#request) downlink command or current pulse counter value.                                        |

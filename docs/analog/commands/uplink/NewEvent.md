@@ -34,7 +34,7 @@ It's the last generated event number.
 
 Event data specific for the event type.
 
-`MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIVATE`, `CAN_OFF`, `INSERT`, `REMOVE`, `COUNTER_OVER`, `OPTOLOW`, `OPTOFLASH`, `JOIN_ACCEPT`
+The data format for these events `MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIVATE`, `CAN_OFF`, `INSERT`, `REMOVE`, `COUNTER_OVER`, `OPTOLOW`, `OPTOFLASH`, `JOIN_ACCEPT` is:
 
 | Size | Type        | Field                                            |
 | ---- | ----------- | ------------------------------------------------ |
@@ -73,12 +73,12 @@ Event data specific for the event type.
 | Field           | Value       | Hex          |
 | --------------- | ----------- | ------------ |
 | command id      | `21`        | `0x15`       |
-| command size    | `4`         | `0x04`       |
+| command size    | `6`         | `0x06`       |
 | event id        | `5`         | `0x05`       |
 | sequence number | `2`         | `0x02`       |
 | time            | `734015840` | `0x2bc03160` |
 
-Message hex dump with LRC: `15 06 01 02 2b c0 31 60 ff`
+Message hex dump with LRC: `15 06 05 02 2b c0 31 60 fb`
 
 #### for `BATTERY_ALARM`:
 

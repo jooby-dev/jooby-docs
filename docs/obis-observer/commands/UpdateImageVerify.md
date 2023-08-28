@@ -10,17 +10,20 @@ This command is part of update procedure.
 
 | Size | Type                                 | Field                               |
 | ---- | ------------------------------------ | ----------------------------------- |
-| `1`  | `byte`                               | command id = `0x2c`                 |
+| `1`  | `byte`                               | command id = `0x32`                 |
+| `1`  | `byte`                               | command size                        |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique  identifier |
+
 
 ### Examples
 
-| Field      | Value | Hex    |
-| ---------- | ----- | ------ |
-| command id | `44`  | `0x2c` |
-| request id | `33`  | `0x21` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `50`  | `0x32` |
+| command size | `1`   | `0x01` |
+| request id   | `33`  | `0x21` |
 
-Message hex dump: `2c 21`
+Message hex dump: `32 01 21`
 
 
 ## Response
@@ -29,31 +32,43 @@ Message hex dump: `2c 21`
 
 | Size | Type                                   | Field                              |
 | ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x2d`                |
+| `1`  | `byte`                                 | command id = `0x33`                |
+| `1`  | `byte`                                 | command size                       |
 | `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
 | `1`  | [Result code](../types.md#result-code) | operation result code              |
+
 
 ### Examples
 
 #### success:
 
-| Field       | Value | Hex    |
-| ----------- | ----- | ------ |
-| command id  | `43`  | `0x2d` |
-| request id  | `32`  | `0x20` |
-| result code | `OK`  | `0x00` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `51`  | `0x33` |
+| command size | `2`   | `0x02` |
+| request id   | `32`  | `0x20` |
+| result code  | `0`   | `0x00` |
 
-Message hex dump: `2b 20 00`
+Message hex dump: `33 02 20 00`
 
 #### failure:
 
-| Field       | Value     | Hex    |
-| ----------- | --------- | ------ |
-| command id  | `43`      | `0x2d` |
-| request id  | `32`      | `0x20` |
-| result code | `FAILURE` | `0x01` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `51`  | `0x33` |
+| command size | `2`   | `0x02` |
+| request id   | `32`  | `0x20` |
+| result code  | `1`   | `0x01` |
 
-Message hex dump: `2d 20 01`
+Message hex dump: `33 02 20 01`
+
+
+### Result codes:
+
+| Result code | Description                       |
+| ----------- | --------------------------------- |
+| `0`         | Ok. The Operation was successful. |
+| `1`         | General failure. Invalid crc.     |
 
 
 ## See also

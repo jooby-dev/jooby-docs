@@ -1,30 +1,34 @@
-# GetShortNameInfo
+# GetObisInfo
 
-Request/response the information for the ShortName.
-Related OBIS and profile.
+Request/response to get the information for the specific OBIS id and meter profile.
 
 
 ## Request
 
 ### Format
 
-| Size | Type                                 | Field                              |
-| ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x0b`                |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Short name](../types.md#short-name) | short name                         |
+| Size | Type                                             | Field                              |
+| ---- | ------------------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                                           | command id = `0x4a`                |
+| `1`  | `byte`                                           | command size                       |
+| `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
+| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `1`  | [OBIS id](../types.md#obis-id)                   | OBIS unique identifier             |
+
 
 ### Examples
 
-#### get info for short name `44`:
+#### get info for OBIS id `44`:
 
-| Field      | Value | Hex    |
-| ---------- | ----- | ------ |
-| command id | `1`   | `0x0b` |
-| request id | `3`   | `0x03` |
-| short name | `44`  | `0x2c` |
+| Field            | Value | Hex    |
+| ---------------- | ----- | ------ |
+| command id       | `74`  | `0x4a` |
+| command size     | `3`   | `0x03` |
+| request id       | `5`   | `0x05` |
+| meter profile id | `10`  | `0x0a` |
+| OBIS id          | `44`  | `0x2c` |
 
-Message hex dump: `0b 03 2c`
+Message hex dump: `4a 03 05 0a 2c`
 
 
 ## Response
@@ -33,30 +37,32 @@ Message hex dump: `0b 03 2c`
 
 | Size  | Type                                     | Field                              |
 | ----- | ---------------------------------------- | ---------------------------------- |
-| `1`   | `byte`                                   | command id = `0x0c`                |
+| `1`   | `byte`                                   | command id = `0x4b`                |
 | `1`   | `byte`                                   | command size (dynamic, `10+`)      |
 | `1`   | [Request ID](../types.md#request-id)     | request/response unique identifier |
 | `3-7` | [OBIS](../types.md#obis)                 | OBIS code                          |
 | `6`   | [OBIS profile](../types.md#obis-profile) | OBIS profile                       |
 
+
 ### Examples
 
-#### short name info for OBIS `0.9.1`:
+#### OBIS id info for OBIS `0.9.1`:
 
 | Field        | Value                                                                                                                                                                                 | Hex              |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| command id   | `12`                                                                                                                                                                                  | `0x0c`           |
+| command id   | `75`                                                                                                                                                                                  | `0x4b`           |
 | command size | `11`                                                                                                                                                                                  | `0x0b`           |
 | request id   | `3`                                                                                                                                                                                   | `0x03`           |
 | OBIS code    | C: `0`, D: `9`, E: `1`                                                                                                                                                                | `0x02000901`     |
 | OBIS profile | capturePeriod: `344` <br> sendingPeriod: `532` <br> sendingCounter: `61` <br> contentType: `STRING` <br> sendOnChange: `0` <br> archiveProfile1: `false` <br> archiveProfile2: `true` | `0x015802143d0a` |
 
-Message hex dump: `0c 0b 03 02 00 09 01 01 58 02 14 3d 0a`
+Message hex dump: `4b 0b 03 02 00 09 01 01 58 02 14 3d 0a`
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Short name](../types.md#short-name)
+* [Meter profile id](../types.md#meter-profile-id)
+* [OBIS id](../types.md#obis-id)
 * [OBIS](../types.md#obis)
 * [OBIS profile](../types.md#obis-profile)

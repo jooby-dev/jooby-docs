@@ -1,7 +1,6 @@
-# RemoveObisProfile
+# RemoveMeterProfile
 
-Request/response to remove the specific OBIS profile.
-
+Request/response to remove the specific meter profile.
 
 ## Request
 
@@ -9,25 +8,22 @@ Request/response to remove the specific OBIS profile.
 
 | Size | Type                                             | Field                              |
 | ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x46`                |
+| `1`  | `byte`                                           | command id = `0x62`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
-| `1`  | [OBIS id](../types.md#obis-id)                   | OBIS unique identifier             |
+
 
 ### Examples
 
-#### remove profile for OBIS id `28`:
+| Field            | Value | Hex    |
+| ---------------- | ----- | ------ |
+| command id       | `98`  | `0x62` |
+| command size     | `2`   | `0x02` |
+| request id       | `18`  | `0x12` |
+| meter profile id | `2`   | `0x02` |
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `70`  | `0x46` |
-| command size | `2`   | `0x02` |
-| request id   | `5`   | `0x05` |
-| obis id      | `28`  | `0x1c` |
-
-
-Message hex dump: `46 02 05 1c`
+Message hex dump: `62 02 18 02`
 
 
 ## Response
@@ -36,7 +32,7 @@ Message hex dump: `46 02 05 1c`
 
 | Size | Type                                   | Field                              |
 | ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x47`                |
+| `1`  | `byte`                                 | command id = `0x63`                |
 | `1`  | `byte`                                 | command size                       |
 | `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
 | `1`  | [Result code](../types.md#result-code) | operation result code              |
@@ -44,16 +40,24 @@ Message hex dump: `46 02 05 1c`
 
 ### Examples
 
-#### remove OBIS profile - not found:
+#### success:
 
-| Field        | Value               | Hex    |
-| ------------ | ------------------- | ------ |
-| command id   | `71`                | `0x47` |
-| command size | `2`                 | `0x02` |
-| request id   | `5`                 | `0x05` |
-| result code  | `PROFILE_NOT_FOUND` | `0x05` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `99`  | `0x63` |
+| command size | `2`   | `0x02` |
+| request id   | `7`   | `0x07` |
+| result code  | `OK`  | `0x00` |
 
-Message hex dump: `47 02 05 05`
+Message hex dump: `26 02 07 00`
+
+
+### Result codes:
+
+| Result code | Description                       |
+| ----------- | --------------------------------- |
+| `0`         | Ok. The Operation was successful. |
+| `10`        | The meter profile not found.      |
 
 
 ## See also
@@ -61,4 +65,3 @@ Message hex dump: `47 02 05 05`
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
 * [Meter profile id](../types.md#meter-profile-id)
-* [OBIS id](../types.md#obis-id)

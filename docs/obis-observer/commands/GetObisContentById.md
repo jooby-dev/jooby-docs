@@ -1,6 +1,6 @@
-# GetContentByShortName
+# GetObisContentById
 
-Request/response to get the OBIS code content from the metering device.
+Request/response to get the OBIS code content from the specific metering device.
 
 
 ## Request
@@ -9,21 +9,25 @@ Request/response to get the OBIS code content from the metering device.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x17`                |
+| `1`  | `byte`                               | command id = `0x4e`                |
+| `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Short name](../types.md#short-name) | short name                         |
+| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+| `1`  | [OBIS id](../types.md#obis-id)       | OBIS unique identifier             |
 
 ### Examples
 
-#### get content for short name `50`:
+#### get content for OBIS id `50`:
 
-| Field      | Value | Hex    |
-| ---------- | ----- | ------ |
-| command id | `23`  | `0x17` |
-| request id | `121` | `0x79` |
-| short name | `50`  | `0x32` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `78`  | `0x4e` |
+| command size | `3`   | `0x03` |
+| request id   | `121` | `0x79` |
+| meter id     | `11`  | `0x0b` |
+| OBIS id      | `50`  | `0x32` |
 
-Message hex dump: `17 79 32`
+Message hex dump: `4e 03 79 0b 32`
 
 
 ## Response with float content
@@ -32,19 +36,21 @@ Message hex dump: `17 79 32`
 
 | Size | Type                                 | Field                                      |
 | ---- | ------------------------------------ | ------------------------------------------ |
-| `1`  | `byte`                               | command id = `0x18`                        |
+| `1`  | `byte`                               | command id = `0x4f`                        |
+| `1`  | `byte`                               | command size                               |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier         |
 | `4`  | `float32`                            | OBIS code content from the metering device |
 
 ### Examples
 
-| Field      | Value    | Hex          |
-| ---------- | -------- | ------------ |
-| command id | `24`     | `0x18`       |
-| request id | `121`    | `0x79`       |
-| content    | `344.23` | `0x43ac1d71` |
+| Field        | Value    | Hex          |
+| ------------ | -------- | ------------ |
+| command id   | `79`     | `0x4f`       |
+| command size | `5`      | `0x05`       |
+| request id   | `121`    | `0x79`       |
+| content      | `344.23` | `0x43ac1d71` |
 
-Message hex dump: `18 79 43 ac 1d 71`
+Message hex dump: `4f 05 79 43 ac 1d 71`
 
 
 ## Response with string content
@@ -53,7 +59,7 @@ Message hex dump: `18 79 43 ac 1d 71`
 
 | Size | Type                                 | Field                                      |
 | ---- | ------------------------------------ | ------------------------------------------ |
-| `1`  | `byte`                               | command id = `0x19`                        |
+| `1`  | `byte`                               | command id = `0x50`                        |
 | `1`  | `byte`                               | command size (dynamic, `3+`)               |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier         |
 | `1+` | [String](../types.md#string)         | OBIS code content from the metering device |
@@ -62,16 +68,17 @@ Message hex dump: `18 79 43 ac 1d 71`
 
 | Field        | Value          | Hex                            |
 | ------------ | -------------- | ------------------------------ |
-| command id   | `25`           | `0x19`                         |
+| command id   | `80`           | `0x50`                         |
 | command size | `14`           | `0x0e`                         |
 | request id   | `121`          | `0x79`                         |
 | content      | `Total energy` | `0x0c546f74616c20656e65726779` |
 
-Message hex dump: `19 0e 79 0c 54 6f 74 61 6c 20 65 6e 65 72 67 79`
+Message hex dump: `50 0e 79 0c 54 6f 74 61 6c 20 65 6e 65 72 67 79`
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Short name](../types.md#short-name)
+* [Meter id](../types.md#meter-id)
+* [OBIS id](../types.md#OBIS-id)
 * [String](../types.md#string)

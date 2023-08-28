@@ -1,6 +1,6 @@
-# Reboot
+# RemoveMeter
 
-Request/response to restart the device.
+Request/response to remove specific meter device.
 
 
 ## Request
@@ -9,19 +9,22 @@ Request/response to restart the device.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x09`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `byte`                               | command id = `0x72`                |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+
 
 ### Examples
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `9`   | `0x09` |
-| command size | `1`   | `0x01` |
-| request id   | `3`   | `0x03` |
+| command id   | `114` | `0x72` |
+| command size | `2`   | `0x02` |
+| request id   | `121` | `0x29` |
+| meter id     | `1`   | `0x01` |
 
-Message hex dump: `09 01 03`
+Message hex dump: `72 02 29 01`
 
 
 ## Response
@@ -30,7 +33,7 @@ Message hex dump: `09 01 03`
 
 | Size | Type                                   | Field                              |
 | ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x0a`                |
+| `1`  | `byte`                                 | command id = `0x73`                |
 | `1`  | `byte`                                 | command size                       |
 | `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
 | `1`  | [Result code](../types.md#result-code) | operation result code              |
@@ -42,12 +45,23 @@ Message hex dump: `09 01 03`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `10`  | `0x0a` |
+| command id   | `115` | `0x73` |
 | command size | `2`   | `0x02` |
-| request id   | `3`   | `0x03` |
+| request id   | `156` | `0x9c` |
 | result code  | `OK`  | `0x00` |
 
-Message hex dump: `0a 02 03 00`
+Message hex dump: `71 02 9c 00`
+
+#### general error:
+
+| Field        | Value     | Hex    |
+| ------------ | --------- | ------ |
+| command id   | `115`     | `0x73` |
+| command size | `2`       | `0x02` |
+| request id   | `49`      | `0x31` |
+| result code  | `FAILURE` | `0x01` |
+
+Message hex dump: `71 02 31 01`
 
 
 ### Result codes:
@@ -55,8 +69,11 @@ Message hex dump: `0a 02 03 00`
 | Result code | Description                       |
 | ----------- | --------------------------------- |
 | `0`         | Ok. The Operation was successful. |
+| `8`         | The meter not found.              |
+
 
 ## See also
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
+* [Meter id](../types.md#meter-id)

@@ -1,6 +1,6 @@
-# GetDate
+# GeMeterDate
 
-Request/response to get the current date and time on the device.
+Request/response to get the current date and time on the specific meter.
 
 
 ## Request
@@ -9,47 +9,50 @@ Request/response to get the current date and time on the device.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x22`                |
+| `1`  | `byte`                               | command id = `0x7a`                |
+| `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
+| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
 
 ### Examples
 
-| Field      | Value | Hex    |
-| ---------- | ----- | ------ |
-| command id | `34`  | `0x22` |
-| request id | `18`  | `0x12` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `122` | `0x7a` |
+| command size | `2`   | `0x02` |
+| request id   | `18`  | `0x12` |
+| meter id     | `1`   | `0x01` |
 
-Message hex dump: `22 12`
+Message hex dump: `7a 02 12 01`
 
 
 ## Response
 
 ### Format
 
-| Size | Type                                 | Field                                            |
-| ---- | ------------------------------------ | ------------------------------------------------ |
-| `1`  | `byte`                               | command id = `0x23`                              |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier               |
-| `4`  | [Time 2000](../types.md#time-2000)   | The field specifies a current time on the device |
-| `4`  | `uint32_be`                          | uptime in seconds                                |
-
+| Size | Type                                 | Field                                           |
+| ---- | ------------------------------------ | ----------------------------------------------- |
+| `1`  | `byte`                               | command id = `0x7b`                             |
+| `1`  | `byte`                               | command size                                    |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier              |
+| `4`  | [Time 2000](../types.md#time-2000)   | The field specifies a current time on the meter |
 
 
 ### Examples
 
-#### Device information:
+| Field        | Value                     | Hex          |
+| ------------ | ------------------------- | ------------ |
+| command id   | `123`                     | `0x7b`       |
+| command size | `2`                       | `0x02`       |
+| request id   | `7`                       | `0x07`       |
+| time         | `2023.06.28 15:15:02 GMT` | `0x2c2f0af6` |
 
-| Field             | Value                     | Hex          |
-| ----------------- | ------------------------- | ------------ |
-| command id        | `35`                      | `0x23`       |
-| request id        | `7`                       | `0x07`       |
-| time              | `2023.06.28 15:15:02 GMT` | `0x2c2f0af6` |
-| uptime in seconds | `4016`                    | `0x00000fb0` |
 
-Message hex dump: `23 07 2c 2f 0a f6 00 00 0f b0`
+Message hex dump: `7b 05 07 2c 2f 0a f6`
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
+* [Meter id](../types.md#meter-id)
 * [Time 2000](../types.md#time-2000)

@@ -10,17 +10,20 @@ This command is part of update procedure.
 
 | Size | Type                                 | Field                               |
 | ---- | ------------------------------------ | ----------------------------------- |
-| `1`  | `byte`                               | command id = `0x2e`                 |
+| `1`  | `byte`                               | command id = `0x34`                 |
+| `1`  | `byte`                               | command size                        |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique  identifier |
+
 
 ### Examples
 
-| Field      | Value | Hex    |
-| ---------- | ----- | ------ |
-| command id | `46`  | `0x2e` |
-| request id | `33`  | `0x21` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `52`  | `0x34` |
+| command size | `1`   | `0x01` |
+| request id   | `33`  | `0x21` |
 
-Message hex dump: `2e 21`
+Message hex dump: `34 01 21`
 
 
 ## Response
@@ -29,31 +32,31 @@ Message hex dump: `2e 21`
 
 | Size | Type                                   | Field                              |
 | ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x2f`                |
+| `1`  | `byte`                                 | command id = `0x35`                |
+| `1`  | `byte`                                 | command size                       |
 | `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
 | `1`  | [Result code](../types.md#result-code) | operation result code              |
+
 
 ### Examples
 
 #### success:
 
-| Field       | Value | Hex    |
-| ----------- | ----- | ------ |
-| command id  | `47`  | `0x2f` |
-| request id  | `32`  | `0x20` |
-| result code | `OK`  | `0x00` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `53`  | `0x35` |
+| command size | `2`   | `0x02` |
+| request id   | `32`  | `0x20` |
+| result code  | `OK`  | `0x00` |
 
-Message hex dump: `2f 20 00`
+Message hex dump: `35 02 20 00`
 
-#### failure:
 
-| Field       | Value     | Hex    |
-| ----------- | --------- | ------ |
-| command id  | `47`      | `0x1f` |
-| request id  | `32`      | `0x20` |
-| result code | `FAILURE` | `0x01` |
+### Result codes:
 
-Message hex dump: `2f 20 01`
+| Result code | Description                       |
+| ----------- | --------------------------------- |
+| `0`         | Ok. The Operation was successful. |
 
 
 ## See also

@@ -1,16 +1,16 @@
-# Short names with OBIS codes
+# OBIS id list with OBIS codes
 
-Short name is a one-byte number that will be used in all messages to represent the OBIS code.
+OBIS id is a one-byte number that will be used in all messages to represent the OBIS code.
 
-`1`-`199` - [static names](#static) that can't be changed.
-`210`-`235` - [reassignable names](#reassignable).
+`1`-`199` - [list of static id](#static) that can't be changed.
+`210`-`235` - [list of reassignable id](#reassignable).
 
 
 ## Static
 
 ### General
 
-| Short name | OBIS code | Description                                                             |
+| OBIS id  | OBIS code | Description                                                             |
 | ---------- | --------- | ----------------------------------------------------------------------- |
 | `1`        | `1.4.0`   | active power+ (`QI`+`QIV`), current avg. `1`                            |
 | `2`        | `1.5.0`   | active power+ (`QI`+`QIV`), average                                     |
@@ -148,7 +148,7 @@ Short name is a one-byte number that will be used in all messages to represent t
 
 ### Instantaneous
 
-| Short name | OBIS code | Description                                             |
+| OBIS id  | OBIS code | Description                                             |
 | ---------- | --------- | ------------------------------------------------------- |
 | `134`      | `1.7.0`   | active power+ (`QI`+`QIV`)                              |
 | `135`      | `21.7.0`  | active power+ (`QI`+`QIV`), `L1`                        |
@@ -212,7 +212,7 @@ Short name is a one-byte number that will be used in all messages to represent t
 
 ### Abstract
 
-| Short name | OBIS code   | Description                |
+| OBIS id  | OBIS code   | Description                |
 | ---------- | ----------- | -------------------------- |
 | `193`      | `0.0.0`     | device ID                  |
 | `194`      | `0.2.0`     | active firmware identifier |
@@ -225,7 +225,7 @@ Short name is a one-byte number that will be used in all messages to represent t
 
 ## Reassignable
 
-| Short name | OBIS code | Description                                                                        |
+| OBIS id  | OBIS code | Description                                                                        |
 | ---------- | --------- | ---------------------------------------------------------------------------------- |
 | `210`      | `C.5.0`   | internal operating status, global                                                  |
 | `211`      | `C.5.1`   | internal operating status (status word `1`)                                        |

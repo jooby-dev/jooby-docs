@@ -3,11 +3,32 @@
 Commands use many specific data types packed to bytes.
 This document describes these types and structuring principles.
 
+# Meter profile
 
-## Short name
+Meter profile contains all data which we need to observe, archive and report the OBIS content.
+- archive settings. 
+- custom OBIS table. Setup obis id for the custom OBIS code, see [reassignable table](./obis-id.md#reassignable).
+- table of the [OBIS profiles](#obis-profile). They describe how to read, archive and report the specific OBIS.
+
+## Meter profile id
+
+A `1`-byte unique number which used to represent the specific meter profile.
+`0xff` considers as invalid meter profile id.
+
+# Meter
+- meter address. The string 32 characters maximum. Usually equals to the serial number of the meter.
+Only one meter with meter id `0` have empty address and works only in [single mode](./singleMultiMode.md#single-mode).
+- [meter profile id](#meter-profile-id). Link to meter profile to use.
+
+## Meter id
+
+A `1`-byte number will be used in all messages to represent the specific meter.
+`0xff` considers as invalid meter id.
+
+## Obis id
 
 A `1`-byte number will be used in all messages to represent the specific OBIS code.
-See the full list of [short names](short-names.md).
+See the full list of [obis id](obis-id-list.md).
 
 
 ## Time 2000
@@ -277,8 +298,8 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
             <td colspan="3"><code>0</code></td>
             <td colspan="2"><a href="#contenttype">Content type</a></td>
             <td>Send on change</td>
-            <td><a href="#archive-profile-2">Archive profile 2</a></td>
-            <td><a href="#archive-profile-1">Archive profile 1</a></td>
+            <td><a href="#archive-1">Archive 1</a></td>
+            <td><a href="#archive-2">Archive 2</a></td>
         </tr>
     </tbody>
 </table>
@@ -291,27 +312,35 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
 | `1`   | float                      |
 | `2`   | string                     |
 
-### Archive profile 1
+### Archive 1
 
 The archive contains data that has been collected over a long interval.
 By default, the archive period is one day.                                                |
 
-### Archive profile 2
+### Archive 2
 
 This archive contains data that is captured at a highly detailed level, providing a granular view of performance.
-By default, the archive period is `15` minutes. |
+By default, the archive period is `15` minutes.
 
 
 ## Result code
 
-| Value | Description                                                      |
-| ----- | ---------------------------------------------------------------- |
-| `0`   | Ok. The Operation was successful.                                |
-| `1`   | General failure.                                                 |
-| `2`   | Forbidden to reassign the static short name.                     |
-| `3`   | The short name to OBIS code map full: unable to add new entries. |
-| `4`   | Short name not found.                                            |
-| `5`   | Profile not found.                                               |
+| Value | Description                                                 |
+| ----- | ----------------------------------------------------------- |
+| `0`   | Ok. The Operation was successful.                           |
+| `1`   | General failure.                                            |
+| `2`   | Wrong arguments.                                            |
+| `3`   | Forbidden to reassign the static OBIS id.                   |
+| `4`   | The OBIS id table full. Unable to add new entries.          |
+| `5`   | OBIS profile not found.                                     |
+| `6`   | The OBIS profile id table full. Unable to add new entries.  |
+| `7`   | The meter id table full. Unable to add new entries.         |
+| `8`   | The meter not found.                                        |
+| `9`   | The meter profile id table full. Unable to add new entries. |
+| `10`  | The meter profile not found.                                |
+| `11`  | The meter profile exists.                                   |
+| `12`  | The single meter mode collision.                            |
+| `13`  | The multi meter mode unsupported.                           |
 
 
 ## LoRaWAN activation method

@@ -12,12 +12,12 @@ Request/response to remove the specific OBIS profile.
 | `1`  | `byte`                                           | command id = `0x46`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
-| `1`  | [OBIS id](../types.md#obis-id)                   | OBIS unique identifier             |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `1`  | [OBIS ID](../types.md#obis-id)                   | OBIS unique identifier             |
 
 ### Examples
 
-#### remove profile for OBIS id `28`:
+#### remove profile for OBIS ID `28`:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
@@ -60,5 +60,5 @@ Message hex dump: `47 02 05 05`
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
-* [Meter profile id](../types.md#meter-profile-id)
-* [OBIS id](../types.md#obis-id)
+* [Meter profile ID](../types.md#meter-profile-id)
+* [OBIS ID](../types.md#obis-id)

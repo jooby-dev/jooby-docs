@@ -11,7 +11,7 @@ Request/response to remove the specific meter profile.
 | `1`  | `byte`                                           | command id = `0x62`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
 
 
 ### Examples
@@ -23,7 +23,7 @@ Request/response to remove the specific meter profile.
 | request id       | `18`  | `0x12` |
 | meter profile id | `2`   | `0x02` |
 
-Message hex dump: `62 02 18 02`
+Message hex dump: `62 02 12 02`
 
 
 ## Response
@@ -49,7 +49,7 @@ Message hex dump: `62 02 18 02`
 | request id   | `7`   | `0x07` |
 | result code  | `OK`  | `0x00` |
 
-Message hex dump: `26 02 07 00`
+Message hex dump: `63 02 07 00`
 
 
 ### Result codes:
@@ -64,4 +64,4 @@ Message hex dump: `26 02 07 00`
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
-* [Meter profile id](../types.md#meter-profile-id)
+* [Meter profile ID](../types.md#meter-profile-id)

@@ -12,7 +12,7 @@ Request/response to remove specific meter device.
 | `1`  | `byte`                               | command id = `0x72`                |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `1`  | `byte`                               | command size                       |
-| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 
 ### Examples
@@ -48,20 +48,20 @@ Message hex dump: `72 02 29 01`
 | command id   | `115` | `0x73` |
 | command size | `2`   | `0x02` |
 | request id   | `156` | `0x9c` |
-| result code  | `OK`  | `0x00` |
+| result code  | `0`   | `0x00` |
 
-Message hex dump: `71 02 9c 00`
+Message hex dump: `73 02 9c 00`
 
-#### general error:
+#### the meter not found
 
-| Field        | Value     | Hex    |
-| ------------ | --------- | ------ |
-| command id   | `115`     | `0x73` |
-| command size | `2`       | `0x02` |
-| request id   | `49`      | `0x31` |
-| result code  | `FAILURE` | `0x01` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `115` | `0x73` |
+| command size | `2`   | `0x02` |
+| request id   | `49`  | `0x31` |
+| result code  | `1 `  | `0x08` |
 
-Message hex dump: `71 02 31 01`
+Message hex dump: `73 02 31 08`
 
 
 ### Result codes:
@@ -76,4 +76,4 @@ Message hex dump: `71 02 31 01`
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
-* [Meter id](../types.md#meter-id)
+* [Meter ID](../types.md#meter-id)

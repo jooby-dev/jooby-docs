@@ -3,29 +3,35 @@
 Commands use many specific data types packed to bytes.
 This document describes these types and structuring principles.
 
-# Meter profile
+## Meter profile
 
-Meter profile contains all data which we need to observe, archive and report the OBIS content.
-- archive settings. 
-- custom OBIS table. Setup obis id for the custom OBIS code, see [reassignable table](./obis-id.md#reassignable).
-- table of the [OBIS profiles](#obis-profile). They describe how to read, archive and report the specific OBIS.
+Meter profile contains all data which we need to observe, archive and report the OBIS content:
+- archive settings
+- [reassignable table](./obis-id.md#reassignable)
+- table of the [OBIS profiles](#obis-profile)
 
-## Meter profile id
+### Meter profile ID
 
 A `1`-byte unique number which used to represent the specific meter profile.
 `0xff` considers as invalid meter profile id.
 
-# Meter
-- meter address. The string 32 characters maximum. Usually equals to the serial number of the meter.
-Only one meter with meter id `0` have empty address and works only in [single mode](./singleMultiMode.md#single-mode).
-- [meter profile id](#meter-profile-id). Link to meter profile to use.
+## Meter
 
-## Meter id
+### Meter address
+
+The string 32 characters maximum. Usually equals to the serial number of the meter.
+Only one meter with meter id `0` have empty address and works only in [single mode](./singleMultiMode.md#single-mode).
+
+### Meter profile ID
+
+Link to meter profile to use.
+
+### Meter ID
 
 A `1`-byte number will be used in all messages to represent the specific meter.
 `0xff` considers as invalid meter id.
 
-## Obis id
+## OBIS ID
 
 A `1`-byte number will be used in all messages to represent the specific OBIS code.
 See the full list of [obis id](obis-id-list.md).
@@ -330,8 +336,8 @@ By default, the archive period is `15` minutes.
 | `0`   | Ok. The Operation was successful.                           |
 | `1`   | General failure.                                            |
 | `2`   | Wrong arguments.                                            |
-| `3`   | Forbidden to reassign the static OBIS id.                   |
-| `4`   | The OBIS id table full. Unable to add new entries.          |
+| `3`   | Forbidden to reassign the static OBIS ID.                   |
+| `4`   | The OBIS ID table full. Unable to add new entries.          |
 | `5`   | OBIS profile not found.                                     |
 | `6`   | The OBIS profile id table full. Unable to add new entries.  |
 | `7`   | The meter id table full. Unable to add new entries.         |

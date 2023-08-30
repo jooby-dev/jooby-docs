@@ -52,7 +52,7 @@ Message hex dump: `19 01 03`
 | max OBIS profiles number  | `8`   | `0x08` |
 | is multi-mode supported   | `1`   | `0x01` |
 
-Message hex dump: `1a 05 08 08 08 01`
+Message hex dump: `1a 05 07 08 08 08 01`
 
 
 ## See also

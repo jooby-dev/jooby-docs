@@ -12,7 +12,7 @@ Request/response to get the archive settings for the specific meter profile.
 | `1`  | `byte`                                           | command id = `0x66`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
 
 
 ### Examples
@@ -59,5 +59,5 @@ Message hex dump: `67 05 03 02 58 00 2d`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter profile id](../types.md#meter-profile-id)
+* [Meter profile ID](../types.md#meter-profile-id)
   

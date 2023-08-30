@@ -3,5 +3,5 @@
 - [Message format](./message.md)
 - [Data types](./types.md)
 - [Available commands](./commands/readme.md)
-- [OBIS id list with OBIS codes](./obis-id-list.md)
+- [OBIS ID list with OBIS codes](./obis-id-list.md)
 - [Single mode](./single-mode.md)

@@ -12,7 +12,7 @@ Request/response to get the OBIS code content from the specific metering device.
 | `1`   | `byte`                               | command id = `0x4c`                |
 | `1`   | `byte`                               | command size                       |
 | `1`   | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`   | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+| `1`   | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 | `3-7` | [OBIS](../types.md#obis)             | OBIS code                          |
 
 
@@ -58,6 +58,6 @@ Message hex dump: `4b 0a 02 08 35 37 39 30 36 36 33 35`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter id](../types.md#meter-id)
+* [Meter ID](../types.md#meter-id)
 * [OBIS](../types.md#obis)
 * [String](../types.md#string)

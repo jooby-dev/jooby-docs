@@ -17,7 +17,7 @@ Request to set the single or multi mode of the observer device.
 
 ### Examples
 
-#### get profile for OBIS id `128`:
+#### get profile for OBIS ID `128`:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
@@ -54,7 +54,7 @@ Message hex dump: `0b 02 04 01`
 
 Message hex dump: `0c 02 9c 00`
 
-#### failure:
+#### the multi mode unsupported:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
@@ -63,7 +63,7 @@ Message hex dump: `0c 02 9c 00`
 | request id   | `156` | `0x9c` |
 | result code  | `13`  | `0x0d` |
 
-Message hex dump: `0c 02 9c 01`
+Message hex dump: `0c 02 9c 0d`
 
 
 ### Result codes:

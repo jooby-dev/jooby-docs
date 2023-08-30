@@ -115,7 +115,7 @@ Message hex dump: `07 04 34 05 08 05`
 
 Message hex dump: `08 02 20 00`
 
-#### failure:
+#### wrong argument:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |

@@ -13,8 +13,8 @@ A new meter will be created if it doesn't exist.
 | `1`  | `byte`                                           | command id = `0x70`                |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`  | `byte`                                           | command size                       |
-| `1`  | [Meter id](../types.md#meter-id)                 | meter unique identifier            |
-| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `1`  | [Meter ID](../types.md#meter-id)                 | meter unique identifier            |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
 | `1+` | [String](../types.md#string)                     | meter address                      |
 
 
@@ -57,16 +57,16 @@ Message hex dump: `70 0c 29 01 02 07 32 33 34 35 34 33 32`
 
 Message hex dump: `71 02 9c 00`
 
-#### failure:
+#### the meter profile not found:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `113` | `0x71` |
 | command size | `2`   | `0x02` |
 | request id   | `49`  | `0x31` |
-| result code  | `2`   | `0x02` |
+| result code  | `10`  | `0x0a` |
 
-Message hex dump: `71 02 31 02`
+Message hex dump: `71 02 31 0a`
 
 
 ### Result codes:
@@ -84,5 +84,5 @@ Message hex dump: `71 02 31 02`
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
-* [Meter id](../types.md#meter-id)
-* [Meter profile id](../types.md#meter-profile-id)
+* [Meter ID](../types.md#meter-id)
+* [Meter profile ID](../types.md#meter-profile-id)

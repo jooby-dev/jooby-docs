@@ -12,12 +12,12 @@ Request/response to get the OBIS code content from the specific metering device.
 | `1`  | `byte`                               | command id = `0x4e`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
-| `1`  | [OBIS id](../types.md#obis-id)       | OBIS unique identifier             |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
+| `1`  | [OBIS ID](../types.md#obis-id)       | OBIS unique identifier             |
 
 ### Examples
 
-#### get content for OBIS id `50`:
+#### get content for OBIS ID `50`:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
@@ -25,7 +25,7 @@ Request/response to get the OBIS code content from the specific metering device.
 | command size | `3`   | `0x03` |
 | request id   | `121` | `0x79` |
 | meter id     | `11`  | `0x0b` |
-| OBIS id      | `50`  | `0x32` |
+| OBIS ID      | `50`  | `0x32` |
 
 Message hex dump: `4e 03 79 0b 32`
 
@@ -79,6 +79,6 @@ Message hex dump: `50 0e 79 0c 54 6f 74 61 6c 20 65 6e 65 72 67 79`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter id](../types.md#meter-id)
-* [OBIS id](../types.md#OBIS-id)
+* [Meter ID](../types.md#meter-id)
+* [OBIS ID](../types.md#OBIS-id)
 * [String](../types.md#string)

@@ -10,12 +10,12 @@ The message includes the OBIS content captured according to schedule and contain
 | ---- | ---------------------------------- | -------------------------------------------- |
 | `1`  | `byte`                             | command id = `0x52`                          |
 | `1`  | `byte`                             | command size (dynamic, `10+`)                |
-| `1`  | [Meter id](../types.md#meter-id)   | meter unique identifier                      |
+| `1`  | [Meter ID](../types.md#meter-id)   | meter unique identifier                      |
 | `4`  | [Time 2000](../types.md#time-2000) | date and time at which the data was captured |
-| `1`  | [OBIS id](../types.md#obis-id)     | OBIS id `1`                                  |
+| `1`  | [OBIS ID](../types.md#obis-id)     | OBIS ID `1`                                  |
 | `4`  | [String](../types.md#string)       | OBIS content `1`                             |
 | ...  | ...                                | ...                                          |
-| `1`  | [OBIS id](../types.md#obis-id)     | OBIS id `N`                                  |
+| `1`  | [OBIS ID](../types.md#obis-id)     | OBIS ID `N`                                  |
 | `4`  | [String](../types.md#string)       | OBIS content `N`                             |
 
 ### Examples
@@ -26,9 +26,9 @@ The message includes the OBIS content captured according to schedule and contain
 | command size     | `59`                         | `0x3b`                                                     |
 | meter id         | `2`                          | `0x02`                                                     |
 | time             | `2023.12.23 00:00:00 GMT`    | `0x2d18df80`                                               |
-| OBIS id `1`      | `50`                         | `0x32`                                                     |
+| OBIS ID `1`      | `50`                         | `0x32`                                                     |
 | OBIS content `1` | `reactive power QI, average` | `0x1a726561637469766520706f7765722051492c2061766572616765` |
-| OBIS id `2`      | `56`                         | `0x38`                                                     |
+| OBIS ID `2`      | `56`                         | `0x38`                                                     |
 | OBIS content `2` | `reactive power QI, total`   | `0x18726561637469766520706f7765722051492c20746f74616c`     |
 
 Message hex dump: `52 3b 02 2d 18 df 80 32 1a 72 65 61 63 74 69 76 65 20 70 6f 77 65 72 20 51 49 2c 20 61 76 65 72 61 67 65 38 18 72 65 61 63 74 69 76 65 20 70 6f 77 65 72 20 51 49 2c 20 74 6f 74 61 6c`
@@ -37,6 +37,6 @@ Message hex dump: `52 3b 02 2d 18 df 80 32 1a 72 65 61 63 74 69 76 65 20 70 6f 7
 ## See also
 
 * [Time 2000](../types.md#time-2000)
-* [OBIS id](../types.md#obis-id)
+* [OBIS ID](../types.md#obis-id)
 * [String](../types.md#string)
-* [Meter id](../types.md#meter-id)
+* [Meter ID](../types.md#meter-id)

@@ -23,7 +23,7 @@ Request/response to get the meter id by the meter address.
 | request id    | `12`      | `0x0c`               |
 | meter address | `2345432` | `0x0732333435343332` |
 
-Message hex dump: `74 09 0c 07 32 33 34 35 34 33 32`
+Message hex dump: `76 09 0c 07 32 33 34 35 34 33 32`
 
 
 ## Response
@@ -35,7 +35,7 @@ Message hex dump: `74 09 0c 07 32 33 34 35 34 33 32`
 | `1`  | `byte`                               | command id = `0x77`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 
 ### Examples
@@ -53,5 +53,5 @@ Message hex dump: `77 02 0c 01`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter id](../types.md#meter-id)
+* [Meter ID](../types.md#meter-id)
 * [String](../types.md#string)

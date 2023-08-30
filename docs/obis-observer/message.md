@@ -27,10 +27,10 @@ Devices send and receive messages in the following format:
             <td>Command id</td>
         </tr>
         <tr align="center">
-            <td>command data size</td>
+            <td>Command data size</td>
         </tr>
         <tr align="center">
-            <td>command data</td>
+            <td>Command data</td>
         </tr>
     </tbody>
 </table>

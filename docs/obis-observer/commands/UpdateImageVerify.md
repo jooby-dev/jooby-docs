@@ -51,7 +51,7 @@ Message hex dump: `32 01 21`
 
 Message hex dump: `33 02 20 00`
 
-#### failure:
+#### general failure:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |

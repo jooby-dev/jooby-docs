@@ -12,7 +12,7 @@ Request/response to get the current date and time on the specific meter.
 | `1`  | `byte`                               | command id = `0x7a`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 ### Examples
 
@@ -54,5 +54,5 @@ Message hex dump: `7b 05 07 2c 2f 0a f6`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter id](../types.md#meter-id)
+* [Meter ID](../types.md#meter-id)
 * [Time 2000](../types.md#time-2000)

@@ -30,9 +30,9 @@ There are `2` types of command direction:
 | `0x44` | [AddObisProfile](./AddObisProfile.md#request)                         | Request to add OBIS profile.                                                   |
 | `0x46` | [RemoveObisProfile](./RemoveObisProfile.md#request)                   | Request to remove OBIS profile.                                                |
 | `0x48` | [GetObisProfile](./GetObisProfile.md#request)                         | Request to get OBIS profile.                                                   |
-| `0x4a` | [GetObisInfo](./GetObisInfo.md#request)                               | Request to get OBIS information by OBIS id. Related OBIS and profile..         |
+| `0x4a` | [GetObisInfo](./GetObisInfo.md#request)                               | Request to get OBIS information by OBIS ID. Related OBIS and profile..         |
 | `0x4c` | [GetObisContent](./GetObisContent.md#request)                         | Request to get OBIS content.                                                   |
-| `0x4e` | [GetObisContentById](./GetObisContentById.md#request)                 | Request to get OBIS content by OBIS id.                                        |
+| `0x4e` | [GetObisContentById](./GetObisContentById.md#request)                 | Request to get OBIS content by OBIS ID.                                        |
 | `0x60` | [AddMeterProfile](./AddMeterProfile.md#request)                       | Request to add meter profile.                                                  |
 | `0x62` | [RemoveMeterProfile](./RemoveMeterProfile.md#request)                 | Request to remove meter profile.                                               |
 | `0x64` | [GetMeterProfileIdList](./GetMeterProfileIdList.md#request)           | Get the list of the meter profile id.                                          |

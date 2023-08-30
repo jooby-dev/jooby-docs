@@ -12,7 +12,7 @@ Request/response to get the readout related state and statistic from the specifi
 | `1`  | `byte`                               | command id = `0x81`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 ### Examples
 
@@ -78,3 +78,4 @@ Message hex dump: `82 16 03 00 00 00 7f 00 00 00 c1 00 0e 00 0c 00 02 00 00 00 0
 ## See also
 
 * [Request ID](../types.md#request-id)
+* [Meter ID](../types.md#meter-id)

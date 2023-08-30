@@ -53,5 +53,4 @@ Message hex dump: `0e 02 07 01`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Single mode](../single-mode.md)
   

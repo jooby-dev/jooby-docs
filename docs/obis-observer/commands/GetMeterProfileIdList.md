@@ -38,7 +38,7 @@ Message hex dump: `64 02 0c 02`
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`  | `byte`                                           | number of all meters profiles      |
 | `1`  | `byte`                                           | number of ids in message           |
-| `1+` | [Meter profile id](../types.md#meter-profile-id) | meter profile id list              |
+| `1+` | [Meter profile ID](../types.md#meter-profile-id) | meter profile id list              |
 
 
 ### Examples
@@ -58,4 +58,4 @@ Message hex dump: `65 05 0c 04 02 01 02`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter profile id](../types.md#meter-profile-id)
+* [Meter profile ID](../types.md#meter-profile-id)

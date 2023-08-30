@@ -12,7 +12,7 @@ Request/response to get the meter profile id and meter address for the specific 
 | `1`  | `byte`                               | command id = `0x78`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter id](../types.md#meter-id)     | meter unique identifier            |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 ### Examples
 
@@ -35,7 +35,7 @@ Message hex dump: `78 02 01 01`
 | `1`  | `byte`                                           | command id = `0x79`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `4`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `4`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
 | `1+` | [String](../types.md#string)                     | meter address                      |
 
 
@@ -55,6 +55,6 @@ Message hex dump: `79 0a 02 01 07 32 33 34 35 34 33 32`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter id](../types.md#meter-id)
-* [Meter profile id](../types.md#meter-profile-id)
+* [Meter ID](../types.md#meter-id)
+* [Meter profile ID](../types.md#meter-profile-id)
 * [String](../types.md#string)

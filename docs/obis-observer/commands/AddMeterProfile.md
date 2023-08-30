@@ -12,7 +12,7 @@ Request/response to add the meter profile.
 | `1`  | `byte`                                           | command id = `0x60`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
 
 
 ### Examples
@@ -26,7 +26,7 @@ Request/response to add the meter profile.
 | request id       | `3`   | `0x03` |
 | meter profile id | `32`  | `0x20` |
 
-Message hex dump: `40 02 03 20`
+Message hex dump: `60 02 03 20`
 
 
 ## Response
@@ -68,4 +68,4 @@ Message hex dump: `61 02 03 00`
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
-* [Meter profile id](../types.md#meter-profile-id)
+* [Meter profile ID](../types.md#meter-profile-id)

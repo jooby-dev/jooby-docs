@@ -1,6 +1,6 @@
 # GetObisInfo
 
-Request/response to get the information for the specific OBIS id and meter profile.
+Request/response to get the information for the specific OBIS ID and meter profile.
 
 
 ## Request
@@ -12,13 +12,13 @@ Request/response to get the information for the specific OBIS id and meter profi
 | `1`  | `byte`                                           | command id = `0x4a`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier    |
-| `1`  | [OBIS id](../types.md#obis-id)                   | OBIS unique identifier             |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
+| `1`  | [OBIS ID](../types.md#obis-id)                   | OBIS unique identifier             |
 
 
 ### Examples
 
-#### get info for OBIS id `44`:
+#### get info for OBIS ID `44`:
 
 | Field            | Value | Hex    |
 | ---------------- | ----- | ------ |
@@ -26,7 +26,7 @@ Request/response to get the information for the specific OBIS id and meter profi
 | command size     | `3`   | `0x03` |
 | request id       | `5`   | `0x05` |
 | meter profile id | `10`  | `0x0a` |
-| OBIS id          | `44`  | `0x2c` |
+| OBIS ID          | `44`  | `0x2c` |
 
 Message hex dump: `4a 03 05 0a 2c`
 
@@ -46,15 +46,15 @@ Message hex dump: `4a 03 05 0a 2c`
 
 ### Examples
 
-#### OBIS id info for OBIS `0.9.1`:
+#### OBIS ID info for OBIS `0.9.1`:
 
-| Field        | Value                                                                                                                                                                                 | Hex              |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| command id   | `75`                                                                                                                                                                                  | `0x4b`           |
-| command size | `11`                                                                                                                                                                                  | `0x0b`           |
-| request id   | `3`                                                                                                                                                                                   | `0x03`           |
-| OBIS code    | C: `0`, D: `9`, E: `1`                                                                                                                                                                | `0x02000901`     |
-| OBIS profile | capturePeriod: `344` <br> sendingPeriod: `532` <br> sendingCounter: `61` <br> contentType: `STRING` <br> sendOnChange: `0` <br> archiveProfile1: `false` <br> archiveProfile2: `true` | `0x015802143d0a` |
+| Field        | Value                                                                                                                                                                   | Hex              |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| command id   | `75`                                                                                                                                                                    | `0x4b`           |
+| command size | `11`                                                                                                                                                                    | `0x0b`           |
+| request id   | `3`                                                                                                                                                                     | `0x03`           |
+| OBIS code    | C: `0`, D: `9`, E: `1`                                                                                                                                                  | `0x02000901`     |
+| OBIS profile | capturePeriod: `344` <br> sendingPeriod: `532` <br> sendingCounter: `61` <br> contentType: `STRING` <br> sendOnChange: `0` <br> archive1: `false` <br> archive2: `true` | `0x015802143d0a` |
 
 Message hex dump: `4b 0b 03 02 00 09 01 01 58 02 14 3d 0a`
 
@@ -62,7 +62,7 @@ Message hex dump: `4b 0b 03 02 00 09 01 01 58 02 14 3d 0a`
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Meter profile id](../types.md#meter-profile-id)
-* [OBIS id](../types.md#obis-id)
+* [Meter profile ID](../types.md#meter-profile-id)
+* [OBIS ID](../types.md#obis-id)
 * [OBIS](../types.md#obis)
 * [OBIS profile](../types.md#obis-profile)

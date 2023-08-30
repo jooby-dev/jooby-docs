@@ -12,7 +12,7 @@ Request/response to set the archive settings for the specific meter profile.
 | `1`  | `byte`                                           | command id = `0x68`                           |
 | `1`  | `byte`                                           | command size                                  |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier            |
-| `1`  | [Meter profile id](../types.md#meter-profile-id) | meter profile unique identifier               |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier               |
 | `2`  | `uint16_be`                                      | archive period for the `Archive 1` in minutes |
 | `2`  | `uint16_be`                                      | archive period for the `Archive 2` in minutes |
 
@@ -55,7 +55,7 @@ Message hex dump: `68 05 23 0b 40 00 1e`
 | request id   | `156` | `0x9c` |
 | result code  | `0`   | `0x00` |
 
-Message hex dump: `10 9c 00`
+Message hex dump: `69 02 9c 00`
 
 #### The meter profile not found:
 
@@ -66,7 +66,7 @@ Message hex dump: `10 9c 00`
 | request id   | `49`  | `0x31` |
 | result code  | `10`  | `0x0a` |
 
-Message hex dump: `69 31 01`
+Message hex dump: `69 02 31 0a`
 
 
 ### Result codes:
@@ -81,4 +81,4 @@ Message hex dump: `69 31 01`
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
-* [Meter profile id](../types.md#meter-profile-id)
+* [Meter profile ID](../types.md#meter-profile-id)

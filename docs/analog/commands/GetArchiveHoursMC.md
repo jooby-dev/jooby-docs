@@ -27,7 +27,7 @@ Start date for requested day pulse counter's values.
 
 #### **hours**
 
-It's a start hour value and the total number of hours (one diff value for each hour).
+It`s full value of pulse counter with diff for each previous hours (8 hours if reporting data interval is set to 4 hours)
 <br>
 [See details](../types.md#packed-hours).
 
@@ -84,7 +84,7 @@ Start date for requested day pulse counter's values.
 
 #### **hours**
 
-It's a start hour value and the total number of hours (one diff value for each hour).
+It`s full value of pulse counter with diff for each previous hours (8 hours if reporting data interval is set to 4 hours)
 <br>
 [See details](../types.md#packed-hours).
 

@@ -15,7 +15,7 @@ The parameter `23` is used for this behavior.
 | ------ | ----------------------------------------------------- | --------------------------------------------------- |
 | `1`    | `byte`                                                | extra flag = `0x1f`                                 |
 | `1`    | `byte`                                                | command id = `0x0a`                                 |
-| `1`    | `byte`                                                | command size (dynamic, `7+`)                        |
+| `1`    | `byte`                                                | command size (dynamic, `6+`)                        |
 | `2`    | [packed date](../../types.md#packed-date)             | [date](#date)                                       |
 | `1`    | [packed hours](../../types.md#packed-hours)           | [hours](#hours)                                     |
 | `1..5` | [extended value](../../types.md#extended-value)       | [channels bit set](../../types.md#channels-bit-set) |
@@ -45,7 +45,7 @@ The command contains pulse counter of channels for this date.
 
 #### **hours**
 
-It's a start hour value and the total number of hours (one diff value for each hour).
+It`s full value of pulse counter with diff for each previous hours (8 hours if reporting data interval is set to 4 hours)
 <br>
 [See details](../../types.md#packed-hours).
 

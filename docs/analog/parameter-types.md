@@ -270,6 +270,57 @@ By default, the value is `327680` or `0x50000` (`10` seconds).
 Message hex dump with LRC: `03 05 0b 00 32 00 00 6a`
 
 
+## Channels config
+
+This parameter set configuration of the module channels, only for universal 4-channels devices
+
+### Format
+
+| Size   | Type   | Field                                                         |
+| ------ | ------ | ------------------------------------------------------------- |
+| `1`    | `byte` | parameter type = `13`                                         |
+| `1`    | `byte` | [channels configuration value](#channels-configuration-value) |
+
+#### **channels configuration value**
+
+Description: `+` enable channel, `-` disable channel
+
+| configuration value | channel 0 | channel 1 | channel 2 | channel 3 | serial |
+|---------------------|-----------|-----------|-----------|-----------|--------|
+| `0`                 | `+`       | `+`       | `+`       | `+`       | `-`    |
+| `1`                 | `+`       | `+`       | `+`       | `-`       | `-`    |
+| `2`                 | `+`       | `+`       | `-`       | `+`       | `-`    |
+| `3`                 | `+`       | `+`       | `-`       | `-`       | `-`    |
+| `4`                 | `+`       | `-`       | `+`       | `+`       | `-`    |
+| `5`                 | `+`       | `-`       | `+`       | `-`       | `-`    |
+| `6`                 | `+`       | `-`       | `-`       | `+`       | `-`    |
+| `7`                 | `+`       | `-`       | `-`       | `-`       | `-`    |
+| `8`                 | `-`       | `+`       | `+`       | `+`       | `-`    |
+| `9`                 | `-`       | `+`       | `+`       | `-`       | `-`    |
+| `10`                | `-`       | `+`       | `-`       | `+`       | `-`    |
+| `11`                | `-`       | `+`       | `-`       | `-`       | `-`    |
+| `12`                | `-`       | `-`       | `+`       | `+`       | `-`    |
+| `13`                | `-`       | `-`       | `+`       | `-`       | `-`    |
+| `14`                | `-`       | `-`       | `-`       | `+`       | `-`    |
+| `15`                | `-`       | `-`       | `-`       | `-`       | `+`    |
+| `16`                | `+`       | `+`       | `-`       | `-`       | `+`    |
+| `17`                | `+`       | `-`       | `-`       | `-`       | `+`    |
+| `18`                | `-`       | `+`       | `-`       | `-`       | `+`    |
+
+### Examples
+
+#### enable 1-4 channels, and disable serial channel for device:
+
+| Field                        | Value | Hex    |
+| ---------------------------- | ----- | ------ |
+| command id                   | `3`   | `0x03` |
+| command size                 | `2`   | `0x02` |
+| parameter type               | `13`  | `0x0d` |
+| channels configuration value | `0`   | `0x00` |
+
+Message hex dump with LRC: `03 02 0d 00 59`
+
+
 ## RX2 config
 
 Parameter is used to setup `RX2` window configuration.

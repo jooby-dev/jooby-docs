@@ -44,9 +44,7 @@ There are `2` types of command direction:
 | `0x76` | [GetMeterId](./GetMeterId.md#request)                                 | Request to get the meter id by the meter address.                              |
 | `0x78` | [GetMeterInfo](./GetMeterInfo.md#request)                             | Request to get the meter info, like address and meter profile id.              |
 | `0x7a` | [GetMeterDate](./GetMeterDate.md#request)                             | Request to get the current date and time on the meter.                         |
-| `0x7c` | [GetMeterArchiveState](./GetMeterArchiveState.md#request)             | Request to get archive state for the meter.                                    |
-| `0x7f` | [ReadMeterArchive](./ReadMeterArchive.md#request)                     | Request to read the archive for the specific meter.                            |
-| `0x81` | [GetMeterReadoutState](./GetMeterReadoutState.md#request)             | Request to get readout state from the specific meter.                          |
+| `0x7c` | [GetMeterReadoutState](./GetMeterReadoutState.md#request)             | Request to get readout state from the specific meter.                          |
 
 
 ## Uplink commands
@@ -64,6 +62,8 @@ There are `2` types of command direction:
 | `0x14` | [GetLorawanInfo](./GetLorawanInfo.md#response)                                | Response to the [GetLorawanInfo](./GetLorawanInfo.md#request) downlink command.                         |
 | `0x16` | [GetLorawanState](./GetLorawanState.md#response)                              | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                       |
 | `0x18` | [SetLorawanConnectionMethod](./SetLorawanConnectionMethod.md#response)        | Response to the [SetLorawanConnectionMethod](./SetLorawanConnectionMethod.md#request) downlink command. |
+| `0x10` | [GetArchiveState](./GetArchiveState.md#response)                              | Response to the [GetArchiveState](./GetArchiveState.md#request) downlink command.                       |
+| `0x12` | [ReadArchive](./ReadArchive.md#response)                                      | Response to the [ReadArchive](./ReadArchive.md#request) downlink command.                               |
 | `0x1a` | [Reboot](./Reboot.md#response)                                                | Response to the [Reboot](./Reboot.md#request) downlink command.                                         |
 | `0x31` | [UpdateImageWrite](./UpdateImageWrite.md#response)                            | Response to the [UpdateImageWrite](./UpdateImageWrite.md#request) downlink command.                     |
 | `0x33` | [UpdateImageVerify](./UpdateImageVerify.md#response)                          | Response to the [UpdateImageVerify](./UpdateImageVerify.md#request) downlink command.                   |
@@ -90,9 +90,7 @@ There are `2` types of command direction:
 | `0x77` | [GetMeterId](./GetMeterId.md#response)                                        | Response to the [GetMeterId](./GetMeterId.md#request) downlink command.                                 |
 | `0x79` | [GetMeterInfo](./GetMeterInfo.md#response)                                    | Response to the [GetMeterInfo](./GetMeterInfo.md#request) downlink command.                             |
 | `0x7b` | [GetMeterDate](./GetMeterDate.md#response)                                    | Response to the [GetMeterDate](./GetMeterDate.md#request) downlink command.                             |
-| `0x7d` | [GetMeterArchiveState](./GetMeterArchiveState.md#response)                    | Response to the [GetMeterArchiveState](./GetMeterArchiveState.md#request) downlink command.             |
-| `0x80` | [ReadMeterArchive](./ReadMeterArchive.md#response)                            | Response to the [ReadMeterArchive](./ReadMeterArchive.md#request) downlink command.                     |
-| `0x82` | [GetMeterReadoutState](./GetMeterReadoutState.md#response)                    | Response to the [GetMeterReadoutState](./GetMeterReadoutState.md#request) downlink command.             |
+| `0x7d` | [GetMeterReadoutState](./GetMeterReadoutState.md#response)                    | Response to the [GetMeterReadoutState](./GetMeterReadoutState.md#request) downlink command.             |
 
 
 **Note**

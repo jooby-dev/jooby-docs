@@ -1,4 +1,4 @@
-# GetMeterArchiveState
+# GetArchiveState
 
 Request/response to get the archive state for the specific meter, including the record count, eldest record date, and newest record date.
 
@@ -7,25 +7,29 @@ Request/response to get the archive state for the specific meter, including the 
 
 ### Format
 
-| Size | Type                                 | Field                                                   |
-| ---- | ------------------------------------ | ------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x7c`                                     |
-| `1`  | `byte`                               | command size                                            |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                      |
-| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier                                 |
-| `1`  | `byte`                               | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
+| Size | Type                                 | Mandatory/optional | Field                                                   |
+| ---- | ------------------------------------ | ------------------ | ------------------------------------------------------- |
+| `1`  | `byte`                               | mandatory          | command id = `0x0f`                                     |
+| `1`  | `byte`                               | mandatory          | command size                                            |
+| `1`  | [Request ID](../types.md#request-id) | mandatory          | request/response unique identifier                      |
+| `1`  | `byte`                               | mandatory          | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
+| `1`  | [Meter ID](../types.md#meter-id)     | optional           | meter unique identifier                                 |
+
+If meter id field is provided, the observer will respond with information about that specified meter.
+If meter id field is not provided, the observer will respond with information about all meters.
+
 
 ### Examples
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `124` | `0x7c` |
+| command id   | `15`  | `0x0f` |
 | command size | `3`   | `0x03` |
 | request id   | `41`  | `0x29` |
-| meter id     | `3`   | `0x03` |
 | archive type | `1`   | `0x01` |
+| meter id     | `3`   | `0x03` |
 
-Message hex dump: `7c 03 29 03 01`
+Message hex dump: `0f 03 29 01 03`
 
 
 ## Response
@@ -34,7 +38,7 @@ Message hex dump: `7c 03 29 03 01`
 
 | Size | Type                                 | Field                                  |
 | ---- | ------------------------------------ | -------------------------------------- |
-| `1`  | `byte`                               | command id = `0x7d`                    |
+| `1`  | `byte`                               | command id = `0x10`                    |
 | `1`  | `byte`                               | command size                           |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier     |
 | `4`  | `uint32_be`                          | number of the archive records          |
@@ -48,25 +52,24 @@ Message hex dump: `7c 03 29 03 01`
 
 | Field          | Value | Hex          |
 | -------------- | ----- | ------------ |
-| command id     | `125` | `0x7d`       |
-| command size   | `5`   | `0x05`       |
+| command id     | `16`  | `0x10`       |
+| command size   | `1`   | `0x01`       |
 | request id     | `2`   | `0x02`       |
-| records number | `0`   | `0x00000000` |
 
-Message hex dump: `7d 05 02 00 00 00 00`
+Message hex dump: `10 01 02`
 
 #### some archive records are present
 
 | Field              | Value                     | Hex          |
 | ------------------ | ------------------------- | ------------ |
-| command id         | `125`                     | `0x7d`       |
+| command id         | `16`                      | `0x10`       |
 | command size       | `13`                      | `0x0d`       |
 | request id         | `2`                       | `0x02`       |
 | records number     | `81`                      | `0x00000051` |
 | eldest record time | `2023.06.27 18:45:02 GMT` | `0x2c2deaae` |
 | newest record time | `2023.06.28 15:15:02 GMT` | `0x2c2f0af6` |
 
-Message hex dump: `7d 0d 02 00 00 00 51 2c 2d ea ae 2c 2f 0a f6`
+Message hex dump: `10 0d 02 00 00 00 51 2c 2d ea ae 2c 2f 0a f6`
 
 
 ## See also

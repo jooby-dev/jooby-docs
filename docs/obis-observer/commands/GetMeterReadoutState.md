@@ -9,7 +9,7 @@ Request/response to get the readout related state and statistic from the specifi
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x81`                |
+| `1`  | `byte`                               | command id = `0x7c`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
@@ -20,12 +20,12 @@ Request/response to get the readout related state and statistic from the specifi
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `129` | `0x81` |
+| command id   | `124` | `0x7c` |
 | command size | `1`   | `0x01` |
 | request id   | `18`  | `0x12` |
 | meter id     | `8`   | `0x08` |
 
-Message hex dump: `81 02 12 08`
+Message hex dump: `7c 02 12 08`
 
 
 
@@ -35,7 +35,7 @@ Message hex dump: `81 02 12 08`
 
 | Size | Type                                 | Field                                                                                   |
 | ---- | ------------------------------------ | --------------------------------------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x82`                                                                     |
+| `1`  | `byte`                               | command id = `0x7d`                                                                     |
 | `1`  | `byte`                               | command size                                                                            |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                      |
 | `4`  | `uint32_be`                          | seconds since the start of the device when the last successful readout attempt occurred |
@@ -56,7 +56,7 @@ Message hex dump: `81 02 12 08`
 
 | Field                                                                                   | Value | Hex          |
 | --------------------------------------------------------------------------------------- | ----- | ------------ |
-| command id                                                                              | `130` | `0x82`       |
+| command id                                                                              | `125` | `0x7d`       |
 | command size                                                                            | `22`  | `0x16`       |
 | request id                                                                              | `3`   | `0x03`       |
 | seconds since the start of the device when the last successful readout attempt occurred | `127` | `0x0000007f` |
@@ -72,7 +72,7 @@ Message hex dump: `81 02 12 08`
 | the number of the frame errors                                                          | `0`   | `0x00`       |
 | the number of the overrun errors                                                        | `0`   | `0x00`       |
 
-Message hex dump: `82 16 03 00 00 00 7f 00 00 00 c1 00 0e 00 0c 00 02 00 00 00 00 00 00 00`
+Message hex dump: `7d 16 03 00 00 00 7f 00 00 00 c1 00 0e 00 0c 00 02 00 00 00 00 00 00 00`
 
 
 ## See also

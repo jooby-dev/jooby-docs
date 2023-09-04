@@ -38,8 +38,9 @@ Message hex dump: `40 06 03 0a 02 00 09 01`
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
 | `1`  | `byte`                               | command id = `0x41`                |
-| `1`  | `byte`                               | command size (dynamic, `4+`)       |
+| `1`  | `byte`                               | command size (dynamic, `2+`)       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
+| `1`  | `byte`                               | is list completed                  |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                        |
 | ...  | ...                                  | ...                                |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `N`                        |
@@ -49,15 +50,16 @@ Message hex dump: `40 06 03 0a 02 00 09 01`
 
 #### OBIS ID list for OBIS `0.9.1`:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `65`  | `0x41` |
-| command size | `3`   | `0x03` |
-| request id   | `7`   | `0x07` |
-| OBIS ID `1`  | `197` | `0xc5` |
-| OBIS ID `2`  | `198` | `0xc6` |
+| Field             | Value | Hex    |
+| ----------------- | ----- | ------ |
+| command id        | `65`  | `0x41` |
+| command size      | `4`   | `0x04` |
+| request id        | `7`   | `0x07` |
+| is list completed | `1`   | `0x01` |
+| OBIS ID `1`       | `197` | `0xc5` |
+| OBIS ID `2`       | `198` | `0xc6` |
 
-Message hex dump: `41 03 07 c5 c6`
+Message hex dump: `41 04 07 01 c5 c6`
 
 
 ## See also

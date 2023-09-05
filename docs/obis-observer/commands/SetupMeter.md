@@ -8,14 +8,14 @@ A new meter will be created if it doesn't exist.
 
 ### Format
 
-| Size | Type                                             | Field                              |
-| ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x70`                |
-| `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `1`  | `byte`                                           | command size                       |
-| `1`  | [Meter ID](../types.md#meter-id)                 | meter unique identifier            |
-| `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
-| `1+` | [String](../types.md#string)                     | meter address                      |
+| Size | Type                                             | Mandatory/optional | Field                              |
+| ---- | ------------------------------------------------ | ------------------ | ---------------------------------- |
+| `1`  | `byte`                                           | mandatory          | command id = `0x70`                |
+| `1`  | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier |
+| `1`  | `byte`                                           | mandatory          | command size                       |
+| `1`  | [Meter ID](../types.md#meter-id)                 | mandatory          | meter unique identifier            |
+| `1+` | [String](../types.md#string)                     | optional           | meter address                      |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | optional           | meter profile unique identifier    |
 
 
 ### Examples
@@ -26,10 +26,10 @@ A new meter will be created if it doesn't exist.
 | command size     | `12`      | `0x0c`               |
 | request id       | `121`     | `0x29`               |
 | meter id         | `1`       | `0x01`               |
-| meter profile id | `2`       | `0x02`               |
 | meter address    | `2345432` | `0x0732333435343332` |
+| meter profile id | `2`       | `0x02`               |
 
-Message hex dump: `70 0c 29 01 02 07 32 33 34 35 34 33 32`
+Message hex dump: `70 0c 29 01 07 32 33 34 35 34 33 32 02`
 
 
 ## Response

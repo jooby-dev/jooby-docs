@@ -30,13 +30,13 @@ Message hex dump: `78 02 01 01`
 
 ### Format
 
-| Size | Type                                             | Field                              |
-| ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x79`                |
-| `1`  | `byte`                                           | command size                       |
-| `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `4`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
-| `1+` | [String](../types.md#string)                     | meter address                      |
+| Size | Type                                             | Mandatory/optional | Field                              |
+| ---- | ------------------------------------------------ | ------------------ | ---------------------------------- |
+| `1`  | `byte`                                           | mandatory          | command id = `0x79`                |
+| `1`  | `byte`                                           | mandatory          | command size                       |
+| `1`  | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier |
+| `1+` | [String](../types.md#string)                     | optional           | meter address                      |
+| `4`  | [Meter profile ID](../types.md#meter-profile-id) | optional           | meter profile unique identifier    |
 
 
 ### Examples
@@ -45,11 +45,12 @@ Message hex dump: `78 02 01 01`
 | ---------------- | --------- | -------------------- |
 | command id       | `121`     | `0x79`               |
 | command size     | `10`      | `0x0a`               |
-| request id       | `7`       | `0x07`               |
-| meter profile id | `2`       | `0x02`               |
+| request id       | `9`       | `0x09`               |
 | meter address    | `2345432` | `0x0732333435343332` |
+| meter profile id | `2`       | `0x02`               |
 
-Message hex dump: `79 0a 02 01 07 32 33 34 35 34 33 32`
+
+Message hex dump: `79 0a 09 01 07 32 33 34 35 34 33 32 02`
 
 
 ## See also

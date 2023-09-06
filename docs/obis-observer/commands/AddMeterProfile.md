@@ -57,11 +57,11 @@ Message hex dump: `61 02 03 00`
 
 ### Result codes:
 
-| Result code | Description                                                 |
-| ----------- | ----------------------------------------------------------- |
-| `0`         | Ok. The Operation was successful.                           |
-| `2`         | Wrong arguments. Can't use `0xff` as profile id.            |
-| `9`         | The meter profile id table full. Unable to add new entries. |
+| Result code | Description                                      |
+| ----------- | ------------------------------------------------ |
+| `0`         | Ok. The Operation was successful.                |
+| `2`         | Wrong arguments. Can't use `0xff` as profile id. |
+| `8`         | Meter profile allocation failed.                 |
 
 
 ## See also

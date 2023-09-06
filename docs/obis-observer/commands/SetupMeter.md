@@ -64,20 +64,20 @@ Message hex dump: `71 02 9c 00`
 | command id   | `113` | `0x71` |
 | command size | `2`   | `0x02` |
 | request id   | `49`  | `0x31` |
-| result code  | `10`  | `0x0a` |
+| result code  | `10`  | `0x09` |
 
-Message hex dump: `71 02 31 0a`
+Message hex dump: `71 02 31 09`
 
 
 ### Result codes:
 
-| Result code | Description                                                                                       |
-| ----------- | ------------------------------------------------------------------------------------------------- |
-| `0`         | Ok. The Operation was successful.                                                                 |
-| `2`         | Wrong arguments. Invalid meter id, or the meter address too big.                                  |
-| `7`         | The meter id table full. Unable to add new entries.                                               |
-| `10`        | The meter profile not found.                                                                      |
-| `12`        | The single meter mode collision. Empty address in multi meter mode. Address in single meter mode. |
+| Result code | Description                                                      |
+| ----------- | ---------------------------------------------------------------- |
+| `0`         | Ok. The Operation was successful.                                |
+| `2`         | Wrong arguments. Invalid meter id, or the meter address too big. |
+| `6`         | Meter allocation failed.                                         |
+| `9`         | The meter profile not found.                                     |
+| `11`        | The single-multi meter mode collision.                           |
 
 
 ## See also

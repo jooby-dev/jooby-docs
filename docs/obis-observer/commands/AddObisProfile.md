@@ -61,11 +61,11 @@ Message hex dump: `45 02 07 00`
 
 ### Result codes:
 
-| Result code | Description                                                |
-| ----------- | ---------------------------------------------------------- |
-| `0`         | Ok. The Operation was successful.                          |
-| `6`         | The OBIS profile id table full. Unable to add new entries. |
-| `10`        | The meter profile not found.                               |
+| Result code | Description                       |
+| ----------- | --------------------------------- |
+| `0`         | Ok. The Operation was successful. |
+| `5`         | Obis profile allocation failed.   |
+| `9`         | The meter profile not found.      |
 
 
 ## See also

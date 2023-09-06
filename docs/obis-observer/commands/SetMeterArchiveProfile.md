@@ -64,9 +64,9 @@ Message hex dump: `69 02 9c 00`
 | command id   | `105` | `0x69` |
 | command size | `2`   | `0x02` |
 | request id   | `49`  | `0x31` |
-| result code  | `10`  | `0x0a` |
+| result code  | `10`  | `0x09` |
 
-Message hex dump: `69 02 31 0a`
+Message hex dump: `69 02 31 09`
 
 
 ### Result codes:
@@ -74,7 +74,7 @@ Message hex dump: `69 02 31 0a`
 | Result code | Description                       |
 | ----------- | --------------------------------- |
 | `0`         | Ok. The Operation was successful. |
-| `10`        | The meter profile not found.      |
+| `9`         | The meter profile not found.      |
 
 
 ## See also

@@ -59,9 +59,9 @@ Message hex dump: `73 02 9c 00`
 | command id   | `115` | `0x73` |
 | command size | `2`   | `0x02` |
 | request id   | `49`  | `0x31` |
-| result code  | `1 `  | `0x08` |
+| result code  | `1 `  | `0x07` |
 
-Message hex dump: `73 02 31 08`
+Message hex dump: `73 02 31 07`
 
 
 ### Result codes:
@@ -69,7 +69,7 @@ Message hex dump: `73 02 31 08`
 | Result code | Description                       |
 | ----------- | --------------------------------- |
 | `0`         | Ok. The Operation was successful. |
-| `8`         | The meter not found.              |
+| `7`         | The meter not found.              |
 
 
 ## See also

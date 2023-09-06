@@ -57,7 +57,7 @@ Message hex dump: `63 02 07 00`
 | Result code | Description                       |
 | ----------- | --------------------------------- |
 | `0`         | Ok. The Operation was successful. |
-| `10`        | The meter profile not found.      |
+| `9`         | The meter profile not found.      |
 
 
 ## See also

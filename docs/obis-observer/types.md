@@ -331,22 +331,21 @@ By default, the archive period is `15` minutes.
 
 ## Result code
 
-| Value | Description                                                 |
-| ----- | ----------------------------------------------------------- |
-| `0`   | Ok. The Operation was successful.                           |
-| `1`   | General failure.                                            |
-| `2`   | Wrong arguments.                                            |
-| `3`   | Forbidden to reassign the static OBIS ID.                   |
-| `4`   | The OBIS ID table full. Unable to add new entries.          |
-| `5`   | OBIS profile not found.                                     |
-| `6`   | The OBIS profile id table full. Unable to add new entries.  |
-| `7`   | The meter id table full. Unable to add new entries.         |
-| `8`   | The meter not found.                                        |
-| `9`   | The meter profile id table full. Unable to add new entries. |
-| `10`  | The meter profile not found.                                |
-| `11`  | The meter profile exists.                                   |
-| `12`  | The single meter mode collision.                            |
-| `13`  | The multi meter mode unsupported.                           |
+| Value | Description                               |
+| ----- | ----------------------------------------- |
+| `0`   | Ok. The Operation was successful.         |
+| `1`   | General failure.                          |
+| `2`   | Wrong arguments.                          |
+| `3`   | Forbidden to reassign the static OBIS ID. |
+| `4`   | Obis id allocation failed.                |
+| `5`   | Obis profile allocation failed.           |
+| `6`   | Meter allocation failed.                  |
+| `7`   | The meter not found.                      |
+| `8`   | Meter profile allocation failed.          |
+| `9`   | The meter profile not found.              |
+| `10`  | The meter profile exists.                 |
+| `11`  | The single-multi meter mode collision.    |
+| `12`  | The multi meter mode unsupported.         |
 
 
 ## LoRaWAN activation method

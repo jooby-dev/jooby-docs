@@ -44,16 +44,14 @@ Message hex dump: `46 02 05 1c`
 
 ### Examples
 
-#### remove OBIS profile - not found:
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `71`  | `0x47` |
+| command size | `2`   | `0x02` |
+| request id   | `5`   | `0x05` |
+| result code  | `OK`  | `0x00` |
 
-| Field        | Value               | Hex    |
-| ------------ | ------------------- | ------ |
-| command id   | `71`                | `0x47` |
-| command size | `2`                 | `0x02` |
-| request id   | `5`                 | `0x05` |
-| result code  | `PROFILE_NOT_FOUND` | `0x05` |
-
-Message hex dump: `47 02 05 05`
+Message hex dump: `47 02 05 00`
 
 
 ## See also

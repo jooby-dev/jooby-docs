@@ -59,12 +59,12 @@ Message hex dump: `43 02 14 00`
 
 ### Result codes:
 
-| Result code | Description                                        |
-| ----------- | -------------------------------------------------- |
-| `0`         | Ok. The Operation was successful.                  |
-| `3`         | Forbidden to reassign the static OBIS ID.          |
-| `4`         | The OBIS ID table full. Unable to add new entries. |
-| `10`        | The meter profile not found.                       |
+| Result code | Description                               |
+| ----------- | ----------------------------------------- |
+| `0`         | Ok. The Operation was successful.         |
+| `3`         | Forbidden to reassign the static OBIS ID. |
+| `4`         | Obis id allocation failed.                |
+| `9`         | The meter profile not found.              |
 
 
 ## See also

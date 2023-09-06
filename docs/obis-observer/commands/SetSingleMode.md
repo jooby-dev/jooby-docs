@@ -61,9 +61,9 @@ Message hex dump: `0c 02 9c 00`
 | command id   | `12`  | `0x0c` |
 | command size | `2`   | `0x02` |
 | request id   | `156` | `0x9c` |
-| result code  | `13`  | `0x0d` |
+| result code  | `12`  | `0x0c` |
 
-Message hex dump: `0c 02 9c 0d`
+Message hex dump: `0c 02 9c 0c`
 
 
 ### Result codes:
@@ -71,7 +71,7 @@ Message hex dump: `0c 02 9c 0d`
 | Result code | Description                       |
 | ----------- | --------------------------------- |
 | `0`         | Ok. The Operation was successful. |
-| `13`        | The multi meter mode unsupported. |
+| `12`        | The multi meter mode unsupported. |
 
 
 ## See also

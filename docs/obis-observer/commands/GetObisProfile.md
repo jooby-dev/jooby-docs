@@ -9,7 +9,7 @@ Request/response to get the OBIS profile for the specific OBIS ID and meter prof
 
 | Size | Type                                             | Field                              |
 | ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x48`                |
+| `1`  | `byte`                                           | command id = `0x4a`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
@@ -21,13 +21,13 @@ Request/response to get the OBIS profile for the specific OBIS ID and meter prof
 
 | Field            | Value | Hex    |
 | ---------------- | ----- | ------ |
-| command id       | `72`  | `0x48` |
+| command id       | `74`  | `0x4a` |
 | command size     | `3`   | `0x03` |
 | request id       | `4`   | `0x04` |
 | meter profile id | `8`   | `0x08` |
 | OBIS ID          | `128` | `0x80` |
 
-Message hex dump: `09 03 04 08 80`
+Message hex dump: `4a 03 04 08 80`
 
 
 ## Response
@@ -36,7 +36,7 @@ Message hex dump: `09 03 04 08 80`
 
 | Size | Type                                     | Field                              |
 | ---- | ---------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                   | command id = `0x49`                |
+| `1`  | `byte`                                   | command id = `0x4b`                |
 | `1`  | `byte`                                   | command size                       |
 | `1`  | [Request ID](../types.md#request-id)     | request/response unique identifier |
 | `6`  | [OBIS profile](../types.md#obis-profile) | OBIS profile                       |
@@ -48,12 +48,12 @@ Message hex dump: `09 03 04 08 80`
 
 | Field        | Value                                                                                                                                                                   | Hex              |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| command id   | `73`                                                                                                                                                                    | `0x49`           |
+| command id   | `75`                                                                                                                                                                    | `0x4b`           |
 | command size | `7`                                                                                                                                                                     | `0x07`           |
 | request id   | `3`                                                                                                                                                                     | `0x03`           |
 | OBIS profile | capturePeriod: `344` <br> sendingPeriod: `532` <br> sendingCounter: `61` <br> contentType: `STRING` <br> sendOnChange: `0` <br> archive1: `false` <br> archive2: `true` | `0x015802143d0a` |
 
-Message hex dump: `49 07 03 01 58 02 14 3d 0a`
+Message hex dump: `4b 07 03 01 58 02 14 3d 0a`
 
 
 ## See also

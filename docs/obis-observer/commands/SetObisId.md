@@ -9,7 +9,7 @@ Request/response to set the OBIS ID for the specific OBIS code and meter profile
 
 | Size  | Type                                             | Field                              |
 | ----- | ------------------------------------------------ | ---------------------------------- |
-| `1`   | `byte`                                           | command id = `0x42`                |
+| `1`   | `byte`                                           | command id = `0x44`                |
 | `1`   | `byte`                                           | command size                       |
 | `1`   | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`   | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
@@ -22,14 +22,14 @@ Request/response to set the OBIS ID for the specific OBIS code and meter profile
 
 | Field            | Value                  | Hex          |
 | ---------------- | ---------------------- | ------------ |
-| command id       | `66`                   | `0x42`       |
+| command id       | `68`                   | `0x44`       |
 | command size     | `7`                    | `0x07`       |
 | request id       | `4`                    | `0x04`       |
 | meter profile id | `10`                   | `0x0a`       |
 | OBIS ID          | `44`                   | `0x2c`       |
 | OBIS code        | C: `0`, D: `9`, E: `1` | `0x02000901` |
 
-Message hex dump: `42 07 04 0a 2c 02 00 09 01`
+Message hex dump: `44 07 04 0a 2c 02 00 09 01`
 
 
 ## Response
@@ -38,7 +38,7 @@ Message hex dump: `42 07 04 0a 2c 02 00 09 01`
 
 | Size | Type                                   | Field                              |
 | ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x43`                |
+| `1`  | `byte`                                 | command id = `0x45`                |
 | `1`  | `byte`                                 | command size                       |
 | `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
 | `1`  | [Result code](../types.md#result-code) | operation result code              |
@@ -49,12 +49,12 @@ Message hex dump: `42 07 04 0a 2c 02 00 09 01`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `67`  | `0x43` |
+| command id   | `69`  | `0x45` |
 | command size | `2`   | `0x02` |
 | request id   | `20`  | `0x14` |
 | result code  | `OK`  | `0x00` |
 
-Message hex dump: `43 02 14 00`
+Message hex dump: `45 02 14 00`
 
 
 ### Result codes:

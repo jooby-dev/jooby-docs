@@ -9,7 +9,7 @@ Request/response to remove the specific OBIS profile.
 
 | Size | Type                                             | Field                              |
 | ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x46`                |
+| `1`  | `byte`                                           | command id = `0x48`                |
 | `1`  | `byte`                                           | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
@@ -21,13 +21,13 @@ Request/response to remove the specific OBIS profile.
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `70`  | `0x46` |
+| command id   | `72`  | `0x48` |
 | command size | `2`   | `0x02` |
 | request id   | `5`   | `0x05` |
 | obis id      | `28`  | `0x1c` |
 
 
-Message hex dump: `46 02 05 1c`
+Message hex dump: `48 02 05 1c`
 
 
 ## Response
@@ -36,7 +36,7 @@ Message hex dump: `46 02 05 1c`
 
 | Size | Type                                   | Field                              |
 | ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x47`                |
+| `1`  | `byte`                                 | command id = `0x49`                |
 | `1`  | `byte`                                 | command size                       |
 | `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
 | `1`  | [Result code](../types.md#result-code) | operation result code              |
@@ -46,7 +46,7 @@ Message hex dump: `46 02 05 1c`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `71`  | `0x47` |
+| command id   | `73`  | `0x49` |
 | command size | `2`   | `0x02` |
 | request id   | `5`   | `0x05` |
 | result code  | `OK`  | `0x00` |

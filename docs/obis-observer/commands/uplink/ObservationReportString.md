@@ -8,7 +8,7 @@ The message includes the OBIS content captured according to schedule and contain
 
 | Size | Type                               | Field                                        |
 | ---- | ---------------------------------- | -------------------------------------------- |
-| `1`  | `byte`                             | command id = `0x52`                          |
+| `1`  | `byte`                             | command id = `0x54`                          |
 | `1`  | `byte`                             | command size (dynamic, `10+`)                |
 | `1`  | [Meter ID](../types.md#meter-id)   | meter unique identifier                      |
 | `4`  | [Time 2000](../types.md#time-2000) | date and time at which the data was captured |
@@ -22,7 +22,7 @@ The message includes the OBIS content captured according to schedule and contain
 
 | Field            | Value                        | Hex                                                        |
 | ---------------- | ---------------------------- | ---------------------------------------------------------- |
-| command id       | `82`                         | `0x52`                                                     |
+| command id       | `84`                         | `0x54`                                                     |
 | command size     | `59`                         | `0x3b`                                                     |
 | meter id         | `2`                          | `0x02`                                                     |
 | time             | `2023.12.23 00:00:00 GMT`    | `0x2d18df80`                                               |
@@ -31,7 +31,7 @@ The message includes the OBIS content captured according to schedule and contain
 | OBIS ID `2`      | `56`                         | `0x38`                                                     |
 | OBIS content `2` | `reactive power QI, total`   | `0x18726561637469766520706f7765722051492c20746f74616c`     |
 
-Message hex dump: `52 3b 02 2d 18 df 80 32 1a 72 65 61 63 74 69 76 65 20 70 6f 77 65 72 20 51 49 2c 20 61 76 65 72 61 67 65 38 18 72 65 61 63 74 69 76 65 20 70 6f 77 65 72 20 51 49 2c 20 74 6f 74 61 6c`
+Message hex dump: `54 3b 02 2d 18 df 80 32 1a 72 65 61 63 74 69 76 65 20 70 6f 77 65 72 20 51 49 2c 20 61 76 65 72 61 67 65 38 18 72 65 61 63 74 69 76 65 20 70 6f 77 65 72 20 51 49 2c 20 74 6f 74 61 6c`
 
 
 ## See also

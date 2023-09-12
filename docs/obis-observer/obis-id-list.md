@@ -40,7 +40,7 @@ OBIS ID is a one-byte number that will be used in all messages to represent the 
 | `26`    | `3.5.0`   | reactive power+ (`QI`+`QII`), average                                   |
 | `27`    | `3.6.0`   | reactive power+ (`QI`+`QII`), maximum, total                            |
 | `28`    | `3.6.1`   | reactive power+ (`QI`+`QII`), maximum, tariff `T1`                      |
-| `39`    | `3.6.2`   | reactive power+ (`QI`+`QII`), maximum, tariff `T2`                      |
+| `29`    | `3.6.2`   | reactive power+ (`QI`+`QII`), maximum, tariff `T2`                      |
 | `30`    | `3.6.3`   | reactive power+ (`QI`+`QII`), maximum, tariff `T3`                      |
 | `31`    | `3.6.4`   | reactive power+ (`QI`+`QII`), maximum, tariff `T4`                      |
 | `32`    | `3.8.0`   | reactive power+ (`QI`+`QII`), total                                     |

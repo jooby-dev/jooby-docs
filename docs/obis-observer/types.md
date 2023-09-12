@@ -338,7 +338,7 @@ By default, the archive period is `15` minutes.
 | `2`   | Wrong arguments.                          |
 | `3`   | Forbidden to reassign the static OBIS ID. |
 | `4`   | Obis id allocation failed.                |
-| `5`   | Obis profile allocation failed.           |
+| `5`   | OBIS profile allocation failed.           |
 | `6`   | Meter allocation failed.                  |
 | `7`   | The meter not found.                      |
 | `8`   | Meter profile allocation failed.          |

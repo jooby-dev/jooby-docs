@@ -10,7 +10,7 @@ Request/response to get the archive state for the specific meter, including the 
 | Size | Type                                 | Mandatory/optional | Field                                                   |
 | ---- | ------------------------------------ | ------------------ | ------------------------------------------------------- |
 | `1`  | `byte`                               | mandatory          | command id = `0x0f`                                     |
-| `1`  | `byte`                               | mandatory          | command size                                            |
+| `1`  | `byte`                               | mandatory          | command size (dynamic, `2+`)                            |
 | `1`  | [Request ID](../types.md#request-id) | mandatory          | request/response unique identifier                      |
 | `1`  | `byte`                               | mandatory          | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
 | `1`  | [Meter ID](../types.md#meter-id)     | optional           | meter unique identifier                                 |
@@ -50,11 +50,11 @@ Message hex dump: `0f 03 29 01 03`
 
 #### no archive records
 
-| Field          | Value | Hex          |
-| -------------- | ----- | ------------ |
-| command id     | `16`  | `0x10`       |
-| command size   | `1`   | `0x01`       |
-| request id     | `2`   | `0x02`       |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `16`  | `0x10` |
+| command size | `1`   | `0x01` |
+| request id   | `2`   | `0x02` |
 
 Message hex dump: `10 01 02`
 

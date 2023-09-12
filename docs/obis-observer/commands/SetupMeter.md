@@ -12,7 +12,7 @@ A new meter will be created if it doesn't exist.
 | ---- | ------------------------------------------------ | ------------------ | ---------------------------------- |
 | `1`  | `byte`                                           | mandatory          | command id = `0x70`                |
 | `1`  | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier |
-| `1`  | `byte`                                           | mandatory          | command size                       |
+| `1`  | `byte`                                           | mandatory          | command size (dynamic, `1+`)       |
 | `1`  | [Meter ID](../types.md#meter-id)                 | mandatory          | meter unique identifier            |
 | `1+` | [String](../types.md#string)                     | optional           | meter address                      |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | optional           | meter profile unique identifier    |

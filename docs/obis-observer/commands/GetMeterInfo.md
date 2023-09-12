@@ -33,7 +33,7 @@ Message hex dump: `78 02 01 01`
 | Size | Type                                             | Mandatory/optional | Field                              |
 | ---- | ------------------------------------------------ | ------------------ | ---------------------------------- |
 | `1`  | `byte`                                           | mandatory          | command id = `0x79`                |
-| `1`  | `byte`                                           | mandatory          | command size                       |
+| `1`  | `byte`                                           | mandatory          | command size (dynamic, `1+`)       |
 | `1`  | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier |
 | `1+` | [String](../types.md#string)                     | optional           | meter address                      |
 | `4`  | [Meter profile ID](../types.md#meter-profile-id) | optional           | meter profile unique identifier    |

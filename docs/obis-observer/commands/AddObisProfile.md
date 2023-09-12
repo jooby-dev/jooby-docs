@@ -64,7 +64,7 @@ Message hex dump: `45 02 07 00`
 | Result code | Description                       |
 | ----------- | --------------------------------- |
 | `0`         | Ok. The Operation was successful. |
-| `5`         | Obis profile allocation failed.   |
+| `5`         | OBIS profile allocation failed.   |
 | `9`         | The meter profile not found.      |
 
 

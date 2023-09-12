@@ -10,7 +10,7 @@ Request/response to get archive data.
 | Size | Type                                 | Mandatory/optional | Field                                                   |
 | ---- | ------------------------------------ | ------------------ | ------------------------------------------------------- |
 | `1`  | `byte`                               | mandatory          | command id = `0x11`                                     |
-| `1`  | `byte`                               | mandatory          | command size                                            |
+| `1`  | `byte`                               | mandatory          | command size (dynamic, `2+`)                            |
 | `1`  | [Request ID](../types.md#request-id) | mandatory          | request/response unique identifier                      |
 | `1`  | `byte`                               | mandatory          | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
 | `1`  | `byte`                               | mandatory          | index of the first record to get                        |

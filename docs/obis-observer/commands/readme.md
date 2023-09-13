@@ -26,6 +26,7 @@ There are `2` types of command direction:
 | `0x32` | [UpdateImageVerify](./UpdateImageVerify.md#request)                   | Request to verify the update image on the device.                              |
 | `0x34` | [UpdateRun](./UpdateRun.md#request)                                   | Request to run the update on the device.                                       |
 | `0x40` | [GetObisIdList](./GetObisIdList.md#request)                           | Request to get the id list of the specific OBIS code.                          |
+| `0x42` | [GetObisInfoList](./GetObisInfoList.md#request)                       | Request to get the list of the OBIS id and related information.                |
 | `0x44` | [SetObisId](./SetObisId.md#request)                                   | Request to set the id for the specific OBIS code.                              |
 | `0x46` | [AddObisProfile](./AddObisProfile.md#request)                         | Request to add OBIS profile.                                                   |
 | `0x48` | [RemoveObisProfile](./RemoveObisProfile.md#request)                   | Request to remove OBIS profile.                                                |

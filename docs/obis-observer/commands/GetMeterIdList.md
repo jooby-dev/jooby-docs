@@ -7,12 +7,12 @@ Request/response to get the list of meters id.
 
 ### Format
 
-| Size | Type                                 | Field                              |
-| ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x74`                |
-| `1`  | `byte`                               | command size                       |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | `byte`                               | index of the first meter to get    |
+| Size | Type                                 | Field                                                |
+| ---- | ------------------------------------ | ---------------------------------------------------- |
+| `1`  | `byte`                               | command id = `0x74`                                  |
+| `1`  | `byte`                               | command size                                         |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                   |
+| `1`  | `byte`                               | the index of the meter to start forming the response |
 
 ### Examples
 
@@ -21,7 +21,7 @@ Request/response to get the list of meters id.
 | command id   | `116` | `0x74` |
 | command size | `2`   | `0x02` |
 | request id   | `12`  | `0x0c` |
-| start index  | `2`   | `0x02` |
+| index        | `2`   | `0x02` |
 
 Message hex dump: `74 02 0c 02`
 

@@ -63,7 +63,7 @@ Message hex dump: `45 02 14 00`
 | ----------- | ----------------------------------------- |
 | `0`         | Ok. The Operation was successful.         |
 | `3`         | Forbidden to reassign the static OBIS ID. |
-| `4`         | Obis id allocation failed.                |
+| `4`         | OBIS ID allocation failed.                |
 | `9`         | The meter profile not found.              |
 
 

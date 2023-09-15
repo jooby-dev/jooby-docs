@@ -16,7 +16,7 @@ Request/response to get the readout related state and statistic from the specifi
 
 ### Examples
 
-#### get readout state for meter with id `8`
+#### get readout state for meter with id `8`:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |

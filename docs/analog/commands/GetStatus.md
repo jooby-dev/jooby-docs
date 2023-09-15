@@ -72,7 +72,7 @@ Device type revision.
 #### **battery voltage**
 
 `3` bytes that store low and high battery voltage values.
-Low - battery voltage with minimum load (sleep mode), value in `mV`.  Typical value is about `3600` `mV`.
+Low - battery voltage with minimum load (sleep mode), value in `mV`. Typical value is about `3600` `mV`.
 High - battery voltage with load simulating transmission mode, value in `mV`. Typical value is about `3100` `mV`.
 If the voltage value is `4095` `mV`, then the value is unknown.
 Voltage values bit map (each line is a byte):

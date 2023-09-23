@@ -30,48 +30,27 @@ Message hex dump: `32 01 21`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x33`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                                                                |
+| ---- | ------------------------------------ | -------------------------------------------------------------------- |
+| `1`  | `byte`                               | command id = `0x33`                                                  |
+| `1`  | `byte`                               | command size                                                         |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                   |
+| `1`  | `byte`                               | is image valid flag: <br> `0` - invalid image <br> `2` - valid image |
 
 
 ### Examples
 
 #### success:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `51`  | `0x33` |
-| command size | `2`   | `0x02` |
-| request id   | `32`  | `0x20` |
-| result code  | `0`   | `0x00` |
-
-Message hex dump: `33 02 20 00`
-
-#### general failure:
-
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `51`  | `0x33` |
-| command size | `2`   | `0x02` |
-| request id   | `32`  | `0x20` |
-| result code  | `1`   | `0x01` |
+| Field               | Value | Hex    |
+| ------------------- | ----- | ------ |
+| command id          | `51`  | `0x33` |
+| command size        | `2`   | `0x02` |
+| request id          | `32`  | `0x20` |
+| is image valid flag | `1`   | `0x01` |
 
 Message hex dump: `33 02 20 01`
-
-
-### Result codes:
-
-| Result code | Description                       |
-| ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
-| `1`         | General failure. Invalid crc.     |
-
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Result code](../types.md#result-code)

@@ -71,9 +71,22 @@ Message hex dump: `10 01 02`
 
 Message hex dump: `10 0d 02 00 00 00 51 2c 2d ea ae 2c 2f 0a f6`
 
+#### error:
+
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
+
+##### Result codes:
+
+| Result code | Description          |
+| ----------- | -------------------- |
+| `3`         | Format error.        |
+| `8`         | The meter not found. |
+
 
 ## See also
 
 * [Request ID](../types.md#request-id)
 * [Meter ID](../types.md#meter-id)
 * [Time 2000](../types.md#time-2000)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

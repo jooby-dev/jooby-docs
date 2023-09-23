@@ -94,12 +94,11 @@ Message hex dump: `07 04 34 05 08 05`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x08`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x08`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
 ### Examples
@@ -109,33 +108,25 @@ Message hex dump: `07 04 34 05 08 05`
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `8`   | `0x08` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `32`  | `0x20` |
-| result code  | `0`   | `0x00` |
 
-Message hex dump: `08 02 20 00`
-
-#### wrong argument:
-
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `8`   | `0x08` |
-| command size | `2`   | `0x02` |
-| request id   | `32`  | `0x20` |
-| result code  | `2`   | `0x02` |
-
-Message hex dump: `08 02 20 02`
+Message hex dump: `08 01 20`
 
 
-### Result codes:
+#### error:
 
-| Result code | Description                       |
-| ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
-| `2`         | Wrong arguments.                  |
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
+
+##### Result codes:
+
+| Result code | Description   |
+| ----------- | ------------- |
+| `3`         | Format error. |
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

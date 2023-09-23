@@ -30,36 +30,25 @@ Message hex dump: `34 01 21`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x35`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x35`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
 ### Examples
 
-#### success:
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `53`  | `0x35` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `32`  | `0x20` |
-| result code  | `OK`  | `0x00` |
 
-Message hex dump: `35 02 20 00`
-
-
-### Result codes:
-
-| Result code | Description                       |
-| ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
+Message hex dump: `35 01 20`
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Result code](../types.md#result-code)

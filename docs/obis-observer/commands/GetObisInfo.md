@@ -58,6 +58,16 @@ Message hex dump: `4c 03 05 0a 2c`
 
 Message hex dump: `4d 0b 03 02 00 09 01 01 58 02 14 3d 0a`
 
+#### error:
+
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
+
+##### Result codes:
+
+| Result code | Description                  |
+| ----------- | ---------------------------- |
+| `3`         | Format error.                |
+| `10`        | The meter profile not found. |
 
 ## See also
 
@@ -66,3 +76,5 @@ Message hex dump: `4d 0b 03 02 00 09 01 01 58 02 14 3d 0a`
 * [OBIS ID](../types.md#obis-id)
 * [OBIS](../types.md#obis)
 * [OBIS profile](../types.md#obis-profile)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

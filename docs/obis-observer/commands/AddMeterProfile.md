@@ -33,12 +33,11 @@ Message hex dump: `60 02 03 20`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x61`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x61`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
 ### Examples
@@ -48,24 +47,26 @@ Message hex dump: `60 02 03 20`
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `97`  | `0x61` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `3`   | `0x03` |
-| result code  | `OK`  | `0x00` |
 
-Message hex dump: `61 02 03 00`
+Message hex dump: `61 01 03`
 
+#### error:
 
-### Result codes:
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-| Result code | Description                                      |
-| ----------- | ------------------------------------------------ |
-| `0`         | Ok. The Operation was successful.                |
-| `2`         | Wrong arguments. Can't use `0xff` as profile id. |
-| `8`         | Meter profile allocation failed.                 |
+##### Result codes:
+
+| Result code | Description                      |
+| ----------- | -------------------------------- |
+| `3`         | Format error.                    |
+| `9`         | Meter profile allocation failed. |
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Result code](../types.md#result-code)
 * [Meter profile ID](../types.md#meter-profile-id)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

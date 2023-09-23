@@ -37,12 +37,11 @@ Message hex dump: `46 09 03 0a 20 00 f4 00 84 26 04`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x47`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x47`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
 ### Examples
@@ -52,26 +51,29 @@ Message hex dump: `46 09 03 0a 20 00 f4 00 84 26 04`
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `71`  | `0x47` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `7`   | `0x07` |
-| result code  | `OK`  | `0x00` |
 
-Message hex dump: `47 02 07 00`
+Message hex dump: `47 01 07`
 
+#### error:
 
-### Result codes:
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-| Result code | Description                       |
-| ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
-| `5`         | OBIS profile allocation failed.   |
-| `9`         | The meter profile not found.      |
+##### Result codes:
+
+| Result code | Description                     |
+| ----------- | ------------------------------- |
+| `3`         | Format error.                   |
+| `5`         | OBIS profile allocation failed. |
+| `9`         | The meter profile not found.    |
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Result code](../types.md#result-code)
 * [Meter profile ID](../types.md#meter-profile-id)
 * [OBIS ID](../types.md#obis-id)
 * [OBIS profile](../types.md#obis-profile)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

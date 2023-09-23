@@ -31,12 +31,11 @@ Message hex dump: `72 02 29 01`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x73`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x73`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
 ### Examples
@@ -46,34 +45,26 @@ Message hex dump: `72 02 29 01`
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `115` | `0x73` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `156` | `0x9c` |
-| result code  | `0`   | `0x00` |
 
-Message hex dump: `73 02 9c 00`
+Message hex dump: `73 01 9c`
 
-#### the meter not found
+#### error:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `115` | `0x73` |
-| command size | `2`   | `0x02` |
-| request id   | `49`  | `0x31` |
-| result code  | `1 `  | `0x07` |
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-Message hex dump: `73 02 31 07`
+##### Result codes:
 
-
-### Result codes:
-
-| Result code | Description                       |
-| ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
-| `7`         | The meter not found.              |
+| Result code | Description                            |
+| ----------- | -------------------------------------- |
+| `3`         | Format error.                          |
+| `11`        | The single-multi meter mode collision. |
 
 
-## See also
+## See alsos
 
 * [Request ID](../types.md#request-id)
-* [Result code](../types.md#result-code)
 * [Meter ID](../types.md#meter-id)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

@@ -333,7 +333,6 @@ By default, the archive period is `15` minutes.
 
 | Value | Description                               |
 | ----- | ----------------------------------------- |
-| `0`   | Ok. The Operation was successful.         |
 | `1`   | General failure.                          |
 | `2`   | Unknown command.                          |
 | `3`   | Format error.                             |

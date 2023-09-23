@@ -67,6 +67,16 @@ If a byte with the value 0 immediately follows the OBIS content, it indicates th
 
 Message hex dump: `14 07 0d 01 08 40 76 24 dd`
 
+#### error:
+
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
+
+##### Result codes:
+
+| Result code | Description          |
+| ----------- | -------------------- |
+| `3`         | Format error.        |
+| `8`         | The meter not found. |
 
 ## See also
 
@@ -74,3 +84,5 @@ Message hex dump: `14 07 0d 01 08 40 76 24 dd`
 * [Meter ID](../types.md#meter-id)
 * [Time 2000](../types.md#time-2000)
 * [OBIS ID](../types.md#obis-id)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

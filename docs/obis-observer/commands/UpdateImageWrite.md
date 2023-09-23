@@ -41,33 +41,38 @@ Message hex dump: `30 15 21 00 00 08 40 00 01 02 03 04 05 06 07 08 09 00 00 00 0
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x31`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x31`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 ### Examples
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `49`  | `0x31` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `33`  | `0x21` |
-| result code  | `OK`  | `0x00` |
 
-Message hex dump: `2b 21 00`
+Message hex dump: `2b 01 21`
 
 
-### Result codes:
+#### error:
 
-| Result code | Description                       |
-| ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
-| `1`         | General failure. Invalid crc.     |
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
+
+##### Result codes:
+
+| Result code | Description                   |
+| ----------- | ----------------------------- |
+| `1`         | General failure. Invalid crc. |
+| `3`         | Format error.                 |
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)
+* 

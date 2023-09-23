@@ -36,12 +36,11 @@ Message hex dump: `68 05 23 0b 40 00 1e`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x69`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x69`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
 ### Examples
@@ -51,34 +50,25 @@ Message hex dump: `68 05 23 0b 40 00 1e`
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `105` | `0x69` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `156` | `0x9c` |
-| result code  | `0`   | `0x00` |
 
-Message hex dump: `69 02 9c 00`
+Message hex dump: `69 01 9c`
 
-#### The meter profile not found:
+#### error:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `105` | `0x69` |
-| command size | `2`   | `0x02` |
-| request id   | `49`  | `0x31` |
-| result code  | `10`  | `0x09` |
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-Message hex dump: `69 02 31 09`
+##### Result codes:
 
-
-### Result codes:
-
-| Result code | Description                       |
-| ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
-| `9`         | The meter profile not found.      |
-
+| Result code | Description                  |
+| ----------- | ---------------------------- |
+| `3`         | Format error.                |
+| `9`         | The meter profile not found. |
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Result code](../types.md#result-code)
 * [Meter profile ID](../types.md#meter-profile-id)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

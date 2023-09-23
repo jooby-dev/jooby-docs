@@ -55,9 +55,21 @@ Message hex dump: `66 02 03 02`
 
 Message hex dump: `67 05 03 02 58 00 2d`
 
+#### error:
+
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
+
+##### Result codes:
+
+| Result code | Description                  |
+| ----------- | ---------------------------- |
+| `3`         | Format error.                |
+| `10`        | The meter profile not found. |
 
 ## See also
 
 * [Request ID](../types.md#request-id)
 * [Meter profile ID](../types.md#meter-profile-id)
-  
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)
+*   

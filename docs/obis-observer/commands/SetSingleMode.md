@@ -33,12 +33,11 @@ Message hex dump: `0b 02 04 01`
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                 | command id = `0x0c`                |
-| `1`  | `byte`                                 | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                 | Field                              |
+| ---- | ------------------------------------ | ---------------------------------- |
+| `1`  | `byte`                               | command id = `0x0c`                |
+| `1`  | `byte`                               | command size                       |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
 ### Examples
@@ -48,34 +47,26 @@ Message hex dump: `0b 02 04 01`
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
 | command id   | `12`  | `0x0c` |
-| command size | `2`   | `0x02` |
+| command size | `1`   | `0x01` |
 | request id   | `156` | `0x9c` |
-| result code  | `0`   | `0x00` |
 
-Message hex dump: `0c 02 9c 00`
+Message hex dump: `0c 01 9c`
 
-#### the multi mode unsupported:
+#### error:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `12`  | `0x0c` |
-| command size | `2`   | `0x02` |
-| request id   | `156` | `0x9c` |
-| result code  | `12`  | `0x0c` |
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-Message hex dump: `0c 02 9c 0c`
-
-
-### Result codes:
+##### Result codes:
 
 | Result code | Description                       |
 | ----------- | --------------------------------- |
-| `0`         | Ok. The Operation was successful. |
+| `3`         | Format error.                     |
 | `12`        | The multi meter mode unsupported. |
 
 
 ## See also
 
 * [Request ID](../types.md#request-id)
-* [Result code](../types.md#result-code)
 * [Single mode](../single-mode.md)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

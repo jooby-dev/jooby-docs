@@ -17,7 +17,7 @@ There are `2` types of command direction:
 | `0x0b` | [SetSingleMode](./SetSingleMode.md#request)                           | Request to set the single or multi mode of the observer device.                |
 | `0x0d` | [GetSingleMode](./GetSingleMode.md#request)                           | Request to get the current mode (single or multi mode) of the observer device. |
 | `0x0f` | [GetArchiveState](./GetArchiveState.md#request)                       | Request to get archive state.                                                  |
-| `0x11` | [ReadArchive](./ReadArchive.md#request)                               | Request to read the archive.                                                   |
+| `0x11` | [ReadMeterArchive](./ReadMeterArchive.md#request)                     | Request to read the meter archive.                                             |
 | `0x20` | [GetLorawanInfo](./GetLorawanInfo.md#request)                         | Request to get LoRaWAN information.                                            |
 | `0x22` | [GetLorawanState](./GetLorawanState.md#request)                       | Request to get LoRaWAN state.                                                  |
 | `0x24` | [SetLorawanActivationMethod](./SetLorawanActivationMethod.md#request) | Request to set the LoRaWAN activation method OTAA or ABP.                      |
@@ -59,7 +59,7 @@ There are `2` types of command direction:
 | `0x0c` | [SetSingleMode](./SetSingleMode.md#response)                                  | Response to the [SetSingleMode](./SetSingleMode.md#request) downlink command.                           |
 | `0x0e` | [GetSingleMode](./GetSingleMode.md#request)                                   | Response to the [GetSingleMode](./GetSingleMode.md#request) downlink command.                           |
 | `0x10` | [GetArchiveState](./GetArchiveState.md#response)                              | Response to the [GetArchiveState](./GetArchiveState.md#request) downlink command.                       |
-| `0x12` | [ReadArchive](./ReadArchive.md#response)                                      | Response to the [ReadArchive](./ReadArchive.md#request) downlink command.                               |
+| `0x12` | [ReadMeterArchive](./ReadMeterArchive.md#response)                            | Response to the [ReadMeterArchive](./ReadMeterArchive.md#request) downlink command.                     |
 | `0x21` | [GetLorawanInfo](./GetLorawanInfo.md#response)                                | Response to the [GetLorawanInfo](./GetLorawanInfo.md#request) downlink command.                         |
 | `0x23` | [GetLorawanState](./GetLorawanState.md#response)                              | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                       |
 | `0x25` | [SetLorawanConnectionMethod](./SetLorawanConnectionMethod.md#response)        | Response to the [SetLorawanConnectionMethod](./SetLorawanConnectionMethod.md#request) downlink command. |

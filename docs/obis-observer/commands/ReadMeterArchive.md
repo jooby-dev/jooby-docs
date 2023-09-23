@@ -1,6 +1,6 @@
-# ReadArchive
+# ReadMeterArchive
 
-Request/response to get archive data.
+Request/response to get the meter archive data.
 
 
 ## Request

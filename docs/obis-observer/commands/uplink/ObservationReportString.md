@@ -1,7 +1,7 @@
 # ObservationReportString
 
-The Observation Report String message is used for reporting by the OBIS observer.
-The message includes the OBIS content captured according to schedule and contain string values.
+The Observation Report String command is used for reporting by the OBIS observer.
+The command includes the OBIS content captured according to schedule and contain string values.
 
 
 ### Format

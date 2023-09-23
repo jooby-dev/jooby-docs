@@ -1,7 +1,7 @@
 # ObservationReport
 
-The Observation Report message is used for reporting by the OBIS observer.
-The message includes the OBIS content captured according to schedule and contain float values.
+The Observation Report command is used for reporting by the OBIS observer.
+The command includes the OBIS content captured according to schedule and contain float values.
 
 
 ### Format

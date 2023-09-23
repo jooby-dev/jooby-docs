@@ -93,6 +93,7 @@ There are `2` types of command direction:
 | `0x79` | [GetMeterInfo](./GetMeterInfo.md#response)                                    | Response to the [GetMeterInfo](./GetMeterInfo.md#request) downlink command.                             |
 | `0x7b` | [GetMeterDate](./GetMeterDate.md#response)                                    | Response to the [GetMeterDate](./GetMeterDate.md#request) downlink command.                             |
 | `0x82` | [GetMeterReadoutState](./GetMeterReadoutState.md#response)                    | Response to the [GetMeterReadoutState](./GetMeterReadoutState.md#request) downlink command.             |
+| `0xfe` | [Error](./uplink/Error.md)                                                    | Response to the command with error.                                                                     |
 
 
 **Note**

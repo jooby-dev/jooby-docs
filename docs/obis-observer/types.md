@@ -335,15 +335,15 @@ By default, the archive period is `15` minutes.
 | ----- | ----------------------------------------- |
 | `0`   | Ok. The Operation was successful.         |
 | `1`   | General failure.                          |
-| `2`   | Wrong arguments.                          |
-| `3`   | Forbidden to reassign the static OBIS ID. |
-| `4`   | OBIS ID allocation failed.                |
-| `5`   | OBIS profile allocation failed.           |
-| `6`   | Meter allocation failed.                  |
-| `7`   | The meter not found.                      |
-| `8`   | Meter profile allocation failed.          |
-| `9`   | The meter profile not found.              |
-| `10`  | The meter profile exists.                 |
+| `2`   | Unknown command.                          |
+| `3`   | Format error.                             |
+| `4`   | Forbidden to reassign the static OBIS ID. |
+| `5`   | OBIS ID allocation failed.                |
+| `6`   | OBIS profile allocation failed.           |
+| `7`   | Meter allocation failed.                  |
+| `8`   | The meter not found.                      |
+| `9`   | Meter profile allocation failed.          |
+| `10`  | The meter profile not found.              |
 | `11`  | The single-multi meter mode collision.    |
 | `12`  | The multi meter mode unsupported.         |
 

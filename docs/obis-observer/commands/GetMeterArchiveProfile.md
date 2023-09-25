@@ -72,4 +72,3 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 * [Meter profile ID](../types.md#meter-profile-id)
 * [Result code](../types.md#result-code)
 * [Error](./uplink/Error.md)
-*   

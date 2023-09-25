@@ -3,11 +3,38 @@
 Commands use many specific data types packed to bytes.
 This document describes these types and structuring principles.
 
+## Meter profile
 
-## Short name
+Meter profile contains all data which we need to observe, archive and report the OBIS content:
+- archive settings
+- [reassignable table](./obis-id.md#reassignable)
+- table of the [OBIS profiles](#obis-profile)
+
+### Meter profile ID
+
+A `1`-byte unique number which used to represent the specific meter profile.
+`0xff` considers as invalid meter profile id.
+
+## Meter
+
+### Meter address
+
+The string 32 characters maximum. Usually equals to the serial number of the meter.
+Only one meter with meter id `0` have empty address and works only in [single mode](./singleMultiMode.md#single-mode).
+
+### Meter profile ID
+
+Link to meter profile to use.
+
+### Meter ID
+
+A `1`-byte number will be used in all messages to represent the specific meter.
+`0xff` considers as invalid meter id.
+
+## OBIS ID
 
 A `1`-byte number will be used in all messages to represent the specific OBIS code.
-See the full list of [short names](short-names.md).
+See the full list of [obis id](obis-id-list.md).
 
 
 ## Time 2000
@@ -277,8 +304,8 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
             <td colspan="3"><code>0</code></td>
             <td colspan="2"><a href="#contenttype">Content type</a></td>
             <td>Send on change</td>
-            <td><a href="#archive-profile-2">Archive profile 2</a></td>
-            <td><a href="#archive-profile-1">Archive profile 1</a></td>
+            <td><a href="#archive-1">Archive 1</a></td>
+            <td><a href="#archive-2">Archive 2</a></td>
         </tr>
     </tbody>
 </table>
@@ -291,27 +318,33 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
 | `1`   | float                      |
 | `2`   | string                     |
 
-### Archive profile 1
+### Archive 1
 
 The archive contains data that has been collected over a long interval.
 By default, the archive period is one day.                                                |
 
-### Archive profile 2
+### Archive 2
 
 This archive contains data that is captured at a highly detailed level, providing a granular view of performance.
-By default, the archive period is `15` minutes. |
+By default, the archive period is `15` minutes.
 
 
 ## Result code
 
-| Value | Description                                                      |
-| ----- | ---------------------------------------------------------------- |
-| `0`   | Ok. The Operation was successful.                                |
-| `1`   | General failure.                                                 |
-| `2`   | Forbidden to reassign the static short name.                     |
-| `3`   | The short name to OBIS code map full: unable to add new entries. |
-| `4`   | Short name not found.                                            |
-| `5`   | Profile not found.                                               |
+| Value | Description                               |
+| ----- | ----------------------------------------- |
+| `1`   | General failure.                          |
+| `2`   | Unknown command.                          |
+| `3`   | Format error.                             |
+| `4`   | Forbidden to reassign the static OBIS ID. |
+| `5`   | OBIS ID allocation failed.                |
+| `6`   | OBIS profile allocation failed.           |
+| `7`   | Meter allocation failed.                  |
+| `8`   | The meter not found.                      |
+| `9`   | Meter profile allocation failed.          |
+| `10`  | The meter profile not found.              |
+| `11`  | The single-multi meter mode collision.    |
+| `12`  | The multi meter mode unsupported.         |
 
 
 ## LoRaWAN activation method

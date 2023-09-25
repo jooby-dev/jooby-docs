@@ -18,3 +18,22 @@ Devices send and receive messages in the following format:
         </tr>
     </tbody>
 </table>
+
+## Commands
+
+<table>
+    <tbody>
+        <tr align="center">
+            <td>Command id</td>
+        </tr>
+        <tr align="center">
+            <td>Command data size</td>
+        </tr>
+        <tr align="center">
+            <td>Command data</td>
+        </tr>
+    </tbody>
+</table>
+
+
+

@@ -1,6 +1,6 @@
-# GetReadoutState
+# GetMeterReadoutState
 
-Request/response to get the readout related state and statistic.
+Request/response to get the readout related state and statistic from the specific meter.
 
 
 ## Request
@@ -9,17 +9,24 @@ Request/response to get the readout related state and statistic.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x26`                |
+| `1`  | `byte`                               | command id = `0x7c`                |
+| `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 ### Examples
 
-| Field      | Value | Hex    |
-| ---------- | ----- | ------ |
-| command id | `38`  | `0x26` |
-| request id | `18`  | `0x12` |
+#### get readout state for meter with id `8`:
 
-Message hex dump: `26 12`
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `124` | `0x7c` |
+| command size | `1`   | `0x01` |
+| request id   | `18`  | `0x12` |
+| meter id     | `8`   | `0x08` |
+
+Message hex dump: `7c 02 12 08`
+
 
 
 ## Response
@@ -28,7 +35,8 @@ Message hex dump: `26 12`
 
 | Size | Type                                 | Field                                                                                   |
 | ---- | ------------------------------------ | --------------------------------------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x27`                                                                     |
+| `1`  | `byte`                               | command id = `0x7d`                                                                     |
+| `1`  | `byte`                               | command size                                                                            |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                      |
 | `4`  | `uint32_be`                          | seconds since the start of the device when the last successful readout attempt occurred |
 | `4`  | `uint32_be`                          | seconds since the start of the device when the last failed readout attempt occurred     |
@@ -47,8 +55,9 @@ Message hex dump: `26 12`
 ### Examples
 
 | Field                                                                                   | Value | Hex          |
-| ----------------------------------------------------------------------------------------| ----- | ------------ |
-| command id                                                                              | `39`  | `0x27`       |
+| --------------------------------------------------------------------------------------- | ----- | ------------ |
+| command id                                                                              | `125` | `0x7d`       |
+| command size                                                                            | `22`  | `0x16`       |
 | request id                                                                              | `3`   | `0x03`       |
 | seconds since the start of the device when the last successful readout attempt occurred | `127` | `0x0000007f` |
 | seconds since the start of the device when the last failed readout attempt occurred     | `193` | `0x000000c1` |
@@ -63,9 +72,22 @@ Message hex dump: `26 12`
 | the number of the frame errors                                                          | `0`   | `0x00`       |
 | the number of the overrun errors                                                        | `0`   | `0x00`       |
 
-Message hex dump: `27 03 00 00 00 7f 00 00 00 c1 00 0e 00 0c 00 02 00 00 00 00 00 00 00`
+Message hex dump: `7d 16 03 00 00 00 7f 00 00 00 c1 00 0e 00 0c 00 02 00 00 00 00 00 00 00`
 
+#### error:
+
+If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
+
+##### Result codes:
+
+| Result code | Description          |
+| ----------- | -------------------- |
+| `3`         | Format error.        |
+| `8`         | The meter not found. |
 
 ## See also
 
 * [Request ID](../types.md#request-id)
+* [Meter ID](../types.md#meter-id)
+* [Result code](../types.md#result-code)
+* [Error](./uplink/Error.md)

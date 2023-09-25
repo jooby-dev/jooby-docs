@@ -52,6 +52,27 @@ Message hex dump: `42 03 03 0a 00`
 | ------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | reserved      | `0` - not linked to the OBIS profile, <br> `1` - has the linked the OBIS profile | `0` - that is the reassignable OBIS id, <br> `1` - that is the static OBIS id |
 
+<table>
+    <thead>
+        <tr align="center">
+            <th>8</th>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="6">Reserved</td>
+            <td><code>0</code> - not linked to the OBIS profile, <br> <code>1</code> - has the linked the OBIS profile</td>
+            <td><code>0</code> - that is the reassignable OBIS id, <br> <code>1</code> - that is the static OBIS id</td>
+        </tr>
+    </tbody>
+</table>
 
 
 ### Examples

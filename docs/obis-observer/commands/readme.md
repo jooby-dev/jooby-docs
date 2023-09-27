@@ -34,11 +34,10 @@ There are `2` types of command direction:
 | `0x4c` | [GetObisInfo](./GetObisInfo.md#request)                               | Request to get OBIS information by OBIS ID. Related OBIS and profile..         |
 | `0x4e` | [GetObisContent](./GetObisContent.md#request)                         | Request to get OBIS content.                                                   |
 | `0x50` | [GetObisContentById](./GetObisContentById.md#request)                 | Request to get OBIS content by OBIS ID.                                        |
-| `0x60` | [AddMeterProfile](./AddMeterProfile.md#request)                       | Request to add meter profile.                                                  |
+| `0x60` | [SetupMeterProfile](./SetupMeterProfile.md#request)                   | Request to setup meter profile.                                                |
 | `0x62` | [RemoveMeterProfile](./RemoveMeterProfile.md#request)                 | Request to remove meter profile.                                               |
 | `0x64` | [GetMeterProfileIdList](./GetMeterProfileIdList.md#request)           | Get the list of the meter profile id.                                          |
 | `0x66` | [GetMeterArchiveProfile](./GetMeterArchiveProfile.md#request)         | Request to get archive profile for the specific meter profile.                 |
-| `0x68` | [SetMeterArchiveProfile](./SetMeterArchiveProfile.md#request)         | Request to set archive profile for the specific meter profile.                 |
 | `0x70` | [SetupMeter](./SetupMeter.md#request)                                 | Request to setup meter. Setup meter id and address...                          |
 | `0x72` | [RemoveMeter](./RemoveMeter.md#request)                               | Request to to remove specific meter.                                           |
 | `0x74` | [GetMeterIdList](./GetMeterIdList.md#request)                         | Get the list of the meter id.                                                  |
@@ -79,11 +78,10 @@ There are `2` types of command direction:
 | `0x52` | [GetObisContentByIdStr](./GetObisContentById.md#response-with-string-content) | Response to the [GetObisContentByIdStr](./GetObisContentByIdStr.md#request) downlink command.           |
 | `0x53` | [ObservationReport](./uplink/ObservationReport.md)                            | Content of the OBIS codes that were captured with float content.                                        |
 | `0x54` | [ObservationReportString](./uplink/ObservationReportString.md)                | Content of the OBIS codes that were captured with string content.                                       |
-| `0x61` | [AddMeterProfile](./AddMeterProfile.md#response)                              | Response to the [AddMeterProfile](./AddMeterProfile.md#request) downlink command.                       |
+| `0x61` | [SetupMeterProfile](./SetupMeterProfile.md#response)                          | Response to the [SetupMeterProfile](./SetupMeterProfile.md#request) downlink command.                   |
 | `0x63` | [RemoveMeterProfile](./RemoveMeterProfile.md#response)                        | Response to the [RemoveMeterProfile](./RemoveMeterProfile.md#request) downlink command.                 |
 | `0x65` | [GetMeterProfileIdList](./GetMeterProfileIdList.md#response)                  | Response to the [GetMeterProfileIdList](./GetMeterProfileIdList.md#request) downlink command.           |
 | `0x67` | [GetMeterArchiveProfile](./GetMeterArchiveProfile.md#response)                | Response to the [GetMeterArchiveProfile](./GetMeterArchiveProfile.md#request) downlink command.         |
-| `0x69` | [SetMeterArchiveProfile](./SetMeterArchiveProfile.md#response)                | Response to the [SetMeterArchiveProfile](./SetMeterArchiveProfile.md#request) downlink command.         |
 | `0x71` | [SetupMeter](./SetupMeter.md#response)                                        | Response to the [SetupMeter](./SetupMeter.md#request) downlink command.                                 |
 | `0x73` | [RemoveMeter](./RemoveMeter.md#response)                                      | Response to the [RemoveMeter](./RemoveMeter.md#request) downlink command.                               |
 | `0x75` | [GetMeterIdList](./GetMeterIdList.md#response)                                | Response to the [GetMeterIdList](./GetMeterIdList.md#request) downlink command.                         |

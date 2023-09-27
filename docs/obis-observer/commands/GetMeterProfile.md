@@ -1,6 +1,6 @@
-# GetMeterArchiveProfile
+# GetMeterProfile
 
-Request/response to get the archive settings for the specific meter profile.
+Request/response to get the meter profile related information.
 
 
 ## Request

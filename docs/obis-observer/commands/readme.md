@@ -37,7 +37,7 @@ There are `2` types of command direction:
 | `0x60` | [SetupMeterProfile](./SetupMeterProfile.md#request)                   | Request to setup meter profile.                                                |
 | `0x62` | [RemoveMeterProfile](./RemoveMeterProfile.md#request)                 | Request to remove meter profile.                                               |
 | `0x64` | [GetMeterProfileIdList](./GetMeterProfileIdList.md#request)           | Get the list of the meter profile id.                                          |
-| `0x66` | [GetMeterArchiveProfile](./GetMeterArchiveProfile.md#request)         | Request to get archive profile for the specific meter profile.                 |
+| `0x66` | [GetMeterProfile](./GetMeterProfile.md#request)                       | Request/response to get the meter profile related information                  |
 | `0x70` | [SetupMeter](./SetupMeter.md#request)                                 | Request to setup meter. Setup meter id and address...                          |
 | `0x72` | [RemoveMeter](./RemoveMeter.md#request)                               | Request to to remove specific meter.                                           |
 | `0x74` | [GetMeterIdList](./GetMeterIdList.md#request)                         | Get the list of the meter id.                                                  |
@@ -81,7 +81,7 @@ There are `2` types of command direction:
 | `0x61` | [SetupMeterProfile](./SetupMeterProfile.md#response)                          | Response to the [SetupMeterProfile](./SetupMeterProfile.md#request) downlink command.                   |
 | `0x63` | [RemoveMeterProfile](./RemoveMeterProfile.md#response)                        | Response to the [RemoveMeterProfile](./RemoveMeterProfile.md#request) downlink command.                 |
 | `0x65` | [GetMeterProfileIdList](./GetMeterProfileIdList.md#response)                  | Response to the [GetMeterProfileIdList](./GetMeterProfileIdList.md#request) downlink command.           |
-| `0x67` | [GetMeterArchiveProfile](./GetMeterArchiveProfile.md#response)                | Response to the [GetMeterArchiveProfile](./GetMeterArchiveProfile.md#request) downlink command.         |
+| `0x67` | [GetMeterProfile](./GetMeterProfile.md#response)                              | Response to the [GetMeterProfile](./GetMeterProfile.md#request) downlink command.                       |
 | `0x71` | [SetupMeter](./SetupMeter.md#response)                                        | Response to the [SetupMeter](./SetupMeter.md#request) downlink command.                                 |
 | `0x73` | [RemoveMeter](./RemoveMeter.md#response)                                      | Response to the [RemoveMeter](./RemoveMeter.md#request) downlink command.                               |
 | `0x75` | [GetMeterIdList](./GetMeterIdList.md#response)                                | Response to the [GetMeterIdList](./GetMeterIdList.md#request) downlink command.                         |

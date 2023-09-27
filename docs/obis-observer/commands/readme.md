@@ -28,6 +28,7 @@ There are `2` types of command direction:
 | `0x34` | [UpdateRun](./UpdateRun.md#request)                                   | Request to run the update on the device.                                       |
 | `0x40` | [GetObisIdList](./GetObisIdList.md#request)                           | Request to get the OBIS id list for the specific meter profile.                |
 | `0x42` | [SetupObis](./SetupObis.md#request)                                   | Request to set up the id and OBIS profile for the specific OBIS code.          |
+| `0x44` | [RemoveObis](./RemoveObis.md#request)                                 | Request to remove OBIS from service.                                           |
 | `0x46` | [AddObisProfile](./AddObisProfile.md#request)                         | Request to add OBIS profile.                                                   |
 | `0x4a` | [GetObisProfile](./GetObisProfile.md#request)                         | Request to get OBIS profile.                                                   |
 | `0x4c` | [GetObisInfo](./GetObisInfo.md#request)                               | Request to get OBIS information by OBIS ID. Related OBIS and profile..         |
@@ -69,6 +70,7 @@ There are `2` types of command direction:
 | `0x35` | [UpdateRun](./UpdateRun.md#response)                                          | Response to the [UpdateRun](./UpdateRun.md#request) downlink command.                                   |
 | `0x41` | [GetObisIdList](./GetObisIdList.md#response)                                  | Response to the [GetObisIdList](./GetObisIdList.md#request) downlink command.                           |
 | `0x43` | [SetupObis](./SetupObis.md#response)                                          | Response to the [SetupObis](./SetupObis.md#request) downlink command.                                   |
+| `0x45` | [RemoveObis](./RemoveObis.md#response)                                        | Response to the [RemoveObis](./RemoveObis.md#request) downlink command.                                 |
 | `0x47` | [AddObisProfile](./AddObisProfile.md#response)                                | Response to the [AddObisProfile](./AddObisProfile.md#request) downlink command.                         |
 | `0x4b` | [GetObisProfile](./GetObisProfile.md#response)                                | Response to the [GetObisProfile](./GetObisProfile.md#request) downlink command.                         |
 | `0x4d` | [GetObisInfo](./GetObisInfo.md#response)                                      | Response to the [GetObisInfo](./GetObisInfo.md#request) downlink command.                               |

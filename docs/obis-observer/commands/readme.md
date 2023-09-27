@@ -26,8 +26,7 @@ There are `2` types of command direction:
 | `0x30` | [UpdateImageWrite](./UpdateImageWrite.md#request)                     | Request to write the block of the new image to the device.                     |
 | `0x32` | [UpdateImageVerify](./UpdateImageVerify.md#request)                   | Request to verify the update image on the device.                              |
 | `0x34` | [UpdateRun](./UpdateRun.md#request)                                   | Request to run the update on the device.                                       |
-| `0x40` | [GetObisIdList](./GetObisIdList.md#request)                           | Request to get the id list of the specific OBIS code.                          |
-| `0x42` | [GetObisInfoList](./GetObisInfoList.md#request)                       | Request to get the list of the OBIS id and related information.                |
+| `0x40` | [GetObisIdList](./GetObisIdList.md#request)                           | Request to get the OBIS id list for the specific meter profile.                |
 | `0x44` | [SetObisId](./SetObisId.md#request)                                   | Request to set the id for the specific OBIS code.                              |
 | `0x46` | [AddObisProfile](./AddObisProfile.md#request)                         | Request to add OBIS profile.                                                   |
 | `0x48` | [RemoveObisProfile](./RemoveObisProfile.md#request)                   | Request to remove OBIS profile.                                                |
@@ -70,7 +69,6 @@ There are `2` types of command direction:
 | `0x33` | [UpdateImageVerify](./UpdateImageVerify.md#response)                          | Response to the [UpdateImageVerify](./UpdateImageVerify.md#request) downlink command.                   |
 | `0x35` | [UpdateRun](./UpdateRun.md#response)                                          | Response to the [UpdateRun](./UpdateRun.md#request) downlink command.                                   |
 | `0x41` | [GetObisIdList](./GetObisIdList.md#response)                                  | Response to the [GetObisIdList](./GetObisIdList.md#request) downlink command.                           |
-| `0x43` | [GetObisInfoList](./GetObisInfoList.md#response)                              | Response to the [GetObisIdList](./GetObisInfoList.md#request) downlink command.                         |
 | `0x45` | [SetObisId](./SetObisId.md#response)                                          | Response to the [SetObisId](./SetObisId.md#request) downlink command.                                   |
 | `0x47` | [AddObisProfile](./AddObisProfile.md#response)                                | Response to the [AddObisProfile](./AddObisProfile.md#request) downlink command.                         |
 | `0x49` | [RemoveObisProfile](./RemoveObisProfile.md#response)                          | Response to the [RemoveObisProfile](./RemoveObisProfile.md#request) downlink command.                   |

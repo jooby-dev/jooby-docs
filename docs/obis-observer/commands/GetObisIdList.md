@@ -1,36 +1,31 @@
 # GetObisIdList
 
-Request/response to get the OBIS ID list for the specific OBIS code and meter profile.
-
+Request/response to get the OBIS id list for the specific meter profile.
 
 ## Request
 
 ### Format
 
-| Size  | Type                                             | Mandatory/optional | Field                                                       |
-| ----- | ------------------------------------------------ | ------------------ | ----------------------------------------------------------- |
-| `1`   | `byte`                                           | mandatory          | command id = `0x40`                                         |
-| `1`   | `byte`                                           | mandatory          | command size (dynamic, `2+`)                                |
-| `1`   | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier                          |
-| `1`   | [Meter profile ID](../types.md#meter-profile-id) | mandatory          | meter profile unique identifier                             |
-| `1`   | `index`                                          | mandatory          | the index of the initial item to start forming the response |
-| `3-7` | [OBIS](../types.md#obis)                         | optional           | OBIS code                                                   |
+| Size | Type                                             | Mandatory/optional | Field                                                       |
+| ---- | ------------------------------------------------ | ------------------ | ----------------------------------------------------------- |
+| `1`  | `byte`                                           | mandatory          | command id = `0x40`                                         |
+| `1`  | `byte`                                           | mandatory          | command size (dynamic, `2+`)                                |
+| `1`  | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier                          |
+| `1`  | [Meter profile ID](../types.md#meter-profile-id) | mandatory          | meter profile unique identifier                             |
+| `1`  | `index`                                          | mandatory          | the index of the initial item to start forming the response |
 
 
 ### Examples
 
-#### get OBIS ID list for OBIS `0.9.1`:
+| Field            | Value | Hex    |
+| ---------------- | ----- | ------ |
+| command id       | `64`  | `0x40` |
+| command size     | `3`   | `0x02` |
+| request id       | `3`   | `0x03` |
+| meter profile id | `10`  | `0x0a` |
+| index            | `0`   | `0x00` |
 
-| Field            | Value                  | Hex          |
-| ---------------- | ---------------------- | ------------ |
-| command id       | `64`                   | `0x40`       |
-| command size     | `7`                    | `0x07`       |
-| request id       | `3`                    | `0x03`       |
-| meter profile id | `10`                   | `0x0a`       |
-| index            | `0`                    | `0x00`       |
-| OBIS code        | C: `0`, D: `9`, E: `1` | `0x02000901` |
-
-Message hex dump: `40 07 03 0a 00 02 00 09 01`
+Message hex dump: `40 03 03 0a 00`
 
 
 ## Response
@@ -48,9 +43,10 @@ Message hex dump: `40 07 03 0a 00 02 00 09 01`
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `N`                        |
 
 
+
 ### Examples
 
-#### OBIS ID list for OBIS `0.9.1`:
+Response with two OBIS ID
 
 | Field             | Value | Hex    |
 | ----------------- | ----- | ------ |

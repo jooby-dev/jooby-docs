@@ -65,8 +65,8 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | Result code | Description                     |
 | ----------- | ------------------------------- |
 | `3`         | Format error.                   |
-| `5`         | OBIS profile allocation failed. |
-| `9`         | The meter profile not found.    |
+| `7`         | OBIS profile allocation failed. |
+| `11`        | The meter profile not found.    |
 
 
 ## See also

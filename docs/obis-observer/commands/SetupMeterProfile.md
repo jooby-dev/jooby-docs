@@ -65,7 +65,7 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | Result code | Description                      |
 | ----------- | -------------------------------- |
 | `3`         | Format error.                    |
-| `9`         | Meter profile allocation failed. |
+| `10`        | Meter profile allocation failed. |
 
 ## See also
 

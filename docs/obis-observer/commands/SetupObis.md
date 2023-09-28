@@ -68,8 +68,9 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | `3`         | Format error.                             |
 | `4`         | Forbidden to reassign the static OBIS ID. |
 | `5`         | OBIS ID allocation failed.                |
-| `6`         | OBIS profile allocation failed.           |
-| `9`         | The meter profile not found.              |
+| `6`         | OBIS not found.                           |
+| `7`         | OBIS profile allocation failed.           |
+| `11`        | The meter profile not found.              |
 
 
 ## See also

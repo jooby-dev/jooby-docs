@@ -59,7 +59,7 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | Result code | Description                            |
 | ----------- | -------------------------------------- |
 | `3`         | Format error.                          |
-| `11`        | The single-multi meter mode collision. |
+| `12`        | The single-multi meter mode collision. |
 
 
 ## See alsos

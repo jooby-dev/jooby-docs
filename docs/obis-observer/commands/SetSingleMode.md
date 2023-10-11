@@ -61,7 +61,7 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | Result code | Description                       |
 | ----------- | --------------------------------- |
 | `3`         | Format error.                     |
-| `12`        | The multi meter mode unsupported. |
+| `13`        | The multi meter mode unsupported. |
 
 
 ## See also

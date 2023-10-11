@@ -338,13 +338,14 @@ By default, the archive period is `15` minutes.
 | `3`   | Format error.                             |
 | `4`   | Forbidden to reassign the static OBIS ID. |
 | `5`   | OBIS ID allocation failed.                |
-| `6`   | OBIS profile allocation failed.           |
-| `7`   | Meter allocation failed.                  |
-| `8`   | The meter not found.                      |
-| `9`   | Meter profile allocation failed.          |
-| `10`  | The meter profile not found.              |
-| `11`  | The single-multi meter mode collision.    |
-| `12`  | The multi meter mode unsupported.         |
+| `6`   | OBIS not found.                           |
+| `7`   | OBIS profile allocation failed.           |
+| `8`   | Meter allocation failed.                  |
+| `9`   | The meter not found.                      |
+| `10`  | Meter profile allocation failed.          |
+| `11`  | The meter profile not found.              |
+| `12`  | The single-multi meter mode collision.    |
+| `13`  | The multi meter mode unsupported.         |
 
 
 ## LoRaWAN activation method

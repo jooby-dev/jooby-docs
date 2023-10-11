@@ -1,6 +1,6 @@
-# GetMeterArchiveProfile
+# GetMeterProfile
 
-Request/response to get the archive settings for the specific meter profile.
+Request/response to get the meter profile related information.
 
 
 ## Request
@@ -64,7 +64,7 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | Result code | Description                  |
 | ----------- | ---------------------------- |
 | `3`         | Format error.                |
-| `10`        | The meter profile not found. |
+| `11`        | The meter profile not found. |
 
 ## See also
 

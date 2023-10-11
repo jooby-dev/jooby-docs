@@ -1,6 +1,6 @@
-# SetMeterArchiveProfile
+# SetupMeterProfile
 
-Request/response to set the archive settings for the specific meter profile.
+Request/response to setup the meter profile.
 
 
 ## Request
@@ -9,7 +9,7 @@ Request/response to set the archive settings for the specific meter profile.
 
 | Size | Type                                             | Field                                         |
 | ---- | ------------------------------------------------ | --------------------------------------------- |
-| `1`  | `byte`                                           | command id = `0x68`                           |
+| `1`  | `byte`                                           | command id = `0x60`                           |
 | `1`  | `byte`                                           | command size                                  |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier            |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier               |
@@ -23,13 +23,14 @@ Request/response to set the archive settings for the specific meter profile.
 
 | Field            | Value  | Hex      |
 | ---------------- | ------ | -------- |
-| command id       | `104`  | `0x68`   |
+| command id       | `96`   | `0x60`   |
 | command size     | `5`    | `0x05`   |
 | request id       | `35`   | `0x23`   |
+| meter profile id | `2`    | `0x02`   |
 | archive 1 period | `2880` | `0x0b40` |
 | archive 2 period | `30`   | `0x001e` |
 
-Message hex dump: `68 05 23 0b 40 00 1e`
+Message hex dump: `60 06 23 02 0b 40 00 1e`
 
 
 ## Response
@@ -38,7 +39,7 @@ Message hex dump: `68 05 23 0b 40 00 1e`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x69`                |
+| `1`  | `byte`                               | command id = `0x61`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
@@ -49,11 +50,11 @@ Message hex dump: `68 05 23 0b 40 00 1e`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `105` | `0x69` |
+| command id   | `97`  | `0x61` |
 | command size | `1`   | `0x01` |
 | request id   | `156` | `0x9c` |
 
-Message hex dump: `69 01 9c`
+Message hex dump: `61 01 9c`
 
 #### error:
 
@@ -61,10 +62,10 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 
 ##### Result codes:
 
-| Result code | Description                  |
-| ----------- | ---------------------------- |
-| `3`         | Format error.                |
-| `9`         | The meter profile not found. |
+| Result code | Description                      |
+| ----------- | -------------------------------- |
+| `3`         | Format error.                    |
+| `10`        | Meter profile allocation failed. |
 
 ## See also
 

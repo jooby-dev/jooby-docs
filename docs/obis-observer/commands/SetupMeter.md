@@ -64,8 +64,8 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | Result code | Description                            |
 | ----------- | -------------------------------------- |
 | `3`         | Format error.                          |
-| `7`         | Meter allocation failed.               |
-| `10`        | The meter profile not found.           |
+| `8`         | Meter allocation failed.               |
+| `11`        | The meter profile not found.           |
 | `12`        | The single-multi meter mode collision. |
 
 

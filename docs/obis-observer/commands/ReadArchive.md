@@ -43,16 +43,16 @@ Message hex dump: `15 06 21 01 00 00 00 00`
 | `1`  | `byte`                               | command size (dynamic, `3+`)                                                                                          |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                                                    |
 | `1`  | `byte`                               | is completed flag: <br> `0` - there is more content in the archive <br> `1` - there is no more content in the archive |
-| `1`  | `byte`                               | Meter id `1`                                                                                                          |
-| `4`  | [Time 2000](../types.md#time-2000)   | Date `1`. The date and time at which the data was captured                                                            |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier `1`                                                                                          |
+| `4`  | [Time 2000](../types.md#time-2000)   | date `1`. The date and time at which the data was captured                                                            |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                           |
 | `4`  | `float32`                            | OBIS content `1`                                                                                                      |
 | ...  | ...                                  | ...                                                                                                                   |
 | `1`  | [OBIS ID](../types.md#obis-od)       | OBIS ID `N`                                                                                                           |
 | `4`  | `float32`                            | OBIS content `N`                                                                                                      |
-| `1`  | `byte`                               | Meter end flag                                                                                                        |
-| `1`  | `byte`                               | Meter id `2`                                                                                                          |
-| `4`  | [Time 2000](../types.md#time-2000)   | Date `2`. The date and time at which the data was captured                                                            |
+| `1`  | `byte`                               | meter end flag                                                                                                        |
+| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier `2`                                                                                          |
+| `4`  | [Time 2000](../types.md#time-2000)   | date `2`. The date and time at which the data was captured                                                            |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                           |
 | `4`  | `float32`                            | OBIS content `1`                                                                                                      |
 | ...  | ...                                  | ...                                                                                                                   |

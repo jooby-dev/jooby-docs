@@ -336,7 +336,6 @@ By default, the archive period is `15` minutes.
 | `1`   | General failure.                          |
 | `2`   | Unknown command.                          |
 | `3`   | Format error.                             |
-| `4`   | Forbidden to reassign the static OBIS ID. |
 | `5`   | OBIS ID allocation failed.                |
 | `6`   | OBIS not found.                           |
 | `7`   | OBIS profile allocation failed.           |

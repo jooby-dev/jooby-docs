@@ -66,7 +66,6 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | Result code | Description                               |
 | ----------- | ----------------------------------------- |
 | `3`         | Format error.                             |
-| `4`         | Forbidden to reassign the static OBIS ID. |
 | `5`         | OBIS ID allocation failed.                |
 | `6`         | OBIS not found.                           |
 | `7`         | OBIS profile allocation failed.           |

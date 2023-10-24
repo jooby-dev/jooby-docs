@@ -25,7 +25,9 @@ There are `2` types of command direction:
 | `0x1b`   | [GetArchiveDaysMC](./GetArchiveDaysMC.md#request)   | Request to get a day values from archive.                                    |
 | `0x1f02` | [GetLmicInfo](./GetLmicInfo.md#request)             | Request to get LMiC (IBM LoRaWAN in C) information.                          |
 | `0x1f0f` | [GetExAbsCurrentMC](./GetExAbsCurrentMC.md#request) | Request to receive current consumption absolute values from device channels. |
-
+| `0x1f2a` | [WriteImage](./WriteImage.md#request)               | Request to write the block of the new image to the device.                   |
+| `0x1f2b` | [VerifyImage](./VerifyImage.md#request)             | Request to verify the update image on the device.                            |
+| `0x1f2c` | [UpdateRun](./UpdateRun.md#request)                 | Request to start update on the device.                                       |
 
 ## Uplink commands
 
@@ -52,6 +54,9 @@ There are `2` types of command direction:
 | `0x1f0a` | [ExAbsHourMC](./uplink/ExAbsHourMC.md)               | Absolute values from device channels for the specified hour and hourly difference.                                                                |
 | `0x1f0b` | [ExAbsDayMC](./uplink/ExAbsDayMC.md)                 | Absolute values from device channels for the previous day's billing hour.                                                                         |
 | `0x1f0f` | [ExAbsCurrentMC](./GetExAbsCurrentMC.md#response)    | Response to the [GetExAbsCurrentMC](./GetExAbsCurrentMC.md#request) downlink command or current consumption absolute values from device channels. |
+| `0x1f2a` | [WriteImage](./WriteImage.md#response)               | Response to the [GetLmicInfo](./WriteImage.md#request) downlink command.                                                                          |
+| `0x1f2b` | [VerifyImage](./VerifyImage.md#response)             | Response to the [GetLmicInfo](./VerifyImage.md#request) downlink command.                                                                         |
+| `0x1f2c` | [UpdateRun](./UpdateRun.md#response)                 | Response to the [GetLmicInfo](./UpdateRun.md#request) downlink command.                                                                           |
 | `0x20`   | [Day](./uplink/Day.md)                               | Contains complete pulse counter data for the specified day.                                                                                       |
 | `0x40`   | [Hour](./uplink/Hour.md)                             | Contains the complete pulse counter value for the specified hour and the hourly difference in readings.                                           |
 | `0x60`   | [LastEvent](./uplink/LastEvent.md)                   | Info of the last device event sequence number and the status bits.                                                                                |

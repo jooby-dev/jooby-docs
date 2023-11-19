@@ -1,13 +1,34 @@
-# Time2000
+# GetTime2000
 
-A device with this command reports its current time.
+The command to request sensor current time.
 
+
+## Request
+
+### Format
+
+| Size | Type   | Field               |
+| ---- | ------ | ------------------- |
+| `1`  | `byte` | command id = `0x09` |
+| `1`  | `byte` | command size = `9`  |
+
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+
+### Examples
+
+| Field           | Value    | Hex          |
+| --------------- | -------- | ------------ |
+| command id      | `9`      | `0x09`       |
+| command size    | `0`      | `0x00`       |
+
+Message hex dump with LRC: `09 00 5c`
+
+
+## Response
+
+It's a mandatory confirmation to [GetTime2000 request](./GetTime2000.md#request).
 It is sent immediately after device power on.
 After it a device sends it periodically (once per 24 hours).
-This command is followed by the [GetStatus](./GetStatus.md#response) uplink command.
-
-
-## Event
 
 ### Format
 

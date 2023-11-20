@@ -44,10 +44,10 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 | command id   | `26`                      |                      | `0x1a`   |
 | command size | `4`                       |                      | `0x04`   |
 | start date   | `2023.12.23 00:00:00 GMT` | `0b0010111110010111` | `0x2f97` |
-| hours        | hour: `12:00`, hours: `2` | `0b01001100`         | `0x4c`   |
+| hours        | hour: `12:00`, hours: `2` | `0b01001100`         | `0x2c`   |
 | channels     | `1`                       | `0b00000001`         | `0x01`   |
 
-Message hex dump with LRC: `1a 04 2f 97 4c 01 be`
+Message hex dump with LRC: `1a 04 2f 97 2c 01 de`
 
 
 ## Response

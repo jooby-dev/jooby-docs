@@ -71,9 +71,9 @@ Device type revision.
 
 #### **battery voltage**
 
-`3` bytes that store low and high battery voltage values.
-Low - battery voltage with minimum load (sleep mode), value in `mV`. Typical value is about `3600` `mV`.
-High - battery voltage with load simulating transmission mode, value in `mV`. Typical value is about `3100` `mV`.
+`3` bytes that store battery voltage values under different load.
+Under low load - battery voltage under minimum load (sleep mode), value in `mV`. Typical value is about `3600` `mV`.
+Under high load - battery voltage under load simulating transmission mode, value in `mV`. Typical value is about `3600` `mV`.
 If the voltage value is `4095` `mV`, then the value is unknown.
 Voltage values bit map (each line is a byte):
 
@@ -92,14 +92,14 @@ Voltage values bit map (each line is a byte):
     </thead>
     <tbody>
         <tr>
-            <td colspan="8" align="center">low voltage [<code>11..4</code>]</td>
+            <td colspan="8" align="center">under low load [<code>11..4</code>]</td>
         </tr>
         <tr>
-            <td colspan="4" align="center">low voltage [<code>3..0</code>]</td>
-            <td colspan="4" align="center">high voltage [<code>11..8</code>]</td>
+            <td colspan="4" align="center">under low load [<code>3..0</code>]</td>
+            <td colspan="4" align="center">under high load [<code>11..8</code>]</td>
         </tr>
         <tr>
-            <td colspan="8" align="center">high voltage [<code>7..0</code>]</td>
+            <td colspan="8" align="center">under high load [<code>7..0</code>]</td>
         </tr>
     </tbody>
 </table>

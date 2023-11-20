@@ -65,7 +65,7 @@ If the voltage value is `4095` `mV`, then the value is unknown.
 
 #### **voltage under high load**
 
-Voltage under load simulating transmission mode, value in `mV`. Typical value is about `3600` `c`.
+Voltage under load simulating transmission mode, value in `mV`. Typical value is about `3600` `mV`.
 If the voltage value is `4095` `mV`, then the value is unknown.
 
 #### **internal resistance**
@@ -93,17 +93,17 @@ Counter for exceeding average daily consumption.
 
 ### Examples
 
-| Field                                           | Value  | Bits | Hex      |
-|-------------------------------------------------|--------|------|----------|
-| extra flag                                      | `31`   |      | `0x1f`   |
-| command id                                      | `5`    |      | `0x05`   |
-| command size                                    | `11`   |      | `0x0b`   |
-| voltage under low load                          | `3600` |      | `0x100e` |
-| voltage under high load                         | `3600` |      | `0x100e` |
-| internal resistance                             | `1034` |      | `0x0a04` |
-| temperature                                     | `15`   |      | `0x0f`   |
-| remaining capacity                              | `41`   |      | `0x29`   |
-| overconsumption for last 24 hours               | `0`    |      | `0x00`   |
-| counter for exceeding average daily consumption | `34`   |      | `0x2200` |
+| Field                                           | Value  | Hex      |
+|-------------------------------------------------|--------|----------|
+| extra flag                                      | `31`   | `0x1f`   |
+| command id                                      | `5`    | `0x05`   |
+| command size                                    | `11`   | `0x0b`   |
+| voltage under low load                          | `3600` | `0x100e` |
+| voltage under high load                         | `3600` | `0x100e` |
+| internal resistance                             | `1034` | `0x0a04` |
+| temperature                                     | `15`   | `0x0f`   |
+| remaining capacity                              | `41`   | `0x29`   |
+| overconsumption for last 24 hours               | `0`    | `0x00`   |
+| counter for exceeding average daily consumption | `34`   | `0x2200` |
 
 Message hex dump with LRC: `1f 05 0b 10 0e 10 0e 0a 04 0f 29 00 22 00 4e`

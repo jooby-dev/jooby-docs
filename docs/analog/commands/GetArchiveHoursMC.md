@@ -44,10 +44,10 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 | command id   | `26`                      |                      | `0x1a`   |
 | command size | `4`                       |                      | `0x04`   |
 | start date   | `2023.12.23 00:00:00 GMT` | `0b0010111110010111` | `0x2f97` |
-| hours        | hour: `12:00`, hours: `2` | `0b01001100`         | `0x4c`   |
+| hours        | hour: `12:00`, hours: `2` | `0b00101100`         | `0x2c`   |
 | channels     | `1`                       | `0b00000001`         | `0x01`   |
 
-Message hex dump with LRC: `1a 04 2f 97 4c 01 be`
+Message hex dump with LRC: `1a 04 2f 97 2c 01 de`
 
 
 ## Response
@@ -101,7 +101,7 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 | command id                 | `26`                      |                                                                     | `0x1a`   |
 | command size               | `13`                      |                                                                     | `0x0d`   |
 | start date                 | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                | `0x2f97` |
-| hours                      | hour: `12:00`, hours: `1` | `0b01001100`                                                        | `0x0c`   |
+| hours                      | hour: `12:00`, hours: `1` | `0b00001100`                                                        | `0x0c`   |
 | channels                   | `1`, `2`, `3`, `4`        | `0b00001111`                                                        | `0x0f`   |
 | channel `1` hour `1` value | `131`                     | `0b0000000010000011`<br>with extended bits:<br>`0b0000100000110001` | `0x8301` |
 | channel `1` hour `1` diff  | `10`                      | `0b00001010`<br>with extended bits:<br>`0b00001010`                 | `0x0a`   |

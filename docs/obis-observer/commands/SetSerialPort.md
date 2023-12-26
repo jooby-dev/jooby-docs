@@ -57,12 +57,7 @@ The serial port parity setting.
     </thead>
     <tbody>
         <tr>
-            <td colspan="5"><code>0</code></td>
-            <td>
-                fixed flag: <br>
-                <code>0</code> - the given setting will be used as initial <br>
-                <code>1</code> - only the given settings will be used
-            </td>
+            <td colspan="6"><code>0</code></td>
             <td colspan="2">
                 parity: <br>
                 <code>0</code> - none <br>
@@ -78,16 +73,16 @@ The serial port parity setting.
 
 #### set fixed settings:
 
-| Field        | Value                               | Hex    |
-| ------------ | ----------------------------------- | ------ |
-| command id   | `19`                                | `0x07` |
-| command size | `4`                                 | `0x04` |
-| request id   | `52`                                | `0x34` |
-| baud rate    | `9600`                              | `0x05` |
-| data bits    | `8`                                 | `0x08` |
-| flags        | parity: `odd` <br> is fixed: `true` | `0x05` |
+| Field        | Value         | Hex    |
+| ------------ | ------------- | ------ |
+| command id   | `19`          | `0x07` |
+| command size | `4`           | `0x04` |
+| request id   | `52`          | `0x34` |
+| baud rate    | `9600`        | `0x05` |
+| data bits    | `8`           | `0x08` |
+| flags        | parity: `odd` | `0x01` |
 
-Message hex dump: `07 04 34 05 08 05`
+Message hex dump: `07 04 34 05 08 01`
 
 
 ## Response

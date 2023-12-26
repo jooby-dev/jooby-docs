@@ -363,3 +363,61 @@ By default, the archive period is `15` minutes.
 | `1`   | B     |
 | `2`   | C     |
 | `3`   | AC    |
+
+
+## Serial port parameters
+
+### **baud rate**
+
+The serial port baud rate.
+
+| Value | Baud rate |
+| ----- | --------- |
+| `0`   | `300`     |
+| `1`   | `600`     |
+| `2`   | `1200`    |
+| `3`   | `2400`    |
+| `4`   | `4800`    |
+| `5`   | `9600`    |
+| `6`   | `14440`   |
+| `7`   | `19200`   |
+| `8`   | `28800`   |
+| `9`   | `38400`   |
+| `10`  | `56000`   |
+| `11`  | `57600`   |
+| `12`  | `115200`  |
+
+
+### ***data bits***
+
+Serial port word length or data bits (supported: `7`, `8`)
+
+### **parity**
+
+The serial port parity setting.
+
+<table>
+    <thead>
+        <tr>
+            <th>8</th>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="6"><code>0</code></td>
+            <td colspan="2">
+                parity: <br>
+                <code>0</code> - none <br>
+                <code>1</code> - odd <br>
+                <code>2</code> - even <br>
+            </td>
+        </tr>
+    </tbody>
+</table>

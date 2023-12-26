@@ -9,7 +9,7 @@ Request/response to set serial port parameters.
 
 | Size | Type                                 | Field                                                      |
 | ---- | ------------------------------------ | ---------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x07`                                        |
+| `1`  | `byte`                               | command id = `0x09`                                        |
 | `1`  | `byte`                               | command size                                               |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                         |
 | `1`  | `byte`                               | [baud rate](#baud-rate)                                    |
@@ -71,18 +71,18 @@ The serial port parity setting.
 
 ### Examples
 
-#### set fixed settings:
+#### set settings:
 
 | Field        | Value         | Hex    |
 | ------------ | ------------- | ------ |
-| command id   | `19`          | `0x07` |
+| command id   | `9`           | `0x09` |
 | command size | `4`           | `0x04` |
 | request id   | `52`          | `0x34` |
 | baud rate    | `9600`        | `0x05` |
 | data bits    | `8`           | `0x08` |
 | flags        | parity: `odd` | `0x01` |
 
-Message hex dump: `07 04 34 05 08 01`
+Message hex dump: `09 04 34 05 08 01`
 
 
 ## Response
@@ -91,7 +91,7 @@ Message hex dump: `07 04 34 05 08 01`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x08`                |
+| `1`  | `byte`                               | command id = `0x0a`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
@@ -102,11 +102,11 @@ Message hex dump: `07 04 34 05 08 01`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `8`   | `0x08` |
+| command id   | `10`  | `0x0a` |
 | command size | `1`   | `0x01` |
 | request id   | `32`  | `0x20` |
 
-Message hex dump: `08 01 20`
+Message hex dump: `0a 01 20`
 
 
 #### error:

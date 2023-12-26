@@ -9,7 +9,7 @@ Request/response to set the Lorawan activation method OTAA or ABP.
 
 | Size | Type                                                       | Field                              |
 | ---- | ---------------------------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                                     | command id = `0x17`                |
+| `1`  | `byte`                                                     | command id = `0x24`                |
 | `1`  | `byte`                                                     | command size                       |
 | `1`  | [Request ID](../types.md#request-id)                       | request/response unique identifier |
 | `1`  | [Activation method](../types.md#lorawan-activation-method) | LoRaWAN activation method          |
@@ -19,12 +19,12 @@ Request/response to set the Lorawan activation method OTAA or ABP.
 
 | Field             | Value | Hex    |
 | ----------------- | ----- | ------ |
-| command id        | `23`  | `0x17` |
+| command id        | `36`  | `0x24` |
 | command size      | `2`   | `0x02` |
 | request id        | `7`   | `0x07` |
 | activation method | `1`   | `0x01` |
 
-Message hex dump: `17 02 07 01`
+Message hex dump: `24 02 07 01`
 
 
 ## Response
@@ -33,7 +33,7 @@ Message hex dump: `17 02 07 01`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x18`                |
+| `1`  | `byte`                               | command id = `0x25`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
@@ -44,11 +44,11 @@ Message hex dump: `17 02 07 01`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `24`  | `0x18` |
+| command id   | `37`  | `0x25` |
 | command size | `1`   | `0x01` |
 | request id   | `156` | `0x9c` |
 
-Message hex dump: `18 01 9c`
+Message hex dump: `25 01 9c`
 
 #### error:
 

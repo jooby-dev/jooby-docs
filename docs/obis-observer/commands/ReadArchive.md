@@ -43,7 +43,7 @@ Message hex dump: `15 06 21 01 00 00 00 00`
 | `1`  | `byte`                               | command size (dynamic, `3+`)                                                                                          |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                                                    |
 | `1`  | `byte`                               | is completed flag: <br> `0` - there is more content in the archive <br> `1` - there is no more content in the archive |
-| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier `1`                                                                                          |
+| `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier `1`                                                                                           |
 | `4`  | [Time 2000](../types.md#time-2000)   | date `1`. The date and time at which the data was captured                                                            |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                           |
 | `4`  | `float32`                            | OBIS content `1`                                                                                                      |
@@ -51,7 +51,7 @@ Message hex dump: `15 06 21 01 00 00 00 00`
 | `1`  | [OBIS ID](../types.md#obis-od)       | OBIS ID `N`                                                                                                           |
 | `4`  | `float32`                            | OBIS content `N`                                                                                                      |
 | `1`  | `byte`                               | meter end flag                                                                                                        |
-| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier `2`                                                                                          |
+| `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier `2`                                                                                           |
 | `4`  | [Time 2000](../types.md#time-2000)   | date `2`. The date and time at which the data was captured                                                            |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                           |
 | `4`  | `float32`                            | OBIS content `1`                                                                                                      |
@@ -68,15 +68,15 @@ If a byte with the value 0 immediately follows the OBIS content, it indicates th
 | Field              | Value                     | Hex          |
 | ------------------ | ------------------------- | ------------ |
 | command id         | `22`                      | `0x16`       |
-| command size       | `28`                      | `0x1с`       |
+| command size       | `34`                      | `0x22`       |
 | request id         | `01`                      | `0x09`       |
 | is completed       | `1`                       | `0x01`       |
-| meter id `1`       | `1`                       | `0x01`       |
+| meter id `1`       | `1`                       | `0x00000001` |
 | date `1`           | `2023.10.10 20:26:16 GMT` | `0x14560168` |
 | OBIS ID `1`        | `108`                     | `0x6c`       |
 | OBIS content `1`   | `0.20`                    | `0x3e4ccccd` |
 | meter `1` end flag | `0`                       | `0x00`       |
-| meter id `2`       | `2`                       | `0x02`       |
+| meter id `2`       | `2`                       | `0x00000002` |
 | date `2`           | `2023.10.10 20:26:15 GMT` | `0x14560167` |
 | OBIS ID `1`        | `8`                       | `0x08`       |
 | OBIS content `1`   | `0.20`                    | `0x3e4ccccd` |
@@ -84,7 +84,7 @@ If a byte with the value 0 immediately follows the OBIS content, it indicates th
 | OBIS content `2`   | `0.20`                    | `0x3e4ccccd` |
 
 
-Message hex dump: `16 1c 09 01 01 14 56 01 68 6c 3e 4c cc cd 00 02 14 56 01 67 08 3e 4c cc cd 6c 3e 4c cc cd`
+Message hex dump: `16 22 09 01 00 00 00 01 14 56 01 68 6c 3e 4c cc cd 00 00 00 00 02 14 56 01 67 08 3e 4c cc cd 6c 3e 4c cc cd`
 
 #### error:
 

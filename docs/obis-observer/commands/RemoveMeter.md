@@ -12,19 +12,19 @@ Request/response to remove specific meter device.
 | `1`  | `byte`                               | command id = `0x72`                |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `1`  | `byte`                               | command size                       |
-| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
+| `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 
 ### Examples
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `114` | `0x72` |
-| command size | `2`   | `0x02` |
-| request id   | `121` | `0x29` |
-| meter id     | `1`   | `0x01` |
+| Field        | Value | Hex          |
+| ------------ | ----- | ------------ |
+| command id   | `114` | `0x72`       |
+| command size | `5`   | `0x05`       |
+| request id   | `121` | `0x29`       |
+| meter id     | `1`   | `0x00000001` |
 
-Message hex dump: `72 02 29 01`
+Message hex dump: `72 05 29 00 00 00 01`
 
 
 ## Response
@@ -62,7 +62,7 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 | `12`        | The single-multi meter mode collision. |
 
 
-## See alsos
+## See also
 
 * [Request ID](../types.md#request-id)
 * [Meter ID](../types.md#meter-id)

@@ -12,20 +12,20 @@ Request/response to get the readout related state and statistic from the specifi
 | `1`  | `byte`                               | command id = `0x81`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
+| `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 ### Examples
 
 #### get readout state for meter with id `8`:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `129` | `0x81` |
-| command size | `1`   | `0x01` |
-| request id   | `18`  | `0x12` |
-| meter id     | `8`   | `0x08` |
+| Field        | Value | Hex          |
+| ------------ | ----- | ------------ |
+| command id   | `129` | `0x81`       |
+| command size | `5`   | `0x05`       |
+| request id   | `18`  | `0x12`       |
+| meter id     | `8`   | `0x00000008` |
 
-Message hex dump: `81 02 12 08`
+Message hex dump: `81 05 12 00 00 00 08`
 
 
 

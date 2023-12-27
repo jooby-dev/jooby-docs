@@ -13,6 +13,7 @@ There are `2` types of command direction:
 | `0x01` | [GetObserverInfo](./GetObserverInfo.md#request)                       | Request to get information about the observer device.                          |
 | `0x03` | [GetObserverCapabilities](./GetObserverCapabilities.md#request)       | Request to get the observer capabilities.                                      |
 | `0x05` | [GetObserverUptime](./GetObserverUptime.md#request)                   | Request to get uptime in seconds of the observer device.                       |
+| `0x07` | [GetSerialPort](./GetSerialPort.md#request)                           | Request to get serial port settings.                                           |
 | `0x09` | [SetSerialPort](./SetSerialPort.md#request)                           | Request to set serial port parameters.                                         |
 | `0x0b` | [SetSingleMode](./SetSingleMode.md#request)                           | Request to set the single or multi mode of the observer device.                |
 | `0x0d` | [GetSingleMode](./GetSingleMode.md#request)                           | Request to get the current mode (single or multi mode) of the observer device. |
@@ -53,6 +54,7 @@ There are `2` types of command direction:
 | `0x02` | [GetObserverInfo](./GetObserverInfo.md#request)                               | Response to the [GetObserverInfo](./GetObserverInfo.md#request) downlink command.                       |
 | `0x04` | [GetObserverCapabilities](./GetObserverCapabilities.md#response)              | Response to the [GetObserverCapabilities](./GetObserverCapabilities.md#request) downlink command.       |
 | `0x06` | [GetObserverUptime](./GetObserverUptime.md#response)                          | Response to the [GetObserverUptime](./GetObserverUptime.md#request) downlink command.                   |
+| `0x08` | [GetSerialPort](./GetSerialPort.md#response)                                  | Response to the [GetSerialPort](./GetSerialPort.md#request) downlink command.                           |
 | `0x0a` | [SetSerialPort](./SetSerialPort.md#response)                                  | Response to the [SetSerialPort](./SetSerialPort.md#request) downlink command.                           |
 | `0x0c` | [SetSingleMode](./SetSingleMode.md#response)                                  | Response to the [SetSingleMode](./SetSingleMode.md#request) downlink command.                           |
 | `0x0e` | [GetSingleMode](./GetSingleMode.md#request)                                   | Response to the [GetSingleMode](./GetSingleMode.md#request) downlink command.                           |

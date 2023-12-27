@@ -9,7 +9,7 @@ Request/response to get the Lorawan related state and statistic.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x15`                |
+| `1`  | `byte`                               | command id = `0x22`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
@@ -18,11 +18,11 @@ Request/response to get the Lorawan related state and statistic.
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `21`  | `0x15` |
+| command id   | `34`  | `0x22` |
 | command size | `1`   | `0x01` |
 | request id   | `18`  | `0x12` |
 
-Message hex dump: `15 01 12`
+Message hex dump: `22 01 12`
 
 
 ## Response
@@ -31,7 +31,7 @@ Message hex dump: `15 01 12`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x16`                |
+| `1`  | `byte`                               | command id = `0x23`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `1`  | `byte`                               | downlink quality in percent        |
@@ -47,7 +47,7 @@ Message hex dump: `15 01 12`
 
 | Field                       | Value | Hex    |
 | --------------------------- | ----- | ------ |
-| command id                  | `22`  | `0x16` |
+| command id                  | `35`  | `0x23` |
 | command size                | `8`   | `0x08` |
 | request id                  | `1`   | `0x01` |
 | downlink quality in percent | `1`   | `0x01` |
@@ -58,7 +58,7 @@ Message hex dump: `15 01 12`
 | reset flag                  | `0`   | `0x00` |
 | sender collision            | `0`   | `0x00` |
 
-Message hex dump: `16 08 01 01 c1 05 06 00 00 00`
+Message hex dump: `23 08 01 01 c1 05 06 00 00 00`
 
 
 ## See also

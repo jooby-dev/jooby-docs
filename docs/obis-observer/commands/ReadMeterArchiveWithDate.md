@@ -8,7 +8,7 @@ Request/response to get the meter archive data for the specific date.
 
 | Size | Type                                 | Field                                                   |
 | ---- | ------------------------------------ | ------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x11`                                     |
+| `1`  | `byte`                               | command id = `0x13`                                     |
 | `1`  | `byte`                               | command size                                            |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                      |
 | `1`  | `byte`                               | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |

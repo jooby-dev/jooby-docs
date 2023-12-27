@@ -9,7 +9,7 @@ Request/response the information about observer, like name, software and hardwar
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x19`                |
+| `1`  | `byte`                               | command id = `0x03`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
@@ -18,11 +18,11 @@ Request/response the information about observer, like name, software and hardwar
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `25`  | `0x19` |
+| command id   | `3`   | `0x03` |
 | command size | `1`   | `0x01` |
 | request id   | `3`   | `0x03` |
 
-Message hex dump: `19 01 03`
+Message hex dump: `03 01 03`
 
 
 ## Response
@@ -31,7 +31,7 @@ Message hex dump: `19 01 03`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x1a`                |
+| `1`  | `byte`                               | command id = `0x04`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `1`  | `byte`                               | max meter profiles number          |
@@ -44,7 +44,7 @@ Message hex dump: `19 01 03`
 
 | Field                     | Value | Hex    |
 | ------------------------- | ----- | ------ |
-| command id                | `26`  | `0x1a` |
+| command id                | `04`  | `0x04` |
 | command size              | `5`   | `0x05` |
 | request id                | `7`   | `0x07` |
 | max meter profiles number | `8`   | `0x08` |
@@ -52,7 +52,7 @@ Message hex dump: `19 01 03`
 | max OBIS profiles number  | `8`   | `0x08` |
 | is multi-mode supported   | `1`   | `0x01` |
 
-Message hex dump: `1a 05 07 08 08 08 01`
+Message hex dump: `04 05 07 08 08 08 01`
 
 
 ## See also

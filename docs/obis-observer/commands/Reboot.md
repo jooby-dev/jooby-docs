@@ -9,7 +9,7 @@ Request/response to restart the device.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x09`                |
+| `1`  | `byte`                               | command id = `0x26`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
@@ -17,11 +17,11 @@ Request/response to restart the device.
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `9`   | `0x09` |
+| command id   | `38`  | `0x26` |
 | command size | `1`   | `0x01` |
 | request id   | `3`   | `0x03` |
 
-Message hex dump: `09 01 03`
+Message hex dump: `26 01 03`
 
 
 ## Response
@@ -30,7 +30,7 @@ Message hex dump: `09 01 03`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x0a`                |
+| `1`  | `byte`                               | command id = `0x27`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
@@ -39,11 +39,11 @@ Message hex dump: `09 01 03`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `10`  | `0x0a` |
+| command id   | `39`  | `0x27` |
 | command size | `1`   | `0x01` |
 | request id   | `3`   | `0x03` |
 
-Message hex dump: `0a 01 03`
+Message hex dump: `27 01 03`
 
 ## See also
 

@@ -13,7 +13,7 @@ Request/response to get the archive state for the specific meter, including the 
 | `1`  | `byte`                               | mandatory          | command size (dynamic, `2+`)                            |
 | `1`  | [Request ID](../types.md#request-id) | mandatory          | request/response unique identifier                      |
 | `1`  | `byte`                               | mandatory          | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
-| `1`  | [Meter ID](../types.md#meter-id)     | optional           | meter unique identifier                                 |
+| `4`  | [Meter ID](../types.md#meter-id)     | optional           | meter unique identifier                                 |
 
 If meter id field is provided, the observer will respond with information about that specified meter.
 If meter id field is not provided, the observer will respond with information about all meters.
@@ -21,15 +21,15 @@ If meter id field is not provided, the observer will respond with information ab
 
 ### Examples
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `15`  | `0x0f` |
-| command size | `3`   | `0x03` |
-| request id   | `41`  | `0x29` |
-| archive type | `1`   | `0x01` |
-| meter id     | `3`   | `0x03` |
+| Field        | Value | Hex          |
+| ------------ | ----- | ------------ |
+| command id   | `15`  | `0x0f`       |
+| command size | `6`   | `0x06`       |
+| request id   | `41`  | `0x29`       |
+| archive type | `1`   | `0x01`       |
+| meter id     | `3`   | `0x00000003` |
 
-Message hex dump: `0f 03 29 01 03`
+Message hex dump: `0f 06 29 01 00 00 00 03`
 
 
 ## Response

@@ -12,18 +12,18 @@ Request/response to get the current date and time on the specific meter.
 | `1`  | `byte`                               | command id = `0x7a`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
+| `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 ### Examples
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `122` | `0x7a` |
-| command size | `2`   | `0x02` |
-| request id   | `18`  | `0x12` |
-| meter id     | `1`   | `0x01` |
+| Field        | Value | Hex          |
+| ------------ | ----- | ------------ |
+| command id   | `122` | `0x7a`       |
+| command size | `5`   | `0x05`       |
+| request id   | `18`  | `0x12`       |
+| meter id     | `1`   | `0x00000001` |
 
-Message hex dump: `7a 02 12 01`
+Message hex dump: `7a 05 12 00 00 00 01`
 
 
 ## Response

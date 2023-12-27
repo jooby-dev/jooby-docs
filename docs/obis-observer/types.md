@@ -28,8 +28,8 @@ Link to meter profile to use.
 
 ### Meter ID
 
-A `1`-byte number will be used in all messages to represent the specific meter.
-`0xff` considers as invalid meter id.
+A `4`-byte number will be used in all messages to represent the specific meter.
+`0xffffffff` considers as invalid meter id.
 
 ## OBIS ID
 

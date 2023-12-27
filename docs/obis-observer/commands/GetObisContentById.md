@@ -12,22 +12,22 @@ Request/response to get the OBIS code content from the specific metering device.
 | `1`  | `byte`                               | command id = `0x50`                |
 | `1`  | `byte`                               | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
+| `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS unique identifier             |
 
 ### Examples
 
 #### get content for OBIS ID `50`:
 
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `80`  | `0x50` |
-| command size | `3`   | `0x03` |
-| request id   | `121` | `0x79` |
-| meter id     | `11`  | `0x0b` |
-| OBIS ID      | `50`  | `0x32` |
+| Field        | Value | Hex          |
+| ------------ | ----- | ------------ |
+| command id   | `80`  | `0x50`       |
+| command size | `6`   | `0x06`       |
+| request id   | `121` | `0x79`       |
+| meter id     | `11`  | `0x0000000b` |
+| OBIS ID      | `50`  | `0x32`       |
 
-Message hex dump: `50 03 79 0b 32`
+Message hex dump: `50 06 79 00 00 00 0b 32`
 
 
 ## Response with float content

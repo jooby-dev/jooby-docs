@@ -23,6 +23,7 @@ There are `2` types of command direction:
 | `0x19`   | [SoftRestart](./SoftRestart.md#request)             | Request to restart a device.                                                 |
 | `0x1a`   | [GetArchiveHoursMC](./GetArchiveHoursMC.md#request) | Request to get a hour values from archive.                                   |
 | `0x1b`   | [GetArchiveDaysMC](./GetArchiveDaysMC.md#request)   | Request to get a day values from archive.                                    |
+| `0x1e`   | [DataSegment](./DataSegment.md#request)             | Request to send data segment DataSegment downlink command.                   |
 | `0x1f02` | [GetLmicInfo](./GetLmicInfo.md#request)             | Request to get LMiC (IBM LoRaWAN in C) information.                          |
 | `0x1f0f` | [GetExAbsCurrentMC](./GetExAbsCurrentMC.md#request) | Request to receive current consumption absolute values from device channels. |
 | `0x1f2a` | [WriteImage](./WriteImage.md#request)               | Request to write the block of the new image to the device.                   |
@@ -50,6 +51,7 @@ There are `2` types of command direction:
 | `0x19`   | [SoftRestart](./SoftRestart.md#response)             | Response to the [SoftRestart](./SoftRestart.md#request) downlink command.                                                                         |
 | `0x1a`   | [GetArchiveHoursMC](./GetArchiveHoursMC.md#response) | Response to the [GetArchiveHoursMC](./GetArchiveHoursMC.md#request) downlink command.                                                             |
 | `0x1b`   | [GetArchiveDaysMC](./GetArchiveDaysMC.md#response)   | Response to the [GetArchiveDaysMC](./GetArchiveDaysMC.md#request) downlink command.                                                               |
+| `0x1e`   | [DataSegment](./DataSegment.md#response)             | Response to the [DataSegment](./DataSegment.md#request) downlink command.                                                                         |
 | `0x1f02` | [GetLmicInfo](./GetLmicInfo.md#response)             | Response to the [GetLmicInfo](./GetLmicInfo.md#request) downlink command.                                                                         |
 | `0x1f0a` | [ExAbsHourMC](./uplink/ExAbsHourMC.md)               | Absolute values from device channels for the specified hour and hourly difference.                                                                |
 | `0x1f0b` | [ExAbsDayMC](./uplink/ExAbsDayMC.md)                 | Absolute values from device channels for the previous day's billing hour.                                                                         |

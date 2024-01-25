@@ -762,11 +762,11 @@ The table displays the version from which this change took effect.
 
 ### Format
 
-| Size   | Type   | Field                                                     |
-| ------ | ------ | --------------------------------------------------------- |
-| `1`    | `byte` | parameter type = `33`                                     |
-| `2`    | `byte` | [resistance start threshold](#resistance-start-threshold) |
-| `2`    | `byte` | [resistance stop threshold](#resistance-stop-threshold)   |
+| Size | Type   | Field                                                     |
+| ---- | ------ | --------------------------------------------------------- |
+| `1`  | `byte` | parameter type = `33`                                     |
+| `2`  | `byte` | [resistance start threshold](#resistance-start-threshold) |
+| `2`  | `byte` | [resistance stop threshold](#resistance-stop-threshold)   |
 
 #### **resistance start threshold**
 
@@ -774,18 +774,18 @@ Represents the value of the internal resistance of the battery (in `mΩ`) upon e
 
 #### **resistance stop threshold**
 
-Represents the value of the internal resistance of the battery (in `mΩ`). If the internal resistance of the battery falls below this threshold, the depassivation process will stop. For WLE modules, this value is set by default to `25000` `mΩ`, and for modules using the SX1276 transceiver, this value is set to `10350` `mΩ`.
+Represents the value of the internal resistance of the battery (in `mΩ`). If the internal resistance of the battery falls below this threshold, the depassivation process will stop. For WLE modules, this value is set by default to `25000` `mΩ`, and for modules using the `SX1276` transceiver, this value is set to `10350` `mΩ`.
 
 ### Examples
 
 #### set depassivation start threshold to 36000 mΩ and stop threshold to 26000 mΩ:
 
-| Field           | Value    | Hex      |
-| --------------- | -------- | -------- |
-| command id      | `3`      | `0x03`   |
-| command size    | `5`      | `0x05`   |
-| parameter type  | `33`     | `0x21`   |
-| start threshold | `36000`  | `0x8ca0` |
-| stop threshold  | `26000`  | `0x6590` |
+| Field           | Value   | Hex      |
+| --------------- | ------- | -------- |
+| command id      | `3`     | `0x03`   |
+| command size    | `5`     | `0x05`   |
+| parameter type  | `33`    | `0x21`   |
+| start threshold | `36000` | `0x8ca0` |
+| stop threshold  | `26000` | `0x6590` |
 
 Message hex dump with LRC: `03 05 21 8c a0 65 90`

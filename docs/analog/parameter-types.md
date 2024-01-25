@@ -277,17 +277,17 @@ This parameter set configuration of the module channels, only for universal 4-ch
 
 ### Format
 
-| Size   | Type   | Field                                                         |
-| ------ | ------ | ------------------------------------------------------------- |
-| `1`    | `byte` | parameter type = `13`                                         |
-| `1`    | `byte` | [channels configuration value](#channels-configuration-value) |
+| Size | Type   | Field                                                         |
+| ---- | ------ | ------------------------------------------------------------- |
+| `1`  | `byte` | parameter type = `13`                                         |
+| `1`  | `byte` | [channels configuration value](#channels-configuration-value) |
 
 #### **channels configuration value**
 
 Description: `+` enable channel, `-` disable channel
 
 | configuration value | channel 0 | channel 1 | channel 2 | channel 3 | serial |
-|---------------------|-----------|-----------|-----------|-----------|--------|
+| ------------------- | --------- | --------- | --------- | --------- | ------ |
 | `0`                 | `+`       | `+`       | `+`       | `+`       | `-`    |
 | `1`                 | `+`       | `+`       | `+`       | `-`       | `-`    |
 | `2`                 | `+`       | `+`       | `-`       | `+`       | `-`    |
@@ -750,13 +750,13 @@ With the introduction of this parameter, the following listed parameters cease t
 
 The table displays the version from which this change took effect.
 
-| Device    | Transceiver   | HARD_TYPE   | HARD_VERSION            | SOFT_VERSION   |
-| --------- | ------------- | ----------- | ----------------------- | -------------- |
-| `NOVATOR` | `SX1276`      | `4`         | `3`                     | `0x58`         |
-| `NOVATOR` | `WLE`         | `4`         | `4`                     | `0x70`         |
-| `IMP4EU`  | `WLE`         | `6`         | `16`, `17`, `18`, `19`  | `0x74`         |
-| `GAZZWLE` | `WLE`         | `12`        | `1`, `5`                | `0x70`         |
-| `WATER`   | `WLE`         | `13`        | `2`                     | `0x09`         |
+| Device    | Transceiver | HARD_TYPE | HARD_VERSION           | SOFT_VERSION |
+| --------- | ----------- | --------- | ---------------------- | ------------ |
+| `NOVATOR` | `SX1276`    | `4`       | `3`                    | `0x58`       |
+| `NOVATOR` | `WLE`       | `4`       | `4`                    | `0x70`       |
+| `IMP4EU`  | `WLE`       | `6`       | `16`, `17`, `18`, `19` | `0x74`       |
+| `GAZZWLE` | `WLE`       | `12`      | `1`, `5`               | `0x70`       |
+| `WATER`   | `WLE`       | `13`      | `2`                    | `0x09`       |
 
 [Hardware types](./basics.md#hardware-types)
 

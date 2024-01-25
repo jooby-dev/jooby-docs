@@ -748,34 +748,33 @@ With the introduction of this parameter, the following listed parameters cease t
 * [Battery depassivation info](#battery-depassivation-info)
 * [Battery minimal load time](#battery-minimal-load-time)
 
-
 The table displays the version from which this change took effect.
 
-| Device  |        | HARD_TYPE | HARD_VERSION | SOFT_VERSION |
-|---------|--------|-----------|--------------|--------------|
-| NOVATOR | SX1276 | 4         | 3            | 0x58         |
-| NOVATOR | WLE    | 4         | 4            | 0x70         |
-| IMP4EU  | WLE    | 6         | 16,17,18,19  | 0x74         |
-| GAZZWLE | WLE    | 12        | 1,5          | 0x70         |
-| WATER   | WLE    | 13        | 2            | 0x09         |
+| Device    | Transceiver   | HARD_TYPE   | HARD_VERSION            | SOFT_VERSION   |
+| --------- | ------------- | ----------- | ----------------------- | -------------- |
+| `NOVATOR` | `SX1276`      | `4`         | `3`                     | `0x58`         |
+| `NOVATOR` | `WLE`         | `4`         | `4`                     | `0x70`         |
+| `IMP4EU`  | `WLE`         | `6`         | `16`, `17`, `18`, `19`  | `0x74`         |
+| `GAZZWLE` | `WLE`         | `12`        | `1`, `5`                | `0x70`         |
+| `WATER`   | `WLE`         | `13`        | `2`                     | `0x09`         |
 
 [Hardware types](./basics.md#hardware-types)
 
 ### Format
 
-| Size | Type   | Field                                                     |
-|------|--------|-----------------------------------------------------------|
-| 1    | `byte` | parameter type = `33`                                     |
-| 2    | `byte` | [resistance start threshold](#resistance-start-threshold) |
-| 2    | `byte` | [resistance stop threshold](#resistance-stop-threshold)   |
+| Size   | Type   | Field                                                     |
+| ------ | ------ | --------------------------------------------------------- |
+| `1`    | `byte` | parameter type = `33`                                     |
+| `2`    | `byte` | [resistance start threshold](#resistance-start-threshold) |
+| `2`    | `byte` | [resistance stop threshold](#resistance-stop-threshold)   |
 
 #### **resistance start threshold**
 
-Represents the value of the internal resistance of the battery (in mΩ) upon exceeding which the depassivation process will be initiated. For WLE modules, this value is set by default to 35,000 mΩ, and for modules using the SX1276 transceiver, this value is set to 16,000 mΩ.
+Represents the value of the internal resistance of the battery (in `mΩ`) upon exceeding which the depassivation process will be initiated. For WLE modules, this value is set by default to `35000` `mΩ`, and for modules using the `SX1276` transceiver, this value is set to `16000` `mΩ`.
 
 #### **resistance stop threshold**
 
-Represents the value of the internal resistance of the battery (in mΩ). If the internal resistance of the battery falls below this threshold, the depassivation process will stop. For WLE modules, this value is set by default to 25,000 mΩ, and for modules using the SX1276 transceiver, this value is set to 10,350 mΩ.
+Represents the value of the internal resistance of the battery (in `mΩ`). If the internal resistance of the battery falls below this threshold, the depassivation process will stop. For WLE modules, this value is set by default to `25000` `mΩ`, and for modules using the SX1276 transceiver, this value is set to `10350` `mΩ`.
 
 ### Examples
 

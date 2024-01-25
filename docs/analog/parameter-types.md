@@ -19,6 +19,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [Enable absolute data](#enable-absolute-data)
 * [Pulse channels scan configuration](#pulse-channels-scan-configuration)
 * [Pulse channels set config](#pulse-channels-set-config)
+* [Battery depassivation config](#battery-depassivation-config)
 
 
 ## Reporting data interval
@@ -736,3 +737,56 @@ hardware type - `0x06` hardware version - `0x0a`
 | channels       | `1`, `2` | `0x03` |
 
 Message hex dump with LRC: `03 02 20 03 77`
+
+
+## Battery depassivation config
+
+Parameter is used to set thresholds for start/stop device battery depassivation.
+Applies to all types of modules with battery power.
+With the introduction of this parameter, the following listed parameters cease to function.
+
+* [Battery depassivation info](#battery-depassivation-info)
+* [Battery minimal load time](#battery-minimal-load-time)
+
+
+The table displays the version from which this change took effect.
+
+| Device  |        | HARD_TYPE | HARD_VERSION | SOFT_VERSION |
+|---------|--------|-----------|--------------|--------------|
+| NOVATOR | SX1276 | 4         | 3            | 0x58         |
+| NOVATOR | WLE    | 4         | 4            | 0x70         |
+| IMP4EU  | WLE    | 6         | 16,17,18,19  | 0x74         |
+| GAZZWLE | WLE    | 12        | 1,5          | 0x70         |
+| WATER   | WLE    | 13        | 2            | 0x09         |
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type   | Field                                                     |
+|------|--------|-----------------------------------------------------------|
+| 1    | `byte` | parameter type = `33`                                     |
+| 2    | `byte` | [resistance start threshold](#resistance-start-threshold) |
+| 2    | `byte` | [resistance stop threshold](#resistance-stop-threshold)   |
+
+#### **resistance start threshold**
+
+Represents the value of the internal resistance of the battery (in mΩ) upon exceeding which the depassivation process will be initiated. For WLE modules, this value is set by default to 35,000 mΩ, and for modules using the SX1276 transceiver, this value is set to 16,000 mΩ.
+
+#### **resistance stop threshold**
+
+Represents the value of the internal resistance of the battery (in mΩ). If the internal resistance of the battery falls below this threshold, the depassivation process will stop. For WLE modules, this value is set by default to 25,000 mΩ, and for modules using the SX1276 transceiver, this value is set to 10,350 mΩ.
+
+### Examples
+
+#### set depassivation start threshold to 36000 mΩ and stop threshold to 26000 mΩ:
+
+| Field           | Value    | Hex      |
+| --------------- | -------- | -------- |
+| command id      | `3`      | `0x03`   |
+| command size    | `5`      | `0x05`   |
+| parameter type  | `33`     | `0x21`   |
+| start threshold | `36000`  | `0x8ca0` |
+| stop threshold  | `26000`  | `0x6590` |
+
+Message hex dump with LRC: `03 05 21 8c a0 65 90`

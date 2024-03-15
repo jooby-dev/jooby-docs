@@ -9,8 +9,8 @@ Request/response to set the Lorawan activation method OTAA or ABP.
 
 | Size | Type                                                       | Field                              |
 | ---- | ---------------------------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                                     | command id = `0x24`                |
-| `1`  | `byte`                                                     | command size                       |
+| `1`  | `uint8`                                                    | command id = `0x24`                |
+| `1`  | `uint8`                                                    | command size                       |
 | `1`  | [Request ID](../types.md#request-id)                       | request/response unique identifier |
 | `1`  | [Activation method](../types.md#lorawan-activation-method) | LoRaWAN activation method          |
 
@@ -33,8 +33,8 @@ Message hex dump: `24 02 07 01`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x25`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x25`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 

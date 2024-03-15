@@ -12,11 +12,11 @@ This is enough to monitor the battery condition.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | extra flag = `0x1f` |
-| `1`  | `byte` | command id = `0x05` |
-| `1`  | `byte` | command size = `0`  |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | extra flag = `0x1f` |
+| `1`  | `uint8` | command id = `0x05` |
+| `1`  | `uint8` | command size = `0`  |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -43,15 +43,15 @@ It's a mandatory confirmation to [GetBatteryStatus request](./GetBatteryStatus.m
 
 | Size | Type     | Field                                                                                               |
 | ---- | -------- | --------------------------------------------------------------------------------------------------- |
-| `1`  | `byte`   | extra flag = `0x1f`                                                                                 |
-| `1`  | `byte`   | command id = `0x05`                                                                                 |
-| `1`  | `byte`   | command size = `11`                                                                                 |
+| `1`  | `uint8`  | extra flag = `0x1f`                                                                                 |
+| `1`  | `uint8`  | command id = `0x05`                                                                                 |
+| `1`  | `uint8`  | command size = `11`                                                                                 |
 | `2`  | `uint16` | [voltage under low load](#voltage-under-low-load) in `mV`                                           |
 | `2`  | `uint16` | [voltage under high load](#voltage-under-high-load) in `mV`                                         |
 | `2`  | `uint16` | [internal resistance](#internal-resistance) in `mΩ`                                                 |
-| `1`  | `byte`   | [temperature](#temperature) in degrees Celsius                                                      |
-| `1`  | `byte`   | [remaining capacity](#remaining-capacity) in percents                                               |
-| `1`  | `byte`   | [overconsumption for last 24 hours](#overconsumption-for-last-24-hours)                             |
+| `1`  | `uint8`  | [temperature](#temperature) in degrees Celsius                                                      |
+| `1`  | `uint8`  | [remaining capacity](#remaining-capacity) in percents                                               |
+| `1`  | `uint8`  | [overconsumption for last 24 hours](#overconsumption-for-last-24-hours)                             |
 | `2`  | `uint16` | [counter for exceeding average daily consumption](#counter-for-exceeding-average-daily-consumption) |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
@@ -94,7 +94,7 @@ Counter for exceeding average daily consumption.
 ### Examples
 
 | Field                                           | Value  | Hex      |
-|-------------------------------------------------|--------|----------|
+| ----------------------------------------------- | ------ | -------- |
 | extra flag                                      | `31`   | `0x1f`   |
 | command id                                      | `5`    | `0x05`   |
 | command size                                    | `11`   | `0x0b`   |

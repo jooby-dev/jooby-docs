@@ -9,8 +9,8 @@ Request to get the current mode (single or multi mode) of the observer device.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x0d`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x0d`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
@@ -32,10 +32,10 @@ Message hex dump: `0d 01 04`
 
 | Size | Type                                 | Field                                           |
 | ---- | ------------------------------------ | ----------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x0e`                             |
-| `1`  | `byte`                               | command size                                    |
+| `1`  | `uint8`                              | command id = `0x0e`                             |
+| `1`  | `uint8`                              | command size                                    |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier              |
-| `1`  | `byte`                               | Single mode: <br> `0` - multi <br> `1` - single |
+| `1`  | `uint8`                              | Single mode: <br> `0` - multi <br> `1` - single |
 
 
 ### Examples
@@ -53,4 +53,3 @@ Message hex dump: `0e 02 07 01`
 ## See also
 
 * [Request ID](../types.md#request-id)
-  

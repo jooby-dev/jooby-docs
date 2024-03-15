@@ -7,11 +7,11 @@ Command to request current consumption absolute values from device channels.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | extra flag = `0x1f` |
-| `1`  | `byte` | command id = `0x0f` |
-| `1`  | `byte` | command size = `0`  |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | extra flag = `0x1f` |
+| `1`  | `uint8` | command id = `0x0f` |
+| `1`  | `uint8` | command size = `0`  |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -39,9 +39,9 @@ This command can be sent periodically if [device report data parameter](../param
 
 | Size   | Type                                               | Field                                            |
 | ------ | -------------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                             | extra flag = `0x1f`                              |
-| `1`    | `byte`                                             | command id = `0x0f`                              |
-| `1`    | `byte`                                             | command size (dynamic, `3+`)                     |
+| `1`    | `uint8`                                            | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                            | command id = `0x0f`                              |
+| `1`    | `uint8`                                            | command size (dynamic, `3+`)                     |
 | `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../types.md#channels-bit-set) |
 | `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                    |
 | `1..5` | [extended value](../../types.md#extended-value)    | channel `1` value                                |

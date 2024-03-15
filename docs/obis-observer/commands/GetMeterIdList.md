@@ -9,10 +9,10 @@ Request/response to get the list of meters id.
 
 | Size | Type                                 | Field                                                |
 | ---- | ------------------------------------ | ---------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x74`                                  |
-| `1`  | `byte`                               | command size                                         |
+| `1`  | `uint8`                              | command id = `0x74`                                  |
+| `1`  | `uint8`                              | command size                                         |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                   |
-| `1`  | `byte`                               | the index of the meter to start forming the response |
+| `1`  | `uint8`                              | the index of the meter to start forming the response |
 
 ### Examples
 
@@ -32,10 +32,10 @@ Message hex dump: `74 02 0c 02`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x75`                |
-| `1`  | `byte`                               | command size (dynamic, `2+`)       |
+| `1`  | `uint8`                              | command id = `0x75`                |
+| `1`  | `uint8`                              | command size (dynamic, `2+`)       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | `byte`                               | is list completed                  |
+| `1`  | `uint8`                              | is list completed                  |
 | `1+` | [Meter ID](../types.md#meter-id)     | meter id list                      |
 
 

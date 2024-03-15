@@ -9,8 +9,8 @@ Request/response to set serial port parameters.
 
 | Size | Type                                 | Field                                |
 | ---- | ------------------------------------ | ------------------------------------ |
-| `1`  | `byte`                               | command id = `0x09`                  |
-| `1`  | `byte`                               | command size                         |
+| `1`  | `uint8`                              | command id = `0x09`                  |
+| `1`  | `uint8`                              | command size                         |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier   |
 | `1`  | [baud rate](../types.md#baud-rate)   | serial port baud rate                |
 | `1`  | [data bits](../types.md#data-bits)   | serial port word length or data bits |
@@ -36,8 +36,8 @@ Message hex dump: `09 04 34 05 08 01`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x0a`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x0a`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 

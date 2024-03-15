@@ -28,11 +28,11 @@ Setting time parameters of operation. Applicable to all types of modules.
 
 ### Format
 
-| Size | Type   | Field                              |
-| ---- | ------ | ---------------------------------- |
-| 1    | `byte` | parameter type = `1`               |
-| 3    | `byte` | [reserved](#reserved) = `0x000000` |
-| 1    | `byte` | [period](#period)                  |
+| Size | Type    | Field                              |
+| ---- | ------- | ---------------------------------- |
+| `1`  | `uint8` | parameter type = `1`               |
+| `3`  | `uint8` | [reserved](#reserved) = `0x000000` |
+| `1`  | `uint8` | [period](#period)                  |
 
 #### **reserved**
 
@@ -66,10 +66,10 @@ The parameter defines the hour of the day by which the daily consumption is calc
 
 ### Format
 
-| Size | Type   | Field                |
-| ---- | ------ | -------------------- |
-| 1    | `byte` | parameter type = `4` |
-| 1    | `byte` | [hour](#hour)        |
+| Size | Type    | Field                |
+| ---- | ------- | -------------------- |
+| `1`  | `uint8` | parameter type = `4` |
+| `1`  | `uint8` | [hour](#hour)        |
 
 #### **hour**
 
@@ -95,10 +95,10 @@ Parameter is used to setup type of values received from device.
 
 ### Format
 
-| Size | Type   | Field                   |
-| ---- | ------ | ----------------------- |
-| 1    | `byte` | parameter type = `5`    |
-| 1    | `byte` | [data type](#data-type) |
+| Size | Type    | Field                   |
+| ---- | ------- | ----------------------- |
+| `1`  | `uint8` | parameter type = `5`    |
+| `1`  | `uint8` | [data type](#data-type) |
 
 #### **data type**
 
@@ -131,10 +131,10 @@ This parameter applies to all types of modules.
 
 ### Format
 
-| Size | Type   | Field                           |
-| ---- | ------ | ------------------------------- |
-| 1    | `byte` | parameter type = `8`            |
-| 1    | `byte` | [delivery type](#delivery-type) |
+| Size | Type    | Field                           |
+| ---- | ------- | ------------------------------- |
+| `1`  | `uint8` | parameter type = `8`            |
+| `1`  | `uint8` | [delivery type](#delivery-type) |
 
 #### **delivery type**
 
@@ -164,10 +164,10 @@ Parameter is used to setup activation method in LoRaWAN network.
 
 ### Format
 
-| Size | Type   | Field                                             |
-| ---- | ------ | ------------------------------------------------- |
-| 1    | `byte` | parameter type = `9`                              |
-| 1    | `byte` | [activation method type](#activation-method-type) |
+| Size | Type    | Field                                             |
+| ---- | ------- | ------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `9`                              |
+| `1`  | `uint8` | [activation method type](#activation-method-type) |
 
 #### **activation method type**
 
@@ -196,12 +196,12 @@ Defines battery depassivation parameters for all module types except `MTXLora`.
 
 ### Format
 
-| Size | Type   | Field                                       |
-| ---- | ------ | ------------------------------------------- |
-| 1    | `byte` | parameter type = `10`                       |
-| 2    | `byte` | [load time](#load-time)                     |
-| 2    | `byte` | [internal resistance](#internal-resistance) |
-| 2    | `byte` | [low voltage](#low-voltage)                 |
+| Size | Type    | Field                                       |
+| ---- | ------- | ------------------------------------------- |
+| `1`  | `uint8` | parameter type = `10`                       |
+| `2`  | `uint8` | [load time](#load-time)                     |
+| `2`  | `uint8` | [internal resistance](#internal-resistance) |
+| `2`  | `uint8` | [low voltage](#low-voltage)                 |
 
 #### **load time**
 
@@ -246,10 +246,10 @@ It applies to all module types except `MTXLora`.
 
 ### Format
 
-| Size | Type   | Field                   |
-| ---- | ------ | ----------------------- |
-| 1    | `byte` | parameter type = `11`   |
-| 4    | `byte` | [load time](#load-time) |
+| Size | Type    | Field                   |
+| ---- | ------- | ----------------------- |
+| `1`  | `uint8` | parameter type = `11`   |
+| `4`  | `uint8` | [load time](#load-time) |
 
 #### **load time**
 
@@ -277,10 +277,10 @@ This parameter set configuration of the module channels, only for universal 4-ch
 
 ### Format
 
-| Size | Type   | Field                                                         |
-| ---- | ------ | ------------------------------------------------------------- |
-| `1`  | `byte` | parameter type = `13`                                         |
-| `1`  | `byte` | [channels configuration value](#channels-configuration-value) |
+| Size | Type    | Field                                                         |
+| ---- | ------- | ------------------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `13`                                         |
+| `1`  | `uint8` | [channels configuration value](#channels-configuration-value) |
 
 #### **channels configuration value**
 
@@ -328,11 +328,11 @@ Parameter is used to setup `RX2` window configuration.
 
 ### Format
 
-| Size | Type   | Field                           |
-| ---- | ------ | ------------------------------- |
-| 1    | `byte` | parameter type = `18`           |
-| 1    | `byte` | [spread factor](#spread-factor) |
-| 3    | `byte` | [frequency](#frequency)         |
+| Size | Type    | Field                           |
+| ---- | ------- | ------------------------------- |
+| `1`  | `uint8` | parameter type = `18`           |
+| `1`  | `uint8` | [spread factor](#spread-factor) |
+| `3`  | `uint8` | [frequency](#frequency)         |
 
 #### **spread factor**
 
@@ -381,12 +381,12 @@ Parameter is used to setup absolute data for device.
 
 ### Format
 
-| Size | Type   | Field                                          |
-| ---- | ------ | ---------------------------------------------- |
-| 1    | `byte` | parameter type = `23`                          |
-| 1    | `byte` | [meter value](#meter-value)                    |
-| 3    | `byte` | [pulse coefficient](#pulse-coefficient)        |
-| 3    | `byte` | [pulse counter's value](#pulse-counters-value) |
+| Size | Type    | Field                                          |
+| ---- | ------- | ---------------------------------------------- |
+| `1`  | `uint8` | parameter type = `23`                          |
+| `1`  | `uint8` | [meter value](#meter-value)                    |
+| `3`  | `uint8` | [pulse coefficient](#pulse-coefficient)        |
+| `3`  | `uint8` | [pulse counter's value](#pulse-counters-value) |
 
 #### **meter value**
 
@@ -426,10 +426,10 @@ Parameter is used to enable absolute data for device.
 
 ### Format
 
-| Size | Type   | Field                                       |
-| ---- | ------ | ------------------------------------------- |
-| 1    | `byte` | parameter type = `24`                       |
-| 1    | `byte` | [absolute data state](#absolute-data-state) |
+| Size | Type    | Field                                       |
+| ---- | ------- | ------------------------------------------- |
+| `1`  | `uint8` | parameter type = `24`                       |
+| `1`  | `uint8` | [absolute data state](#absolute-data-state) |
 
 #### **absolute data state**
 
@@ -458,10 +458,10 @@ Parameter is used to set device serial number.
 
 ### Format
 
-| Size | Type   | Field                           |
-| ---- | ------ | ------------------------------- |
-| 1    | `byte` | parameter type = `25`           |
-| 6    | `byte` | [serial number](#serial-number) |
+| Size | Type    | Field                           |
+| ---- | ------- | ------------------------------- |
+| `1`  | `uint8` | parameter type = `25`           |
+| `6`  | `uint8` | [serial number](#serial-number) |
 
 #### **serial number**
 
@@ -489,12 +489,12 @@ Parameter is used to set device geolocation.
 
 ### Format
 
-| Size | Type   | Field                   |
-| ---- | ------ | ----------------------- |
-| 1    | `byte` | parameter type = `26`   |
-| 4    | `byte` | [latitude](#latitude)   |
-| 4    | `byte` | [longitude](#longitude) |
-| 2    | `byte` | [altitude](#altitude)   |
+| Size | Type    | Field                   |
+| ---- | ------- | ----------------------- |
+| `1`  | `uint8` | parameter type = `26`   |
+| `4`  | `uint8` | [latitude](#latitude)   |
+| `4`  | `uint8` | [longitude](#longitude) |
+| `2`  | `uint8` | [altitude](#altitude)   |
 
 #### **latitude**
 
@@ -530,10 +530,10 @@ Message hex dump with LRC: `03 0b 1a 52 b8 09 42 52 b8 2d 42 17 00 74`
 
 ### Format
 
-| Size | Type   | Field                 |
-| ---- | ------ | --------------------- |
-| 1    | `byte` | parameter type = `28` |
-| 2    | `byte` | [interval](#interval) |
+| Size | Type    | Field                 |
+| ---- | ------- | --------------------- |
+| `1`  | `uint8` | parameter type = `28` |
+| `2`  | `uint8` | [interval](#interval) |
 
 #### **interval**
 
@@ -564,13 +564,13 @@ Parameter is used to setup absolute data for device.
 
 ### Format
 
-| Size | Type   | Field                                          |
-| ---- | ------ | ---------------------------------------------- |
-| 1    | `byte` | parameter type = `29`                          |
-| 1    | `byte` | [channel index](#channel-index)                |
-| 1    | `byte` | [meter value](#meter-value)                    |
-| 3    | `byte` | [pulse coefficient](#pulse-coefficient)        |
-| 3    | `byte` | [pulse counter's value](#pulse-counters-value) |
+| Size | Type    | Field                                          |
+| ---- | ------- | ---------------------------------------------- |
+| `1`  | `uint8` | parameter type = `29`                          |
+| `1`  | `uint8` | [channel index](#channel-index)                |
+| `1`  | `uint8` | [meter value](#meter-value)                    |
+| `3`  | `uint8` | [pulse coefficient](#pulse-coefficient)        |
+| `3`  | `uint8` | [pulse counter's value](#pulse-counters-value) |
 
 #### **channel index**
 
@@ -617,11 +617,11 @@ Parameter is used to enable absolute data for device.
 
 ### Format
 
-| Size | Type   | Field                                       |
-| ---- | ------ | ------------------------------------------- |
-| 1    | `byte` | parameter type = `30`                       |
-| 1    | `byte` | [channel index](#channel-index)             |
-| 1    | `byte` | [absolute data state](#absolute-data-state) |
+| Size | Type    | Field                                       |
+| ---- | ------- | ------------------------------------------- |
+| `1`  | `uint8` | parameter type = `30`                       |
+| `1`  | `uint8` | [channel index](#channel-index)             |
+| `1`  | `uint8` | [absolute data state](#absolute-data-state) |
 
 #### **channel index**
 
@@ -662,12 +662,12 @@ hardware type - `0x06` hardware version - `0x0a`
 
 ### Format
 
-| Size | Type   | Field                                 |
-| ---- | ------ | ------------------------------------- |
-| 1    | `byte` | parameter type = `31`                 |
-| 1    | `byte` | [channels bit set](#channels-bit-set) |
-| 1    | `byte` | [pull up time](#pull-up-time)         |
-| 1    | `byte` | [scan time](#scan-time)               |
+| Size | Type    | Field                                 |
+| ---- | ------- | ------------------------------------- |
+| `1`  | `uint8` | parameter type = `31`                 |
+| `1`  | `uint8` | [channels bit set](#channels-bit-set) |
+| `1`  | `uint8` | [pull up time](#pull-up-time)         |
+| `1`  | `uint8` | [scan time](#scan-time)               |
 
 #### **channels bit set**
 
@@ -716,10 +716,10 @@ hardware type - `0x06` hardware version - `0x0a`
 
 ### Format
 
-| Size | Type   | Field                                   |
-| ---- | ------ | --------------------------------------- |
-| 1    | `byte` | parameter type = `32`                   |
-| 1    | `byte` | [channels bit set](#channels-bit-set-1) |
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
+| `1`  | `uint8` | parameter type = `32`                   |
+| `1`  | `uint8` | [channels bit set](#channels-bit-set-1) |
 
 #### **channels bit set**
 
@@ -762,11 +762,11 @@ The table displays the version from which this change took effect.
 
 ### Format
 
-| Size | Type   | Field                                                     |
-| ---- | ------ | --------------------------------------------------------- |
-| `1`  | `byte` | parameter type = `33`                                     |
-| `2`  | `byte` | [resistance start threshold](#resistance-start-threshold) |
-| `2`  | `byte` | [resistance stop threshold](#resistance-stop-threshold)   |
+| Size | Type    | Field                                                     |
+| ---- | ------- | --------------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `33`                                     |
+| `2`  | `uint8` | [resistance start threshold](#resistance-start-threshold) |
+| `2`  | `uint8` | [resistance stop threshold](#resistance-stop-threshold)   |
 
 #### **resistance start threshold**
 

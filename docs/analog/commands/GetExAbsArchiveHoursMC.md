@@ -9,9 +9,9 @@ Command to request hourly consumption (absolute values) of device channels from 
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                       | extra flag = `0x1f`                              |
-| `1`    | `byte`                                       | command id = `0x0c`                              |
-| `1`    | `byte`                                       | command size (dynamic, `4+`)                     |
+| `1`    | `uint8`                                      | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                      | command id = `0x0c`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `4+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1`    | [packed hours](../types.md#packed-hours)     | [hours](#hours)                                  |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
@@ -58,9 +58,9 @@ Message hex dump with LRC: `1f 0c 04 2f 97 0c 01 f7`
 
 | Size   | Type                                               | Field                                            |
 | ------ | -------------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                             | extra flag = `0x1f`                              |
-| `1`    | `byte`                                             | command id = `0x0c`                              |
-| `1`    | `byte`                                             | command size (dynamic, `6+`)                     |
+| `1`    | `uint8`                                            | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                            | command id = `0x0c`                              |
+| `1`    | `uint8`                                            | command size (dynamic, `6+`)                     |
 | `2`    | [packed date](../types.md#packed-date)             | [start date](#start-date)                        |
 | `1`    | [packed hours](../types.md#packed-hours)           | [hours](#hours)                                  |
 | `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../types.md#channels-bit-set) |

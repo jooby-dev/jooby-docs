@@ -9,8 +9,8 @@ Request/response to get the Lorawan related state and statistic.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x22`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x22`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
@@ -31,16 +31,16 @@ Message hex dump: `22 01 12`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x23`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x23`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | `byte`                               | downlink quality in percent        |
-| `1`  | `byte`                               | RSSI of the last frame             |
-| `1`  | `byte`                               | SNR of the last frame              |
-| `1`  | `byte`                               | device's margin                    |
-| `1`  | `byte`                               | gate's margin                      |
-| `1`  | `byte`                               | reset flag                         |
-| `1`  | `byte`                               | sender collision                   |
+| `1`  | `uint8`                              | downlink quality in percent        |
+| `1`  | `uint8`                              | RSSI of the last frame             |
+| `1`  | `uint8`                              | SNR of the last frame              |
+| `1`  | `uint8`                              | device's margin                    |
+| `1`  | `uint8`                              | gate's margin                      |
+| `1`  | `uint8`                              | reset flag                         |
+| `1`  | `uint8`                              | sender collision                   |
 
 
 ### Examples

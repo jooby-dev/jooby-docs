@@ -10,11 +10,11 @@ This command is part of update procedure.
 
 | Size  | Type                                 | Field                               |
 | ----- | ------------------------------------ | ----------------------------------- |
-| `1`   | `byte`                               | command id = `0x30`                 |
-| `1`   | `byte`                               | command size (dynamic, `21+`)       |
+| `1`   | `uint8`                              | command id = `0x30`                 |
+| `1`   | `uint8`                              | command size (dynamic, `21+`)       |
 | `1`   | [Request ID](../types.md#request-id) | request/response unique  identifier |
 | `4`   | `uint32_be`                          | offset to write image block         |
-| `16+` | `byte`                               | [image content](#image-content)     |
+| `16+` | `uint8`                              | [image content](#image-content)     |
 
 ### Parameters
 
@@ -43,8 +43,8 @@ Message hex dump: `30 15 21 00 00 08 40 00 01 02 03 04 05 06 07 08 09 00 00 00 0
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x31`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x31`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 ### Examples
@@ -75,4 +75,4 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 * [Request ID](../types.md#request-id)
 * [Result code](../types.md#result-code)
 * [Error](./uplink/Error.md)
-* 
+*

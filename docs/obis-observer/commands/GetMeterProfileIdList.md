@@ -9,10 +9,10 @@ Request/response to get the list of the meter profile id.
 
 | Size | Type                                 | Field                                                        |
 | ---- | ------------------------------------ | ------------------------------------------------------------ |
-| `1`  | `byte`                               | command id = `0x64`                                          |
-| `1`  | `byte`                               | command size                                                 |
+| `1`  | `uint8`                              | command id = `0x64`                                          |
+| `1`  | `uint8`                              | command size                                                 |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                           |
-| `1`  | `byte`                               | the index of the meter profile to start forming the response |
+| `1`  | `uint8`                              | the index of the meter profile to start forming the response |
 
 
 ### Examples
@@ -33,10 +33,10 @@ Message hex dump: `64 02 0c 02`
 
 | Size | Type                                             | Field                              |
 | ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x65`                |
-| `1`  | `byte`                                           | command size (dynamic, `2+`)       |
+| `1`  | `uint8`                                          | command id = `0x65`                |
+| `1`  | `uint8`                                          | command size (dynamic, `2+`)       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
-| `1`  | `byte`                                           | is list completed                  |
+| `1`  | `uint8`                                          | is list completed                  |
 | `1+` | [Meter profile ID](../types.md#meter-profile-id) | meter profile id list              |
 
 

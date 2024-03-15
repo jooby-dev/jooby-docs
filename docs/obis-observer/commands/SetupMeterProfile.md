@@ -9,8 +9,8 @@ Request/response to setup the meter profile.
 
 | Size | Type                                             | Field                                         |
 | ---- | ------------------------------------------------ | --------------------------------------------- |
-| `1`  | `byte`                                           | command id = `0x60`                           |
-| `1`  | `byte`                                           | command size                                  |
+| `1`  | `uint8`                                          | command id = `0x60`                           |
+| `1`  | `uint8`                                          | command size                                  |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier            |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier               |
 | `2`  | `uint16_be`                                      | archive period for the `Archive 1` in minutes |
@@ -39,8 +39,8 @@ Message hex dump: `60 06 23 02 0b 40 00 1e`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x61`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x61`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 

@@ -12,9 +12,9 @@ The parameter `23` is used for this behavior.
 
 | Size   | Type                                                  | Field                                               |
 | ------ | ----------------------------------------------------- | --------------------------------------------------- |
-| `1`    | `byte`                                                | extra flag = `0x1f`                                 |
-| `1`    | `byte`                                                | command id = `0x0b`                                 |
-| `1`    | `byte`                                                | command size (dynamic, `4+`)                        |
+| `1`    | `uint8`                                               | extra flag = `0x1f`                                 |
+| `1`    | `uint8`                                               | command id = `0x0b`                                 |
+| `1`    | `uint8`                                               | command size (dynamic, `4+`)                        |
 | `2`    | [packed date](../../types.md#packed-date)             | [date](#date)                                       |
 | `1..5` | [extended value](../../types.md#extended-value)       | [channels bit set](../../types.md#channels-bit-set) |
 | `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `1` pulse coefficient                       |

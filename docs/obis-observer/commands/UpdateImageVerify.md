@@ -10,8 +10,8 @@ This command is part of update procedure.
 
 | Size | Type                                 | Field                               |
 | ---- | ------------------------------------ | ----------------------------------- |
-| `1`  | `byte`                               | command id = `0x32`                 |
-| `1`  | `byte`                               | command size                        |
+| `1`  | `uint8`                              | command id = `0x32`                 |
+| `1`  | `uint8`                              | command size                        |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique  identifier |
 
 
@@ -32,10 +32,10 @@ Message hex dump: `32 01 21`
 
 | Size | Type                                 | Field                                                                |
 | ---- | ------------------------------------ | -------------------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x33`                                                  |
-| `1`  | `byte`                               | command size                                                         |
+| `1`  | `uint8`                              | command id = `0x33`                                                  |
+| `1`  | `uint8`                              | command size                                                         |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                   |
-| `1`  | `byte`                               | is image valid flag: <br> `0` - invalid image <br> `2` - valid image |
+| `1`  | `uint8`                              | is image valid flag: <br> `0` - invalid image <br> `2` - valid image |
 
 
 ### Examples

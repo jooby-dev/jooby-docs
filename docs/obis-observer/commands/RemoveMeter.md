@@ -9,9 +9,9 @@ Request/response to remove specific meter device.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x72`                |
+| `1`  | `uint8`                              | command id = `0x72`                |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command size                       |
 | `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
 
@@ -33,8 +33,8 @@ Message hex dump: `72 05 29 00 00 00 01`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x73`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x73`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 

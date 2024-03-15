@@ -9,8 +9,8 @@ Request/response the LoRaWAN information, like device EUI, application EUI and a
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x20`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x20`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
@@ -31,11 +31,11 @@ Message hex dump: `20 01 03`
 
 | Size | Type                                                       | Field                              |
 | ---- | ---------------------------------------------------------- | ---------------------------------- |
-| `1`  | `byte`                                                     | command id = `0x21`                |
-| `1`  | `byte`                                                     | command size                       |
+| `1`  | `uint8`                                                    | command id = `0x21`                |
+| `1`  | `uint8`                                                    | command size                       |
 | `1`  | [Request ID](../types.md#request-id)                       | request/response unique identifier |
-| `8`  | `byte`                                                     | device EUI                         |
-| `8`  | `byte`                                                     | application EUI                    |
+| `8`  | `uint8`                                                    | device EUI                         |
+| `8`  | `uint8`                                                    | application EUI                    |
 | `1`  | [Device class](../types.md#lorawan-device-classes)         | LoRaWAN device classes             |
 | `1`  | [Activation method](../types.md#lorawan-activation-method) | LoRaWAN activation method          |
 

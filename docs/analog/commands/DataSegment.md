@@ -10,13 +10,13 @@ without any request.
 
 ### Format
 
-| Size | Type                                 | Field                                               |
-| ---- | ------------------------------------ | --------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x1e`                                 |
-| `1`  | `byte`                               | command size (dynamic, `2+`)                        |
-| `1`  | `byte`                               | [segmentation session id](#segmentation-session-id) |
-| `1`  | `byte`                               | [segment flags](#segment-flags)                     |
-| `1+` | `byte`                               | data (array of bytes)                               |
+| Size | Type    | Field                                               |
+| ---- | ------- | --------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x1e`                                 |
+| `1`  | `uint8` | command size (dynamic, `2+`)                        |
+| `1`  | `uint8` | [segmentation session id](#segmentation-session-id) |
+| `1`  | `uint8` | [segment flags](#segment-flags)                     |
+| `1+` | `uint8` | data (array of bytes)                               |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

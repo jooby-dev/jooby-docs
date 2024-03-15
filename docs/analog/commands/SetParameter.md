@@ -9,12 +9,12 @@ The sensor confirms the execution of the command with [response](#response).
 
 ### Format
 
-| Size | Type   | Field                             |
-| ---- | ------ | --------------------------------- |
-| 1    | `byte` | command id = `0x03`               |
-| 1    | `byte` | command size  (dynamic, `2+`)     |
-| 1    | `byte` | [parameter type](#parameter-type) |
-| 1+   | `byte` | [parameter data](#parameter-data) |
+| Size | Type    | Field                             |
+| ---- | ------- | --------------------------------- |
+| `1`  | `uint8` | command id = `0x03`               |
+| `1`  | `uint8` | command size  (dynamic, `2+`)     |
+| `1`  | `uint8` | [parameter type](#parameter-type) |
+| `1+` | `uint8` | [parameter data](#parameter-data) |
 
 ### Parameters
 
@@ -33,12 +33,12 @@ It's a mandatory confirmation to [SetParameter request](./SetParameter.md#reques
 
 ### Format
 
-| Size | Type   | Field                             |
-| ---- | ------ | --------------------------------- |
-| 1    | `byte` | command id = `0x03`               |
-| 1    | `byte` | length = `2`                      |
-| 1    | `byte` | [parameter type](#parameter-type) |
-| 1    | `byte` | [status](#status)                 |
+| Size | Type    | Field                             |
+| ---- | ------- | --------------------------------- |
+| `1`  | `uint8` | command id = `0x03`               |
+| `1`  | `uint8` | length = `2`                      |
+| `1`  | `uint8` | [parameter type](#parameter-type) |
+| `1`  | `uint8` | [status](#status)                 |
 
 ### Parameters
 

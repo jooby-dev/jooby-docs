@@ -8,11 +8,11 @@ This command is part of update procedure.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | extra flag = `0x1f` |
-| `1`  | `byte` | command id = `0x2c` |
-| `1`  | `byte` | command size        |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | extra flag = `0x1f` |
+| `1`  | `uint8` | command id = `0x2c` |
+| `1`  | `uint8` | command size        |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -35,11 +35,11 @@ Message hex dump with LRC: `1f 2c 00 33`
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | extra flag = `0x1f` |
-| `1`  | `byte` | command id = `0x2c` |
-| `1`  | `byte` | command size        |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | extra flag = `0x1f` |
+| `1`  | `uint8` | command id = `0x2c` |
+| `1`  | `uint8` | command size        |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 

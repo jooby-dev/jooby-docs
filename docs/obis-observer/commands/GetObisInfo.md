@@ -9,8 +9,8 @@ Request/response to get the information for the specific OBIS ID and meter profi
 
 | Size | Type                                             | Field                              |
 | ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x46`                |
-| `1`  | `byte`                                           | command size                       |
+| `1`  | `uint8`                                          | command id = `0x46`                |
+| `1`  | `uint8`                                          | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
 | `1`  | [OBIS ID](../types.md#obis-id)                   | OBIS unique identifier             |
@@ -37,8 +37,8 @@ Message hex dump: `46 03 05 0a 2c`
 
 | Size  | Type                                     | Field                              |
 | ----- | ---------------------------------------- | ---------------------------------- |
-| `1`   | `byte`                                   | command id = `0x47`                |
-| `1`   | `byte`                                   | command size (dynamic, `10+`)      |
+| `1`   | `uint8`                                  | command id = `0x47`                |
+| `1`   | `uint8`                                  | command size (dynamic, `10+`)      |
 | `1`   | [Request ID](../types.md#request-id)     | request/response unique identifier |
 | `3-7` | [OBIS](../types.md#obis)                 | OBIS code                          |
 | `6`   | [OBIS profile](../types.md#obis-profile) | OBIS profile                       |

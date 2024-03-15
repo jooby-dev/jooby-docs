@@ -10,12 +10,12 @@ A device may apply it with a delay.
 
 ### Format
 
-| Size | Type   | Field                               |
-| ---- | ------ | ----------------------------------- |
-| `1`  | `byte` | command id = `0x0c`                 |
-| `1`  | `byte` | command size = `2`                  |
-| `1`  | `byte` | [sequence number](#sequence-number) |
-| `1`  | `byte` | [seconds](#seconds)                 |
+| Size | Type    | Field                               |
+| ---- | ------- | ----------------------------------- |
+| `1`  | `uint8` | command id = `0x0c`                 |
+| `1`  | `uint8` | command size = `2`                  |
+| `1`  | `uint8` | [sequence number](#sequence-number) |
+| `1`  | `int8`  | [seconds](#seconds)                 |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -50,11 +50,11 @@ Message hex dump with LRC: `0c 02 2d 88 fe`
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | command id = `0x0c` |
-| `1`  | `byte` | length = `1`        |
-| `1`  | `byte` | [status](#status)   |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x0c` |
+| `1`  | `uint8` | length = `1`        |
+| `1`  | `uint8` | [status](#status)   |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

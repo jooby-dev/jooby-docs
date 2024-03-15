@@ -9,8 +9,8 @@ Request/response to get the OBIS code content from the specific metering device.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x50`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x50`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS unique identifier             |
@@ -36,8 +36,8 @@ Message hex dump: `50 06 79 00 00 00 0b 32`
 
 | Size | Type                                 | Field                                      |
 | ---- | ------------------------------------ | ------------------------------------------ |
-| `1`  | `byte`                               | command id = `0x51`                        |
-| `1`  | `byte`                               | command size                               |
+| `1`  | `uint8`                              | command id = `0x51`                        |
+| `1`  | `uint8`                              | command size                               |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier         |
 | `4`  | `float32`                            | OBIS code content from the metering device |
 
@@ -59,8 +59,8 @@ Message hex dump: `51 05 79 43 ac 1d 71`
 
 | Size | Type                                 | Field                                      |
 | ---- | ------------------------------------ | ------------------------------------------ |
-| `1`  | `byte`                               | command id = `0x52`                        |
-| `1`  | `byte`                               | command size (dynamic, `3+`)               |
+| `1`  | `uint8`                              | command id = `0x52`                        |
+| `1`  | `uint8`                              | command size (dynamic, `3+`)               |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier         |
 | `1+` | [String](../types.md#string)         | OBIS code content from the metering device |
 

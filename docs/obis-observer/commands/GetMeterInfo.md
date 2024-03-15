@@ -9,8 +9,8 @@ Request/response to get the meter profile id and meter address for the specific 
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x78`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x78`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
@@ -32,8 +32,8 @@ Message hex dump: `78 05 12 00 00 00 01`
 
 | Size | Type                                             | Mandatory/optional | Field                              |
 | ---- | ------------------------------------------------ | ------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | mandatory          | command id = `0x79`                |
-| `1`  | `byte`                                           | mandatory          | command size (dynamic, `1+`)       |
+| `1`  | `uint8`                                          | mandatory          | command id = `0x79`                |
+| `1`  | `uint8`                                          | mandatory          | command size (dynamic, `1+`)       |
 | `1`  | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier |
 | `1+` | [String](../types.md#string)                     | optional           | meter address                      |
 | `4`  | [Meter profile ID](../types.md#meter-profile-id) | optional           | meter profile unique identifier    |

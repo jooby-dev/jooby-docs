@@ -12,9 +12,9 @@ A device should apply it immediately.
 
 | Size | Type       | Field                               |
 | ---- | ---------- | ----------------------------------- |
-| `1`  | `byte`     | command id = `0x02`                 |
-| `1`  | `byte`     | command size = `5`                  |
-| `1`  | `byte`     | [sequence number](#sequence-number) |
+| `1`  | `uint8`    | command id = `0x02`                 |
+| `1`  | `uint8`    | command size = `5`                  |
+| `1`  | `uint8`    | [sequence number](#sequence-number) |
 | `4`  | `int32_be` | [seconds](#seconds)                 |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
@@ -50,11 +50,11 @@ Message hex dump with LRC: `02 05 4e 00 01 e2 40 bf`
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | command id = `0x02` |
-| `1`  | `byte` | length = `1`        |
-| `1`  | `byte` | [status](#status)   |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x02` |
+| `1`  | `uint8` | length = `1`        |
+| `1`  | `uint8` | [status](#status)   |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

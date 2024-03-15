@@ -12,10 +12,10 @@ For hardware revisions `1`, `2`.
 
 | Size | Type                                                                                  | Field                                                                                 |
 | ---- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `1`  | `byte`                                                                                | command id `0x20` + command size `6`                                                  |
+| `1`  | `uint8`                                                                               | command id `0x20` + command size `6`                                                  |
 | `2`  | [packed date](../../types.md#packed-date)                                             | [date](#date)                                                                         |
 | `1`  | [magnetic influence flag and hour](../../types.md#packed-magnetic-influence-and-hour) | [packed info of magnet influence and time](#packed-info-of-magnet-influence-and-time) |
-| `3`  | `byte`                                                                                | [counter value](#counter-value)                                                       |
+| `3`  | `uint8`                                                                               | [counter value](#counter-value)                                                       |
 
 It's a command with a [one-bytes header](../../message.md#command-with-a-one-byte-header).
 

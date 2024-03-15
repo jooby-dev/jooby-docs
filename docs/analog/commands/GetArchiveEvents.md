@@ -9,10 +9,10 @@ Command to request/receive events from device archive.
 
 | Size | Type        | Field                     |
 | ---- | ----------- | ------------------------- |
-| `1`  | `byte`      | command id = `0x0b`       |
-| `1`  | `byte`      | command size = `5`        |
+| `1`  | `uint8`     | command id = `0x0b`       |
+| `1`  | `uint8`     | command size = `5`        |
 | `4`  | `uint32_be` | [start time](#start-time) |
-| `1`  | `byte`      | [events](#events)         |
+| `1`  | `uint8`     | [events](#events)         |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -46,18 +46,18 @@ Message hex dump with LRC: `0b 05 2b bd 98 ad 04 fc`
 
 | Size | Type        | Field                                         |
 | ---- | ----------- | --------------------------------------------- |
-| `1`  | `byte`      | command id = `0x0b`                           |
-| `1`  | `byte`      | command size = `6+`                           |
+| `1`  | `uint8`     | command id = `0x0b`                           |
+| `1`  | `uint8`     | command size = `6+`                           |
 | `4`  | `uint32_be` | [event `1` time](#event-time)                 |
-| `1`  | `byte`      | [event `1` id](#event-id)                     |
-| `1`  | `byte`      | [event `1` sequence number](#sequence-number) |
+| `1`  | `uint8`     | [event `1` id](#event-id)                     |
+| `1`  | `uint8`     | [event `1` sequence number](#sequence-number) |
 | `4`  | `uint32_be` | [event `2` time](#event-time)                 |
-| `1`  | `byte`      | [event `2` id](#event-id)                     |
-| `1`  | `byte`      | [event `2` sequence number](#sequence-number) |
+| `1`  | `uint8`     | [event `2` id](#event-id)                     |
+| `1`  | `uint8`     | [event `2` sequence number](#sequence-number) |
 | ...  | ...         | ...                                           |
 | `4`  | `uint32_be` | [event `N` time](#event-time)                 |
-| `1`  | `byte`      | [event `N` id](#event-id)                     |
-| `1`  | `byte`      | [event `N` sequence number](#sequence-number) |
+| `1`  | `uint8`     | [event `N` id](#event-id)                     |
+| `1`  | `uint8`     | [event `N` sequence number](#sequence-number) |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

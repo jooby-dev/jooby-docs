@@ -9,10 +9,10 @@ A device restarts in `~30` seconds with new LoRaWAN parameters.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | command id = `0x19` |
-| `1`  | `byte` | command size = `0`  |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x19` |
+| `1`  | `uint8` | command size = `0`  |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -36,10 +36,10 @@ It's a mandatory confirmation to [SoftRestart request](./SoftRestart.md#request)
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | command id = `0x19` |
-| `1`  | `byte` | length = `0`        |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x19` |
+| `1`  | `uint8` | length = `0`        |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

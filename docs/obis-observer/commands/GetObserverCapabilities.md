@@ -9,8 +9,8 @@ Request/response the information about observer, like name, software and hardwar
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x03`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x03`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
@@ -31,13 +31,13 @@ Message hex dump: `03 01 03`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x04`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x04`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `1`  | `byte`                               | max meter profiles number          |
-| `1`  | `byte`                               | max meter number                   |
-| `1`  | `byte`                               | max OBIS profiles number           |
-| `1`  | `byte`                               | is multi-mode supported            |
+| `1`  | `uint8`                              | max meter profiles number          |
+| `1`  | `uint8`                              | max meter number                   |
+| `1`  | `uint8`                              | max OBIS profiles number           |
+| `1`  | `uint8`                              | is multi-mode supported            |
 
 
 ### Examples

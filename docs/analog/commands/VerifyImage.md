@@ -8,11 +8,11 @@ This command is part of update procedure.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | extra flag = `0x1f` |
-| `1`  | `byte` | command id = `0x2b` |
-| `1`  | `byte` | command size        |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | extra flag = `0x1f` |
+| `1`  | `uint8` | command id = `0x2b` |
+| `1`  | `uint8` | command size        |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -35,12 +35,12 @@ Message hex dump with LRC: `1f 2b 00 34`
 
 ### Format
 
-| Size | Type   | Field             |
-| ---- | ------ | ----------------- |
-| `1`  | `31`   | `0x1f`            |
-| `1`  | `43`   | `0x2b`            |
-| `1`  | `1`    | `0x01`            |
-| `1`  | `byte` | [status](#status) |
+| Size | Type    | Field             |
+| ---- | ------- | ----------------- |
+| `1`  | `31`    | `0x1f`            |
+| `1`  | `43`    | `0x2b`            |
+| `1`  | `1`     | `0x01`            |
+| `1`  | `uint8` | [status](#status) |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 

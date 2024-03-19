@@ -9,8 +9,8 @@ Request/response the information about observer, like name, software and hardwar
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x01`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x01`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
@@ -31,22 +31,22 @@ Message hex dump: `01 01 03`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x02`                |
-| `1`  | `byte`                               | command size (dynamic, `8+`)       |
+| `1`  | `uint8`                              | command id = `0x02`                |
+| `1`  | `uint8`                              | command size (dynamic, `8+`)       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
-| `2`  | `byte`                               | [software version](#version)       |
-| `2`  | `byte`                               | [protocol version](#version)       |
-| `2`  | `byte`                               | [hardware version](#version)       |
+| `2`  | `uint8`                              | [software version](#version)       |
+| `2`  | `uint8`                              | [protocol version](#version)       |
+| `2`  | `uint8`                              | [hardware version](#version)       |
 | `1+` | [String](../types.md#string)         | Name of the device                 |
 
 ### Parameters
 
 #### **version**
 
-| Size | Type   | Field                |
-| ---- | ------ | -------------------- |
-| `1`  | `byte` | Major version number |
-| `1`  | `byte` | Minor version number |
+| Size | Type    | Field                |
+| ---- | ------- | -------------------- |
+| `1`  | `uint8` | Major version number |
+| `1`  | `uint8` | Minor version number |
 
 
 ### Examples

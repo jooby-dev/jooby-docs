@@ -7,10 +7,10 @@ Command to request current values from device channels.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | command id = `0x18` |
-| `1`  | `byte` | command size = `0`  |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x18` |
+| `1`  | `uint8` | command size = `0`  |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -39,8 +39,8 @@ This command can be sent periodically if [device report data parameter](../param
 
 | Size       | Type                                                      | Field                                            |
 | ---------- | --------------------------------------------------------- | ------------------------------------------------ |
-| `1`        | `byte`                                                    | command id = `0x18`                              |
-| `1`        | `byte`                                                    | command size (dynamic, `2+`)                     |
+| `1`        | `uint8`                                                   | command id = `0x18`                              |
+| `1`        | `uint8`                                                   | command size (dynamic, `2+`)                     |
 | `1..5`     | [extended value](../types.md#extended-value)              | [channels bit set](../types.md#channels-bit-set) |
 | `[1..5]*n` | sequence of [extended values](../types.md#extended-value) | [channel values sequence](#channel-values)       |
 

@@ -9,8 +9,8 @@ Request/response to get the readout related state and statistic from the specifi
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x81`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x81`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
@@ -35,21 +35,21 @@ Message hex dump: `81 05 12 00 00 00 08`
 
 | Size | Type                                 | Field                                                                                   |
 | ---- | ------------------------------------ | --------------------------------------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x82`                                                                     |
-| `1`  | `byte`                               | command size                                                                            |
+| `1`  | `uint8`                              | command id = `0x82`                                                                     |
+| `1`  | `uint8`                              | command size                                                                            |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                      |
 | `4`  | `uint32_be`                          | seconds since the start of the device when the last successful readout attempt occurred |
 | `4`  | `uint32_be`                          | seconds since the start of the device when the last failed readout attempt occurred     |
 | `2`  | `uint16_be`                          | the number of the readout attempts                                                      |
 | `2`  | `uint16_be`                          | the number of the successful readout attempts                                           |
 | `2`  | `uint16_be`                          | the number of the readout repetitions                                                   |
-| `1`  | `byte`                               | the number of the `WAIT NEXT SYMBOL` errors                                             |
-| `1`  | `byte`                               | the number of the `WAIT ID` errors                                                      |
-| `1`  | `byte`                               | the number of the `WAIT NEXT STATE` errors                                              |
-| `1`  | `byte`                               | the number of the `WRONG BCC` errors                                                    |
-| `1`  | `byte`                               | the number of the parity errors                                                         |
-| `1`  | `byte`                               | the number of the frame errors                                                          |
-| `1`  | `byte`                               | the number of the overrun errors                                                        |
+| `1`  | `uint8`                              | the number of the `WAIT NEXT SYMBOL` errors                                             |
+| `1`  | `uint8`                              | the number of the `WAIT ID` errors                                                      |
+| `1`  | `uint8`                              | the number of the `WAIT NEXT STATE` errors                                              |
+| `1`  | `uint8`                              | the number of the `WRONG BCC` errors                                                    |
+| `1`  | `uint8`                              | the number of the parity errors                                                         |
+| `1`  | `uint8`                              | the number of the frame errors                                                          |
+| `1`  | `uint8`                              | the number of the overrun errors                                                        |
 
 
 ### Examples

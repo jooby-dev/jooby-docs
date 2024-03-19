@@ -9,8 +9,8 @@ Request/response to get the meter id by the meter address.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x76`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x76`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `1+` | [String](../types.md#string)         | meter address                      |
 
@@ -32,8 +32,8 @@ Message hex dump: `76 09 0c 07 32 33 34 35 34 33 32`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x77`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x77`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 

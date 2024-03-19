@@ -10,11 +10,11 @@ This command is part of update procedure.
 
 | Size | Type        | Field                                  |
 | ---- | ----------- | -------------------------------------- |
-| `1`  | `byte`      | extra flag = `0x1f`                    |
-| `1`  | `byte`      | command id = `0x2a`                    |
-| `1`  | `byte`      | command size                           |
+| `1`  | `uint8`     | extra flag = `0x1f`                    |
+| `1`  | `uint8`     | command id = `0x2a`                    |
+| `1`  | `uint8`     | command size                           |
 | `4`  | `uint32_be` | [offset](#offset) to write image block |
-| `8+` | `byte`      | [image content](#image-content)        |
+| `8+` | `uint8`     | [image content](#image-content)        |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -52,7 +52,7 @@ Message hex dump with LRC: `1f 2a 14 00 00 00 40 00 01 02 03 04 05 06 07 08 09 0
 | `1`  | `31`        | `0x1f`                                 |
 | `1`  | `42`        | `0x2a`                                 |
 | `4`  | `uint32_be` | [offset](#offset) to write image block |
-| `1`  | `byte`      | [status](#status)                      |
+| `1`  | `uint8`     | [status](#status)                      |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 

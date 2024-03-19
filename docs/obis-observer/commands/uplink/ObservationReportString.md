@@ -8,8 +8,8 @@ The command includes the OBIS content captured according to schedule and contain
 
 | Size | Type                               | Field                                        |
 | ---- | ---------------------------------- | -------------------------------------------- |
-| `1`  | `byte`                             | command id = `0x54`                          |
-| `1`  | `byte`                             | command size (dynamic, `10+`)                |
+| `1`  | `uint8`                            | command id = `0x54`                          |
+| `1`  | `uint8`                            | command size (dynamic, `10+`)                |
 | `4`  | [Meter ID](../types.md#meter-id)   | meter unique identifier                      |
 | `4`  | [Time 2000](../types.md#time-2000) | date and time at which the data was captured |
 | `1`  | [OBIS ID](../types.md#obis-id)     | OBIS ID `1`                                  |

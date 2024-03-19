@@ -7,11 +7,11 @@ Command to get LMiC (IBM LoRaWAN in C) information.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | extra flag = `0x1f` |
-| `1`  | `byte` | command id = `0x02` |
-| `1`  | `byte` | command size = `0`  |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | extra flag = `0x1f` |
+| `1`  | `uint8` | command id = `0x02` |
+| `1`  | `uint8` | command size = `0`  |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -36,13 +36,13 @@ It's a mandatory confirmation to [GetLmicInfo request](./GetLmicInfo.md#request)
 
 ### Format
 
-| Size | Type   | Field                         |
-| ---- | ------ | ----------------------------- |
-| `1`  | `byte` | extra flag = `0x1f`           |
-| `1`  | `byte` | command id = `0x02`           |
-| `1`  | `byte` | length = `2`                  |
-| `1`  | `byte` | [capabilities](#capabilities) |
-| `1`  | `byte` | [version](#version)           |
+| Size | Type    | Field                         |
+| ---- | ------- | ----------------------------- |
+| `1`  | `uint8` | extra flag = `0x1f`           |
+| `1`  | `uint8` | command id = `0x02`           |
+| `1`  | `uint8` | length = `2`                  |
+| `1`  | `uint8` | [capabilities](#capabilities) |
+| `1`  | `uint8` | [version](#version)           |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 

@@ -10,11 +10,11 @@ In response, the sensor will transmit the current value of the requested paramet
 
 ### Format
 
-| Size | Type   | Field                             |
-| ---- | ------ | --------------------------------- |
-| 1    | `byte` | command id = `0x04`               |
-| 1    | `byte` | command size = `1`                |
-| 1    | `byte` | [parameter type](#parameter-type) |
+| Size | Type    | Field                             |
+| ---- | ------- | --------------------------------- |
+| `1`  | `uint8` | command id = `0x04`               |
+| `1`  | `uint8` | command size = `1`                |
+| `1`  | `uint8` | [parameter type](#parameter-type) |
 
 ### Parameters
 
@@ -41,12 +41,12 @@ It's a mandatory confirmation to [GetParameter request](./GetParameter.md#reques
 
 ### Format
 
-| Size | Type   | Field                             |
-| ---- | ------ | --------------------------------- |
-| 1    | `byte` | command id = `0x04`               |
-| 1    | `byte` | command size (dynamic, `2+`)      |
-| 1    | `byte` | [parameter type](#parameter-type) |
-| 1+   | `byte` | [parameter data](#parameter-data) |
+| Size | Type    | Field                             |
+| ---- | ------- | --------------------------------- |
+|`1`    | `uint8` | command id = `0x04`               |
+|`1`    | `uint8` | command size (dynamic, `2+`)      |
+|`1`    | `uint8` | [parameter type](#parameter-type) |
+|`1+`   | `uint8` | [parameter data](#parameter-data) |
 
 ### Parameters
 

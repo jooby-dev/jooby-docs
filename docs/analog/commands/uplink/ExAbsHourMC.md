@@ -13,9 +13,9 @@ The parameter `23` is used for this behavior.
 
 | Size   | Type                                                  | Field                                               |
 | ------ | ----------------------------------------------------- | --------------------------------------------------- |
-| `1`    | `byte`                                                | extra flag = `0x1f`                                 |
-| `1`    | `byte`                                                | command id = `0x0a`                                 |
-| `1`    | `byte`                                                | command size (dynamic, `6+`)                        |
+| `1`    | `uint8`                                               | extra flag = `0x1f`                                 |
+| `1`    | `uint8`                                               | command id = `0x0a`                                 |
+| `1`    | `uint8`                                               | command size (dynamic, `6+`)                        |
 | `2`    | [packed date](../../types.md#packed-date)             | [date](#date)                                       |
 | `1`    | [packed hours](../../types.md#packed-hours)           | [hours](#hours)                                     |
 | `1..5` | [extended value](../../types.md#extended-value)       | [channels bit set](../../types.md#channels-bit-set) |

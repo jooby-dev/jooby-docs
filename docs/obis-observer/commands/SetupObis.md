@@ -9,8 +9,8 @@ Request/response to set the OBIS ID and OBIS profile for the specific OBIS code 
 
 | Size  | Type                                             | Mandatory/optional | Field                              |
 | ----- | ------------------------------------------------ | ------------------ | ---------------------------------- |
-| `1`   | `byte`                                           | mandatory          | command id = `0x42`                |
-| `1`   | `byte`                                           | mandatory          | command size (dynamic, 9+)         |
+| `1`   | `uint8`                                          | mandatory          | command id = `0x42`                |
+| `1`   | `uint8`                                          | mandatory          | command size (dynamic, 9+)         |
 | `1`   | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier |
 | `1`   | [Meter profile ID](../types.md#meter-profile-id) | mandatory          | meter profile unique identifier    |
 | `1`   | [OBIS ID](../types.md#obis-id)                   | mandatory          | OBIS unique identifier             |
@@ -40,8 +40,8 @@ Message hex dump: `42 0d 04 0a 2c 00 f4 00 84 26 04 02 00 09 01`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x43`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x43`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 
@@ -63,13 +63,13 @@ If an error occurs, the observer will respond by sending the [Error](./uplink/Er
 
 ##### Result codes:
 
-| Result code | Description                               |
-| ----------- | ----------------------------------------- |
-| `3`         | Format error.                             |
-| `5`         | OBIS ID allocation failed.                |
-| `6`         | OBIS not found.                           |
-| `7`         | OBIS profile allocation failed.           |
-| `11`        | The meter profile not found.              |
+| Result code | Description                     |
+| ----------- | ------------------------------- |
+| `3`         | Format error.                   |
+| `5`         | OBIS ID allocation failed.      |
+| `6`         | OBIS not found.                 |
+| `7`         | OBIS profile allocation failed. |
+| `11`        | The meter profile not found.    |
 
 
 ## See also

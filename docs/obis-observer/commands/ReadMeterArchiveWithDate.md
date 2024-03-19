@@ -8,12 +8,12 @@ Request/response to get the meter archive data for the specific date.
 
 | Size | Type                                 | Field                                                   |
 | ---- | ------------------------------------ | ------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x13`                                     |
-| `1`  | `byte`                               | command size                                            |
+| `1`  | `uint8`                              | command id = `0x13`                                     |
+| `1`  | `uint8`                              | command size                                            |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                      |
-| `1`  | `byte`                               | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
+| `1`  | `uint8`                              | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
 | `1`  | `uint32_be`                          | index of the first record to get                        |
-| `1`  | `byte`                               | meter unique identifier                                 |
+| `1`  | `uint8`                              | meter unique identifier                                 |
 | `4`  | [Time 2000](../types.md#time-2000)   | The date of the archive records to read                 |
 
 
@@ -40,10 +40,10 @@ Message hex dump: `13 0b 0d 02 00 00 00 00 01 2c a0 e7 02`
 
 | Size | Type                                 | Field                                                                                                                 |
 | ---- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x11`                                                                                                   |
-| `1`  | `byte`                               | command size (dynamic, `2+`)                                                                                          |
+| `1`  | `uint8`                              | command id = `0x11`                                                                                                   |
+| `1`  | `uint8`                              | command size (dynamic, `2+`)                                                                                          |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                                                    |
-| `1`  | `byte`                               | is completed flag: <br> `0` - there is more content in the archive <br> `1` - there is no more content in the archive |
+| `1`  | `uint8`                              | is completed flag: <br> `0` - there is more content in the archive <br> `1` - there is no more content in the archive |
 | `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                           |
 | `4`  | `float32`                            | OBIS content `1`                                                                                                      |
 | ...  | ...                                  | ...                                                                                                                   |

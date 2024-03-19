@@ -10,8 +10,8 @@ This command is part of update procedure.
 
 | Size | Type                                 | Field                               |
 | ---- | ------------------------------------ | ----------------------------------- |
-| `1`  | `byte`                               | command id = `0x34`                 |
-| `1`  | `byte`                               | command size                        |
+| `1`  | `uint8`                              | command id = `0x34`                 |
+| `1`  | `uint8`                              | command size                        |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique  identifier |
 
 
@@ -32,8 +32,8 @@ Message hex dump: `34 01 21`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x35`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x35`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 

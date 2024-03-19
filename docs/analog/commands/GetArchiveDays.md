@@ -11,10 +11,10 @@ Due to the limited length of transmitted data from the sensor, not all requested
 
 | Size | Type                                   | Field                                 |
 | ---- | -------------------------------------- | ------------------------------------- |
-| `1`  | `byte`                                 | command id = `0x06`                   |
-| `1`  | `byte`                                 | command size = `3`                    |
+| `1`  | `uint8`                                | command id = `0x06`                   |
+| `1`  | `uint8`                                | command size = `3`                    |
 | `2`  | [packed date](../types.md#packed-date) | [start date](#start-date)             |
-| `1`  | `byte`                                 | [number of values](#number-of-values) |
+| `1`  | `uint8`                                | [number of values](#number-of-values) |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -50,11 +50,11 @@ The response to the command for requesting the archive of daily data from the pu
 
 | Size  | Type                                   | Field                                           |
 | ----- | -------------------------------------- | ----------------------------------------------- |
-| `1`   | `byte`                                 | command id = `0x06`                             |
-| `1`   | `byte`                                 | command size (dynamic, `6+`)                    |
+| `1`   | `uint8`                                | command id = `0x06`                             |
+| `1`   | `uint8`                                | command size (dynamic, `6+`)                    |
 | `2`   | [packed date](../types.md#packed-date) | [start date](#start-date)                       |
-| `1*n` | `byte`                                 | [magnet influence flag](#magnet-influence-flag) |
-| `3*n` | `byte`                                 | [counter value](#counter-value)                 |
+| `1*n` | `uint8`                                | [magnet influence flag](#magnet-influence-flag) |
+| `3*n` | `uint8`                                | [counter value](#counter-value)                 |
 
 > `n` - the number of day data
 

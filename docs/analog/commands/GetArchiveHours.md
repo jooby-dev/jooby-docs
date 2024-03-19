@@ -12,11 +12,11 @@ Since the length of the transmitted data from the sensor is limited, not all req
 
 | Size | Type                                   | Field                                 |
 | ---- | -------------------------------------- | ------------------------------------- |
-| `1`  | `byte`                                 | command id = `0x05`                   |
-| `1`  | `byte`                                 | command size = `4`                    |
+| `1`  | `uint8`                                | command id = `0x05`                   |
+| `1`  | `uint8`                                | command size = `4`                    |
 | `2`  | [packed date](../types.md#packed-date) | [start date](#start-date)             |
-| `1`  | `byte`                                 | [start hour](#start-hour)             |
-| `1`  | `byte`                                 | [number of values](#number-of-values) |
+| `1`  | `uint8`                                | [start hour](#start-hour)             |
+| `1`  | `uint8`                                | [number of values](#number-of-values) |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -57,11 +57,11 @@ The response to the command for requesting the archive of hourly data from the p
 
 | Size  | Type                                                                                           | Field                                                                                 |
 | ----- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `1`   | `byte`                                                                                         | command id = `0x05`                                                                   |
-| `1`   | `byte`                                                                                         | command size (dynamic, `8+`)                                                          |
+| `1`   | `uint8`                                                                                        | command id = `0x05`                                                                   |
+| `1`   | `uint8`                                                                                        | command size (dynamic, `8+`)                                                          |
 | `2`   | [packed date](../types.md#packed-date)                                                         | [start date](#start-date)                                                             |
 | `1`   | [magnetic influence flag and hour](../types.md#packed-magnetic-influence-and-hour)             | [packed info of magnet influence and time](#packed-info-of-magnet-influence-and-time) |
-| `3`   | `byte`                                                                                         | [counter value](#counter-value)                                                       |
+| `3`   | `uint8`                                                                                        | [counter value](#counter-value)                                                       |
 | `2*n` | sequence of [magnetic influence flag and diff](../types.md#packed-magnetic-influence-and-diff) | [packed info of magnet influence and diff](#packed-info-of-magnet-influence-and-diff) |
 
 > `n` - the number of hour data diff values.

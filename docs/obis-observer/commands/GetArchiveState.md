@@ -9,10 +9,10 @@ Request/response to get the archive state for the specific meter, including the 
 
 | Size | Type                                 | Mandatory/optional | Field                                                   |
 | ---- | ------------------------------------ | ------------------ | ------------------------------------------------------- |
-| `1`  | `byte`                               | mandatory          | command id = `0x0f`                                     |
-| `1`  | `byte`                               | mandatory          | command size (dynamic, `2+`)                            |
+| `1`  | `uint8`                              | mandatory          | command id = `0x0f`                                     |
+| `1`  | `uint8`                              | mandatory          | command size (dynamic, `2+`)                            |
 | `1`  | [Request ID](../types.md#request-id) | mandatory          | request/response unique identifier                      |
-| `1`  | `byte`                               | mandatory          | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
+| `1`  | `uint8`                              | mandatory          | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
 | `4`  | [Meter ID](../types.md#meter-id)     | optional           | meter unique identifier                                 |
 
 If meter id field is provided, the observer will respond with information about that specified meter.
@@ -38,8 +38,8 @@ Message hex dump: `0f 06 29 01 00 00 00 03`
 
 | Size | Type                                 | Field                                  |
 | ---- | ------------------------------------ | -------------------------------------- |
-| `1`  | `byte`                               | command id = `0x10`                    |
-| `1`  | `byte`                               | command size                           |
+| `1`  | `uint8`                              | command id = `0x10`                    |
+| `1`  | `uint8`                              | command size                           |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier     |
 | `4`  | `uint32_be`                          | number of the archive records          |
 | `4`  | [Time 2000](../types.md#time-2000)   | the date of the eldest archive records |

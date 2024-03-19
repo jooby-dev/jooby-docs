@@ -10,13 +10,13 @@ Whether to transmit with a confirmation request or not is determined by the set 
 
 ### Format
 
-| Size | Type   | Field                               |
-| ---- | ------ | ----------------------------------- |
-| `1`  | `byte` | command id = `0x15`                 |
-| `1`  | `byte` | command size (dynamic, `3+`)        |
-| `1`  | `byte` | [event id](#event-id)               |
-| `1`  | `byte` | [sequence number](#sequence-number) |
-| `1+` | `byte` | [event data](#event-data)           |
+| Size | Type    | Field                               |
+| ---- | ------- | ----------------------------------- |
+| `1`  | `uint8` | command id = `0x15`                 |
+| `1`  | `uint8` | command size (dynamic, `3+`)        |
+| `1`  | `uint8` | [event id](#event-id)               |
+| `1`  | `uint8` | [sequence number](#sequence-number) |
+| `1+` | `uint8` | [event data](#event-data)           |
 
 It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
 
@@ -42,29 +42,29 @@ The data format for these events `MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIV
 
 `BATTERY_ALARM`
 
-| Size | Type | Field           |
-| ---- | ---- | --------------- |
-| `2`  | byte | battery voltage |
+| Size | Type    | Field           |
+| ---- | ------- | --------------- |
+| `2`  | `uint8` | battery voltage |
 
 `ACTIVATE_MTX`
 
 | Size | Type        | Field                                            |
 | ---- | ----------- | ------------------------------------------------ |
 | `4`  | `uint32_be` | [time 2000](../../types.md#time-2000) in seconds |
-| `8`  | byte        | device id (MAC address)                          |
+| `8`  | `uint8`     | device id (MAC address)                          |
 
 `CONNECT`, `DISCONNECT`
 
-| Size | Type | Field                                                            |
-| ---- | ---- | ---------------------------------------------------------------- |
-| `1`  | byte | channel number                                                   |
-| `1+` | byte | channel value as [extended value](../../types.md#extended-value) |
+| Size | Type    | Field                                                            |
+| ---- | ------- | ---------------------------------------------------------------- |
+| `1`  | `uint8` | channel number                                                   |
+| `1+` | `uint8` | channel value as [extended value](../../types.md#extended-value) |
 
 `EV_MTX`
 
-| Size | Type | Field                                                            |
-| ---- | ---- | ---------------------------------------------------------------- |
-| `2`  | byte | [status for MTXLORA](./LastEvent.md#for-mtxlora-devices-2-bytes) |
+| Size | Type    | Field                                                            |
+| ---- | ------- | ---------------------------------------------------------------- |
+| `2`  | `uint8` | [status for MTXLORA](./LastEvent.md#for-mtxlora-devices-2-bytes) |
 
 ### Examples
 

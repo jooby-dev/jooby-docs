@@ -9,8 +9,8 @@ Request/response to remove the specific OBIS from service.
 
 | Size | Type                                             | Field                              |
 | ---- | ------------------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | command id = `0x44`                |
-| `1`  | `byte`                                           | command size                       |
+| `1`  | `uint8`                                          | command id = `0x44`                |
+| `1`  | `uint8`                                          | command size                       |
 | `1`  | [Request ID](../types.md#request-id)             | request/response unique identifier |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | meter profile unique identifier    |
 | `1`  | [OBIS ID](../types.md#obis-id)                   | OBIS unique identifier             |
@@ -37,8 +37,8 @@ Message hex dump: `44 03 05 04 1c`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x45`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x45`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 

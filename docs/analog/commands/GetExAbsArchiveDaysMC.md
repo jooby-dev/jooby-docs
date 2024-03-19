@@ -9,12 +9,12 @@ Command to request daily consumption (absolute values) of device channels from t
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                       | extra flag = `0x1f`                              |
-| `1`    | `byte`                                       | command id = `0x0d`                              |
-| `1`    | `byte`                                       | command size (dynamic, `4+`)                     |
+| `1`    | `uint8`                                      | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                      | command id = `0x0d`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `4+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
-| `1`    | `byte`                                       | [days](#days)                                    |
+| `1`    | `uint8`                                      | [days](#days)                                    |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -56,12 +56,12 @@ Message hex dump with LRC: `1f 0d 04 2f 98 01 01 f4`
 
 | Size   | Type                                               | Field                                            |
 | ------ | -------------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                             | extra flag = `0x1f`                              |
-| `1`    | `byte`                                             | command id = `0x0d`                              |
-| `1`    | `byte`                                             | command size (dynamic, `6+`)                     |
+| `1`    | `uint8`                                            | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                            | command id = `0x0d`                              |
+| `1`    | `uint8`                                            | command size (dynamic, `6+`)                     |
 | `2`    | [packed date](../types.md#packed-date)             | [start date](#start-date)                        |
 | `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../types.md#channels-bit-set) |
-| `1`    | `byte`                                             | [days](#days)                                    |
+| `1`    | `uint8`                                            | [days](#days)                                    |
 | `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                    |
 | `1..5` | [extended value](../types.md#extended-value)       | channel `1` day `1` value                        |
 | `1..5` | [extended value](../types.md#extended-value)       | channel `1` day `2` value                        |

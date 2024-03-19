@@ -49,10 +49,10 @@ Unix time for year 2000 is `946684800` so seconds since year 2000 is `1680530477
 
 ## String
 
-| Size | Type   | Field          |
-| ---- | ------ | -------------- |
-| `1`  | `byte` | string size    |
-| `1+` | `byte` | string content |
+| Size | Type    | Field          |
+| ---- | ------- | -------------- |
+| `1`  | `uint8` | string size    |
+| `1+` | `uint8` | string content |
 
 
 ## Request ID
@@ -281,8 +281,8 @@ Result: `7-0:41.0.0*255` in hex `0x09072900ff`.
 | ---- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `2`  | `uint16_be` | Capture period in minutes. This determines how often the OBIS observer will read the value of the OBIS code from the metering device. |
 | `2`  | `uint16_be` | Sending period in minutes.                                                                                                            |
-| `1`  | `byte`      | Sending counter.                                                                                                                      |
-| `1`  | `byte`      | [OBIS profile flags](#obis-profile-flags)                                                                                             |
+| `1`  | `uint8`     | Sending counter.                                                                                                                      |
+| `1`  | `uint8`     | [OBIS profile flags](#obis-profile-flags)                                                                                             |
 
 ### OBIS profile flags
 
@@ -331,20 +331,20 @@ By default, the archive period is `15` minutes.
 
 ## Result code
 
-| Value | Description                               |
-| ----- | ----------------------------------------- |
-| `1`   | General failure.                          |
-| `2`   | Unknown command.                          |
-| `3`   | Format error.                             |
-| `5`   | OBIS ID allocation failed.                |
-| `6`   | OBIS not found.                           |
-| `7`   | OBIS profile allocation failed.           |
-| `8`   | Meter allocation failed.                  |
-| `9`   | The meter not found.                      |
-| `10`  | Meter profile allocation failed.          |
-| `11`  | The meter profile not found.              |
-| `12`  | The single-multi meter mode collision.    |
-| `13`  | The multi meter mode unsupported.         |
+| Value | Description                            |
+| ----- | -------------------------------------- |
+| `1`   | General failure.                       |
+| `2`   | Unknown command.                       |
+| `3`   | Format error.                          |
+| `5`   | OBIS ID allocation failed.             |
+| `6`   | OBIS not found.                        |
+| `7`   | OBIS profile allocation failed.        |
+| `8`   | Meter allocation failed.               |
+| `9`   | The meter not found.                   |
+| `10`  | Meter profile allocation failed.       |
+| `11`  | The meter profile not found.           |
+| `12`  | The single-multi meter mode collision. |
+| `13`  | The multi meter mode unsupported.      |
 
 
 ## LoRaWAN activation method

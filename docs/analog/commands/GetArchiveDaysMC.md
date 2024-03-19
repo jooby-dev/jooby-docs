@@ -9,11 +9,11 @@ Command to request/receive day pulse counter's values from device archive.
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                       | command id = `0x1b`                              |
-| `1`    | `byte`                                       | command size (dynamic, `4+`)                     |
+| `1`    | `uint8`                                      | command id = `0x1b`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `4+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
-| `1`    | `byte`                                       | [days](#days)                                    |
+| `1`    | `uint8`                                      | [days](#days)                                    |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -54,11 +54,11 @@ Message hex dump with LRC: `1b 04 2f 97 0d 02 fd`
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                       | command id = `0x1b`                              |
-| `1`    | `byte`                                       | command size (dynamic, `5+`)                     |
+| `1`    | `uint8`                                      | command id = `0x1b`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `5+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
-| `1`    | `byte`                                       | [days](#days)                                    |
+| `1`    | `uint8`                                      | [days](#days)                                    |
 | `1..5` | [extended value](../types.md#extended-value) | channel `1` day `1` value                        |
 | `1..5` | [extended value](../types.md#extended-value) | channel `1` day `2` value                        |
 | `1..5` | [extended value](../types.md#extended-value) | channel `2` day `1` value                        |

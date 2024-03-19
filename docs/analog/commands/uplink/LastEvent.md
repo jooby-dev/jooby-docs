@@ -11,11 +11,11 @@ The status bits may differ for different device types.
 
 ### Format
 
-| Size  | Type   | Field                                                                                          |
-| ----- | ------ | ---------------------------------------------------------------------------------------------- |
-| `1`   | `byte` | command id + size = `0x60-0x7f`                                                                |
-| `1`   | `byte` | [sequence number](#sequence-number)                                                            |
-| `1-2` | `byte` | [status](#status) (can be an [extended value](../../types.md#extended-value) for some devices) |
+| Size  | Type    | Field                                                                                          |
+| ----- | ------- | ---------------------------------------------------------------------------------------------- |
+| `1`   | `uint8` | command id + size = `0x60-0x7f`                                                                |
+| `1`   | `uint8` | [sequence number](#sequence-number)                                                            |
+| `1-2` | `uint8` | [status](#status) (can be an [extended value](../../types.md#extended-value) for some devices) |
 
 It's a command with a [one-byte header](../../message.md#command-with-a-one-byte-header).<br>
 Max command size is `31` bytes.

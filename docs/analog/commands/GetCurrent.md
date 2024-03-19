@@ -7,10 +7,10 @@ Command to request the current pulse counter readings from the sensor.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | command id = `0x07` |
-| `1`  | `byte` | command size = `0`  |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x07` |
+| `1`  | `uint8` | command size = `0`  |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -36,12 +36,12 @@ The body of the command contains the current value of the pulse counter.
 
 ### Format
 
-| Size | Type   | Field                                           |
-| ---- | ------ | ----------------------------------------------- |
-| `1`  | `byte` | command id = `0x07`                             |
-| `1`  | `byte` | command size = `4`                              |
-| `1`  | `byte` | [magnet influence flag](#magnet-influence-flag) |
-| `3`  | `byte` | [counter value](#counter-value)                 |
+| Size | Type    | Field                                           |
+| ---- | ------- | ----------------------------------------------- |
+| `1`  | `uint8` | command id = `0x07`                             |
+| `1`  | `uint8` | command size = `4`                              |
+| `1`  | `uint8` | [magnet influence flag](#magnet-influence-flag) |
+| `3`  | `uint8` | [counter value](#counter-value)                 |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

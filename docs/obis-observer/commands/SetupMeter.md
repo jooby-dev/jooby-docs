@@ -10,9 +10,9 @@ A new meter will be created if it doesn't exist.
 
 | Size | Type                                             | Mandatory/optional | Field                              |
 | ---- | ------------------------------------------------ | ------------------ | ---------------------------------- |
-| `1`  | `byte`                                           | mandatory          | command id = `0x70`                |
+| `1`  | `uint8`                                          | mandatory          | command id = `0x70`                |
 | `1`  | [Request ID](../types.md#request-id)             | mandatory          | request/response unique identifier |
-| `1`  | `byte`                                           | mandatory          | command size (dynamic, `1+`)       |
+| `1`  | `uint8`                                          | mandatory          | command size (dynamic, `1+`)       |
 | `4`  | [Meter ID](../types.md#meter-id)                 | mandatory          | meter unique identifier            |
 | `1+` | [String](../types.md#string)                     | optional           | meter address                      |
 | `1`  | [Meter profile ID](../types.md#meter-profile-id) | optional           | meter profile unique identifier    |
@@ -38,8 +38,8 @@ Message hex dump: `70 0e 29 00 00 00 01 07 32 33 34 35 34 33 32 02`
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x71`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x71`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 
 

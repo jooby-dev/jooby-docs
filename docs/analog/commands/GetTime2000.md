@@ -7,19 +7,19 @@ The command to request sensor current time.
 
 ### Format
 
-| Size | Type   | Field               |
-| ---- | ------ | ------------------- |
-| `1`  | `byte` | command id = `0x09` |
-| `1`  | `byte` | command size = `9`  |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x09` |
+| `1`  | `uint8` | command size = `9`  |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
 ### Examples
 
-| Field           | Value    | Hex          |
-| --------------- | -------- | ------------ |
-| command id      | `9`      | `0x09`       |
-| command size    | `0`      | `0x00`       |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `9`   | `0x09` |
+| command size | `0`   | `0x00` |
 
 Message hex dump with LRC: `09 00 5c`
 
@@ -34,9 +34,9 @@ After it a device sends it periodically (once per 24 hours).
 
 | Size | Type        | Field                               |
 | ---- | ----------- | ----------------------------------- |
-| `1`  | `byte`      | command id = `0x09`                 |
-| `1`  | `byte`      | command size = `5`                  |
-| `1`  | `byte`      | [sequence number](#sequence-number) |
+| `1`  | `uint8`     | command id = `0x09`                 |
+| `1`  | `uint8`     | command size = `5`                  |
+| `1`  | `uint8`     | [sequence number](#sequence-number) |
 | `4`  | `uint32_be` | [seconds](#seconds)                 |
 
 It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).

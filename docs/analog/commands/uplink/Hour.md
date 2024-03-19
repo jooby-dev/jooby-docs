@@ -12,10 +12,10 @@ For hardware revisions `1`, `2`.
 
 | Size  | Type                                                                                              | Field                                                                                 |
 | ----- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `1`   | `byte`                                                                                            | command id `0x40` + dynamic command size                                              |
+| `1`   | `uint8`                                                                                           | command id `0x40` + dynamic command size                                              |
 | `2`   | [packed date](../../types.md#packed-date)                                                         | [date](#date)                                                                         |
 | `1`   | [magnetic influence flag and hour](../../types.md#packed-magnetic-influence-and-hour)             | [packed info of magnet influence and time](#packed-info-of-magnet-influence-and-time) |
-| `3`   | `byte`                                                                                            | [counter value](#counter-value)                                                       |
+| `3`   | `uint8`                                                                                           | [counter value](#counter-value)                                                       |
 | `2*n` | sequence of [magnetic influence flag and diff](../../types.md#packed-magnetic-influence-and-diff) | [packed info of magnet influence and diff](#packed-info-of-magnet-influence-and-diff) |
 
 > `n` - the number of hour data diff values.

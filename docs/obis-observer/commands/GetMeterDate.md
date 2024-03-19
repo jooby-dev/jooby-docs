@@ -9,8 +9,8 @@ Request/response to get the current date and time on the specific meter.
 
 | Size | Type                                 | Field                              |
 | ---- | ------------------------------------ | ---------------------------------- |
-| `1`  | `byte`                               | command id = `0x7a`                |
-| `1`  | `byte`                               | command size                       |
+| `1`  | `uint8`                              | command id = `0x7a`                |
+| `1`  | `uint8`                              | command size                       |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier |
 | `4`  | [Meter ID](../types.md#meter-id)     | meter unique identifier            |
 
@@ -32,8 +32,8 @@ Message hex dump: `7a 05 12 00 00 00 01`
 
 | Size | Type                                 | Field                                           |
 | ---- | ------------------------------------ | ----------------------------------------------- |
-| `1`  | `byte`                               | command id = `0x7b`                             |
-| `1`  | `byte`                               | command size                                    |
+| `1`  | `uint8`                              | command id = `0x7b`                             |
+| `1`  | `uint8`                              | command size                                    |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier              |
 | `4`  | [Time 2000](../types.md#time-2000)   | The field specifies a current time on the meter |
 

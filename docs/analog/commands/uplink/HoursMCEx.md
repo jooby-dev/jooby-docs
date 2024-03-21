@@ -1,6 +1,6 @@
 # HourMCEx
 
-This command is extended version of [HourMC](#./HourMC.md). Command could send up to 256 hours.
+This command is extended version of [HourMC](./HourMC.md). Command could send up to 256 hours.
 
 
 ## Event

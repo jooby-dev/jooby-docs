@@ -63,4 +63,4 @@ There are `2` types of command direction:
 | `0x40`   | [Hour](./uplink/Hour.md)                             | Contains the complete pulse counter value for the specified hour and the hourly difference in readings.                                           |
 | `0x60`   | [LastEvent](./uplink/LastEvent.md)                   | Info of the last device event sequence number and the status bits.                                                                                |
 | `0x1f30` | [HourMCEx](./uplink/HourMCEx.md)                         | Pulse counter data, accumulated on a hour basis. Limited by protocol packet max size up to 256 hours                                |
-| `0x1f31` | [GetArchiveHoursMCEx](GetArchiveHoursMCEx.md#response) | Response to the [GetArchiveDaysMC](./GetArchiveDaysMC.md#request) downlink command if requested hours more than 8 |
+| `0x1f31` | [GetArchiveHoursMCEx](./GetArchiveHoursMCEx.md#response) | Response to the [GetArchiveDaysMC](./GetArchiveDaysMC.md#request) downlink command if requested hours more than 8 |

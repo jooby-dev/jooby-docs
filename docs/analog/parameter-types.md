@@ -36,6 +36,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NBIOT device software update](#nbiot-device-software-update)
 * [NBIOT module firmware update](#nbiot-module-firmware-update)
 * [Reporting data config](#reporting-data-config)
+* [NBTIO module info](#NBTIO-module-info)
 
 ## Reporting data interval
 
@@ -1355,7 +1356,7 @@ software image url where image stored. Will use nbiot to download image and star
 
 ### Examples
 
-#### set topic prefix "/root/mac"
+#### update device on imagefile url
 
 | Field           | Value                   | Hex                                |
 | --------------  | --------                | --------------------------------   |
@@ -1368,7 +1369,7 @@ Message hex dump no LRC: `03 10 2a 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
 
 ## NBIOT module firmware update
 
-Parameter is used to set mqtt broker address.
+Parameter is used to set firmware image file update url
 Available from software version = `??` for:<br>
 hardware type - `??` hardware version - `??`<br>
 hardware type - `??` hardware version - `??`
@@ -1383,11 +1384,11 @@ hardware type - `??` hardware version - `??`
 | 1-64 | `string`        | [module_firmware_image_url](#module_firmware_image_url) |
 
 #### **module firmware image url**
-module firmware image url where image stored. Will use nbiot to download image and start update module
+module firmware image url where image stored. Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
 
 ### Examples
 
-#### set topic prefix "/root/mac"
+#### set nbiot module firmware image url
 
 | Field           | Value                   | Hex                                |
 | --------------  | --------                | --------------------------------   |
@@ -1401,7 +1402,7 @@ Message hex dump no LRC: `03 10 2b 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
 
 ## Reporting data config
 
-Parameter is used to set mqtt broker address.
+Parameter is used to set reporting data config
 Available from software version = `??` for:<br>
 hardware type - `??` hardware version - `??`<br>
 hardware type - `??` hardware version - `??`

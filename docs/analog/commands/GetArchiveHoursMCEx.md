@@ -1,6 +1,6 @@
 # GetArchiveHoursMCEx
 
-| `0x1f31` | [GetArchiveHoursMCEx](GetArchiveHoursMCEx.md#response) | Response to the [GetArchiveDaysMC](./GetArchiveDaysMC.md#request) downlink command if requested hours more than 8 |
+Response to the [GetArchiveHoursMC](./GetArchiveHoursMC.md#request) downlink command if requested hours more than 8 |
 
 ## Response
 

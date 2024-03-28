@@ -1426,3 +1426,50 @@ how many data to send
 
 Message hex dump no LRC: `03 07 31 00 03 00 04`
 
+## Events config
+
+Parameter is used to event config
+Available from software version = `??` for:<br>
+hardware type - `??` hardware version - `??`<br>
+hardware type - `??` hardware version - `??`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type   | Field                                   |
+| ---- | ------ | --------------------------------------- |
+|  1   | `byte` | parameter type = `50`                   |
+|  1   | `byte` | [event_id](#[event_id)                |
+|  1   | `byte` | [enable event](#enable_event)           |
+|  1   | `byte` | [send event](#send_event)               |
+|  1   | `byte` | [save event](#save_event)               |
+
+#### **event_id**
+
+One of the [event types](../../basics.md#device-events).
+
+#### **enable_event**
+how many data to send
+
+#### **send_event**
+how many data to send
+
+#### **save_event**
+how many data to send
+
+### Examples
+
+#### set hour data recieve config to start send data from 03:00 with 4 records
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `5`      | `0x05` |
+| parameter type | `50`     | `0x32` |
+| event_id       | `0`      | `0x00` |
+| enable_event   | `1`      | `0x01` |
+| send_event     | `1`      | `0x01` |
+| save_event     | `0`      | `0x01` |
+
+Message hex dump no LRC: `03 05 32 01 01 00`

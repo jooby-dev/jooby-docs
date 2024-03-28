@@ -806,21 +806,6 @@ Represents the value of the internal resistance of the battery (in `mΩ`). If th
 
 Message hex dump with LRC: `03 05 21 8c a0 65 90`
 
-* [MQTT topic prefix](#mqtt-topic-prefix)
-* [MQTT data recieve config](#mqtt-data-recieve-config)
-* [MQTT data send config](#mqtt-data-send-config)
-* [NBIOT ssl config](#nbiot-ssl-config)
-* [NBIOT ssl cacert write](#nbiot-ssl-cacert-write)
-* [NBIOT ssl cacert set](#nbiot-ssl-cacert-set)
-* [NBIOT ssl client cert write](#nbiot-ssl-client-cert-write)
-* [NBIOT ssl client cert set](#nbiot-ssl-client-cert-set)
-* [NBIOT ssl client key write](#nbiot-ssl-client-key-write)
-* [NBIOT ssl client key set](#nbiot-ssl-client-key-set)
-* [NBIOT device software update](#nbiot-device-software-update)
-* [NBIOT module firmware update](#nbiot-module-firmware-update)
-* [Reporting data config](#reporting-data-config)
-
-
 ## MQTT session config
 
 Parameter is used to set mqtt session.
@@ -834,7 +819,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type     | Field                                   |
 | ---- | ------   | --------------------------------------- |
-| 1    | `byte`   | parameter type = `33`                   |
+| 1    | `byte`   | parameter type = `34`                   |
 | 1-64 | `string` | [client_id](#client_id)                 |
 | 1-64 | `string` | [user_name](#user_name)                 |
 | 1-64 | `string` | [password](#password)                   |
@@ -864,13 +849,13 @@ If the client has requested a clean session, the sessionPresent flag will always
 | -------------- | --------   | ------                 |
 | command id     | `3`        | `0x03`                 |
 | command size   | `20`       | `0x14`                 |
-| parameter type | `33`       | `0x21`                 |
+| parameter type | `34`       | `0x22`                 |
 | client_id      | `0`        | `0x00`                 |
 | user_name      | `login`    | `0x056c6f67696e`       |
 | password       | `password` | `0x0870617373776f7264` |
 | clean_session  | `0`        | `0x00`                 |
 
-Message hex dump no LRC: `03 14 21 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00`
+Message hex dump no LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00`
 
 ## MQTT broker address
 
@@ -885,7 +870,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type     | Field                                   |
 | ---- | ------   | --------------------------------------- |
-| 1    | `byte`   | parameter type = `34`                   |
+| 1    | `byte`   | parameter type = `35`                   |
 | 1-64 | `string` | [host_name](#host_name)                 |
 | 2    | `byte`   | [port](#port)                           |
 
@@ -906,11 +891,11 @@ Integer type. The port of the server. Range: 1–65535.
 | -------------- | --------                | ------                                     |
 | command id     | `3`                     | `0x03`                                     |
 | command size   | `23`                    | `0x17`                                     |
-| parameter type | `34`                    | `0x22`                                     |
+| parameter type | `35`                    | `0x23`                                     |
 | host_name      | `s2.eu.hivemq.cloud`    | `0x1273322e65752e686976656d712e636c6f7564` |
 | port           | `8883`                  | `0x22B3`                                   |
 
-Message hex dump no LRC: `03 17 22 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64`
+Message hex dump no LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64`
 
 ## MQTT ssl enable
 
@@ -925,7 +910,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type         | Field                                   |
 | ---- | ------       | --------------------------------------- |
-| 1    | `byte`       | parameter type = `35`                   |
+| 1    | `byte`       | parameter type = `36`                   |
 | 1    | `enable`     | [enable](#ssl_enable)                   |
 
 #### **ssl_enable**
@@ -939,10 +924,10 @@ Indicates whether to use SSL/TLS secure connection for MQTT
 | --------------  | --------                | ------ |
 | command id      | `3`                     | `0x03` |
 | command size    | `4`                     | `0x04` |
-| parameter type  | `35`                    | `0x23` |
+| parameter type  | `36`                    | `0x24` |
 | ssl_enable      | `1`                     | `0x01` |
 
-Message hex dump no LRC: `03 04 23 01`
+Message hex dump no LRC: `03 04 24 01`
 
 ## MQTT topic prefix
 
@@ -957,7 +942,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type            | Field                                   |
 | ---- | ------          | --------------------------------------- |
-| 1    | `byte`          | parameter type = `36`                   |
+| 1    | `byte`          | parameter type = `37`                   |
 | 1-64 | `string`        | [topic_prefix](#topic_prefix)           |
 
 #### **topic_prefix**
@@ -971,14 +956,14 @@ topic prefix that will be used to make topic to subscribe topic_prefix/down and 
 | --------------  | --------                | ------                   |
 | command id      | `3`                     | `0x03`                   |
 | command size    | `12`                    | `0x0c`                   |
-| parameter type  | `36`                    | `0x24`                   |
+| parameter type  | `37`                    | `0x25`                   |
 | topic_prefix    | `/root/mac`             | `0x0a2f726f6f742f6d6163` |
 
-Message hex dump no LRC: `03 0c 24 0a 2f 72 6f 6f 74 2f 6d 61 63`
+Message hex dump no LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63`
 
-## MQTT data recieve config
+## MQTT data receive config
 
-Parameter is used to set mqtt broker address.
+Parameter is used to set MQTT broker address.
 Available from software version = `??` for:<br>
 hardware type - `??` hardware version - `??`<br>
 hardware type - `??` hardware version - `??`
@@ -989,28 +974,28 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                                   |
 | ---- | ------ | --------------------------------------- |
-|  1   | `byte` | parameter type = `37`                   |
+|  1   | `byte` | parameter type = `38`                   |
 |  1   | `byte` | [qos](#qos)                             |
 
-#### **qos**
-QOS use to subscribe.
+#### **QoS**
+QoS used to subscribe.
 
 ### Examples
 
-#### set hour data recieve config to start send data from 03:00 with 4 records
+#### Set hour data receive config to start sending data from 03:00 with 4 records
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
 | command size   | `2`      | `0x02` |
-| parameter type | `37`     | `0x25` |
+| parameter type | `38`     | `0x26` |
 | qos            | `1`      | `0x01` |
 
-Message hex dump no LRC: `03 02 25 01`
+Message hex dump no LRC: `03 02 26 01`
 
 ## MQTT data send config
 
-Parameter is used to set mqtt broker address.
+Parameter is used to set MQTT broker address.
 Available from software version = `??` for:<br>
 hardware type - `??` hardware version - `??`<br>
 hardware type - `??` hardware version - `??`
@@ -1021,7 +1006,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                                                           |
 | ---- | ------ | --------------------------------------------------------------- |
-|  1   | `byte` | parameter type = `38`                                           |
+|  1   | `byte` | parameter type = `39`                                           |
 |  1   | `byte` | [qos](#qos)                                                     |
 |  1   | `byte` | [retain](#retain)                                               |
 |  1   | `byte` | [newest_send_first](#newest_send_first)                         |
@@ -1029,42 +1014,42 @@ hardware type - `??` hardware version - `??`
 |  1   | `byte` | [send_timeout_between_attempts](#send_timeout_between_attempts) |
 
 #### **qos**
-QOS use to publish. In case of qos 0. Data delivered in case if broker connection esteblished.
+QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection established.
 in case qos1/2 Data delivered in case if message published to broker successful
-Default value is QOS1.
+The default value is QOS1.
 
 #### **retain**
-use retain flag when publish
+use the retain flag when publishing
 
 #### **newest_send_first**
-if we have undelivered data first data will send from newest to oldest 
+if we have undelivered data first data will be sent from the newest to oldest 
 
 #### **send_count_attempts**
-count to try resend if failure was
+count to try to resend if failure was
 
 #### **send_timeout_between_attempts**
 timeout minutes between reattempts
 
 ### Examples
 
-#### set qos to 1 and make send undelivered data from old to new
+#### Set QoS to 1 and send undelivered data from old to new
 
 | Field                         | Value    | Hex    |
 | ----------------------------- | -------- | ------ |
 | command id                    | `3`      | `0x03` |
 | command size                  | `2`      | `0x02` |
-| parameter type                | `38`     | `0x26` |
+| parameter type                | `39`     | `0x27` |
 | qos                           | `1`      | `0x01` |
 | retain                        | `0`      | `0x00` |
 | newest_send_first             | `0`      | `0x00` |
 | send_count_attempts           | `3`      | `0x03` |
 | send_timeout_between_attempts | `30`     | `0x1e` |
 
-Message hex dump no LRC: `03 06 26 01 00 00 03 1e`
+Message hex dump no LRC: `03 06 27 01 00 00 03 1e`
 
-## NBIOT ssl config
+## NBIOT SSL config
 
-Parameter is used to set mqtt broker address.
+Parameter is used to config NBIOT SSL.
 Available from software version = `??` for:<br>
 hardware type - `??` hardware version - `??`<br>
 hardware type - `??` hardware version - `??`
@@ -1075,7 +1060,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `39`       |
+|  1   | `byte` | parameter type = `40`       |
 |  1   | `byte` | [seclevel](#seclevel)       |
 |  1   | `byte` | [ssl_version](#ssl_version) |
 
@@ -1100,13 +1085,13 @@ SSL version.
 
 ### Examples
 
-#### set ssl config to perform server conversation and all protocol
+#### set SSL config to perform server conversation and all protocol
 
 | Field          | Value    | Hex    |
 | ---------------| -------- | ------ |
 | command id     | `3`      | `0x03` |
 | command size   | `3`      | `0x02` |
-| parameter type | `39`     | `0x28` |
+| parameter type | `40`     | `0x28` |
 | seclevel       | `1`      | `0x01` |
 | ssl_version    | `4`      | `0x04` |
 
@@ -1114,7 +1099,7 @@ Message hex dump no LRC: `03 03 28 01 04`
 
 ## NBIOT ssl cacert write
 
-Parameter is used to set mqtt broker address.
+Parameter is used store SSL cert on device
 Available from software version = `??` for:<br>
 hardware type - `??` hardware version - `??`<br>
 hardware type - `??` hardware version - `??`
@@ -1125,7 +1110,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `39`       |
+|  1   | `byte` | parameter type = `41`       |
 |  2   | `byte` | [size](#size)               |
 |  2   | `byte` | [pos](#pos)                 |
 |  ~   | `bytes`| [chunk](#chunk)             |
@@ -1147,16 +1132,16 @@ chunk of bytes
 | ---------------| -------- | ------     |
 | command id     | `3`      | `0x03`     |
 | command size   | `200`    | `0xc8`     |
-| parameter type | `41`     | `0x2b`     |
+| parameter type | `41`     | `0x29`     |
 | size           | `196`    | `0xc4`     |
 | pos            | `500`    | `0x01F4`   |
 | chunk          | `0...65` | `0x0...5f` |
 
-Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
+Message hex dump no LRC: `03 c8 29 c4 01 F4 00...5f`
 
 ## NBIOT ssl cacert set
 
-Parameter is used to set mqtt broker address.
+Parameter is used to set stored ssl sertificate into nbiot
 Available from software version = `??` for:<br>
 hardware type - `??` hardware version - `??`<br>
 hardware type - `??` hardware version - `??`
@@ -1167,11 +1152,11 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `43`       |
+|  1   | `byte` | parameter type = `42`       |
 |  4   | `byte` | [crc32](#crc32)             |
 
 #### **crc32**
-crc32 to check if cacert write correct and set it in nbiot module
+crc32 of stored cacert to verify and if crc valid write to nbiot
 
 ### Examples
 
@@ -1181,10 +1166,10 @@ crc32 to check if cacert write correct and set it in nbiot module
 | ---------------| --------     | ------       |
 | command id     | `3`          | `0x03`       |
 | command size   | `5`          | `0x05`       |
-| parameter type | `41`         | `0x2c`       |
+| parameter type | `42`         | `0x2a`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump no LRC: `03 05 2c bd 0b e3 38`
+Message hex dump no LRC: `03 05 2a bd 0b e3 38`
 
 
 ## NBIOT ssl client cert write
@@ -1200,7 +1185,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `39`       |
+|  1   | `byte` | parameter type = `43`       |
 |  2   | `byte` | [size](#size)               |
 |  2   | `byte` | [pos](#pos)                 |
 |  ~   | `bytes`| [chunk](#chunk)             |
@@ -1222,7 +1207,7 @@ chunk of bytes
 | ---------------| -------- | ------     |
 | command id     | `3`      | `0x03`     |
 | command size   | `200`    | `0xc8`     |
-| parameter type | `41`     | `0x2b`     |
+| parameter type | `43`     | `0x2b`     |
 | size           | `196`    | `0xc4`     |
 | pos            | `500`    | `0x01F4`   |
 | chunk          | `0...65` | `0x0...5f` |
@@ -1242,7 +1227,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `43`       |
+|  1   | `byte` | parameter type = `44`       |
 |  4   | `byte` | [crc32](#crc32)             |
 
 #### **crc32**
@@ -1256,7 +1241,7 @@ crc32 to check if client cert write correct and set it in nbiot module
 | ---------------| --------     | ------       |
 | command id     | `3`          | `0x03`       |
 | command size   | `5`          | `0x05`       |
-| parameter type | `41`         | `0x2c`       |
+| parameter type | `44`         | `0x2c`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
 Message hex dump no LRC: `03 05 2c bd 0b e3 38`
@@ -1274,7 +1259,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `39`       |
+|  1   | `byte` | parameter type = `45`       |
 |  2   | `byte` | [size](#size)               |
 |  2   | `byte` | [pos](#pos)                 |
 |  ~   | `bytes`| [chunk](#chunk)             |
@@ -1296,12 +1281,12 @@ chunk of bytes
 | ---------------| -------- | ------     |
 | command id     | `3`      | `0x03`     |
 | command size   | `200`    | `0xc8`     |
-| parameter type | `41`     | `0x2b`     |
+| parameter type | `45`     | `0x2d`     |
 | size           | `196`    | `0xc4`     |
 | pos            | `500`    | `0x01F4`   |
 | chunk          | `0...65` | `0x0...5f` |
 
-Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
+Message hex dump no LRC: `03 c8 2d c4 01 F4 00...5f`
 
 ## NBIOT ssl client key set
 
@@ -1316,7 +1301,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `43`       |
+|  1   | `byte` | parameter type = `46`       |
 |  4   | `byte` | [crc32](#crc32)             |
 
 #### **crc32**
@@ -1330,10 +1315,10 @@ crc32 to check if client key write correct and set it in nbiot module
 | ---------------| --------     | ------       |
 | command id     | `3`          | `0x03`       |
 | command size   | `5`          | `0x05`       |
-| parameter type | `41`         | `0x2c`       |
+| parameter type | `46`         | `0x2e`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump no LRC: `03 05 2c bd 0b e3 38`
+Message hex dump no LRC: `03 05 2e bd 0b e3 38`
 
 ## NBIOT device software update
 
@@ -1348,7 +1333,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type            | Field                                   |
 | ---- | ------          | --------------------------------------- |
-| 1    | `byte`          | parameter type = `40`                   |
+| 1    | `byte`          | parameter type = `47`                   |
 | 1-64 | `string`        | [software_image_url](#software_image_url)               |
 
 #### **software_image_url**
@@ -1362,10 +1347,10 @@ software image url where image stored. Will use nbiot to download image and star
 | --------------  | --------                | --------------------------------   |
 | command id      | `3`                     | `0x03`                             |
 | command size    | `16`                    | `0x10`                             |
-| parameter type  | `40`                    | `0x2a`                             |
+| parameter type  | `47`                    | `0x2f`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump no LRC: `03 10 2a 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
+Message hex dump no LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
 
 ## NBIOT module firmware update
 
@@ -1380,7 +1365,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type            | Field                                                   |
 | ---- | ------          | ---------------------------------------                 |
-| 1    | `byte`          | parameter type = `41`                                   |
+| 1    | `byte`          | parameter type = `48`                                   |
 | 1-64 | `string`        | [module_firmware_image_url](#module_firmware_image_url) |
 
 #### **module firmware image url**
@@ -1394,10 +1379,10 @@ module firmware image url where image stored. Will use nbiot DFOTA over HTTP/HTT
 | --------------  | --------                | --------------------------------   |
 | command id      | `3`                     | `0x03`                             |
 | command size    | `16`                    | `0x10`                             |
-| parameter type  | `41`                    | `0x2b`                             |
+| parameter type  | `48`                    | `0x30`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump no LRC: `03 10 2b 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
+Message hex dump no LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
 
 
 ## Reporting data config
@@ -1413,7 +1398,7 @@ hardware type - `??` hardware version - `??`
 
 | Size | Type   | Field                                   |
 | ---- | ------ | --------------------------------------- |
-|  1   | `byte` | parameter type = `37`                   |
+|  1   | `byte` | parameter type = `49`                   |
 |  1   | `byte` | [data_type](#data-type)                 |
 |  1   | `byte` | [hour](#hour)                           |
 |  1   | `byte` | [minutes](#minutes)                     |
@@ -1433,11 +1418,11 @@ how many data to send
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
 | command size   | `6`      | `0x07` |
-| parameter type | `37`     | `0x25` |
+| parameter type | `49`     | `0x31` |
 | data_type      | `0`      | `0x00` |
 | hour           | `3`      | `0x03` |
 | minutes        | `0`      | `0x00` |
 | count_to_send  | `4`      | `0x04` |
 
-Message hex dump no LRC: `03 07 25 00 03 00 04`
+Message hex dump no LRC: `03 07 31 00 03 00 04`
 

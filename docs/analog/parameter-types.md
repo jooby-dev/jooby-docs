@@ -36,7 +36,8 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NBIOT device software update](#nbiot-device-software-update)
 * [NBIOT module firmware update](#nbiot-module-firmware-update)
 * [Reporting data config](#reporting-data-config)
-* [NBTIO module info](#NBTIO-module-info)
+* [NBIOT module info](#NBIOT-module-info)
+* [NBIOT bands](#NBIOT-bands)
 
 ## Reporting data interval
 
@@ -1450,17 +1451,17 @@ hardware type - `??` hardware version - `??`
 One of the [event types](../../basics.md#device-events).
 
 #### **enable_event**
-how many data to send
+if need to check on event
 
 #### **send_event**
-how many data to send
+is need to send event in flash
 
 #### **save_event**
-how many data to send
+is need to store event in flash
 
 ### Examples
 
-#### set hour data recieve config to start send data from 03:00 with 4 records
+#### set hour data receive config to start send data from 03:00 with 4 records
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
@@ -1473,3 +1474,85 @@ how many data to send
 | save_event     | `0`      | `0x01` |
 
 Message hex dump no LRC: `03 05 32 01 01 00`
+
+
+## NBIOT module info
+
+The parameter is used to get nbiot module info
+Available from software version = `??` for:<br>
+hardware type - `??` hardware version - `??`<br>
+hardware type - `??` hardware version - `??`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type   | Field                                   |
+| ---- | ------ | --------------------------------------- |
+|  1   | `byte` | parameter type = `51`                   |
+
+### Examples
+
+#### get module info
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `1`      | `0x01` |
+| parameter type | `51`     | `0x33` |
+
+Message hex dump no LRC: `03 05 33`
+
+Response:
+
+### Format
+
+| Size  | Type     | Field                                   |
+| ----  | ------   | --------------------------------------- |
+|  1    | `byte`   | parameter type = `51`                   |
+|  1-64 | `string` | [module_info](#module_info) |
+
+#### **module_info**
+Product identification information including the identifier of the device type 
+and the revision of software NBIOT module.
+
+## NBIOT bands
+
+Parameter to set preferred NB-IoT bands to be searched for.
+Available from software version = `??` for:<br>
+hardware type - `??` hardware version - `??`<br>
+hardware type - `??` hardware version - `??`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size  | Type   | Field                                   |
+| ----  | ------ | --------------------------------------- |
+|  1    | `byte` | parameter type = `52`                   |
+|  1    | `byte` | [band_count](#band_count)               |
+|  0-17 | `byte` | [bands](#bands)               |
+
+#### **band_count**
+band count to set
+
+#### **band_count**
+Currently preferred NB-IoT bands to be searched for. if set to 0 all band that support module will be searched (default)
+
+#### **bands**
+locked band 
+
+### Examples
+
+#### set band to 20 
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `5`      | `0x05` |
+| parameter type | `52`     | `0x34` |
+| band_count     | `1`      | `0x01` |
+| bands          | `20`     | `0x14` |
+
+Message hex dump no LRC: `03 05 34 01 14`
+

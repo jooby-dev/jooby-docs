@@ -1536,11 +1536,8 @@ hardware type - `??` hardware version - `??`
 #### **band_count**
 band count to set
 
-#### **band_count**
-Currently preferred NB-IoT bands to be searched for. if set to 0 all band that support module will be searched (default)
-
 #### **bands**
-locked band 
+Currently preferred NB-IoT bands to be searched for. if set to 0 all band that support module will be searched (default)
 
 ### Examples
 

@@ -1,7 +1,7 @@
 # HourMCEx
 
-This command is extended version of [HourMC](./HourMC.md). Command could send up to 256 hours.
-
+This command is an extended version of [HourMC](./HourMC.md). Command could send up to 256 hours if transport support.
+To get this uplink need to set param [mqtt data send config](parameter-types.md#mqtt-data-send-config)
 
 ## Event
 
@@ -36,9 +36,13 @@ The command contains pulse counter of channels for this date.
 <br>
 [See details](../../types.md#packed-date).
 
+#### **hour**
+
+It's a start hour.
+
 #### **hours**
 
-It`s full value of pulse counter with diff for each previous hours
+Count the pulse counter's full value with a diff for each previous hour. The hours value 0 means 1 hour.
 
 #### **channels bit set**
 
@@ -50,7 +54,8 @@ It`s full value of pulse counter with diff for each previous hours
 
 | Field             | Value                     | Bits                                                                    | Hex      |
 | ----------------- | ------------------------- | ----------------------------------------------------------------------- | -------- |
-| command id        | `23`                      |                                                                         | `0x17`   |
+| extra flag        | `31`                      |                                                                         | `0x1f`   |
+| command id        | `10`                      |                                                                         | `0x31`   |
 | command size      | `15`                      |                                                                         | `0x10`   |
 | date              | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                    | `0x2f97` |
 | hour              | hour: `12:00`             | `0b00001100`                                                            | `0x0c`   |
@@ -65,7 +70,7 @@ It`s full value of pulse counter with diff for each previous hours
 | channel `4` value | `234`                     | `0b0000000011101010` <br> with extended bits: <br> `0b0000000111101010` | `0xea01` |
 | channel `4` diff  | `11`                      |                                                                         | `0x0b`   |
 
-Message hex dump with LRC: `17 10 2f 97 0c 00 0f 83 01 0a c0 06 0c 26 08 ea 01 0b 7a`
+Message hex dump with LRC: `1f 31 10 2f 97 0c 00 0f 83 01 0a c0 06 0c 26 08 ea 01 0b 65`
 
 
 ## See also

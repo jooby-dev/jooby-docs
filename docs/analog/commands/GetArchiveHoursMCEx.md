@@ -1,7 +1,58 @@
 # GetArchiveHoursMCEx
 
-Response to the [GetArchiveHoursMC](./GetArchiveHoursMCEx.md#request) downlink command if requested hours more than 8
+Command to request/receive hour pulse counter's values from device archive. This is an extended version of [GetArchiveHoursMC](./GetArchiveHoursMC.md) to get archive hours more than 8
 
+## Request
+
+### Format
+
+| Size   | Type                                         | Field                                            |
+| ------ | -------------------------------------------- | ------------------------------------------------ |
+| `1`    | `byte`                                       | extra flag = `0x1f`                              |
+| `1`    | `byte`                                       | command id = `0x30`                              |
+| `1`    | `byte`                                       | command size (dynamic, `4+`)                     |
+| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
+| `1`    | `byte`                                       | [hour](#hour)                                    |
+| `1`    | `byte`                                       | [hours](#hours)                                  |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
+
+It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+
+### Parameters
+
+#### **start date**
+
+Start date for requested day pulse counter's values.
+<br>
+[See details](../types.md#packed-date).
+
+#### **hour**
+
+It's a start hour.
+
+#### **hours**
+
+Count the pulse counter's value with a diff for each previous hour. The hours value 0 means 1 hour.
+
+#### **channels bit set**
+
+[See details](../types.md#channels-bit-set).
+
+### Examples
+
+#### channels `1`, `3`, `4`:
+
+| Field        | Value                     | Bits                 | Hex      |
+| ------------ | ------------------------- | -------------------- | -------- |
+| extra flag   | `31`                      |                      | `0x1f`   |
+| command id   | `48`                      |                      | `0x30`   |
+| command size | `5`                       |                      | `0x05`   |
+| start date   | `2023.12.23 00:00:00 GMT` | `0b0010111110010111` | `0x2f97` |
+| hours        | hour: `12:00`             | `0b00001100`         | `0x0c`   |
+| hours        | hours: `2`                | `0b00000010`         | `0x02`   |
+| channels     | `1`                       | `0b00000001`         | `0x01`   |
+
+Message hex dump with LRC: `1f 30 05 2f 97 0c 02 01 c8`
 ## Response
 
 ### Format
@@ -35,9 +86,13 @@ Start date for requested day pulse counter's values.
 <br>
 [See details](../types.md#packed-date).
 
+#### **hour**
+
+It's a start hour.
+
 #### **hours**
 
-It`s full value of pulse counter with diff for each previous hours
+Count the pulse counter's full value with a diff for each previous hour. The hours value 0 means 1 hour.
 
 #### **channels bit set**
 
@@ -49,7 +104,8 @@ It`s full value of pulse counter with diff for each previous hours
 
 | Field                      | Value                     | Bits                                                                | Hex      |
 | -------------------------- | ------------------------- | ------------------------------------------------------------------- | -------- |
-| command id                 | `26`                      |                                                                     | `0x1a`   |
+| extra flag                 | `31`                      |                                                                     | `0x1f`   |
+| command id                 | `48`                      |                                                                     | `0x30`   |
 | command size               | `14`                      |                                                                     | `0x0e`   |
 | start date                 | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                | `0x2f97` |
 | hours                      | hour: `12:00`             | `0b00001100`                                                        | `0x0c`   |
@@ -64,7 +120,7 @@ It`s full value of pulse counter with diff for each previous hours
 | channel `4` hour `1` value | `12`                      | `0b00001000`<br>with extended bits:<br>`0b00001000`                 | `0x0c`   |
 | channel `4` hour `1` diff  | `10`                      | `0b00001100`<br>with extended bits:<br>`0b00001100`                 | `0x0a`   |
 
-Message hex dump with LRC: `1a 0e 2f 97 0c 00 0f 83 01 0a 08 0a 08 0a 0c 0a 77`
+Message hex dump with LRC: `1f 30 0e 2f 97 0c 00 0f 83 01 0a 08 0a 08 0a 0c 0a 41`
 
 
 ## See also

@@ -9,6 +9,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [Activation method](#activation-method)
 * [Battery depassivation info](#battery-depassivation-info)
 * [Battery minimal load time](#battery-minimal-load-time)
+* [Channels config](#channels-config)
 * [RX2 config](#rx2-config)
 * [Absolute data](#absolute-data)
 * [Enable absolute data](#enable-absolute-data)
@@ -16,7 +17,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [Geolocation](#geolocation)
 * [Extra frame interval](#extra-frame-interval)
 * [Absolute data multi channel](#absolute-data-multi-channel)
-* [Enable absolute data](#enable-absolute-data)
+* [Enable absolute data multi channel](#enable-absolute-data-multi-channel)
 * [Pulse channels scan configuration](#pulse-channels-scan-configuration)
 * [Pulse channels set config](#pulse-channels-set-config)
 * [Battery depassivation config](#battery-depassivation-config)
@@ -24,7 +25,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [MQTT broker address](#mqtt-broker-address)
 * [MQTT ssl enable](#mqtt-ssl-enable)
 * [MQTT topic prefix](#mqtt-topic-prefix)
-* [MQTT data recieve config](#mqtt-data-recieve-config)
+* [MQTT data receive config](#mqtt-data-receive-config)
 * [MQTT data send config](#mqtt-data-send-config)
 * [NBIOT ssl config](#nbiot-ssl-config)
 * [NBIOT ssl cacert write](#nbiot-ssl-cacert-write)
@@ -36,6 +37,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NBIOT device software update](#nbiot-device-software-update)
 * [NBIOT module firmware update](#nbiot-module-firmware-update)
 * [Reporting data config](#reporting-data-config)
+* [Events config](#events-config)
 * [NBIOT module info](#NBIOT-module-info)
 * [NBIOT bands](#NBIOT-bands)
 
@@ -628,7 +630,7 @@ It is a `4`-byte unsigned int BE.
 Message hex dump with LRC: `03 0b 1d 00 00 00 01 92 84 00 00 07 f0 a0`
 
 
-## Enable absolute data
+## Enable absolute data multi channel
 
 Parameter is used to enable absolute data for device.
 
@@ -820,27 +822,25 @@ hardware type - `24`
 | Size | Type     | Field                                   |
 | ---- | ------   | --------------------------------------- |
 | 1    | `byte`   | parameter type = `34`                   |
-| 1-64 | `string` | [client_id](#client_id)                 |
-| 1-64 | `string` | [user_name](#user_name)                 |
+| 1-64 | `string` | [client id](#client-id)                 |
+| 1-64 | `string` | [username](#username)                   |
 | 1-64 | `string` | [password](#password)                   |
-| 1    | `byte`   | [clean_session](#clean_session)         |
+| 1    | `byte`   | [clean session](#clean-session)         |
 
-#### **client_id**
+#### **client id**
 unique identifier that distinguishes each MQTT client connecting to a broker and enables the broker to keep track of the client’s current state.
 allows for an empty client_id. However, this connection must have the clean session flag set to true, or the broker will reject the connection.
 Up to 64 byte. No default value
 
-#### **user_name**
+#### **username**
 MQTT username for client authentication and authorization. Up to 64 byte. No default value
 
 #### **password**
 MQTT password for client authentication and authorization. Up to 64 byte. No default value
 
-#### **clean_session**
+#### **clean session**
 If the client has requested a clean session, the sessionPresent flag will always be false, indicating there is no previous session.
 No default value
-
-[string type](./basics.md#string)
 
 ### Examples
 
@@ -852,7 +852,7 @@ No default value
 | command size   | `20`       | `0x14`                 |
 | parameter type | `34`       | `0x22`                 |
 | client_id      | `0`        | `0x00`                 |
-| user_name      | `login`    | `0x056c6f67696e`       |
+| username       | `login`    | `0x056c6f67696e`       |
 | password       | `password` | `0x0870617373776f7264` |
 | clean_session  | `0`        | `0x00`                 |
 
@@ -871,17 +871,15 @@ hardware type - `24`
 | Size | Type     | Field                                   |
 | ---- | ------   | --------------------------------------- |
 | 1    | `byte`   | parameter type = `35`                   |
-| 1-64 | `string` | [host_name](#host_name)                 |
+| 1-64 | `string` | [host name](#host-name)                 |
 | 2    | `byte`   | [port](#port)                           |
 
-#### **host_name**
+#### **host name**
 The address of the server. It can be an IP address or a domain name. No default value
 Maximum length: 64 bytes.
 
 #### **port**
 Integer type. The port of the server. Range: 1–65535.
-
-[string type](./basics.md#string)
 
 ### Examples
 
@@ -910,9 +908,9 @@ hardware type - `24`
 | Size | Type         | Field                                   |
 | ---- | ------       | --------------------------------------- |
 | 1    | `byte`       | parameter type = `36`                   |
-| 1    | `enable`     | [enable](#ssl_enable)                   |
+| 1    | `enable`     | [enable](#ssl-enable)                   |
 
-#### **ssl_enable**
+#### **ssl enable**
 Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediately for next connection without device reset. Default value 1
 
 ### Examples
@@ -941,9 +939,9 @@ hardware type - `24`
 | Size | Type            | Field                                   |
 | ---- | ------          | --------------------------------------- |
 | 1    | `byte`          | parameter type = `37`                   |
-| 1-64 | `string`        | [topic_prefix](#topic_prefix)           |
+| 1-64 | `string`        | [topic prefix](#topic-prefix)           |
 
-#### **topic_prefix**
+#### **topic prefix**
 topic prefix that will be used to make topic to subscribe topic_prefix/elster-<short_mac>/down and publish topic_prefix/elster-<short_mac>/up,
 where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without device reset. No Default value. topics will be /elster-<short_mac>/up - /elster-<short_mac>/down.
 
@@ -1006,9 +1004,9 @@ hardware type - `24`
 |  1   | `byte` | parameter type = `39`                                           |
 |  1   | `byte` | [qos](#qos)                                                     |
 |  1   | `byte` | [retain](#retain)                                               |
-|  1   | `byte` | [newest_send_first](#newest_send_first)                         |
-|  1   | `byte` | [send_count_attempts](#send_count_attempts)                     |
-|  1   | `byte` | [send_timeout_between_attempts](#send_timeout_between_attempts) |
+|  1   | `byte` | [newest send first](#newest-send-first)                         |
+|  1   | `byte` | [send count attempts](#send-count-attempts)                     |
+|  1   | `byte` | [send timeout between attempts](#send-timeout-between-attempts) |
 
 #### **qos**
 QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
@@ -1018,13 +1016,13 @@ The default value is QOS1. Default value QOS=1
 #### **retain**
 use the retain flag when publishing. Default value retain=0
 
-#### **newest_send_first**
+#### **newest send first**
 if we have undelivered data first data will be sent from the newest to the oldest. Default value newest_send_first=1
 
-#### **send_count_attempts**
+#### **send count attempts**
 count to try to resend if failure was. Default value send_count_attempts=1
 
-#### **send_timeout_between_attempts**
+#### **send timeout between attempts**
 timeout minutes between read attempts. Default value send_timeout_between_attempts=5
 
 ### Examples
@@ -1054,13 +1052,13 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                       |
-| ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `40`       |
-|  1   | `byte` | [seclevel](#seclevel)       |
-|  1   | `byte` | [ssl_version](#ssl_version) |
+| Size | Type   | Field                             |
+| ---- | ------ | --------------------------------- |
+|  1   | `byte` | parameter type = `40`             |
+|  1   | `byte` | [security level](#security-level) |
+|  1   | `byte` | [version](#version)               |
 
-#### **seclevel**
+#### **security level**
 The authentication mode.
 
 | Value | Description                                                                |
@@ -1069,7 +1067,7 @@ The authentication mode.
 | `1`   | Perform server authentication                                              |
 | `2`   | Perform server and client authentication if requested by the remote server |
 
-#### **ssl_version**
+#### **version**
 SSL version.
 
 | Value | Description                                                                                             |
@@ -1088,8 +1086,8 @@ SSL version.
 | command id     | `3`      | `0x03` |
 | command size   | `3`      | `0x02` |
 | parameter type | `40`     | `0x28` |
-| seclevel       | `1`      | `0x01` |
-| ssl_version    | `4`      | `0x04` |
+| security_level | `1`      | `0x01` |
+| version        | `4`      | `0x04` |
 
 Message hex dump LRC: `03 03 28 01 04 78`
 
@@ -1107,13 +1105,13 @@ hardware type - `24`
 | ---- | ------ | --------------------------- |
 |  1   | `byte` | parameter type = `41`       |
 |  2   | `byte` | [size](#size)               |
-|  2   | `byte` | [pos](#pos)                 |
+|  2   | `byte` | [position](#position)       |
 |  ~   | `bytes`| [chunk](#chunk)             |
 
 #### **size**
 chunk size
 
-#### **pos**
+#### **position**
 chink position
 
 #### **chunk**
@@ -1129,7 +1127,7 @@ chunk of bytes
 | command size   | `200`    | `0xc8`     |
 | parameter type | `41`     | `0x29`     |
 | size           | `196`    | `0xc4`     |
-| pos            | `500`    | `0x01F4`   |
+| position       | `500`    | `0x01F4`   |
 | chunk          | `0...65` | `0x0...5f` |
 
 Message hex dump no LRC: `03 c8 29 c4 01 F4 00...5f`
@@ -1180,13 +1178,13 @@ hardware type - `24`
 | ---- | ------ | --------------------------- |
 |  1   | `byte` | parameter type = `43`       |
 |  2   | `byte` | [size](#size)               |
-|  2   | `byte` | [pos](#pos)                 |
+|  2   | `byte` | [position](#position)       |
 |  ~   | `bytes`| [chunk](#chunk)             |
 
 #### **size**
 chunk size
 
-#### **pos**
+#### **position**
 chink position
 
 #### **chunk**
@@ -1202,7 +1200,7 @@ chunk of bytes
 | command size   | `200`    | `0xc8`     |
 | parameter type | `43`     | `0x2b`     |
 | size           | `196`    | `0xc4`     |
-| pos            | `500`    | `0x01F4`   |
+| position       | `500`    | `0x01F4`   |
 | chunk          | `0...65` | `0x0...5f` |
 
 Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
@@ -1252,13 +1250,13 @@ hardware type - `24`
 | ---- | ------ | --------------------------- |
 |  1   | `byte` | parameter type = `45`       |
 |  2   | `byte` | [size](#size)               |
-|  2   | `byte` | [pos](#pos)                 |
+|  2   | `byte` | [position](#position)       |
 |  ~   | `bytes`| [chunk](#chunk)             |
 
 #### **size**
 chunk size
 
-#### **pos**
+#### **position**
 chink position
 
 #### **chunk**
@@ -1274,7 +1272,7 @@ chunk of bytes
 | command size   | `200`    | `0xc8`     |
 | parameter type | `45`     | `0x2d`     |
 | size           | `196`    | `0xc4`     |
-| pos            | `500`    | `0x01F4`   |
+| position       | `500`    | `0x01F4`   |
 | chunk          | `0...65` | `0x0...5f` |
 
 Message hex dump no LRC: `03 c8 2d c4 01 F4 00...5f`
@@ -1320,12 +1318,12 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type            | Field                                   |
-| ---- | ------          | --------------------------------------- |
-| 1    | `byte`          | parameter type = `47`                   |
-| 1-64 | `string`        | [software_image_url](#software_image_url)               |
+| Size | Type            | Field                                     |
+| ---- | ------          | ----------------------------------------- |
+| 1    | `byte`          | parameter type = `47`                     |
+| 1-64 | `string`        | [software image url](#software-image-url) |
 
-#### **software_image_url**
+#### **software image url**
 software image URL where the image is stored. Will use nbiot to download the image and start the update.
 After the update is finished successfully device will reboot and start updating in bootloader. The device will restart and send Activate.
 If the update unsuccessful no indication will be.
@@ -1356,7 +1354,7 @@ hardware type - `24`
 | Size | Type            | Field                                                   |
 | ---- | ------          | ---------------------------------------                 |
 | 1    | `byte`          | parameter type = `48`                                   |
-| 1-64 | `string`        | [module_firmware_image_url](#module_firmware_image_url) |
+| 1-64 | `string`        | [module firmware image url](#module-firmware-image-url) |
 
 #### **module firmware image url**
 module firmware image URL where the image is stored(special DFOTA image). Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
@@ -1388,15 +1386,15 @@ hardware type - `24`
 | Size | Type   | Field                                   |
 | ---- | ------ | --------------------------------------- |
 |  1   | `byte` | parameter type = `49`                   |
-|  1   | `byte` | [data_type](#data-type)                 |
-|  1   | `byte` | [hour](#hour)                           |
-|  1   | `byte` | [minutes](#minutes)                     |
-|  1   | `byte` | [count_to_send](#count_to_send)         |
+|  1   | `byte` | [data type](#data-type)                 |
+|  1   | `byte` | [hour](#minutes-hour)                   |
+|  1   | `byte` | [minutes](#minutes-hour)                |
+|  1   | `byte` | [count to send](#count-to-send)         |
 
 #### **minutes** **hour**
 start time from sending reporting data 
 
-#### **count_to_send**
+#### **count to send**
 how many data samples to send
 
 ### Examples
@@ -1428,22 +1426,22 @@ hardware type - `24`
 | Size | Type   | Field                                   |
 | ---- | ------ | --------------------------------------- |
 |  1   | `byte` | parameter type = `50`                   |
-|  1   | `byte` | [event_id](#[event_id)                |
-|  1   | `byte` | [enable event](#enable_event)           |
-|  1   | `byte` | [send event](#send_event)               |
-|  1   | `byte` | [save event](#save_event)               |
+|  1   | `byte` | [event id](#event-id)                   |
+|  1   | `byte` | [enable event](#enable-event)           |
+|  1   | `byte` | [send event](#send-event)               |
+|  1   | `byte` | [save event](#save-event)               |
 
-#### **event_id**
+#### **event id**
 
-One of the [event types](../../basics.md#device-events).
+One of the [event types](./basics.md#device-events).
 
-#### **enable_event**
+#### **enable event**
 if need to check on the event
 
-#### **send_event**
+#### **send event**
 is needed to send the event in a flash
 
-#### **save_event**
+#### **save event**
 is needed to store events in flash
 
 ### Examples
@@ -1496,9 +1494,9 @@ Response:
 | Size  | Type     | Field                                   |
 | ----  | ------   | --------------------------------------- |
 |  1    | `byte`   | parameter type = `51`                   |
-|  1-64 | `string` | [module_info](#module_info) |
+|  1-64 | `string` | [module info](#module-info)             |
 
-#### **module_info**
+#### **module info**
 Product identification information including the identifier of the device type 
 and the revision of software NBIOT module.
 
@@ -1515,10 +1513,10 @@ hardware type - `24`
 | Size  | Type   | Field                                   |
 | ----  | ------ | --------------------------------------- |
 |  1    | `byte` | parameter type = `52`                   |
-|  1    | `byte` | [band_count](#band_count)               |
-|  0-17 | `byte` | [bands](#bands)               |
+|  1    | `byte` | [count](#count)                         |
+|  0-17 | `byte` | [bands](#bands)                         |
 
-#### **band_count**
+#### **count**
 band count to set
 
 #### **bands**
@@ -1533,7 +1531,7 @@ Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that
 | command id     | `3`      | `0x03` |
 | command size   | `5`      | `0x05` |
 | parameter type | `52`     | `0x34` |
-| band_count     | `1`      | `0x01` |
+| count          | `1`      | `0x01` |
 | bands          | `20`     | `0x14` |
 
 Message hex dump no LRC: `03 05 34 01 14`

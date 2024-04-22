@@ -809,10 +809,9 @@ Message hex dump with LRC: `03 05 21 8c a0 65 90`
 
 ## MQTT session config
 
-Parameter is used to set mqtt session.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set MQTT session.
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -829,16 +828,17 @@ hardware type - `??` hardware version - `??`
 #### **client_id**
 unique identifier that distinguishes each MQTT client connecting to a broker and enables the broker to keep track of the client’s current state.
 allows for an empty client_id. However, this connection must have the clean session flag set to true, or the broker will reject the connection.
-Up to 64 byte.
+Up to 64 byte. No default value
 
 #### **user_name**
-MQTT username for client authentication and authorization. Up to 64 byte
+MQTT username for client authentication and authorization. Up to 64 byte. No default value
 
 #### **password**
-MQTT password for client authentication and authorization. Up to 64 byte
+MQTT password for client authentication and authorization. Up to 64 byte. No default value
 
 #### **clean_session**
 If the client has requested a clean session, the sessionPresent flag will always be false, indicating there is no previous session.
+No default value
 
 [string type](./basics.md#string)
 
@@ -856,14 +856,13 @@ If the client has requested a clean session, the sessionPresent flag will always
 | password       | `password` | `0x0870617373776f7264` |
 | clean_session  | `0`        | `0x00`                 |
 
-Message hex dump no LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00`
+Message hex dump LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 11`
 
 ## MQTT broker address
 
-Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set MQTT broker address.
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -876,7 +875,7 @@ hardware type - `??` hardware version - `??`
 | 2    | `byte`   | [port](#port)                           |
 
 #### **host_name**
-The address of the server. It can be an IP address or a domain name. 
+The address of the server. It can be an IP address or a domain name. No default value
 Maximum length: 64 bytes.
 
 #### **port**
@@ -886,7 +885,7 @@ Integer type. The port of the server. Range: 1–65535.
 
 ### Examples
 
-#### connect to hivemq broker
+#### Connect to hivemq broker
 
 | Field          | Value                   | Hex                                        |
 | -------------- | --------                | ------                                     |
@@ -896,14 +895,13 @@ Integer type. The port of the server. Range: 1–65535.
 | host_name      | `s2.eu.hivemq.cloud`    | `0x1273322e65752e686976656d712e636c6f7564` |
 | port           | `8883`                  | `0x22B3`                                   |
 
-Message hex dump no LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64`
+Message hex dump LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
 
 ## MQTT ssl enable
 
-Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to enable ssl
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -915,7 +913,7 @@ hardware type - `??` hardware version - `??`
 | 1    | `enable`     | [enable](#ssl_enable)                   |
 
 #### **ssl_enable**
-Indicates whether to use SSL/TLS secure connection for MQTT
+Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediately for next connection without device reset. Default value 1
 
 ### Examples
 
@@ -928,14 +926,13 @@ Indicates whether to use SSL/TLS secure connection for MQTT
 | parameter type  | `36`                    | `0x24` |
 | ssl_enable      | `1`                     | `0x01` |
 
-Message hex dump no LRC: `03 04 24 01`
+Message hex dump LRC: `03 04 24 01 77`
 
 ## MQTT topic prefix
 
-Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set topic prefix
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -947,7 +944,8 @@ hardware type - `??` hardware version - `??`
 | 1-64 | `string`        | [topic_prefix](#topic_prefix)           |
 
 #### **topic_prefix**
-topic prefix that will be used to make topic to subscribe topic_prefix/down and publish topic_prefix/up
+topic prefix that will be used to make topic to subscribe topic_prefix/elster-<short_mac>/down and publish topic_prefix/elster-<short_mac>/up,
+where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without device reset. No Default value. topics will be /elster-<short_mac>/up - /elster-<short_mac>/down.
 
 ### Examples
 
@@ -960,14 +958,13 @@ topic prefix that will be used to make topic to subscribe topic_prefix/down and 
 | parameter type  | `37`                    | `0x25`                   |
 | topic_prefix    | `/root/mac`             | `0x0a2f726f6f742f6d6163` |
 
-Message hex dump no LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63`
+Message hex dump LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
 
 ## MQTT data receive config
 
-Parameter is used to set MQTT broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set MQTT data receive config
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -979,11 +976,11 @@ hardware type - `??` hardware version - `??`
 |  1   | `byte` | [qos](#qos)                             |
 
 #### **QoS**
-QoS used to subscribe.
+QoS option for subscribing. Default value QOS=1.
 
 ### Examples
 
-#### Set hour data receive config to start sending data from 03:00 with 4 records
+#### Set receive config to subscribe with QOS=1  
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
@@ -992,14 +989,13 @@ QoS used to subscribe.
 | parameter type | `38`     | `0x26` |
 | qos            | `1`      | `0x01` |
 
-Message hex dump no LRC: `03 02 26 01`
+Message hex dump LRC: `03 02 26 01 73`
 
 ## MQTT data send config
 
-Parameter is used to set MQTT broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set MQTT send config.
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1015,21 +1011,21 @@ hardware type - `??` hardware version - `??`
 |  1   | `byte` | [send_timeout_between_attempts](#send_timeout_between_attempts) |
 
 #### **qos**
-QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection established.
+QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
 in case qos1/2 Data delivered in case if message published to broker successful
-The default value is QOS1.
+The default value is QOS1. Default value QOS=1
 
 #### **retain**
-use the retain flag when publishing
+use the retain flag when publishing. Default value retain=0
 
 #### **newest_send_first**
-if we have undelivered data first data will be sent from the newest to oldest 
+if we have undelivered data first data will be sent from the newest to the oldest. Default value newest_send_first=1
 
 #### **send_count_attempts**
-count to try to resend if failure was
+count to try to resend if failure was. Default value send_count_attempts=1
 
 #### **send_timeout_between_attempts**
-timeout minutes between reattempts
+timeout minutes between read attempts. Default value send_timeout_between_attempts=5
 
 ### Examples
 
@@ -1046,14 +1042,13 @@ timeout minutes between reattempts
 | send_count_attempts           | `3`      | `0x03` |
 | send_timeout_between_attempts | `30`     | `0x1e` |
 
-Message hex dump no LRC: `03 06 27 01 00 00 03 1e`
+Message hex dump LRC: `03 06 27 01 00 00 03 1e 6b`
 
 ## NBIOT SSL config
 
 Parameter is used to config NBIOT SSL.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1096,14 +1091,13 @@ SSL version.
 | seclevel       | `1`      | `0x01` |
 | ssl_version    | `4`      | `0x04` |
 
-Message hex dump no LRC: `03 03 28 01 04`
+Message hex dump LRC: `03 03 28 01 04 78`
 
 ## NBIOT ssl cacert write
 
-Parameter is used store SSL cert on device
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to store chunk of SSL certificate on device
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1127,7 +1121,7 @@ chunk of bytes
 
 ### Examples
 
-#### set ssl config to perform server conversation and all protocol
+#### Write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
 | ---------------| -------- | ------     |
@@ -1142,10 +1136,9 @@ Message hex dump no LRC: `03 c8 29 c4 01 F4 00...5f`
 
 ## NBIOT ssl cacert set
 
-Parameter is used to set stored ssl sertificate into nbiot
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set stored SSL certificate into nbiot
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1161,7 +1154,7 @@ crc32 of stored cacert to verify and if crc valid write to nbiot
 
 ### Examples
 
-#### set ssl config to perform server conversation and all protocol
+#### Write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
 | ---------------| --------     | ------       |
@@ -1170,15 +1163,14 @@ crc32 of stored cacert to verify and if crc valid write to nbiot
 | parameter type | `42`         | `0x2a`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump no LRC: `03 05 2a bd 0b e3 38`
+Message hex dump LRC: `03 05 2a bd 0b e3 38 14`
 
 
 ## NBIOT ssl client cert write
 
-Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to store chunk of SSL certificate
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1202,7 +1194,7 @@ chunk of bytes
 
 ### Examples
 
-#### set ssl config to perform server conversation and all protocol
+#### Write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
 | ---------------| -------- | ------     |
@@ -1217,10 +1209,9 @@ Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
 
 ## NBIOT ssl client cert set
 
-Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set stored SSL certificate into nbiot
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1236,7 +1227,7 @@ crc32 to check if client cert write correct and set it in nbiot module
 
 ### Examples
 
-#### set ssl config to perform server conversation and all protocol
+#### Write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
 | ---------------| --------     | ------       |
@@ -1245,14 +1236,13 @@ crc32 to check if client cert write correct and set it in nbiot module
 | parameter type | `44`         | `0x2c`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump no LRC: `03 05 2c bd 0b e3 38`
+Message hex dump LRC: `03 05 2c bd 0b e3 38 12`
 
 ## NBIOT ssl client key write
 
 Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1276,7 +1266,7 @@ chunk of bytes
 
 ### Examples
 
-#### set ssl config to perform server conversation and all protocol
+#### Write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
 | ---------------| -------- | ------     |
@@ -1292,9 +1282,8 @@ Message hex dump no LRC: `03 c8 2d c4 01 F4 00...5f`
 ## NBIOT ssl client key set
 
 Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1310,7 +1299,7 @@ crc32 to check if client key write correct and set it in nbiot module
 
 ### Examples
 
-#### set ssl config to perform server conversation and all protocol
+#### Write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
 | ---------------| --------     | ------       |
@@ -1319,14 +1308,13 @@ crc32 to check if client key write correct and set it in nbiot module
 | parameter type | `46`         | `0x2e`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump no LRC: `03 05 2e bd 0b e3 38`
+Message hex dump no LRC: `03 05 2e bd 0b e3 38 10`
 
 ## NBIOT device software update
 
-Parameter is used to set mqtt broker address.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to start updating from URL
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1338,7 +1326,9 @@ hardware type - `??` hardware version - `??`
 | 1-64 | `string`        | [software_image_url](#software_image_url)               |
 
 #### **software_image_url**
-software image url where image stored. Will use nbiot to download image and start update
+software image URL where the image is stored. Will use nbiot to download the image and start the update.
+After the update is finished successfully device will reboot and start updating in bootloader. The device will restart and send Activate.
+If the update unsuccessful no indication will be.
 
 ### Examples
 
@@ -1351,14 +1341,13 @@ software image url where image stored. Will use nbiot to download image and star
 | parameter type  | `47`                    | `0x2f`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump no LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
+Message hex dump LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
 
 ## NBIOT module firmware update
 
-Parameter is used to set firmware image file update url
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set firmware image file update URL
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1370,7 +1359,7 @@ hardware type - `??` hardware version - `??`
 | 1-64 | `string`        | [module_firmware_image_url](#module_firmware_image_url) |
 
 #### **module firmware image url**
-module firmware image url where image stored. Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
+module firmware image URL where the image is stored(special DFOTA image). Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
 
 ### Examples
 
@@ -1383,15 +1372,14 @@ module firmware image url where image stored. Will use nbiot DFOTA over HTTP/HTT
 | parameter type  | `48`                    | `0x30`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump no LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e`
+Message hex dump no LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 6d`
 
 
 ## Reporting data config
 
 Parameter is used to set reporting data config
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1406,14 +1394,14 @@ hardware type - `??` hardware version - `??`
 |  1   | `byte` | [count_to_send](#count_to_send)         |
 
 #### **minutes** **hour**
-start time from to send reporting data 
+start time from sending reporting data 
 
 #### **count_to_send**
-how many data to send
+how many data samples to send
 
 ### Examples
 
-#### set hour data recieve config to start send data from 03:00 with 4 records
+#### set hour data receive config to start sending data from 03:00 with 4 records
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
@@ -1429,10 +1417,9 @@ Message hex dump no LRC: `03 07 31 00 03 00 04`
 
 ## Events config
 
-Parameter is used to event config
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Parameter is used to set event config
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1451,17 +1438,17 @@ hardware type - `??` hardware version - `??`
 One of the [event types](../../basics.md#device-events).
 
 #### **enable_event**
-if need to check on event
+if need to check on the event
 
 #### **send_event**
-is need to send event in flash
+is needed to send the event in a flash
 
 #### **save_event**
-is need to store event in flash
+is needed to store events in flash
 
 ### Examples
 
-#### set hour data receive config to start send data from 03:00 with 4 records
+#### config event=0 to enable it and send but not to send
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
@@ -1479,9 +1466,8 @@ Message hex dump no LRC: `03 05 32 01 01 00`
 ## NBIOT module info
 
 The parameter is used to get nbiot module info
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1519,9 +1505,8 @@ and the revision of software NBIOT module.
 ## NBIOT bands
 
 Parameter to set preferred NB-IoT bands to be searched for.
-Available from software version = `??` for:<br>
-hardware type - `??` hardware version - `??`<br>
-hardware type - `??` hardware version - `??`
+Available from software version = `1` for:<br>
+hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
 
@@ -1537,7 +1522,7 @@ hardware type - `??` hardware version - `??`
 band count to set
 
 #### **bands**
-Currently preferred NB-IoT bands to be searched for. if set to 0 all band that support module will be searched (default)
+Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that support the module will be searched (default)
 
 ### Examples
 

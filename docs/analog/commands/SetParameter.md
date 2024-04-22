@@ -48,7 +48,7 @@ See [available parameter types](../parameter-types.md).
 
 #### **status**
 
-`1` - parameter setup was successful <br>
+`1` - parameter setup was successful <br/>
 `0` - parameter setting failed, parameter was not changed
 
 ### Examples

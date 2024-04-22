@@ -25,7 +25,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 #### **start date**
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
 #### **start hour**
@@ -73,15 +73,15 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 #### **date**
 
 The command contains counter data for this date.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
 #### **packed info of magnet influence and time**
 
 The magnetic influence bit flag indicates that there was a magnet intervention during the specified time.
-<br>
+<br/>
 The command contains counter data for this time.
-<br>
+<br/>
 [See details](../types.md#packed-magnetic-influence-and-hour).
 
 #### **counter value**
@@ -91,7 +91,7 @@ It's a pulse counter value for given date and time packed in `3` bytes.
 #### **packed info of magnet influence and diff**
 
 It's a sequence of [magnetic influence flag and diff](../types.md#packed-magnetic-influence-and-diff).
-<br>
+<br/>
 [See details](../types.md#packed-magnetic-influence-and-diff).
 
 ### Examples

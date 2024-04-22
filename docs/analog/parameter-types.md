@@ -41,7 +41,7 @@ Obsolete parameter. This field is no longer used.
 #### **period**
 
 This parameter defines the periodicity of sending data from the sensor.
-<br>
+<br/>
 It is a `1`-byte value with a resolution of `600` seconds plus a pseudo-random value of up to `511` seconds.
 If the parameter is not set, the data transmission period will be `13320` seconds plus a pseudo-random value of up to `2551` seconds.
 
@@ -357,7 +357,7 @@ Lowering the spreading factor makes it more difficult for the gateway to receive
 The second receive window (RX2) uses a fixed frequency and data rate.
 This value configures the frequency to use in `RX2`.
 Changing the desired value makes the Network Server transmit the RXParamSetupReq MAC command.
-<br>
+<br/>
 It is a `3`-byte unsigned int BE, real frequency value divided by `100`.
 
 ### Examples
@@ -391,7 +391,7 @@ Parameter is used to setup absolute data for device.
 #### **meter value**
 
 Base absolute meter value.
-<br>
+<br/>
 It is a `4`-byte unsigned int BE.
 
 #### **pulse coefficient**
@@ -401,7 +401,7 @@ It is a `4`-byte unsigned int BE.
 #### **pulse counter's value**
 
 Base pulse counter's value.
-<br>
+<br/>
 It is a `4`-byte unsigned int BE.
 
 ### Examples
@@ -466,7 +466,7 @@ Parameter is used to set device serial number.
 #### **serial number**
 
 Device serial number.
-<br>
+<br/>
 It is a `6`-byte hex value.
 
 ### Examples
@@ -575,13 +575,13 @@ Parameter is used to setup absolute data for device.
 #### **channel index**
 
 Channel index number.
-<br>
+<br/>
 It is a `1`-byte unsigned int.
 
 #### **meter value**
 
 Base absolute meter value.
-<br>
+<br/>
 It is a `4`-byte unsigned int BE.
 
 #### **pulse coefficient**
@@ -591,7 +591,7 @@ It is a `4`-byte unsigned int BE.
 #### **pulse counter's value**
 
 Base pulse counter's value.
-<br>
+<br/>
 It is a `4`-byte unsigned int BE.
 
 ### Examples
@@ -626,7 +626,7 @@ Parameter is used to enable absolute data for device.
 #### **channel index**
 
 Channel index number.
-<br>
+<br/>
 It is a `1`-byte unsigned int.
 
 #### **absolute data state**
@@ -654,8 +654,8 @@ Message hex dump with LRC: `03 03 1e 01 01 4b`
 ## Pulse channels scan configuration
 
 Parameter is used to set scan configuration for pulse devices.
-Available from software version = `0x6C` for:<br>
-hardware type - `0x0f` hardware version - `0x02`<br>
+Available from software version = `0x6C` for:<br/>
+hardware type - `0x0f` hardware version - `0x02`<br/>
 hardware type - `0x06` hardware version - `0x0a`
 
 [Hardware types](./basics.md#hardware-types)
@@ -676,17 +676,17 @@ hardware type - `0x06` hardware version - `0x0a`
 #### **pull up time**
 
 Channel pull up time in microseconds.
-<br>
+<br/>
 Minimal value - `17` `μs`, maximum - `255` `μs`, `18` `μs` by default.
-<br>
+<br/>
 It is a `1`-byte unsigned int.
 
 #### **scan time**
 
 Channel scan time in microseconds `μs`.
-<br>
+<br/>
 Minimal value - `15` `μs`, maximum - `255` `μs`, `50` `μs` by default.
-<br>
+<br/>
 It is a `1`-byte unsigned int.
 
 ### Examples
@@ -708,8 +708,8 @@ Message hex dump with LRC: `03 04 1f 09 12 17 41`
 ## Pulse channels set config
 
 Parameter is used to set channels for pulse devices.
-Available from software version = `0x6C` for:<br>
-hardware type - `0x0f` hardware version - `0x02`<br>
+Available from software version = `0x6C` for:<br/>
+hardware type - `0x0f` hardware version - `0x02`<br/>
 hardware type - `0x06` hardware version - `0x0a`
 
 [Hardware types](./basics.md#hardware-types)

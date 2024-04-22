@@ -107,14 +107,14 @@ Message hex dump with LRC: `15 0e 0b 02 2b c0 31 60 00 1a 79 88 17 01 23 56 75`
 
 #### for `CONNECT`:
 
-| Field           | Value | Bits                                                                    | Hex      |
-| --------------- | ----- | ----------------------------------------------------------------------- | -------- |
-| command id      | `21`  |                                                                         | `0x15`   |
-| command size    | `5`   |                                                                         | `0x05`   |
-| event id        | `12`  |                                                                         | `0x0c`   |
-| sequence number | `2`   |                                                                         | `0x02`   |
-| channel number  | `0`   |                                                                         | `0x00`   |
-| channel value   | `131` | `0b0000000010000011` <br> with extended bits: <br> `0b0000000110000011` | `0x8301` |
+| Field           | Value | Bits                                                                      | Hex      |
+| --------------- | ----- | ------------------------------------------------------------------------- | -------- |
+| command id      | `21`  |                                                                           | `0x15`   |
+| command size    | `5`   |                                                                           | `0x05`   |
+| event id        | `12`  |                                                                           | `0x0c`   |
+| sequence number | `2`   |                                                                           | `0x02`   |
+| channel number  | `0`   |                                                                           | `0x00`   |
+| channel value   | `131` | `0b0000000010000011` <br/> with extended bits: <br/> `0b0000000110000011` | `0x8301` |
 
 Message hex dump with LRC: `15 05 0c 02 00 83 01 c9`
 

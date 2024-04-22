@@ -9,11 +9,11 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-| Size | Type    | Field                                                            |
-| ---- | ------- | ---------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x2c`                                              |
-| `1`  | `uint8` | command size = `1`                                               |
-| `1`  | `uint8` | tariff table identifier<br> (`0` - table `A+`, `1` – table `A-`) |
+| Size | Type    | Field                                                             |
+| ---- | ------- | ----------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x2c`                                               |
+| `1`  | `uint8` | command size = `1`                                                |
+| `1`  | `uint8` | tariff table identifier<br/> (`0` - table `A+`, `1` – table `A-`) |
 
 ### Examples
 
@@ -34,7 +34,7 @@ Message hex dump: `2c 05 01`
 | ---- | -------- | ---------------------------------------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x2c`                                                                                  |
 | `1`  | `uint8`  | command size = `23`                                                                                  |
-| `1`  | `uint8`  | tariff table identifier<br> (`0` - table `A+`, `1` – table `A-`)                                     |
+| `1`  | `uint8`  | tariff table identifier<br/> (`0` - table `A+`, `1` – table `A-`)                                    |
 | `1`  | `uint32` | active plan: rate plan unique identifier                                                             |
 | `1`  | `uint8`  | active plan: indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)  |
 | `1`  | `uint8`  | active plan: activation year (number of years after `2000`)                                          |

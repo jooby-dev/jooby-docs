@@ -62,7 +62,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 #### **status**
 
-`1` - the time setting was successful <br>
+`1` - the time setting was successful <br/>
 `0` - time setting failed (the [sequence number](#sequence-number) parameter was not changed)
 
 ### Examples

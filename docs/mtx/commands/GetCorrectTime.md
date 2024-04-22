@@ -28,19 +28,19 @@ Message hex dump: `3e 00`
 
 ### Format
 
-| Size | Type    | Field                                                                                         |
-| ---- | ------- | --------------------------------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x3e`                                                                           |
-| `1`  | `uint8` | command size = `9`                                                                            |
-| `1`  | `uint8` | month of transition to `DST`                                                                  |
-| `1`  | `uint8` | date of transition to `DST`<br> if `0` then it refers to the last Sunday of the month         |
-| `1`  | `uint8` | hour of transition to `DST`                                                                   |
-| `1`  | `uint8` | adjustment in hours during the transition to `DST`                                            |
-| `1`  | `uint8` | month of transition to standard time                                                          |
-| `1`  | `uint8` | date of transition to standard time<br> if `0` then it refers to the last Sunday of the month |
-| `1`  | `uint8` | hour of transition to standard time                                                           |
-| `1`  | `uint8` | adjustment in hours during the transition to standard time                                    |
-| `1`  | `uint8` | flag if `DST`/Standard transition is required                                                 |
+| Size | Type    | Field                                                                                          |
+| ---- | ------- | ---------------------------------------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x3e`                                                                            |
+| `1`  | `uint8` | command size = `9`                                                                             |
+| `1`  | `uint8` | month of transition to `DST`                                                                   |
+| `1`  | `uint8` | date of transition to `DST`<br/> if `0` then it refers to the last Sunday of the month         |
+| `1`  | `uint8` | hour of transition to `DST`                                                                    |
+| `1`  | `uint8` | adjustment in hours during the transition to `DST`                                             |
+| `1`  | `uint8` | month of transition to standard time                                                           |
+| `1`  | `uint8` | date of transition to standard time<br/> if `0` then it refers to the last Sunday of the month |
+| `1`  | `uint8` | hour of transition to standard time                                                            |
+| `1`  | `uint8` | adjustment in hours during the transition to standard time                                     |
+| `1`  | `uint8` | flag if `DST`/Standard transition is required                                                  |
 
 ### Examples
 

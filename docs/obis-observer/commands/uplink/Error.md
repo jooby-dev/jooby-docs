@@ -4,12 +4,12 @@ The Error command is used for error indication by the OBIS observer.
 
 ### Format
 
-| Size | Type                                   | Field                              |
-| ---- | -------------------------------------- | ---------------------------------- |
-| `1`  | `uint8`                                | command id = `0xfe`                |
-| `1`  | `uint8`                                | command size                       |
-| `1`  | [Request ID](../types.md#request-id)   | request/response unique identifier |
-| `1`  | [Result code](../types.md#result-code) | operation result code              |
+| Size | Type                                      | Field                              |
+| ---- | ----------------------------------------- | ---------------------------------- |
+| `1`  | `uint8`                                   | command id = `0xfe`                |
+| `1`  | `uint8`                                   | command size                       |
+| `1`  | [Request ID](../../types.md#request-id)   | request/response unique identifier |
+| `1`  | [Result code](../../types.md#result-code) | operation result code              |
 
 ### Examples
 

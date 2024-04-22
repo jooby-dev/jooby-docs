@@ -17,7 +17,7 @@ The status bits may differ for different device types.
 | `1`   | `uint8` | [sequence number](#sequence-number)                                                            |
 | `1-2` | `uint8` | [status](#status) (can be an [extended value](../../types.md#extended-value) for some devices) |
 
-It's a command with a [one-byte header](../../message.md#command-with-a-one-byte-header).<br>
+It's a command with a [one-byte header](../../message.md#command-with-a-one-byte-header).<br/>
 Max command size is `31` bytes.
 
 ### Parameters
@@ -33,13 +33,13 @@ It depends on the device [hardware type](../../basics.md#hardware-types).
 
 #### for `GAS*` devices (`1` byte):
 
-| Bit    | Name     | Description                                                                |
-| ------ | -------- | -------------------------------------------------------------------------- |
-| `0`    | `BAT`    | `1` - the battery voltage has dropped below the set threshold              |
-| `1`    | `MAGNET` | `1` - there is a magnetic field influence                                  |
-| `2`    | `BUTTON` | `0` - button is pressed <br> `1` - button is release (device is unmounted) |
-| `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server           |
-| `4..7` | `RES`    | reserved for future use                                                    |
+| Bit    | Name     | Description                                                                 |
+| ------ | -------- | --------------------------------------------------------------------------- |
+| `0`    | `BAT`    | `1` - the battery voltage has dropped below the set threshold               |
+| `1`    | `MAGNET` | `1` - there is a magnetic field influence                                   |
+| `2`    | `BUTTON` | `0` - button is pressed <br/> `1` - button is release (device is unmounted) |
+| `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server            |
+| `4..7` | `RES`    | reserved for future use                                                     |
 
 #### for `IMP2AS`, `IMP2EU`, `IMP2IN`, `NOVATOR` 2-channel devices (`1` byte):
 
@@ -107,11 +107,11 @@ It depends on the device [hardware type](../../basics.md#hardware-types).
 
 #### for `GAZI3`:
 
-| Field             | Value                            | Hex    |
-| ----------------- | -------------------------------- | ------ |
-| command id + size | `98`                             | `0x62` |
-| sequence number   | `32`                             | `0x20` |
-| status            | `0b00001001` <br> see json below | `0x09` |
+| Field             | Value                             | Hex    |
+| ----------------- | --------------------------------- | ------ |
+| command id + size | `98`                              | `0x62` |
+| sequence number   | `32`                              | `0x20` |
+| status            | `0b00001001` <br/> see json below | `0x09` |
 
 ```json
 {
@@ -126,11 +126,11 @@ Message hex dump with LRC: `62 20 09 1e`
 
 #### for `MTXLORA`:
 
-| Field             | Value                                    | Hex      |
-| ----------------- | ---------------------------------------- | -------- |
-| command id + size | `99`                                     | `0x63`   |
-| sequence number   | `48`                                     | `0x30`   |
-| status            | `0b1000001100001010` <br> see json below | `0x830a` |
+| Field             | Value                                     | Hex      |
+| ----------------- | ----------------------------------------- | -------- |
+| command id + size | `99`                                      | `0x63`   |
+| sequence number   | `48`                                      | `0x30`   |
+| status            | `0b1000001100001010` <br/> see json below | `0x830a` |
 
 ```json
 {

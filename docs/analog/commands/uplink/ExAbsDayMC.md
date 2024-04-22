@@ -10,20 +10,20 @@ The parameter `23` is used for this behavior.
 
 ### Format
 
-| Size   | Type                                                  | Field                                               |
-| ------ | ----------------------------------------------------- | --------------------------------------------------- |
-| `1`    | `uint8`                                               | extra flag = `0x1f`                                 |
-| `1`    | `uint8`                                               | command id = `0x0b`                                 |
-| `1`    | `uint8`                                               | command size (dynamic, `4+`)                        |
-| `2`    | [packed date](../../types.md#packed-date)             | [date](#date)                                       |
-| `1..5` | [extended value](../../types.md#extended-value)       | [channels bit set](../../types.md#channels-bit-set) |
-| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `1` pulse coefficient                       |
-| `1..5` | [extended value](../../types.md#extended-value)       | channel `1` value                                   |
-| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `2` pulse coefficient                       |
-| `1..5` | [extended value](../../types.md#extended-value)       | channel `2` value                                   |
-| ...    | ...                                                   | ...                                                 |
-| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `N` pulse coefficient                       |
-| `1..5` | [extended value](../../types.md#extended-value)       | channel `N` value                                   |
+| Size   | Type                                                  | Field                                                         |
+| ------ | ----------------------------------------------------- | ------------------------------------------------------------- |
+| `1`    | `uint8`                                               | extra flag = `0x1f`                                           |
+| `1`    | `uint8`                                               | command id = `0x0b`                                           |
+| `1`    | `uint8`                                               | command size (dynamic, `4+`)                                  |
+| `2`    | [packed date](../../types.md#packed-date)             | [date](#date)                                                 |
+| `1..5` | [extended value](../../types.md#extended-value)       | [channels bit set](../../parameter-types.md#channels-bit-set) |
+| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `1` pulse coefficient                                 |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `1` value                                             |
+| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `2` pulse coefficient                                 |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `2` value                                             |
+| ...    | ...                                                   | ...                                                           |
+| `1`    | [pulse coefficient](../../types.md#pulse-coefficient) | channel `N` pulse coefficient                                 |
+| `1..5` | [extended value](../../types.md#extended-value)       | channel `N` value                                             |
 
 It's a command with a [three-bytes header](../../message.md#command-with-a-three-bytes-header).
 
@@ -32,26 +32,26 @@ It's a command with a [three-bytes header](../../message.md#command-with-a-three
 #### **date**
 
 The command contains pulse counter of channels for this date.
-<br>
+<br/>
 [See details](../../types.md#packed-date).
 
 #### **channels bit set**
 
-[See details](../../types.md#channels-bit-set).
+[See details](../../parameter-types.md#channels-bit-set).
 
 ### Examples
 
 #### channel `1` for `2023.03.10 00:00:00 GMT`:
 
-| Field                         | Value                     | Bits                                                                    | Hex      |
-| ----------------------------- | ------------------------- | ----------------------------------------------------------------------- | -------- |
-| extra flag                    | `31`                      |                                                                         | `0x1f`   |
-| command id                    | `11`                      |                                                                         | `0x0b`   |
-| command size                  | `6`                       |                                                                         | `0x06`   |
-| date                          | `2023.03.10 00:00:00 GMT` | `0b0010111001101010`                                                    | `0x2e6a` |
-| channels                      | `1`                       | `0b00000001`                                                            | `0x01`   |
-| channel `1` pulse coefficient | `100`                     |                                                                         | `0x64`   |
-| channel `1` value             | `342`                     | `0b0000000101010110` <br> with extended bits: <br> `0b0000001011010110` | `0xd602` |
+| Field                         | Value                     | Bits                                                                      | Hex      |
+| ----------------------------- | ------------------------- | ------------------------------------------------------------------------- | -------- |
+| extra flag                    | `31`                      |                                                                           | `0x1f`   |
+| command id                    | `11`                      |                                                                           | `0x0b`   |
+| command size                  | `6`                       |                                                                           | `0x06`   |
+| date                          | `2023.03.10 00:00:00 GMT` | `0b0010111001101010`                                                      | `0x2e6a` |
+| channels                      | `1`                       | `0b00000001`                                                              | `0x01`   |
+| channel `1` pulse coefficient | `100`                     |                                                                           | `0x64`   |
+| channel `1` value             | `342`                     | `0b0000000101010110` <br/> with extended bits: <br/> `0b0000001011010110` | `0xd602` |
 
 Message hex dump with LRC: `1f 0b 06 2e 6a 01 64 d6 02 b2`
 
@@ -60,4 +60,4 @@ Message hex dump with LRC: `1f 0b 06 2e 6a 01 64 d6 02 b2`
 
 * [Packed date](../../types.md#packed-date)
 * [Extended value](../../types.md#extended-value)
-* [Channels bit set](../../types.md#channels-bit-set)
+* [Channels bit set](../../parameter-types.md#channels-bit-set)

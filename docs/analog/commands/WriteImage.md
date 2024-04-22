@@ -27,7 +27,7 @@ The offset at which to write the image content to the device's flash memory.
 #### **image content**
 
 The image content size should be a multiple of `8`.
-<br>
+<br/>
 In case there is less data it should be padded with zeros.
 
 ### Examples
@@ -64,7 +64,7 @@ The offset at which to write the image content to the device's flash memory.
 
 #### **status**
 
-`1` - the writing was successful <br>
+`1` - the writing was successful <br/>
 `0` - the writing failed
 
 ### Examples

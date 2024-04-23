@@ -11,7 +11,7 @@ To get this uplink need to set param [mqtt data send config](../../parameter-typ
 | ------ | ----------------------------------------------- | --------------------------------------------------- |
 | `1`    | `uint8`                                         | extra flag = `0x1f`                                 |
 | `1`    | `uint8`                                         | command id = `0x31`                                 |
-| `1`    | `byte`                                          | command size (dynamic, `7+`)                        |
+| `1`    | `byte`                                          | command size (dynamic, `6+`)                        |
 | `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
 | `1`    | byte                                            | [hour](#hour)                                       |
 | `1`    | byte                                            | [hours](#hours)                                     |

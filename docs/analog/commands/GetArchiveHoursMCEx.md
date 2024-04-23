@@ -69,15 +69,15 @@ Message hex dump with LRC: `1f 30 05 2f 97 0c 02 01 c8`
 | `1`    | `uint8`                                         | [hours](#hours)                                  |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
 | `1..5` | [extended value](../types.md#extended-value) | channel `1` hour `1` value                       |
-| `1..5` | [extended value](../types.md#extended-value) | channel `1` hour `1` diff                        |
-| `1..5` | [extended value](../types.md#extended-value) | channel `1` hour `2` diff                        |
+| `0..5` | [extended value](../types.md#extended-value) | channel `1` hour `1` diff                        |
+| `0..5` | [extended value](../types.md#extended-value) | channel `1` hour `2` diff                        |
 | `1..5` | [extended value](../types.md#extended-value) | channel `2` hour `1` value                       |
-| `1..5` | [extended value](../types.md#extended-value) | channel `2` hour `1` diff                        |
-| `1..5` | [extended value](../types.md#extended-value) | channel `2` hour `2` diff                        |
+| `0..5` | [extended value](../types.md#extended-value) | channel `2` hour `1` diff                        |
+| `0..5` | [extended value](../types.md#extended-value) | channel `2` hour `2` diff                        |
 | ...    | ...                                          | ...                                              |
 | `1..5` | [extended value](../types.md#extended-value) | channel `N` hour `H` value                       |
-| `1..5` | [extended value](../types.md#extended-value) | channel `N` hour `H` diff                        |
-| `1..5` | [extended value](../types.md#extended-value) | channel `N` hour `H` diff                        |
+| `0..5` | [extended value](../types.md#extended-value) | channel `N` hour `H` diff                        |
+| `0..5` | [extended value](../types.md#extended-value) | channel `N` hour `H` diff                        |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

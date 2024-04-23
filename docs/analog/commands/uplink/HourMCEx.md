@@ -11,10 +11,10 @@ To get this uplink need to set param [mqtt data send config](../../parameter-typ
 | ------ | ----------------------------------------------- | --------------------------------------------------- |
 | `1`    | `uint8`                                         | extra flag = `0x1f`                                 |
 | `1`    | `uint8`                                         | command id = `0x31`                                 |
-| `1`    | `byte`                                          | command size (dynamic, `6+`)                        |
+| `1`    | `uint8`                                          | command size (dynamic, `6+`)                        |
 | `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
-| `1`    | byte                                            | [hour](#hour)                                       |
-| `1`    | byte                                            | [hours](#hours)                                     |
+| `1`    | uint8                                            | [hour](#hour)                                       |
+| `1`    | uint8                                            | [hours](#hours)                                     |
 | `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../types.md#channels-bit-set) |
 | `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                   |
 | `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `1`                                |

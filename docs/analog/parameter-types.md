@@ -1005,8 +1005,8 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                                                           |
-| ---- | ------ | --------------------------------------------------------------- |
+| Size | Type    | Field                                                           |
+| ---- | ------- | --------------------------------------------------------------- |
 |  1   | `uint8` | parameter type = `39`                                           |
 |  1   | `uint8` | [qos](#qos)                                                     |
 |  1   | `uint8` | [retain](#retain)                                               |
@@ -1333,7 +1333,7 @@ hardware type - `24`
 
 | Size | Type            | Field                                     |
 | ---- | ------          | ----------------------------------------- |
-| 1    | `uint8`          | parameter type = `47`                     |
+| 1    | `uint8`         | parameter type = `47`                     |
 | 1-64 | `string`        | [software image url](#software-image-url) |
 
 #### **software image url**
@@ -1367,7 +1367,7 @@ hardware type - `24`
 
 | Size | Type            | Field                                                   |
 | ---- | ------          | ---------------------------------------                 |
-| 1    | `uint8`          | parameter type = `48`                                   |
+| 1    | `uint8`         | parameter type = `48`                                   |
 | 1-64 | `string`        | [module firmware image url](#module-firmware-image-url) |
 
 #### **module firmware image url**
@@ -1397,8 +1397,8 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                                   |
-| ---- | ------ | --------------------------------------- |
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
 |  1   | `uint8` | parameter type = `49`                   |
 |  1   | `uint8` | [data type](#data-type)                 |
 |  1   | `uint8` | [hour](#minutes-hour)                   |
@@ -1438,8 +1438,8 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                                   |
-| ---- | ------ | --------------------------------------- |
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
 |  1   | `uint8` | parameter type = `50`                   |
 |  1   | `uint8` | [event id](#event-id)                   |
 |  1   | `uint8` | [enable event](#enable-event)           |
@@ -1527,8 +1527,8 @@ hardware type - `24`
 
 ### Format
 
-| Size  | Type   | Field                                   |
-| ----  | ------ | --------------------------------------- |
+| Size  | Type    | Field                                   |
+| ----  | ------- | --------------------------------------- |
 |  1    | `uint8` | parameter type = `52`                   |
 |  1    | `uint8` | [count](#count)                         |
 |  0-17 | `uint8` | [bands](#bands)                         |

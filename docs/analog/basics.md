@@ -181,5 +181,12 @@ Archives can be requested for the latest events, the oldest events, and events s
                 <code>Jooby OMNI RM LoRaWAN 4PI 202 AS</code>
             </td>
         </tr>
+        <tr>
+            <td><code>0x18</code></td>
+            <td><code>ElsterNbiotLora</code></td>
+            <td>
+                <code>Jooby EPHIR RMS NBIoT GMIT10 206 EU</code> <br>
+            </td>
+        </tr>
     </tbody>
 </table>

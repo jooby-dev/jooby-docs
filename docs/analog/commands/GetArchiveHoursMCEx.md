@@ -8,7 +8,7 @@ Command to request/receive hour pulse counter's values from device archive. This
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `byte`                                       | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                       | extra flag = `0x1f`                              |
 | `1`    | `byte`                                       | command id = `0x30`                              |
 | `1`    | `byte`                                       | command size (dynamic, `5+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |

@@ -49,9 +49,9 @@ Setting time parameters of operation. Applicable to all types of modules.
 
 | Size | Type    | Field                              |
 | ---- | ------- | ---------------------------------- |
-| 1    | `uint8` | parameter type = `1`               |
-| 3    | `uint8` | [reserved](#reserved) = `0x000000` |
-| 1    | `uint8` | [period](#period)                  |
+| `1`  | `uint8` | parameter type = `1`               |
+| `3`  | `uint8` | [reserved](#reserved) = `0x000000` |
+| `1`  | `uint8` | [period](#period)                  |
 
 #### **reserved**
 
@@ -87,8 +87,8 @@ The parameter defines the hour of the day by which the daily consumption is calc
 
 | Size | Type    | Field                |
 | ---- | ------- | -------------------- |
-| 1    | `uint8` | parameter type = `4` |
-| 1    | `uint8` | [hour](#hour)        |
+| `1`  | `uint8` | parameter type = `4` |
+| `1`  | `uint8` | [hour](#hour)        |
 
 #### **hour**
 
@@ -116,8 +116,8 @@ Parameter is used to setup type of values received from device.
 
 | Size | Type    | Field                   |
 | ---- | ------- | ----------------------- |
-| 1    | `uint8` | parameter type = `5`    |
-| 1    | `uint8` | [data type](#data-type) |
+| `1`  | `uint8` | parameter type = `5`    |
+| `1`  | `uint8` | [data type](#data-type) |
 
 #### **data type**
 
@@ -152,8 +152,8 @@ This parameter applies to all types of modules.
 
 | Size | Type    | Field                           |
 | ---- | ------- | ------------------------------- |
-| 1    | `uint8` | parameter type = `8`            |
-| 1    | `uint8` | [delivery type](#delivery-type) |
+| `1`  | `uint8` | parameter type = `8`            |
+| `1`  | `uint8` | [delivery type](#delivery-type) |
 
 #### **delivery type**
 
@@ -185,8 +185,8 @@ Parameter is used to setup activation method in LoRaWAN network.
 
 | Size | Type    | Field                                             |
 | ---- | ------- | ------------------------------------------------- |
-| 1    | `uint8` | parameter type = `9`                              |
-| 1    | `uint8` | [activation method type](#activation-method-type) |
+| `1`  | `uint8` | parameter type = `9`                              |
+| `1`  | `uint8` | [activation method type](#activation-method-type) |
 
 #### **activation method type**
 
@@ -217,10 +217,10 @@ Defines battery depassivation parameters for all module types except `MTXLora`.
 
 | Size | Type    | Field                                       |
 | ---- | ------- | ------------------------------------------- |
-| 1    | `uint8` | parameter type = `10`                       |
-| 2    | `uint8` | [load time](#load-time)                     |
-| 2    | `uint8` | [internal resistance](#internal-resistance) |
-| 2    | `uint8` | [low voltage](#low-voltage)                 |
+| `1`  | `uint8` | parameter type = `10`                       |
+| `2`  | `uint8` | [load time](#load-time)                     |
+| `2`  | `uint8` | [internal resistance](#internal-resistance) |
+| `2`  | `uint8` | [low voltage](#low-voltage)                 |
 
 #### **load time**
 
@@ -267,8 +267,8 @@ It applies to all module types except `MTXLora`.
 
 | Size | Type    | Field                   |
 | ---- | ------- | ----------------------- |
-| 1    | `uint8` | parameter type = `11`   |
-| 4    | `uint8` | [load time](#load-time) |
+| `1`  | `uint8` | parameter type = `11`   |
+| `4`  | `uint8` | [load time](#load-time) |
 
 #### **load time**
 
@@ -349,9 +349,9 @@ Parameter is used to setup `RX2` window configuration.
 
 | Size | Type    | Field                           |
 | ---- | ------- | ------------------------------- |
-| 1    | `uint8` | parameter type = `18`           |
-| 1    | `uint8` | [spread factor](#spread-factor) |
-| 3    | `uint8` | [frequency](#frequency)         |
+| `1`  | `uint8` | parameter type = `18`           |
+| `1`  | `uint8` | [spread factor](#spread-factor) |
+| `3`  | `uint8` | [frequency](#frequency)         |
 
 #### **spread factor**
 
@@ -402,10 +402,10 @@ Parameter is used to setup absolute data for device.
 
 | Size | Type    | Field                                          |
 | ---- | ------- | ---------------------------------------------- |
-| 1    | `uint8` | parameter type = `23`                          |
-| 1    | `uint8` | [meter value](#meter-value)                    |
-| 3    | `uint8` | [pulse coefficient](#pulse-coefficient)        |
-| 3    | `uint8` | [pulse counter's value](#pulse-counters-value) |
+| `1`  | `uint8` | parameter type = `23`                          |
+| `1`  | `uint8` | [meter value](#meter-value)                    |
+| `3`  | `uint8` | [pulse coefficient](#pulse-coefficient)        |
+| `3`  | `uint8` | [pulse counter's value](#pulse-counters-value) |
 
 #### **meter value**
 
@@ -447,8 +447,8 @@ Parameter is used to enable absolute data for device.
 
 | Size | Type    | Field                                       |
 | ---- | ------- | ------------------------------------------- |
-| 1    | `uint8` | parameter type = `24`                       |
-| 1    | `uint8` | [absolute data state](#absolute-data-state) |
+| `1`  | `uint8` | parameter type = `24`                       |
+| `1`  | `uint8` | [absolute data state](#absolute-data-state) |
 
 #### **absolute data state**
 
@@ -479,8 +479,8 @@ Parameter is used to set device serial number.
 
 | Size | Type    | Field                           |
 | ---- | ------- | ------------------------------- |
-| 1    | `uint8` | parameter type = `25`           |
-| 6    | `uint8` | [serial number](#serial-number) |
+| `1`  | `uint8` | parameter type = `25`           |
+| `6`  | `uint8` | [serial number](#serial-number) |
 
 #### **serial number**
 
@@ -510,10 +510,10 @@ Parameter is used to set device geolocation.
 
 | Size | Type    | Field                   |
 | ---- | ------- | ----------------------- |
-| 1    | `uint8` | parameter type = `26`   |
-| 4    | `uint8` | [latitude](#latitude)   |
-| 4    | `uint8` | [longitude](#longitude) |
-| 2    | `uint8` | [altitude](#altitude)   |
+| `1`  | `uint8` | parameter type = `26`   |
+| `4`  | `uint8` | [latitude](#latitude)   |
+| `4`  | `uint8` | [longitude](#longitude) |
+| `2`  | `uint8` | [altitude](#altitude)   |
 
 #### **latitude**
 
@@ -551,8 +551,8 @@ Message hex dump with LRC: `03 0b 1a 52 b8 09 42 52 b8 2d 42 17 00 74`
 
 | Size | Type    | Field                 |
 | ---- | ------- | --------------------- |
-| 1    | `uint8` | parameter type = `28` |
-| 2    | `uint8` | [interval](#interval) |
+| `1`  | `uint8` | parameter type = `28` |
+| `2`  | `uint8` | [interval](#interval) |
 
 #### **interval**
 
@@ -585,11 +585,11 @@ Parameter is used to setup absolute data for device.
 
 | Size | Type    | Field                                          |
 | ---- | ------- | ---------------------------------------------- |
-| 1    | `uint8` | parameter type = `29`                          |
-| 1    | `uint8` | [channel index](#channel-index)                |
-| 1    | `uint8` | [meter value](#meter-value)                    |
-| 3    | `uint8` | [pulse coefficient](#pulse-coefficient)        |
-| 3    | `uint8` | [pulse counter's value](#pulse-counters-value) |
+| `1`  | `uint8` | parameter type = `29`                          |
+| `1`  | `uint8` | [channel index](#channel-index)                |
+| `1`  | `uint8` | [meter value](#meter-value)                    |
+| `3`  | `uint8` | [pulse coefficient](#pulse-coefficient)        |
+| `3`  | `uint8` | [pulse counter's value](#pulse-counters-value) |
 
 #### **channel index**
 
@@ -638,9 +638,9 @@ Parameter is used to enable absolute data for device.
 
 | Size | Type    | Field                                       |
 | ---- | ------- | ------------------------------------------- |
-| 1    | `uint8` | parameter type = `30`                       |
-| 1    | `uint8` | [channel index](#channel-index)             |
-| 1    | `uint8` | [absolute data state](#absolute-data-state) |
+| `1`  | `uint8` | parameter type = `30`                       |
+| `1`  | `uint8` | [channel index](#channel-index)             |
+| `1`  | `uint8` | [absolute data state](#absolute-data-state) |
 
 #### **channel index**
 
@@ -683,10 +683,10 @@ hardware type - `0x06` hardware version - `0x0a`
 
 | Size | Type    | Field                                 |
 | ---- | ------- | ------------------------------------- |
-| 1    | `uint8` | parameter type = `31`                 |
-| 1    | `uint8` | [channels bit set](#channels-bit-set) |
-| 1    | `uint8` | [pull up time](#pull-up-time)         |
-| 1    | `uint8` | [scan time](#scan-time)               |
+| `1`  | `uint8` | parameter type = `31`                 |
+| `1`  | `uint8` | [channels bit set](#channels-bit-set) |
+| `1`  | `uint8` | [pull up time](#pull-up-time)         |
+| `1`  | `uint8` | [scan time](#scan-time)               |
 
 #### **channels bit set**
 
@@ -737,8 +737,8 @@ hardware type - `0x06` hardware version - `0x0a`
 
 | Size | Type    | Field                                   |
 | ---- | ------- | --------------------------------------- |
-| 1    | `uint8` | parameter type = `32`                   |
-| 1    | `uint8` | [channels bit set](#channels-bit-set-1) |
+| `1`  | `uint8` | parameter type = `32`                   |
+| `1`  | `uint8` | [channels bit set](#channels-bit-set-1) |
 
 #### **channels bit set**
 
@@ -820,13 +820,13 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type     | Field                                   |
-| ---- | ------   | --------------------------------------- |
-| 1    | `uint8`  | parameter type = `34`                   |
-| 1-64 | `string` | [client id](#client-id)                 |
-| 1-64 | `string` | [username](#username)                   |
-| 1-64 | `string` | [password](#password)                   |
-| 1    | `uint8`  | [clean session](#clean-session)         |
+| Size   | Type     | Field                                   |
+| -----  | ------   | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `34`                   |
+| '1-64' | `string` | [client id](#client-id)                 |
+| '1-64' | `string` | [username](#username)                   |
+| '1-64' | `string` | [password](#password)                   |
+| `1`    | `uint8`  | [clean session](#clean-session)         |
 
 #### **client id**
 unique identifier that distinguishes each MQTT client connecting to a broker and enables the broker to keep track of the client’s current state.
@@ -870,11 +870,11 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type     | Field                                   |
-| ---- | ------   | --------------------------------------- |
-| 1    | `uint8`  | parameter type = `35`                   |
-| 1-64 | `string` | [host name](#host-name)                 |
-| 2    | `uint8`  | [port](#port)                           |
+| Size   | Type     | Field                                   |
+| ------ | ------   | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `35`                   |
+| `1-64` | `string` | [host name](#host-name)                 |
+| `2`    | `uint8`  | [port](#port)                           |
 
 #### **host name**
 The address of the server. It can be an IP address or a domain name. No default value
@@ -910,8 +910,8 @@ hardware type - `24`
 
 | Size | Type         | Field                                   |
 | ---- | ------       | --------------------------------------- |
-| 1    | `uint8`      | parameter type = `36`                   |
-| 1    | `enable`     | [enable](#ssl-enable)                   |
+| `1`  | `uint8`      | parameter type = `36`                   |
+| `1`  | `enable`     | [enable](#ssl-enable)                   |
 
 #### **ssl enable**
 Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediately for next connection without device reset. Default value 1
@@ -940,10 +940,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type            | Field                                   |
-| ---- | ------          | --------------------------------------- |
-| 1    | `uint8`         | parameter type = `37`                   |
-| 1-64 | `string`        | [topic prefix](#topic-prefix)           |
+| Size   | Type            | Field                                   |
+| ----   | ------          | --------------------------------------- |
+| `1`    | `uint8`         | parameter type = `37`                   |
+| `1-64` | `string`        | [topic prefix](#topic-prefix)           |
 
 #### **topic prefix**
 topic prefix that will be used to make topic to subscribe topic_prefix/elster-<short_mac>/down and publish topic_prefix/elster-<short_mac>/up,
@@ -975,8 +975,8 @@ hardware type - `24`
 
 | Size | Type    | Field                                   |
 | ---- | ------  | --------------------------------------- |
-|  1   | `uint8` | parameter type = `38`                   |
-|  1   | `uint8` | [qos](#qos)                             |
+| `1`  | `uint8` | parameter type = `38`                   |
+| `1`  | `uint8` | [qos](#qos)                             |
 
 #### **QoS**
 QoS option for subscribing. Default value QOS=1.
@@ -1007,12 +1007,12 @@ hardware type - `24`
 
 | Size | Type    | Field                                                           |
 | ---- | ------- | --------------------------------------------------------------- |
-|  1   | `uint8` | parameter type = `39`                                           |
-|  1   | `uint8` | [qos](#qos)                                                     |
-|  1   | `uint8` | [retain](#retain)                                               |
-|  1   | `uint8` | [newest send first](#newest-send-first)                         |
-|  1   | `uint8` | [send count attempts](#send-count-attempts)                     |
-|  1   | `uint8` | [send timeout between attempts](#send-timeout-between-attempts) |
+| `1`  | `uint8` | parameter type = `39`                                           |
+| `1`  | `uint8` | [qos](#qos)                                                     |
+| `1`  | `uint8` | [retain](#retain)                                               |
+| `1`  | `uint8` | [newest send first](#newest-send-first)                         |
+| `1`  | `uint8` | [send count attempts](#send-count-attempts)                     |
+| `1`  | `uint8` | [send timeout between attempts](#send-timeout-between-attempts) |
 
 #### **qos**
 QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
@@ -1061,9 +1061,9 @@ hardware type - `24`
 
 | Size | Type    | Field                             |
 | ---- | ------  | --------------------------------- |
-|  1   | `uint8` | parameter type = `40`             |
-|  1   | `uint8` | [security level](#security-level) |
-|  1   | `uint8` | [version](#version)               |
+| `1`  | `uint8` | parameter type = `40`             |
+| `1`  | `uint8` | [security level](#security-level) |
+| `1`  | `uint8` | [version](#version)               |
 
 #### **security level**
 The authentication mode.
@@ -1153,8 +1153,8 @@ hardware type - `24`
 
 | Size | Type    | Field                       |
 | ---- | ------  | --------------------------- |
-|  1   | `uint8` | parameter type = `42`       |
-|  4   | `uint8` | [crc32](#crc32)             |
+| `1`  | `uint8` | parameter type = `42`       |
+| `4`  | `uint8` | [crc32](#crc32)             |
 
 #### **crc32**
 crc32 of stored cacert to verify and if crc valid write to nbiot
@@ -1183,12 +1183,12 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type    | Field                       |
-| ----   | ------  | --------------------------- |
-|  1     | `uint8` | parameter type = `43`       |
-|  2     | `uint8` | [size](#size)               |
-|  2     | `uint8` | [position](#position)       |
-|  0...n | `uint8` | [chunk](#chunk)             |
+| Size    | Type    | Field                       |
+| ----    | ------  | --------------------------- |
+| `1`     | `uint8` | parameter type = `43`       |
+| `2`     | `uint8` | [size](#size)               |
+| `2`     | `uint8` | [position](#position)       |
+| `0...n` | `uint8` | [chunk](#chunk)             |
 
 #### **size**
 chunk size
@@ -1227,8 +1227,8 @@ hardware type - `24`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `uint8` | parameter type = `44`       |
-|  4   | `uint8` | [crc32](#crc32)             |
+| `1`  | `uint8` | parameter type = `44`       |
+| `4`  | `uint8` | [crc32](#crc32)             |
 
 #### **crc32**
 crc32 to check if client cert write correct and set it in nbiot module
@@ -1257,12 +1257,12 @@ hardware type - `24`
 
 ### Format
 
-| Size  | Type    | Field                       |
-| ----  | ------  | --------------------------- |
-|  1    | `uint8` | parameter type = `45`       |
-|  2    | `uint8` | [size](#size)               |
-|  2    | `uint8` | [position](#position)       |
-|  0..n | `uint8` | [chunk](#chunk)             |
+| Size   | Type    | Field                       |
+| ----   | ------  | --------------------------- |
+| `1`    | `uint8` | parameter type = `45`       |
+| `2`    | `uint8` | [size](#size)               |
+| `2`    | `uint8` | [position](#position)       |
+| `0..n` | `uint8` | [chunk](#chunk)             |
 
 #### **size**
 chunk size
@@ -1299,10 +1299,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                       |
-| ---- | ------ | --------------------------- |
-|  1   | `uint8` | parameter type = `46`       |
-|  4   | `uint8` | [crc32](#crc32)             |
+| Size | Type    | Field                       |
+| ---- | ------  | --------------------------- |
+| `1`  | `uint8` | parameter type = `46`       |
+| `4`  | `uint8` | [crc32](#crc32)             |
 
 #### **crc32**
 crc32 to check if client key write correct and set it in nbiot module
@@ -1331,10 +1331,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type            | Field                                     |
-| ---- | ------          | ----------------------------------------- |
-| 1    | `uint8`         | parameter type = `47`                     |
-| 1-64 | `string`        | [software image url](#software-image-url) |
+| Size   | Type            | Field                                     |
+| ----   | ------          | ----------------------------------------- |
+| `1`    | `uint8`         | parameter type = `47`                     |
+| `1-64` | `string`        | [software image url](#software-image-url) |
 
 #### **software image url**
 software image URL where the image is stored. Will use nbiot to download the image and start the update.
@@ -1365,10 +1365,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type            | Field                                                   |
-| ---- | ------          | ---------------------------------------                 |
-| 1    | `uint8`         | parameter type = `48`                                   |
-| 1-64 | `string`        | [module firmware image url](#module-firmware-image-url) |
+| Size   | Type            | Field                                                   |
+| ----   | ------          | ---------------------------------------                 |
+| `1`    | `uint8`         | parameter type = `48`                                   |
+| `1-64` | `string`        | [module firmware image url](#module-firmware-image-url) |
 
 #### **module firmware image url**
 module firmware image URL where the image is stored(special DFOTA image). Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
@@ -1399,11 +1399,11 @@ hardware type - `24`
 
 | Size | Type    | Field                                   |
 | ---- | ------- | --------------------------------------- |
-|  1   | `uint8` | parameter type = `49`                   |
-|  1   | `uint8` | [data type](#data-type)                 |
-|  1   | `uint8` | [hour](#minutes-hour)                   |
-|  1   | `uint8` | [minutes](#minutes-hour)                |
-|  1   | `uint8` | [count to send](#count-to-send)         |
+| `1`  | `uint8` | parameter type = `49`                   |
+| `1`  | `uint8` | [data type](#data-type)                 |
+| `1`  | `uint8` | [hour](#minutes-hour)                   |
+| `1`  | `uint8` | [minutes](#minutes-hour)                |
+| `1`  | `uint8` | [count to send](#count-to-send)         |
 
 #### **minutes** **hour**
 start time from sending reporting data 
@@ -1440,11 +1440,11 @@ hardware type - `24`
 
 | Size | Type    | Field                                   |
 | ---- | ------- | --------------------------------------- |
-|  1   | `uint8` | parameter type = `50`                   |
-|  1   | `uint8` | [event id](#event-id)                   |
-|  1   | `uint8` | [enable event](#enable-event)           |
-|  1   | `uint8` | [send event](#send-event)               |
-|  1   | `uint8` | [save event](#save-event)               |
+| `1`  | `uint8` | parameter type = `50`                   |
+| `1`  | `uint8` | [event id](#event-id)                   |
+| `1`  | `uint8` | [enable event](#enable-event)           |
+| `1`  | `uint8` | [send event](#send-event)               |
+| `1`  | `uint8` | [save event](#save-event)               |
 
 #### **event id**
 
@@ -1488,7 +1488,7 @@ hardware type - `24`
 
 | Size | Type    | Field                                   |
 | ---- | ------- | --------------------------------------- |
-|  1   | `uint8` | parameter type = `51`                   |
+| `1`  | `uint8` | parameter type = `51`                   |
 
 ### Examples
 
@@ -1506,10 +1506,10 @@ Message hex dump no LRC: `03 05 33`
 
 #### Format
 
-| Size  | Type     | Field                                   |
-| ----  | ------   | --------------------------------------- |
-|  1    | `uint8`  | parameter type = `51`                   |
-|  1-64 | `string` | [module info](#module-info)             |
+| Size   | Type     | Field                                   |
+| ----   | ------   | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `51`                   |
+| `1-64` | `string` | [module info](#module-info)             |
 
 ##### **module info**
 
@@ -1527,11 +1527,11 @@ hardware type - `24`
 
 ### Format
 
-| Size  | Type    | Field                                   |
-| ----  | ------- | --------------------------------------- |
-|  1    | `uint8` | parameter type = `52`                   |
-|  1    | `uint8` | [count](#count)                         |
-|  0-17 | `uint8` | [bands](#bands)                         |
+| Size   | Type    | Field                                   |
+| ----   | ------- | --------------------------------------- |
+| `1`    | `uint8` | parameter type = `52`                   |
+| `1`    | `uint8` | [count](#count)                         |
+| `0-17` | `uint8` | [bands](#bands)                         |
 
 #### **count**
 band count to set

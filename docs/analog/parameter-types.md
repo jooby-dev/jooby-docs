@@ -823,9 +823,9 @@ hardware type - `24`
 | Size   | Type     | Field                                   |
 | -----  | ------   | --------------------------------------- |
 | `1`    | `uint8`  | parameter type = `34`                   |
-| '1-64' | `string` | [client id](#client-id)                 |
-| '1-64' | `string` | [username](#username)                   |
-| '1-64' | `string` | [password](#password)                   |
+| `1-64` | `string` | [client id](#client-id)                 |
+| `1-64` | `string` | [username](#username)                   |
+| `1-64` | `string` | [password](#password)                   |
 | `1`    | `uint8`  | [clean session](#clean-session)         |
 
 #### **client id**

@@ -1486,8 +1486,8 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                                   |
-| ---- | ------ | --------------------------------------- |
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
 |  1   | `uint8` | parameter type = `51`                   |
 
 ### Examples
@@ -1511,7 +1511,7 @@ Message hex dump no LRC: `03 05 33`
 |  1    | `uint8`  | parameter type = `51`                   |
 |  1-64 | `string` | [module info](#module-info)             |
 
-#### **module info**
+##### **module info**
 
 Product identification information including the identifier of the device type 
 and the revision of software NBIOT module.

@@ -809,6 +809,7 @@ Represents the value of the internal resistance of the battery (in `mΩ`). If th
 
 Message hex dump with LRC: `03 05 21 8c a0 65 90`
 
+
 ## MQTT session config
 
 Parameter is used to set MQTT session.
@@ -858,6 +859,7 @@ No default value
 
 Message hex dump LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 11`
 
+
 ## MQTT broker address
 
 Parameter is used to set MQTT broker address.
@@ -895,6 +897,7 @@ Integer type. The port of the server. Range: 1–65535.
 
 Message hex dump LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
 
+
 ## MQTT ssl enable
 
 Parameter is used to enable ssl
@@ -925,6 +928,7 @@ Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediatel
 | ssl_enable      | `1`                     | `0x01` |
 
 Message hex dump LRC: `03 04 24 01 77`
+
 
 ## MQTT topic prefix
 
@@ -958,6 +962,7 @@ where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without
 
 Message hex dump LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
 
+
 ## MQTT data receive config
 
 Parameter is used to set MQTT data receive config
@@ -988,6 +993,7 @@ QoS option for subscribing. Default value QOS=1.
 | qos            | `1`      | `0x01` |
 
 Message hex dump LRC: `03 02 26 01 73`
+
 
 ## MQTT data send config
 
@@ -1042,6 +1048,7 @@ timeout minutes between read attempts. Default value send_timeout_between_attemp
 
 Message hex dump LRC: `03 06 27 01 00 00 03 1e 6b`
 
+
 ## NBIOT SSL config
 
 Parameter is used to config NBIOT SSL.
@@ -1091,6 +1098,7 @@ SSL version.
 
 Message hex dump LRC: `03 03 28 01 04 78`
 
+
 ## NBIOT ssl cacert write
 
 Parameter is used to store chunk of SSL certificate on device
@@ -1131,6 +1139,7 @@ chunk of bytes
 | chunk          | `0...65` | `0x0...5f` |
 
 Message hex dump no LRC: `03 c8 29 c4 01 F4 00...5f`
+
 
 ## NBIOT ssl cacert set
 
@@ -1205,6 +1214,7 @@ chunk of bytes
 
 Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
 
+
 ## NBIOT ssl client cert set
 
 Parameter is used to set stored SSL certificate into nbiot
@@ -1235,6 +1245,7 @@ crc32 to check if client cert write correct and set it in nbiot module
 | crc32          | `3171672888` | `0xBD0BE338` |
 
 Message hex dump LRC: `03 05 2c bd 0b e3 38 12`
+
 
 ## NBIOT ssl client key write
 
@@ -1277,6 +1288,7 @@ chunk of bytes
 
 Message hex dump no LRC: `03 c8 2d c4 01 F4 00...5f`
 
+
 ## NBIOT ssl client key set
 
 Parameter is used to set mqtt broker address.
@@ -1307,6 +1319,7 @@ crc32 to check if client key write correct and set it in nbiot module
 | crc32          | `3171672888` | `0xBD0BE338` |
 
 Message hex dump no LRC: `03 05 2e bd 0b e3 38 10`
+
 
 ## NBIOT device software update
 
@@ -1340,6 +1353,7 @@ If the update unsuccessful no indication will be.
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
 Message hex dump LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
+
 
 ## NBIOT module firmware update
 
@@ -1412,6 +1426,7 @@ how many data samples to send
 | count_to_send  | `4`      | `0x04` |
 
 Message hex dump no LRC: `03 07 31 00 03 00 04`
+
 
 ## Events config
 
@@ -1487,18 +1502,20 @@ hardware type - `24`
 
 Message hex dump no LRC: `03 05 33`
 
-Response:
+### Response:
 
-### Format
+#### Format
 
 | Size  | Type     | Field                                   |
 | ----  | ------   | --------------------------------------- |
-|  1    | `uint8`   | parameter type = `51`                   |
+|  1    | `uint8`  | parameter type = `51`                   |
 |  1-64 | `string` | [module info](#module-info)             |
 
 #### **module info**
+
 Product identification information including the identifier of the device type 
 and the revision of software NBIOT module.
+
 
 ## NBIOT bands
 

@@ -2,6 +2,7 @@
 
 Command to request/receive hour pulse counter's values from device archive. This is an extended version of [GetArchiveHoursMC](./GetArchiveHoursMC.md) to get archive hours more than 8
 
+
 ## Request
 
 ### Format
@@ -53,6 +54,8 @@ Count the pulse counter's value with a diff for each previous hour. The hours va
 | channels     | `1`                       | `0b00000001`         | `0x01`   |
 
 Message hex dump with LRC: `1f 30 05 2f 97 0c 02 01 c8`
+
+
 ## Response
 
 ### Format

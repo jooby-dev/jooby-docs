@@ -9,6 +9,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [Activation method](#activation-method)
 * [Battery depassivation info](#battery-depassivation-info)
 * [Battery minimal load time](#battery-minimal-load-time)
+* [Channels config](#channels-config)
 * [RX2 config](#rx2-config)
 * [Absolute data](#absolute-data)
 * [Enable absolute data](#enable-absolute-data)
@@ -16,11 +17,29 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [Geolocation](#geolocation)
 * [Extra frame interval](#extra-frame-interval)
 * [Absolute data multi channel](#absolute-data-multi-channel)
-* [Enable absolute data](#enable-absolute-data)
+* [Enable absolute data multi channel](#enable-absolute-data-multi-channel)
 * [Pulse channels scan configuration](#pulse-channels-scan-configuration)
 * [Pulse channels set config](#pulse-channels-set-config)
 * [Battery depassivation config](#battery-depassivation-config)
-
+* [MQTT session config](#mqtt-session-config)
+* [MQTT broker address](#mqtt-broker-address)
+* [MQTT ssl enable](#mqtt-ssl-enable)
+* [MQTT topic prefix](#mqtt-topic-prefix)
+* [MQTT data receive config](#mqtt-data-receive-config)
+* [MQTT data send config](#mqtt-data-send-config)
+* [NBIOT ssl config](#nbiot-ssl-config)
+* [NBIOT ssl cacert write](#nbiot-ssl-cacert-write)
+* [NBIOT ssl cacert set](#nbiot-ssl-cacert-set)
+* [NBIOT ssl client cert write](#nbiot-ssl-client-cert-write)
+* [NBIOT ssl client cert set](#nbiot-ssl-client-cert-set)
+* [NBIOT ssl client key write](#nbiot-ssl-client-key-write)
+* [NBIOT ssl client key set](#nbiot-ssl-client-key-set)
+* [NBIOT device software update](#nbiot-device-software-update)
+* [NBIOT module firmware update](#nbiot-module-firmware-update)
+* [Reporting data config](#reporting-data-config)
+* [Events config](#events-config)
+* [NBIOT module info](#NBIOT-module-info)
+* [NBIOT bands](#NBIOT-bands)
 
 ## Reporting data interval
 
@@ -126,7 +145,7 @@ Message hex dump with LRC: `03 02 05 02 53`
 ## Priority data delivery type
 
 Data delivery method for priority data.
-Can be with acknowledgment or not.
+Can be with acknowledgement or not.
 This parameter applies to all types of modules.
 
 ### Format
@@ -611,7 +630,7 @@ It is a `4`-byte unsigned int BE.
 Message hex dump with LRC: `03 0b 1d 00 00 00 01 92 84 00 00 07 f0 a0`
 
 
-## Enable absolute data
+## Enable absolute data multi channel
 
 Parameter is used to enable absolute data for device.
 
@@ -789,3 +808,748 @@ Represents the value of the internal resistance of the battery (in `mΩ`). If th
 | stop threshold  | `26000` | `0x6590` |
 
 Message hex dump with LRC: `03 05 21 8c a0 65 90`
+
+
+## MQTT session config
+
+Parameter is used to set MQTT session.
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type     | Field                                   |
+| -----  | ------   | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `34`                   |
+| `1-64` | `string` | [client id](#client-id)                 |
+| `1-64` | `string` | [username](#username)                   |
+| `1-64` | `string` | [password](#password)                   |
+| `1`    | `uint8`  | [clean session](#clean-session)         |
+
+#### **client id**
+unique identifier that distinguishes each MQTT client connecting to a broker and enables the broker to keep track of the client’s current state.
+allows for an empty client_id. However, this connection must have the clean session flag set to true, or the broker will reject the connection.
+Up to 64 byte. No default value
+
+#### **username**
+MQTT username for client authentication and authorization. Up to 64 byte. No default value
+
+#### **password**
+MQTT password for client authentication and authorization. Up to 64 byte. No default value
+
+#### **clean session**
+If the client has requested a clean session, the sessionPresent flag will always be false, indicating there is no previous session.
+No default value
+
+### Examples
+
+#### set clear session
+
+| Field          | Value      | Hex                    |
+| -------------- | --------   | ------                 |
+| command id     | `3`        | `0x03`                 |
+| command size   | `20`       | `0x14`                 |
+| parameter type | `34`       | `0x22`                 |
+| client_id      | `0`        | `0x00`                 |
+| username       | `login`    | `0x056c6f67696e`       |
+| password       | `password` | `0x0870617373776f7264` |
+| clean_session  | `0`        | `0x00`                 |
+
+Message hex dump LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 11`
+
+
+## MQTT broker address
+
+Parameter is used to set MQTT broker address.
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type     | Field                                   |
+| ------ | ------   | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `35`                   |
+| `1-64` | `string` | [host name](#host-name)                 |
+| `2`    | `uint8`  | [port](#port)                           |
+
+#### **host name**
+The address of the server. It can be an IP address or a domain name. No default value
+Maximum length: 64 bytes.
+
+#### **port**
+Integer type. The port of the server. Range: 1–65535.
+
+### Examples
+
+#### Connect to hivemq broker
+
+| Field          | Value                   | Hex                                        |
+| -------------- | --------                | ------                                     |
+| command id     | `3`                     | `0x03`                                     |
+| command size   | `23`                    | `0x17`                                     |
+| parameter type | `35`                    | `0x23`                                     |
+| host_name      | `s2.eu.hivemq.cloud`    | `0x1273322e65752e686976656d712e636c6f7564` |
+| port           | `8883`                  | `0x22B3`                                   |
+
+Message hex dump LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
+
+
+## MQTT ssl enable
+
+Parameter is used to enable ssl
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type         | Field                                   |
+| ---- | ------       | --------------------------------------- |
+| `1`  | `uint8`      | parameter type = `36`                   |
+| `1`  | `enable`     | [enable](#ssl-enable)                   |
+
+#### **ssl enable**
+Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediately for next connection without device reset. Default value 1
+
+### Examples
+
+#### Use SSL/TLS TCP secure connection
+
+| Field           | Value                   | Hex    |
+| --------------  | --------                | ------ |
+| command id      | `3`                     | `0x03` |
+| command size    | `4`                     | `0x04` |
+| parameter type  | `36`                    | `0x24` |
+| ssl_enable      | `1`                     | `0x01` |
+
+Message hex dump LRC: `03 04 24 01 77`
+
+
+## MQTT topic prefix
+
+Parameter is used to set topic prefix
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type            | Field                                   |
+| ----   | ------          | --------------------------------------- |
+| `1`    | `uint8`         | parameter type = `37`                   |
+| `1-64` | `string`        | [topic prefix](#topic-prefix)           |
+
+#### **topic prefix**
+topic prefix that will be used to make topic to subscribe topic_prefix/elster-<short_mac>/down and publish topic_prefix/elster-<short_mac>/up,
+where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without device reset. No Default value. topics will be /elster-<short_mac>/up - /elster-<short_mac>/down.
+
+### Examples
+
+#### set topic prefix "/root/mac"
+
+| Field           | Value                   | Hex                      |
+| --------------  | --------                | ------                   |
+| command id      | `3`                     | `0x03`                   |
+| command size    | `12`                    | `0x0c`                   |
+| parameter type  | `37`                    | `0x25`                   |
+| topic_prefix    | `/root/mac`             | `0x0a2f726f6f742f6d6163` |
+
+Message hex dump LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
+
+
+## MQTT data receive config
+
+Parameter is used to set MQTT data receive config
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                   |
+| ---- | ------  | --------------------------------------- |
+| `1`  | `uint8` | parameter type = `38`                   |
+| `1`  | `uint8` | [qos](#qos)                             |
+
+#### **QoS**
+QoS option for subscribing. Default value QOS=1.
+
+### Examples
+
+#### Set receive config to subscribe with QOS=1  
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `2`      | `0x02` |
+| parameter type | `38`     | `0x26` |
+| qos            | `1`      | `0x01` |
+
+Message hex dump LRC: `03 02 26 01 73`
+
+
+## MQTT data send config
+
+Parameter is used to set MQTT send config.
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                                           |
+| ---- | ------- | --------------------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `39`                                           |
+| `1`  | `uint8` | [qos](#qos)                                                     |
+| `1`  | `uint8` | [retain](#retain)                                               |
+| `1`  | `uint8` | [newest send first](#newest-send-first)                         |
+| `1`  | `uint8` | [send count attempts](#send-count-attempts)                     |
+| `1`  | `uint8` | [send timeout between attempts](#send-timeout-between-attempts) |
+
+#### **qos**
+QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
+in case qos1/2 Data delivered in case if message published to broker successful
+The default value is QOS1. Default value QOS=1
+
+#### **retain**
+use the retain flag when publishing. Default value retain=0
+
+#### **newest send first**
+if we have undelivered data first data will be sent from the newest to the oldest. Default value newest_send_first=1
+
+#### **send count attempts**
+count to try to resend if failure was. Default value send_count_attempts=1
+
+#### **send timeout between attempts**
+timeout minutes between read attempts. Default value send_timeout_between_attempts=5
+
+### Examples
+
+#### Set QoS to 1 and send undelivered data from old to new
+
+| Field                         | Value    | Hex    |
+| ----------------------------- | -------- | ------ |
+| command id                    | `3`      | `0x03` |
+| command size                  | `2`      | `0x02` |
+| parameter type                | `39`     | `0x27` |
+| qos                           | `1`      | `0x01` |
+| retain                        | `0`      | `0x00` |
+| newest_send_first             | `0`      | `0x00` |
+| send_count_attempts           | `3`      | `0x03` |
+| send_timeout_between_attempts | `30`     | `0x1e` |
+
+Message hex dump LRC: `03 06 27 01 00 00 03 1e 6b`
+
+
+## NBIOT SSL config
+
+Parameter is used to config NBIOT SSL.
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                             |
+| ---- | ------  | --------------------------------- |
+| `1`  | `uint8` | parameter type = `40`             |
+| `1`  | `uint8` | [security level](#security-level) |
+| `1`  | `uint8` | [version](#version)               |
+
+#### **security level**
+The authentication mode.
+
+| Value | Description                                                                |
+| ----- | -------------------------------------------------------------------------- |
+| `0`   | No authentication                                                          |
+| `1`   | Perform server authentication                                              |
+| `2`   | Perform server and client authentication if requested by the remote server |
+
+#### **version**
+SSL version.
+
+| Value | Description                                                                                             |
+| ----- | ------------------------------------------------------------------------------------------------------- |
+| `1`   | TLS 1.0                                                                                                 |
+| `2`   | TLS 1.1                                                                                                 |
+| `3`   | TLS 1.2                                                                                                 |
+| `4`   | All protocols are supported, the specific protocol version used needs to be negotiated with the server  |
+
+### Examples
+
+#### set SSL config to perform server conversation and all protocol
+
+| Field          | Value    | Hex    |
+| ---------------| -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `3`      | `0x02` |
+| parameter type | `40`     | `0x28` |
+| security_level | `1`      | `0x01` |
+| version        | `4`      | `0x04` |
+
+Message hex dump LRC: `03 03 28 01 04 78`
+
+
+## NBIOT ssl cacert write
+
+Parameter is used to store chunk of SSL certificate on device
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type    | Field                       |
+| ----   | ------  | --------------------------- |
+|  1     | `uint8` | parameter type = `41`       |
+|  2     | `uint8` | [size](#size)               |
+|  2     | `uint8` | [position](#position)       |
+|  0...n | `uint8` | [chunk](#chunk)             |
+
+#### **size**
+chunk size
+
+#### **position**
+chink position
+
+#### **chunk**
+chunk of bytes
+
+### Examples
+
+#### Write a chunk of ssl certificate
+
+| Field          | Value    | Hex        |
+| ---------------| -------- | ------     |
+| command id     | `3`      | `0x03`     |
+| command size   | `200`    | `0xc8`     |
+| parameter type | `41`     | `0x29`     |
+| size           | `196`    | `0xc4`     |
+| position       | `500`    | `0x01F4`   |
+| chunk          | `0...65` | `0x0...5f` |
+
+Message hex dump no LRC: `03 c8 29 c4 01 F4 00...5f`
+
+
+## NBIOT ssl cacert set
+
+Parameter is used to set stored SSL certificate into nbiot
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                       |
+| ---- | ------  | --------------------------- |
+| `1`  | `uint8` | parameter type = `42`       |
+| `4`  | `uint8` | [crc32](#crc32)             |
+
+#### **crc32**
+crc32 of stored cacert to verify and if crc valid write to nbiot
+
+### Examples
+
+#### Write SSL certificate to nbiot
+
+| Field          | Value        | Hex          |
+| ---------------| --------     | ------       |
+| command id     | `3`          | `0x03`       |
+| command size   | `5`          | `0x05`       |
+| parameter type | `42`         | `0x2a`       |
+| crc32          | `3171672888` | `0xBD0BE338` |
+
+Message hex dump LRC: `03 05 2a bd 0b e3 38 14`
+
+
+## NBIOT ssl client cert write
+
+Parameter is used to store chunk of SSL certificate
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size    | Type    | Field                       |
+| ----    | ------  | --------------------------- |
+| `1`     | `uint8` | parameter type = `43`       |
+| `2`     | `uint8` | [size](#size)               |
+| `2`     | `uint8` | [position](#position)       |
+| `0...n` | `uint8` | [chunk](#chunk)             |
+
+#### **size**
+chunk size
+
+#### **position**
+chink position
+
+#### **chunk**
+chunk of bytes
+
+### Examples
+
+#### Write a chunk of ssl certificate
+
+| Field          | Value    | Hex        |
+| ---------------| -------- | ------     |
+| command id     | `3`      | `0x03`     |
+| command size   | `200`    | `0xc8`     |
+| parameter type | `43`     | `0x2b`     |
+| size           | `196`    | `0xc4`     |
+| position       | `500`    | `0x01F4`   |
+| chunk          | `0...65` | `0x0...5f` |
+
+Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
+
+
+## NBIOT ssl client cert set
+
+Parameter is used to set stored SSL certificate into nbiot
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type   | Field                       |
+| ---- | ------ | --------------------------- |
+| `1`  | `uint8` | parameter type = `44`       |
+| `4`  | `uint8` | [crc32](#crc32)             |
+
+#### **crc32**
+crc32 to check if client cert write correct and set it in nbiot module
+
+### Examples
+
+#### Write SSL certificate to nbiot
+
+| Field          | Value        | Hex          |
+| ---------------| --------     | ------       |
+| command id     | `3`          | `0x03`       |
+| command size   | `5`          | `0x05`       |
+| parameter type | `44`         | `0x2c`       |
+| crc32          | `3171672888` | `0xBD0BE338` |
+
+Message hex dump LRC: `03 05 2c bd 0b e3 38 12`
+
+
+## NBIOT ssl client key write
+
+Parameter is used to set mqtt broker address.
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type    | Field                       |
+| ----   | ------  | --------------------------- |
+| `1`    | `uint8` | parameter type = `45`       |
+| `2`    | `uint8` | [size](#size)               |
+| `2`    | `uint8` | [position](#position)       |
+| `0..n` | `uint8` | [chunk](#chunk)             |
+
+#### **size**
+chunk size
+
+#### **position**
+chink position
+
+#### **chunk**
+chunk of bytes
+
+### Examples
+
+#### Write a chunk of ssl certificate
+
+| Field          | Value    | Hex        |
+| ---------------| -------- | ------     |
+| command id     | `3`      | `0x03`     |
+| command size   | `200`    | `0xc8`     |
+| parameter type | `45`     | `0x2d`     |
+| size           | `196`    | `0xc4`     |
+| position       | `500`    | `0x01F4`   |
+| chunk          | `0...65` | `0x0...5f` |
+
+Message hex dump no LRC: `03 c8 2d c4 01 F4 00...5f`
+
+
+## NBIOT ssl client key set
+
+Parameter is used to set mqtt broker address.
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                       |
+| ---- | ------  | --------------------------- |
+| `1`  | `uint8` | parameter type = `46`       |
+| `4`  | `uint8` | [crc32](#crc32)             |
+
+#### **crc32**
+crc32 to check if client key write correct and set it in nbiot module
+
+### Examples
+
+#### Write SSL certificate to nbiot
+
+| Field          | Value        | Hex          |
+| ---------------| --------     | ------       |
+| command id     | `3`          | `0x03`       |
+| command size   | `5`          | `0x05`       |
+| parameter type | `46`         | `0x2e`       |
+| crc32          | `3171672888` | `0xBD0BE338` |
+
+Message hex dump no LRC: `03 05 2e bd 0b e3 38 10`
+
+
+## NBIOT device software update
+
+Parameter is used to start updating from URL
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type            | Field                                     |
+| ----   | ------          | ----------------------------------------- |
+| `1`    | `uint8`         | parameter type = `47`                     |
+| `1-64` | `string`        | [software image url](#software-image-url) |
+
+#### **software image url**
+software image URL where the image is stored. Will use nbiot to download the image and start the update.
+After the update is finished successfully device will reboot and start updating in bootloader. The device will restart and send Activate.
+If the update unsuccessful no indication will be.
+
+### Examples
+
+#### update device on imagefile url
+
+| Field           | Value                   | Hex                                |
+| --------------  | --------                | --------------------------------   |
+| command id      | `3`                     | `0x03`                             |
+| command size    | `16`                    | `0x10`                             |
+| parameter type  | `47`                    | `0x2f`                             |
+| topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
+
+Message hex dump LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
+
+
+## NBIOT module firmware update
+
+Parameter is used to set firmware image file update URL
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type            | Field                                                   |
+| ----   | ------          | ---------------------------------------                 |
+| `1`    | `uint8`         | parameter type = `48`                                   |
+| `1-64` | `string`        | [module firmware image url](#module-firmware-image-url) |
+
+#### **module firmware image url**
+module firmware image URL where the image is stored(special DFOTA image). Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
+
+### Examples
+
+#### set nbiot module firmware image url
+
+| Field           | Value                   | Hex                                |
+| --------------  | --------                | --------------------------------   |
+| command id      | `3`                     | `0x03`                             |
+| command size    | `16`                    | `0x10`                             |
+| parameter type  | `48`                    | `0x30`                             |
+| topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
+
+Message hex dump no LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 6d`
+
+
+## Reporting data config
+
+Parameter is used to set reporting data config
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
+| `1`  | `uint8` | parameter type = `49`                   |
+| `1`  | `uint8` | [data type](#data-type)                 |
+| `1`  | `uint8` | [hour](#minutes-hour)                   |
+| `1`  | `uint8` | [minutes](#minutes-hour)                |
+| `1`  | `uint8` | [count to send](#count-to-send)         |
+
+#### **minutes** **hour**
+start time from sending reporting data 
+
+#### **count to send**
+how many data samples to send
+
+### Examples
+
+#### set hour data receive config to start sending data from 03:00 with 4 records
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `6`      | `0x07` |
+| parameter type | `49`     | `0x31` |
+| data_type      | `0`      | `0x00` |
+| hour           | `3`      | `0x03` |
+| minutes        | `0`      | `0x00` |
+| count_to_send  | `4`      | `0x04` |
+
+Message hex dump no LRC: `03 07 31 00 03 00 04`
+
+
+## Events config
+
+Parameter is used to set event config
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
+| `1`  | `uint8` | parameter type = `50`                   |
+| `1`  | `uint8` | [event id](#event-id)                   |
+| `1`  | `uint8` | [enable event](#enable-event)           |
+| `1`  | `uint8` | [send event](#send-event)               |
+| `1`  | `uint8` | [save event](#save-event)               |
+
+#### **event id**
+
+One of the [event types](./basics.md#device-events).
+
+#### **enable event**
+if need to check on the event
+
+#### **send event**
+is needed to send the event in a flash
+
+#### **save event**
+is needed to store events in flash
+
+### Examples
+
+#### config event=0 to enable it and send but not to send
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `5`      | `0x05` |
+| parameter type | `50`     | `0x32` |
+| event_id       | `0`      | `0x00` |
+| enable_event   | `1`      | `0x01` |
+| send_event     | `1`      | `0x01` |
+| save_event     | `0`      | `0x01` |
+
+Message hex dump no LRC: `03 05 32 01 01 00`
+
+
+## NBIOT module info
+
+The parameter is used to get nbiot module info
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
+| `1`  | `uint8` | parameter type = `51`                   |
+
+### Examples
+
+#### get module info
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `1`      | `0x01` |
+| parameter type | `51`     | `0x33` |
+
+Message hex dump no LRC: `03 05 33`
+
+### Response:
+
+#### Format
+
+| Size   | Type     | Field                                   |
+| ----   | ------   | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `51`                   |
+| `1-64` | `string` | [module info](#module-info)             |
+
+##### **module info**
+
+Product identification information including the identifier of the device type 
+and the revision of software NBIOT module.
+
+
+## NBIOT bands
+
+Parameter to set preferred NB-IoT bands to be searched for.
+Available from software version = `1` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type    | Field                                   |
+| ----   | ------- | --------------------------------------- |
+| `1`    | `uint8` | parameter type = `52`                   |
+| `1`    | `uint8` | [count](#count)                         |
+| `0-17` | `uint8` | [bands](#bands)                         |
+
+#### **count**
+band count to set
+
+#### **bands**
+Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that support the module will be searched (default)
+
+### Examples
+
+#### set band to 20 
+
+| Field          | Value    | Hex    |
+| -------------- | -------- | ------ |
+| command id     | `3`      | `0x03` |
+| command size   | `5`      | `0x05` |
+| parameter type | `52`     | `0x34` |
+| count          | `1`      | `0x01` |
+| bands          | `20`     | `0x14` |
+
+Message hex dump no LRC: `03 05 34 01 14`
+

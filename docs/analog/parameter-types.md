@@ -821,11 +821,11 @@ hardware type - `24`
 
 | Size | Type     | Field                                   |
 | ---- | ------   | --------------------------------------- |
-| 1    | `byte`   | parameter type = `34`                   |
+| 1    | `uint8`  | parameter type = `34`                   |
 | 1-64 | `string` | [client id](#client-id)                 |
 | 1-64 | `string` | [username](#username)                   |
 | 1-64 | `string` | [password](#password)                   |
-| 1    | `byte`   | [clean session](#clean-session)         |
+| 1    | `uint8`  | [clean session](#clean-session)         |
 
 #### **client id**
 unique identifier that distinguishes each MQTT client connecting to a broker and enables the broker to keep track of the client’s current state.
@@ -870,9 +870,9 @@ hardware type - `24`
 
 | Size | Type     | Field                                   |
 | ---- | ------   | --------------------------------------- |
-| 1    | `byte`   | parameter type = `35`                   |
+| 1    | `uint8`  | parameter type = `35`                   |
 | 1-64 | `string` | [host name](#host-name)                 |
-| 2    | `byte`   | [port](#port)                           |
+| 2    | `uint8`  | [port](#port)                           |
 
 #### **host name**
 The address of the server. It can be an IP address or a domain name. No default value
@@ -907,7 +907,7 @@ hardware type - `24`
 
 | Size | Type         | Field                                   |
 | ---- | ------       | --------------------------------------- |
-| 1    | `byte`       | parameter type = `36`                   |
+| 1    | `uint8`      | parameter type = `36`                   |
 | 1    | `enable`     | [enable](#ssl-enable)                   |
 
 #### **ssl enable**
@@ -938,7 +938,7 @@ hardware type - `24`
 
 | Size | Type            | Field                                   |
 | ---- | ------          | --------------------------------------- |
-| 1    | `byte`          | parameter type = `37`                   |
+| 1    | `uint8`         | parameter type = `37`                   |
 | 1-64 | `string`        | [topic prefix](#topic-prefix)           |
 
 #### **topic prefix**
@@ -968,10 +968,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                                   |
-| ---- | ------ | --------------------------------------- |
-|  1   | `byte` | parameter type = `38`                   |
-|  1   | `byte` | [qos](#qos)                             |
+| Size | Type    | Field                                   |
+| ---- | ------  | --------------------------------------- |
+|  1   | `uint8` | parameter type = `38`                   |
+|  1   | `uint8` | [qos](#qos)                             |
 
 #### **QoS**
 QoS option for subscribing. Default value QOS=1.
@@ -1001,12 +1001,12 @@ hardware type - `24`
 
 | Size | Type   | Field                                                           |
 | ---- | ------ | --------------------------------------------------------------- |
-|  1   | `byte` | parameter type = `39`                                           |
-|  1   | `byte` | [qos](#qos)                                                     |
-|  1   | `byte` | [retain](#retain)                                               |
-|  1   | `byte` | [newest send first](#newest-send-first)                         |
-|  1   | `byte` | [send count attempts](#send-count-attempts)                     |
-|  1   | `byte` | [send timeout between attempts](#send-timeout-between-attempts) |
+|  1   | `uint8` | parameter type = `39`                                           |
+|  1   | `uint8` | [qos](#qos)                                                     |
+|  1   | `uint8` | [retain](#retain)                                               |
+|  1   | `uint8` | [newest send first](#newest-send-first)                         |
+|  1   | `uint8` | [send count attempts](#send-count-attempts)                     |
+|  1   | `uint8` | [send timeout between attempts](#send-timeout-between-attempts) |
 
 #### **qos**
 QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
@@ -1052,11 +1052,11 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                             |
-| ---- | ------ | --------------------------------- |
-|  1   | `byte` | parameter type = `40`             |
-|  1   | `byte` | [security level](#security-level) |
-|  1   | `byte` | [version](#version)               |
+| Size | Type    | Field                             |
+| ---- | ------  | --------------------------------- |
+|  1   | `uint8` | parameter type = `40`             |
+|  1   | `uint8` | [security level](#security-level) |
+|  1   | `uint8` | [version](#version)               |
 
 #### **security level**
 The authentication mode.
@@ -1101,12 +1101,12 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                       |
-| ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `41`       |
-|  2   | `byte` | [size](#size)               |
-|  2   | `byte` | [position](#position)       |
-|  ~   | `bytes`| [chunk](#chunk)             |
+| Size   | Type    | Field                       |
+| ----   | ------  | --------------------------- |
+|  1     | `uint8` | parameter type = `41`       |
+|  2     | `uint8` | [size](#size)               |
+|  2     | `uint8` | [position](#position)       |
+|  0...n | `uint8` | [chunk](#chunk)             |
 
 #### **size**
 chunk size
@@ -1142,10 +1142,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                       |
-| ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `42`       |
-|  4   | `byte` | [crc32](#crc32)             |
+| Size | Type    | Field                       |
+| ---- | ------  | --------------------------- |
+|  1   | `uint8` | parameter type = `42`       |
+|  4   | `uint8` | [crc32](#crc32)             |
 
 #### **crc32**
 crc32 of stored cacert to verify and if crc valid write to nbiot
@@ -1174,12 +1174,12 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                       |
-| ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `43`       |
-|  2   | `byte` | [size](#size)               |
-|  2   | `byte` | [position](#position)       |
-|  ~   | `bytes`| [chunk](#chunk)             |
+| Size   | Type    | Field                       |
+| ----   | ------  | --------------------------- |
+|  1     | `uint8` | parameter type = `43`       |
+|  2     | `uint8` | [size](#size)               |
+|  2     | `uint8` | [position](#position)       |
+|  0...n | `uint8` | [chunk](#chunk)             |
 
 #### **size**
 chunk size
@@ -1217,8 +1217,8 @@ hardware type - `24`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `44`       |
-|  4   | `byte` | [crc32](#crc32)             |
+|  1   | `uint8` | parameter type = `44`       |
+|  4   | `uint8` | [crc32](#crc32)             |
 
 #### **crc32**
 crc32 to check if client cert write correct and set it in nbiot module
@@ -1246,12 +1246,12 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                       |
-| ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `45`       |
-|  2   | `byte` | [size](#size)               |
-|  2   | `byte` | [position](#position)       |
-|  ~   | `bytes`| [chunk](#chunk)             |
+| Size  | Type    | Field                       |
+| ----  | ------  | --------------------------- |
+|  1    | `uint8` | parameter type = `45`       |
+|  2    | `uint8` | [size](#size)               |
+|  2    | `uint8` | [position](#position)       |
+|  0..n | `uint8` | [chunk](#chunk)             |
 
 #### **size**
 chunk size
@@ -1289,8 +1289,8 @@ hardware type - `24`
 
 | Size | Type   | Field                       |
 | ---- | ------ | --------------------------- |
-|  1   | `byte` | parameter type = `46`       |
-|  4   | `byte` | [crc32](#crc32)             |
+|  1   | `uint8` | parameter type = `46`       |
+|  4   | `uint8` | [crc32](#crc32)             |
 
 #### **crc32**
 crc32 to check if client key write correct and set it in nbiot module
@@ -1320,7 +1320,7 @@ hardware type - `24`
 
 | Size | Type            | Field                                     |
 | ---- | ------          | ----------------------------------------- |
-| 1    | `byte`          | parameter type = `47`                     |
+| 1    | `uint8`          | parameter type = `47`                     |
 | 1-64 | `string`        | [software image url](#software-image-url) |
 
 #### **software image url**
@@ -1353,7 +1353,7 @@ hardware type - `24`
 
 | Size | Type            | Field                                                   |
 | ---- | ------          | ---------------------------------------                 |
-| 1    | `byte`          | parameter type = `48`                                   |
+| 1    | `uint8`          | parameter type = `48`                                   |
 | 1-64 | `string`        | [module firmware image url](#module-firmware-image-url) |
 
 #### **module firmware image url**
@@ -1385,11 +1385,11 @@ hardware type - `24`
 
 | Size | Type   | Field                                   |
 | ---- | ------ | --------------------------------------- |
-|  1   | `byte` | parameter type = `49`                   |
-|  1   | `byte` | [data type](#data-type)                 |
-|  1   | `byte` | [hour](#minutes-hour)                   |
-|  1   | `byte` | [minutes](#minutes-hour)                |
-|  1   | `byte` | [count to send](#count-to-send)         |
+|  1   | `uint8` | parameter type = `49`                   |
+|  1   | `uint8` | [data type](#data-type)                 |
+|  1   | `uint8` | [hour](#minutes-hour)                   |
+|  1   | `uint8` | [minutes](#minutes-hour)                |
+|  1   | `uint8` | [count to send](#count-to-send)         |
 
 #### **minutes** **hour**
 start time from sending reporting data 
@@ -1425,11 +1425,11 @@ hardware type - `24`
 
 | Size | Type   | Field                                   |
 | ---- | ------ | --------------------------------------- |
-|  1   | `byte` | parameter type = `50`                   |
-|  1   | `byte` | [event id](#event-id)                   |
-|  1   | `byte` | [enable event](#enable-event)           |
-|  1   | `byte` | [send event](#send-event)               |
-|  1   | `byte` | [save event](#save-event)               |
+|  1   | `uint8` | parameter type = `50`                   |
+|  1   | `uint8` | [event id](#event-id)                   |
+|  1   | `uint8` | [enable event](#enable-event)           |
+|  1   | `uint8` | [send event](#send-event)               |
+|  1   | `uint8` | [save event](#save-event)               |
 
 #### **event id**
 
@@ -1493,7 +1493,7 @@ Response:
 
 | Size  | Type     | Field                                   |
 | ----  | ------   | --------------------------------------- |
-|  1    | `byte`   | parameter type = `51`                   |
+|  1    | `uint8`   | parameter type = `51`                   |
 |  1-64 | `string` | [module info](#module-info)             |
 
 #### **module info**
@@ -1512,9 +1512,9 @@ hardware type - `24`
 
 | Size  | Type   | Field                                   |
 | ----  | ------ | --------------------------------------- |
-|  1    | `byte` | parameter type = `52`                   |
-|  1    | `byte` | [count](#count)                         |
-|  0-17 | `byte` | [bands](#bands)                         |
+|  1    | `uint8` | parameter type = `52`                   |
+|  1    | `uint8` | [count](#count)                         |
+|  0-17 | `uint8` | [bands](#bands)                         |
 
 #### **count**
 band count to set

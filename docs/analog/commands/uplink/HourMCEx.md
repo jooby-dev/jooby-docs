@@ -3,6 +3,7 @@
 This command is an extended version of [HourMC](./HourMC.md). Command could send up to 256 hours if transport support.
 To get this uplink need to set param [mqtt data send config](../../parameter-types.md#mqtt-data-send-config)
 
+
 ## Event
 
 ### Format
@@ -11,21 +12,21 @@ To get this uplink need to set param [mqtt data send config](../../parameter-typ
 | ------ | ----------------------------------------------- | --------------------------------------------------- |
 | `1`    | `uint8`                                         | extra flag = `0x1f`                                 |
 | `1`    | `uint8`                                         | command id = `0x31`                                 |
-| `1`    | `uint8`                                          | command size (dynamic, `6+`)                        |
+| `1`    | `uint8`                                         | command size (dynamic, `6+`)                        |
 | `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
-| `1`    | uint8                                            | [hour](#hour)                                       |
-| `1`    | uint8                                            | [hours](#hours)                                     |
+| `1`    | uint8                                           | [hour](#hour)                                       |
+| `1`    | uint8                                           | [hours](#hours)                                     |
 | `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../types.md#channels-bit-set) |
 | `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                   |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `1`                                |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `2`                                |
+| `0..5` | [extended value](../../types.md#extended-value) | channel `1` diff `1`                                |
+| `0..5` | [extended value](../../types.md#extended-value) | channel `1` diff `2`                                |
 | `1..5` | [extended value](../../types.md#extended-value) | channel `2` value                                   |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `1`                                |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `2`                                |
+| `0..5` | [extended value](../../types.md#extended-value) | channel `2` diff `1`                                |
+| `0..5` | [extended value](../../types.md#extended-value) | channel `2` diff `2`                                |
 | ...    | ...                                             | ...                                                 |
 | `1..5` | [extended value](../../types.md#extended-value) | channel `N` value                                   |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                |
+| `0..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                |
+| `0..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                |
 
 It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
 

@@ -85,7 +85,7 @@ A value of `255` means that the remaining battery capacity is unknown.
 
 #### **overconsumption for last 24 hours**
 
-Flag is set when consumption over the last 24 hours was higher than estimated
+Flag is set when consumption over the last 24 hours was higher than estimated.
 
 #### **counter for exceeding average daily consumption**
 

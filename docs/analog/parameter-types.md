@@ -400,12 +400,12 @@ Parameter is used to setup absolute data for device.
 
 ### Format
 
-| Size | Type    | Field                                          |
-| ---- | ------- | ---------------------------------------------- |
-| `1`  | `uint8` | parameter type = `23`                          |
-| `1`  | `uint8` | [meter value](#meter-value)                    |
-| `3`  | `uint8` | [pulse coefficient](#pulse-coefficient)        |
-| `3`  | `uint8` | [pulse counter's value](#pulse-counters-value) |
+| Size | Type        | Field                                          |
+| ---- | ----------- | ---------------------------------------------- |
+| `1`  | `uint8`     | parameter type = `23`                          |
+| `1`  | `uint32_be` | [meter value](#meter-value)                    |
+| `1`  | `uint8`     | [pulse coefficient](#pulse-coefficient)        |
+| `1`  | `uint32_be` | [pulse counter's value](#pulse-counters-value) |
 
 #### **meter value**
 
@@ -508,12 +508,12 @@ Parameter is used to set device geolocation.
 
 ### Format
 
-| Size | Type    | Field                   |
-| ---- | ------- | ----------------------- |
-| `1`  | `uint8` | parameter type = `26`   |
-| `4`  | `uint8` | [latitude](#latitude)   |
-| `4`  | `uint8` | [longitude](#longitude) |
-| `2`  | `uint8` | [altitude](#altitude)   |
+| Size | Type      | Field                   |
+| ---- | --------- | ----------------------- |
+| `1`  | `uint8`   | parameter type = `26`   |
+| `1`  | `float32` | [latitude](#latitude)   |
+| `1`  | `float32` | [longitude](#longitude) |
+| `1`  | `int16`   | [altitude](#altitude)   |
 
 #### **latitude**
 
@@ -789,11 +789,14 @@ The table displays the version from which this change took effect.
 
 #### **resistance start threshold**
 
-Represents the value of the internal resistance of the battery (in `mΩ`) upon exceeding which the depassivation process will be initiated. For WLE modules, this value is set by default to `35000` `mΩ`, and for modules using the `SX1276` transceiver, this value is set to `16000` `mΩ`.
+Represents the value of the internal resistance of the battery (in `mΩ`) upon exceeding which the depassivation process will be initiated.
+For WLE modules, this value is set by default to `35000` `mΩ`, and for modules using the `SX1276` transceiver, this value is set to `16000` `mΩ`.
 
 #### **resistance stop threshold**
 
-Represents the value of the internal resistance of the battery (in `mΩ`). If the internal resistance of the battery falls below this threshold, the depassivation process will stop. For WLE modules, this value is set by default to `25000` `mΩ`, and for modules using the `SX1276` transceiver, this value is set to `10350` `mΩ`.
+Represents the value of the internal resistance of the battery (in `mΩ`).
+If the internal resistance of the battery falls below this threshold, the depassivation process will stop.
+For WLE modules, this value is set by default to `25000` `mΩ`, and for modules using the `SX1276` transceiver, this value is set to `10350` `mΩ`.
 
 ### Examples
 

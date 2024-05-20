@@ -109,7 +109,7 @@ Format (each line is a byte):
             <td align="center">Month [<code>3</code>]</td>
         </tr>
         <tr>
-            <td colspan="3" align="center">Month [<code>2..0<code>]</td>
+            <td colspan="3" align="center">Month [<code>2..0</code>]</td>
             <td colspan="5" align="center">Date [<code>4..0</code>]</td>
         </tr>
     </tbody>
@@ -118,17 +118,17 @@ Format (each line is a byte):
 ### Examples
 
 Let's pack the date `2023.12.23 00:00:00 GMT`.
-<br>
+<br/>
 In order to set the year to `2023`, we need to calculate the difference between `2000` and `2023`.
 It's `23` which is `0b10111`.
 Pad this value with zeros till the necessary size of `7` bits.
 Now it's `0b0010111` as the highest `7` bits of the first byte of the result.
-<br>
+<br/>
 The month part `12` is `0b1100`.
 The highest one bit should be placed to the position `0` of the first byte of the result. The rest `3` bits will be the highest bits of the second byte.
-<br>
+<br/>
 The day part `23` is `0b10111`. It should be placed from the start of the first byte.
-<br>
+<br/>
 Combine it all together to get `0b00101111` in the first byte and `0b10010111` in the second. The final value is `0x2f97`.
 
 The same in a table form:
@@ -152,7 +152,7 @@ The same in a table form:
             <td align="center"><code>1</code></td>
         </tr>
         <tr>
-            <td colspan="3" align="center"><code>100<code></td>
+            <td colspan="3" align="center"><code>100</code></td>
             <td colspan="5" align="center"><code>10111</code></td>
         </tr>
     </tbody>
@@ -189,11 +189,11 @@ Format:
 ### Examples
 
 Let's pack the start hour `13:00` and the number of hour `2`.
-<br>
+<br/>
 Hours `2` decreased by `1` (`0b1`) becomes `0b001` to have the size of `3` bits.
-<br>
+<br/>
 Hour `13` (`0b1101`) becomes `0b01101` to have the size of `5` bits.
-<br>
+<br/>
 Combine it all together to get `0b00101101` or `0x2d`.
 
 The same in a table form:
@@ -251,11 +251,11 @@ Format:
 ### Examples
 
 Let's pack the presence of magnetic influence and the start hour `09:00`.
-<br>
+<br/>
 The presence of magnetic influence becomes `1` as the highest bit.
-<br>
+<br/>
 Hour `09` (`0b1001`) becomes `0b01001` to have the size of `5` bits.
-<br>
+<br/>
 Combine it all together to get `0b10001001` or `0x89`.
 
 The same in a table form:
@@ -318,11 +318,11 @@ Format:
 ### Examples
 
 Let's pack the presence of magnetic influence and the hourly difference value `348`.
-<br>
+<br/>
 The presence of magnetic influence becomes `1` as the highest bit.
-<br>
+<br/>
 Value `348` (`0b101011100`) splits to two bytes `0b1` and `0b01011100`.
-<br>
+<br/>
 Combine it all together to get `0b1000000101011100` or `0x815c`.
 
 The same in a table form:
@@ -387,7 +387,7 @@ Each value usually is up to `32-bit` integer.
 
 The first value `131` is `0b0000000010000011` with extended bits becomes `0b0000000110000011` or `0x8301`.
 All the rest values are simple (extended bit is `0`) and take one byte each.
-<br>
+<br/>
 The final sequence is `83 01 08 0a 0c`.
 
 #### 3 channels with values `8146`, `164`, `75`
@@ -395,7 +395,7 @@ The final sequence is `83 01 08 0a 0c`.
 The first value `8146` is `0b0001111111010010` with extended bits becomes `0b0011111111010010` or `0xd23f`.
 The second value `164` is `0b0000000010100100` with extended bits becomes `0b0000000110100100` or `0xa401`.
 The last value `75` is simple (no extension) `0x4b`.
-<br>
+<br/>
 The final sequence is `e0 20 d2 3f a4 01 4b`.
 
 

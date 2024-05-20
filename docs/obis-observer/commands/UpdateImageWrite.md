@@ -21,7 +21,7 @@ This command is part of update procedure.
 #### **image content**
 
 The image content size should be a multiple of `16`.
-<br>
+<br/>
 In case there is less data it should be padded with zeros.
 
 ### Examples

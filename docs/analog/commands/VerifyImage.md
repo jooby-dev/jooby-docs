@@ -48,7 +48,7 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 #### **status**
 
-`1` - the image is correct <br>
+`1` - the image is correct <br/>
 `0` - the image is incorrect
 
 ### Examples

@@ -32,7 +32,7 @@ It's a command with a [three-bytes header](../../message.md#command-with-a-three
 #### **date**
 
 The command contains pulse counter of channels for this date.
-<br>
+<br/>
 [See details](../../types.md#packed-date).
 
 #### **channels bit set**
@@ -43,15 +43,15 @@ The command contains pulse counter of channels for this date.
 
 #### channel `1` for `2023.03.10 00:00:00 GMT`:
 
-| Field                         | Value                     | Bits                                                                    | Hex      |
-| ----------------------------- | ------------------------- | ----------------------------------------------------------------------- | -------- |
-| extra flag                    | `31`                      |                                                                         | `0x1f`   |
-| command id                    | `11`                      |                                                                         | `0x0b`   |
-| command size                  | `6`                       |                                                                         | `0x06`   |
-| date                          | `2023.03.10 00:00:00 GMT` | `0b0010111001101010`                                                    | `0x2e6a` |
-| channels                      | `1`                       | `0b00000001`                                                            | `0x01`   |
-| channel `1` pulse coefficient | `100`                     |                                                                         | `0x64`   |
-| channel `1` value             | `342`                     | `0b0000000101010110` <br> with extended bits: <br> `0b0000001011010110` | `0xd602` |
+| Field                         | Value                     | Bits                                                                      | Hex      |
+| ----------------------------- | ------------------------- | ------------------------------------------------------------------------- | -------- |
+| extra flag                    | `31`                      |                                                                           | `0x1f`   |
+| command id                    | `11`                      |                                                                           | `0x0b`   |
+| command size                  | `6`                       |                                                                           | `0x06`   |
+| date                          | `2023.03.10 00:00:00 GMT` | `0b0010111001101010`                                                      | `0x2e6a` |
+| channels                      | `1`                       | `0b00000001`                                                              | `0x01`   |
+| channel `1` pulse coefficient | `100`                     |                                                                           | `0x64`   |
+| channel `1` value             | `342`                     | `0b0000000101010110` <br/> with extended bits: <br/> `0b0000001011010110` | `0xd602` |
 
 Message hex dump with LRC: `1f 0b 06 2e 6a 01 64 d6 02 b2`
 

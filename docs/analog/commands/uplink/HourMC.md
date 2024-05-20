@@ -33,13 +33,13 @@ It's a command with a [two-bytes header](../../message.md#command-with-a-two-byt
 #### **date**
 
 The command contains pulse counter of channels for this date.
-<br>
+<br/>
 [See details](../../types.md#packed-date).
 
 #### **hours**
 
 It`s full value of pulse counter with diff for each previous hours (8 hours if reporting data interval is set to 4 hours)
-<br>
+<br/>
 [See details](../../types.md#packed-hours).
 
 #### **channels bit set**
@@ -50,21 +50,21 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 
 #### channels `1`, `2`, `3`, `4`:
 
-| Field             | Value                     | Bits                                                                    | Hex      |
-| ----------------- | ------------------------- | ----------------------------------------------------------------------- | -------- |
-| command id        | `23`                      |                                                                         | `0x17`   |
-| command size      | `15`                      |                                                                         | `0x0f`   |
-| date              | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                    | `0x2f97` |
-| hours             | hour: `12:00`, hours: `1` | `0b00001100`                                                            | `0x0c`   |
-| channels          | `1`, `2`, `3`, `4`        | `0b00001111` <br> the same with extended bits                           | `0x0f`   |
-| channel `1` value | `131`                     | `0b0000000010000011` <br> with extended bits: <br> `0b0000000110000011` | `0x8301` |
-| channel `1` diff  | `10`                      |                                                                         | `0x0a`   |
-| channel `2` value | `832`                     | `0b0000001101000000` <br> with extended bits: <br> `0b0000011011000000` | `0xc006` |
-| channel `2` diff  | `12`                      |                                                                         | `0x0c`   |
-| channel `3` value | `38`                      |                                                                         | `0x26`   |
-| channel `3` diff  | `8`                       |                                                                         | `0x08`   |
-| channel `4` value | `234`                     | `0b0000000011101010` <br> with extended bits: <br> `0b0000000111101010` | `0xea01` |
-| channel `4` diff  | `11`                      |                                                                         | `0x0b`   |
+| Field             | Value                     | Bits                                                                      | Hex      |
+| ----------------- | ------------------------- | ------------------------------------------------------------------------- | -------- |
+| command id        | `23`                      |                                                                           | `0x17`   |
+| command size      | `15`                      |                                                                           | `0x0f`   |
+| date              | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                      | `0x2f97` |
+| hours             | hour: `12:00`, hours: `1` | `0b00001100`                                                              | `0x0c`   |
+| channels          | `1`, `2`, `3`, `4`        | `0b00001111` <br/> the same with extended bits                            | `0x0f`   |
+| channel `1` value | `131`                     | `0b0000000010000011` <br/> with extended bits: <br/> `0b0000000110000011` | `0x8301` |
+| channel `1` diff  | `10`                      |                                                                           | `0x0a`   |
+| channel `2` value | `832`                     | `0b0000001101000000` <br/> with extended bits: <br/> `0b0000011011000000` | `0xc006` |
+| channel `2` diff  | `12`                      |                                                                           | `0x0c`   |
+| channel `3` value | `38`                      |                                                                           | `0x26`   |
+| channel `3` diff  | `8`                       |                                                                           | `0x08`   |
+| channel `4` value | `234`                     | `0b0000000011101010` <br/> with extended bits: <br/> `0b0000000111101010` | `0xea01` |
+| channel `4` diff  | `11`                      |                                                                           | `0x0b`   |
 
 Message hex dump with LRC: `17 0f 2f 97 0c 0f 83 01 0a c0 06 0c 26 08 ea 01 0b 7a`
 

@@ -21,15 +21,15 @@ Request/response to set the OBIS ID and OBIS profile for the specific OBIS code 
 
 #### setup OBIS profile and OBIS code `0.9.1` with OBIS ID `44`:
 
-| Field            | Value                                                                                                                                                                  | Hex              |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| command id       | `66`                                                                                                                                                                   | `0x42`           |
-| command size     | `7`                                                                                                                                                                    | `0x07`           |
-| request id       | `4`                                                                                                                                                                    | `0x04`           |
-| meter profile id | `10`                                                                                                                                                                   | `0x0a`           |
-| OBIS ID          | `44`                                                                                                                                                                   | `0x2c`           |
-| OBIS profile     | capturePeriod: `244` <br> sendingPeriod: `132` <br> sendingCounter: `38` <br> contentType: `AUTO` <br> sendOnChange: `1` <br> archive1: `false` <br> archive2: `false` | `0x00f400842604` |
-| OBIS code        | C: `0`, D: `9`, E: `1`                                                                                                                                                 | `0x02000901`     |
+| Field            | Value                                                                                                                                                                        | Hex              |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| command id       | `66`                                                                                                                                                                         | `0x42`           |
+| command size     | `7`                                                                                                                                                                          | `0x07`           |
+| request id       | `4`                                                                                                                                                                          | `0x04`           |
+| meter profile id | `10`                                                                                                                                                                         | `0x0a`           |
+| OBIS ID          | `44`                                                                                                                                                                         | `0x2c`           |
+| OBIS profile     | capturePeriod: `244` <br/> sendingPeriod: `132` <br/> sendingCounter: `38` <br/> contentType: `AUTO` <br/> sendOnChange: `1` <br/> archive1: `false` <br/> archive2: `false` | `0x00f400842604` |
+| OBIS code        | C: `0`, D: `9`, E: `1`                                                                                                                                                       | `0x02000901`     |
 
 Message hex dump: `42 0d 04 0a 2c 00 f4 00 84 26 04 02 00 09 01`
 

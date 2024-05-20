@@ -127,18 +127,18 @@ After reading the sensor status, this field is also reset.
 
 ### Examples
 
-| Field                       | Value                         | Bits                                             | Hex        |
-| --------------------------- | ----------------------------- | ------------------------------------------------ | ---------- |
-| command id                  | `20`                          |                                                  | `0x14`     |
-| command size                | `12`                          |                                                  | `0x0c`     |
-| software type               | `2`                           |                                                  | `0x02`     |
-| software version            | `10`                          |                                                  | `0x0a`     |
-| hardware type               | `GAZI3` = `3`                 |                                                  | `0x03`     |
-| hardware version            | `1`                           |                                                  | `0x01`     |
-| battery voltage             | low: `3158` <br> high: `3522` | `0b11000101` <br> `0b01101101` <br> `0b11000010` | `0xc56dc2` |
-| battery internal resistance | `10034`                       |                                                  | `0x2732`   |
-| temperature                 | `14`                          |                                                  | `0x0e`     |
-| remaining battery capacity  | `41%` = `104`                 |                                                  | `0x68`     |
-| sequence number             | `34`                          |                                                  | `0x22`     |
+| Field                       | Value                          | Bits                                               | Hex        |
+| --------------------------- | ------------------------------ | -------------------------------------------------- | ---------- |
+| command id                  | `20`                           |                                                    | `0x14`     |
+| command size                | `12`                           |                                                    | `0x0c`     |
+| software type               | `2`                            |                                                    | `0x02`     |
+| software version            | `10`                           |                                                    | `0x0a`     |
+| hardware type               | `GAZI3` = `3`                  |                                                    | `0x03`     |
+| hardware version            | `1`                            |                                                    | `0x01`     |
+| battery voltage             | low: `3158` <br/> high: `3522` | `0b11000101` <br/> `0b01101101` <br/> `0b11000010` | `0xc56dc2` |
+| battery internal resistance | `10034`                        |                                                    | `0x2732`   |
+| temperature                 | `14`                           |                                                    | `0x0e`     |
+| remaining battery capacity  | `41%` = `104`                  |                                                    | `0x68`     |
+| sequence number             | `34`                           |                                                    | `0x22`     |
 
 Message hex dump with LRC: `14 0c 02 0a 03 01 c5 6d c2 27 32 0e 68 22 7c`

@@ -7,14 +7,14 @@ Request/response to get the meter archive data.
 
 ### Format
 
-| Size | Type                                 | Field                                                   |
-| ---- | ------------------------------------ | ------------------------------------------------------- |
-| `1`  | `uint8`                              | command id = `0x11`                                     |
-| `1`  | `uint8`                              | command size                                            |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                      |
-| `1`  | `uint8`                              | archive type: <br> `1` - archive 1 <br> `2` - archive 2 |
-| `1`  | `uint32_be`                          | index of the first record to get                        |
-| `1`  | `uint8`                              | meter unique identifier                                 |
+| Size | Type                                 | Field                                                     |
+| ---- | ------------------------------------ | --------------------------------------------------------- |
+| `1`  | `uint8`                              | command id = `0x11`                                       |
+| `1`  | `uint8`                              | command size                                              |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                        |
+| `1`  | `uint8`                              | archive type: <br/> `1` - archive 1 <br/> `2` - archive 2 |
+| `1`  | `uint32_be`                          | index of the first record to get                          |
+| `1`  | `uint8`                              | meter unique identifier                                   |
 
 
 If the index is equal to `0`, the response will include the newest archive content.
@@ -39,25 +39,25 @@ Message hex dump: `11 07 21 01 00 00 00 00 02`
 
 ### Format
 
-| Size | Type                                 | Field                                                                                                                 |
-| ---- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| `1`  | `uint8`                              | command id = `0x12`                                                                                                   |
-| `1`  | `uint8`                              | command size (dynamic, `3+`)                                                                                          |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                                                    |
-| `1`  | `uint8`                              | is completed flag: <br> `0` - there is more content in the archive <br> `1` - there is no more content in the archive |
-| `4`  | [Time 2000](../types.md#time-2000)   | Date `1`. The date and time at which the data was captured                                                            |
-| `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                           |
-| `4`  | `float32`                            | OBIS content `1`                                                                                                      |
-| ...  | ...                                  | ...                                                                                                                   |
-| `1`  | [OBIS ID](../types.md#obis-od)       | OBIS ID `N`                                                                                                           |
-| `4`  | `float32`                            | OBIS content `N`                                                                                                      |
-| `1`  | `uint8`                              | Date end flag                                                                                                         |
-| `4`  | [Time 2000](../types.md#time-2000)   | Date `2`. The date and time at which the data was captured                                                            |
-| `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                           |
-| `4`  | `float32`                            | OBIS content `1`                                                                                                      |
-| ...  | ...                                  | ...                                                                                                                   |
-| `1`  | [OBIS ID](../types.md#obis-od)       | OBIS ID `N`                                                                                                           |
-| `4`  | `float32`                            | OBIS content `N`                                                                                                      |
+| Size | Type                                 | Field                                                                                                                   |
+| ---- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| `1`  | `uint8`                              | command id = `0x12`                                                                                                     |
+| `1`  | `uint8`                              | command size (dynamic, `3+`)                                                                                            |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                                                                      |
+| `1`  | `uint8`                              | is completed flag: <br/> `0` - there is more content in the archive <br/> `1` - there is no more content in the archive |
+| `4`  | [Time 2000](../types.md#time-2000)   | Date `1`. The date and time at which the data was captured                                                              |
+| `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                             |
+| `4`  | `float32`                            | OBIS content `1`                                                                                                        |
+| ...  | ...                                  | ...                                                                                                                     |
+| `1`  | [OBIS ID](../types.md#obis-od)       | OBIS ID `N`                                                                                                             |
+| `4`  | `float32`                            | OBIS content `N`                                                                                                        |
+| `1`  | `uint8`                              | Date end flag                                                                                                           |
+| `4`  | [Time 2000](../types.md#time-2000)   | Date `2`. The date and time at which the data was captured                                                              |
+| `1`  | [OBIS ID](../types.md#obis-id)       | OBIS ID `1`                                                                                                             |
+| `4`  | `float32`                            | OBIS content `1`                                                                                                        |
+| ...  | ...                                  | ...                                                                                                                     |
+| `1`  | [OBIS ID](../types.md#obis-od)       | OBIS ID `N`                                                                                                             |
+| `4`  | `float32`                            | OBIS content `N`                                                                                                        |
 
 #### Date end flag
 If a byte with the value 0 immediately follows the OBIS content, it indicates the end-of-date flag. In this case, the subsequent 4 bytes will be interpreted as the next date and time.

@@ -18,12 +18,12 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 
 ### Examples
 
-| Field        | Value                                                                                 | Hex          |
-| ------------ | ------------------------------------------------------------------------------------- | ------------ |
-| command id   | `93`                                                                                  | `0x5d`       |
-| command size | `5`                                                                                   | `0x05`       |
-| display mode | additional (`1`)                                                                      | `0x01`       |
-| displays     | `TOTAL_ACTIVE_ENERGY`<br>`CURRENT_IN_PHASE`<br>`SOFTWARE_VERSION`<br>`OPTOPORT_SPEED` | `0x030a021f` |
+| Field        | Value                                                                                          | Hex          |
+| ------------ | ---------------------------------------------------------------------------------------------- | ------------ |
+| command id   | `93`                                                                                           | `0x5d`       |
+| command size | `5`                                                                                            | `0x05`       |
+| display mode | additional (`1`)                                                                               | `0x01`       |
+| displays     | `TOTAL_ACTIVE_ENERGY` <br/> `CURRENT_IN_PHASE` <br/> `SOFTWARE_VERSION` <br/> `OPTOPORT_SPEED` | `0x030a021f` |
 
 Message hex dump: `5d 05 01 03 0a 02 1f`
 

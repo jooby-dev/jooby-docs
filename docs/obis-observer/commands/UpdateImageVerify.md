@@ -30,12 +30,12 @@ Message hex dump: `32 01 21`
 
 ### Format
 
-| Size | Type                                 | Field                                                                |
-| ---- | ------------------------------------ | -------------------------------------------------------------------- |
-| `1`  | `uint8`                              | command id = `0x33`                                                  |
-| `1`  | `uint8`                              | command size                                                         |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                   |
-| `1`  | `uint8`                              | is image valid flag: <br> `0` - invalid image <br> `2` - valid image |
+| Size | Type                                 | Field                                                                  |
+| ---- | ------------------------------------ | ---------------------------------------------------------------------- |
+| `1`  | `uint8`                              | command id = `0x33`                                                    |
+| `1`  | `uint8`                              | command size                                                           |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                                     |
+| `1`  | `uint8`                              | is image valid flag: <br/> `0` - invalid image <br/> `2` - valid image |
 
 
 ### Examples

@@ -6,17 +6,17 @@ The command includes the OBIS content captured according to schedule and contain
 
 ### Format
 
-| Size | Type                               | Field                                        |
-| ---- | ---------------------------------- | -------------------------------------------- |
-| `1`  | `uint8`                            | command id = `0x53`                          |
-| `1`  | `uint8`                            | command size (dynamic, `10+`)                |
-| `4`  | [Meter ID](../types.md#meter-id)   | meter unique identifier                      |
-| `4`  | [Time 2000](../types.md#time-2000) | date and time at which the data was captured |
-| `1`  | [OBIS ID](../types.md#obis-id)     | OBIS ID `1`                                  |
-| `4`  | `float32`                          | OBIS content `1`                             |
-| ...  | ...                                | ...                                          |
-| `1`  | [OBIS ID](../types.md#obis-id)     | OBIS ID `N`                                  |
-| `4`  | `float32`                          | OBIS content `N`                             |
+| Size | Type                                  | Field                                        |
+| ---- | ------------------------------------- | -------------------------------------------- |
+| `1`  | `uint8`                               | command id = `0x53`                          |
+| `1`  | `uint8`                               | command size (dynamic, `10+`)                |
+| `4`  | [Meter ID](../../types.md#meter-id)   | meter unique identifier                      |
+| `4`  | [Time 2000](../../types.md#time-2000) | date and time at which the data was captured |
+| `1`  | [OBIS ID](../../types.md#obis-id)     | OBIS ID `1`                                  |
+| `4`  | `float32`                             | OBIS content `1`                             |
+| ...  | ...                                   | ...                                          |
+| `1`  | [OBIS ID](../../types.md#obis-id)     | OBIS ID `N`                                  |
+| `4`  | `float32`                             | OBIS content `N`                             |
 
 ### Examples
 
@@ -36,6 +36,6 @@ Message hex dump: `53 12 00 00 00 02 2d 18 df 80 32 42 09 51 ec 38 42 35 51 ec`
 
 ## See also
 
-* [Time 2000](../types.md#time-2000)
-* [OBIS ID](../types.md#obis-id)
-* [Meter ID](../types.md#meter-id)
+* [Time 2000](../../types.md#time-2000)
+* [OBIS ID](../../types.md#obis-id)
+* [Meter ID](../../types.md#meter-id)

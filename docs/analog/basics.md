@@ -66,7 +66,7 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x01</code></td>
             <td><code>GAZI1</code></td>
             <td>
-                <code>Jooby RM GM-E</code> <br>
+                <code>Jooby RM GM-E</code> <br/>
                 <code>Jooby RM GM-M</code>
             </td>
             <td>Based on CPU <code>STM32L15x</code> (no longer in production).</td>
@@ -83,21 +83,20 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x03</code></td>
             <td><code>GAZI3</code></td>
             <td>
-                <code>Jooby RM GM-E</code> <br>
-                <code>Jooby RM GM-M</code> <br>
-                <code>Jooby RM GM-S</code> <br>
-                <code>Jooby RM GM-E_ext</code> <br>
-                <code>Jooby RM GM-M_ext</code> <br>
+                <code>Jooby RM GM-E</code> <br/>
+                <code>Jooby RM GM-M</code> <br/>
+                <code>Jooby RM GM-S</code> <br/>
+                <code>Jooby RM GM-E_ext</code> <br/>
+                <code>Jooby RM GM-M_ext</code> <br/>
                 <code>Jooby EPHIR RMS LoRaWAN GMSG10 105 EU</code>
             </td>
-            <td>Based on CPU <code>STM32L05x</code>.
-            </td>
+            <td>Based on CPU <code>STM32L05x</code>.</td>
         </tr>
         <tr>
             <td><code>0x04</code></td>
             <td><code>NOVATOR</code></td>
             <td>
-                <code>Jooby RM O-WM-N</code> <br>
+                <code>Jooby RM O-WM-N</code> <br/>
                 <code>Jooby Aquaris RMS LoRaWAN WONO10 203 EU</code>
             </td>
             <td>Based on CPU <code>STM32WLE5</code>.</td>
@@ -114,8 +113,8 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x06</code></td>
             <td><code>IMP4EU</code></td>
             <td>
-                <code>Jooby RM 4PI</code> <br>
-                <code>Jooby OMNI RM LoRaWAN 4PI 200 EU</code> <br>
+                <code>Jooby RM 4PI</code> <br/>
+                <code>Jooby OMNI RM LoRaWAN 4PI 200 EU</code> <br/>
                 <code>Jooby OMNI RM LoRaWAN 4PI 202 EU</code>
             </td>
             <td>Based on CPU <code>STM32WLE5</code>.</td>
@@ -125,7 +124,7 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>MTXLORA</code></td>
             <td></td>
             <td>
-                RM installed inside MTX meters. <br>
+                RM installed inside MTX meters. <br/>
                 Based on <code>STM32L051</code>, <code>STM32L071</code> (no longer in production) and <code>STM32WLE5</code>.
             </td>
         </tr>
@@ -159,15 +158,15 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x0c</code></td>
             <td><code>GAZIC</code></td>
             <td>
-                <code>Jooby RM GM-E</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMEL10 100 EU</code> <br>
-                <code>Jooby RM GM-M</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMME10 103 EU</code> <br>
-                <code>Jooby RM GM-E_ext</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMEL10 102 EU</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMEL10 106 EU</code> <br>
-                <code>Jooby RM GM-M_ext</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMME10 104 EU</code> <br>
+                <code>Jooby RM GM-E</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 100 EU</code> <br/>
+                <code>Jooby RM GM-M</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMME10 103 EU</code> <br/>
+                <code>Jooby RM GM-E_ext</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 102 EU</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 106 EU</code> <br/>
+                <code>Jooby RM GM-M_ext</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMME10 104 EU</code> <br/>
                 <code>Jooby EPHIR RMS LoRaWAN GMME10 107 EU</code>
             </td>
             <td>Based on CPU <code>STM32WLE5</code>.</td>
@@ -176,8 +175,8 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x0f</code></td>
             <td><code>IMP4AS</code></td>
             <td>
-                <code>Jooby RM 4PI</code> <br>
-                <code>Jooby OMNI RM LoRaWAN 4PI 200 AS</code> <br>
+                <code>Jooby RM 4PI</code> <br/>
+                <code>Jooby OMNI RM LoRaWAN 4PI 200 AS</code> <br/>
                 <code>Jooby OMNI RM LoRaWAN 4PI 202 AS</code>
             </td>
         </tr>
@@ -185,7 +184,7 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x18</code></td>
             <td><code>ElsterNbiotLora</code></td>
             <td>
-                <code>Jooby EPHIR RMS NBIoT GMIT10 206 EU</code> <br>
+                <code>Jooby EPHIR RMS NBIoT GMIT10 206 EU</code> <br/>
             </td>
         </tr>
     </tbody>

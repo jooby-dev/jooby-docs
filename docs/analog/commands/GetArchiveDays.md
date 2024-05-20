@@ -23,7 +23,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 #### **start date**
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
 #### **number of values**
@@ -65,16 +65,16 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 #### **start date**
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
 #### **magnet influence flag**
 
 The magnetic influence bit flag indicates that there was a magnet intervention.
 The flag set as one highest bit:
-<br>
+<br/>
 `0x00` - no magnetic influence
-<br>
+<br/>
 `0x80` - magnetic influence is present
 
 #### **counter value**

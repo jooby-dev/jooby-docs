@@ -13,7 +13,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | ---- | -------- | -------------------------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x13`                                                                    |
 | `1`  | `uint8`  | command size = `12`                                                                    |
-| `1`  | `uint8`  | tariff table identifier<br> (`0` - table `A+`, `1` – table `A-`)                       |
+| `1`  | `uint8`  | tariff table identifier <br/> (`0` - table `A+`, `1` – table `A-`)                     |
 | `1`  | `uint32` | rate plan unique identifier                                                            |
 | `1`  | `uint8`  | indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid) |
 | `1`  | `uint8`  | activation year (number of years after `2000`)                                         |

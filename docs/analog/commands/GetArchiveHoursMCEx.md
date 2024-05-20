@@ -24,7 +24,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 #### **start date**
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
 #### **hour**
@@ -86,7 +86,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 #### **start date**
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
 #### **hour**
@@ -114,14 +114,14 @@ Count the pulse counter's full value with a diff for each previous hour. The hou
 | hours                      | hour: `12:00`             | `0b00001100`                                                        | `0x0c`   |
 | hours                      | hours: `1`                | `0b00000001`                                                        | `0x01`   |
 | channels                   | `1`, `2`, `3`, `4`        | `0b00001111`                                                        | `0x0f`   |
-| channel `1` hour `1` value | `131`                     | `0b0000000010000011`<br>with extended bits:<br>`0b0000100000110001` | `0x8301` |
-| channel `1` hour `1` diff  | `10`                      | `0b00001010`<br>with extended bits:<br>`0b00001010`                 | `0x0a`   |
-| channel `2` hour `1` value | `8`                       | `0b00001000`<br>with extended bits:<br>`0b00001000`                 | `0x08`   |
-| channel `2` hour `1` diff  | `10`                      | `0b00001010`<br>with extended bits:<br>`0b00001010`                 | `0x0a`   |
-| channel `3` hour `1` value | `8`                       | `0b00001000`<br>with extended bits:<br>`0b00001000`                 | `0x08`   |
-| channel `3` hour `1` diff  | `10`                      | `0b00001010`<br>with extended bits:<br>`0b00001010`                 | `0x0a`   |
-| channel `4` hour `1` value | `12`                      | `0b00001000`<br>with extended bits:<br>`0b00001000`                 | `0x0c`   |
-| channel `4` hour `1` diff  | `10`                      | `0b00001100`<br>with extended bits:<br>`0b00001100`                 | `0x0a`   |
+| channel `1` hour `1` value | `131`                     | `0b0000000010000011`<br/>with extended bits:<br/>`0b0000100000110001` | `0x8301` |
+| channel `1` hour `1` diff  | `10`                      | `0b00001010`<br/>with extended bits:<br/>`0b00001010`                 | `0x0a`   |
+| channel `2` hour `1` value | `8`                       | `0b00001000`<br/>with extended bits:<br/>`0b00001000`                 | `0x08`   |
+| channel `2` hour `1` diff  | `10`                      | `0b00001010`<br/>with extended bits:<br/>`0b00001010`                 | `0x0a`   |
+| channel `3` hour `1` value | `8`                       | `0b00001000`<br/>with extended bits:<br/>`0b00001000`                 | `0x08`   |
+| channel `3` hour `1` diff  | `10`                      | `0b00001010`<br/>with extended bits:<br/>`0b00001010`                 | `0x0a`   |
+| channel `4` hour `1` value | `12`                      | `0b00001000`<br/>with extended bits:<br/>`0b00001000`                 | `0x0c`   |
+| channel `4` hour `1` diff  | `10`                      | `0b00001100`<br/>with extended bits:<br/>`0b00001100`                 | `0x0a`   |
 
 Message hex dump with LRC: `1f 30 0e 2f 97 0c 01 0f 83 01 0a 08 0a 08 0a 0c 0a 40`
 

@@ -816,7 +816,7 @@ Message hex dump with LRC: `03 05 21 8c a0 65 90`
 ## MQTT session config
 
 Parameter is used to set MQTT session.
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -866,7 +866,7 @@ Message hex dump LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 
 ## MQTT broker address
 
 Parameter is used to set MQTT broker address.
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -904,7 +904,7 @@ Message hex dump LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 
 ## MQTT ssl enable
 
 Parameter is used to enable ssl
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -936,7 +936,7 @@ Message hex dump LRC: `03 04 24 01 77`
 ## MQTT topic prefix
 
 Parameter is used to set topic prefix
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -969,7 +969,7 @@ Message hex dump LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
 ## MQTT data receive config
 
 Parameter is used to set MQTT data receive config
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -986,7 +986,7 @@ QoS option for subscribing. Default value QOS=1.
 
 ### Examples
 
-#### Set receive config to subscribe with QOS=1  
+#### Set receive config to subscribe with QOS=1
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
@@ -1001,7 +1001,7 @@ Message hex dump LRC: `03 02 26 01 73`
 ## MQTT data send config
 
 Parameter is used to set MQTT send config.
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1055,7 +1055,7 @@ Message hex dump LRC: `03 06 27 01 00 00 03 1e 6b`
 ## NBIOT SSL config
 
 Parameter is used to config NBIOT SSL.
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1105,7 +1105,7 @@ Message hex dump LRC: `03 03 28 01 04 78`
 ## NBIOT ssl cacert write
 
 Parameter is used to store chunk of SSL certificate on device
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1147,7 +1147,7 @@ Message hex dump no LRC: `03 c8 29 c4 01 F4 00...5f`
 ## NBIOT ssl cacert set
 
 Parameter is used to set stored SSL certificate into nbiot
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1179,7 +1179,7 @@ Message hex dump LRC: `03 05 2a bd 0b e3 38 14`
 ## NBIOT ssl client cert write
 
 Parameter is used to store chunk of SSL certificate
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1221,7 +1221,7 @@ Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
 ## NBIOT ssl client cert set
 
 Parameter is used to set stored SSL certificate into nbiot
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1253,7 +1253,7 @@ Message hex dump LRC: `03 05 2c bd 0b e3 38 12`
 ## NBIOT ssl client key write
 
 Parameter is used to set mqtt broker address.
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1295,7 +1295,7 @@ Message hex dump no LRC: `03 c8 2d c4 01 F4 00...5f`
 ## NBIOT ssl client key set
 
 Parameter is used to set mqtt broker address.
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1327,7 +1327,7 @@ Message hex dump no LRC: `03 05 2e bd 0b e3 38 10`
 ## NBIOT device software update
 
 Parameter is used to start updating from URL
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1361,7 +1361,7 @@ Message hex dump LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
 ## NBIOT module firmware update
 
 Parameter is used to set firmware image file update URL
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1393,7 +1393,7 @@ Message hex dump no LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 
 ## Reporting data config
 
 Parameter is used to set reporting data config
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1409,7 +1409,7 @@ hardware type - `24`
 | `1`  | `uint8` | [count to send](#count-to-send)         |
 
 #### **minutes** **hour**
-start time from sending reporting data 
+start time from sending reporting data
 
 #### **count to send**
 how many data samples to send
@@ -1434,7 +1434,7 @@ Message hex dump no LRC: `03 07 31 00 03 00 04`
 ## Events config
 
 Parameter is used to set event config
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1482,7 +1482,7 @@ Message hex dump no LRC: `03 05 32 01 01 00`
 ## NBIOT module info
 
 The parameter is used to get nbiot module info
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1516,14 +1516,14 @@ Message hex dump no LRC: `03 05 33`
 
 ##### **module info**
 
-Product identification information including the identifier of the device type 
+Product identification information including the identifier of the device type
 and the revision of software NBIOT module.
 
 
 ## NBIOT bands
 
 Parameter to set preferred NB-IoT bands to be searched for.
-Available from software version = `1` for:<br>
+Available from software version = `1` for:<br/>
 hardware type - `24`
 
 [Hardware types](./basics.md#hardware-types)
@@ -1544,7 +1544,7 @@ Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that
 
 ### Examples
 
-#### set band to 20 
+#### set band to 20
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |

@@ -184,7 +184,7 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x18</code></td>
             <td><code>ElsterNbiotLora</code></td>
             <td>
-                <code>Jooby EPHIR RMS NBIoT GMIT10 206 EU</code> <br>
+                <code>Jooby EPHIR RMS NBIoT GMIT10 206 EU</code> <br/>
             </td>
         </tr>
     </tbody>

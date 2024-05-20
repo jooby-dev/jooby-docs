@@ -9,12 +9,12 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 
 ### Format
 
-| Size | Type     | Field                                                             |
-| ---- | -------- | ----------------------------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x14`                                               |
-| `1`  | `uint8`  | command size = `5`                                                |
-| `1`  | `uint8`  | tariff table identifier<br/> (`0` - table `A+`, `1` – table `A-`) |
-| `1`  | `uint32` | rate plan unique identifier                                       |
+| Size | Type     | Field                                                              |
+| ---- | -------- | ------------------------------------------------------------------ |
+| `1`  | `uint8`  | command id = `0x14`                                                |
+| `1`  | `uint8`  | command size = `5`                                                 |
+| `1`  | `uint8`  | tariff table identifier <br/> (`0` - table `A+`, `1` – table `A-`) |
+| `1`  | `uint32` | rate plan unique identifier                                        |
 
 ### Examples
 

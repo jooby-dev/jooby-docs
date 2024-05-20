@@ -97,17 +97,17 @@ It's pulse counter's values by days for each channel.
 
 #### 4th channel:
 
-| Field                         | Value                     | Bits                                                                  | Hex      |
-| ----------------------------- | ------------------------- | --------------------------------------------------------------------- | -------- |
-| extra flag                    | `31`                      |                                                                       | `0x1f`   |
-| command id                    | `13`                      |                                                                       | `0x0d`   |
-| command size                  | `9`                       |                                                                       | `0x09`   |
-| start date                    | `2023.12.23 00:00:00 GMT` | `0b10111011111011`                                                    | `0x2f97` |
-| channels                      | `4`                       | `0b00001000`                                                          | `0x08`   |
-| days                          | `2`                       |                                                                       | `0x02`   |
-| channel `4` pulse coefficient | `100`                     | `0b10000011`                                                          | `0x83`   |
-| channel `4` day `1` value     | `5524`                    | `0b0001010110010100`<br/>with extended bits:<br/>`0b1001010000101011` | `0x942b` |
-| channel `4` day `2` value     | `5674`                    | `0b0001011000101010`<br/>with extended bits:<br/>`0b1010101000101100` | `0xaa2c` |
+| Field                         | Value                     | Bits                                                                      | Hex      |
+| ----------------------------- | ------------------------- | ------------------------------------------------------------------------- | -------- |
+| extra flag                    | `31`                      |                                                                           | `0x1f`   |
+| command id                    | `13`                      |                                                                           | `0x0d`   |
+| command size                  | `9`                       |                                                                           | `0x09`   |
+| start date                    | `2023.12.23 00:00:00 GMT` | `0b10111011111011`                                                        | `0x2f97` |
+| channels                      | `4`                       | `0b00001000`                                                              | `0x08`   |
+| days                          | `2`                       |                                                                           | `0x02`   |
+| channel `4` pulse coefficient | `100`                     | `0b10000011`                                                              | `0x83`   |
+| channel `4` day `1` value     | `5524`                    | `0b0001010110010100` <br/> with extended bits: <br/> `0b1001010000101011` | `0x942b` |
+| channel `4` day `2` value     | `5674`                    | `0b0001011000101010` <br/> with extended bits: <br/> `0b1010101000101100` | `0xaa2c` |
 
 Message hex dump with LRC: `1f 0d 09 2f 97 08 02 83 94 2b aa 2c 46`
 

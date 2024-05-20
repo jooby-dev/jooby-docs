@@ -415,3 +415,14 @@ If the most significant bit is `1` then the value of pulse coefficient is determ
 | `0х84`            | `1000`         | `1`           |
 | `0х85`            | `10000`        | `10`          |
 | `0х86`            | `100000`       | `100`         |
+
+
+## string
+bytes array of uint8 code points that range in value from 0 through 255. Each code point, or character code, represents a single character.
+
+### Format
+
+| Size    | Type    |
+| ------- | ------- |
+| `1`     | `uint8` |
+| `0...n` | `uint8` |

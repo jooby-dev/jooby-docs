@@ -37,19 +37,19 @@ This command can be sent periodically if [device report data parameter](../param
 
 ### Format
 
-| Size   | Type                                               | Field                                                      |
-| ------ | -------------------------------------------------- | ---------------------------------------------------------- |
-| `1`    | `uint8`                                            | extra flag = `0x1f`                                        |
-| `1`    | `uint8`                                            | command id = `0x0f`                                        |
-| `1`    | `uint8`                                            | command size (dynamic, `3+`)                               |
-| `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../parameter-types.md#channels-bit-set) |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `1` value                                          |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `2` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `2` value                                          |
-| ...    | ...                                                | ...                                                        |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `N` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `N` value                                          |
+| Size   | Type                                               | Field                                            |
+| ------ | -------------------------------------------------- | ------------------------------------------------ |
+| `1`    | `uint8`                                            | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                            | command id = `0x0f`                              |
+| `1`    | `uint8`                                            | command size (dynamic, `3+`)                     |
+| `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../types.md#channels-bit-set) |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `1` value                                |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `2` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `2` value                                |
+| ...    | ...                                                | ...                                              |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `N` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `N` value                                |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -57,7 +57,7 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 ### Examples
 
@@ -79,4 +79,4 @@ Message hex dump with LRC: `1f 0f 04 08 64 d6 02 f9`
 
 * [Device report data parameter](../parameter-types.md#reporting-data-type)
 * [Extended value](../types.md#extended-value)
-* [Channels bit set](../parameter-types.md#channels-bit-set)
+* [Channels bit set](../types.md#channels-bit-set)

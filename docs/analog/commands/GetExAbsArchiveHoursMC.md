@@ -7,14 +7,14 @@ Command to request hourly consumption (absolute values) of device channels from 
 
 ### Format
 
-| Size   | Type                                         | Field                                                      |
-| ------ | -------------------------------------------- | ---------------------------------------------------------- |
-| `1`    | `uint8`                                      | extra flag = `0x1f`                                        |
-| `1`    | `uint8`                                      | command id = `0x0c`                                        |
-| `1`    | `uint8`                                      | command size (dynamic, `4+`)                               |
-| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                                  |
-| `1`    | [packed hours](../types.md#packed-hours)     | [hours](#hours)                                            |
-| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../parameter-types.md#channels-bit-set) |
+| Size   | Type                                         | Field                                            |
+| ------ | -------------------------------------------- | ------------------------------------------------ |
+| `1`    | `uint8`                                      | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                      | command id = `0x0c`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `4+`)                     |
+| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
+| `1`    | [packed hours](../types.md#packed-hours)     | [hours](#hours)                                  |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -34,7 +34,7 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 ### Examples
 
@@ -56,27 +56,27 @@ Message hex dump with LRC: `1f 0c 04 2f 97 0c 01 f7`
 
 ### Format
 
-| Size   | Type                                               | Field                                                      |
-| ------ | -------------------------------------------------- | ---------------------------------------------------------- |
-| `1`    | `uint8`                                            | extra flag = `0x1f`                                        |
-| `1`    | `uint8`                                            | command id = `0x0c`                                        |
-| `1`    | `uint8`                                            | command size (dynamic, `6+`)                               |
-| `2`    | [packed date](../types.md#packed-date)             | [start date](#start-date)                                  |
-| `1`    | [packed hours](../types.md#packed-hours)           | [hours](#hours)                                            |
-| `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../parameter-types.md#channels-bit-set) |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `1` hour `1` value                                 |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `1` hour `1` diff                                  |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `1` hour `2` diff                                  |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `2` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `2` hour `1` value                                 |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `2` hour `1` diff                                  |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `2` hour `2` diff                                  |
-| ...    | ...                                                | ...                                                        |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `N` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `N` hour `H` value                                 |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `N` hour `H` diff                                  |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `N` hour `H` diff                                  |
+| Size   | Type                                               | Field                                            |
+| ------ | -------------------------------------------------- | ------------------------------------------------ |
+| `1`    | `uint8`                                            | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                            | command id = `0x0c`                              |
+| `1`    | `uint8`                                            | command size (dynamic, `6+`)                     |
+| `2`    | [packed date](../types.md#packed-date)             | [start date](#start-date)                        |
+| `1`    | [packed hours](../types.md#packed-hours)           | [hours](#hours)                                  |
+| `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../types.md#channels-bit-set) |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `1` hour `1` value                       |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `1` hour `1` diff                        |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `1` hour `2` diff                        |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `2` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `2` hour `1` value                       |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `2` hour `1` diff                        |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `2` hour `2` diff                        |
+| ...    | ...                                                | ...                                              |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `N` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `N` hour `H` value                       |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `N` hour `H` diff                        |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `N` hour `H` diff                        |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -96,7 +96,7 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 ### Examples
 
@@ -122,4 +122,4 @@ Message hex dump with LRC: `1f 0c 0a 2f 97 2c 01 83 b9 f3 14 80 01 85`
 * [Packed date](../types.md#packed-date)
 * [Packed hours](../types.md#packed-hours)
 * [Extended value](../types.md#extended-value)
-* [Channels bit set](../parameter-types.md#channels-bit-set)
+* [Channels bit set](../types.md#channels-bit-set)

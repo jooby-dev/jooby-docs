@@ -37,12 +37,12 @@ This command can be sent periodically if [device report data parameter](../param
 
 ### Format
 
-| Size       | Type                                                      | Field                                                      |
-| ---------- | --------------------------------------------------------- | ---------------------------------------------------------- |
-| `1`        | `uint8`                                                   | command id = `0x18`                                        |
-| `1`        | `uint8`                                                   | command size (dynamic, `2+`)                               |
-| `1..5`     | [extended value](../types.md#extended-value)              | [channels bit set](../parameter-types.md#channels-bit-set) |
-| `[1..5]*n` | sequence of [extended values](../types.md#extended-value) | [channel values sequence](#channel-values)                 |
+| Size       | Type                                                      | Field                                            |
+| ---------- | --------------------------------------------------------- | ------------------------------------------------ |
+| `1`        | `uint8`                                                   | command id = `0x18`                              |
+| `1`        | `uint8`                                                   | command size (dynamic, `2+`)                     |
+| `1..5`     | [extended value](../types.md#extended-value)              | [channels bit set](../types.md#channels-bit-set) |
+| `[1..5]*n` | sequence of [extended values](../types.md#extended-value) | [channel values sequence](#channel-values)       |
 
 > `n` - the number of selected channels.
 
@@ -52,7 +52,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 #### **channel values**
 

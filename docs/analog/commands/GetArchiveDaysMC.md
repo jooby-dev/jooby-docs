@@ -7,13 +7,13 @@ Command to request/receive day pulse counter's values from device archive.
 
 ### Format
 
-| Size   | Type                                         | Field                                                      |
-| ------ | -------------------------------------------- | ---------------------------------------------------------- |
-| `1`    | `uint8`                                      | command id = `0x1b`                                        |
-| `1`    | `uint8`                                      | command size (dynamic, `4+`)                               |
-| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                                  |
-| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../parameter-types.md#channels-bit-set) |
-| `1`    | `uint8`                                      | [days](#days)                                              |
+| Size   | Type                                         | Field                                            |
+| ------ | -------------------------------------------- | ------------------------------------------------ |
+| `1`    | `uint8`                                      | command id = `0x1b`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `4+`)                     |
+| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
+| `1`    | `uint8`                                      | [days](#days)                                    |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -27,7 +27,7 @@ Start date for requested day pulse counter's values.
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 #### **days**
 
@@ -52,20 +52,20 @@ Message hex dump with LRC: `1b 04 2f 97 0d 02 fd`
 
 ### Format
 
-| Size   | Type                                         | Field                                                      |
-| ------ | -------------------------------------------- | ---------------------------------------------------------- |
-| `1`    | `uint8`                                      | command id = `0x1b`                                        |
-| `1`    | `uint8`                                      | command size (dynamic, `5+`)                               |
-| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                                  |
-| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../parameter-types.md#channels-bit-set) |
-| `1`    | `uint8`                                      | [days](#days)                                              |
-| `1..5` | [extended value](../types.md#extended-value) | channel `1` day `1` value                                  |
-| `1..5` | [extended value](../types.md#extended-value) | channel `1` day `2` value                                  |
-| `1..5` | [extended value](../types.md#extended-value) | channel `2` day `1` value                                  |
-| `1..5` | [extended value](../types.md#extended-value) | channel `2` day `2` value                                  |
-| ...    | ...                                          | ...                                                        |
-| `1..5` | [extended value](../types.md#extended-value) | channel `N` day `D` value                                  |
-| `1..5` | [extended value](../types.md#extended-value) | channel `N` day `D` value                                  |
+| Size   | Type                                         | Field                                            |
+| ------ | -------------------------------------------- | ------------------------------------------------ |
+| `1`    | `uint8`                                      | command id = `0x1b`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `5+`)                     |
+| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
+| `1`    | `uint8`                                      | [days](#days)                                    |
+| `1..5` | [extended value](../types.md#extended-value) | channel `1` day `1` value                        |
+| `1..5` | [extended value](../types.md#extended-value) | channel `1` day `2` value                        |
+| `1..5` | [extended value](../types.md#extended-value) | channel `2` day `1` value                        |
+| `1..5` | [extended value](../types.md#extended-value) | channel `2` day `2` value                        |
+| ...    | ...                                          | ...                                              |
+| `1..5` | [extended value](../types.md#extended-value) | channel `N` day `D` value                        |
+| `1..5` | [extended value](../types.md#extended-value) | channel `N` day `D` value                        |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -79,7 +79,7 @@ Start date for requested day pulse counter's values.
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 #### **days**
 
@@ -128,4 +128,4 @@ Message hex dump with LRC: `1b 13 2e fb 0f 02 7b d9 02 c7 03 fa 06 ce 02 9c 03 d
 
 * [Packed date](../types.md#packed-date)
 * [Extended value](../types.md#extended-value)
-* [Channels bit set](../parameter-types.md#channels-bit-set)
+* [Channels bit set](../types.md#channels-bit-set)

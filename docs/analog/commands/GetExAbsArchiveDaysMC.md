@@ -7,14 +7,14 @@ Command to request daily consumption (absolute values) of device channels from t
 
 ### Format
 
-| Size   | Type                                         | Field                                                      |
-| ------ | -------------------------------------------- | ---------------------------------------------------------- |
-| `1`    | `uint8`                                      | extra flag = `0x1f`                                        |
-| `1`    | `uint8`                                      | command id = `0x0d`                                        |
-| `1`    | `uint8`                                      | command size (dynamic, `4+`)                               |
-| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                                  |
-| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../parameter-types.md#channels-bit-set) |
-| `1`    | `uint8`                                      | [days](#days)                                              |
+| Size   | Type                                         | Field                                            |
+| ------ | -------------------------------------------- | ------------------------------------------------ |
+| `1`    | `uint8`                                      | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                      | command id = `0x0d`                              |
+| `1`    | `uint8`                                      | command size (dynamic, `4+`)                     |
+| `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
+| `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
+| `1`    | `uint8`                                      | [days](#days)                                    |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -28,7 +28,7 @@ Start date for requested day pulse counter's values.
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 #### **days**
 
@@ -54,24 +54,24 @@ Message hex dump with LRC: `1f 0d 04 2f 98 01 01 f4`
 
 ### Format
 
-| Size   | Type                                               | Field                                                      |
-| ------ | -------------------------------------------------- | ---------------------------------------------------------- |
-| `1`    | `uint8`                                            | extra flag = `0x1f`                                        |
-| `1`    | `uint8`                                            | command id = `0x0d`                                        |
-| `1`    | `uint8`                                            | command size (dynamic, `6+`)                               |
-| `2`    | [packed date](../types.md#packed-date)             | [start date](#start-date)                                  |
-| `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../parameter-types.md#channels-bit-set) |
-| `1`    | `uint8`                                            | [days](#days)                                              |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `1` day `1` value                                  |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `1` day `2` value                                  |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `2` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `2` day `1` value                                  |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `2` day `2` value                                  |
-| ...    | ...                                                | ...                                                        |
-| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `N` pulse coefficient                              |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `N` day `D` value                                  |
-| `1..5` | [extended value](../types.md#extended-value)       | channel `N` day `D` value                                  |
+| Size   | Type                                               | Field                                            |
+| ------ | -------------------------------------------------- | ------------------------------------------------ |
+| `1`    | `uint8`                                            | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                            | command id = `0x0d`                              |
+| `1`    | `uint8`                                            | command size (dynamic, `6+`)                     |
+| `2`    | [packed date](../types.md#packed-date)             | [start date](#start-date)                        |
+| `1..5` | [extended value](../types.md#extended-value)       | [channels bit set](../types.md#channels-bit-set) |
+| `1`    | `uint8`                                            | [days](#days)                                    |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `1` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `1` day `1` value                        |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `1` day `2` value                        |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `2` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `2` day `1` value                        |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `2` day `2` value                        |
+| ...    | ...                                                | ...                                              |
+| `1`    | [pulse coefficient](../types.md#pulse-coefficient) | channel `N` pulse coefficient                    |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `N` day `D` value                        |
+| `1..5` | [extended value](../types.md#extended-value)       | channel `N` day `D` value                        |
 
 It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
@@ -85,7 +85,7 @@ Start date for requested day pulse counter's values.
 
 #### **channels bit set**
 
-[See details](../parameter-types.md#channels-bit-set).
+[See details](../types.md#channels-bit-set).
 
 #### **days**
 
@@ -116,4 +116,4 @@ Message hex dump with LRC: `1f 0d 09 2f 97 08 02 83 94 2b aa 2c 46`
 
 * [Packed date](../types.md#packed-date)
 * [Extended value](../types.md#extended-value)
-* [Channels bit set](../parameter-types.md#channels-bit-set)
+* [Channels bit set](../types.md#channels-bit-set)

@@ -8,23 +8,23 @@ The command contains the total value of the pulse counter for the specified hour
 
 ### Format
 
-| Size   | Type                                            | Field                                                         |
-| ------ | ----------------------------------------------- | ------------------------------------------------------------- |
-| `1`    | `uint8`                                         | command id = `0x17`                                           |
-| `1`    | `uint8`                                         | command size (dynamic, `5+`)                                  |
-| `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                                 |
-| `1`    | [packed hours](../../types.md#packed-hours)     | [hours](#hours)                                               |
-| `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../parameter-types.md#channels-bit-set) |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                             |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `1`                                          |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `2`                                          |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` value                                             |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `1`                                          |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `2`                                          |
-| ...    | ...                                             | ...                                                           |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` value                                             |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                          |
-| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                          |
+| Size   | Type                                            | Field                                               |
+| ------ | ----------------------------------------------- | --------------------------------------------------- |
+| `1`    | `uint8`                                         | command id = `0x17`                                 |
+| `1`    | `uint8`                                         | command size (dynamic, `5+`)                        |
+| `2`    | [packed date](../../types.md#packed-date)       | [date](#date)                                       |
+| `1`    | [packed hours](../../types.md#packed-hours)     | [hours](#hours)                                     |
+| `1..5` | [extended value](../../types.md#extended-value) | [channels bit set](../../types.md#channels-bit-set) |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `1` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `1` diff `2`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `2` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `2` diff `2`                                |
+| ...    | ...                                             | ...                                                 |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `N` value                                   |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                |
+| `1..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                |
 
 It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
 
@@ -44,7 +44,7 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 
 #### **channels bit set**
 
-[See details](../../parameter-types.md#channels-bit-set).
+[See details](../../types.md#channels-bit-set).
 
 ### Examples
 
@@ -74,4 +74,4 @@ Message hex dump with LRC: `17 0f 2f 97 0c 0f 83 01 0a c0 06 0c 26 08 ea 01 0b 7
 * [Packed date](../../types.md#packed-date)
 * [Packed hours](../../types.md#packed-hours)
 * [Extended value](../../types.md#extended-value)
-* [Channels bit set](../../parameter-types.md#channels-bit-set)
+* [Channels bit set](../../types.md#channels-bit-set)

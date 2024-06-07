@@ -33,7 +33,7 @@ The parameter `23` is used for this behavior.
 | `1..5` | [extended value](../../types.md#extended-value)       | channel `N` diff `1`                                |
 | `1..5` | [extended value](../../types.md#extended-value)       | channel `N` diff `2`                                |
 
-It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
+It's a command with a [three-bytes header](../../message.md#command-with-a-three-bytes-header).
 
 ### Parameters
 

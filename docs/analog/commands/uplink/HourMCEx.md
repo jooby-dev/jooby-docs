@@ -28,7 +28,7 @@ To get this uplink need to set param [mqtt data send config](../../parameter-typ
 | `0..5` | [extended value](../../types.md#extended-value) | channel `N` diff `1`                                |
 | `0..5` | [extended value](../../types.md#extended-value) | channel `N` diff `2`                                |
 
-It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
+It's a command with a [three-bytes header](../../message.md#command-with-a-three-bytes-header).
 
 ### Parameters
 

@@ -1,6 +1,7 @@
 # GetArchiveHoursMCEx
 
-Command to request/receive hour pulse counter's values from device archive. This is an extended version of [GetArchiveHoursMC](./GetArchiveHoursMC.md) to get archive hours more than 8
+Command to request/receive hour pulse counter's values from device archive.
+This is an extended version of [GetArchiveHoursMC](./GetArchiveHoursMC.md) to get archive hours more than 8.
 
 
 ## Request
@@ -17,7 +18,7 @@ Command to request/receive hour pulse counter's values from device archive. This
 | `1`    | `uint8`                                      | [hours](#hours)                                  |
 | `1..5` | [extended value](../types.md#extended-value) | [channels bit set](../types.md#channels-bit-set) |
 
-It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
 ### Parameters
 

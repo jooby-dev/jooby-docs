@@ -14,7 +14,8 @@ Command to request current values from device channels.
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
-As a response to this request there is a message with two uplink commands: [GetCurrentMC](./GetCurrentMC.md#response) and [GetExAbsCurrentMC](./GetExAbsCurrentMC.md).
+In response to this request, there is a message with two uplink commands:
+[GetCurrentMC](./GetCurrentMC.md#response) and [GetExAbsCurrentMC](./GetExAbsCurrentMC.md#response).
 
 ### Parameters
 

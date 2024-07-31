@@ -41,6 +41,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NB-IoT module info](#nb-iot-module-info)
 * [NB-IoT bands](#nb-iot-bands)
 * [NB-IoT APN](#nb-iot-apn)
+* [NB-IoT LED Indication](#nb-iot-led-indication)
 
 ## Reporting data interval
 
@@ -1591,3 +1592,36 @@ After the parameter is set NB-IoT module will be reset. Option accepted immediat
 | apn            | `NBIOT`  | `0x4e42494f54` |
 
 Message hex dump with LRC: `03 07 35 05 4e 42 49 4f 54 3f`
+
+
+## NB-IoT LED Indication
+
+Parameter is used to enable LED indication for debugging.
+WARNING: LED indication significantly raises battery consumption.
+Available from software version = `1.5` for:<br/>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                           |
+| ---- | ------- | ----------------------------------------------- |
+| `1`  | `uint8` | parameter type = `54`                           |
+| `1`  | `uint8` | [enable led indication](#enable-led-indication) |
+
+#### **enable led indication**
+Enable or disable led indication. The device has an internal state machine that will be indicated by LED pattern.
+
+### Examples
+
+#### enable led indication
+
+| Field                 | Value    | Hex    |
+| --------------------- | -------- | ------ |
+| command id            | `3`      | `0x03` |
+| command size          | `2`      | `0x02` |
+| parameter type        | `54`     | `0x36` |
+| enable_led_indication | `1`      | `0x01` |
+
+Message hex dump LRC: `03 02 36 01 01`

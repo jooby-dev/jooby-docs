@@ -27,19 +27,21 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [MQTT topic prefix](#mqtt-topic-prefix)
 * [MQTT data receive config](#mqtt-data-receive-config)
 * [MQTT data send config](#mqtt-data-send-config)
-* [NBIOT ssl config](#nbiot-ssl-config)
-* [NBIOT ssl cacert write](#nbiot-ssl-cacert-write)
-* [NBIOT ssl cacert set](#nbiot-ssl-cacert-set)
-* [NBIOT ssl client cert write](#nbiot-ssl-client-cert-write)
-* [NBIOT ssl client cert set](#nbiot-ssl-client-cert-set)
-* [NBIOT ssl client key write](#nbiot-ssl-client-key-write)
-* [NBIOT ssl client key set](#nbiot-ssl-client-key-set)
-* [NBIOT device software update](#nbiot-device-software-update)
-* [NBIOT module firmware update](#nbiot-module-firmware-update)
+* [NB-IoT ssl config](#nb-iot-ssl-config)
+* [NB-IoT ssl cacert write](#nb-iot-ssl-cacert-write)
+* [NB-IoT ssl cacert set](#nb-iot-ssl-cacert-set)
+* [NB-IoT ssl client cert write](#nb-iot-ssl-client-cert-write)
+* [NB-IoT ssl client cert set](#nb-iot-ssl-client-cert-set)
+* [NB-IoT ssl client key write](#nb-iot-ssl-client-key-write)
+* [NB-IoT ssl client key set](#nb-iot-ssl-client-key-set)
+* [NB-IoT device software update](#nb-iot-device-software-update)
+* [NB-IoT module firmware update](#nb-iot-module-firmware-update)
 * [Reporting data config](#reporting-data-config)
 * [Events config](#events-config)
-* [NBIOT module info](#NBIOT-module-info)
-* [NBIOT bands](#NBIOT-bands)
+* [NB-IoT module info](#nb-iot-module-info)
+* [NB-IoT bands](#nb-iot-bands)
+* [NB-IoT APN](#nb-iot-apn)
+* [NB-IoT LED Indication](#nb-iot-led-indication)
 
 ## Reporting data interval
 
@@ -1052,9 +1054,9 @@ timeout minutes between read attempts. Default value send_timeout_between_attemp
 Message hex dump LRC: `03 06 27 01 00 00 03 1e 6b`
 
 
-## NBIOT SSL config
+## NB-IoT SSL config
 
-Parameter is used to config NBIOT SSL.
+Parameter is used to config NB-IoT SSL.
 Available from software version = `1` for:<br/>
 hardware type - `24`
 
@@ -1102,7 +1104,7 @@ SSL version.
 Message hex dump LRC: `03 03 28 01 04 78`
 
 
-## NBIOT ssl cacert write
+## NB-IoT ssl cacert write
 
 Parameter is used to store chunk of SSL certificate on device
 Available from software version = `1` for:<br/>
@@ -1144,7 +1146,7 @@ chunk of bytes
 Message hex dump no LRC: `03 c8 29 c4 01 F4 00...5f`
 
 
-## NBIOT ssl cacert set
+## NB-IoT ssl cacert set
 
 Parameter is used to set stored SSL certificate into nbiot
 Available from software version = `1` for:<br/>
@@ -1176,7 +1178,7 @@ crc32 of stored cacert to verify and if crc valid write to nbiot
 Message hex dump LRC: `03 05 2a bd 0b e3 38 14`
 
 
-## NBIOT ssl client cert write
+## NB-IoT ssl client cert write
 
 Parameter is used to store chunk of SSL certificate
 Available from software version = `1` for:<br/>
@@ -1218,7 +1220,7 @@ chunk of bytes
 Message hex dump no LRC: `03 c8 2b c4 01 F4 00...5f`
 
 
-## NBIOT ssl client cert set
+## NB-IoT ssl client cert set
 
 Parameter is used to set stored SSL certificate into nbiot
 Available from software version = `1` for:<br/>
@@ -1250,7 +1252,7 @@ crc32 to check if client cert write correct and set it in nbiot module
 Message hex dump LRC: `03 05 2c bd 0b e3 38 12`
 
 
-## NBIOT ssl client key write
+## NB-IoT ssl client key write
 
 Parameter is used to set mqtt broker address.
 Available from software version = `1` for:<br/>
@@ -1292,7 +1294,7 @@ chunk of bytes
 Message hex dump no LRC: `03 c8 2d c4 01 F4 00...5f`
 
 
-## NBIOT ssl client key set
+## NB-IoT ssl client key set
 
 Parameter is used to set mqtt broker address.
 Available from software version = `1` for:<br/>
@@ -1324,7 +1326,7 @@ crc32 to check if client key write correct and set it in nbiot module
 Message hex dump no LRC: `03 05 2e bd 0b e3 38 10`
 
 
-## NBIOT device software update
+## NB-IoT device software update
 
 Parameter is used to start updating from URL
 Available from software version = `1` for:<br/>
@@ -1358,7 +1360,7 @@ If the update unsuccessful no indication will be.
 Message hex dump LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
 
 
-## NBIOT module firmware update
+## NB-IoT module firmware update
 
 Parameter is used to set firmware image file update URL
 Available from software version = `1` for:<br/>
@@ -1479,7 +1481,7 @@ is needed to store events in flash
 Message hex dump no LRC: `03 05 32 01 01 00`
 
 
-## NBIOT module info
+## NB-IoT module info
 
 The parameter is used to get nbiot module info
 Available from software version = `1` for:<br/>
@@ -1517,10 +1519,10 @@ Message hex dump no LRC: `03 05 33`
 ##### **module info**
 
 Product identification information including the identifier of the device type
-and the revision of software NBIOT module.
+and the revision of software NB-IoT module.
 
 
-## NBIOT bands
+## NB-IoT bands
 
 Parameter to set preferred NB-IoT bands to be searched for.
 Available from software version = `1` for:<br/>
@@ -1556,3 +1558,70 @@ Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that
 
 Message hex dump no LRC: `03 05 34 01 14`
 
+
+## NB-IoT APN
+
+Parameter to set the default APN.
+Available from software version = `1.5` for:<br/>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type     | Field                                   |
+| ------ | -------- | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `53`                   |
+| `1-64` | `string` | [APN](#apn)                             |
+
+#### **APN**
+A logical name that is used to select the GGSN or the external packet data 
+network. If the string size is `0` then the APN will be "network provided APN".
+After the parameter is set NB-IoT module will be reset. Option accepted immediately.
+
+### Examples
+
+#### set APN "NBIOT"
+
+| Field          | Value    | Hex            |
+| -------------- | -------- | -------------- |
+| command id     | `3`      | `0x03`         |
+| command size   | `7`      | `0x07`         |
+| parameter type | `53`     | `0x35`         |
+| size           | `5`      | `0x05`         |
+| apn            | `NBIOT`  | `0x4e42494f54` |
+
+Message hex dump with LRC: `03 07 35 05 4e 42 49 4f 54 3f`
+
+
+## NB-IoT LED Indication
+
+Parameter is used to enable LED indication for debugging.
+WARNING: LED indication significantly raises battery consumption.
+Available from software version = `1.5` for:<br/>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                           |
+| ---- | ------- | ----------------------------------------------- |
+| `1`  | `uint8` | parameter type = `54`                           |
+| `1`  | `uint8` | [enable led indication](#enable-led-indication) |
+
+#### **enable led indication**
+Enable or disable led indication. The device has an internal state machine that will be indicated by LED pattern.
+
+### Examples
+
+#### enable led indication
+
+| Field                 | Value    | Hex    |
+| --------------------- | -------- | ------ |
+| command id            | `3`      | `0x03` |
+| command size          | `2`      | `0x02` |
+| parameter type        | `54`     | `0x36` |
+| enable_led_indication | `1`      | `0x01` |
+
+Message hex dump LRC: `03 02 36 01 01`

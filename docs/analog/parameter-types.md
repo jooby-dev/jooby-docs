@@ -40,6 +40,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [Events config](#events-config)
 * [NBIOT module info](#NBIOT-module-info)
 * [NBIOT bands](#NBIOT-bands)
+* [NBIOT apn](#NBIOT-apn)
 
 ## Reporting data interval
 
@@ -1556,3 +1557,37 @@ Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that
 
 Message hex dump no LRC: `03 05 34 01 14`
 
+
+## NBIOT APN
+
+Parameter to set default APN.
+Available from software version = `1.5` for:<br/>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type     | Field                                   |
+| ----   | -------  | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `53`                   |
+| `1-64` | `string` | [apn](#apn)                             |
+
+#### **apn**
+A logical name that is used to select the GGSN or the external packet data 
+network. If the string size is 0 then the apn will be "network provided APN".
+After the parameter is set nbiot module will be reset. Option accepted immediately.
+
+### Examples
+
+#### set apn "NBIOT"
+
+| Field          | Value    | Hex            |
+| -------------- | -------- | -------------- |
+| command id     | `3`      | `0x03`         |
+| command size   | `7`      | `0x07`         |
+| parameter type | `53`     | `0x35`         |
+| size           | `5`      | `0x05`         |
+| apn            | `NBIOT`  | `0x4e42494f54` |
+
+Message hex dump with LRC: `03 07 35 05 4e 42 49 4f 54 3f`

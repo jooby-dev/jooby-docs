@@ -1560,7 +1560,7 @@ Message hex dump no LRC: `03 05 34 01 14`
 
 ## NBIOT APN
 
-Parameter to set default APN.
+Parameter to set the default APN.
 Available from software version = `1.5` for:<br/>
 hardware type - `24`
 
@@ -1569,13 +1569,13 @@ hardware type - `24`
 ### Format
 
 | Size   | Type     | Field                                   |
-| ----   | -------  | --------------------------------------- |
+| ------ | -------- | --------------------------------------- |
 | `1`    | `uint8`  | parameter type = `53`                   |
 | `1-64` | `string` | [apn](#apn)                             |
 
 #### **apn**
 A logical name that is used to select the GGSN or the external packet data 
-network. If the string size is 0 then the apn will be "network provided APN".
+network. If the string size is `0` then the APN will be "network provided APN".
 After the parameter is set nbiot module will be reset. Option accepted immediately.
 
 ### Examples

@@ -982,22 +982,32 @@ hardware type - `24`
 | ---- | ------  | --------------------------------------- |
 | `1`  | `uint8` | parameter type = `38`                   |
 | `1`  | `uint8` | [qos](#qos)                             |
+| `1`  | `uint8` | [receive_window_commands_count](#receive_window_commands_count)                             |
+| `1`  | `uint8` | [timeout](#timeout)                             |
 
 #### **QoS**
 QoS option for subscribing. Default value QOS=1.
+
+#### **receive window commands count**
+desctiption
+
+#### **timeout**
+desctiption
 
 ### Examples
 
 #### Set receive config to subscribe with QOS=1
 
-| Field          | Value    | Hex    |
-| -------------- | -------- | ------ |
-| command id     | `3`      | `0x03` |
-| command size   | `2`      | `0x02` |
-| parameter type | `38`     | `0x26` |
-| qos            | `1`      | `0x01` |
+| Field                         | Value    | Hex    |
+| ----------------------------- | -------- | ------ |
+| command id                    | `3`      | `0x03` |
+| command size                  | `2`      | `0x02` |
+| parameter type                | `38`     | `0x26` |
+| qos                           | `1`      | `0x01` |
+| receive_window_commands_count | `20`     | `0x14` |
+| timeout                       | `10`     | `0x0a` |
 
-Message hex dump LRC: `03 02 26 01 73`
+Message hex dump LRC: `03 04 26 01 14 0A 6B`
 
 
 ## MQTT data send config
@@ -1605,23 +1615,84 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                           |
-| ---- | ------- | ----------------------------------------------- |
-| `1`  | `uint8` | parameter type = `54`                           |
-| `1`  | `uint8` | [enable led indication](#enable-led-indication) |
+| Size | Type    | Field                                                                                 |
+| ---- | ------- | ------------------------------------------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `54`                                                                 |
+| `1`  | `uint8` | [enable led indication](#enable-led-indication)                                       |
+| `1`  | `uint8` | [enable NB-IoT network led](#enable-nbiot-network-led) (since software version `2.1`) |
 
 #### **enable led indication**
 Enable or disable led indication. The device has an internal state machine that will be indicated by LED pattern.
+
+#### **enable NB-IoT network led**
+Enable or disable NB-IoT network led indication.
+
+NB-IoT network indication description: The different durations of ON and OFF indicate different network status
+
+| Network Status      | ON duration   | OFF Duration |
+| ------------------- | ------------- | ------------ |
+| `Network Searching` | `64 ms`       | `800 ms`     |
+| `Connecting`        | `64 ms`       | `2000 ms`    |
 
 ### Examples
 
 #### enable led indication
 
-| Field                 | Value    | Hex    |
-| --------------------- | -------- | ------ |
-| command id            | `3`      | `0x03` |
-| command size          | `2`      | `0x02` |
-| parameter type        | `54`     | `0x36` |
-| enable_led_indication | `1`      | `0x01` |
+| Field                    | Value    | Hex    |
+| ------------------------ | -------- | ------ |
+| command id               | `3`      | `0x03` |
+| command size             | `3`      | `0x02` |
+| parameter type           | `54`     | `0x36` |
+| enable_led_indication    | `1`      | `0x01` |
+| enable-nbiot-network-led | `1`      | `0x01` |
 
-Message hex dump LRC: `03 02 36 01 01`
+Message hex dump LRC: `03 04 36 01 01 63`
+
+
+## NB-IoT SIM
+
+Parameter to set/get SIM card password. 
+SIM card unlock will be performed only in device insert/activation event.
+Device will try PIN only one time. If PIN fails device will indicate the problem by LED indication.
+!Warning: device will try PIN even if it is a last try. So it could be blocked and then you need to perform an unlock operation with a PUK code via an external device 
+[NB IoT LED indication](#nb-iot-led-indication) doesn't affect this.
+
+LED indication SIM card status in insert/activation event:
+
+| SIM ERROR TYPE      | OFF time  | ON time  |
+| ------------------- | --------- | -------- |
+| `Missing SIM`       | `3000ms`  | `100ms`  |
+| `Error operation`   | `500`     | `100ms`  |
+
+Available from software version = `2` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type    | Field                                   |
+| ----   | ------- | --------------------------------------- |
+| `1`    | `uint8` | parameter type = `55`                   |
+| `1`    | `uint8` | [is_set](#is_set)                       |
+| `4`    | `uint8` | [PIN](#pin)                             |
+
+#### **is_set**
+Set to use PIN for SIM card
+
+#### **PIN**
+ASCII format 4 bytes - "0000".
+
+### Examples
+
+#### set SIM card PIN to perform unlock
+
+| Field          | Value    | Hex          |
+| -------------- | -------- | ------------ |
+| command id     | `3`      | `0x03`       |
+| command size   | `6`      | `0x06`       |
+| parameter type | `55`     | `0x37`       |
+| is_set         | `1`      | `0x01`       |
+| PIN            | `0000`   | `0x30303030` |
+
+Message hex dump: `03 06 37 01 30 30 30 30 66`

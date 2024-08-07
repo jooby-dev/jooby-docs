@@ -1624,10 +1624,10 @@ Enable or disable NB-IoT network led indication.
 
 NB-IoT network indication description: The different durations of ON and OFF indicate different network status
 
-| Network Status      | ON duration   | OFF duration |
-| ------------------- | ------------- | ------------ |
-| `Network Searching` | `64 ms`       | `800 ms`     |
-| `Connecting`        | `64 ms`       | `2000 ms`    |
+| Network Status      | ON duration  | OFF duration |
+| ------------------- | ------------ | ------------ |
+| `Network Searching` | `64ms`       | `800ms`      |
+| `Connecting`        | `64ms`       | `2000ms`     |
 
 ### Examples
 

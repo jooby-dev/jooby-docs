@@ -1629,7 +1629,7 @@ Enable or disable NB-IoT network led indication.
 
 NB-IoT network indication description: The different durations of ON and OFF indicate different network status
 
-| Network Status      | ON duration   | OFF Duration |
+| Network Status      | ON duration   | OFF duration |
 | ------------------- | ------------- | ------------ |
 | `Network Searching` | `64 ms`       | `800 ms`     |
 | `Connecting`        | `64 ms`       | `2000 ms`    |
@@ -1659,10 +1659,10 @@ Device will try PIN only one time. If PIN fails device will indicate the problem
 
 LED indication SIM card status in insert/activation event:
 
-| SIM ERROR TYPE      | OFF time  | ON time  |
-| ------------------- | --------- | -------- |
-| `Missing SIM`       | `3000ms`  | `100ms`  |
-| `Error operation`   | `500`     | `100ms`  |
+| SIM ERROR TYPE      |  ON duration |  OFF duration | 
+| ------------------- | ------------ | ------------- |
+| `Missing SIM`       | `100ms`      | `3000ms`      |
+| `Error operation`   | `100ms`      | `500ms`       |
 
 Available from software version = `2` for:<br>
 hardware type - `24`
@@ -1671,17 +1671,17 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type    | Field                                   |
-| ----   | ------- | --------------------------------------- |
-| `1`    | `uint8` | parameter type = `55`                   |
-| `1`    | `uint8` | [is_set](#is_set)                       |
-| `4`    | `uint8` | [PIN](#pin)                             |
+| Size   | Type     | Field                                   |
+| ----   | -------- | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `55`                   |
+| `1`    | `uint8`  | [is_set](#is_set)                       |
+| `1`    | `uint16` | [PIN](#pin)                             |
 
 #### **is_set**
 Set to use PIN for SIM card
 
 #### **PIN**
-ASCII format 4 bytes - "0000".
+2 byte digital pin code. 0000 pin will be 0 in digital format
 
 ### Examples
 
@@ -1690,9 +1690,9 @@ ASCII format 4 bytes - "0000".
 | Field          | Value    | Hex          |
 | -------------- | -------- | ------------ |
 | command id     | `3`      | `0x03`       |
-| command size   | `6`      | `0x06`       |
+| command size   | `3`      | `0x04`       |
 | parameter type | `55`     | `0x37`       |
 | is_set         | `1`      | `0x01`       |
-| PIN            | `0000`   | `0x30303030` |
+| PIN            | `0000`   | `0x0000`     |
 
-Message hex dump: `03 06 37 01 30 30 30 30 66`
+Message hex dump: `03 04 37 01 00 00 64`

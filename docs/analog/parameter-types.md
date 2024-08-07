@@ -1457,16 +1457,12 @@ hardware type - `24`
 | ---- | ------- | --------------------------------------- |
 | `1`  | `uint8` | parameter type = `50`                   |
 | `1`  | `uint8` | [event id](#event-id)                   |
-| `1`  | `uint8` | [enable event](#enable-event)           |
 | `1`  | `uint8` | [send event](#send-event)               |
 | `1`  | `uint8` | [save event](#save-event)               |
 
 #### **event id**
 
 One of the [event types](./basics.md#device-events).
-
-#### **enable event**
-if need to check on the event
 
 #### **send event**
 is needed to send the event in a flash
@@ -1481,19 +1477,18 @@ is needed to store events in flash
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
-| command size   | `5`      | `0x05` |
+| command size   | `5`      | `0x03` |
 | parameter type | `50`     | `0x32` |
 | event_id       | `0`      | `0x00` |
-| enable_event   | `1`      | `0x01` |
 | send_event     | `1`      | `0x01` |
 | save_event     | `0`      | `0x01` |
 
-Message hex dump no LRC: `03 05 32 01 01 00`
+Message hex dump with LRC: `03 03 32 01 00 66`
 
 
 ## NB-IoT module info
 
-The parameter is used to get nbiot module info
+The parameter is used to get NB-IoT module info
 Available from software version = `1` for:<br/>
 hardware type - `24`
 

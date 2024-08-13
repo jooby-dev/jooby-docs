@@ -999,7 +999,7 @@ If value = 0, receive window will be set to 20sec.
 
 > [!CAUTION]
 > If timeout is set to < 5 sec, due to network issues some messages could be skipped.
-> The best is avoid small timeout for installed devices. 
+> It is better to avoid a small timeout for installed devices. 
 
 ### Examples
 

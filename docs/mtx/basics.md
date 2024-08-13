@@ -41,8 +41,8 @@ A set is a combination of the following displays:
 | `17`   | `EXPORTED_ACTIVE_ENERGY_T2`    | Active energy A-, T2 (2.8.2)                                |
 | `18`   | `EXPORTED_ACTIVE_ENERGY_T3`    | Active energy A-, T3 (2.8.3)                                |
 | `19`   | `EXPORTED_ACTIVE_ENERGY_T4`    | Active energy A-, T4 (2.8.4)                                |
-| `20`   | `POWER_COEFFICIENT_PHASE_A`    | Power ratio (cos φ) in channel A (33.7.0)                   |
-| `21`   | `POWER_COEFFICIENT_PHASE_B`    | Power ratio (cos φ) in channel B (53.7.0)                   |
+| `20`   | `POWER_FACTOR_PHASE_A`         | Power factor (cos φ) in channel A (33.7.0)                  |
+| `21`   | `POWER_FACTOR_PHASE_B`         | Power factor (cos φ) in channel B (53.7.0)                  |
 | `22`   | `BATTERY_VOLTAGE`              | Battery voltage (96.6.3)                                    |
 | `23`   | `POWER_THRESHOLD_T1`           | Relay cut-off power threshold according to tariff 1 (5.2.1) |
 | `24`   | `POWER_THRESHOLD_T2`           | Relay cut-off power threshold according to tariff 2 (5.2.2) |

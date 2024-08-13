@@ -994,7 +994,7 @@ Message count received from topic to force unsubscribe and go to standby. Defaul
 Set to `255` or `0` for unlimited count.
 
 #### **timeout**
-Timeout to close receive window. Default 20sec.
+Timeout to close receive window. Default is `20` seconds.
 If value = `0`, receive window will be set to `20` seconds.
 
 > [!CAUTION]
@@ -1037,7 +1037,7 @@ hardware type - `24`
 #### **qos**
 QoS is used to publish. In the case of QoS `0`. Data delivered in case if broker connection is established.
 in case qos1/2 Data delivered in case if message published to broker successful
-The default value is QOS1. Default value QOS=1
+The default value is QOS1. Default value is `1`.
 
 #### **retain**
 use the retain flag when publishing. Default value retain=0

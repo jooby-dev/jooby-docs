@@ -1647,18 +1647,24 @@ Message hex dump LRC: `03 04 36 01 01 63`
 
 ## NB-IoT SIM
 
-Parameter to set/get SIM card password. 
-SIM card unlock will be performed only in device insert/activation event.
-Device will try PIN only one time. If PIN fails device will indicate the problem by LED indication.
-!Warning: device will try PIN even if it is a last try. So it could be blocked and then you need to perform an unlock operation with a PUK code via an external device 
-[NB IoT LED indication](#nb-iot-led-indication) doesn't affect this.
+Parameter to set/get SIM card password to unlock SIM.
+SIM card unlock will be performed only in the device insert/activation event.
+Device will try PIN only one time. If PIN fails device will indicate the problem by LED indication. 
 
-LED indication SIM card status in insert/activation event:
+> [!WARNING]  
+> Device will try PIN even if it is a last try.
+> So it could be blocked and then you need to perform an unlock operation with a PUK code via an external device 
 
 | SIM ERROR TYPE      |  ON duration |  OFF duration | 
 | ------------------- | ------------ | ------------- |
 | `Missing SIM`       | `100ms`      | `3000ms`      |
 | `Error operation`   | `100ms`      | `500ms`       |
+
+#### **Missing SIM**
+If SIM card is not detected or module has a problem enabling radio interface.
+
+#### **Error operation**
+If SIM PIN is incorrect or SIM card wait for PUK code.
 
 Available from software version = `2` for:<br>
 hardware type - `24`
@@ -1670,14 +1676,14 @@ hardware type - `24`
 | Size   | Type     | Field                                   |
 | ----   | -------- | --------------------------------------- |
 | `1`    | `uint8`  | parameter type = `55`                   |
-| `1`    | `uint8`  | [is_set](#is_set)                       |
+| `1`    | `uint8`  | [enable](#enable)                       |
 | `1`    | `uint16` | [PIN](#pin)                             |
 
-#### **is_set**
+#### **enable**
 Set to use PIN for SIM card
 
 #### **PIN**
-2 byte digital pin code. 0000 pin will be 0 in digital format
+2-byte digital PIN code. 0000 pin will be 0 in digital format
 
 ### Examples
 
@@ -1688,7 +1694,7 @@ Set to use PIN for SIM card
 | command id     | `3`      | `0x03`       |
 | command size   | `3`      | `0x04`       |
 | parameter type | `55`     | `0x37`       |
-| is_set         | `1`      | `0x01`       |
+| enable         | `1`      | `0x01`       |
 | PIN            | `0000`   | `0x0000`     |
 
 Message hex dump: `03 04 37 01 00 00 64`

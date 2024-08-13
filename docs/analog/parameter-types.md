@@ -990,10 +990,16 @@ hardware type - `24`
 QoS option for subscribing. Default value QOS=1.
 
 #### **receive window commands count**
-desctiption
+Message count received from topic to force unsubscribe and go to standby. Default no limits.
+Set to 255 or 0 for unlimited count.
 
 #### **timeout**
-desctiption
+Timeout to close receive window. Default 20sec.
+If value = 0, receive window will be set to 20sec.
+
+> [!CAUTION]
+> If timeout is set to < 5 sec, due to network issues some messages could be skipped.
+> The best is avoid small timeout for installed devices. 
 
 ### Examples
 
@@ -1027,8 +1033,6 @@ hardware type - `24`
 | `1`  | `uint8` | [qos](#qos)                                                     |
 | `1`  | `uint8` | [retain](#retain)                                               |
 | `1`  | `uint8` | [newest send first](#newest-send-first)                         |
-| `1`  | `uint8` | [send count attempts](#send-count-attempts)                     |
-| `1`  | `uint8` | [send timeout between attempts](#send-timeout-between-attempts) |
 
 #### **qos**
 QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
@@ -1041,12 +1045,6 @@ use the retain flag when publishing. Default value retain=0
 #### **newest send first**
 if we have undelivered data first data will be sent from the newest to the oldest. Default value newest_send_first=1
 
-#### **send count attempts**
-count to try to resend if failure was. Default value send_count_attempts=1
-
-#### **send timeout between attempts**
-timeout minutes between read attempts. Default value send_timeout_between_attempts=5
-
 ### Examples
 
 #### Set QoS to 1 and send undelivered data from old to new
@@ -1054,15 +1052,13 @@ timeout minutes between read attempts. Default value send_timeout_between_attemp
 | Field                         | Value    | Hex    |
 | ----------------------------- | -------- | ------ |
 | command id                    | `3`      | `0x03` |
-| command size                  | `2`      | `0x02` |
+| command size                  | `4`      | `0x04` |
 | parameter type                | `39`     | `0x27` |
 | qos                           | `1`      | `0x01` |
 | retain                        | `0`      | `0x00` |
 | newest_send_first             | `0`      | `0x00` |
-| send_count_attempts           | `3`      | `0x03` |
-| send_timeout_between_attempts | `30`     | `0x1e` |
 
-Message hex dump LRC: `03 06 27 01 00 00 03 1e 6b`
+Message hex dump LRC: `03 04 27 01 00 00 74`
 
 
 ## NB-IoT SSL config
@@ -1602,7 +1598,7 @@ Message hex dump with LRC: `03 07 35 05 4e 42 49 4f 54 3f`
 
 ## NB-IoT LED Indication
 
-Parameter is used to enable LED indication for debugging.
+Parameter is used to enable debug LED indication.
 WARNING: LED indication significantly raises battery consumption.
 Available from software version = `1.5` for:<br/>
 hardware type - `24`

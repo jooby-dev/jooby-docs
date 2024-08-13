@@ -983,7 +983,7 @@ hardware type - `24`
 | ---- | ------  | --------------------------------------------------------------- |
 | `1`  | `uint8` | parameter type = `38`                                           |
 | `1`  | `uint8` | [qos](#qos)                                                     |
-| `1`  | `uint8` | [receive_window_commands_count](#receive_window_commands_count) |
+| `1`  | `uint8` | [receive window commands count](#receive_window_commands_count) |
 | `1`  | `uint8` | [timeout](#timeout)                                             |
 
 #### **QoS**

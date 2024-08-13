@@ -1474,13 +1474,13 @@ is needed to store events in flash
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
-| command size   | `5`      | `0x03` |
+| command size   | `4`      | `0x04` |
 | parameter type | `50`     | `0x32` |
 | event id       | `0`      | `0x00` |
 | send event     | `1`      | `0x01` |
-| save_event     | `0`      | `0x01` |
+| save event     | `0`      | `0x01` |
 
-Message hex dump with LRC: `03 03 32 01 00 66`
+Message hex dump with LRC: `03 04 32 00 01 00 61`
 
 
 ## NB-IoT module info

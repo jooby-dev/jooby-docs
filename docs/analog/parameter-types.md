@@ -863,7 +863,7 @@ No default value
 | password       | `password` | `0x0870617373776f7264` |
 | clean_session  | `0`        | `0x00`                 |
 
-Message hex dump LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 11`
+Message hex dump with LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 11`
 
 
 ## MQTT broker address
@@ -901,7 +901,7 @@ Integer type. The port of the server. Range: 1–65535.
 | host_name      | `s2.eu.hivemq.cloud`    | `0x1273322e65752e686976656d712e636c6f7564` |
 | port           | `8883`                  | `0x22B3`                                   |
 
-Message hex dump LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
+Message hex dump with LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
 
 
 ## MQTT ssl enable
@@ -933,7 +933,7 @@ Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediatel
 | parameter type  | `36`                    | `0x24` |
 | ssl_enable      | `1`                     | `0x01` |
 
-Message hex dump LRC: `03 04 24 01 77`
+Message hex dump with LRC: `03 04 24 01 77`
 
 
 ## MQTT topic prefix
@@ -966,7 +966,7 @@ where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without
 | parameter type  | `37`                    | `0x25`                   |
 | topic_prefix    | `/root/mac`             | `0x0a2f726f6f742f6d6163` |
 
-Message hex dump LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
+Message hex dump with LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
 
 
 ## MQTT data receive config
@@ -1014,7 +1014,7 @@ If value = `0`, receive window will be set to `20` seconds.
 | receive window commands count | `20`     | `0x14` |
 | timeout                       | `10`     | `0x0a` |
 
-Message hex dump LRC: `03 04 26 01 14 0A 6B`
+Message hex dump with LRC: `03 04 26 01 14 0A 6B`
 
 
 ## MQTT data send config
@@ -1058,7 +1058,7 @@ if we have undelivered data first data will be sent from the newest to the oldes
 | retain                        | `0`      | `0x00` |
 | newest_send_first             | `0`      | `0x00` |
 
-Message hex dump LRC: `03 04 27 01 00 00 74`
+Message hex dump with LRC: `03 04 27 01 00 00 74`
 
 
 ## NB-IoT SSL config
@@ -1108,7 +1108,7 @@ SSL version.
 | security_level | `1`      | `0x01` |
 | version        | `4`      | `0x04` |
 
-Message hex dump LRC: `03 03 28 01 04 78`
+Message hex dump with LRC: `03 03 28 01 04 78`
 
 
 ## NB-IoT ssl cacert write
@@ -1182,7 +1182,7 @@ crc32 of stored cacert to verify and if crc valid write to nbiot
 | parameter type | `42`         | `0x2a`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump LRC: `03 05 2a bd 0b e3 38 14`
+Message hex dump with LRC: `03 05 2a bd 0b e3 38 14`
 
 
 ## NB-IoT ssl client cert write
@@ -1256,7 +1256,7 @@ crc32 to check if client cert write correct and set it in nbiot module
 | parameter type | `44`         | `0x2c`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump LRC: `03 05 2c bd 0b e3 38 12`
+Message hex dump with LRC: `03 05 2c bd 0b e3 38 12`
 
 
 ## NB-IoT ssl client key write
@@ -1330,7 +1330,7 @@ crc32 to check if client key write correct and set it in nbiot module
 | parameter type | `46`         | `0x2e`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump no LRC: `03 05 2e bd 0b e3 38 10`
+Message hex dump with LRC: `03 05 2e bd 0b e3 38 10`
 
 
 ## NB-IoT device software update
@@ -1364,7 +1364,7 @@ If the update unsuccessful no indication will be.
 | parameter type  | `47`                    | `0x2f`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
+Message hex dump with LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
 
 
 ## NB-IoT module firmware update
@@ -1396,7 +1396,7 @@ module firmware image URL where the image is stored(special DFOTA image). Will u
 | parameter type  | `48`                    | `0x30`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump no LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 6d`
+Message hex dump with LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 6d`
 
 
 ## Reporting data config
@@ -1430,14 +1430,14 @@ how many data samples to send
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
-| command size   | `6`      | `0x07` |
+| command size   | `5`      | `0x05` |
 | parameter type | `49`     | `0x31` |
 | data_type      | `0`      | `0x00` |
 | hour           | `3`      | `0x03` |
 | minutes        | `0`      | `0x00` |
 | count_to_send  | `4`      | `0x04` |
 
-Message hex dump no LRC: `03 07 31 00 03 00 04`
+Message hex dump with LRC: `03 05 31 00 03 00 04 65`
 
 
 ## Events config
@@ -1503,11 +1503,11 @@ hardware type - `24`
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
-| command id     | `3`      | `0x03` |
+| command id     | `4`      | `0x04` |
 | command size   | `1`      | `0x01` |
 | parameter type | `51`     | `0x33` |
 
-Message hex dump no LRC: `03 05 33`
+Message hex dump with LRC: `04 01 33 63`
 
 ### Response:
 
@@ -1553,12 +1553,12 @@ Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
-| command size   | `5`      | `0x05` |
+| command size   | `3`      | `0x03` |
 | parameter type | `52`     | `0x34` |
 | count          | `1`      | `0x01` |
 | bands          | `20`     | `0x14` |
 
-Message hex dump no LRC: `03 05 34 01 14`
+Message hex dump with LRC: `03 03 34 01 14 74`
 
 
 ## NB-IoT APN
@@ -1638,7 +1638,7 @@ NB-IoT network indication description: The different durations of ON and OFF ind
 | enable_led_indication    | `1`      | `0x01` |
 | enable-nbiot-network-led | `1`      | `0x01` |
 
-Message hex dump LRC: `03 04 36 01 01 63`
+Message hex dump with LRC: `03 04 36 01 01 63`
 
 
 ## NB-IoT SIM
@@ -1693,4 +1693,4 @@ Set to use PIN for SIM card
 | enable         | `1`      | `0x01`       |
 | PIN            | `0000`   | `0x0000`     |
 
-Message hex dump: `03 04 37 01 00 00 64`
+Message hex dump with LRC: `03 04 37 01 00 00 64`

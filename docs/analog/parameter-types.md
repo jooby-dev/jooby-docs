@@ -1040,10 +1040,10 @@ in case qos1/2 Data delivered in case if message published to broker successful
 The default value is QOS1. Default value is `1`.
 
 #### **retain**
-use the retain flag when publishing. Default value retain=0
+use the retain flag when publishing (default value is `0`)
 
 #### **newest send first**
-if we have undelivered data first data will be sent from the newest to the oldest. Default value newest_send_first=1
+if we have undelivered data first data will be sent from the newest to the oldest (default value is `1`)
 
 ### Examples
 
@@ -1619,7 +1619,7 @@ Enable or disable led indication. The device has an internal state machine that 
 #### **enable NB-IoT network led**
 Enable or disable NB-IoT network led indication.
 
-NB-IoT network indication description: The different durations of ON and OFF indicate different network status
+NB-IoT network indication description: the different durations of ON and OFF indicate different network status.
 
 | Network Status      | ON duration  | OFF duration |
 | ------------------- | ------------ | ------------ |
@@ -1649,7 +1649,7 @@ Device will try PIN only one time. If PIN fails device will indicate the problem
 
 > [!WARNING]  
 > Device will try PIN even if it is a last try.
-> So it could be blocked and then you need to perform an unlock operation with a PUK code via an external device 
+> So it could be blocked and then you need to perform an unlock operation with a PUK code via an external device.
 
 | SIM ERROR TYPE      |  ON duration |  OFF duration | 
 | ------------------- | ------------ | ------------- |
@@ -1676,10 +1676,10 @@ hardware type - `24`
 | `1`    | `uint16` | [PIN](#pin)                             |
 
 #### **enable**
-Set to use PIN for SIM card
+set to use PIN for SIM card
 
 #### **PIN**
-`2`-byte digital PIN code. `0000` pin will be `0` in digital format
+`2`-byte digital PIN code (`0000` pin will be `0` in digital format)
 
 ### Examples
 

@@ -1035,9 +1035,9 @@ hardware type - `24`
 | `1`  | `uint8` | [newest send first](#newest-send-first)                         |
 
 #### **qos**
-QoS is used to publish. In the case of QoS `0`. Data delivered in case if broker connection is established.
-in case qos1/2 Data delivered in case if message published to broker successful
-The default value is QOS1. Default value is `1`.
+In the case of QoS `0`, data is delivered only if the broker connection is established.
+For QoS `1` or `2`, data is delivered when the message is successfully published to the broker.
+The default QoS value is `1`.
 
 #### **retain**
 use the retain flag when publishing (default value is `0`)

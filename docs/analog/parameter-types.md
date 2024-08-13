@@ -987,18 +987,18 @@ hardware type - `24`
 | `1`  | `uint8` | [timeout](#timeout)                                             |
 
 #### **QoS**
-QoS option for subscribing. Default value QOS=1.
+QoS option for subscribing. Default value is `1`.
 
 #### **receive window commands count**
 Message count received from topic to force unsubscribe and go to standby. Default no limits.
-Set to 255 or 0 for unlimited count.
+Set to `255` or `0` for unlimited count.
 
 #### **timeout**
 Timeout to close receive window. Default 20sec.
-If value = 0, receive window will be set to 20sec.
+If value = `0`, receive window will be set to `20` seconds.
 
 > [!CAUTION]
-> If timeout is set to < 5 sec, due to network issues some messages could be skipped.
+> If timeout is set to < `5` sec, due to network issues some messages could be skipped.
 > It is better to avoid a small timeout for installed devices. 
 
 ### Examples
@@ -1011,7 +1011,7 @@ If value = 0, receive window will be set to 20sec.
 | command size                  | `2`      | `0x02` |
 | parameter type                | `38`     | `0x26` |
 | qos                           | `1`      | `0x01` |
-| receive_window_commands_count | `20`     | `0x14` |
+| receive window commands count | `20`     | `0x14` |
 | timeout                       | `10`     | `0x0a` |
 
 Message hex dump LRC: `03 04 26 01 14 0A 6B`
@@ -1035,7 +1035,7 @@ hardware type - `24`
 | `1`  | `uint8` | [newest send first](#newest-send-first)                         |
 
 #### **qos**
-QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
+QoS is used to publish. In the case of QoS `0`. Data delivered in case if broker connection is established.
 in case qos1/2 Data delivered in case if message published to broker successful
 The default value is QOS1. Default value QOS=1
 
@@ -1476,8 +1476,8 @@ is needed to store events in flash
 | command id     | `3`      | `0x03` |
 | command size   | `5`      | `0x03` |
 | parameter type | `50`     | `0x32` |
-| event_id       | `0`      | `0x00` |
-| send_event     | `1`      | `0x01` |
+| event id       | `0`      | `0x00` |
+| send event     | `1`      | `0x01` |
 | save_event     | `0`      | `0x01` |
 
 Message hex dump with LRC: `03 03 32 01 00 66`
@@ -1679,7 +1679,7 @@ hardware type - `24`
 Set to use PIN for SIM card
 
 #### **PIN**
-2-byte digital PIN code. 0000 pin will be 0 in digital format
+`2`-byte digital PIN code. `0000` pin will be `0` in digital format
 
 ### Examples
 

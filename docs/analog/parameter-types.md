@@ -42,6 +42,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NB-IoT bands](#nb-iot-bands)
 * [NB-IoT APN](#nb-iot-apn)
 * [NB-IoT LED Indication](#nb-iot-led-indication)
+* [NB-IoT SIM](#nb-iot-sim)
 
 ## Reporting data interval
 

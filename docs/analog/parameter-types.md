@@ -979,12 +979,12 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                   |
-| ---- | ------  | --------------------------------------- |
-| `1`  | `uint8` | parameter type = `38`                   |
-| `1`  | `uint8` | [qos](#qos)                             |
-| `1`  | `uint8` | [receive_window_commands_count](#receive_window_commands_count)                             |
-| `1`  | `uint8` | [timeout](#timeout)                             |
+| Size | Type    | Field                                                           |
+| ---- | ------  | --------------------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `38`                                           |
+| `1`  | `uint8` | [qos](#qos)                                                     |
+| `1`  | `uint8` | [receive_window_commands_count](#receive_window_commands_count) |
+| `1`  | `uint8` | [timeout](#timeout)                                             |
 
 #### **QoS**
 QoS option for subscribing. Default value QOS=1.

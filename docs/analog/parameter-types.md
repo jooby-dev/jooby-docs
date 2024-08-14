@@ -42,6 +42,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NB-IoT bands](#nb-iot-bands)
 * [NB-IoT APN](#nb-iot-apn)
 * [NB-IoT LED Indication](#nb-iot-led-indication)
+* [NB-IoT SIM](#nb-iot-sim)
 
 ## Reporting data interval
 
@@ -862,7 +863,7 @@ No default value
 | password       | `password` | `0x0870617373776f7264` |
 | clean_session  | `0`        | `0x00`                 |
 
-Message hex dump LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 11`
+Message hex dump with LRC: `03 14 22 05 6c 6f 67 69 6e 08 70 61 73 73 77 6f 72 64 00 11`
 
 
 ## MQTT broker address
@@ -900,7 +901,7 @@ Integer type. The port of the server. Range: 1–65535.
 | host_name      | `s2.eu.hivemq.cloud`    | `0x1273322e65752e686976656d712e636c6f7564` |
 | port           | `8883`                  | `0x22B3`                                   |
 
-Message hex dump LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
+Message hex dump with LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
 
 
 ## MQTT ssl enable
@@ -932,7 +933,7 @@ Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediatel
 | parameter type  | `36`                    | `0x24` |
 | ssl_enable      | `1`                     | `0x01` |
 
-Message hex dump LRC: `03 04 24 01 77`
+Message hex dump with LRC: `03 04 24 01 77`
 
 
 ## MQTT topic prefix
@@ -965,7 +966,7 @@ where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without
 | parameter type  | `37`                    | `0x25`                   |
 | topic_prefix    | `/root/mac`             | `0x0a2f726f6f742f6d6163` |
 
-Message hex dump LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
+Message hex dump with LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
 
 
 ## MQTT data receive config
@@ -978,26 +979,42 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                   |
-| ---- | ------  | --------------------------------------- |
-| `1`  | `uint8` | parameter type = `38`                   |
-| `1`  | `uint8` | [qos](#qos)                             |
+| Size | Type    | Field                                                           |
+| ---- | ------  | --------------------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `38`                                           |
+| `1`  | `uint8` | [qos](#qos)                                                     |
+| `1`  | `uint8` | [receive window commands count](#receive_window_commands_count) |
+| `1`  | `uint8` | [timeout](#timeout)                                             |
 
 #### **QoS**
-QoS option for subscribing. Default value QOS=1.
+QoS option for subscribing. Default value is `1`.
+
+#### **receive window commands count**
+Message count received from topic to force unsubscribe and go to standby. Default no limits.
+Set to `255` or `0` for unlimited count.
+
+#### **timeout**
+Timeout to close receive window. Default is `20` seconds.
+If value = `0`, receive window will be set to `20` seconds.
+
+> [!CAUTION]
+> If timeout is set to < `5` sec, due to network issues some messages could be skipped.
+> It is better to avoid a small timeout for installed devices. 
 
 ### Examples
 
 #### Set receive config to subscribe with QOS=1
 
-| Field          | Value    | Hex    |
-| -------------- | -------- | ------ |
-| command id     | `3`      | `0x03` |
-| command size   | `2`      | `0x02` |
-| parameter type | `38`     | `0x26` |
-| qos            | `1`      | `0x01` |
+| Field                         | Value    | Hex    |
+| ----------------------------- | -------- | ------ |
+| command id                    | `3`      | `0x03` |
+| command size                  | `2`      | `0x02` |
+| parameter type                | `38`     | `0x26` |
+| qos                           | `1`      | `0x01` |
+| receive window commands count | `20`     | `0x14` |
+| timeout                       | `10`     | `0x0a` |
 
-Message hex dump LRC: `03 02 26 01 73`
+Message hex dump with LRC: `03 04 26 01 14 0A 6B`
 
 
 ## MQTT data send config
@@ -1016,25 +1033,17 @@ hardware type - `24`
 | `1`  | `uint8` | [qos](#qos)                                                     |
 | `1`  | `uint8` | [retain](#retain)                                               |
 | `1`  | `uint8` | [newest send first](#newest-send-first)                         |
-| `1`  | `uint8` | [send count attempts](#send-count-attempts)                     |
-| `1`  | `uint8` | [send timeout between attempts](#send-timeout-between-attempts) |
 
 #### **qos**
-QOS is used to publish. In the case of QoS 0. Data delivered in case if broker connection is established.
-in case qos1/2 Data delivered in case if message published to broker successful
-The default value is QOS1. Default value QOS=1
+In the case of QoS `0`, data is delivered only if the broker connection is established.
+For QoS `1` or `2`, data is delivered when the message is successfully published to the broker.
+The default QoS value is `1`.
 
 #### **retain**
-use the retain flag when publishing. Default value retain=0
+use the retain flag when publishing (default value is `0`)
 
 #### **newest send first**
-if we have undelivered data first data will be sent from the newest to the oldest. Default value newest_send_first=1
-
-#### **send count attempts**
-count to try to resend if failure was. Default value send_count_attempts=1
-
-#### **send timeout between attempts**
-timeout minutes between read attempts. Default value send_timeout_between_attempts=5
+if we have undelivered data first data will be sent from the newest to the oldest (default value is `1`)
 
 ### Examples
 
@@ -1043,15 +1052,13 @@ timeout minutes between read attempts. Default value send_timeout_between_attemp
 | Field                         | Value    | Hex    |
 | ----------------------------- | -------- | ------ |
 | command id                    | `3`      | `0x03` |
-| command size                  | `2`      | `0x02` |
+| command size                  | `4`      | `0x04` |
 | parameter type                | `39`     | `0x27` |
 | qos                           | `1`      | `0x01` |
 | retain                        | `0`      | `0x00` |
 | newest_send_first             | `0`      | `0x00` |
-| send_count_attempts           | `3`      | `0x03` |
-| send_timeout_between_attempts | `30`     | `0x1e` |
 
-Message hex dump LRC: `03 06 27 01 00 00 03 1e 6b`
+Message hex dump with LRC: `03 04 27 01 00 00 74`
 
 
 ## NB-IoT SSL config
@@ -1101,7 +1108,7 @@ SSL version.
 | security_level | `1`      | `0x01` |
 | version        | `4`      | `0x04` |
 
-Message hex dump LRC: `03 03 28 01 04 78`
+Message hex dump with LRC: `03 03 28 01 04 78`
 
 
 ## NB-IoT ssl cacert write
@@ -1175,7 +1182,7 @@ crc32 of stored cacert to verify and if crc valid write to nbiot
 | parameter type | `42`         | `0x2a`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump LRC: `03 05 2a bd 0b e3 38 14`
+Message hex dump with LRC: `03 05 2a bd 0b e3 38 14`
 
 
 ## NB-IoT ssl client cert write
@@ -1249,7 +1256,7 @@ crc32 to check if client cert write correct and set it in nbiot module
 | parameter type | `44`         | `0x2c`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump LRC: `03 05 2c bd 0b e3 38 12`
+Message hex dump with LRC: `03 05 2c bd 0b e3 38 12`
 
 
 ## NB-IoT ssl client key write
@@ -1323,7 +1330,7 @@ crc32 to check if client key write correct and set it in nbiot module
 | parameter type | `46`         | `0x2e`       |
 | crc32          | `3171672888` | `0xBD0BE338` |
 
-Message hex dump no LRC: `03 05 2e bd 0b e3 38 10`
+Message hex dump with LRC: `03 05 2e bd 0b e3 38 10`
 
 
 ## NB-IoT device software update
@@ -1357,7 +1364,7 @@ If the update unsuccessful no indication will be.
 | parameter type  | `47`                    | `0x2f`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
+Message hex dump with LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
 
 
 ## NB-IoT module firmware update
@@ -1389,7 +1396,7 @@ module firmware image URL where the image is stored(special DFOTA image). Will u
 | parameter type  | `48`                    | `0x30`                             |
 | topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
 
-Message hex dump no LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 6d`
+Message hex dump with LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 6d`
 
 
 ## Reporting data config
@@ -1423,14 +1430,14 @@ how many data samples to send
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
-| command size   | `6`      | `0x07` |
+| command size   | `5`      | `0x05` |
 | parameter type | `49`     | `0x31` |
 | data_type      | `0`      | `0x00` |
 | hour           | `3`      | `0x03` |
 | minutes        | `0`      | `0x00` |
 | count_to_send  | `4`      | `0x04` |
 
-Message hex dump no LRC: `03 07 31 00 03 00 04`
+Message hex dump with LRC: `03 05 31 00 03 00 04 65`
 
 
 ## Events config
@@ -1447,16 +1454,12 @@ hardware type - `24`
 | ---- | ------- | --------------------------------------- |
 | `1`  | `uint8` | parameter type = `50`                   |
 | `1`  | `uint8` | [event id](#event-id)                   |
-| `1`  | `uint8` | [enable event](#enable-event)           |
 | `1`  | `uint8` | [send event](#send-event)               |
 | `1`  | `uint8` | [save event](#save-event)               |
 
 #### **event id**
 
 One of the [event types](./basics.md#device-events).
-
-#### **enable event**
-if need to check on the event
 
 #### **send event**
 is needed to send the event in a flash
@@ -1471,19 +1474,18 @@ is needed to store events in flash
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
-| command size   | `5`      | `0x05` |
+| command size   | `4`      | `0x04` |
 | parameter type | `50`     | `0x32` |
-| event_id       | `0`      | `0x00` |
-| enable_event   | `1`      | `0x01` |
-| send_event     | `1`      | `0x01` |
-| save_event     | `0`      | `0x01` |
+| event id       | `0`      | `0x00` |
+| send event     | `1`      | `0x01` |
+| save event     | `0`      | `0x01` |
 
-Message hex dump no LRC: `03 05 32 01 01 00`
+Message hex dump with LRC: `03 04 32 00 01 00 61`
 
 
 ## NB-IoT module info
 
-The parameter is used to get nbiot module info
+The parameter is used to get NB-IoT module info
 Available from software version = `1` for:<br/>
 hardware type - `24`
 
@@ -1501,11 +1503,11 @@ hardware type - `24`
 
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
-| command id     | `3`      | `0x03` |
+| command id     | `4`      | `0x04` |
 | command size   | `1`      | `0x01` |
 | parameter type | `51`     | `0x33` |
 
-Message hex dump no LRC: `03 05 33`
+Message hex dump with LRC: `04 01 33 63`
 
 ### Response:
 
@@ -1551,12 +1553,12 @@ Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that
 | Field          | Value    | Hex    |
 | -------------- | -------- | ------ |
 | command id     | `3`      | `0x03` |
-| command size   | `5`      | `0x05` |
+| command size   | `3`      | `0x03` |
 | parameter type | `52`     | `0x34` |
 | count          | `1`      | `0x01` |
 | bands          | `20`     | `0x14` |
 
-Message hex dump no LRC: `03 05 34 01 14`
+Message hex dump with LRC: `03 03 34 01 14 74`
 
 
 ## NB-IoT APN
@@ -1596,7 +1598,7 @@ Message hex dump with LRC: `03 07 35 05 4e 42 49 4f 54 3f`
 
 ## NB-IoT LED Indication
 
-Parameter is used to enable LED indication for debugging.
+Parameter is used to enable debug LED indication.
 WARNING: LED indication significantly raises battery consumption.
 Available from software version = `1.5` for:<br/>
 hardware type - `24`
@@ -1605,23 +1607,90 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                           |
-| ---- | ------- | ----------------------------------------------- |
-| `1`  | `uint8` | parameter type = `54`                           |
-| `1`  | `uint8` | [enable led indication](#enable-led-indication) |
+| Size | Type    | Field                                                                                 |
+| ---- | ------- | ------------------------------------------------------------------------------------- |
+| `1`  | `uint8` | parameter type = `54`                                                                 |
+| `1`  | `uint8` | [enable led indication](#enable-led-indication)                                       |
+| `1`  | `uint8` | [enable NB-IoT network led](#enable-nbiot-network-led) (since software version `2.1`) |
 
 #### **enable led indication**
 Enable or disable led indication. The device has an internal state machine that will be indicated by LED pattern.
+
+#### **enable NB-IoT network led**
+Enable or disable NB-IoT network led indication.
+
+NB-IoT network indication description: the different durations of ON and OFF indicate different network status.
+
+| Network Status      | ON duration  | OFF duration |
+| ------------------- | ------------ | ------------ |
+| `Network Searching` | `64ms`       | `800ms`      |
+| `Connecting`        | `64ms`       | `2000ms`     |
 
 ### Examples
 
 #### enable led indication
 
-| Field                 | Value    | Hex    |
-| --------------------- | -------- | ------ |
-| command id            | `3`      | `0x03` |
-| command size          | `2`      | `0x02` |
-| parameter type        | `54`     | `0x36` |
-| enable_led_indication | `1`      | `0x01` |
+| Field                    | Value    | Hex    |
+| ------------------------ | -------- | ------ |
+| command id               | `3`      | `0x03` |
+| command size             | `3`      | `0x02` |
+| parameter type           | `54`     | `0x36` |
+| enable_led_indication    | `1`      | `0x01` |
+| enable-nbiot-network-led | `1`      | `0x01` |
 
-Message hex dump LRC: `03 02 36 01 01`
+Message hex dump with LRC: `03 04 36 01 01 63`
+
+
+## NB-IoT SIM
+
+Parameter to set/get SIM card password to unlock SIM.
+SIM card unlock will be performed only in the device insert/activation event.
+Device will try PIN only one time. If PIN fails device will indicate the problem by LED indication. 
+
+> [!WARNING]  
+> Device will try PIN even if it is a last try.
+> So it could be blocked and then you need to perform an unlock operation with a PUK code via an external device.
+
+| SIM ERROR TYPE      |  ON duration |  OFF duration | 
+| ------------------- | ------------ | ------------- |
+| `Missing SIM`       | `100ms`      | `3000ms`      |
+| `Error operation`   | `100ms`      | `500ms`       |
+
+#### **Missing SIM**
+If SIM card is not detected or module has a problem enabling radio interface.
+
+#### **Error operation**
+If SIM PIN is incorrect or SIM card wait for PUK code.
+
+Available from software version = `2` for:<br>
+hardware type - `24`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size   | Type     | Field                                   |
+| ----   | -------- | --------------------------------------- |
+| `1`    | `uint8`  | parameter type = `55`                   |
+| `1`    | `uint8`  | [enable](#enable)                       |
+| `1`    | `uint16` | [PIN](#pin)                             |
+
+#### **enable**
+set to use PIN for SIM card
+
+#### **PIN**
+`2`-byte digital PIN code (`0000` pin will be `0` in digital format)
+
+### Examples
+
+#### set SIM card PIN to perform unlock
+
+| Field          | Value    | Hex          |
+| -------------- | -------- | ------------ |
+| command id     | `3`      | `0x03`       |
+| command size   | `3`      | `0x04`       |
+| parameter type | `55`     | `0x37`       |
+| enable         | `1`      | `0x01`       |
+| PIN            | `0000`   | `0x0000`     |
+
+Message hex dump with LRC: `03 04 37 01 00 00 64`

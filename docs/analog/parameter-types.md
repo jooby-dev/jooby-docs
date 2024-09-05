@@ -64,7 +64,7 @@ Obsolete parameter. This field is no longer used.
 
 This parameter defines the periodicity of sending data from the sensor.
 <br/>
-It is a `1`-byte value with a resolution of `600` seconds plus a pseudo-random value of up to `511` seconds.
+It is a `1`-byte value with a resolution of `600` seconds plus a pseudo-random value of up to `1020` seconds.
 If the parameter is not set, the data transmission period will be `13320` seconds plus a pseudo-random value of up to `2551` seconds.
 
 ### Examples
@@ -826,13 +826,13 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type     | Field                                   |
-| -----  | ------   | --------------------------------------- |
-| `1`    | `uint8`  | parameter type = `34`                   |
-| `1-64` | `string` | [client id](#client-id)                 |
-| `1-64` | `string` | [username](#username)                   |
-| `1-64` | `string` | [password](#password)                   |
-| `1`    | `uint8`  | [clean session](#clean-session)         |
+| Size   | Type     | Field                           |
+| ------ | -------- | ------------------------------- |
+| `1`    | `uint8`  | parameter type = `34`           |
+| `1-64` | `string` | [client id](#client-id)         |
+| `1-64` | `string` | [username](#username)           |
+| `1-64` | `string` | [password](#password)           |
+| `1`    | `uint8`  | [clean session](#clean-session) |
 
 #### **client id**
 unique identifier that distinguishes each MQTT client connecting to a broker and enables the broker to keep track of the client’s current state.
@@ -854,7 +854,7 @@ No default value
 #### set clear session
 
 | Field          | Value      | Hex                    |
-| -------------- | --------   | ------                 |
+| -------------- | ---------- | ---------------------- |
 | command id     | `3`        | `0x03`                 |
 | command size   | `20`       | `0x14`                 |
 | parameter type | `34`       | `0x22`                 |
@@ -876,11 +876,11 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type     | Field                                   |
-| ------ | ------   | --------------------------------------- |
-| `1`    | `uint8`  | parameter type = `35`                   |
-| `1-64` | `string` | [host name](#host-name)                 |
-| `2`    | `uint8`  | [port](#port)                           |
+| Size   | Type     | Field                   |
+| ------ | -------- | ----------------------- |
+| `1`    | `uint8`  | parameter type = `35`   |
+| `1-64` | `string` | [host name](#host-name) |
+| `2`    | `uint8`  | [port](#port)           |
 
 #### **host name**
 The address of the server. It can be an IP address or a domain name. No default value
@@ -893,13 +893,13 @@ Integer type. The port of the server. Range: 1–65535.
 
 #### Connect to hivemq broker
 
-| Field          | Value                   | Hex                                        |
-| -------------- | --------                | ------                                     |
-| command id     | `3`                     | `0x03`                                     |
-| command size   | `23`                    | `0x17`                                     |
-| parameter type | `35`                    | `0x23`                                     |
-| host_name      | `s2.eu.hivemq.cloud`    | `0x1273322e65752e686976656d712e636c6f7564` |
-| port           | `8883`                  | `0x22B3`                                   |
+| Field          | Value                | Hex                                        |
+| -------------- | -------------------- | ------------------------------------------ |
+| command id     | `3`                  | `0x03`                                     |
+| command size   | `23`                 | `0x17`                                     |
+| parameter type | `35`                 | `0x23`                                     |
+| host_name      | `s2.eu.hivemq.cloud` | `0x1273322e65752e686976656d712e636c6f7564` |
+| port           | `8883`               | `0x22B3`                                   |
 
 Message hex dump with LRC: `03 17 23 12 73 32 2e 65 75 2e 68 69 76 65 6d 71 2e 63 6c 6f 75 64 70`
 
@@ -914,10 +914,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type         | Field                                   |
-| ---- | ------       | --------------------------------------- |
-| `1`  | `uint8`      | parameter type = `36`                   |
-| `1`  | `enable`     | [enable](#ssl-enable)                   |
+| Size | Type      | Field                 |
+| ---- | --------- | --------------------- |
+| `1`  | `uint8`   | parameter type = `36` |
+| `1`  | `boolean` | [enable](#ssl-enable) |
 
 #### **ssl enable**
 Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediately for next connection without device reset. Default value 1
@@ -926,12 +926,12 @@ Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediatel
 
 #### Use SSL/TLS TCP secure connection
 
-| Field           | Value                   | Hex    |
-| --------------  | --------                | ------ |
-| command id      | `3`                     | `0x03` |
-| command size    | `4`                     | `0x04` |
-| parameter type  | `36`                    | `0x24` |
-| ssl_enable      | `1`                     | `0x01` |
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `4`   | `0x04` |
+| parameter type | `36`  | `0x24` |
+| ssl_enable     | `1`   | `0x01` |
 
 Message hex dump with LRC: `03 04 24 01 77`
 
@@ -946,10 +946,10 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type            | Field                                   |
-| ----   | ------          | --------------------------------------- |
-| `1`    | `uint8`         | parameter type = `37`                   |
-| `1-64` | `string`        | [topic prefix](#topic-prefix)           |
+| Size   | Type     | Field                         |
+| ------ | -------- | ----------------------------- |
+| `1`    | `uint8`  | parameter type = `37`         |
+| `1-64` | `string` | [topic prefix](#topic-prefix) |
 
 #### **topic prefix**
 topic prefix that will be used to make topic to subscribe topic_prefix/elster-<short_mac>/down and publish topic_prefix/elster-<short_mac>/up,
@@ -959,12 +959,12 @@ where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without
 
 #### set topic prefix "/root/mac"
 
-| Field           | Value                   | Hex                      |
-| --------------  | --------                | ------                   |
-| command id      | `3`                     | `0x03`                   |
-| command size    | `12`                    | `0x0c`                   |
-| parameter type  | `37`                    | `0x25`                   |
-| topic_prefix    | `/root/mac`             | `0x0a2f726f6f742f6d6163` |
+| Field          | Value       | Hex                      |
+| -------------- | ----------- | ------------------------ |
+| command id     | `3`         | `0x03`                   |
+| command size   | `12`        | `0x0c`                   |
+| parameter type | `37`        | `0x25`                   |
+| topic_prefix   | `/root/mac` | `0x0a2f726f6f742f6d6163` |
 
 Message hex dump with LRC: `03 0c 25 0a 2f 72 6f 6f 74 2f 6d 61 63 1c`
 
@@ -980,7 +980,7 @@ hardware type - `24`
 ### Format
 
 | Size | Type    | Field                                                           |
-| ---- | ------  | --------------------------------------------------------------- |
+| ---- | ------- | --------------------------------------------------------------- |
 | `1`  | `uint8` | parameter type = `38`                                           |
 | `1`  | `uint8` | [qos](#qos)                                                     |
 | `1`  | `uint8` | [receive window commands count](#receive_window_commands_count) |
@@ -999,20 +999,20 @@ If value = `0`, receive window will be set to `20` seconds.
 
 > [!CAUTION]
 > If timeout is set to < `5` sec, due to network issues some messages could be skipped.
-> It is better to avoid a small timeout for installed devices. 
+> It is better to avoid a small timeout for installed devices.
 
 ### Examples
 
 #### Set receive config to subscribe with QOS=1
 
-| Field                         | Value    | Hex    |
-| ----------------------------- | -------- | ------ |
-| command id                    | `3`      | `0x03` |
-| command size                  | `2`      | `0x02` |
-| parameter type                | `38`     | `0x26` |
-| qos                           | `1`      | `0x01` |
-| receive window commands count | `20`     | `0x14` |
-| timeout                       | `10`     | `0x0a` |
+| Field                         | Value | Hex    |
+| ----------------------------- | ----- | ------ |
+| command id                    | `3`   | `0x03` |
+| command size                  | `2`   | `0x02` |
+| parameter type                | `38`  | `0x26` |
+| qos                           | `1`   | `0x01` |
+| receive window commands count | `20`  | `0x14` |
+| timeout                       | `10`  | `0x0a` |
 
 Message hex dump with LRC: `03 04 26 01 14 0A 6B`
 
@@ -1027,12 +1027,12 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                                           |
-| ---- | ------- | --------------------------------------------------------------- |
-| `1`  | `uint8` | parameter type = `39`                                           |
-| `1`  | `uint8` | [qos](#qos)                                                     |
-| `1`  | `uint8` | [retain](#retain)                                               |
-| `1`  | `uint8` | [newest send first](#newest-send-first)                         |
+| Size | Type    | Field                                   |
+| ---- | ------- | --------------------------------------- |
+| `1`  | `uint8` | parameter type = `39`                   |
+| `1`  | `uint8` | [qos](#qos)                             |
+| `1`  | `uint8` | [retain](#retain)                       |
+| `1`  | `uint8` | [newest send first](#newest-send-first) |
 
 #### **qos**
 In the case of QoS `0`, data is delivered only if the broker connection is established.
@@ -1049,14 +1049,14 @@ if we have undelivered data first data will be sent from the newest to the oldes
 
 #### Set QoS to 1 and send undelivered data from old to new
 
-| Field                         | Value    | Hex    |
-| ----------------------------- | -------- | ------ |
-| command id                    | `3`      | `0x03` |
-| command size                  | `4`      | `0x04` |
-| parameter type                | `39`     | `0x27` |
-| qos                           | `1`      | `0x01` |
-| retain                        | `0`      | `0x00` |
-| newest_send_first             | `0`      | `0x00` |
+| Field             | Value | Hex    |
+| ----------------- | ----- | ------ |
+| command id        | `3`   | `0x03` |
+| command size      | `4`   | `0x04` |
+| parameter type    | `39`  | `0x27` |
+| qos               | `1`   | `0x01` |
+| retain            | `0`   | `0x00` |
+| newest_send_first | `0`   | `0x00` |
 
 Message hex dump with LRC: `03 04 27 01 00 00 74`
 
@@ -1072,7 +1072,7 @@ hardware type - `24`
 ### Format
 
 | Size | Type    | Field                             |
-| ---- | ------  | --------------------------------- |
+| ---- | ------- | --------------------------------- |
 | `1`  | `uint8` | parameter type = `40`             |
 | `1`  | `uint8` | [security level](#security-level) |
 | `1`  | `uint8` | [version](#version)               |
@@ -1089,24 +1089,24 @@ The authentication mode.
 #### **version**
 SSL version.
 
-| Value | Description                                                                                             |
-| ----- | ------------------------------------------------------------------------------------------------------- |
-| `1`   | TLS 1.0                                                                                                 |
-| `2`   | TLS 1.1                                                                                                 |
-| `3`   | TLS 1.2                                                                                                 |
-| `4`   | All protocols are supported, the specific protocol version used needs to be negotiated with the server  |
+| Value | Description                                                                                            |
+| ----- | ------------------------------------------------------------------------------------------------------ |
+| `1`   | TLS 1.0                                                                                                |
+| `2`   | TLS 1.1                                                                                                |
+| `3`   | TLS 1.2                                                                                                |
+| `4`   | All protocols are supported, the specific protocol version used needs to be negotiated with the server |
 
 ### Examples
 
 #### set SSL config to perform server conversation and all protocol
 
-| Field          | Value    | Hex    |
-| ---------------| -------- | ------ |
-| command id     | `3`      | `0x03` |
-| command size   | `3`      | `0x02` |
-| parameter type | `40`     | `0x28` |
-| security_level | `1`      | `0x01` |
-| version        | `4`      | `0x04` |
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `3`   | `0x02` |
+| parameter type | `40`  | `0x28` |
+| security_level | `1`   | `0x01` |
+| version        | `4`   | `0x04` |
 
 Message hex dump with LRC: `03 03 28 01 04 78`
 
@@ -1121,12 +1121,12 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type    | Field                       |
-| ----   | ------  | --------------------------- |
-|  1     | `uint8` | parameter type = `41`       |
-|  2     | `uint8` | [size](#size)               |
-|  2     | `uint8` | [position](#position)       |
-|  0...n | `uint8` | [chunk](#chunk)             |
+| Size  | Type    | Field                 |
+| ----- | ------- | --------------------- |
+| 1     | `uint8` | parameter type = `41` |
+| 2     | `uint8` | [size](#size)         |
+| 2     | `uint8` | [position](#position) |
+| 0...n | `uint8` | [chunk](#chunk)       |
 
 #### **size**
 chunk size
@@ -1142,7 +1142,7 @@ chunk of bytes
 #### Write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
-| ---------------| -------- | ------     |
+| -------------- | -------- | ---------- |
 | command id     | `3`      | `0x03`     |
 | command size   | `200`    | `0xc8`     |
 | parameter type | `41`     | `0x29`     |
@@ -1163,10 +1163,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                       |
-| ---- | ------  | --------------------------- |
-| `1`  | `uint8` | parameter type = `42`       |
-| `4`  | `uint8` | [crc32](#crc32)             |
+| Size | Type    | Field                 |
+| ---- | ------- | --------------------- |
+| `1`  | `uint8` | parameter type = `42` |
+| `4`  | `uint8` | [crc32](#crc32)       |
 
 #### **crc32**
 crc32 of stored cacert to verify and if crc valid write to nbiot
@@ -1176,7 +1176,7 @@ crc32 of stored cacert to verify and if crc valid write to nbiot
 #### Write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
-| ---------------| --------     | ------       |
+| -------------- | ------------ | ------------ |
 | command id     | `3`          | `0x03`       |
 | command size   | `5`          | `0x05`       |
 | parameter type | `42`         | `0x2a`       |
@@ -1195,12 +1195,12 @@ hardware type - `24`
 
 ### Format
 
-| Size    | Type    | Field                       |
-| ----    | ------  | --------------------------- |
-| `1`     | `uint8` | parameter type = `43`       |
-| `2`     | `uint8` | [size](#size)               |
-| `2`     | `uint8` | [position](#position)       |
-| `0...n` | `uint8` | [chunk](#chunk)             |
+| Size    | Type    | Field                 |
+| ------- | ------- | --------------------- |
+| `1`     | `uint8` | parameter type = `43` |
+| `2`     | `uint8` | [size](#size)         |
+| `2`     | `uint8` | [position](#position) |
+| `0...n` | `uint8` | [chunk](#chunk)       |
 
 #### **size**
 chunk size
@@ -1216,7 +1216,7 @@ chunk of bytes
 #### Write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
-| ---------------| -------- | ------     |
+| -------------- | -------- | ---------- |
 | command id     | `3`      | `0x03`     |
 | command size   | `200`    | `0xc8`     |
 | parameter type | `43`     | `0x2b`     |
@@ -1237,10 +1237,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type   | Field                       |
-| ---- | ------ | --------------------------- |
-| `1`  | `uint8` | parameter type = `44`       |
-| `4`  | `uint8` | [crc32](#crc32)             |
+| Size | Type    | Field                 |
+| ---- | ------- | --------------------- |
+| `1`  | `uint8` | parameter type = `44` |
+| `4`  | `uint8` | [crc32](#crc32)       |
 
 #### **crc32**
 crc32 to check if client cert write correct and set it in nbiot module
@@ -1250,7 +1250,7 @@ crc32 to check if client cert write correct and set it in nbiot module
 #### Write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
-| ---------------| --------     | ------       |
+| -------------- | ------------ | ------------ |
 | command id     | `3`          | `0x03`       |
 | command size   | `5`          | `0x05`       |
 | parameter type | `44`         | `0x2c`       |
@@ -1269,12 +1269,12 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type    | Field                       |
-| ----   | ------  | --------------------------- |
-| `1`    | `uint8` | parameter type = `45`       |
-| `2`    | `uint8` | [size](#size)               |
-| `2`    | `uint8` | [position](#position)       |
-| `0..n` | `uint8` | [chunk](#chunk)             |
+| Size   | Type    | Field                 |
+| ------ | ------- | --------------------- |
+| `1`    | `uint8` | parameter type = `45` |
+| `2`    | `uint8` | [size](#size)         |
+| `2`    | `uint8` | [position](#position) |
+| `0..n` | `uint8` | [chunk](#chunk)       |
 
 #### **size**
 chunk size
@@ -1290,7 +1290,7 @@ chunk of bytes
 #### Write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
-| ---------------| -------- | ------     |
+| -------------- | -------- | ---------- |
 | command id     | `3`      | `0x03`     |
 | command size   | `200`    | `0xc8`     |
 | parameter type | `45`     | `0x2d`     |
@@ -1311,10 +1311,10 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                       |
-| ---- | ------  | --------------------------- |
-| `1`  | `uint8` | parameter type = `46`       |
-| `4`  | `uint8` | [crc32](#crc32)             |
+| Size | Type    | Field                 |
+| ---- | ------- | --------------------- |
+| `1`  | `uint8` | parameter type = `46` |
+| `4`  | `uint8` | [crc32](#crc32)       |
 
 #### **crc32**
 crc32 to check if client key write correct and set it in nbiot module
@@ -1324,7 +1324,7 @@ crc32 to check if client key write correct and set it in nbiot module
 #### Write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
-| ---------------| --------     | ------       |
+| -------------- | ------------ | ------------ |
 | command id     | `3`          | `0x03`       |
 | command size   | `5`          | `0x05`       |
 | parameter type | `46`         | `0x2e`       |
@@ -1343,10 +1343,10 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type            | Field                                     |
-| ----   | ------          | ----------------------------------------- |
-| `1`    | `uint8`         | parameter type = `47`                     |
-| `1-64` | `string`        | [software image url](#software-image-url) |
+| Size   | Type     | Field                                     |
+| ------ | -------- | ----------------------------------------- |
+| `1`    | `uint8`  | parameter type = `47`                     |
+| `1-64` | `string` | [software image url](#software-image-url) |
 
 #### **software image url**
 software image URL where the image is stored. Will use nbiot to download the image and start the update.
@@ -1357,12 +1357,12 @@ If the update unsuccessful no indication will be.
 
 #### update device on imagefile url
 
-| Field           | Value                   | Hex                                |
-| --------------  | --------                | --------------------------------   |
-| command id      | `3`                     | `0x03`                             |
-| command size    | `16`                    | `0x10`                             |
-| parameter type  | `47`                    | `0x2f`                             |
-| topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
+| Field          | Value            | Hex                                |
+| -------------- | ---------------- | ---------------------------------- |
+| command id     | `3`              | `0x03`                             |
+| command size   | `16`             | `0x10`                             |
+| parameter type | `47`             | `0x2f`                             |
+| topic_prefix   | `test/image.bin` | `0x0e746573742f696d6167652e62696e` |
 
 Message hex dump with LRC: `03 10 2f 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 72`
 
@@ -1377,10 +1377,10 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type            | Field                                                   |
-| ----   | ------          | ---------------------------------------                 |
-| `1`    | `uint8`         | parameter type = `48`                                   |
-| `1-64` | `string`        | [module firmware image url](#module-firmware-image-url) |
+| Size   | Type     | Field                                                   |
+| ------ | -------- | ------------------------------------------------------- |
+| `1`    | `uint8`  | parameter type = `48`                                   |
+| `1-64` | `string` | [module firmware image url](#module-firmware-image-url) |
 
 #### **module firmware image url**
 module firmware image URL where the image is stored(special DFOTA image). Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
@@ -1389,12 +1389,12 @@ module firmware image URL where the image is stored(special DFOTA image). Will u
 
 #### set nbiot module firmware image url
 
-| Field           | Value                   | Hex                                |
-| --------------  | --------                | --------------------------------   |
-| command id      | `3`                     | `0x03`                             |
-| command size    | `16`                    | `0x10`                             |
-| parameter type  | `48`                    | `0x30`                             |
-| topic_prefix    | `test/image.bin`        | `0x0e746573742f696d6167652e62696e` |
+| Field          | Value            | Hex                                |
+| -------------- | ---------------- | ---------------------------------- |
+| command id     | `3`              | `0x03`                             |
+| command size   | `16`             | `0x10`                             |
+| parameter type | `48`             | `0x30`                             |
+| topic_prefix   | `test/image.bin` | `0x0e746573742f696d6167652e62696e` |
 
 Message hex dump with LRC: `03 10 30 0e 74 65 73 74 2f 69 6d 61 67 65 2e 62 69 6e 6d`
 
@@ -1409,13 +1409,13 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                   |
-| ---- | ------- | --------------------------------------- |
-| `1`  | `uint8` | parameter type = `49`                   |
-| `1`  | `uint8` | [data type](#data-type)                 |
-| `1`  | `uint8` | [hour](#minutes-hour)                   |
-| `1`  | `uint8` | [minutes](#minutes-hour)                |
-| `1`  | `uint8` | [count to send](#count-to-send)         |
+| Size | Type    | Field                           |
+| ---- | ------- | ------------------------------- |
+| `1`  | `uint8` | parameter type = `49`           |
+| `1`  | `uint8` | [data type](#data-type)         |
+| `1`  | `uint8` | [hour](#minutes-hour)           |
+| `1`  | `uint8` | [minutes](#minutes-hour)        |
+| `1`  | `uint8` | [count to send](#count-to-send) |
 
 #### **minutes** **hour**
 start time from sending reporting data
@@ -1427,15 +1427,15 @@ how many data samples to send
 
 #### set hour data receive config to start sending data from 03:00 with 4 records
 
-| Field          | Value    | Hex    |
-| -------------- | -------- | ------ |
-| command id     | `3`      | `0x03` |
-| command size   | `5`      | `0x05` |
-| parameter type | `49`     | `0x31` |
-| data_type      | `0`      | `0x00` |
-| hour           | `3`      | `0x03` |
-| minutes        | `0`      | `0x00` |
-| count_to_send  | `4`      | `0x04` |
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `5`   | `0x05` |
+| parameter type | `49`  | `0x31` |
+| data_type      | `0`   | `0x00` |
+| hour           | `3`   | `0x03` |
+| minutes        | `0`   | `0x00` |
+| count_to_send  | `4`   | `0x04` |
 
 Message hex dump with LRC: `03 05 31 00 03 00 04 65`
 
@@ -1450,12 +1450,12 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                   |
-| ---- | ------- | --------------------------------------- |
-| `1`  | `uint8` | parameter type = `50`                   |
-| `1`  | `uint8` | [event id](#event-id)                   |
-| `1`  | `uint8` | [send event](#send-event)               |
-| `1`  | `uint8` | [save event](#save-event)               |
+| Size | Type    | Field                     |
+| ---- | ------- | ------------------------- |
+| `1`  | `uint8` | parameter type = `50`     |
+| `1`  | `uint8` | [event id](#event-id)     |
+| `1`  | `uint8` | [send event](#send-event) |
+| `1`  | `uint8` | [save event](#save-event) |
 
 #### **event id**
 
@@ -1471,14 +1471,14 @@ is needed to store events in flash
 
 #### config event=0 to enable it and send but not to send
 
-| Field          | Value    | Hex    |
-| -------------- | -------- | ------ |
-| command id     | `3`      | `0x03` |
-| command size   | `4`      | `0x04` |
-| parameter type | `50`     | `0x32` |
-| event id       | `0`      | `0x00` |
-| send event     | `1`      | `0x01` |
-| save event     | `0`      | `0x01` |
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `4`   | `0x04` |
+| parameter type | `50`  | `0x32` |
+| event id       | `0`   | `0x00` |
+| send event     | `1`   | `0x01` |
+| save event     | `0`   | `0x01` |
 
 Message hex dump with LRC: `03 04 32 00 01 00 61`
 
@@ -1493,19 +1493,19 @@ hardware type - `24`
 
 ### Format
 
-| Size | Type    | Field                                   |
-| ---- | ------- | --------------------------------------- |
-| `1`  | `uint8` | parameter type = `51`                   |
+| Size | Type    | Field                 |
+| ---- | ------- | --------------------- |
+| `1`  | `uint8` | parameter type = `51` |
 
 ### Examples
 
 #### get module info
 
-| Field          | Value    | Hex    |
-| -------------- | -------- | ------ |
-| command id     | `4`      | `0x04` |
-| command size   | `1`      | `0x01` |
-| parameter type | `51`     | `0x33` |
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `4`   | `0x04` |
+| command size   | `1`   | `0x01` |
+| parameter type | `51`  | `0x33` |
 
 Message hex dump with LRC: `04 01 33 63`
 
@@ -1513,10 +1513,10 @@ Message hex dump with LRC: `04 01 33 63`
 
 #### Format
 
-| Size   | Type     | Field                                   |
-| ----   | ------   | --------------------------------------- |
-| `1`    | `uint8`  | parameter type = `51`                   |
-| `1-64` | `string` | [module info](#module-info)             |
+| Size   | Type     | Field                       |
+| ------ | -------- | --------------------------- |
+| `1`    | `uint8`  | parameter type = `51`       |
+| `1-64` | `string` | [module info](#module-info) |
 
 ##### **module info**
 
@@ -1534,11 +1534,11 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type    | Field                                   |
-| ----   | ------- | --------------------------------------- |
-| `1`    | `uint8` | parameter type = `52`                   |
-| `1`    | `uint8` | [count](#count)                         |
-| `0-17` | `uint8` | [bands](#bands)                         |
+| Size   | Type    | Field                 |
+| ------ | ------- | --------------------- |
+| `1`    | `uint8` | parameter type = `52` |
+| `1`    | `uint8` | [count](#count)       |
+| `0-17` | `uint8` | [bands](#bands)       |
 
 #### **count**
 band count to set
@@ -1550,13 +1550,13 @@ Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that
 
 #### set band to 20
 
-| Field          | Value    | Hex    |
-| -------------- | -------- | ------ |
-| command id     | `3`      | `0x03` |
-| command size   | `3`      | `0x03` |
-| parameter type | `52`     | `0x34` |
-| count          | `1`      | `0x01` |
-| bands          | `20`     | `0x14` |
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `3`   | `0x03` |
+| parameter type | `52`  | `0x34` |
+| count          | `1`   | `0x01` |
+| bands          | `20`  | `0x14` |
 
 Message hex dump with LRC: `03 03 34 01 14 74`
 
@@ -1571,13 +1571,13 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type     | Field                                   |
-| ------ | -------- | --------------------------------------- |
-| `1`    | `uint8`  | parameter type = `53`                   |
-| `1-64` | `string` | [APN](#apn)                             |
+| Size   | Type     | Field                 |
+| ------ | -------- | --------------------- |
+| `1`    | `uint8`  | parameter type = `53` |
+| `1-64` | `string` | [APN](#apn)           |
 
 #### **APN**
-A logical name that is used to select the GGSN or the external packet data 
+A logical name that is used to select the GGSN or the external packet data
 network. If the string size is `0` then the APN will be "network provided APN".
 After the parameter is set NB-IoT module will be reset. Option accepted immediately.
 
@@ -1585,13 +1585,13 @@ After the parameter is set NB-IoT module will be reset. Option accepted immediat
 
 #### set APN "NBIOT"
 
-| Field          | Value    | Hex            |
-| -------------- | -------- | -------------- |
-| command id     | `3`      | `0x03`         |
-| command size   | `7`      | `0x07`         |
-| parameter type | `53`     | `0x35`         |
-| size           | `5`      | `0x05`         |
-| apn            | `NBIOT`  | `0x4e42494f54` |
+| Field          | Value   | Hex            |
+| -------------- | ------- | -------------- |
+| command id     | `3`     | `0x03`         |
+| command size   | `7`     | `0x07`         |
+| parameter type | `53`    | `0x35`         |
+| size           | `5`     | `0x05`         |
+| apn            | `NBIOT` | `0x4e42494f54` |
 
 Message hex dump with LRC: `03 07 35 05 4e 42 49 4f 54 3f`
 
@@ -1621,22 +1621,22 @@ Enable or disable NB-IoT network led indication.
 
 NB-IoT network indication description: the different durations of ON and OFF indicate different network status.
 
-| Network Status      | ON duration  | OFF duration |
-| ------------------- | ------------ | ------------ |
-| `Network Searching` | `64ms`       | `800ms`      |
-| `Connecting`        | `64ms`       | `2000ms`     |
+| Network Status      | ON duration | OFF duration |
+| ------------------- | ----------- | ------------ |
+| `Network Searching` | `64ms`      | `800ms`      |
+| `Connecting`        | `64ms`      | `2000ms`     |
 
 ### Examples
 
 #### enable led indication
 
-| Field                    | Value    | Hex    |
-| ------------------------ | -------- | ------ |
-| command id               | `3`      | `0x03` |
-| command size             | `3`      | `0x02` |
-| parameter type           | `54`     | `0x36` |
-| enable_led_indication    | `1`      | `0x01` |
-| enable-nbiot-network-led | `1`      | `0x01` |
+| Field                    | Value | Hex    |
+| ------------------------ | ----- | ------ |
+| command id               | `3`   | `0x03` |
+| command size             | `3`   | `0x02` |
+| parameter type           | `54`  | `0x36` |
+| enable_led_indication    | `1`   | `0x01` |
+| enable-nbiot-network-led | `1`   | `0x01` |
 
 Message hex dump with LRC: `03 04 36 01 01 63`
 
@@ -1645,16 +1645,16 @@ Message hex dump with LRC: `03 04 36 01 01 63`
 
 Parameter to set/get SIM card password to unlock SIM.
 SIM card unlock will be performed only in the device insert/activation event.
-Device will try PIN only one time. If PIN fails device will indicate the problem by LED indication. 
+Device will try PIN only one time. If PIN fails device will indicate the problem by LED indication.
 
-> [!WARNING]  
+> [!WARNING]
 > Device will try PIN even if it is a last try.
 > So it could be blocked and then you need to perform an unlock operation with a PUK code via an external device.
 
-| SIM ERROR TYPE      |  ON duration |  OFF duration | 
-| ------------------- | ------------ | ------------- |
-| `Missing SIM`       | `100ms`      | `3000ms`      |
-| `Error operation`   | `100ms`      | `500ms`       |
+| SIM ERROR TYPE    | ON duration | OFF duration |
+| ----------------- | ----------- | ------------ |
+| `Missing SIM`     | `100ms`     | `3000ms`     |
+| `Error operation` | `100ms`     | `500ms`      |
 
 #### **Missing SIM**
 If SIM card is not detected or module has a problem enabling radio interface.
@@ -1669,11 +1669,11 @@ hardware type - `24`
 
 ### Format
 
-| Size   | Type     | Field                                   |
-| ----   | -------- | --------------------------------------- |
-| `1`    | `uint8`  | parameter type = `55`                   |
-| `1`    | `uint8`  | [enable](#enable)                       |
-| `1`    | `uint16` | [PIN](#pin)                             |
+| Size | Type     | Field                 |
+| ---- | -------- | --------------------- |
+| `1`  | `uint8`  | parameter type = `55` |
+| `1`  | `uint8`  | [enable](#enable)     |
+| `1`  | `uint16` | [PIN](#pin)           |
 
 #### **enable**
 set to use PIN for SIM card
@@ -1685,12 +1685,12 @@ set to use PIN for SIM card
 
 #### set SIM card PIN to perform unlock
 
-| Field          | Value    | Hex          |
-| -------------- | -------- | ------------ |
-| command id     | `3`      | `0x03`       |
-| command size   | `3`      | `0x04`       |
-| parameter type | `55`     | `0x37`       |
-| enable         | `1`      | `0x01`       |
-| PIN            | `0000`   | `0x0000`     |
+| Field          | Value  | Hex      |
+| -------------- | ------ | -------- |
+| command id     | `3`    | `0x03`   |
+| command size   | `3`    | `0x04`   |
+| parameter type | `55`   | `0x37`   |
+| enable         | `1`    | `0x01`   |
+| PIN            | `0000` | `0x0000` |
 
 Message hex dump with LRC: `03 04 37 01 00 00 64`

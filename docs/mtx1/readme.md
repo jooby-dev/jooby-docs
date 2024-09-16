@@ -1,4 +1,4 @@
-# Jooby MTX message documentation
+# Jooby MTX1 message documentation
 
 - [Message format](./message.md)
 - [Data types](./types.md)

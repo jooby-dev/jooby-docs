@@ -55,7 +55,7 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 | command id        | `23`                      |                                                                           | `0x17`   |
 | command size      | `15`                      |                                                                           | `0x0f`   |
 | date              | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                      | `0x2f97` |
-| hours             | hour: `12:00`, hours: `1` | `0b00001100`                                                              | `0x0c`   |
+| hours             | hour: `12:00`, hours: `2` | `0b00101100`                                                              | `0x2c`   |
 | channels          | `1`, `2`, `3`, `4`        | `0b00001111` <br/> the same with extended bits                            | `0x0f`   |
 | channel `1` value | `131`                     | `0b0000000010000011` <br/> with extended bits: <br/> `0b0000000110000011` | `0x8301` |
 | channel `1` diff  | `10`                      |                                                                           | `0x0a`   |
@@ -66,7 +66,7 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 | channel `4` value | `234`                     | `0b0000000011101010` <br/> with extended bits: <br/> `0b0000000111101010` | `0xea01` |
 | channel `4` diff  | `11`                      |                                                                           | `0x0b`   |
 
-Message hex dump with LRC: `17 0f 2f 97 0c 0f 83 01 0a c0 06 0c 26 08 ea 01 0b 7a`
+Message hex dump with LRC: `17 0f 2f 97 2c 0f 83 01 0a c0 06 0c 26 08 ea 01 0b 5a`
 
 
 ## See also

@@ -29,9 +29,8 @@ There are `2` types of command direction:
 | `0x1f2a` | [WriteImage](./WriteImage.md#request)               | Request to write the block of the new image to the device.                   |
 | `0x1f2b` | [VerifyImage](./VerifyImage.md#request)             | Request to verify the update image on the device.                            |
 | `0x1f2c` | [UpdateRun](./UpdateRun.md#request)                 | Request to start update on the device.                                       |
-| `0x1f2c` | [UpdateRun](./UpdateRun.md#request)                 | Request to start update on the device.                                       |
-| `0x1f32` | [ChannelsStatus](./GetChannelsStatus.md#request)    | Command to get the status of device channels.                                |
-| `0x1f33` | [UpdateRun](./GetChannelsTypes.md#request)          | Command to get the types of channels on the device.                          |
+| `0x1f32` | [GetChannelsStatus](./GetChannelsStatus.md#request) | Command to get the status of device channels.                                |
+| `0x1f33` | [GetChannelsTypes](./GetChannelsTypes.md#request)   | Command to get the types of channels on the device.                          |
 
 ## Uplink commands
 
@@ -58,7 +57,7 @@ There are `2` types of command direction:
 | `0x1f02` | [GetLmicInfo](./GetLmicInfo.md#response)                 | Response to the [GetLmicInfo](./GetLmicInfo.md#request) downlink command.                                                                         |
 | `0x1f0a` | [ExAbsHourMC](./uplink/ExAbsHourMC.md)                   | Absolute values from device channels for the specified hour and hourly difference.                                                                |
 | `0x1f0b` | [ExAbsDayMC](./uplink/ExAbsDayMC.md)                     | Absolute values from device channels for the previous day's billing hour.                                                                         |
-| `0x1f0f` | [ExAbsCurrentMC](./GetExAbsCurrentMC.md#response)        | Response to the [GetExAbsCurrentMC](./GetExAbsCurrentMC.md#request) downlink command or current consumption absolute values from device channels. |
+| `0x1f0f` | [GetExAbsCurrentMC](./GetExAbsCurrentMC.md#response)     | Response to the [GetExAbsCurrentMC](./GetExAbsCurrentMC.md#request) downlink command or current consumption absolute values from device channels. |
 | `0x1f2a` | [WriteImage](./WriteImage.md#response)                   | Response to the [GetLmicInfo](./WriteImage.md#request) downlink command.                                                                          |
 | `0x1f2b` | [VerifyImage](./VerifyImage.md#response)                 | Response to the [GetLmicInfo](./VerifyImage.md#request) downlink command.                                                                         |
 | `0x1f2c` | [UpdateRun](./UpdateRun.md#response)                     | Response to the [GetLmicInfo](./UpdateRun.md#request) downlink command.                                                                           |

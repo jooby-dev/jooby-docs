@@ -43,6 +43,7 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NB-IoT APN](#nb-iot-apn)
 * [NB-IoT LED Indication](#nb-iot-led-indication)
 * [NB-IoT SIM](#nb-iot-sim)
+* [Channel type](#channel type)
 
 ## Reporting data interval
 
@@ -1694,3 +1695,109 @@ set to use PIN for SIM card
 | PIN            | `0000` | `0x0000` |
 
 Message hex dump with LRC: `03 04 37 01 00 00 64`
+
+
+## Channel type
+
+Parameter to set/get channel type.
+The parameter defines the type of function or sensor that a channel serves within the device.
+Each channel can be configured as one of several [types](channel-type-values).
+
+Available from software version = `0x02` for:<br/>
+hardware type - `0x06` hardware version - `0x12`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                     |
+| ---- | ------- | ----------------------------------------- |
+| `1`  | `uint8` | parameter type = `56`                     |
+| `1`  | `uint8` | channel number                            |
+| `1`  | `uint8` | [channel type](#channel-type-values)      |
+| `1+` | `uint8` | [channel parameters](#channel-parameters) |
+
+#### **Channel type values**
+
+The following channel types and their respective settings are supported:
+
+| Value | Channel type       | Channel data                                                    |
+| ----- | ------------------ | --------------------------------------------------------------- |
+| `0`   | Idle channel       | no related parameters                                           |
+| `1`   | Power channel      | no related parameters                                           |
+| `3`   | Binary sensor      | [binary sensor parameters](#binary-sensor-parameters)           |
+| `4`   | Temperature sensor | [temperature sensor parameters](#temperature-sensor-parameters) |
+
+### **Channel parameters**
+
+Parameters for the specific channel type.
+
+#### **Binary sensor parameters**
+
+| Size | Type     | Field                  |
+| ---- | -------- | ---------------------- |
+| `2`  | `uint16` | active state time (ms) |
+
+#### **Temperature sensor parameters**
+
+| Size | Type     | Field                                                                                           |
+| ---- | -------- | ----------------------------------------------------------------------------------------------- |
+| `2`  | `uint16` | measurement interval (sec)                                                                      |
+| `1`  | `uint8`  | hysteresis (ms). Represents the hysteresis value used to prevent rapid toggling of temperature. |
+| `1`  | `uint8`  | high temperature threshold (°C)                                                                 |
+| `1`  | `uint8`  | low temperature threshold  (°C)                                                                 |
+
+### Examples
+
+#### Set channel type: channel index: 1, type: power channel
+
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `3`   | `0x03` |
+| parameter type | `56`  | `0x38` |
+| channel        | `0`   | `0x00` |
+| channel type   | `2`   | `0x02` |
+
+Message hex dump with LRC: `03 03 38 00 02 6f`
+
+
+#### Set channel type: channel: 2, type: binary sensor
+
+| Field                  | Value  | Hex      |
+| ---------------------- | ------ | -------- |
+| command id             | `3`    | `0x03`   |
+| command size           | `3`    | `0x03`   |
+| parameter type         | `56`   | `0x38`   |
+| channel                | `1`    | `0x01`   |
+| channel type           | `3`    | `0x03`   |
+| active state time (ms) | `5000` | `0x1388` |
+
+Message hex dump with LRC: `03 05 38 01 03 13 88 f2`
+
+#### Set channel type: channel: 3, type: temperature sensor
+
+| Field                           | Value | Hex    |
+| ------------------------------- | ----- | ------ |
+| command id                      | `3`   | `0x03` |
+| command size                    | `3`   | `0x08` |
+| parameter type                  | `56`  | `0x38` |
+| channel                         | `2`   | `0x02` |
+| channel type                    | `3`   | `0x03` |
+| hysteresis (ms)                 | `2`   | `0x02` |
+| high temperature threshold (°C) | `40`  | `0x28` |
+| low temperature threshold (°C)  | `5`   | `0x05` |
+
+Message hex dump with LRC: `03 08 38 02 04 0e 10 02 28 05`
+
+#### Set channel type: channel: 4, type: idle
+
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `3`   | `0x03` |
+| parameter type | `56`  | `0x38` |
+| channel        | `3`   | `0x03` |
+| channel type   | `0`   | `0x00` |
+
+Message hex dump with LRC: `03 03 38 03 00 6e`

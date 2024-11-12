@@ -34,7 +34,7 @@ It's the last generated event number.
 
 Event data specific for the event type.
 
-The data format for these events `MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIVATE`, `CAN_OFF`, `INSERT`, `REMOVE`, `COUNTER_OVER`, `OPTOLOW`, `OPTOFLASH`, `JOIN_ACCEPT` is:
+The data format for these events `MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIVATE`, `CAN_OFF`, `INSERT`, `REMOVE`, `COUNTER_OVER`, `OPTOLOW`, `OPTOFLASH`, `JOIN_ACCEPT`, `BINARY_SENSOR_ON`, `BINARY_SENSOR_OFF`, `TEMPERATURE_SENSOR_HYSTERESIS`, `TEMPERATURE_SENSOR_LOW_TEMPERATURE`, `TEMPERATURE_SENSOR_HIGH_TEMPERATURE` is:
 
 | Size | Type        | Field                                            |
 | ---- | ----------- | ------------------------------------------------ |
@@ -65,6 +65,23 @@ The data format for these events `MAGNET_ON`, `MAGNET_OFF`, `ACTIVATE`, `DEACTIV
 | Size | Type    | Field                                                            |
 | ---- | ------- | ---------------------------------------------------------------- |
 | `2`  | `uint8` | [status for MTXLORA](./LastEvent.md#for-mtxlora-devices-2-bytes) |
+
+`BINARY_SENSOR_ON`, `BINARY_SENSOR_OFF`
+
+| Size | Type        | Field                                            |
+| ---- | ----------- | ------------------------------------------------ |
+| `4`  | `uint32_be` | [time 2000](../../types.md#time-2000) in seconds |
+| `1`  | `uint8`     | channel number                                   |
+
+
+`TEMPERATURE_SENSOR_HYSTERESIS`, `TEMPERATURE_SENSOR_LOW_TEMPERATURE`, `TEMPERATURE_SENSOR_HIGH_TEMPERATURE`
+
+| Size | Type        | Field                                            |
+| ---- | ----------- | ------------------------------------------------ |
+| `4`  | `uint32_be` | [time 2000](../../types.md#time-2000) in seconds |
+| `1`  | `uint8`     | channel number                                   |
+| `1`  | `int8`      | temperature °C                                   |
+
 
 ### Examples
 
@@ -148,6 +165,73 @@ Message hex dump with LRC: `15 05 0c 02 00 83 01 c9`
 
 Message hex dump with LRC: `15 04 11 02 83 0a de`
 
+#### for `BINARY_SENSOR_ON`
+
+| Field           | Value       | Hex          |
+| --------------- | ----------- | ------------ |
+| command id      | `22`        | `0x16`       |
+| command size    | `7`         | `0x07`       |
+| event id        | `22`        | `0x16`       |
+| sequence number | `5`         | `0x05`       |
+| time            | `734015840` | `0x2bc03160` |
+| channel number  | `1`         | `0x01`       |
+
+Message hex dump with LRC: `15 07 16 05 2b c0 31 60 01 ef`
+
+#### for `BINARY_SENSOR_OFF`
+
+| Field           | Value       | Hex          |
+| --------------- | ----------- | ------------ |
+| command id      | `23`        | `0x17`       |
+| command size    | `7`         | `0x07`       |
+| event id        | `23`        | `0x17`       |
+| sequence number | `6`         | `0x06`       |
+| time            | `734015840` | `0x2bc03160` |
+| channel number  | `1`         | `0x01`       |
+
+Message hex dump with LRC: `15 07 17 06 2b c0 31 60 01 ed`
+
+#### for `TEMPERATURE_SENSOR_HYSTERESIS`
+
+| Field           | Value       | Hex          |
+| --------------- | ----------- | ------------ |
+| command id      | `23`        | `0x17`       |
+| command size    | `8`         | `0x08`       |
+| event id        | `24`        | `0x18`       |
+| sequence number | `7`         | `0x07`       |
+| time            | `734015840` | `0x2bc03160` |
+| channel number  | `2`         | `0x02`       |
+| temperature °C  | `20`        | `0x14`       |
+
+Message hex dump with LRC: `15 08 18 07 2b c0 31 60 02 14 fb`
+
+#### for `TEMPERATURE_SENSOR_LOW_TEMPERATURE`
+
+| Field           | Value       | Hex          |
+| --------------- | ----------- | ------------ |
+| command id      | `23`        | `0x17`       |
+| command size    | `8`         | `0x08`       |
+| event id        | `25`        | `0x19`       |
+| sequence number | `8`         | `0x08`       |
+| time            | `734015840` | `0x2bc03160` |
+| channel number  | `2`         | `0x02`       |
+| temperature °C  | `3`         | `0x03`       |
+
+Message hex dump with LRC: `15 08 19 08 2b c0 31 60 02 03 e2`
+
+#### for `TEMPERATURE_SENSOR_HIGH_TEMPERATURE`
+
+| Field           | Value       | Hex          |
+| --------------- | ----------- | ------------ |
+| command id      | `23`        | `0x17`       |
+| command size    | `8`         | `0x08`       |
+| event id        | `26`        | `0x1a`       |
+| sequence number | `9`         | `0x09`       |
+| time            | `734015840` | `0x2bc03160` |
+| channel number  | `2`         | `0x02`       |
+| temperature °C  | `3`         | `0x40`       |
+
+Message hex dump with LRC: `15 08 1a 09 2b c0 31 60 02 28 cb`
 
 ## See also
 

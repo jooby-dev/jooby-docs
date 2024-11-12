@@ -1,4 +1,4 @@
-# GetCurrentMC
+# GetChannelsStatus
 
 Command to get the status of device channels.
 If no channels bit set is included in the request, the status for all channels will be returned.

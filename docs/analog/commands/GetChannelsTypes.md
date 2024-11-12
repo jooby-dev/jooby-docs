@@ -1,4 +1,4 @@
-# GetCurrentMC
+# GetChannelsTypes
 
 Command to get the types of channels on the device, like IDLE, TEMPERATURE_SENSOR, or BINARY_SENSOR.
 

@@ -1744,8 +1744,8 @@ Parameters for the specific channel type.
 | ---- | -------- | ----------------------------------------------------------------------------------------------- |
 | `2`  | `uint16` | measurement interval (sec)                                                                      |
 | `1`  | `uint8`  | hysteresis (ms). Represents the hysteresis value used to prevent rapid toggling of temperature. |
-| `1`  | `uint8`  | high temperature threshold (°C)                                                                 |
-| `1`  | `uint8`  | low temperature threshold  (°C)                                                                 |
+| `1`  | `int8`   | high temperature threshold (°C)                                                                 |
+| `1`  | `int8`   | low temperature threshold  (°C)                                                                 |
 
 ### Examples
 

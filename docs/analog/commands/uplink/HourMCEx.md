@@ -44,7 +44,7 @@ It's a start hour.
 
 #### **hours**
 
-Count the pulse counter's full value with a diff for each previous hour. The hours value 0 means 1 hour.
+Count the pulse counter's full value with a diff for each next hour. The hours value 0 means 1 hour.
 
 #### **channels bit set**
 

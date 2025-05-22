@@ -4,6 +4,10 @@ Response to provide details for the failed downlink command.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
+Supported devices:
+- MTX1
+- MTX3
+
 
 ## Response
 

@@ -4,6 +4,10 @@ Request/response to get the device type.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
+Supported devices:
+- MTX1
+- MTX3
+
 
 ## Request
 

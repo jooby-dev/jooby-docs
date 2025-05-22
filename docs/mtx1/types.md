@@ -2,6 +2,7 @@
 
 Commands use many specific data types packed to bytes.
 This document describes these types and structuring principles.
+It's applicable to both MTX1 and MTX3 devices.
 
 
 ## Packed date

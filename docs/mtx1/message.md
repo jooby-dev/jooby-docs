@@ -1,6 +1,6 @@
 # Message format
 
-Devices send and receive messages in the following format:
+MTX1 and MTX3 devices send and receive messages in the following format:
 
 <table>
     <tbody>

@@ -4,16 +4,20 @@ Request/response to get device rate plan information.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
+Supported devices:
+- MTX1
+- MTX3
+
 
 ## Request
 
 ### Format
 
-| Size | Type    | Field                                                              |
-| ---- | ------- | ------------------------------------------------------------------ |
-| `1`  | `uint8` | command id = `0x2c`                                                |
-| `1`  | `uint8` | command size = `1`                                                 |
-| `1`  | `uint8` | tariff table identifier <br/> (`0` - table `A+`, `1` – table `A-`) |
+| Size | Type    | Field                                                                                                                                                |
+| ---- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x2c`                                                                                                                                  |
+| `1`  | `uint8` | command size = `1`                                                                                                                                   |
+| `1`  | `uint8` | tariff table identifier <br/> `0` – table `A+`, `1` – table `A-` (for `MTX1`)</br> `0` – table `A+`, `1` – table `P+`, `2` – table `A-` (for `MTX3`) |
 
 ### Examples
 
@@ -30,27 +34,27 @@ Message hex dump: `2c 05 01`
 
 ### Format
 
-| Size | Type     | Field                                                                                                |
-| ---- | -------- | ---------------------------------------------------------------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x2c`                                                                                  |
-| `1`  | `uint8`  | command size = `23`                                                                                  |
-| `1`  | `uint8`  | tariff table identifier <br/> (`0` - table `A+`, `1` – table `A-`)                                   |
-| `1`  | `uint32` | active plan: rate plan unique identifier                                                             |
-| `1`  | `uint8`  | active plan: indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)  |
-| `1`  | `uint8`  | active plan: activation year (number of years after `2000`)                                          |
-| `1`  | `uint8`  | active plan: activation month (`1` - January ... `12` - December)                                    |
-| `1`  | `uint8`  | active plan: activation date                                                                         |
-| `1`  | `uint8`  | active plan: the number of special days in the tariff table (max `26`)                               |
-| `1`  | `uint8`  | active plan: the number of seasons in the tariff table (max `14`)                                    |
-| `1`  | `uint8`  | active plan: the number of days in the tariff table (max `32`)                                       |
-| `1`  | `uint32` | passive plan: rate plan unique identifier                                                            |
-| `1`  | `uint8`  | passive plan: indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid) |
-| `1`  | `uint8`  | passive plan: activation year (number of years after `2000`)                                         |
-| `1`  | `uint8`  | passive plan: activation month (`1` - January ... `12` - December)                                   |
-| `1`  | `uint8`  | passive plan: activation date                                                                        |
-| `1`  | `uint8`  | passive plan: the number of special days in the tariff table (max `26`)                              |
-| `1`  | `uint8`  | passive plan: the number of seasons in the tariff table (max `14`)                                   |
-| `1`  | `uint8`  | passive plan: the number of days in the tariff table (max `32`)                                      |
+| Size | Type     | Field                                                                                                                                                |
+| ---- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1`  | `uint8`  | command id = `0x2c`                                                                                                                                  |
+| `1`  | `uint8`  | command size = `23`                                                                                                                                  |
+| `1`  | `uint8`  | tariff table identifier <br/> `0` – table `A+`, `1` – table `A-` (for `MTX1`)</br> `0` – table `A+`, `1` – table `P+`, `2` – table `A-` (for `MTX3`) |
+| `1`  | `uint32` | active plan: rate plan unique identifier                                                                                                             |
+| `1`  | `uint8`  | active plan: indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)                                                  |
+| `1`  | `uint8`  | active plan: activation year (number of years after `2000`)                                                                                          |
+| `1`  | `uint8`  | active plan: activation month (`1` - January ... `12` - December)                                                                                    |
+| `1`  | `uint8`  | active plan: activation date                                                                                                                         |
+| `1`  | `uint8`  | active plan: the number of special days in the tariff table (max `26`)                                                                               |
+| `1`  | `uint8`  | active plan: the number of seasons in the tariff table (max `14`)                                                                                    |
+| `1`  | `uint8`  | active plan: the number of days in the tariff table (max `32`)                                                                                       |
+| `1`  | `uint32` | passive plan: rate plan unique identifier                                                                                                            |
+| `1`  | `uint8`  | passive plan: indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)                                                 |
+| `1`  | `uint8`  | passive plan: activation year (number of years after `2000`)                                                                                         |
+| `1`  | `uint8`  | passive plan: activation month (`1` - January ... `12` - December)                                                                                   |
+| `1`  | `uint8`  | passive plan: activation date                                                                                                                        |
+| `1`  | `uint8`  | passive plan: the number of special days in the tariff table (max `26`)                                                                              |
+| `1`  | `uint8`  | passive plan: the number of seasons in the tariff table (max `14`)                                                                                   |
+| `1`  | `uint8`  | passive plan: the number of days in the tariff table (max `32`)                                                                                      |
 
 ### Examples
 

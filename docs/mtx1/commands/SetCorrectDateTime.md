@@ -4,6 +4,10 @@ Request/response for incremental device time correction (for a given number of s
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
+Supported devices:
+- MTX1
+- MTX3
+
 
 ## Request
 

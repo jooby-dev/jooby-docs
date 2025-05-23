@@ -18,12 +18,20 @@ Available levels:
 ## Displays
 
 Each device has 2 display sets: `32` main displays and `32` additional displays.
+
+Display modes:
+
+| Value | Screen type  | Screen range |
+| ----- | ------------ | ------------ |
+| `0`   | `main`       | `1..32`      |
+| `1`   | `additional` | `1..32`      |
+
 A set is a combination of the following displays:
 
 | Number | Name                           | Description                                                 |
 | ------ | ------------------------------ | ----------------------------------------------------------- |
-| `1`    | `SET_ALL_SEGMENT_DISPLAY`      | Display test (0.2.0)                                        |
-| `2`    | `SOFTWARE_VERSION`             | Software version                                            |
+| `1`    | `SET_ALL_SEGMENT_DISPLAY`      | Display test                                                |
+| `2`    | `SOFTWARE_VERSION`             | Software version (0.2.0)                                    |
 | `3`    | `TOTAL_ACTIVE_ENERGY`          | Total active energy A+ (1.8.0)                              |
 | `4`    | `ACTIVE_ENERGY_T1`             | Active energy A+, T1 (1.8.1)                                |
 | `5`    | `ACTIVE_ENERGY_T2`             | Active energy A+, T2 (1.8.2)                                |
@@ -33,7 +41,7 @@ A set is a combination of the following displays:
 | `9`    | `ACTIVE_POWER_IN_NEUTRAL`      | Active power consumption in neutral (41.7.0)                |
 | `10`   | `CURRENT_IN_PHASE`             | Phase current (31.7.0)                                      |
 | `11`   | `CURRENT_IN_NEUTRAL`           | Current in neutral (51.7.0)                                 |
-| `12`   | `VOLTAGE`                      | Voltage (31.7.0)                                            |
+| `12`   | `VOLTAGE`                      | Voltage (32.7.0)                                            |
 | `13`   | `HOUR_MINUTE_SECOND`           | Time (0.9.1)                                                |
 | `14`   | `DATE_MONTH_YEAR`              | Date (0.9.2)                                                |
 | `15`   | `TOTAL_EXPORTED_ACTIVE_ENERGY` | Total active energy A- (2.8.0)                              |
@@ -41,8 +49,8 @@ A set is a combination of the following displays:
 | `17`   | `EXPORTED_ACTIVE_ENERGY_T2`    | Active energy A-, T2 (2.8.2)                                |
 | `18`   | `EXPORTED_ACTIVE_ENERGY_T3`    | Active energy A-, T3 (2.8.3)                                |
 | `19`   | `EXPORTED_ACTIVE_ENERGY_T4`    | Active energy A-, T4 (2.8.4)                                |
-| `20`   | `POWER_FACTOR_PHASE_A`         | Power factor (cos φ) in channel A (33.7.0)                  |
-| `21`   | `POWER_FACTOR_PHASE_B`         | Power factor (cos φ) in channel B (53.7.0)                  |
+| `20`   | `POWER_COEFFICIENT_PHASE_A`    | Power ratio (cos φ) in channel A (33.7.0)                   |
+| `21`   | `POWER_COEFFICIENT_PHASE_B`    | Power ratio (cos φ) in channel B (53.7.0)                   |
 | `22`   | `BATTERY_VOLTAGE`              | Battery voltage (96.6.3)                                    |
 | `23`   | `POWER_THRESHOLD_T1`           | Relay cut-off power threshold according to tariff 1 (5.2.1) |
 | `24`   | `POWER_THRESHOLD_T2`           | Relay cut-off power threshold according to tariff 2 (5.2.2) |

@@ -4,6 +4,10 @@ Request/response to set the meter displays sorting order.
 
 The command access level is [READ_WRITE](../basics.md#command-access-level).
 
+Supported devices:
+- MTX1
+- MTX3
+
 
 ## Request
 

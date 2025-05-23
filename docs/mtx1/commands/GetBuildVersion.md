@@ -4,6 +4,10 @@ Request/response to get firmware build date and version from device.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
+Supported devices:
+- MTX1
+- MTX3
+
 
 ## Request
 

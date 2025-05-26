@@ -41,12 +41,12 @@ Message hex dump: `47 00`
 | `4`  | `uint32` | [Display settings 2](./GetOpParams.md#display-settings-2)                                                                                                      |
 | `4`  | `uint32` | [Display settings 3](./GetOpParams.md#display-settings-3)                                                                                                      |
 | `4`  | `uint32` | [Display settings 4](./GetOpParams.md#display-settings-4)                                                                                                      |
-| `1`  | `uint8`  | [Channel load profile 1. If enabled, it will use half of the A+ archive space](#channel-load-profile)                                                          |
-| `1`  | `uint8`  | [Channel load profile 2. If enabled, it will use half of the A+R+ archive space](#channel-load-profile)                                                        |
-| `1`  | `uint8`  | [Channel load profile 3. If enabled, it will use half of the A+R- archive space](#channel-load-profile)                                                        |
-| `1`  | `uint8`  | [Channel load profile 4. If enabled, it will use half of the A- archive space](#channel-load-profile)                                                          |
-| `1`  | `uint8`  | [Channel load profile 5. If enabled, it will use half of the A-R+ archive space](#channel-load-profile)                                                        |
-| `1`  | `uint8`  | [Channel load profile 6. If enabled, it will use half of the A-R- archive space](#channel-load-profile)                                                        |
+| `1`  | `uint8`  | [Channel load profile 1](#channel-load-profile) (if enabled, it will use half of the A+ archive space)                                                         |
+| `1`  | `uint8`  | [Channel load profile 2](#channel-load-profile) (if enabled, it will use half of the A+R+ archive space)                                                       |
+| `1`  | `uint8`  | [Channel load profile 3](#channel-load-profile) (if enabled, it will use half of the A+R- archive space)                                                       |
+| `1`  | `uint8`  | [Channel load profile 4](#channel-load-profile) (if enabled, it will use half of the A- archive space)                                                         |
+| `1`  | `uint8`  | [Channel load profile 5](#channel-load-profile) (if enabled, it will use half of the A-R+ archive space)                                                       |
+| `1`  | `uint8`  | [Channel load profile 6](#channel-load-profile) (if enabled, it will use half of the A-R- archive space)                                                       |
 | `1`  | `uint8`  | Allowed correction period, in hours (`24` hours by default). If bit `7` is `0` (default is `0`), time correction crossing the half-hour boundary is forbidden. |
 
 ### Parameters

@@ -37,7 +37,7 @@ Supported devices:
 | day index    | `3`    | `0x03` |
 | is periodic  | `true` | `0x00` |
 
-Message hex dump: `12 06 01 05 01 09 03 00`
+Command hex dump: `12 06 01 05 01 09 03 00`
 
 
 ## Response
@@ -56,7 +56,7 @@ Message hex dump: `12 06 01 05 01 09 03 00`
 | command id   | `18`  | `0x12` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `12 00`
+Command hex dump: `12 00`
 
 
 ## See also

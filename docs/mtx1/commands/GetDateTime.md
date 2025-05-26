@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `7`   | `0x07` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `07 00`
+Command hex dump: `07 00`
 
 
 ## Response
@@ -62,7 +62,7 @@ Time: `2024.02.19 18:31:55`:
 | month        | `2` (February)                | `0x02` |
 | year         | `24` (`2000` + `24` = `2024`) | `0x18` |
 
-Message hex dump: `07 08 00 37 1f 12 02 13 02 18`
+Command hex dump: `07 08 00 37 1f 12 02 13 02 18`
 
 
 ## See also

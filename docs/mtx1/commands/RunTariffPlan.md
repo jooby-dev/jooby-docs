@@ -27,7 +27,7 @@ Supported devices:
 | command size | `1`   | `0x01` |
 | tariff table | `A+`  | `0x00` |
 
-Message hex dump: `06 01 00`
+Command hex dump: `06 01 00`
 
 
 ## Response
@@ -46,7 +46,7 @@ Message hex dump: `06 01 00`
 | command id   | `6`   | `0x06` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `06 00`
+Command hex dump: `06 00`
 
 
 ## See also

@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `112` | `0x70` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `70 00`
+Command hex dump: `70 00`
 
 
 ## Response
@@ -54,7 +54,7 @@ Build version: `2024.02.19/0.0.9`:
 | year         | `24` (`2000` + `24` = `2024`) | `0x18`     |
 | version      | `0.0.9`                       | `0x000009` |
 
-Message hex dump: `70 06 13 02 18 00 00 09`
+Command hex dump: `70 06 13 02 18 00 00 09`
 
 
 ## See also

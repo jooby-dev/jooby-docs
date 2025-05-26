@@ -31,7 +31,7 @@ Supported devices:
 | index        | `4`     | `0x04` |
 | is active    | `false` | `0x01` |
 
-Message hex dump: `3b 03 00 04 01`
+Command hex dump: `3b 03 00 04 01`
 
 
 ## Response
@@ -95,7 +95,7 @@ Where `tariff` - tariff number to apply for this period and `hour` - period star
 | period #7    | tariff: `2`, isFirstHalfHour: `false`, hour: `8` | `0x46` |
 | period #8    | tariff: `3`, isFirstHalfHour: `true`, hour: `9`  | `0x4b` |
 
-Message hex dump: `3b 08 10 1d 22 2f 30 3d 46 4b`
+Command hex dump: `3b 08 10 1d 22 2f 30 3d 46 4b`
 
 #### response with 4 periods:
 
@@ -109,7 +109,7 @@ Message hex dump: `3b 08 10 1d 22 2f 30 3d 46 4b`
 | period #4    | tariff: `3`, isFirstHalfHour: `false`, hour: `5` | `0x2f` |
 | final suffix |                                                  | `0xff` |
 
-Message hex dump: `3b 05 10 1d 22 2f ff`
+Command hex dump: `3b 05 10 1d 22 2f ff`
 
 
 ## See also

@@ -31,7 +31,7 @@ Supported devices:
 | index        | `4`     | `0x04` |
 | is active    | `false` | `0x01` |
 
-Message hex dump: `3d 03 00 04 01`
+Command hex dump: `3d 03 00 04 01`
 
 
 ## Response
@@ -58,7 +58,7 @@ Message hex dump: `3d 03 00 04 01`
 | day index    | `3`    | `0x03` |
 | is periodic  | `true` | `0x00` |
 
-Message hex dump: `3d 04 01 09 03 00`
+Command hex dump: `3d 04 01 09 03 00`
 
 
 ## See also

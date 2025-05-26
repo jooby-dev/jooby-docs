@@ -73,7 +73,7 @@ Where `tariff` - tariff number to apply for this period and `hour` - period star
 | period #7    | tariff: `2`, isFirstHalfHour: `false`, hour: `8` | `0x46` |
 | period #8    | tariff: `3`, isFirstHalfHour: `true`, hour: `9`  | `0x4b` |
 
-Message hex dump: `10 0a 00 03 10 1d 22 2f 30 3d 46 4b`
+Command hex dump: `10 0a 00 03 10 1d 22 2f 30 3d 46 4b`
 
 #### response with 4 periods:
 
@@ -89,7 +89,7 @@ Message hex dump: `10 0a 00 03 10 1d 22 2f 30 3d 46 4b`
 | period #4    | tariff: `3`, isFirstHalfHour: `false`, hour: `5` | `0x2f` |
 | final suffix |                                                  | `0xff` |
 
-Message hex dump: `10 07 00 05 10 1d 22 2f ff`
+Command hex dump: `10 07 00 05 10 1d 22 2f ff`
 
 
 ## Response
@@ -108,7 +108,7 @@ Message hex dump: `10 07 00 05 10 1d 22 2f ff`
 | command id   | `16`  | `0x10` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `10 00`
+Command hex dump: `10 00`
 
 
 ## See also

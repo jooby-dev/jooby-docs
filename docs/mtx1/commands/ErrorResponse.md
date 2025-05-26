@@ -31,7 +31,7 @@ Supported devices:
 | failed command id | `24`            | `0x18` |
 | error code        | `ACCESS_DENIED` | `0x93` |
 
-Message hex dump: `fe 02 18 93`
+Command hex dump: `fe 02 18 93`
 
 
 ## See also

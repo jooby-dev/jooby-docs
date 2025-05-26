@@ -42,7 +42,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | month        | `3`   | `0x03` |
 | date         | `22`  | `0x16` |
 
-Message hex dump: `16 03 18 03 16`
+Command hex dump: `16 03 18 03 16`
 
 #### request day values with energy type for 2024.03.22:
 
@@ -55,7 +55,7 @@ Message hex dump: `16 03 18 03 16`
 | date         | `22`                     | `0x16` |
 | energy type  | OBIS code `1.8.x` (`A+`) | `0x01` |
 
-Message hex dump: `16 04 18 03 16 01`
+Command hex dump: `16 04 18 03 16 01`
 
 
 ## Response
@@ -101,7 +101,7 @@ Message hex dump: `16 04 18 03 16 01`
 | T3 energy    | `2333`     | `0x0000091d` |
 | T4 energy    | `2145623`  | `0x0020bd57` |
 
-Message hex dump: `16 13 18 03 16 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
+Command hex dump: `16 13 18 03 16 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
 
 #### A- energy with 3 tariffs:
 
@@ -117,7 +117,7 @@ Message hex dump: `16 13 18 03 16 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 5
 | T3 energy    | `2333`     | `0x0000091d` |
 | T4 energy    | `2145623`  | `0x0020bd57` |
 
-Message hex dump: `16 10 18 03 16 d0 02 66 f2 ae 00 00 09 1d 00 20 bd 57`
+Command hex dump: `16 10 18 03 16 d0 02 66 f2 ae 00 00 09 1d 00 20 bd 57`
 
 
 ## See also

@@ -33,7 +33,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | command id   | `15`  | `0x0f` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `0f 00`
+Command hex dump: `0f 00`
 
 #### get A- energy:
 
@@ -43,7 +43,7 @@ Message hex dump: `0f 00`
 | command size | `1`                      | `0x01` |
 | energy type  | OBIS code `2.8.x` (`A-`) | `0x02` |
 
-Message hex dump: `0f 01 02`
+Command hex dump: `0f 01 02`
 
 
 ## Response
@@ -80,7 +80,7 @@ Message hex dump: `0f 01 02`
 | T3 energy    | `2333`     | `0x0000091d` |
 | T4 energy    | `2145623`  | `0x0020bd57` |
 
-Message hex dump: `0f 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
+Command hex dump: `0f 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
 
 #### A- energy with 3 tariffs:
 
@@ -94,7 +94,7 @@ Message hex dump: `0f 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
 | T3 energy              | `2333`     | `0x0000091d` |
 | T4 energy              | `2145623`  | `0x0020bd57` |
 
-Message hex dump: `0f 0d d0 02 66 f2 ae 00 00 09 1d 00 20 bd 57`
+Command hex dump: `0f 0d d0 02 66 f2 ae 00 00 09 1d 00 20 bd 57`
 
 
 ## See also

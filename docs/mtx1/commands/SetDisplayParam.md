@@ -29,7 +29,7 @@ Supported devices:
 | display mode | additional (`1`)                                                                               | `0x01`       |
 | displays     | `TOTAL_ACTIVE_ENERGY` <br/> `CURRENT_IN_PHASE` <br/> `SOFTWARE_VERSION` <br/> `OPTOPORT_SPEED` | `0x030a021f` |
 
-Message hex dump: `5d 05 01 03 0a 02 1f`
+Command hex dump: `5d 05 01 03 0a 02 1f`
 
 
 ## Response
@@ -48,7 +48,7 @@ Message hex dump: `5d 05 01 03 0a 02 1f`
 | command id   | `93`  | `0x5d` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `5d 00`
+Command hex dump: `5d 00`
 
 
 ## See also

@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `13`  | `0x0d` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `0d 00`
+Command hex dump: `0d 00`
 
 
 ## Response
@@ -64,7 +64,7 @@ Default parameters:
 | reactive power in B channel        | `107292`  | `0x0001a31c` |
 | power factor (cos φ) in B channel  | `3767`    | `0x0eb7`     |
 
-Message hex dump: `0d 20 0023d8b2 003dfa53 00049e89 0001a125 0cc3 0004a68b 00019f28 0001a31c 0eb7`
+Command hex dump: `0d 20 0023d8b2 003dfa53 00049e89 0001a125 0cc3 0004a68b 00019f28 0001a31c 0eb7`
 
 
 ## See also

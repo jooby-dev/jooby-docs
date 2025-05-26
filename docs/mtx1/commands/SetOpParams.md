@@ -238,7 +238,7 @@ Bit mask:
 | Relay set 5                                                                      | `?`      | `0x00`       |
 | Allowed correction period                                                        | `24`     | `0x18`       |
 
-Message hex dump: `1f 4a 00040b28 00026160 0001d4c0 00007c38 00007c38 00007c38 00007c38 00 1e 01 7f 07 80003184 00 00 03 03 00 00 00f0 0f 05 05 00 01 00 05 05 37 2d 00  00 00 00 00 02 00 05 05 05  01 08383fff 05 05 00 18`
+Command hex dump: `1f 4a 00040b28 00026160 0001d4c0 00007c38 00007c38 00007c38 00007c38 00 1e 01 7f 07 80003184 00 00 03 03 00 00 00f0 0f 05 05 00 01 00 05 05 37 2d 00  00 00 00 00 02 00 05 05 05  01 08383fff 05 05 00 18`
 
 
 ## Response
@@ -257,7 +257,7 @@ Message hex dump: `1f 4a 00040b28 00026160 0001d4c0 00007c38 00007c38 00007c38 0
 | command id   | `31`  | `0x1f` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `1f 00`
+Command hex dump: `1f 00`
 
 ## See also
 

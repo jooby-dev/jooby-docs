@@ -37,7 +37,7 @@ Supported devices:
 | new saldo    | `2`   | `0x00000002` |
 | old saldo    | `5`   | `0x00000005` |
 
-Message hex dump: `2a 0c 09 17 06 23 00 00 00 02 00 00 00 05`
+Command hex dump: `2a 0c 09 17 06 23 00 00 00 02 00 00 00 05`
 
 
 ## Response
@@ -56,7 +56,7 @@ Message hex dump: `2a 0c 09 17 06 23 00 00 00 02 00 00 00 05`
 | command id   | `42`  | `0x2a` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `2a 00`
+Command hex dump: `2a 00`
 
 
 ## See also

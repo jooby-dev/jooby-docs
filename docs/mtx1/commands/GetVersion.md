@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `40`  | `0x28` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `28 00`
+Command hex dump: `28 00`
 
 
 ## Response
@@ -46,7 +46,7 @@ Message hex dump: `28 00`
 | command size | `10`         | `0x0a`                   |
 | version      | `104.25.003` | `0x3130342e32352e303033` |
 
-Message hex dump: `28 0a 31 30 34 2e 32 35 2e 30 30 33`
+Command hex dump: `28 0a 31 30 34 2e 32 35 2e 30 30 33`
 
 
 ## See also

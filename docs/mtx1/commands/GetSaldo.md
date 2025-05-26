@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `41`  | `0x29` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `29 00`
+Command hex dump: `29 00`
 
 
 ## Response
@@ -60,7 +60,7 @@ Message hex dump: `29 00`
 | hour                | `6`                 | `0x06`                               |
 | minute              | `35`                | `0x23`                               |
 
-Message hex dump: `29 1d 00 00 00 01 08 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00 05 00 00 00 07 09 17 06 23`
+Command hex dump: `29 1d 00 00 00 01 08 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00 05 00 00 00 07 09 17 06 23`
 
 
 ## See also

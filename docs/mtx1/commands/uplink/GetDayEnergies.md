@@ -84,7 +84,7 @@ If the data for a tariff is `0` they are not transmitted, and the corresponding 
 | energy `A+`   | `4096`                              |             | `0x1000` |
 | energy `A-R+` | `8192`                              |             | `0x2000` |
 
-Message hex dump: `78 0c 2a 43 11 11 00 00 10 00 00 00 20 00`
+Command hex dump: `78 0c 2a 43 11 11 00 00 10 00 00 00 20 00`
 
 
 ## See also

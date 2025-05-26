@@ -29,7 +29,7 @@ Shift device time 5 seconds forward:
 | command size | `2`   | `0x02`   |
 | seconds      | `5`   | `0x0005` |
 
-Message hex dump: `5c 02 00 05`
+Command hex dump: `5c 02 00 05`
 
 Shift device time 5 seconds backward:
 
@@ -39,7 +39,7 @@ Shift device time 5 seconds backward:
 | command size | `2`   | `0x02`   |
 | seconds      | `-5`  | `0xfffb` |
 
-Message hex dump: `5c 02 ff fb`
+Command hex dump: `5c 02 ff fb`
 
 
 ## Response
@@ -58,7 +58,7 @@ Message hex dump: `5c 02 ff fb`
 | command id   | `92`  | `0x5c` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `5c 00`
+Command hex dump: `5c 00`
 
 
 ## See also

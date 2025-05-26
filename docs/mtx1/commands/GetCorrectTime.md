@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `62`  | `0x3e` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `3e 00`
+Command hex dump: `3e 00`
 
 
 ## Response
@@ -64,7 +64,7 @@ Default parameters:
 | hours to correct on standard time transition | `1`    | `0x01` |
 | is correction needed                         | `true` | `0x01` |
 
-Message hex dump: `3e 09 03 00 03 01 0a 00 04 01 01`
+Command hex dump: `3e 09 03 00 03 01 0a 00 04 01 01`
 
 
 ## See also

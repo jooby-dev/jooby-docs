@@ -27,7 +27,7 @@ Supported devices:
 | command size | `5`   | `0x05` |
 | tariff table | `A-`  | `0x01` |
 
-Message hex dump: `2c 05 01`
+Command hex dump: `2c 05 01`
 
 
 ## Response
@@ -82,7 +82,7 @@ Activate `A+` table for plan id `1` at `2024.02.19`:
 | passive plan season profiles | `2`                           | `0x02`       |
 | passive plan day profiles    | `3`                           | `0x03`       |
 
-Message hex dump: `2c 17 01  00 00 00 01 01 18 02 13 06 07 08  00 00 00 01 00 18 03 12 04 02 03`
+Command hex dump: `2c 17 01  00 00 00 01 01 18 02 13 06 07 08  00 00 00 01 00 18 03 12 04 02 03`
 
 
 ## See also

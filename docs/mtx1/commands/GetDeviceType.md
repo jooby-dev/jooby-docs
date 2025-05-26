@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `4`   | `0x04` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `04 00`
+Command hex dump: `04 00`
 
 
 ## Response
@@ -57,7 +57,7 @@ Device type `MTX 1G05.DH.2L2-DOB4`, revision `0x0b`, meter type `G_FULL`:
 | data 1       |       | `0x0012164721b3172c` |
 | data 2       |       | `0x11`               |
 
-Message hex dump: `04 09 00 12 16 47 21 b3 17 2c 11`
+Command hex dump: `04 09 00 12 16 47 21 b3 17 2c 11`
 
 
 ## See also

@@ -29,7 +29,7 @@ Supported devices:
 | tariff table | `A+`        | `0x00`       |
 | rate plan id | `987654321` | `0x3ade68b1` |
 
-Message hex dump: `14 05 00 3a de 68 b1`
+Command hex dump: `14 05 00 3a de 68 b1`
 
 
 ## Response
@@ -48,7 +48,7 @@ Message hex dump: `14 05 00 3a de 68 b1`
 | command id   | `20`  | `0x14` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `14 00`
+Command hex dump: `14 00`
 
 
 ## See also

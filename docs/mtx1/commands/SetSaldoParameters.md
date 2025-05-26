@@ -45,7 +45,7 @@ Supported devices:
 | power threshold          | `13`               | `0x0000000d`                         |
 | credit threshold         | `14`               | `0x0000000e`                         |
 
-Message hex dump: `2f 25 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00 05 06 00 00 00 07 00 00 00 08 09 0a 0b 0c 00 00 00 0d 00 00 00 0e`
+Command hex dump: `2f 25 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00 05 06 00 00 00 07 00 00 00 08 09 0a 0b 0c 00 00 00 0d 00 00 00 0e`
 
 
 ## Response
@@ -64,7 +64,7 @@ Message hex dump: `2f 25 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00 05 06 00 0
 | command id   | `47`  | `0x2f` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `2f 00`
+Command hex dump: `2f 00`
 
 
 ## See also

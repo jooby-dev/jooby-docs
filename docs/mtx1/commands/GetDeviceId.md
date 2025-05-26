@@ -25,7 +25,7 @@ Supported devices:
 | command id   | `5`   | `0x05` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `05 00`
+Command hex dump: `05 00`
 
 
 ## Response
@@ -76,7 +76,7 @@ One of the following device types:
 | year         | `20` (`2000` + `20` = `2020`) | `0x14`     |
 | serial       | `1b1d6a`                      | `0x1b1d6a` |
 
-Message hex dump: `05 08 00 1a 79 05 14 1b 1d 6a`
+Command hex dump: `05 08 00 1a 79 05 14 1b 1d 6a`
 
 
 ## See also

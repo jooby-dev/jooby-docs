@@ -23,7 +23,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | command size | `1`              | `0x01` |
 | display mode | additional (`1`) | `0x01` |
 
-Message hex dump: `5e 01 01`
+Command hex dump: `5e 01 01`
 
 
 ## Response
@@ -46,7 +46,7 @@ Message hex dump: `5e 01 01`
 | display mode | additional (`1`)                                                                               | `0x01`       |
 | displays     | `TOTAL_ACTIVE_ENERGY` <br/> `CURRENT_IN_PHASE` <br/> `SOFTWARE_VERSION` <br/> `OPTOPORT_SPEED` | `0x030a021f` |
 
-Message hex dump: `5e 05 01 03 0a 02 1f`
+Command hex dump: `5e 05 01 03 0a 02 1f`
 
 
 ## See also

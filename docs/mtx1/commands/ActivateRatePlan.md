@@ -46,7 +46,7 @@ Activate `A+` table for plan id `1` at `2024.02.19`:
 | season profiles | `7`                           | `0x07`       |
 | day profiles    | `8`                           | `0x08`       |
 
-Message hex dump: `13 0c 00 00 00 00 01 01 18 02 13 06 07 08`
+Command hex dump: `13 0c 00 00 00 00 01 01 18 02 13 06 07 08`
 
 
 ## Response
@@ -65,7 +65,7 @@ Message hex dump: `13 0c 00 00 00 00 01 01 18 02 13 06 07 08`
 | command id   | `19`  | `0x13` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `13 00`
+Command hex dump: `13 00`
 
 
 ## See also

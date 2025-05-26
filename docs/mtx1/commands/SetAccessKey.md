@@ -31,7 +31,7 @@ Set the default key for `READ_ONLY` access level:
 | access level | `3`   | `0x03`                               |
 | key data     |       | `0x00010203040506070809101112131415` |
 
-Message hex dump: `09 11 03 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15`
+Command hex dump: `09 11 03 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15`
 
 
 ## Response
@@ -50,7 +50,7 @@ Message hex dump: `09 11 03 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15`
 | command id   | `9`   | `0x09` |
 | command size | `0`   | `0x00` |
 
-Message hex dump: `09 00`
+Command hex dump: `09 00`
 
 
 ## See also

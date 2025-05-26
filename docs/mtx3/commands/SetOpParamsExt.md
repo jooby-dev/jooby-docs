@@ -13,25 +13,25 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | ---- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `1`  | `uint8` | command id = `0x3f`                                                                                                    |
 | `1`  | `uint8` | command size = `9`                                                                                                     |
-| `1`  | `uint8` | Timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                              |
-| `1`  | `uint8` | [Define 1](./GetOpParamsExt.md#define-1)                                                                                                  |
-| `1`  | `uint8` | Timeout for relay reactivation by button after deactivation due to `IMAX`, `PMAX`, `IDIFF`, or `COSFI` limits, seconds |
-| `1`  | `uint8` | Timeout for relay activation upon restoration of quality voltage, seconds                                              |
-| `5`  | `uint8` | Reserved bytes                                                                                                         |
+| `1`  | `uint8` | timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                              |
+| `1`  | `uint8` | [define 1](./GetOpParamsExt.md#define-1)                                                                               |
+| `1`  | `uint8` | timeout for relay reactivation by button after deactivation due to `IMAX`, `PMAX`, `IDIFF`, or `COSFI` limits, seconds |
+| `1`  | `uint8` | timeout for relay activation upon restoration of quality voltage, seconds                                              |
+| `5`  | `uint8` | reserved bytes                                                                                                         |
 
 ### Examples
 
-| Field                                                                                                                  | Value | Hex    |
-| ---------------------------------------------------------------------------------------------------------------------- | ----- | ------ |
-| command id                                                                                                             | `64`  | `0x40` |
-| command size                                                                                                           | `9`   | `0x9`  |
-| Timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                              | `1`   | `0x01` |
-| Define 1                                                                                                               | `?`   | `0x00` |
-| Timeout for relay reactivation by button after deactivation due to `IMAX`, `PMAX`, `IDIFF`, or `COSFI` limits, seconds | `0`   | `0x00` |
-| Timeout for relay activation upon restoration of quality voltage, seconds                                              | `5`   | `0x05` |
-| Reserved bytes                                                                                                         | `0`   | `0x00` |
+| Field                                                                                                                  | Value | Hex            |
+| ---------------------------------------------------------------------------------------------------------------------- | ----- | -------------- |
+| command id                                                                                                             | `64`  | `0x40`         |
+| command size                                                                                                           | `9`   | `0x9`          |
+| timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                              | `1`   | `0x01`         |
+| define 1                                                                                                               | `?`   | `0x00`         |
+| timeout for relay reactivation by button after deactivation due to `IMAX`, `PMAX`, `IDIFF`, or `COSFI` limits, seconds | `0`   | `0x00`         |
+| timeout for relay activation upon restoration of quality voltage, seconds                                              | `5`   | `0x05`         |
+| reserved bytes                                                                                                         | `0`   | `0x0000000000` |
 
-Command hex dump: `40 09 01 00 00 05 00 00 00 00 00`
+Command hex dump: `40 09 01 00 00 05 0000000000`
 
 
 ## Response

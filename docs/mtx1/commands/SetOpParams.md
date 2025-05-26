@@ -159,10 +159,10 @@ Bit mask:
 
 Bit mask:
 
-| Name                  | Bit | Description                                                            |
-| --------------------- | --- | ---------------------------------------------------------------------- |
-| `BLOCK_KEY_OPTOPORT`  | `2` | `1` - optoport is unlocked by button, `0` - optoport is unlocked (`0`) |
-| `MAGNET_SCREEN_CONST` | `5` | `1` – constant magnetic influence screen (`104.21.017`)                |
+| Name                  | Bit | Description                                                      |
+| --------------------- | --- | ---------------------------------------------------------------- |
+| `BLOCK_KEY_OPTOPORT`  | `2` | `1` - optoport is unlocked by button, `0` - optoport is unlocked |
+| `MAGNET_SCREEN_CONST` | `5` | `1` – constant magnetic influence screen (`104.21.017`)          |
 
 #### Setting for displaying meter readings on additional displays
 

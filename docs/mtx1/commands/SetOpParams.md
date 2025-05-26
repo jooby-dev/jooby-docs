@@ -31,14 +31,15 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `1`  | `uint8`  | [Relay set 2](#relay-set-2)                                                                                                                                    |
 | `1`  | `uint8`  | [Relay set 1](#relay-set-1)                                                                                                                                    |
 | `1`  | `uint8`  | Display type on the remote display (`0` - `OBIS`, `1` - symbolic (not used))                                                                                   |
-| `1`  | `uint8`  | Integration period for energy profiles `A+`, `A-`, voltage VA `0`, `30` - `30` minutes, `15` - `15` minutes, `60` - `60` minutes (`ten`)                       |
-| `1`  | `uint16` | Timeout refresh                                                                                                                                                |
+| `1`  | `uint8`  | Integration period for energy profiles `A+`, `A-`, voltage VA `0`, `30` - `30`, `1`, `3` ,`5`, `10`, `15`, `60` minutes (`ten`)                                |
+| `1`  | `uint8`  | Voltage averaging interval `0`, `1`, `3`, `5`, `10`, `15`, `30`, `60` minutes to detect voltage quality                                                        |
+| `1`  | `uint8`  | Reserved byte                                                                                                                                                  |
 | `1`  | `uint8`  | Allowed correction interval (`15` minutes by default)                                                                                                          |
 | `1`  | `uint8`  | Timeout for relay shutdown upon magnetic interference, seconds                                                                                                 |
 | `1`  | `uint8`  | Timeout for relay activation after magnetic field removal, seconds                                                                                             |
 | `1`  | `uint8`  | [Define 1](#define-1)                                                                                                                                          |
 | `1`  | `uint8`  | Timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                                                                      |
-| `1`  | `uint8`  | Timeout for relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, seconds                                                                                |
+| `1`  | `uint8`  | Timeout for relay reactivation by button after deactivation due to `IMAX`, `PMAX`, `IDIFF`, or `COSFI` limits, seconds                                         |
 | `1`  | `uint8`  | Timeout for relay activation upon restoration of quality voltage, seconds                                                                                      |
 | `1`  | `uint8`  | Timeout for relay deactivation due to poor voltage, seconds                                                                                                    |
 | `1`  | `uint8`  | Maximum threshold for the frequency of the grid voltage                                                                                                        |
@@ -65,37 +66,37 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 
 Bit mask:
 
-| Name                           | Bit  | Description                                                            |
-| ------------------------------ | ---- | ---------------------------------------------------------------------- |
-| `SET_ALL_SEGMENT_DISPLAY`      | `0`  | Enable display test                                                    |
-| `SOFTWARE_VERSION`             | `1`  | Enable software version display                                        |
-| `TOTAL_ACTIVE_ENERGY`          | `2`  | Enable total active energy `A+` display                                |
-| `ACTIVE_ENERGY_T1`             | `3`  | Enable active energy `A+` display for tariff `T1`                      |
-| `ACTIVE_ENERGY_T2`             | `4`  | Enable active energy `A+` display for tariff `T2`                      |
-| `ACTIVE_ENERGY_T3`             | `5`  | Enable active energy `A+` display for tariff `T3`                      |
-| `ACTIVE_ENERGY_T4`             | `6`  | Enable active energy `A+` display for tariff `T4`                      |
-| `ACTIVE_POWER_PER_PHASE`       | `7`  | Enable active power consumption display in phase                       |
-| `ACTIVE_POWER_IN_NEUTRAL`      | `8`  | Enable active power consumption display in neutral                     |
-| `CURRENT_IN_PHASE`             | `9`  | Enable root mean square current display in phase                       |
-| `CURRENT_IN_NEUTRAL`           | `10` | Enable root mean square current display in neutral                     |
-| `VOLTAGE`                      | `11` | Enable root mean square voltage display                                |
-| `HOUR_MINUTE_SECOND`           | `12` | Enable time display                                                    |
-| `DATE_MONTH_YEAR`              | `13` | Enable date display                                                    |
-| `TOTAL_EXPORTED_ACTIVE_ENERGY` | `14` | Enable total active energy `A-` display                                |
-| `EXPORTED_ACTIVE_ENERGY_T1`    | `15` | Enable active energy `A-` display for tariff `T1`                      |
-| `EXPORTED_ACTIVE_ENERGY_T2`    | `16` | Enable active energy `A-` display for tariff `T2`                      |
-| `EXPORTED_ACTIVE_ENERGY_T3`    | `17` | Enable active energy `A-` display for tariff `T3`                      |
-| `EXPORTED_ACTIVE_ENERGY_T4`    | `18` | Enable active energy `A-` display for tariff `T4`                      |
-| `POWER_COEFFICIENT_PHASE_A`    | `19` | Enable power factor display on channel `A` (Obis `33.7.0`)             |
-| `POWER_COEFFICIENT_PHASE_B`    | `20` | Enable power factor display on channel `B` (Obis `53.7.0`)             |
-| `BATTERY_VOLTAGE`              | `21` | Enable battery voltage display (Obis `96.6.3`)                         |
-| `POWER_THRESHOLD_T1`           | `22` | Enable relay off power threshold display for tariff `1` (Obis `5.2.1`) |
-| `POWER_THRESHOLD_T2`           | `23` | Enable relay off power threshold display for tariff `2` (Obis `5.2.2`) |
-| `POWER_THRESHOLD_T3`           | `24` | Enable relay off power threshold display for tariff `3` (Obis `5.2.3`) |
-| `POWER_THRESHOLD_T4`           | `25` | Enable relay off power threshold display for tariff `4` (Obis `5.2.4`) |
-| `CURRENT_BALANCE`              | `29` | Enable current balance display                                         |
-| -                              | `30` | Not used                                                               |
-| `AUTO_SCREEN_SCROLLING`        | `31` | Enable automatic display scrolling (applies only to the main display)  |
+| Name                           | Bit  | Description                                                             |
+| ------------------------------ | ---- | ----------------------------------------------------------------------- |
+| `SET_ALL_SEGMENT_DISPLAY`      | `0`  | Enable display test                                                     |
+| `SOFTWARE_VERSION`             | `1`  | Enable software version display                                         |
+| `TOTAL_ACTIVE_ENERGY`          | `2`  | Enable total active energy `A+` display                                 |
+| `ACTIVE_ENERGY_T1`             | `3`  | Enable active energy `A+` display for tariff `T1`                       |
+| `ACTIVE_ENERGY_T2`             | `4`  | Enable active energy `A+` display for tariff `T2`                       |
+| `ACTIVE_ENERGY_T3`             | `5`  | Enable active energy `A+` display for tariff `T3`                       |
+| `ACTIVE_ENERGY_T4`             | `6`  | Enable active energy `A+` display for tariff `T4`                       |
+| `ACTIVE_POWER_PER_PHASE`       | `7`  | Enable active power consumption display in phase                        |
+| `ACTIVE_POWER_IN_NEUTRAL`      | `8`  | Enable active power consumption display in neutral                      |
+| `CURRENT_IN_PHASE`             | `9`  | Enable root mean square current display in phase                        |
+| `CURRENT_IN_NEUTRAL`           | `10` | Enable root mean square current display in neutral                      |
+| `VOLTAGE`                      | `11` | Enable root mean square voltage display                                 |
+| `HOUR_MINUTE_SECOND`           | `12` | Enable time display                                                     |
+| `DATE_MONTH_YEAR`              | `13` | Enable date display                                                     |
+| `TOTAL_EXPORTED_ACTIVE_ENERGY` | `14` | Enable total active energy `A-` display                                 |
+| `EXPORTED_ACTIVE_ENERGY_T1`    | `15` | Enable active energy `A-` display for tariff `T1`                       |
+| `EXPORTED_ACTIVE_ENERGY_T2`    | `16` | Enable active energy `A-` display for tariff `T2`                       |
+| `EXPORTED_ACTIVE_ENERGY_T3`    | `17` | Enable active energy `A-` display for tariff `T3`                       |
+| `EXPORTED_ACTIVE_ENERGY_T4`    | `18` | Enable active energy `A-` display for tariff `T4`                       |
+| `POWER_COEFFICIENT_PHASE_A`    | `19` | Enable power factor display on channel `A` (Obis `33.7.0`)              |
+| `POWER_COEFFICIENT_PHASE_B`    | `20` | Enable power factor display on channel `B` (Obis `53.7.0`)              |
+| `BATTERY_VOLTAGE`              | `21` | Enable battery voltage display (Obis `96.6.3`)                          |
+| `POWER_THRESHOLD_T1`           | `22` | Enable relay off power threshold display for tariff `T1` (Obis `5.2.1`) |
+| `POWER_THRESHOLD_T2`           | `23` | Enable relay off power threshold display for tariff `T2` (Obis `5.2.2`) |
+| `POWER_THRESHOLD_T3`           | `24` | Enable relay off power threshold display for tariff `T3` (Obis `5.2.3`) |
+| `POWER_THRESHOLD_T4`           | `25` | Enable relay off power threshold display for tariff `T4` (Obis `5.2.4`) |
+| `CURRENT_BALANCE`              | `29` | Enable current balance display                                          |
+| -                              | `30` | Not used                                                                |
+| `AUTO_SCREEN_SCROLLING`        | `31` | Enable automatic display scrolling (applies only to the main display)   |
 
 #### Relay set 4
 
@@ -118,10 +119,10 @@ Bit mask:
 | Name                     | Bit | Description                                                  |
 | ------------------------ | --- | ------------------------------------------------------------ |
 | -                        | `0` | Reserved bit                                                 |
-| `RELAY_OFF_LIM_TARIFF_0` | `1` | Disable by exceeding power consumption limit for tariff `T1` |
-| `RELAY_OFF_LIM_TARIFF_1` | `2` | Disable by exceeding power consumption limit for tariff `T2` |
-| `RELAY_OFF_LIM_TARIFF_2` | `3` | Disable by exceeding power consumption limit for tariff `T3` |
-| `RELAY_OFF_LIM_TARIFF_3` | `4` | Disable by exceeding power consumption limit for tariff `T4` |
+| `RELAY_OFF_LIM_TARIFF_1` | `1` | Disable by exceeding power consumption limit for tariff `T1` |
+| `RELAY_OFF_LIM_TARIFF_2` | `2` | Disable by exceeding power consumption limit for tariff `T2` |
+| `RELAY_OFF_LIM_TARIFF_3` | `3` | Disable by exceeding power consumption limit for tariff `T3` |
+| `RELAY_OFF_LIM_TARIFF_4` | `4` | Disable by exceeding power consumption limit for tariff `T4` |
 | `RELAY_OFF_PF_MIN`       | `5` | Disable by `cos φ`                                           |
 
 #### Relay set 2
@@ -132,10 +133,10 @@ Bit mask:
 | -------------------- | --- | ------------------------------------------------- |
 | `RELAY_OFF_Y`        | `0` | Relay off function: `1` - enabled, `0` - disabled |
 | `RELAY_OFF_CENTER`   | `1` | Disable by central command                        |
-| `RELAY_OFF_TARIFF_0` | `2` | Disable by tariff `T1`                            |
-| `RELAY_OFF_TARIFF_1` | `3` | Disable by tariff `T2`                            |
-| `RELAY_OFF_TARIFF_2` | `4` | Disable by tariff `T3`                            |
-| `RELAY_OFF_TARIFF_3` | `5` | Disable by tariff `T4`                            |
+| `RELAY_OFF_TARIFF_1` | `2` | Disable by tariff `T1`                            |
+| `RELAY_OFF_TARIFF_2` | `3` | Disable by tariff `T2`                            |
+| `RELAY_OFF_TARIFF_3` | `4` | Disable by tariff `T3`                            |
+| `RELAY_OFF_TARIFF_4` | `5` | Disable by tariff `T4`                            |
 | `RELAY_OFF_I_LIMIT`  | `6` | Disable by exceeding load current                 |
 | `RELAY_OFF_V_BAD`    | `7` | Disable by poor voltage quality                   |
 
@@ -148,10 +149,10 @@ Bit mask:
 | `RELAY_ON_Y`        | `0` | Relay on function: `1` - enabled, `0` - disabled |
 | `RELAY_ON_CENTER`   | `1` | Enable by central command                        |
 | `RELAY_ON_PB`       | `2` | Enable by button                                 |
-| `RELAY_ON_TARIFF_0` | `3` | Enable by tariff `T1`                            |
-| `RELAY_ON_TARIFF_1` | `4` | Enable by tariff `T2`                            |
-| `RELAY_ON_TARIFF_2` | `5` | Enable by tariff `T3`                            |
-| `RELAY_ON_TARIFF_3` | `6` | Enable by tariff `T4`                            |
+| `RELAY_ON_TARIFF_1` | `3` | Enable by tariff `T1`                            |
+| `RELAY_ON_TARIFF_2` | `4` | Enable by tariff `T2`                            |
+| `RELAY_ON_TARIFF_3` | `5` | Enable by tariff `T3`                            |
+| `RELAY_ON_TARIFF_4` | `6` | Enable by tariff `T4`                            |
 | `RELAY_ON_V_GOOD`   | `7` | Enable by restoration of good voltage quality    |
 
 #### Define 1

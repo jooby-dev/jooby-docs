@@ -40,6 +40,8 @@ There are `2` types of command direction:
 | `0x70` | `GetBuildVersion`    | `READ_ONLY`      | [request](../../mtx1/commands/GetBuildVersion.md#request) / [response](../../mtx1/commands/GetBuildVersion.md#response)       | Get firmware build date and version from device.                                                       |
 | `0x71` | `GetOpParamsExt3`    | `READ_ONLY`      | [request](./GetOpParamsExt3.md#request) / [response](./GetOpParamsExt3.md#response)                                           | Get extended device operator parameters 3.                                                             |
 | `0x72` | `SetOpParamsExt3`    | **`READ_WRITE`** | [request](./SetOpParamsExt3.md#request) / [response](./SetOpParamsExt3.md#response)                                           | Set extended device operator parameters 3.                                                             |
+| `0x74` | `SetOpParamsExt4`    | **`READ_WRITE`** | [request](./SetOpParamsExt4.md#request) / [response](./SetOpParamsExt4.md#response)                                           | Set extended device operator parameters 3.                                                             |
+| `0x75` | `GetOpParamsExt4`    | `READ_ONLY`      | [request](./GetOpParamsExt4.md#request) / [response](./GetOpParamsExt4.md#response)                                           | Get extended device operator parameters 4.                                                             |
 | `0xfe` | `ErrorResponse`      | `READ_ONLY`      | [response](../../mtx1/commands/ErrorResponse.md#response)                                                                     | Provide info for the failed downlink command.                                                          |
 
 

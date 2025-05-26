@@ -44,12 +44,12 @@ Message hex dump: `3f 00`
 
 Bit mask:
 
-| Name                                | Bit | Description                                                      |
-| ----------------------------------- | --- | ---------------------------------------------------------------- |
-| `RESET_DAILY_MAX_POWER_BY_BUTTON`   | `0` | allow daily maximum power reset by button                        |
-| `RESET_MONTHLY_MAX_POWER_BY_BUTTON` | `1` | allow monthly maximum power reset by button                      |
-| `BLOCK_KEY_OPTOPORT`                | `2` | `1` - optoport is unlocked by button, `0` - optoport is unlocked |
-| `MAGNET_SCREEN_CONST`               | `5` | `1` - constant magnetic influence screen                         |
+| Name                        | Bit | Description                                                      |
+| --------------------------- | --- | ---------------------------------------------------------------- |
+| `RESET_DAY_MAX_POWER_KEY`   | `0` | allow daily maximum power reset by button                        |
+| `RESET_MONTH_MAX_POWER_KEY` | `1` | allow monthly maximum power reset by button                      |
+| `BLOCK_KEY_OPTOPORT`        | `2` | `1` - optoport is unlocked by button, `0` - optoport is unlocked |
+| `MAGNET_SCREEN_CONST`       | `5` | `1` - constant magnetic influence screen                         |
 
 ### Examples
 

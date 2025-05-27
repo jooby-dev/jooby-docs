@@ -17,7 +17,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `4`  | `uint32` | maximum threshold for negative active power for tariff `T2`, Watts |
 | `4`  | `uint32` | maximum threshold for negative active power for tariff `T3`, Watts |
 | `4`  | `uint32` | maximum threshold for negative active power for tariff `T4`, Watts |
-| `1`  | `uint8`  | [Relay set](./GetOpParamsExt3.md#relay-set)                        |
+| `1`  | `uint8`  | [relay set](./GetOpParamsExt3.md#relay-set)                        |
 
 ### Examples
 

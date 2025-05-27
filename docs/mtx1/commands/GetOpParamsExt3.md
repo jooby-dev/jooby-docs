@@ -76,9 +76,9 @@ Bit mask:
       <td>relay set</td>
       <td>
         <code>RELAY_OFF_LIMIT_P_MINUS_T1</code>: <code>true</code><br>
-        <code>RELAY_OFF_LIMIT_P_MINUS_T2</code>: <code>true</code><br>
+        <code>RELAY_OFF_LIMIT_P_MINUS_T2</code>: <code>false</code><br>
         <code>RELAY_OFF_LIMIT_P_MINUS_T3</code>: <code>true</code><br>
-        <code>RELAY_OFF_LIMIT_P_MINUS_T4</code>: <code>true</code>
+        <code>RELAY_OFF_LIMIT_P_MINUS_T4</code>: <code>false</code>
       </td>
       <td><code>0x14</code></td>
     </tr>

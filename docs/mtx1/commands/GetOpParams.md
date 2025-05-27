@@ -116,7 +116,8 @@ Bit mask:
 | `CURRENT_BALANCE`              | `29` | enable current balance display                                          |
 | -                              | `30` | not used                                                                |
 | `AUTO_SCREEN_SCROLLING`        | `31` | enable automatic display scrolling (applies only to the main display)   |
-e#### Relay set 4
+
+#### Relay set 4
 
 Bit mask:
 

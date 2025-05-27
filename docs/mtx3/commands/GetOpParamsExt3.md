@@ -44,26 +44,48 @@ Message hex dump: `71 00`
 
 Bit mask:
 
-| Name                                       | Bit | Description                                                      |
-| ------------------------------------------ | --- | ---------------------------------------------------------------- |
-| `RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_1` | `3` | disable by exceeding negative active power limit for tariff `T1` |
-| `RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_2` | `4` | disable by exceeding negative active power limit for tariff `T2` |
-| `RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_3` | `5` | disable by exceeding negative active power limit for tariff `T3` |
-| `RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_4` | `6` | disable by exceeding negative active power limit for tariff `T4` |
+| Name                         | Bit | Description                                                      |
+| ---------------------------- | --- | ---------------------------------------------------------------- |
+| `RELAY_OFF_LIMIT_P_MINUS_T1` | `3` | disable by exceeding negative active power limit for tariff `T1` |
+| `RELAY_OFF_LIMIT_P_MINUS_T1` | `4` | disable by exceeding negative active power limit for tariff `T2` |
+| `RELAY_OFF_LIMIT_P_MINUS_T1` | `5` | disable by exceeding negative active power limit for tariff `T3` |
+| `RELAY_OFF_LIMIT_P_MINUS_T1` | `6` | disable by exceeding negative active power limit for tariff `T4` |
 
 ### Examples
 
-| Field                                                              | Value                                                                                                                                                                                                            | Hex          |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| command id                                                         | `113`                                                                                                                                                                                                            | `0x71`       |
-| command size                                                       | `17`                                                                                                                                                                                                             | `0x11`       |
-| maximum threshold for negative active power for tariff `T1`, Watts | `100`                                                                                                                                                                                                            | `0x00000064` |
-| maximum threshold for negative active power for tariff `T2`, Watts | `200`                                                                                                                                                                                                            | `0x000000c8` |
-| maximum threshold for negative active power for tariff `T3`, Watts | `300`                                                                                                                                                                                                            | `0x0000012c` |
-| maximum threshold for negative active power for tariff `T4`, Watts | `400`                                                                                                                                                                                                            | `0x00000190` |
-| [relay set](#relay-set)                                            | `RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_1`:`true`<br>`RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_2`:`true`<br>`RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_3`:`true`<br>`RELAY_OFF_NEGATIVE_ACTIVE_POWER_TARIFF_4`:`true` | `0x14`       |
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+      <th>Hex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command id</td>
+      <td><code>113</code></td>
+      <td><code>0x71</code></td>
+    </tr>
+    <tr>
+      <td>command size</td>
+      <td><code>17</code></td>
+      <td><code>0x11</code></td>
+    </tr>
+    <tr>
+      <td>relay set</td>
+      <td>
+        <code>RELAY_OFF_LIMIT_P_MINUS_T1</code>: <code>true</code><br>
+        <code>RELAY_OFF_LIMIT_P_MINUS_T2</code>: <code>true</code><br>
+        <code>RELAY_OFF_LIMIT_P_MINUS_T3</code>: <code>true</code><br>
+        <code>RELAY_OFF_LIMIT_P_MINUS_T4</code>: <code>true</code>
+      </td>
+      <td><code>0x14</code></td>
+    </tr>
+  </tbody>
+</table>
 
-Command hex dump: `71 11 00000064 000000c8 0000012c 00000190 14`
+Command hex dump: `71 11 00000064 000000c8 0000012c 00000190 28`
 
 
 ## See also

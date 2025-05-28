@@ -41,22 +41,22 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
             <td><code>0x11</code></td>
         </tr>
         <tr>
-            <td>maximum threshold for negative active power for tariff `T1`, Watts</td>
+            <td>maximum threshold for negative active power for tariff <code>T1</code>, watts</td>
             <td><code>100</code></td>
             <td><code>0x00000064</code></td>
         </tr>
         <tr>
-            <td>maximum threshold for negative active power for tariff `T2`, Watts</td>
+            <td>maximum threshold for negative active power for tariff <code>T2</code>, watts</td>
             <td><code>200</code></td>
             <td><code>0x 000000c8</code></td>
         </tr>
         <tr>
-            <td>maximum threshold for negative active power for tariff `T3`, Watts</td>
+            <td>maximum threshold for negative active power for tariff <code>T3</code>, watts</td>
             <td><code>300</code></td>
             <td><code>0x0000012c</code></td>
         </tr>
         <tr>
-            <td>maximum threshold for negative active power for tariff `T4`, Watts</td>
+            <td>maximum threshold for negative active power for tariff <code>T4</code>, watts</td>
             <td><code>400</code></td>
             <td><code>0x00000190</code></td>
         </tr>

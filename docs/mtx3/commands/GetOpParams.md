@@ -39,10 +39,10 @@ Message hex dump: `1e 00`
 | `1`  | `uint32` | maximum active power threshold for tariff `T2`, Watts                                                                                                               |
 | `1`  | `uint32` | maximum active power threshold for tariff `T3`, Watts                                                                                                               |
 | `1`  | `uint32` | maximum active power threshold for tariff `T4`, Watts                                                                                                               |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T1`, Volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T2`, Volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T3`, Volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T4`, Volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T1`, volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T2`, volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T3`, volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T4`, volt-ampere reactive                                                                                              |
 | `1`  | `uint8`  | power averaging interval, in minutes                                                                                                                                |
 | `1`  | `uint8`  | start date of the monthly billing period                                                                                                                            |
 | `1`  | `uint8`  | display active time                                                                                                                                                 |
@@ -288,7 +288,7 @@ Bit mask:
 | ---------------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `TRANSFORMATION_RATIO`       | `0` | perform measurements using ratio transformation                                                                                                                         |
 | `METER_TYPE_R`               | `4` | `R` type meter                                                                                                                                                          |
-| `ACCUMULATE_BY_R_PLUS_MINUS` | `7` | reactive energy accumulation type.<br>`false` - reactive energy accumulation by quadrants `Q1`, `Q2`, `Q3`, `Q4`<br>`true` - reactive energy accumulation by `R+`, `R-` |
+| `ACCUMULATE_BY_R_PLUS_MINUS` | `7` | reactive energy accumulation type<br>`false` - reactive energy accumulation by quadrants `Q1`, `Q2`, `Q3`, `Q4`<br>`true` - reactive energy accumulation by `R+`, `R-` |
 
 ### Examples
 
@@ -347,22 +347,22 @@ Bit mask:
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T1</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T1</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T2</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T2</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T3</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T3</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T4</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T4</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>

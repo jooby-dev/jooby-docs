@@ -230,7 +230,15 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td><a href="./GetOpParamsExt4.md#display-settings">battery mode display settings 5</a></td>
-            <td><code>?</code></td>
+            <td>
+                <code>EVENT</code>: <code>false</code><br>
+                <code>PROFILE_P01</code>: <code>false</code><br>
+                <code>PROFILE_P02</code>: <code>true</code><br>
+                <code>PROFILE_P03</code>: <code>true</code><br>
+                <code>PROFILE_P04</code>: <code>true</code><br>
+                <code>PROFILE_P05</code>: <code>false</code><br>
+                <code>PROFILE_P06</code>: <code>false</code>
+            </td>
             <td><code>0x0000001c</code></td>
         </tr>
     </tbody>

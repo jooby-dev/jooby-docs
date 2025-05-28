@@ -20,10 +20,10 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `1`  | `uint32` | maximum active power threshold for tariff `T2`, Watts                                                                                                               |
 | `1`  | `uint32` | maximum active power threshold for tariff `T3`, Watts                                                                                                               |
 | `1`  | `uint32` | maximum active power threshold for tariff `T4`, Watts                                                                                                               |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T1`, Volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T2`, Volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T3`, Volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T4`, Volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T1`, volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T2`, volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T3`, volt-ampere reactive                                                                                              |
+| `1`  | `uint32` | maximum reactive power threshold for tariff `T4`, volt-ampere reactive                                                                                              |
 | `1`  | `uint8`  | power averaging interval, in minutes                                                                                                                                |
 | `1`  | `uint8`  | start date of the monthly billing period                                                                                                                            |
 | `1`  | `uint8`  | display active time                                                                                                                                                 |
@@ -114,22 +114,22 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T1</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T1</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T2</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T2</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T3</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T3</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>
         <tr>
-            <td>maximum reactive power threshold for tariff <code>T4</code>, Volt-ampere reactive</td>
+            <td>maximum reactive power threshold for tariff <code>T4</code>, volt-ampere reactive</td>
             <td><code>31800</code></td>
             <td><code>0x00007c38</code></td>
         </tr>

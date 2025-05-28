@@ -387,29 +387,172 @@ Bit mask:
       <td><code>0x07</code></td>
     </tr>
     <tr>
-      <td><a href="./GetOpParams.md#display-settings-1">display settings 1</a>
-      <td><code>?</code></td>
+      <td>
+        <a href="#display-settings-1">display settings 1</a>
+      </td>
+      <td>
+        <code>SET_ALL_SEGMENT_DISPLAY</code>: <code>true</code><br>
+        <code>SOFTWARE_VERSION</code>: <code>false</code><br>
+        <code>TOTAL_ACTIVE_ENERGY</code>: <code>true</code><br>
+        <code>ACTIVE_ENERGY_T1</code>: <code>false</code><br>
+        <code>ACTIVE_ENERGY_T2</code>: <code>false</code><br>
+        <code>ACTIVE_ENERGY_T3</code>: <code>false</code><br>
+        <code>ACTIVE_ENERGY_T4</code>: <code>false</code><br>
+        <code>TOTAL_REACTIVE_ENERGY</code>: <code>true</code><br>
+        <code>REACTIVE_ENERGY_T1</code>: <code>false</code><br>
+        <code>REACTIVE_ENERGY_T2</code>: <code>false</code><br>
+        <code>REACTIVE_ENERGY_T3</code>: <code>false</code><br>
+        <code>REACTIVE_ENERGY_T4</code>: <code>false</code><br>
+        <code>TOTAL_NEGATIVE_REACTIVE_ENERGY</code>: <code>true</code><br>
+        <code>NEGATIVE_REACTIVE_ENERGY_T1</code>: <code>false</code><br>
+        <code>NEGATIVE_REACTIVE_ENERGY_T2</code>: <code>false</code><br>
+        <code>NEGATIVE_REACTIVE_ENERGY_T3</code>: <code>false</code><br>
+        <code>NEGATIVE_REACTIVE_ENERGY_T4</code>: <code>false</code><br>
+        <code>TOTAL_EXPORTED_ACTIVE_ENERGY</code>: <code>false</code><br>
+        <code>EXPORTED_ACTIVE_ENERGY_T1</code>: <code>false</code><br>
+        <code>EXPORTED_ACTIVE_ENERGY_T2</code>: <code>false</code><br>
+        <code>EXPORTED_ACTIVE_ENERGY_T3</code>: <code>false</code><br>
+        <code>EXPORTED_ACTIVE_ENERGY_T4</code>: <code>false</code><br>
+        <code>TOTAL_EXPORTED_REACTIVE_ENERGY</code>: <code>false</code><br>
+        <code>EXPORTED_REACTIVE_ENERGY_T1</code>: <code>false</code><br>
+        <code>EXPORTED_REACTIVE_ENERGY_T2</code>: <code>false</code><br>
+        <code>EXPORTED_REACTIVE_ENERGY_T3</code>: <code>false</code><br>
+        <code>EXPORTED_REACTIVE_ENERGY_T4</code>: <code>false</code><br>
+        <code>TOTAL_EXPORTED_NEGATIVE_REACTIVE_ENERGY</code>: <code>false</code><br>
+        <code>EXPORTED_NEGATIVE_REACTIVE_ENERGY_T1</code>: <code>false</code><br>
+        <code>EXPORTED_NEGATIVE_REACTIVE_ENERGY_T2</code>: <code>false</code><br>
+        <code>EXPORTED_NEGATIVE_REACTIVE_ENERGY_T3</code>: <code>false</code><br>
+        <code>EXPORTED_NEGATIVE_REACTIVE_ENERGY_T4</code>: <code>false</code>
+      </td>
       <td><code>0x00001085</code></td>
     </tr>
     <tr>
-      <td><a href="./GetOpParams.md#display-settings-2">display settings 2</a>
-      <td><code>?</code></td>
+      <td>
+        <a href="#display-settings-2">display settings 2</a>
+      </td>
+      <td>
+        <code>CURRENT_IN_PHASE_A</code>: <code>false</code><br>
+        <code>CURRENT_IN_PHASE_B</code>: <code>false</code><br>
+        <code>CURRENT_IN_PHASE_C</code>: <code>false</code><br>
+        <code>CURRENT_IN_NEUTRAL</code>: <code>false</code><br>
+        <code>VOLTAGE_IN_PHASE_A</code>: <code>false</code><br>
+        <code>VOLTAGE_IN_PHASE_B</code>: <code>false</code><br>
+        <code>VOLTAGE_IN_PHASE_C</code>: <code>false</code><br>
+        <code>BATTERY_VOLTAGE</code>: <code>false</code><br>
+        <code>FREQUENCY</code>: <code>false</code><br>
+        <code>ACTIVE_POWER_SUM</code>: <code>true</code><br>
+        <code>ACTIVE_POWER_PHASE_A</code>: <code>false</code><br>
+        <code>ACTIVE_POWER_PHASE_B</code>: <code>false</code><br>
+        <code>ACTIVE_POWER_PHASE_C</code>: <code>false</code><br>
+        <code>REACTIVE_POWER_QPLUS_SUM</code>: <code>true</code><br>
+        <code>REACTIVE_POWER_QPLUS_PHASE_A</code>: <code>false</code><br>
+        <code>REACTIVE_POWER_QPLUS_PHASE_B</code>: <code>false</code><br>
+        <code>REACTIVE_POWER_QPLUS_PHASE_C</code>: <code>false</code><br>
+        <code>REACTIVE_POWER_QMINUS_SUM</code>: <code>true</code><br>
+        <code>REACTIVE_POWER_QMINUS_PHASE_A</code>: <code>false</code><br>
+        <code>REACTIVE_POWER_QMINUS_PHASE_B</code>: <code>false</code><br>
+        <code>REACTIVE_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
+        <code>POWER_COEFFICIENT_SUM</code>: <code>false</code><br>
+        <code>POWER_COEFFICIENT_PHASE_A</code>: <code>false</code><br>
+        <code>POWER_COEFFICIENT_PHASE_B</code>: <code>false</code><br>
+        <code>POWER_COEFFICIENT_PHASE_C</code>: <code>false</code><br>
+        <code>APPARENT_POWER_QPLUS_SUM</code>: <code>false</code><br>
+        <code>APPARENT_POWER_QPLUS_PHASE_A</code>: <code>false</code><br>
+        <code>APPARENT_POWER_QPLUS_PHASE_B</code>: <code>false</code><br>
+        <code>APPARENT_POWER_QPLUS_PHASE_C</code>: <code>false</code><br>
+        <code>APPARENT_POWER_QMINUS_SUM</code>: <code>false</code><br>
+        <code>APPARENT_POWER_QMINUS_PHASE_A</code>: <code>false</code><br>
+        <code>APPARENT_POWER_QMINUS_PHASE_B</code>: <code>false</code>
+      </td>
       <td><code>0x00022200</code></td>
     </tr>
     <tr>
-      <td><a href="./GetOpParams.md#display-settings-3">display settings 3</a>
-      <td><code>?</code></td>
+      <td>
+        <a href="#display-settings-3">display settings 3</a>
+      </td>
+      <td>
+        <code>APPARENT_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_DAY_T2</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_DAY_T3</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_DAY_T4</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_MONTH_T1</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_MONTH_T2</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_MONTH_T3</code>: <code>false</code><br>
+        <code>MAX_ACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_DAY_T2</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_DAY_T3</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_DAY_T4</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_MONTH_T1</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_MONTH_T2</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_MONTH_T3</code>: <code>false</code><br>
+        <code>MAX_REACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_DAY_T2</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_DAY_T3</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_DAY_T4</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_MONTH_T1</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_MONTH_T2</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_MONTH_T3</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_REACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_ACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_ACTIVE_POWER_DAY_T2</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_ACTIVE_POWER_DAY_T3</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_ACTIVE_POWER_DAY_T4</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T1</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T2</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T3</code>: <code>false</code>
+      </td>
       <td><code>0x00000000</code></td>
     </tr>
     <tr>
-      <td><a href="./GetOpParams.md#relay-set">relay set</a>
-      <td><code>?</code></td>
+      <td>
+        <a href="#relay-set">relay set</a>
+      </td>
+      <td>
+        <code>RELAY_ON_Y</code>: <code>true</code><br>
+        <code>RELAY_ON_CENTER</code>: <code>true</code><br>
+        <code>RELAY_ON_PB</code>: <code>false</code><br>
+        <code>RELAY_ON_TARIFF_1</code>: <code>false</code><br>
+        <code>RELAY_ON_TARIFF_2</code>: <code>false</code><br>
+        <code>RELAY_ON_TARIFF_3</code>: <code>false</code><br>
+        <code>RELAY_ON_TARIFF_4</code>: <code>false</code><br>
+        <code>RELAY_ON_V_GOOD</code>: <code>false</code><br>
+        <code>RELAY_OFF_Y</code>: <code>true</code><br>
+        <code>RELAY_OFF_CENTER</code>: <code>true</code><br>
+        <code>RELAY_OFF_TARIFF_1</code>: <code>false</code><br>
+        <code>RELAY_OFF_TARIFF_2</code>: <code>false</code><br>
+        <code>RELAY_OFF_TARIFF_3</code>: <code>false</code><br>
+        <code>RELAY_OFF_TARIFF_4</code>: <code>false</code><br>
+        <code>RELAY_OFF_I_LIMIT</code>: <code>false</code><br>
+        <code>RELAY_OFF_V_BAD</code>: <code>false</code><br>
+        <code>RELAY_OFF_DIFF_BAD</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_TARIFF_1</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_TARIFF_2</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_TARIFF_3</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_TARIFF_4</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_VAR_TARIFF_1</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_VAR_TARIFF_2</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_VAR_TARIFF_3</code>: <code>false</code><br>
+        <code>RELAY_OFF_LIM_VAR_TARIFF_4</code>: <code>false</code><br>
+        <code>RELAY_ON_PF_MIN</code>: <code>false</code><br>
+        <code>RELAY_OFF_PF_MIN</code>: <code>false</code><br>
+        <code>RELAY_ON_TIMEOUT</code>: <code>false</code><br>
+        <code>RELAY_ON_SALDO</code>: <code>false</code><br>
+        <code>RELAY_OFF_SALDO</code>: <code>false</code><br>
+        <code>RELAY_OFF_SALDO_SOFT</code>: <code>false</code>
+      </td>
       <td><code>0x00000303</code></td>
     </tr>
     <tr>
-      <td><a href="./GetOpParams.md#serial-ports-set">serial-ports-set</a>
-      <td>serial ports set</td>
-      <td><code>?</code></td>
+      <td>
+        <a href="#serial-ports-set">serial ports set</a>
+      </td>
+      <td>
+        <code>plc</code>: <code>9600</code><br>
+        <code>optoport</code>: <code>9600</code>
+      </td>
       <td><code>0x44</code></td>
     </tr>
     <tr>
@@ -488,8 +631,14 @@ Bit mask:
       <td><code>0x0001</code></td>
     </tr>
     <tr>
-      <td><a href="./GetOpParams.md#measurement-type">measurement type</a>
-      <td><code>0</code></td>
+      <td>
+        <a href="#measurement-type">measurement type</a>
+      </td>
+      <td>
+        <code>TRANSFORMATION_RATIO</code>: <code>false</code><br>
+        <code>METER_TYPE_R</code>: <code>false</code><br>
+        <code>ACCUMULATE_BY_R_PLUS_MINUS</code>: <code>false</code>
+      </td>
       <td><code>0x00</code></td>
     </tr>
     <tr>
@@ -518,8 +667,37 @@ Bit mask:
       <td><code>0x05</code></td>
     </tr>
     <tr>
-      <td><a href="./GetOpParams.md#display-settings-4">display settings 4</a>
-      <td><code>?</code></td>
+      <td><a href="#display-settings-4">display settings 4</a>
+      <td>
+        <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_DAY_T2</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_DAY_T3</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_DAY_T4</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_MONTH_T1</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_MONTH_T2</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_MONTH_T3</code>: <code>false</code><br>
+        <code>MAX_EXPORTED_REACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_DAY_T2</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_DAY_T3</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_DAY_T4</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_MONTH_T1</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_MONTH_T2</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_MONTH_T3</code>: <code>false</code><br>
+        <code>MAX_NEGATIVE_EXPORTED_REACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
+        <code>HOUR_MINUTE_SECOND</code>: <code>true</code><br>
+        <code>DATE_MONTH_YEAR</code>: <code>true</code><br>
+        <code>CURRENT_TRANSFORMATION_RATIO</code>: <code>false</code><br>
+        <code>VOLTAGE_TRANSFORMATION_RATIO</code>: <code>false</code><br>
+        <code>CURRENT_BALANCE</code>: <code>false</code><br>
+        <code>POWER_THRESHOLD_T1</code>: <code>false</code><br>
+        <code>POWER_THRESHOLD_T2</code>: <code>false</code><br>
+        <code>POWER_THRESHOLD_T3</code>: <code>false</code><br>
+        <code>POWER_THRESHOLD_T4</code>: <code>false</code><br>
+        <code>SORT_DISPLAY_SCREENS</code>: <code>false</code><br>
+        <code>AUTO_SCREEN_SCROLLING</code>: <code>true</code>
+      </td>
       <td><code>0x80060000</code></td>
     </tr>
   </tbody>

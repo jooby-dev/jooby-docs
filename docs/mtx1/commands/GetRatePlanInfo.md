@@ -43,7 +43,7 @@ Command hex dump: `2c 05 01`
 | `1`  | `uint8`  | active plan: indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)                                                  |
 | `1`  | `uint8`  | active plan: activation year (number of years after `2000`)                                                                                          |
 | `1`  | `uint8`  | active plan: activation month (`1` - January ... `12` - December)                                                                                    |
-| `1`  | `uint8`  | active plan: activation date                                                                                                                         |
+| `1`  | `uint8`  | active plan: activation date (month day number which starts from `1`)                                                                                |
 | `1`  | `uint8`  | active plan: the number of special days in the tariff table (max `26`)                                                                               |
 | `1`  | `uint8`  | active plan: the number of seasons in the tariff table (max `14`)                                                                                    |
 | `1`  | `uint8`  | active plan: the number of days in the tariff table (max `32`)                                                                                       |
@@ -51,7 +51,7 @@ Command hex dump: `2c 05 01`
 | `1`  | `uint8`  | passive plan: indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)                                                 |
 | `1`  | `uint8`  | passive plan: activation year (number of years after `2000`)                                                                                         |
 | `1`  | `uint8`  | passive plan: activation month (`1` - January ... `12` - December)                                                                                   |
-| `1`  | `uint8`  | passive plan: activation date                                                                                                                        |
+| `1`  | `uint8`  | passive plan: activation date (month day number which starts from `1`)                                                                               |
 | `1`  | `uint8`  | passive plan: the number of special days in the tariff table (max `26`)                                                                              |
 | `1`  | `uint8`  | passive plan: the number of seasons in the tariff table (max `14`)                                                                                   |
 | `1`  | `uint8`  | passive plan: the number of days in the tariff table (max `32`)                                                                                      |

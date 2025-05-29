@@ -31,19 +31,19 @@ Supported devices:
 
 Default parameters:
 
-| Field                                        | Value  | Hex    |
-| -------------------------------------------- | ------ | ------ |
-| command id                                   | `28`   | `0x1c` |
-| command size                                 | `9`    | `0x09` |
-| month transition to `DST`                    | `3`    | `0x03` |
-| date transition to `DST`                     | `0`    | `0x00` |
-| hours transition to `DST`                    | `3`    | `0x03` |
-| hours to correct on `DST` transition         | `1`    | `0x01` |
-| month transition to standard time            | `10`   | `0x0a` |
-| date transition to standard time             | `0`    | `0x00` |
-| hours transition to standard time            | `4`    | `0x04` |
-| hours to correct on standard time transition | `1`    | `0x01` |
-| is correction needed                         | `true` | `0x01` |
+| Field                                        | Value          | Hex    |
+| -------------------------------------------- | -------------- | ------ |
+| command id                                   | `28`           | `0x1c` |
+| command size                                 | `9`            | `0x09` |
+| month transition to `DST`                    | `3` (March)    | `0x03` |
+| date transition to `DST`                     | `0`            | `0x00` |
+| hours transition to `DST`                    | `3`            | `0x03` |
+| hours to correct on `DST` transition         | `1`            | `0x01` |
+| month transition to standard time            | `10` (October) | `0x0a` |
+| date transition to standard time             | `0`            | `0x00` |
+| hours transition to standard time            | `4`            | `0x04` |
+| hours to correct on standard time transition | `1`            | `0x01` |
+| is correction needed                         | `true`         | `0x01` |
 
 Command hex dump: `1c 09 03 00 03 01 0a 00 04 01 01`
 

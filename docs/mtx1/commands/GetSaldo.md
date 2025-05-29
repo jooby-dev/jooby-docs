@@ -55,7 +55,7 @@ Command hex dump: `29 00`
 | counter             | `8`                 | `0x08`                               |
 | energy for tariffs  | `2`, `3`,  `4`, `5` | `0x00000002000000030000000400000005` |
 | saldo after setting | `7`                 | `0x00000007`                         |
-| month               | `9`                 | `0x09`                               |
+| month               | `9` (September)     | `0x09`                               |
 | date                | `23`                | `0x17`                               |
 | hour                | `6`                 | `0x06`                               |
 | minute              | `35`                | `0x23`                               |

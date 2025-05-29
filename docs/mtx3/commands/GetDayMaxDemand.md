@@ -51,7 +51,7 @@ Each power field is linked with the previous `hour` and `minutes` fields.
 | ---- | -------- | ------------------------------------------------------------------------------------- |
 | `1`  | `uint8`  | hour                                                                                  |
 | `1`  | `uint8`  | minutes                                                                               |
-| `1`  | `uint32` | maximum power `P+`, (`1.6.x`, x=`1..4`)                                               |
+| `1`  | `uint32` | maximum power `P+` (`1.6.x`, x=`1..4`)                                                |
 | `1`  | `uint8`  | hour                                                                                  |
 | `1`  | `uint8`  | minutes                                                                               |
 | `1`  | `uint32` | maximum power `VARi`, `3.6.x` for meter type `R` (`A+R+`, `5.8.x` for meter type `G`) |

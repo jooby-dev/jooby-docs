@@ -32,14 +32,14 @@ Command hex dump: `70 00`
 
 ### Format
 
-| Size | Type    | Field                                     |
-| ---- | ------- | ----------------------------------------- |
-| `1`  | `uint8` | command id = `0x70`                       |
-| `1`  | `uint8` | command size = `6`                        |
-| `1`  | `uint8` | date                                      |
-| `1`  | `uint8` | month (`1` - January ... `12` - December) |
-| `1`  | `uint8` | year (number of years after `2000`)       |
-| `3`  | `uint8` | version information (as semver 3 numbers) |
+| Size | Type    | Field                                         |
+| ---- | ------- | --------------------------------------------- |
+| `1`  | `uint8` | command id = `0x70`                           |
+| `1`  | `uint8` | command size = `6`                            |
+| `1`  | `uint8` | date (month day number which starts from `1`) |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)     |
+| `1`  | `uint8` | year (number of years after `2000`)           |
+| `3`  | `uint8` | version information (as semver 3 numbers)     |
 
 ### Examples
 

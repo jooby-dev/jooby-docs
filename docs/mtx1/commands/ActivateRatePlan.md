@@ -22,7 +22,7 @@ Supported devices:
 | `1`  | `uint8`  | indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)                                                               |
 | `1`  | `uint8`  | activation year (number of years after `2000`)                                                                                                       |
 | `1`  | `uint8`  | activation month (`1` - January ... `12` - December)                                                                                                 |
-| `1`  | `uint8`  | activation date                                                                                                                                      |
+| `1`  | `uint8`  | activation date (month day number which starts from `1`)                                                                                             |
 | `1`  | `uint8`  | the number of special days in the tariff table (max `26`)                                                                                            |
 | `1`  | `uint8`  | the number of seasons in the tariff table (max `14`)                                                                                                 |
 | `1`  | `uint8`  | the number of days in the tariff table (max `32`)                                                                                                    |

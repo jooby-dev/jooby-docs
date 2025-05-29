@@ -56,19 +56,19 @@ Command hex dump: `41 02 01 02`
 
 ### Format
 
-| Size | Type    | Field                                                  |
-| ---- | ------- | ------------------------------------------------------ |
-| `1`  | `uint8` | command id = `0x41`                                    |
-| `1`  | `uint8` | command size = `9`                                     |
-| `1`  | `uint8` | [event type](#event-type)                              |
-| `1`  | `uint8` | event offset (`0..7`, `255` - the last critical event) |
-| `1`  | `uint8` | year (date of the last critical event)                 |
-| `1`  | `uint8` | month                                                  |
-| `1`  | `uint8` | date                                                   |
-| `1`  | `uint8` | hours                                                  |
-| `1`  | `uint8` | minutes                                                |
-| `1`  | `uint8` | seconds                                                |
-| `1`  | `uint8` | number of events for a given date                      |
+| Size | Type    | Field                                                          |
+| ---- | ------- | -------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x41`                                            |
+| `1`  | `uint8` | command size = `9`                                             |
+| `1`  | `uint8` | [event type](#event-type)                                      |
+| `1`  | `uint8` | event offset (`0..7`, `255` - the last critical event)         |
+| `1`  | `uint8` | date of the last critical event (number of years after `2000`) |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                      |
+| `1`  | `uint8` | date (month day number which starts from `1`)                  |
+| `1`  | `uint8` | hours                                                          |
+| `1`  | `uint8` | minutes                                                        |
+| `1`  | `uint8` | seconds                                                        |
+| `1`  | `uint8` | number of events for a given date                              |
 
 ### Examples
 
@@ -81,7 +81,7 @@ Default parameters:
 | event type       | electromagnetic influence detected | `0x01` |
 | event offset     | `1`                                | `0x01` |
 | year             | `23`                               | `0x17` |
-| month            | `3`                                | `0x03` |
+| month            | `3` (March)                        | `0x03` |
 | date             | `12`                               | `0x0c` |
 | hours            | `10`                               | `0x0a` |
 | minutes          | `22`                               | `0x16` |

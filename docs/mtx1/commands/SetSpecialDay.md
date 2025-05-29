@@ -26,16 +26,16 @@ Supported devices:
 
 ### Examples
 
-| Field        | Value  | Hex    |
-| ------------ | ------ | ------ |
-| command id   | `18`   | `0x12` |
-| command size | `6`    | `0x06` |
-| tariff table | `A-`   | `0x01` |
-| index        | `5`    | `0x05` |
-| month        | `1`    | `0x01` |
-| date         | `9`    | `0x09` |
-| day index    | `3`    | `0x03` |
-| is periodic  | `true` | `0x00` |
+| Field        | Value         | Hex    |
+| ------------ | ------------- | ------ |
+| command id   | `18`          | `0x12` |
+| command size | `6`           | `0x06` |
+| tariff table | `A-`          | `0x01` |
+| index        | `5`           | `0x05` |
+| month        | `1` (January) | `0x01` |
+| date         | `9`           | `0x09` |
+| day index    | `3`           | `0x03` |
+| is periodic  | `true`        | `0x00` |
 
 Command hex dump: `12 06 01 05 01 09 03 00`
 

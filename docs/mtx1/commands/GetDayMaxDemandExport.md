@@ -47,11 +47,11 @@ Command hex dump: `58 03 18 02 13`
 
 Each power field is linked with the previous `hour` and `minutes` fields.
 
-| Size | Type     | Field                                   |
-| ---- | -------- | --------------------------------------- |
-| `1`  | `uint8`  | hour                                    |
-| `1`  | `uint8`  | minutes                                 |
-| `1`  | `uint32` | maximum power `P-`, (`2.6.x`, x=`1..4`) |
+| Size | Type     | Field                                  |
+| ---- | -------- | -------------------------------------- |
+| `1`  | `uint8`  | hour                                   |
+| `1`  | `uint8`  | minutes                                |
+| `1`  | `uint32` | maximum power `P-` (`2.6.x`, x=`1..4`) |
 
 ### Examples
 

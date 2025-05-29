@@ -50,6 +50,7 @@ There are `2` types of command direction:
 | `0x71` | `GetOperatorParametersExt3` | `READ_ONLY`      | [request](./GetOperatorParametersExt3.md#request) / [response](./GetOperatorParametersExt3.md#response) | Get extended device operator parameters 3.                                                             |
 | `0x72` | `SetOperatorParametersExt3` | **`READ_WRITE`** | [request](./SetOperatorParametersExt3.md#request) / [response](./SetOperatorParametersExt3.md#response) | Set extended device operator parameters 3.                                                             |
 | `0x78` | `GetDayEnergies`            | `UNENCRYPTED`    | [event](./uplink/GetDayEnergies.md)                                                                     | Event to get day energies by 4 tariffs (T1-T4). Can be transmitted only via Lora.                      |
+| `0x7a` | `GetMeterInfo`              | `READ_ONLY`      | [request](./GetMeterInfo.md#request) / [response](./GetMeterInfo.md#response)                           | Get meter info.                                                                                        |
 | `0xfe` | `ErrorResponse`             | `READ_ONLY`      | [response](./ErrorResponse.md#response)                                                                 | Provide info for the failed downlink command.                                                          |
 
 

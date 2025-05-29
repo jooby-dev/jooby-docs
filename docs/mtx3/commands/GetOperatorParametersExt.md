@@ -1,4 +1,4 @@
-# GetOpParamsExt
+# GetOperatorParametersExt
 
 Request/response to get device operator extended parameters.
 

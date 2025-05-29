@@ -1,4 +1,4 @@
-# SetOpParamsExt2
+# SetOperatorParametersExt2
 
 Request/response to set device operator parameters `2`.
 
@@ -18,16 +18,16 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `1`  | `uint8`  | [relay set](#relay-set)                                                                                                                                     |
 | `1`  | `uint8`  | timeout for relay activation after magnetic field removal, seconds                                                                                          |
 | `1`  | `uint8`  | default PLC Phase<br>`0`, `1` - Phase A<br>`2` - Phase B<br>`3` - Phase C                                                                                   |
-| `4`  | `uint32` | [display settings 1](./GetOpParams.md#display-settings-1)                                                                                                   |
-| `4`  | `uint32` | [display settings 2](./GetOpParams.md#display-settings-2)                                                                                                   |
-| `4`  | `uint32` | [display settings 3](./GetOpParams.md#display-settings-3)                                                                                                   |
-| `4`  | `uint32` | [display settings 4](./GetOpParams.md#display-settings-4)                                                                                                   |
-| `1`  | `uint8`  | [channel load profile 1](./GetOpParamsExt2.md#channel-load-profile) (if enabled, it will use half of the `A+` archive space)                                |
-| `1`  | `uint8`  | [channel load profile 2](./GetOpParamsExt2.md#channel-load-profile) (if enabled, it will use half of the `A+R+` archive space                               |
-| `1`  | `uint8`  | [channel load profile 3](./GetOpParamsExt2.md#channel-load-profile) (if enabled, it will use half of the `A+R-` archive space)                              |
-| `1`  | `uint8`  | [channel load profile 4](./GetOpParamsExt2.md#channel-load-profile) (if enabled, it will use half of the `A-` archive space)                                |
-| `1`  | `uint8`  | [channel load profile 5](./GetOpParamsExt2.md#channel-load-profile) (if enabled, it will use half of the `A-R+` archive space)                              |
-| `1`  | `uint8`  | [channel load profile 6](./GetOpParamsExt2.md#channel-load-profile) (if enabled, it will use half of the `A-R-` archive space)                              |
+| `4`  | `uint32` | [display settings 1](./GetOperatorParameters.md#display-settings-1)                                                                                         |
+| `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                         |
+| `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                         |
+| `4`  | `uint32` | [display settings 4](./GetOperatorParameters.md#display-settings-4)                                                                                         |
+| `1`  | `uint8`  | [channel load profile 1](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A+` archive space)                      |
+| `1`  | `uint8`  | [channel load profile 2](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A+R+` archive space                     |
+| `1`  | `uint8`  | [channel load profile 3](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A+R-` archive space)                    |
+| `1`  | `uint8`  | [channel load profile 4](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A-` archive space)                      |
+| `1`  | `uint8`  | [channel load profile 5](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A-R+` archive space)                    |
+| `1`  | `uint8`  | [channel load profile 6](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A-R-` archive space)                    |
 | `1`  | `uint8`  | allowed correction period, hours (`24` hours by default). If bit `7` is `0` (default is `0`), time correction crossing the half-hour boundary is forbidden. |
 
 
@@ -85,7 +85,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-1">display settings 1</a>
+                <a href="./GetOperatorParameters.md#display-settings-1">display settings 1</a>
             </td>
             <td>
                 <code>SET_ALL_SEGMENT_DISPLAY</code>: <code>false</code><br>
@@ -125,7 +125,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-2">display settings 2</a>
+                <a href="./GetOperatorParameters.md#display-settings-2">display settings 2</a>
             </td>
             <td>
                 <code>CURRENT_IN_PHASE_A</code>: <code>false</code><br>
@@ -165,7 +165,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-3">display settings 3</a>
+                <a href="./GetOperatorParameters.md#display-settings-3">display settings 3</a>
             </td>
             <td>
                 <code>APPARENT_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
@@ -205,7 +205,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-4">display settings 4</a>
+                <a href="./GetOperatorParameters.md#display-settings-4">display settings 4</a>
             </td>
             <td>
                 <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
@@ -240,32 +240,32 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
             <td><code>0x40000000</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#channel-load-profile">channel load profile 1</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 1</a></td>
             <td><code>1</code></td>
             <td><code>0x01</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#channel-load-profile">channel load profile 2</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 2</a></td>
             <td><code>2</code></td>
             <td><code>0x02</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#channel-load-profile">channel load profile 3</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 3</a></td>
             <td><code>3</code></td>
             <td><code>0x03</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#channel-load-profile">channel load profile 4</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 4</a></td>
             <td><code>4</code></td>
             <td><code>0x04</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#channel-load-profile">channel load profile 5</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 5</a></td>
             <td><code>5</code></td>
             <td><code>0x05</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#channel-load-profile">channel load profile 6</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 6</a></td>
             <td><code>6</code></td>
             <td><code>0x06</code></td>
         </tr>

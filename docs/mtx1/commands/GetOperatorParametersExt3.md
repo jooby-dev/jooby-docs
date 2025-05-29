@@ -1,4 +1,4 @@
-# GetOpParamsExt3
+# GetOperatorParametersExt3
 
 Request/response to get device operator extended parameters `3`.
 

@@ -1,4 +1,4 @@
-# SetOpParamsExt
+# SetOperatorParametersExt
 
 Request/response to set device operator parameters.
 
@@ -14,7 +14,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `1`  | `uint8` | command id = `0x3f`                                                                                                    |
 | `1`  | `uint8` | command size = `9`                                                                                                     |
 | `1`  | `uint8` | timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                              |
-| `1`  | `uint8` | [define 1](./GetOpParamsExt.md#define-1)                                                                               |
+| `1`  | `uint8` | [define 1](./GetOperatorParametersExt.md#define-1)                                                                     |
 | `1`  | `uint8` | timeout for relay reactivation by button after deactivation due to `IMAX`, `PMAX`, `IDIFF`, or `COSFI` limits, seconds |
 | `1`  | `uint8` | timeout for relay activation upon restoration of quality voltage, seconds                                              |
 | `5`  | `uint8` | reserved bytes                                                                                                         |
@@ -44,7 +44,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
     </tr>
     <tr>
         <td>
-            <a href="./GetOpParams.md#define-1">define 1</a>
+            <a href="./GetOperatorParameters.md#define-1">define 1</a>
         </td>
         <td>
             <code>RESET_DAY_MAX_POWER_KEY</code>: <code>false</code><br>

@@ -1,4 +1,4 @@
-# SetOpParamsExt3
+# SetOperatorParametersExt3
 
 Request/response to set device operator parameters `3`.
 
@@ -17,7 +17,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `4`  | `uint32` | maximum threshold for negative active power for tariff `T2`, Watts |
 | `4`  | `uint32` | maximum threshold for negative active power for tariff `T3`, Watts |
 | `4`  | `uint32` | maximum threshold for negative active power for tariff `T4`, Watts |
-| `1`  | `uint8`  | [relay set](./GetOpParamsExt3.md#relay-set)                        |
+| `1`  | `uint8`  | [relay set](./GetOperatorParametersExt3.md#relay-set)              |
 
 ### Examples
 
@@ -62,7 +62,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParamsExt3.md#relay-set">relay set</a>
+                <a href="./GetOperatorParametersExt3.md#relay-set">relay set</a>
             </td>
             <td>
                 <code>RELAY_OFF_LIMIT_P_MINUS_T1</code>: <code>true</code><br>

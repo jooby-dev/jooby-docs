@@ -1,4 +1,4 @@
-# GetOpParams
+# GetOperatorParameters
 
 Request/response to get device operator parameters.
 

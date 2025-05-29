@@ -1,4 +1,4 @@
-# GetOpParamsExt2
+# GetOperatorParametersExt2
 
 Request/response to get device operator extended parameters `2`.
 
@@ -37,10 +37,10 @@ Message hex dump: `47 00`
 | `1`  | `uint8`  | [relay set](#relay-set)                                                                                                                                     |
 | `1`  | `uint8`  | timeout for relay activation after magnetic field removal, seconds                                                                                          |
 | `1`  | `uint8`  | default PLC Phase<br>`0`, `1` - Phase A<br>`2` - Phase B<br>`3` - Phase C                                                                                   |
-| `4`  | `uint32` | [display settings 1](./GetOpParams.md#display-settings-1)                                                                                                   |
-| `4`  | `uint32` | [display settings 2](./GetOpParams.md#display-settings-2)                                                                                                   |
-| `4`  | `uint32` | [display settings 3](./GetOpParams.md#display-settings-3)                                                                                                   |
-| `4`  | `uint32` | [display settings 4](./GetOpParams.md#display-settings-4)                                                                                                   |
+| `4`  | `uint32` | [display settings 1](./GetOperatorParameters.md#display-settings-1)                                                                                         |
+| `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                         |
+| `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                         |
+| `4`  | `uint32` | [display settings 4](./GetOperatorParameters.md#display-settings-4)                                                                                         |
 | `1`  | `uint8`  | [channel load profile 1](#channel-load-profile) (if enabled, it will use half of the `A+` archive space)                                                    |
 | `1`  | `uint8`  | [channel load profile 2](#channel-load-profile) (if enabled, it will use half of the `A+R+` archive space)                                                  |
 | `1`  | `uint8`  | [channel load profile 3](#channel-load-profile) (if enabled, it will use half of the `A+R-` archive space)                                                  |

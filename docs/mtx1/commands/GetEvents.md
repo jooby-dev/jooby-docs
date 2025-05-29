@@ -13,16 +13,14 @@ Supported devices:
 
 ### Format
 
-| Field        | Value   | Hex                                             |
-| ------------ | ------- | ----------------------------------------------- |
-| command id   | `51`    | `0x33`                                          |
-| command size | `4`     | `0x04`                                          |
-| `1`          | `uint8` | year (number of years after `2000`)             |
-| `1`          | `uint8` | month (`1` - January ... `12` - December)       |
-| `1`          | `uint8` | date                                            |
-| `1`          | `uint8` | offset in the events array of the requested day |
-
-### Examples
+| Size | Type    | Field                                           |
+| ---- | ------- | ----------------------------------------------- |
+| `1`  | `uint8` | command id = `0x33`                             |
+| `1`  | `uint8` | command size = `4`                              |
+| `1`  | `uint8` | year (number of years after `2000`)             |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)       |
+| `1`  | `uint8` | date (month day number which starts from `1`)   |
+| `1`  | `uint8` | offset in the events array of the requested day |
 
 ### Examples
 
@@ -30,7 +28,7 @@ Supported devices:
 | ----------------------------------------------- | ----- | ------ |
 | command id                                      | `51`  | `0x33` |
 | command size                                    | `4`   | `0x04` |
-| years offset from 2000                          | `20`  | `0x14` |
+| years                                           | `20`  | `0x14` |
 | month                                           | `2`   | `0x02` |
 | date                                            | `5`   | `0x05` |
 | offset in the events array of the requested day | `4`   | `0x04` |
@@ -49,7 +47,7 @@ Command hex dump: `33 04 14 2 5 4`
 | `1`     | `uint8` | command size = `5 + 5 × N`, where `N` is the number of events |
 | `1`     | `uint8` | year (number of years after `2000`)                           |
 | `1`     | `uint8` | month (`1` - January ... `12` - December)                     |
-| `1`     | `uint8` | date                                                          |
+| `1`     | `uint8` | date (month day number which starts from `1`)                 |
 | `1`     | `uint8` | total number of events for the requested date                 |
 | `1`     | `uint8` | offset in the events array of the requested day               |
 | `5 × N` | `5 × N` | array of `N` [events](./#event), (can be empty if `N` = 0)    |
@@ -68,13 +66,11 @@ Command hex dump: `33 04 14 2 5 4`
 
 ### Examples
 
-### Examples
-
 | Field                                           | Value | Hex    |
 | ----------------------------------------------- | ----- | ------ |
 | command id                                      | `51`  | `0x33` |
 | command size                                    | `15`  | `0x0f` |
-| years offset from 2000                          | `20`  | `0x14` |
+| years                                           | `20`  | `0x14` |
 | month                                           | `2`   | `0x02` |
 | date                                            | `5`   | `0x05` |
 | total number of events for the requested date   | `2`   | `0x02` |
@@ -87,7 +83,6 @@ Command hex dump: `33 04 14 2 5 4`
 | minutes                                         | `18`  | `0x12` |
 | seconds                                         | `45`  | `0x2d` |
 | event id                                        | `32`  | `0x20` |
-
 
 Command hex dump: `33 0f 14 02 05 04 23 0a 1a 0e 12 2d 20`
 

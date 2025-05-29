@@ -70,7 +70,7 @@
 | `0x67` | `CALIBRATION_FLAG_RESET`   | Calibration flag reset                                                                                          |
 | `0x68` | `BAD_TEST_EEPROM`          | EEPROM test failed                                                                                              |
 | `0x69` | `BAD_TEST_FRAM`            | FRAM test failed                                                                                                |
-| `0x70` | `SET_NEW_SALDO   `         | New prepayment received                                                                                         |
+| `0x70` | `SET_NEW_SALDO`            | New prepayment received                                                                                         |
 | `0x71` | `SALDO_PARAM_BAD `         | Balance parameters lost                                                                                         |
 | `0x72` | `ACC_PARAM_BAD    `        | Accumulation parameters lost                                                                                    |
 | `0x73` | `ACC_PARAM_EXT_BAD`        | Additional accumulation parameters lost                                                                         |

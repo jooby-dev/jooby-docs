@@ -1,6 +1,7 @@
 # GetEventsCounter
 
-Request/response to get counters related to various system events and actions. Each counter represents the total number of occurrences for a specific type of event or system interaction, such as restarts, power-offs, parameter changes, and access attempts.
+Request/response to get counters related to various system events and actions.
+Each counter represents the total number of occurrences for a specific type of event or system interaction, such as restarts, power-offs, parameter changes, and access attempts.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 

@@ -5,3 +5,4 @@
 - [Data types](./types.md)
 - [Available commands](./commands/readme.md)
 - [Command execution result codes](./result-codes.md)
+- [Device events](./events.md)

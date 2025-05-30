@@ -1,4 +1,4 @@
-# GetOpParamsExt4
+# GetOperatorParametersExt4
 
 Request/response to get device operator extended parameters `4`.
 
@@ -28,17 +28,17 @@ Message hex dump: `75 00`
 
 ### Format
 
-| Size | Type     | Field                                                                  |
-| ---- | -------- | ---------------------------------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x75`                                                    |
-| `1`  | `uint8`  | command size = `28`                                                    |
-| `4`  | `uint32` | [main mode display settings](#display-settings)                        |
-| `4`  | `uint32` | [extended mode display settings](#display-settings)                    |
-| `4`  | `uint32` | [battery mode display settings 1](./GetOpParams.md#display-settings-1) |
-| `4`  | `uint32` | [battery mode display settings 2](./GetOpParams.md#display-settings-2) |
-| `4`  | `uint32` | [battery mode display settings 3](./GetOpParams.md#display-settings-3) |
-| `4`  | `uint32` | [battery mode display settings 4](./GetOpParams.md#display-settings-4) |
-| `4`  | `uint32` | [battery mode display settings 5](#display-settings)                   |
+| Size | Type     | Field                                                                            |
+| ---- | -------- | -------------------------------------------------------------------------------- |
+| `1`  | `uint8`  | command id = `0x75`                                                              |
+| `1`  | `uint8`  | command size = `28`                                                              |
+| `4`  | `uint32` | [main mode display settings](#display-settings)                                  |
+| `4`  | `uint32` | [extended mode display settings](#display-settings)                              |
+| `4`  | `uint32` | [battery mode display settings 1](./GetOperatorParameters.md#display-settings-1) |
+| `4`  | `uint32` | [battery mode display settings 2](./GetOperatorParameters.md#display-settings-2) |
+| `4`  | `uint32` | [battery mode display settings 3](./GetOperatorParameters.md#display-settings-3) |
+| `4`  | `uint32` | [battery mode display settings 4](./GetOperatorParameters.md#display-settings-4) |
+| `4`  | `uint32` | [battery mode display settings 5](#display-settings)                             |
 
 ### Parameters
 
@@ -104,7 +104,7 @@ Bit mask:
             <td><code>0x00000055</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#display-settings-1">battery mode display settings 1</a></td>
+            <td><a href="./GetOperatorParameters.md#display-settings-1">battery mode display settings 1</a></td>
             <td>
                 <code>SET_ALL_SEGMENT_DISPLAY</code>: <code>true</code><br>
                 <code>SOFTWARE_VERSION</code>: <code>false</code><br>
@@ -142,7 +142,7 @@ Bit mask:
             <td><code>0x00001085</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#display-settings-2">battery mode display settings 2</a></td>
+            <td><a href="./GetOperatorParameters.md#display-settings-2">battery mode display settings 2</a></td>
             <td>
                 <code>CURRENT_IN_PHASE_A</code>: <code>false</code><br>
                 <code>CURRENT_IN_PHASE_B</code>: <code>false</code><br>
@@ -180,7 +180,7 @@ Bit mask:
             <td><code>0x00022200</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#display-settings-3">battery mode display settings 3</a></td>
+            <td><a href="./GetOperatorParameters.md#display-settings-3">battery mode display settings 3</a></td>
             <td>
                 <code>APPARENT_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
                 <code>MAX_ACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
@@ -218,7 +218,7 @@ Bit mask:
             <td><code>0x00000000</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParams.md#display-settings-4">battery mode display settings 4</a></td>
+            <td><a href="./GetOperatorParameters.md#display-settings-4">battery mode display settings 4</a></td>
             <td>
                 <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
                 <code>MAX_EXPORTED_REACTIVE_POWER_DAY_T1</code>: <code>false</code><br>

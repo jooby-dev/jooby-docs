@@ -1,4 +1,4 @@
-# SetOpParams
+# SetOperatorParameters
 
 Request/response to set device operator parameters.
 
@@ -28,11 +28,11 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `1`  | `uint8`  | start date of the monthly billing period                                                                                                                            |
 | `1`  | `uint8`  | display active time                                                                                                                                                 |
 | `1`  | `uint8`  | display active time for each screen                                                                                                                                 |
-| `4`  | `uint32` | [display settings 1](./GetOpParams.md#display-settings-1)                                                                                                           |
-| `4`  | `uint32` | [display settings 2](./GetOpParams.md#display-settings-2)                                                                                                           |
-| `4`  | `uint32` | [display settings 3](./GetOpParams.md#display-settings-3)                                                                                                           |
-| `4`  | `uint32` | [relay set](./GetOpParams.md#relay-set)                                                                                                                             |
-| `1`  | `uint8`  | [serial ports set](./GetOpParams.md#serial-ports-set)                                                                                                               |
+| `4`  | `uint32` | [display settings 1](./GetOperatorParameters.md#display-settings-1)                                                                                                 |
+| `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                                 |
+| `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                                 |
+| `4`  | `uint32` | [relay set](./GetOperatorParameters.md#relay-set)                                                                                                                   |
+| `1`  | `uint8`  | [serial ports set](./GetOperatorParameters.md#serial-ports-set)                                                                                                     |
 | `1`  | `uint8`  | integration period for energy profiles `A+`, `A-`, voltage VA , `0`, `30` - `30`, `1`, `3`, `5`, `10`, `15`, `60` minutes (`ten`)                                   |
 | `1`  | `uint8`  | voltage averaging interval `0`, `1`, `3`, `5`, `10`, `15`, `30`, `60` minutes to detect voltage quality                                                             |
 | `1`  | `uint8`  | reserved byte                                                                                                                                                       |
@@ -49,13 +49,13 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `2`  | `int16`  | denominator of the current transformation ratio                                                                                                                     |
 | `2`  | `int16`  | numerator of the voltage transformation ratio                                                                                                                       |
 | `2`  | `int16`  | denominator of the voltage transformation ratio                                                                                                                     |
-| `1`  | `uint8`  | [measurement type](./GetOpParams.md#measurement-type)                                                                                                               |
+| `1`  | `uint8`  | [measurement type](./GetOperatorParameters.md#measurement-type)                                                                                                     |
 | `2`  | `uint16` | minimum threshold for the `cos φ` value                                                                                                                             |
 | `1`  | `uint8`  | timeout for relay deactivation based on maximum current                                                                                                             |
 | `1`  | `uint8`  | timeout for relay deactivation based on maximum power                                                                                                               |
 | `1`  | `uint8`  | timeout for relay deactivation based on `cos φ`                                                                                                                     |
 | `1`  | `uint8`  | `PMAX` settings<br>`0` - `PMAX` = `POWER_A` + `POWER_B` + `POWER_C`<br>`1` - `PMAX` averaged power over the integration period                                      |
-| `4`  | `uint32` | [display settings 4](./GetOpParams.md#display-settings-4)                                                                                                           |
+| `4`  | `uint32` | [display settings 4](./GetOperatorParameters.md#display-settings-4)                                                                                                 |
 
 ### Examples
 
@@ -155,7 +155,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-1">display settings 1</a>
+                <a href="./GetOperatorParameters.md#display-settings-1">display settings 1</a>
             </td>
             <td>
                 <code>SET_ALL_SEGMENT_DISPLAY</code>: <code>true</code><br>
@@ -195,7 +195,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-2">display settings 2</a>
+                <a href="./GetOperatorParameters.md#display-settings-2">display settings 2</a>
             </td>
             <td>
                 <code>CURRENT_IN_PHASE_A</code>: <code>false</code><br>
@@ -235,7 +235,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-3">display settings 3</a>
+                <a href="./GetOperatorParameters.md#display-settings-3">display settings 3</a>
             </td>
             <td>
                 <code>APPARENT_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
@@ -275,7 +275,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#relay-set">relay set</a>
+                <a href="./GetOperatorParameters.md#relay-set">relay set</a>
             </td>
             <td>
                 <code>RELAY_ON_Y</code>: <code>true</code><br>
@@ -314,7 +314,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#serial-ports-set">serial-ports-set</a>
+                <a href="./GetOperatorParameters.md#serial-ports-set">serial-ports-set</a>
             </td>
             <td>
                 <code>plc</code>: <code>9600</code><br>
@@ -399,7 +399,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#measurement-type">measurement type</a>
+                <a href="./GetOperatorParameters.md#measurement-type">measurement type</a>
             </td>
             <td>
                 <code>TRANSFORMATION_RATIO</code>: <code>false</code><br>
@@ -435,7 +435,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-4">display settings 4</a>
+                <a href="./GetOperatorParameters.md#display-settings-4">display settings 4</a>
             </td>
             <td>
                 <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>

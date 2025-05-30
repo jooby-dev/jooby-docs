@@ -1,104 +1,35 @@
-# GetOpParamsExt2
+# SetOperatorParametersExt2
 
-Request/response to get device operator extended parameters `2`.
+Request/response to set device operator parameters `2`.
 
-The command access level is [READ_ONLY](../basics.md#command-access-level).
+The command access level is [READ_WRITE](../basics.md#command-access-level).
 
 
 ## Request
 
 ### Format
 
-| Size | Type    | Field               |
-| ---- | ------- | ------------------- |
-| `1`  | `uint8` | command id = `0x47` |
-| `1`  | `uint8` | command size = `0`  |
-
-### Examples
-
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `71`  | `0x47` |
-| command size | `0`   | `0x00` |
-
-Message hex dump: `47 00`
-
-
-## Response
-
-### Format
-
 | Size | Type     | Field                                                                                                                                                       |
 | ---- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x47`                                                                                                                                         |
-| `1`  | `uint8`  | command size = `30`                                                                                                                                         |
+| `1`  | `uint8`  | command id = `0x45`                                                                                                                                         |
+| `1`  | `uint8`  | command size = `28`                                                                                                                                         |
 | `1`  | `uint8`  | allowed correction interval (`15` minutes by default)                                                                                                       |
 | `1`  | `uint8`  | timeout for relay shutdown upon magnetic interference, seconds                                                                                              |
 | `1`  | `uint8`  | [relay set](#relay-set)                                                                                                                                     |
 | `1`  | `uint8`  | timeout for relay activation after magnetic field removal, seconds                                                                                          |
 | `1`  | `uint8`  | default PLC Phase<br>`0`, `1` - Phase A<br>`2` - Phase B<br>`3` - Phase C                                                                                   |
-| `4`  | `uint32` | [display settings 1](./GetOpParams.md#display-settings-1)                                                                                                   |
-| `4`  | `uint32` | [display settings 2](./GetOpParams.md#display-settings-2)                                                                                                   |
-| `4`  | `uint32` | [display settings 3](./GetOpParams.md#display-settings-3)                                                                                                   |
-| `4`  | `uint32` | [display settings 4](./GetOpParams.md#display-settings-4)                                                                                                   |
-| `1`  | `uint8`  | [channel load profile 1](#channel-load-profile) (if enabled, it will use half of the `A+` archive space)                                                    |
-| `1`  | `uint8`  | [channel load profile 2](#channel-load-profile) (if enabled, it will use half of the `A+R+` archive space)                                                  |
-| `1`  | `uint8`  | [channel load profile 3](#channel-load-profile) (if enabled, it will use half of the `A+R-` archive space)                                                  |
-| `1`  | `uint8`  | [channel load profile 4](#channel-load-profile) (if enabled, it will use half of the `A-` archive space)                                                    |
-| `1`  | `uint8`  | [channel load profile 5](#channel-load-profile) (if enabled, it will use half of the `A-R+` archive space)                                                  |
-| `1`  | `uint8`  | [channel load profile 6](#channel-load-profile) (if enabled, it will use half of the `A-R-` archive space)                                                  |
+| `4`  | `uint32` | [display settings 1](./GetOperatorParameters.md#display-settings-1)                                                                                         |
+| `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                         |
+| `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                         |
+| `4`  | `uint32` | [display settings 4](./GetOperatorParameters.md#display-settings-4)                                                                                         |
+| `1`  | `uint8`  | [channel load profile 1](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A+` archive space)                      |
+| `1`  | `uint8`  | [channel load profile 2](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A+R+` archive space                     |
+| `1`  | `uint8`  | [channel load profile 3](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A+R-` archive space)                    |
+| `1`  | `uint8`  | [channel load profile 4](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A-` archive space)                      |
+| `1`  | `uint8`  | [channel load profile 5](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A-R+` archive space)                    |
+| `1`  | `uint8`  | [channel load profile 6](./GetOperatorParametersExt2.md#channel-load-profile) (if enabled, it will use half of the `A-R-` archive space)                    |
 | `1`  | `uint8`  | allowed correction period, hours (`24` hours by default). If bit `7` is `0` (default is `0`), time correction crossing the half-hour boundary is forbidden. |
 
-### Parameters
-
-#### Relay set
-
-Bit mask:
-
-| Name                      | Bit | Description                                            |
-| ------------------------- | --- | ------------------------------------------------------ |
-| `RELAY_OFF_MAGNET`        | `0` | disable relay upon detection of magnetic field         |
-| `RELAY_ON_MAGNET_TIMEOUT` | `1` | enable relay after `timeoutRelayOn` timeout (not used) |
-| `RELAY_ON_MAGNET_AUTO`    | `2` | enable relay after removal of magnetic field           |
-
-#### Channel load profile
-
-| Value | Channel load profile, current, voltage or other                  |
-| ----- | ---------------------------------------------------------------- |
-| `0`   | Do not archive additional measurement                            |
-| `1`   | `1/3/5/10/15/30/60` minutes measurement of the `A+` Phase `A`    |
-| `2`   | `1/3/5/10/15/30/60` minutes measurement of the `A+` Phase `B`    |
-| `3`   | `1/3/5/10/15/30/60` minutes measurement of the `A+` Phase `C`    |
-| `4`   | `1/3/5/10/15/30/60` minutes measurement of the `A-` Phase `A`    |
-| `5`   | `1/3/5/10/15/30/60` minutes measurement of the `A-` Phase `B`    |
-| `6`   | `1/3/5/10/15/30/60` minutes measurement of the `A-` Phase `C`    |
-| `7`   | `1/3/5/10/15/30/60` minutes measurement of the `A+R+` Phase `A`  |
-| `8`   | `1/3/5/10/15/30/60` minutes measurement of the `A+R+` Phase `B`  |
-| `9`   | `1/3/5/10/15/30/60` minutes measurement of the `A+R+` Phase `C`  |
-| `10`  | `1/3/5/10/15/30/60` minutes measurement of the `A+R-` Phase `A`  |
-| `11`  | `1/3/5/10/15/30/60` minutes measurement of the `A+R-` Phase `B`  |
-| `12`  | `1/3/5/10/15/30/60` minutes measurement of the `A+R-` Phase `C`  |
-| `13`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R+` Phase `A`  |
-| `14`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R+` Phase `B`  |
-| `15`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R+` Phase `C`  |
-| `16`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R-` Phase `A`  |
-| `17`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R-` Phase `B`  |
-| `18`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R-` Phase `C`  |
-| `19`  | `1/3/5/10/15/30/60` minutes measurement of the `R+` Phase `A`    |
-| `20`  | `1/3/5/10/15/30/60` minutes measurement of the `R+` Phase `B`    |
-| `21`  | `1/3/5/10/15/30/60` minutes measurement of the `R+` Phase `C`    |
-| `22`  | `1/3/5/10/15/30/60` minutes measurement of the `R-` Phase `A`    |
-| `23`  | `1/3/5/10/15/30/60` minutes measurement of the `R-` Phase `B`    |
-| `24`  | `1/3/5/10/15/30/60` minutes measurement of the `R-` Phase `C`    |
-| `25`  | `1/3/5/10/15/30/60` minutes measurement of the voltage Phase `A` |
-| `26`  | `1/3/5/10/15/30/60` minutes measurement of the voltage Phase `B` |
-| `27`  | `1/3/5/10/15/30/60` minutes measurement of the voltage Phase `C` |
-| `28`  | `10`minute voltage profile Phase `A`                             |
-| `29`  | `10`minute voltage profile Phase `B`                             |
-| `30`  | `10`minute voltage profile Phase `C`                             |
-| `31`  | `1/3/5/10/15/30/60`minute current profile Phase `A`              |
-| `32`  | `1/3/5/10/15/30/60`minute current profile Phase `B`              |
-| `33`  | `1/3/5/10/15/30/60`minute current profile Phase `C`              |
 
 ### Examples
 
@@ -113,8 +44,8 @@ Bit mask:
     <tbody>
         <tr>
             <td>command id</td>
-            <td><code>71</code></td>
-            <td><code>0x47</code></td>
+            <td><code>69</code></td>
+            <td><code>0x45</code></td>
         </tr>
         <tr>
             <td>command size</td>
@@ -132,7 +63,9 @@ Bit mask:
             <td><code>0x05</code></td>
         </tr>
         <tr>
-            <td><a href="#relay-set">relay set</a></td>
+            <td>
+                <a href="#relay-set">relay set</a>
+            </td>
             <td>
                 <code>RELAY_OFF_MAGNET</code>: <code>true</code><br>
                 <code>RELAY_ON_MAGNET_TIMEOUT</code>: <code>false</code><br>
@@ -151,7 +84,9 @@ Bit mask:
             <td><code>0x01</code></td>
         </tr>
         <tr>
-            <td><a href="#display-settings-1">display settings 1</a></td>
+            <td>
+                <a href="./GetOperatorParameters.md#display-settings-1">display settings 1</a>
+            </td>
             <td>
                 <code>SET_ALL_SEGMENT_DISPLAY</code>: <code>false</code><br>
                 <code>SOFTWARE_VERSION</code>: <code>false</code><br>
@@ -189,7 +124,9 @@ Bit mask:
             <td><code>0x00000000</code></td>
         </tr>
         <tr>
-            <td><a href="#display-settings-2">display settings 2</a></td>
+            <td>
+                <a href="./GetOperatorParameters.md#display-settings-2">display settings 2</a>
+            </td>
             <td>
                 <code>CURRENT_IN_PHASE_A</code>: <code>false</code><br>
                 <code>CURRENT_IN_PHASE_B</code>: <code>false</code><br>
@@ -227,7 +164,9 @@ Bit mask:
             <td><code>0x00000000</code></td>
         </tr>
         <tr>
-            <td><a href="#display-settings-3">display settings 3</a></td>
+            <td>
+                <a href="./GetOperatorParameters.md#display-settings-3">display settings 3</a>
+            </td>
             <td>
                 <code>APPARENT_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
                 <code>MAX_ACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
@@ -265,7 +204,9 @@ Bit mask:
             <td><code>0x00000000</code></td>
         </tr>
         <tr>
-            <td><a href="#display-settings-4">display settings 4</a></td>
+            <td>
+                <a href="./GetOperatorParameters.md#display-settings-4">display settings 4</a>
+            </td>
             <td>
                 <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
                 <code>MAX_EXPORTED_REACTIVE_POWER_DAY_T1</code>: <code>false</code><br>
@@ -299,32 +240,32 @@ Bit mask:
             <td><code>0x40000000</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 1</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 1</a></td>
             <td><code>1</code></td>
             <td><code>0x01</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 2</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 2</a></td>
             <td><code>2</code></td>
             <td><code>0x02</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 3</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 3</a></td>
             <td><code>3</code></td>
             <td><code>0x03</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 4</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 4</a></td>
             <td><code>4</code></td>
             <td><code>0x04</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 5</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 5</a></td>
             <td><code>5</code></td>
             <td><code>0x05</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 6</a></td>
+            <td><a href="./GetOperatorParameters.md#channel-load-profile">channel load profile 6</a></td>
             <td><code>6</code></td>
             <td><code>0x06</code></td>
         </tr>
@@ -337,6 +278,25 @@ Bit mask:
 </table>
 
 Command hex dump: `47 1c 0f 05 05 05 01 00000000 00000000 00000000 04000000 01 02 03 04 05 06 98`
+
+
+## Response
+
+### Format
+
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x45` |
+| `1`  | `uint8` | command size = `0`  |
+
+### Examples
+
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `69`  | `0x45` |
+| command size | `0`   | `0x00` |
+
+Command hex dump: `45 00`
 
 
 ## See also

@@ -146,12 +146,12 @@
 | `0xB1` | `EM_MAGNETIC_OFF`                   | `C.176`         | Alternating magnetic field influence ended.                                             |
 | `0xB2` | `RESET_EM_FLAG`                     | `C.177`         | Electromagnetic impact screen reset.                                                    |
 | `0xB3` | `RESET_MAGNETIC_FLAG`               | `C.178`         | Magnetic impact screen reset.                                                           |
-| `0xE0` | `SET_DEMAND_EN_1_MIN`               | `C.224`         | `1`-minute load, voltage, and current graphs recording mode set.                        |
-| `0xE1` | `SET_DEMAND_EN_3_MIN`               | `C.225`         | `3`-minute load, voltage, and current graphs recording mode set.                        |
-| `0xE2` | `SET_DEMAND_EN_5_MIN`               | `C.226`         | `5`-minute load, voltage, and current graphs recording mode set.                        |
-| `0xE3` | `SET_DEMAND_EN_10_MIN`              | `C.227`         | `10`-minute load, voltage, and current graphs recording mode set.                       |
-| `0xE4` | `SET_DEMAND_EN_15_MIN`              | `C.228`         | `15`-minute load, voltage, and current graphs recording mode set.                       |
-| `0xE5` | `SET_DEMAND_EN_30_MIN`              | `C.229`         | `30`-minute load, voltage, and current graphs recording mode set.                       |
-| `0xE6` | `SET_DEMAND_EN_60_MIN`              | `C.230`         | `60`-minute load, voltage, and current graphs recording mode set.                       |
+| `0xE0` | `SET_DEMAND_EN_1_MIN`               | `C.224`         | `1`-minute energy, voltage load profiles recording mode set.                        |
+| `0xE1` | `SET_DEMAND_EN_3_MIN`               | `C.225`         | `3`-minute energy, voltage load profiles recording mode set.                        |
+| `0xE2` | `SET_DEMAND_EN_5_MIN`               | `C.226`         | `5`-minute energy, voltage load profiles recording mode set.                        |
+| `0xE3` | `SET_DEMAND_EN_10_MIN`              | `C.227`         | `10`-minute energy, voltage load profiles recording mode set.                       |
+| `0xE4` | `SET_DEMAND_EN_15_MIN`              | `C.228`         | `15`-minute energy, voltage load profiles recording mode set.                       |
+| `0xE5` | `SET_DEMAND_EN_30_MIN`              | `C.229`         | `30`-minute energy, voltage load profiles recording mode set.                       |
+| `0xE6` | `SET_DEMAND_EN_60_MIN`              | `C.230`         | `60`-minute energy, voltage load profiles recording mode set.                       |
 | `0xE7` | `P_MAX_A_MINUS_OK`                  | `C.231`         | Recovery of permissible generated power `P-` after being too high.                      |
 | `0xE8` | `P_MAX_A_MINUS_OVER`                | `C.232`         | Generated power `P-` exceeds the maximum power threshold.                               |

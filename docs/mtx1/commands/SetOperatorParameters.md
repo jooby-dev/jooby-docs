@@ -1,4 +1,4 @@
-# SetOpParams
+# SetOperatorParameters
 
 Request/response to set device operator parameters.
 

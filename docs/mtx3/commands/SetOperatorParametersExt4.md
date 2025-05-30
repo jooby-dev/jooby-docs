@@ -1,4 +1,4 @@
-# SetOpParamsExt4
+# SetOperatorParametersExt4
 
 Request/response to set device operator parameters `4`.
 
@@ -9,17 +9,17 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 
 ### Format
 
-| Size | Type     | Field                                                                    |
-| ---- | -------- | ------------------------------------------------------------------------ |
-| `1`  | `uint8`  | command id = `0x74`                                                      |
-| `1`  | `uint8`  | command size = `28`                                                      |
-| `4`  | `uint32` | [main mode display settings](./GetOpParamsExt4.md#display-settings)      |
-| `4`  | `uint32` | [extended mode display settings](./GetOpParamsExt4.md#display-settings)  |
-| `4`  | `uint32` | [battery mode display settings 1](./GetOpParams.md#display-settings-1)   |
-| `4`  | `uint32` | [battery mode display settings 2](./GetOpParams.md#display-settings-2)   |
-| `4`  | `uint32` | [battery mode display settings 3](./GetOpParams.md#display-settings-3)   |
-| `4`  | `uint32` | [battery mode display settings 4](./GetOpParams.md#display-settings-4)   |
-| `4`  | `uint32` | [battery mode display settings 5](./GetOpParamsExt4.md#display-settings) |
+| Size | Type     | Field                                                                              |
+| ---- | -------- | ---------------------------------------------------------------------------------- |
+| `1`  | `uint8`  | command id = `0x74`                                                                |
+| `1`  | `uint8`  | command size = `28`                                                                |
+| `4`  | `uint32` | [main mode display settings](./GetOperatorParametersExt4.md#display-settings)      |
+| `4`  | `uint32` | [extended mode display settings](./GetOperatorParametersExt4.md#display-settings)  |
+| `4`  | `uint32` | [battery mode display settings 1](./GetOperatorParameters.md#display-settings-1)   |
+| `4`  | `uint32` | [battery mode display settings 2](./GetOperatorParameters.md#display-settings-2)   |
+| `4`  | `uint32` | [battery mode display settings 3](./GetOperatorParameters.md#display-settings-3)   |
+| `4`  | `uint32` | [battery mode display settings 4](./GetOperatorParameters.md#display-settings-4)   |
+| `4`  | `uint32` | [battery mode display settings 5](./GetOperatorParametersExt4.md#display-settings) |
 
 ### Examples
 
@@ -44,7 +44,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParamsExt4.md#display-settings">main mode display settings</a>
+                <a href="./GetOperatorParametersExt4.md#display-settings">main mode display settings</a>
             </td>
             <td>
                 <code>EVENT</code>: <code>true</code><br>
@@ -59,7 +59,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParamsExt4.md#display-settings">extended mode display settings</a>
+                <a href="./GetOperatorParametersExt4.md#display-settings">extended mode display settings</a>
             </td>
             <td>
                 <code>EVENT</code>: <code>true</code><br>
@@ -74,7 +74,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-1">battery mode display settings 1</a>
+                <a href="./GetOperatorParameters.md#display-settings-1">battery mode display settings 1</a>
             </td>
             <td>
                 <code>SET_ALL_SEGMENT_DISPLAY</code>: <code>true</code><br>
@@ -114,7 +114,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-2">battery mode display settings 2</a>
+                <a href="./GetOperatorParameters.md#display-settings-2">battery mode display settings 2</a>
             </td>
             <td>
                 <code>CURRENT_IN_PHASE_A</code>: <code>false</code><br>
@@ -154,7 +154,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-3">battery mode display settings 3</a>
+                <a href="./GetOperatorParameters.md#display-settings-3">battery mode display settings 3</a>
             </td>
             <td>
                 <code>APPARENT_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
@@ -194,7 +194,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         </tr>
         <tr>
             <td>
-                <a href="./GetOpParams.md#display-settings-4">battery mode display settings 4</a>
+                <a href="./GetOperatorParameters.md#display-settings-4">battery mode display settings 4</a>
             </td>
             <td>
                 <code>MAX_EXPORTED_ACTIVE_POWER_MONTH_T4</code>: <code>false</code><br>
@@ -229,7 +229,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
             <td><code>0x80060000</code></td>
         </tr>
         <tr>
-            <td><a href="./GetOpParamsExt4.md#display-settings">battery mode display settings 5</a></td>
+            <td><a href="./GetOperatorParametersExt4.md#display-settings">battery mode display settings 5</a></td>
             <td>
                 <code>EVENT</code>: <code>false</code><br>
                 <code>PROFILE_P01</code>: <code>false</code><br>

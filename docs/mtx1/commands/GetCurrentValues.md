@@ -4,10 +4,6 @@ Request/response to get current values like voltage, power, etc.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
-Supported devices:
-- MTX1
-- MTX3
-
 
 ## Request
 
@@ -36,15 +32,15 @@ Command hex dump: `0d 00`
 | ---- | ------- | ------------------------------------------------------------- |
 | `1`  | `uint8` | command id = `0x0d`                                           |
 | `1`  | `uint8` | command size = `32`                                           |
-| `1`  | `int32` | active power in A channel; A+ (`21.7.0`)                      |
-| `1`  | `int32` | current in A channel (`31.7.0`)                               |
-| `1`  | `int32` | voltage in A and B channels (`32.7.0`)                        |
-| `1`  | `int32` | reactive power in A channel; R+ (`1.23.7.0`), R- (`1.24.7.0`) |
-| `1`  | `int16` | power factor (cos φ) in A channel (`1.33.7.0`)                |
-| `1`  | `int32` | current in B channel (`1.51.7.0`)                             |
-| `1`  | `int32` | active power in B channel (`1.41.7.0`)                        |
-| `1`  | `int32` | reactive power in B channel; R+ (`1.43.7.0`), R- (`1.44.7.0`) |
-| `1`  | `int16` | power factor (cos φ) in B channel (`1.53.7.0`)                |
+| `4`  | `int32` | active power in A channel; A+ (`21.7.0`)                      |
+| `4`  | `int32` | current in A channel (`31.7.0`)                               |
+| `4`  | `int32` | voltage in A and B channels (`32.7.0`)                        |
+| `4`  | `int32` | reactive power in A channel; R+ (`1.23.7.0`), R- (`1.24.7.0`) |
+| `2`  | `int16` | power factor (cos φ) in A channel (`1.33.7.0`)                |
+| `4`  | `int32` | current in B channel (`1.51.7.0`)                             |
+| `4`  | `int32` | active power in B channel (`1.41.7.0`)                        |
+| `4`  | `int32` | reactive power in B channel; R+ (`1.43.7.0`), R- (`1.44.7.0`) |
+| `2`  | `int16` | power factor (cos φ) in B channel (`1.53.7.0`)                |
 
 ### Examples
 

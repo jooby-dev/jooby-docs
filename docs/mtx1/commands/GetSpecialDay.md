@@ -49,14 +49,14 @@ Command hex dump: `3d 03 00 04 01`
 
 ### Examples
 
-| Field        | Value  | Hex    |
-| ------------ | ------ | ------ |
-| command id   | `61`   | `0x3d` |
-| command size | `4`    | `0x04` |
-| month        | `1`    | `0x01` |
-| date         | `9`    | `0x09` |
-| day index    | `3`    | `0x03` |
-| is periodic  | `true` | `0x00` |
+| Field        | Value         | Hex    |
+| ------------ | ------------- | ------ |
+| command id   | `61`          | `0x3d` |
+| command size | `4`           | `0x04` |
+| month        | `1` (January) | `0x01` |
+| date         | `9`           | `0x09` |
+| day index    | `3`           | `0x03` |
+| is periodic  | `true`        | `0x00` |
 
 Command hex dump: `3d 04 01 09 03 00`
 

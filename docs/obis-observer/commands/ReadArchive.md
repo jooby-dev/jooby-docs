@@ -13,7 +13,7 @@ Request/response to get the meter archive data.
 | `1`  | `uint8`                              | command size                                              |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                        |
 | `1`  | `uint8`                              | archive type: <br/> `1` - archive 1 <br/> `2` - archive 2 |
-| `1`  | `uint32_be`                          | index of the first record to get                          |
+| `4`  | `uint32_be`                          | index of the first record to get                          |
 
 
 If the index is equal to `0`, the response will include the newest archive content.

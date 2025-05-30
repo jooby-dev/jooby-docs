@@ -17,7 +17,7 @@ Supported devices:
 | ---- | ------- | ------------------------------- |
 | `1`  | `uint8` | command id = `0x5c`             |
 | `1`  | `uint8` | command size = `2`              |
-| `1`  | `int16` | number of seconds to shift time |
+| `2`  | `int16` | number of seconds to shift time |
 
 ### Examples
 

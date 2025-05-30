@@ -13,18 +13,18 @@ Supported devices:
 
 ### Format
 
-| Size | Type    | Field                                     |
-| ---- | ------- | ----------------------------------------- |
-| `1`  | `uint8` | command id = `0x08`                       |
-| `1`  | `uint8` | command size = `8`                        |
-| `1`  | `uint8` | isSummerTime (`0` - winter, `1` - summer) |
-| `1`  | `uint8` | seconds                                   |
-| `1`  | `uint8` | minutes                                   |
-| `1`  | `uint8` | hours                                     |
-| `1`  | `uint8` | day (`1` - Sunday ... `7` - Saturday)     |
-| `1`  | `uint8` | date                                      |
-| `1`  | `uint8` | month (`1` - January ... `12` - December) |
-| `1`  | `uint8` | year (number of years after `2000`)       |
+| Size | Type    | Field                                         |
+| ---- | ------- | --------------------------------------------- |
+| `1`  | `uint8` | command id = `0x08`                           |
+| `1`  | `uint8` | command size = `8`                            |
+| `1`  | `uint8` | isSummerTime (`0` - winter, `1` - summer)     |
+| `1`  | `uint8` | seconds                                       |
+| `1`  | `uint8` | minutes                                       |
+| `1`  | `uint8` | hours                                         |
+| `1`  | `uint8` | day (`1` - Sunday ... `7` - Saturday)         |
+| `1`  | `uint8` | date (month day number which starts from `1`) |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)     |
+| `1`  | `uint8` | year (number of years after `2000`)           |
 
 ### Examples
 

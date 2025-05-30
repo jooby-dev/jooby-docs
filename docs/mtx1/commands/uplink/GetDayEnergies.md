@@ -18,30 +18,30 @@ The command access level is [UNENCRYPTED](../basics.md#command-access-level).
 | `2`  | `uint8`  | [packed date](../../types.md#packed-date)                          |
 | `1`  | `uint8`  | [energy flags](#energy-flags)                                      |
 | `1`  | `uint8`  | [tariff flags](#non-zero-energies-flags) `A+` and `A-` for tariffs |
-| `1`  | `uint32` | tariff `A+` `1` day `A+`                                           |
-| `1`  | `uint32` | tariff `A+` `1` day `A+R+`                                         |
-| `1`  | `uint32` | tariff `A+` `1` day `A+R-`                                         |
-| `1`  | `uint32` | tariff `A+` `2` day `A+`                                           |
-| `1`  | `uint32` | tariff `A+` `2` day `A+R+`                                         |
-| `1`  | `uint32` | tariff `A+` `2` day `A+R-`                                         |
-| `1`  | `uint32` | tariff `A+` `3` day `A+`                                           |
-| `1`  | `uint32` | tariff `A+` `3` day `A+R+`                                         |
-| `1`  | `uint32` | tariff `A+` `3` day `A+R-`                                         |
-| `1`  | `uint32` | tariff `A+` `4` day `A+`                                           |
-| `1`  | `uint32` | tariff `A+` `4` day `A+R+`                                         |
-| `1`  | `uint32` | tariff `A+` `4` day `A+R-`                                         |
-| `1`  | `uint32` | tariff `A-` `1` day `A-`                                           |
-| `1`  | `uint32` | tariff `A-` `1` day `A-R+`                                         |
-| `1`  | `uint32` | tariff `A-` `1` day `A-R-`                                         |
-| `1`  | `uint32` | tariff `A-` `2` day `A-`                                           |
-| `1`  | `uint32` | tariff `A-` `2` day `A-R+`                                         |
-| `1`  | `uint32` | tariff `A-` `2` day `A-R-`                                         |
-| `1`  | `uint32` | tariff `A-` `3` day `A-`                                           |
-| `1`  | `uint32` | tariff `A-` `3` day `A-R+`                                         |
-| `1`  | `uint32` | tariff `A-` `3` day `A-R-`                                         |
-| `1`  | `uint32` | tariff `A-` `4` day `A-`                                           |
-| `1`  | `uint32` | tariff `A-` `4` day `A-R+`                                         |
-| `1`  | `uint32` | tariff `A-` `4` day `A-R-`                                         |
+| `4`  | `uint32` | tariff `A+` `1` day `A+`                                           |
+| `4`  | `uint32` | tariff `A+` `1` day `A+R+`                                         |
+| `4`  | `uint32` | tariff `A+` `1` day `A+R-`                                         |
+| `4`  | `uint32` | tariff `A+` `2` day `A+`                                           |
+| `4`  | `uint32` | tariff `A+` `2` day `A+R+`                                         |
+| `4`  | `uint32` | tariff `A+` `2` day `A+R-`                                         |
+| `4`  | `uint32` | tariff `A+` `3` day `A+`                                           |
+| `4`  | `uint32` | tariff `A+` `3` day `A+R+`                                         |
+| `4`  | `uint32` | tariff `A+` `3` day `A+R-`                                         |
+| `4`  | `uint32` | tariff `A+` `4` day `A+`                                           |
+| `4`  | `uint32` | tariff `A+` `4` day `A+R+`                                         |
+| `4`  | `uint32` | tariff `A+` `4` day `A+R-`                                         |
+| `4`  | `uint32` | tariff `A-` `1` day `A-`                                           |
+| `4`  | `uint32` | tariff `A-` `1` day `A-R+`                                         |
+| `4`  | `uint32` | tariff `A-` `1` day `A-R-`                                         |
+| `4`  | `uint32` | tariff `A-` `2` day `A-`                                           |
+| `4`  | `uint32` | tariff `A-` `2` day `A-R+`                                         |
+| `4`  | `uint32` | tariff `A-` `2` day `A-R-`                                         |
+| `4`  | `uint32` | tariff `A-` `3` day `A-`                                           |
+| `4`  | `uint32` | tariff `A-` `3` day `A-R+`                                         |
+| `4`  | `uint32` | tariff `A-` `3` day `A-R-`                                         |
+| `4`  | `uint32` | tariff `A-` `4` day `A-`                                           |
+| `4`  | `uint32` | tariff `A-` `4` day `A-R+`                                         |
+| `4`  | `uint32` | tariff `A-` `4` day `A-R-`                                         |
 
 ### Parameters
 

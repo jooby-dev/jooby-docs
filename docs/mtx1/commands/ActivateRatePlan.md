@@ -18,11 +18,11 @@ Supported devices:
 | `1`  | `uint8`  | command id = `0x13`                                                                                                                                  |
 | `1`  | `uint8`  | command size = `12`                                                                                                                                  |
 | `1`  | `uint8`  | tariff table identifier <br/> `0` – table `A+`, `1` – table `A-` (for `MTX1`)</br> `0` – table `A+`, `1` – table `P+`, `2` – table `A-` (for `MTX3`) |
-| `1`  | `uint32` | rate plan unique identifier                                                                                                                          |
+| `4`  | `uint32` | rate plan unique identifier                                                                                                                          |
 | `1`  | `uint8`  | indicates the state of this tariff plan (`1` - tariff table is valid, `0` - not valid)                                                               |
 | `1`  | `uint8`  | activation year (number of years after `2000`)                                                                                                       |
 | `1`  | `uint8`  | activation month (`1` - January ... `12` - December)                                                                                                 |
-| `1`  | `uint8`  | activation date                                                                                                                                      |
+| `1`  | `uint8`  | activation date (month day number which starts from `1`)                                                                                             |
 | `1`  | `uint8`  | the number of special days in the tariff table (max `26`)                                                                                            |
 | `1`  | `uint8`  | the number of seasons in the tariff table (max `14`)                                                                                                 |
 | `1`  | `uint8`  | the number of days in the tariff table (max `32`)                                                                                                    |

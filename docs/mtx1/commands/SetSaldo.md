@@ -18,24 +18,24 @@ Supported devices:
 | `1`  | `uint8` | command id = `0x2a`                                                  |
 | `1`  | `uint8` | command size `12`                                                    |
 | `1`  | `uint8` | current month (`1` - January ... `12` - December)                    |
-| `1`  | `uint8` | current date                                                         |
+| `1`  | `uint8` | current date (month day number which starts from `1`)                |
 | `1`  | `uint8` | current hour                                                         |
 | `1`  | `uint8` | current minute                                                       |
-| `1`  | `int32` | new saldo to set                                                     |
-| `1`  | `int32` | old saldo (value obtained through [GetSaldo](./GetSaldo.md) command) |
+| `4`  | `int32` | new saldo to set                                                     |
+| `4`  | `int32` | old saldo (value obtained through [GetSaldo](./GetSaldo.md) command) |
 
 ### Examples
 
-| Field        | Value | Hex          |
-| ------------ | ----- | ------------ |
-| command id   | `42`  | `0x2a`       |
-| command size | `12`  | `0x0c`       |
-| month        | `9`   | `0x09`       |
-| date         | `23`  | `0x17`       |
-| hour         | `6`   | `0x06`       |
-| minute       | `35`  | `0x23`       |
-| new saldo    | `2`   | `0x00000002` |
-| old saldo    | `5`   | `0x00000005` |
+| Field        | Value           | Hex          |
+| ------------ | --------------- | ------------ |
+| command id   | `42`            | `0x2a`       |
+| command size | `12`            | `0x0c`       |
+| month        | `9` (September) | `0x09`       |
+| date         | `23`            | `0x17`       |
+| hour         | `6`             | `0x06`       |
+| minute       | `35`            | `0x23`       |
+| new saldo    | `2`             | `0x00000002` |
+| old saldo    | `5`             | `0x00000005` |
 
 Command hex dump: `2a 0c 09 17 06 23 00 00 00 02 00 00 00 05`
 

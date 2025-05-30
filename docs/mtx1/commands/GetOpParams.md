@@ -32,19 +32,19 @@ Command hex dump: `1e 00`
 | ---- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x1e`                                                                                                                                            |
 | `1`  | `uint8`  | command size = `74`                                                                                                                                            |
-| `1`  | `uint32` | maximum voltage threshold, mV                                                                                                                                  |
-| `1`  | `uint32` | minimum voltage threshold, mV                                                                                                                                  |
-| `1`  | `uint32` | maximum current threshold, mA                                                                                                                                  |
-| `1`  | `uint32` | maximum power threshold for tariff `T1`, Watts                                                                                                                 |
-| `1`  | `uint32` | maximum power threshold for tariff `T2`, Watts                                                                                                                 |
-| `1`  | `uint32` | maximum power threshold for tariff `T3`, Watts                                                                                                                 |
-| `1`  | `uint32` | maximum power threshold for tariff `T4`, Watts                                                                                                                 |
+| `4`  | `uint32` | maximum voltage threshold, mV                                                                                                                                  |
+| `4`  | `uint32` | minimum voltage threshold, mV                                                                                                                                  |
+| `4`  | `uint32` | maximum current threshold, mA                                                                                                                                  |
+| `4`  | `uint32` | maximum power threshold for tariff `T1`, Watts                                                                                                                 |
+| `4`  | `uint32` | maximum power threshold for tariff `T2`, Watts                                                                                                                 |
+| `4`  | `uint32` | maximum power threshold for tariff `T3`, Watts                                                                                                                 |
+| `4`  | `uint32` | maximum power threshold for tariff `T4`, Watts                                                                                                                 |
 | `1`  | `uint8`  | reserved byte                                                                                                                                                  |
 | `1`  | `uint8`  | power averaging interval, in minutes                                                                                                                           |
 | `1`  | `uint8`  | start date of the monthly billing period                                                                                                                       |
 | `1`  | `uint8`  | display active time                                                                                                                                            |
 | `1`  | `uint8`  | display active time for each screen                                                                                                                            |
-| `1`  | `uint32` | [display settings for meter readings](#display-settings-for-meter-readings)                                                                                    |
+| `4`  | `uint32` | [display settings for meter readings](#display-settings-for-meter-readings)                                                                                    |
 | `1`  | `uint8`  | [relay set 4](#relay-set-4)                                                                                                                                    |
 | `1`  | `uint8`  | [relay set 3](#relay-set-3)                                                                                                                                    |
 | `1`  | `uint8`  | [relay set 2](#relay-set-2)                                                                                                                                    |
@@ -63,7 +63,7 @@ Command hex dump: `1e 00`
 | `1`  | `uint8`  | timeout for relay deactivation due to poor voltage, seconds                                                                                                    |
 | `1`  | `uint8`  | maximum threshold for the frequency of the grid voltage                                                                                                        |
 | `1`  | `uint8`  | Minimum threshold for the frequency of the grid voltage                                                                                                        |
-| `1`  | `uint16` | minimum threshold for the `cos φ` value                                                                                                                        |
+| `2`  | `uint16` | minimum threshold for the `cos φ` value                                                                                                                        |
 | `1`  | `uint8`  | year of parameters recording                                                                                                                                   |
 | `1`  | `uint8`  | month of parameters recording                                                                                                                                  |
 | `1`  | `uint8`  | date of parameters recording                                                                                                                                   |
@@ -73,7 +73,7 @@ Command hex dump: `1e 00`
 | `1`  | `uint8`  | timeout for relay deactivation based on maximum power                                                                                                          |
 | `1`  | `uint8`  | timeout for relay deactivation based on `cos φ`                                                                                                                |
 | `1`  | `uint8`  | `0` - `PMAX` = `POWER_A`; `1` - `PMAX` averaged power over the integration period                                                                              |
-| `1`  | `uint32` | [setting for displaying meter readings on additional displays](#setting-for-displaying-meter-readings-on-additional-displays) (long press)                     |
+| `4`  | `uint32` | [setting for displaying meter readings on additional displays](#setting-for-displaying-meter-readings-on-additional-displays) (long press)                     |
 | `1`  | `uint8`  | timeout for relay deactivation based on current inequality (`5`)                                                                                               |
 | `1`  | `uint8`  | timeout for relay deactivation upon detection of power with different polarities (`5`)                                                                         |
 | `1`  | `uint8`  | [relay set 5](#relay-set-5)                                                                                                                                    |

@@ -36,16 +36,16 @@ Command hex dump: `2e 00`
 | ---- | -------- | ---------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x2e`                                                    |
 | `1`  | `uint8`  | command size = `37`                                                    |
-| `4`  | `uint32` | saldo coefficients for tariffs `T1`-`T4`                               |
+| `16` | `uint32` | saldo coefficients for tariffs `T1`-`T4`                               |
 | `1`  | `uint8`  | decimal point in the saldo coefficient for the tariff (default is `4`) |
 | `4`  | `int32`  | threshold at which the saldo is indicated                              |
-| `1`  | `int32`  | threshold at which relay turns off based on saldo                      |
+| `4`  | `int32`  | threshold at which relay turns off based on saldo                      |
 | `1`  | `uint8`  | definitions setting the operating mode based on saldo                  |
 | `1`  | `uint8`  | not to deactivate based on saldo after                                 |
 | `1`  | `uint8`  | not to deactivate based on saldo before                                |
 | `1`  | `uint8`  | decimal point for saldo indication                                     |
-| `1`  | `uint32` | power limitation based on saldo                                        |
-| `1`  | `int32`  | saldo credit limit                                                     |
+| `4`  | `uint32` | power limitation based on saldo                                        |
+| `4`  | `int32`  | saldo credit limit                                                     |
 
 ### Examples
 

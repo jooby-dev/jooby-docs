@@ -56,7 +56,7 @@ The response to the command for requesting the archive of daily data from the pu
 | `1*n` | `uint8`                                | [magnet influence flag](#magnet-influence-flag) |
 | `3*n` | `uint8`                                | [counter value](#counter-value)                 |
 
-> `n` - the number of day data
+> `n` - the number of day data.
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 

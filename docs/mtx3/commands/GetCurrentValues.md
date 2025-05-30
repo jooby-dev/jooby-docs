@@ -32,19 +32,19 @@ Command hex dump: `0d 00`
 | ---- | ------- | ----------------------------------------------------------------------------------- |
 | `1`  | `uint8` | command id = `0x0d`                                                                 |
 | `1`  | `uint8` | command size = `52`                                                                 |
-| `1`  | `int32` | voltage in phase `A` (`32.7.0`)                                                     |
-| `1`  | `int32` | voltage in phase `B` (`52.7.0`)                                                     |
-| `1`  | `int32` | voltage in phase `C` (`72.7.0`)                                                     |
-| `1`  | `int32` | current in phase `A` (`31.7.0`)                                                     |
-| `1`  | `int32` | current in phase `B` (`51.7.0`)                                                     |
-| `1`  | `int32` | current in phase `C` (`71.7.0`)                                                     |
-| `1`  | `int32` | active power in channel `A` (`1.21.7.0`)                                            |
-| `1`  | `int32` | active power in channel `B` (`1.41.7.0`)                                            |
-| `1`  | `int32` | active power in channel `C` (`1.61.7.0`)                                            |
-| `1`  | `int32` | reactive power in channel `A` (`1.23.7.0` if `varA >= 0`; `1.24.7.0` if `varA < 0`) |
-| `1`  | `int32` | reactive power in channel `B` (`1.43.7.0` if `varB >= 0`; `1.44.7.0` if `varB < 0`) |
-| `1`  | `int32` | reactive power in channel `C` (`1.63.7.0` if `varC >= 0`; `1.64.7.0` if `varC < 0`) |
-| `1`  | `int32` | current in neutral (`91.7.0`)                                                       |
+| `4`  | `int32` | voltage in phase `A` (`32.7.0`)                                                     |
+| `4`  | `int32` | voltage in phase `B` (`52.7.0`)                                                     |
+| `4`  | `int32` | voltage in phase `C` (`72.7.0`)                                                     |
+| `4`  | `int32` | current in phase `A` (`31.7.0`)                                                     |
+| `4`  | `int32` | current in phase `B` (`51.7.0`)                                                     |
+| `4`  | `int32` | current in phase `C` (`71.7.0`)                                                     |
+| `4`  | `int32` | active power in channel `A` (`1.21.7.0`)                                            |
+| `4`  | `int32` | active power in channel `B` (`1.41.7.0`)                                            |
+| `4`  | `int32` | active power in channel `C` (`1.61.7.0`)                                            |
+| `4`  | `int32` | reactive power in channel `A` (`1.23.7.0` if `varA >= 0`; `1.24.7.0` if `varA < 0`) |
+| `4`  | `int32` | reactive power in channel `B` (`1.43.7.0` if `varB >= 0`; `1.44.7.0` if `varB < 0`) |
+| `4`  | `int32` | reactive power in channel `C` (`1.63.7.0` if `varC >= 0`; `1.64.7.0` if `varC < 0`) |
+| `4`  | `int32` | current in neutral (`91.7.0`)                                                       |
 
 ### Examples
 

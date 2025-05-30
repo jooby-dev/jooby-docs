@@ -32,17 +32,17 @@ Message hex dump: `1e 00`
 | ---- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x1e`                                                                                                                                                 |
 | `1`  | `uint8`  | command size = `95`                                                                                                                                                 |
-| `1`  | `uint32` | maximum voltage threshold, mV                                                                                                                                       |
-| `1`  | `uint32` | minimum voltage threshold, mV                                                                                                                                       |
-| `1`  | `uint32` | maximum current threshold, mA                                                                                                                                       |
-| `1`  | `uint32` | maximum active power threshold for tariff `T1`, Watts                                                                                                               |
-| `1`  | `uint32` | maximum active power threshold for tariff `T2`, Watts                                                                                                               |
-| `1`  | `uint32` | maximum active power threshold for tariff `T3`, Watts                                                                                                               |
-| `1`  | `uint32` | maximum active power threshold for tariff `T4`, Watts                                                                                                               |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T1`, volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T2`, volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T3`, volt-ampere reactive                                                                                              |
-| `1`  | `uint32` | maximum reactive power threshold for tariff `T4`, volt-ampere reactive                                                                                              |
+| `4`  | `uint32` | maximum voltage threshold, mV                                                                                                                                       |
+| `4`  | `uint32` | minimum voltage threshold, mV                                                                                                                                       |
+| `4`  | `uint32` | maximum current threshold, mA                                                                                                                                       |
+| `4`  | `uint32` | maximum active power threshold for tariff `T1`, Watts                                                                                                               |
+| `4`  | `uint32` | maximum active power threshold for tariff `T2`, Watts                                                                                                               |
+| `4`  | `uint32` | maximum active power threshold for tariff `T3`, Watts                                                                                                               |
+| `4`  | `uint32` | maximum active power threshold for tariff `T4`, Watts                                                                                                               |
+| `4`  | `uint32` | maximum reactive power threshold for tariff `T1`, volt-ampere reactive                                                                                              |
+| `4`  | `uint32` | maximum reactive power threshold for tariff `T2`, volt-ampere reactive                                                                                              |
+| `4`  | `uint32` | maximum reactive power threshold for tariff `T3`, volt-ampere reactive                                                                                              |
+| `4`  | `uint32` | maximum reactive power threshold for tariff `T4`, volt-ampere reactive                                                                                              |
 | `1`  | `uint8`  | power averaging interval, in minutes                                                                                                                                |
 | `1`  | `uint8`  | start date of the monthly billing period                                                                                                                            |
 | `1`  | `uint8`  | display active time                                                                                                                                                 |
@@ -69,7 +69,7 @@ Message hex dump: `1e 00`
 | `2`  | `int16`  | numerator of the voltage transformation ratio                                                                                                                       |
 | `2`  | `int16`  | denominator of the voltage transformation ratio                                                                                                                     |
 | `1`  | `uint8`  | [measurement type](#measurement-type)                                                                                                                               |
-| `1`  | `uint16` | minimum threshold for the `cos φ` value                                                                                                                             |
+| `2`  | `uint16` | minimum threshold for the `cos φ` value                                                                                                                             |
 | `1`  | `uint8`  | timeout for relay deactivation based on maximum current                                                                                                             |
 | `1`  | `uint8`  | timeout for relay deactivation based on maximum power                                                                                                               |
 | `1`  | `uint8`  | timeout for relay deactivation based on `cos φ`                                                                                                                     |

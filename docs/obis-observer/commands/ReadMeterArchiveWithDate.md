@@ -12,7 +12,7 @@ Request/response to get the meter archive data for the specific date.
 | `1`  | `uint8`                              | command size                                              |
 | `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                        |
 | `1`  | `uint8`                              | archive type: <br/> `1` - archive 1 <br/> `2` - archive 2 |
-| `1`  | `uint32_be`                          | index of the first record to get                          |
+| `4`  | `uint32_be`                          | index of the first record to get                          |
 | `1`  | `uint8`                              | meter unique identifier                                   |
 | `4`  | [Time 2000](../types.md#time-2000)   | The date of the archive records to read                   |
 

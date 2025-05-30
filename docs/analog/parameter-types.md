@@ -407,9 +407,9 @@ Parameter is used to setup absolute data for device.
 | Size | Type        | Field                                          |
 | ---- | ----------- | ---------------------------------------------- |
 | `1`  | `uint8`     | parameter type = `23`                          |
-| `1`  | `uint32_be` | [meter value](#meter-value)                    |
+| `4`  | `uint32_be` | [meter value](#meter-value)                    |
 | `1`  | `uint8`     | [pulse coefficient](#pulse-coefficient)        |
-| `1`  | `uint32_be` | [pulse counter's value](#pulse-counters-value) |
+| `4`  | `uint32_be` | [pulse counter's value](#pulse-counters-value) |
 
 #### **meter value**
 
@@ -515,9 +515,9 @@ Parameter is used to set device geolocation.
 | Size | Type      | Field                   |
 | ---- | --------- | ----------------------- |
 | `1`  | `uint8`   | parameter type = `26`   |
-| `1`  | `float32` | [latitude](#latitude)   |
-| `1`  | `float32` | [longitude](#longitude) |
-| `1`  | `int16`   | [altitude](#altitude)   |
+| `4`  | `float32` | [latitude](#latitude)   |
+| `4`  | `float32` | [longitude](#longitude) |
+| `2`  | `int16`   | [altitude](#altitude)   |
 
 #### **latitude**
 
@@ -1674,7 +1674,7 @@ hardware type - `24`
 | ---- | -------- | --------------------- |
 | `1`  | `uint8`  | parameter type = `55` |
 | `1`  | `uint8`  | [enable](#enable)     |
-| `1`  | `uint16` | [PIN](#pin)           |
+| `2`  | `uint16` | [PIN](#pin)           |
 
 #### **enable**
 set to use PIN for SIM card

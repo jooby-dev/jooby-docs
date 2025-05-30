@@ -21,8 +21,8 @@ Supported devices:
 | `1`  | `uint8` | current date (month day number which starts from `1`)                |
 | `1`  | `uint8` | current hour                                                         |
 | `1`  | `uint8` | current minute                                                       |
-| `1`  | `int32` | new saldo to set                                                     |
-| `1`  | `int32` | old saldo (value obtained through [GetSaldo](./GetSaldo.md) command) |
+| `4`  | `int32` | new saldo to set                                                     |
+| `4`  | `int32` | old saldo (value obtained through [GetSaldo](./GetSaldo.md) command) |
 
 ### Examples
 

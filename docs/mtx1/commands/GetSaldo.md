@@ -36,10 +36,10 @@ Command hex dump: `29 00`
 | ---- | ------- | ------------------------------------------------------------------------ |
 | `1`  | `uint8` | command id = `0x29`                                                      |
 | `1`  | `uint8` | command size = `29`                                                      |
-| `1`  | `int32` | current saldo                                                            |
+| `4`  | `int32` | current saldo                                                            |
 | `1`  | `uint8` | counter for saldo installations                                          |
-| `4`  | `int32` | energy for tariffs `1`-`4` at the moment of setting a new saldo          |
-| `1`  | `int32` | current saldo after setting the saldo                                    |
+| `16` | `int32` | energy for tariffs `1`-`4` at the moment of setting a new saldo          |
+| `4`  | `int32` | current saldo after setting the saldo                                    |
 | `1`  | `uint8` | month of the last saldo installation (`1` - January ... `12` - December) |
 | `1`  | `uint8` | date of the last saldo installation                                      |
 | `1`  | `uint8` | hour of the last saldo installation                                      |

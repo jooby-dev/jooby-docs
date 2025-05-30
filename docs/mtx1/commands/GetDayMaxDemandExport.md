@@ -34,14 +34,16 @@ Command hex dump: `58 03 18 02 13`
 
 ### Format
 
-| Size | Type                          | Field                                                      |
-| ---- | ----------------------------- | ---------------------------------------------------------- |
-| `1`  | `uint8`                       | command id = `0x58`                                        |
-| `1`  | `uint8`                       | command size = `27`                                        |
-| `1`  | `uint8`                       | year (number of years after `2000`)                        |
-| `1`  | `uint8`                       | month (`1` - January ... `12` - December)                  |
-| `1`  | `uint8`                       | date (month day number which starts from `1`)              |
-| `4`  | [tariffEnergy](#tariffenergy) | field set with time and energy for each tariff (`T1`-`T4`) |
+| Size  | Type                          | Field                                                      |
+| ----- | ----------------------------- | ---------------------------------------------------------- |
+| `1`   | `uint8`                       | command id = `0x58`                                        |
+| `1`   | `uint8`                       | command size = `27`                                        |
+| `1`   | `uint8`                       | year (number of years after `2000`)                        |
+| `1`   | `uint8`                       | month (`1` - January ... `12` - December)                  |
+| `1`   | `uint8`                       | date (month day number which starts from `1`)              |
+| `6*n` | [tariffEnergy](#tariffenergy) | field set with time and energy for each tariff (`T1`-`T4`) |
+
+> `n` - the number of tariffs.
 
 #### tariffEnergy
 
@@ -51,7 +53,7 @@ Each power field is linked with the previous `hour` and `minutes` fields.
 | ---- | -------- | -------------------------------------- |
 | `1`  | `uint8`  | hour                                   |
 | `1`  | `uint8`  | minutes                                |
-| `1`  | `uint32` | maximum power `P-` (`2.6.x`, x=`1..4`) |
+| `4`  | `uint32` | maximum power `P-` (`2.6.x`, x=`1..4`) |
 
 ### Examples
 

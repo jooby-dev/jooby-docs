@@ -75,15 +75,17 @@ Command hex dump: `16 04 18 03 16 01`
 
 #### response with energy type in request
 
-| Size | Type    | Field                                                                                                                                                                                                                                        |
-| ---- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x16`                                                                                                                                                                                                                          |
-| `1`  | `uint8` | command size (dynamic, `8+`, max is `20`)                                                                                                                                                                                                    |
-| `1`  | `uint8` | year (number of years after `2000`)                                                                                                                                                                                                          |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)                                                                                                                                                                                                    |
-| `1`  | `uint8` | date (month day number which starts from `1`)                                                                                                                                                                                                |
-| `1`  | `uint8` | packed energy type with tariff flags <br/> `BIT3`-`BIT0` - energy according to OBIS code (`1` - `1.8.x`, `2` - `2.8.x`) <br/> `BIT7`-`BIT4` tariffs with corresponding energies (`BIT4` - `T1`, `BIT5` - `T2`, `BIT6` - `T3`, `BIT7` - `T4`) |
-| `1+` | `int32` | tariff energies (only when energy is not equal `0`)                                                                                                                                                                                          |
+| Size  | Type    | Field                                                                                                                                                                                                                                        |
+| ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1`   | `uint8` | command id = `0x16`                                                                                                                                                                                                                          |
+| `1`   | `uint8` | command size (dynamic, `8+`, max is `20`)                                                                                                                                                                                                    |
+| `1`   | `uint8` | year (number of years after `2000`)                                                                                                                                                                                                          |
+| `1`   | `uint8` | month (`1` - January ... `12` - December)                                                                                                                                                                                                    |
+| `1`   | `uint8` | date (month day number which starts from `1`)                                                                                                                                                                                                |
+| `1`   | `uint8` | packed energy type with tariff flags <br/> `BIT3`-`BIT0` - energy according to OBIS code (`1` - `1.8.x`, `2` - `2.8.x`) <br/> `BIT7`-`BIT4` tariffs with corresponding energies (`BIT4` - `T1`, `BIT5` - `T2`, `BIT6` - `T3`, `BIT7` - `T4`) |
+| `4*n` | `int32` | tariff energies (only when energy is not equal `0`)                                                                                                                                                                                          |
+
+> `n` - the number of energies derived from packed energy type field.
 
 ### Examples
 

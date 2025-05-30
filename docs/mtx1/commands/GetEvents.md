@@ -33,7 +33,6 @@ Supported devices:
 | date                                            | `5`   | `0x05` |
 | offset in the events array of the requested day | `4`   | `0x04` |
 
-
 Command hex dump: `33 04 14 2 5 4`
 
 
@@ -41,16 +40,16 @@ Command hex dump: `33 04 14 2 5 4`
 
 ### Format
 
-| Size    | Type    | Field                                                         |
-| ------- | ------- | ------------------------------------------------------------- |
-| `1`     | `uint8` | command id = `0x33`                                           |
-| `1`     | `uint8` | command size = `5 + 5 × N`, where `N` is the number of events |
-| `1`     | `uint8` | year (number of years after `2000`)                           |
-| `1`     | `uint8` | month (`1` - January ... `12` - December)                     |
-| `1`     | `uint8` | date (month day number which starts from `1`)                 |
-| `1`     | `uint8` | total number of events for the requested date                 |
-| `1`     | `uint8` | offset in the events array of the requested day               |
-| `5 × N` | `5 × N` | array of `N` [events](./#event), (can be empty if `N` = 0)    |
+| Size    | Type              | Field                                                         |
+| ------- | ----------------- | ------------------------------------------------------------- |
+| `1`     | `uint8`           | command id = `0x33`                                           |
+| `1`     | `uint8`           | command size = `5 + 5 × N`, where `N` is the number of events |
+| `1`     | `uint8`           | year (number of years after `2000`)                           |
+| `1`     | `uint8`           | month (`1` - January ... `12` - December)                     |
+| `1`     | `uint8`           | date (month day number which starts from `1`)                 |
+| `1`     | `uint8`           | total number of events for the requested date                 |
+| `1`     | `uint8`           | offset in the events array of the requested day               |
+| `5 × N` | [event](./#event) | Array of `N` events (can be empty if `N` = 0)                 |
 
 ### Parameters
 

@@ -1,6 +1,6 @@
 # GetEnergyDay
 
-Request/response to get day energy A+ by default or selected energy type for 4 tariffs (T1-T4) for date.
+Request/response to get day energy `A+` by default or selected energy type for 4 tariffs (T1-T4) for date.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
@@ -64,14 +64,14 @@ Command hex dump: `16 04 18 03 16 01`
 
 #### response without energy type in request
 
-| Size | Type    | Field                                                      |
-| ---- | ------- | ---------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x16`                                        |
-| `1`  | `uint8` | command size = `19`                                        |
-| `1`  | `uint8` | year (number of years after `2000`)                        |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)                  |
-| `1`  | `uint8` | date (month day number which starts from `1`)              |
-| `4`  | `int32` | active energy A+ (`1.8.1` – `1.8.4`) for tariffs `T1`-`T4` |
+| Size | Type    | Field                                                 |
+| ---- | ------- | ----------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x16`                                   |
+| `1`  | `uint8` | command size = `19`                                   |
+| `1`  | `uint8` | year (number of years after `2000`)                   |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)             |
+| `1`  | `uint8` | date (month day number which starts from `1`)         |
+| `4`  | `int32` | energy `A+` (`1.8.1` – `1.8.4`) for tariffs `T1`-`T4` |
 
 #### response with energy type in request
 
@@ -98,28 +98,29 @@ Command hex dump: `16 04 18 03 16 01`
 | year         | `24`        | `0x18`       |
 | month        | `3` (March) | `0x03`       |
 | date         | `22`        | `0x16`       |
-| T1 energy    | `40301230`  | `0x0266f2ae` |
-| T2 energy    | `3334244`   | `0x0032e064` |
-| T3 energy    | `2333`      | `0x0000091d` |
-| T4 energy    | `2145623`   | `0x0020bd57` |
+| `T1` energy  | `40301230`  | `0x0266f2ae` |
+| `T2` energy  | `3334244`   | `0x0032e064` |
+| `T3` energy  | `2333`      | `0x0000091d` |
+| `T4` energy  | `2145623`   | `0x0020bd57` |
 
-Command hex dump: `16 13 18 03 16 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
+Command hex dump: `16 13 18 03 16 0266f2ae 0032e064 0000091d 0020bd57`
 
 #### A- energy with 3 tariffs:
 
-| Field        | Value       | Hex          |
-| ------------ | ----------- | ------------ |
-| command id   | `22`        | `0x16`       |
-| command size | `16`        | `0x10`       |
-| year         | `24`        | `0x18`       |
-| month        | `3` (March) | `0x03`       |
-| date         | `22`        | `0x16`       |
-| T1 energy    | `40301230`  | `0x0266f2ae` |
-| T2 energy    | `null`      | -            |
-| T3 energy    | `2333`      | `0x0000091d` |
-| T4 energy    | `2145623`   | `0x0020bd57` |
+| Field        | Value                                                                               | Hex          |
+| ------------ | ----------------------------------------------------------------------------------- | ------------ |
+| command id   | `22`                                                                                | `0x16`       |
+| command size | `16`                                                                                | `0x10`       |
+| year         | `24`                                                                                | `0x18`       |
+| month        | `3` (March)                                                                         | `0x03`       |
+| date         | `22`                                                                                | `0x16`       |
+| energy type  | OBIS code: `2.8.x`<br>`T1`: `true`<br>`T2`: `true`<br>`T3`: `false`<br>`T4`: `true` | `0xd2`       |
+| `T1` energy  | `40301230`                                                                          | `0x0266f2ae` |
+| `T2` energy  | `null`                                                                              | -            |
+| `T3` energy  | `2333`                                                                              | `0x0000091d` |
+| `T4` energy  | `2145623`                                                                           | `0x0020bd57` |
 
-Command hex dump: `16 10 18 03 16 d0 02 66 f2 ae 00 00 09 1d 00 20 bd 57`
+Command hex dump: `16 10 18 03 16 d2 0266f2ae 0000091d 0020bd57`
 
 
 ## See also

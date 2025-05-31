@@ -1,6 +1,6 @@
-# GetEnergyCurrent
+# GetEnergy
 
-Request/response to get current energy A+ by default or selected energy type for 4 tariffs (T1-T4).
+Request/response to get current energy `A+` by default or selected energy type for 4 tariffs (`T1-T4`).
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
@@ -77,10 +77,10 @@ Command hex dump: `0f 01 02`
 | ------------ | ---------- | ------------ |
 | command id   | `15`       | `0x0f`       |
 | command size | `16`       | `0x10`       |
-| T1 energy    | `40301230` | `0x0266f2ae` |
-| T2 energy    | `3334244`  | `0x0032e064` |
-| T3 energy    | `2333`     | `0x0000091d` |
-| T4 energy    | `2145623`  | `0x0020bd57` |
+| `T1` energy  | `40301230` | `0x0266f2ae` |
+| `T2` energy  | `3334244`  | `0x0032e064` |
+| `T3` energy  | `2333`     | `0x0000091d` |
+| `T4` energy  | `2145623`  | `0x0020bd57` |
 
 Command hex dump: `0f 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
 
@@ -91,10 +91,10 @@ Command hex dump: `0f 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
 | command id             | `15`       | `0x0f`       |
 | command size           | `13`       | `0x0d`       |
 | energy type with flags |            | `0xd0`       |
-| T1 energy              | `40301230` | `0x0266f2ae` |
-| T2 energy              | `null`     | -            |
-| T3 energy              | `2333`     | `0x0000091d` |
-| T4 energy              | `2145623`  | `0x0020bd57` |
+| `T1` energy            | `40301230` | `0x0266f2ae` |
+| `T2` energy            | `null`     | -            |
+| `T3` energy            | `2333`     | `0x0000091d` |
+| `T4` energy            | `2145623`  | `0x0020bd57` |
 
 Command hex dump: `0f 0d d0 02 66 f2 ae 00 00 09 1d 00 20 bd 57`
 

@@ -234,6 +234,13 @@ There are `2` types of command direction:
             <td>Reset for monthly max power.</td>
         </tr>
         <tr>
+            <td><code>0x3a</code></td>
+            <td><code>GetExtendedCurrentValues</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetExtendedCurrentValues.md#request">request</a> / <a href="./GetExtendedCurrentValues.md#response">response</a></td>
+            <td>Get the temperature and supply frequency.</td>
+        </tr>
+        <tr>
             <td><code>0x3b</code></td>
             <td><code>GetDayProfile</code></td>
             <td><code>READ_ONLY</code></td>

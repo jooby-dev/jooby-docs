@@ -24,6 +24,13 @@ There are `2` types of command direction:
             <td>Get the device status events.</td>
         </tr>
         <tr>
+            <td><code>0x03</code></td>
+            <td><code>GetEnergyDayPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDayPrevious.md#request">request</a> / <a href="./GetEnergyDayPrevious.md#response">response</a></td>
+            <td>Get the previous day energy `A+` for `4` tariffs.</td>
+        </tr>
+        <tr>
             <td><code>0x04</code></td>
             <td><code>GetDeviceType</code></td>
             <td><code>READ_ONLY</code></td>
@@ -253,6 +260,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetCriticalEvent.md#request">request</a> / <a href="./GetCriticalEvent.md#response">response</a></td>
             <td>Get device critical events.</td>
+        </tr>
+        <tr>
+            <td><code>0x50</code></td>
+            <td><code>GetExportEnergyDayPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetExportEnergyDayPrevious.md#request">request</a> / <a href="./GetExportEnergyDayPrevious.md#response">response</a></td>
+            <td>Get the previous day energy `A-` for `4` tariffs.</td>
         </tr>
         <tr>
             <td><code>0x53</code></td>

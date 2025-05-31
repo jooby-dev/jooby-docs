@@ -85,10 +85,10 @@ A set is a combination of the following displays:
 | `51`   | `REACTIVE_POWER_QMINUS_PHASE_A`                 | Reactive power of phase `A`, `Q-` (quadrant `QIII + QIV`) (`24.7.0`)                                                               |
 | `52`   | `REACTIVE_POWER_QMINUS_PHASE_B`                 | Reactive power of phase `B`, `Q-` (quadrant `QIII + QIV`) (`44.7.0`)                                                               |
 | `53`   | `REACTIVE_POWER_QMINUS_PHASE_C`                 | Reactive power of phase `C`, `Q-` (quadrant `QIII + QIV`) (`64.7.0`)                                                               |
-| `54`   | `POWER_COEFFICIENT_SUM`                         | Power factor (`cos φ`) of all phases (`13.7.0`)                                                                                    |
-| `55`   | `POWER_COEFFICIENT_PHASE_A`                     | Power factor (`cos φ`) of phase `A` (`33.7.0`)                                                                                     |
-| `56`   | `POWER_COEFFICIENT_PHASE_B`                     | Power factor (`cos φ`) of phase `B` (`53.7.0`)                                                                                     |
-| `57`   | `POWER_COEFFICIENT_PHASE_C`                     | Power factor (`cos φ`) of phase `C` (`73.7.0`)                                                                                     |
+| `54`   | `TOTAL_POWER_FACTOR`                            | Total power factor (`cos φ`) (`13.7.0`)                                                                                            |
+| `55`   | `POWER_FACTOR_PHASE_A`                          | Power factor (`cos φ`) of phase `A` (`33.7.0`)                                                                                     |
+| `56`   | `POWER_FACTOR_PHASE_B`                          | Power factor (`cos φ`) of phase `B` (`53.7.0`)                                                                                     |
+| `57`   | `POWER_FACTOR_PHASE_C`                          | Power factor (`cos φ`) of phase `C` (`73.7.0`)                                                                                     |
 | `58`   | `APPARENT_POWER_QPLUS_SUM`                      | Total apparent power `S+` (quadrant `QI + QIV`) (`9.7.0`)                                                                          |
 | `59`   | `APPARENT_POWER_QPLUS_PHASE_A`                  | Apparent power `S+` of phase `A` (quadrant `QI + QIV`) (`29.7.0`)                                                                  |
 | `60`   | `APPARENT_POWER_QPLUS_PHASE_B`                  | Apparent power `S+` of phase `B` (quadrant `QI + QIV`) (`49.7.0`)                                                                  |

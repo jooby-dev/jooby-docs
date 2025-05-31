@@ -284,10 +284,10 @@ Bit mask:
 
 Bit mask:
 
-| Name                         | Bit | Description                                                                                                                                                             |
-| ---------------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `TRANSFORMATION_RATIO`       | `0` | perform measurements using ratio transformation                                                                                                                         |
-| `METER_TYPE_R`               | `4` | `R` type meter                                                                                                                                                          |
+| Name                         | Bit | Description                                                                                                                                                            |
+| ---------------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `TRANSFORMATION_RATIO`       | `0` | perform measurements using ratio transformation                                                                                                                        |
+| `METER_TYPE_R`               | `4` | `R` type meter                                                                                                                                                         |
 | `ACCUMULATE_BY_R_PLUS_MINUS` | `7` | reactive energy accumulation type<br>`false` - reactive energy accumulation by quadrants `Q1`, `Q2`, `Q3`, `Q4`<br>`true` - reactive energy accumulation by `R+`, `R-` |
 
 ### Examples
@@ -452,10 +452,10 @@ Bit mask:
                 <code>REACTIVE_POWER_QMINUS_PHASE_A</code>: <code>false</code><br>
                 <code>REACTIVE_POWER_QMINUS_PHASE_B</code>: <code>false</code><br>
                 <code>REACTIVE_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_SUM</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_PHASE_A</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_PHASE_B</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_PHASE_C</code>: <code>false</code><br>
+                <code>TOTAL_POWER_FACTOR</code>: <code>false</code><br>
+                <code>POWER_FACTOR_PHASE_A</code>: <code>false</code><br>
+                <code>POWER_FACTOR_PHASE_B</code>: <code>false</code><br>
+                <code>POWER_FACTOR_PHASE_C</code>: <code>false</code><br>
                 <code>APPARENT_POWER_QPLUS_SUM</code>: <code>false</code><br>
                 <code>APPARENT_POWER_QPLUS_PHASE_A</code>: <code>false</code><br>
                 <code>APPARENT_POWER_QPLUS_PHASE_B</code>: <code>false</code><br>

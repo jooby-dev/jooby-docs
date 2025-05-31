@@ -17,9 +17,9 @@ Available levels:
 
 ## Displays
 
-Each device has 4 display sets: `32` main displays and `32` additional displays.
+Each device has 4 display sets: `64` main displays and `64` additional displays.
 
-Display modes:
+#### Display modes:
 
 | Value | Screen type  | Screen range |
 | ----- | ------------ | ------------ |

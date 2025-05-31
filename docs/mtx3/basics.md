@@ -72,7 +72,7 @@ A set is a combination of the following displays:
 | `38`   | `VOLTAGE_IN_PHASE_B`                            | Voltage in phase `B` (`52.7.0`)                                                                                                    |
 | `39`   | `VOLTAGE_IN_PHASE_C`                            | Voltage in phase `C` (`72.7.0`)                                                                                                    |
 | `40`   | `BATTERY_VOLTAGE`                               | Battery voltage (`96.6.3`)                                                                                                         |
-| `41`   | `FREQUENCY`                                     | Network frequency (`14.7.0`)                                                                                                       |
+| `41`   | `FREQUENCY`                                     | Supply frequency (`14.7.0`)                                                                                                        |
 | `42`   | `ACTIVE_POWER_SUM`                              | Active power of all phases (`P`, `1.7.0` for `R`-type meters), (`±P`, `16.7.0` for `G`-type meters)                                |
 | `43`   | `ACTIVE_POWER_PHASE_A`                          | Active power of phase `A` (`P`, `21.7.0` for `R`-type meters), (`±P`, `36.7.0` for `G`-type meters)                                |
 | `44`   | `ACTIVE_POWER_PHASE_B`                          | Active power of phase `B` (`P`, `41.7.0` for `R`-type meters), (`±P`, `56.7.0` for `G`-type meters)                                |

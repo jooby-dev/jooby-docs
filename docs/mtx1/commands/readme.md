@@ -235,6 +235,13 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x3a</code></td>
+            <td><code>GetCurrentStatusMeter</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetCurrentStatusMeter.md#request">request</a> / <a href="./GetCurrentStatusMeter.md#response">response</a></td>
+            <td>Get current meter status.</td>
+        </tr>
+        <tr>
+            <td><code>0x3a</code></td>
             <td><code>GetExtendedCurrentValues</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetExtendedCurrentValues.md#request">request</a> / <a href="./GetExtendedCurrentValues.md#response">response</a></td>

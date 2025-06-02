@@ -1,4 +1,4 @@
-# GetEnergyDay
+# GetEnergyDayPrevious
 
 Request/response to get the previous day energy `A+` for `4` tariffs (`T1-T4`).
 
@@ -22,7 +22,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | ---- | ------- | --------------------------------------------------------------------------------------------- |
 | `1`  | `uint8` | command id = `0x03`                                                                           |
 | `1`  | `uint8` | command size = `1`                                                                            |
-| `1`  | `uint8` | energy type according to OBIS code <br/> `1` - `1.8.x`, `2` - `2.8.x` (where `x` is `1`..`4`) |
+| `1`  | `uint8` | energy type according to OBIS code <br/> `1` - `1.8.x`, `2` - `2.8.x` (`x`=`1`..`4`) |
 
 ### Examples
 

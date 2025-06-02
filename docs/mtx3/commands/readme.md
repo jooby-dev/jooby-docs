@@ -1,4 +1,4 @@
-# Commands 1
+# Commands
 
 There are `2` types of command direction:
 
@@ -218,6 +218,13 @@ There are `2` types of command direction:
             <td><strong><code>READ_WRITE</code></strong></td>
             <td><a href="../../mtx1/commands/ResetPowerMaxMonth.md#request">request</a> / <a href="../../mtx1/commands/ResetPowerMaxMonth.md#response">response</a></td>
             <td>Reset for monthly max power.</td>
+        </tr>
+        <tr>
+            <td><code>0x39</code></td>
+            <td><code>GetCurrentStatusMeter</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetCurrentStatusMeter.md#request">request</a> / <a href="./GetCurrentStatusMeter.md#response">response</a></td>
+            <td>Get current meter status.</td>
         </tr>
         <tr>
             <td><code>0x3a</code></td>

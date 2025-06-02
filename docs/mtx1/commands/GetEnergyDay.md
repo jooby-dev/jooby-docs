@@ -21,13 +21,13 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 #### case #2 with energy type
 
-| Size | Type    | Field                                                                                         |
-| ---- | ------- | --------------------------------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x16`                                                                           |
-| `1`  | `uint8` | command size = `4`                                                                            |
-| `1`  | `uint8` | year (number of years after `2000`)                                                           |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)                                                     |
-| `1`  | `uint8` | date (month day number which starts from `1`)                                                 |
+| Size | Type    | Field                                                                                |
+| ---- | ------- | ------------------------------------------------------------------------------------ |
+| `1`  | `uint8` | command id = `0x16`                                                                  |
+| `1`  | `uint8` | command size = `4`                                                                   |
+| `1`  | `uint8` | year (number of years after `2000`)                                                  |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                                            |
+| `1`  | `uint8` | date (month day number which starts from `1`)                                        |
 | `1`  | `uint8` | energy type according to OBIS code <br/> `1` - `1.8.x`, `2` - `2.8.x` (`x`=`1`..`4`) |
 
 ### Examples

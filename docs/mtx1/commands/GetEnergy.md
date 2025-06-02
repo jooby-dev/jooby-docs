@@ -18,10 +18,10 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 #### case #2 with energy type
 
-| Size | Type    | Field                                                                                         |
-| ---- | ------- | --------------------------------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x0f`                                                                           |
-| `1`  | `uint8` | command size = `1`                                                                            |
+| Size | Type    | Field                                                                                |
+| ---- | ------- | ------------------------------------------------------------------------------------ |
+| `1`  | `uint8` | command id = `0x0f`                                                                  |
+| `1`  | `uint8` | command size = `1`                                                                   |
 | `1`  | `uint8` | energy type according to OBIS code <br/> `1` - `1.8.x`, `2` - `2.8.x` (`x`=`1`..`4`) |
 
 ### Examples

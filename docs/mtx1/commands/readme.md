@@ -234,7 +234,7 @@ There are `2` types of command direction:
             <td>Reset for monthly max power.</td>
         </tr>
         <tr>
-            <td><code>0x3a</code></td>
+            <td><code>0x39</code></td>
             <td><code>GetCurrentStatusMeter</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetCurrentStatusMeter.md#request">request</a> / <a href="./GetCurrentStatusMeter.md#response">response</a></td>

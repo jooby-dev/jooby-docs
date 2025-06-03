@@ -108,6 +108,13 @@ There are `2` types of command direction:
             <td>Get active energy (<code>A+</code>) in half hours by date.</td>
         </tr>
         <tr>
+            <td><code>0x17</code></td>
+            <td><code>GetMonthDemand</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetMonthDemand.md#request">request</a> / <a href="./GetMonthDemand.md#response">response</a></td>
+            <td>Get the monthly active energy (<code>A+</code>, <code>R+</code>, <code>R-</code>) for all tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
             <td><code>0x18</code></td>
             <td><code>TurnRelayOn</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
@@ -288,6 +295,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetOperatorParametersExt2.md#request">request</a> / <a href="./GetOperatorParametersExt2.md#response">response</a></td>
             <td>Get extended device operator parameters <code>2</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x52</code></td>
+            <td><code>GetMonthDemandExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetMonthDemandExport.md#request">request</a> / <a href="./GetMonthDemandExport.md#response">response</a></td>
+            <td>Get the monthly energies (<code>A-</code>, <code>A-R+</code>, <code>A-R-</code>) for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x53</code></td>

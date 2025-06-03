@@ -87,8 +87,8 @@ Bit mask:
 | `EXPORTED_ACTIVE_ENERGY_T2`    | `16` | enable active energy `A-` display for tariff `T2`                       |
 | `EXPORTED_ACTIVE_ENERGY_T3`    | `17` | enable active energy `A-` display for tariff `T3`                       |
 | `EXPORTED_ACTIVE_ENERGY_T4`    | `18` | enable active energy `A-` display for tariff `T4`                       |
-| `POWER_COEFFICIENT_PHASE_A`    | `19` | enable power factor display on channel `A` (Obis `33.7.0`)              |
-| `POWER_COEFFICIENT_PHASE_B`    | `20` | enable power factor display on channel `B` (Obis `53.7.0`)              |
+| `POWER_FACTOR_PHASE_A`         | `19` | enable power factor display for phase `A` (Obis `33.7.0`)               |
+| `POWER_FACTOR_PHASE_B`         | `20` | enable power factor display for phase `B` (Obis `53.7.0`)               |
 | `BATTERY_VOLTAGE`              | `21` | enable battery voltage display (Obis `96.6.3`)                          |
 | `POWER_THRESHOLD_T1`           | `22` | enable relay off power threshold display for tariff `T1` (Obis `5.2.1`) |
 | `POWER_THRESHOLD_T2`           | `23` | enable relay off power threshold display for tariff `T2` (Obis `5.2.2`) |

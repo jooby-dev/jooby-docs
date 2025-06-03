@@ -165,10 +165,10 @@ Bit mask:
                 <code>REACTIVE_POWER_QMINUS_PHASE_A</code>: <code>false</code><br>
                 <code>REACTIVE_POWER_QMINUS_PHASE_B</code>: <code>false</code><br>
                 <code>REACTIVE_POWER_QMINUS_PHASE_C</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_SUM</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_PHASE_A</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_PHASE_B</code>: <code>false</code><br>
-                <code>POWER_COEFFICIENT_PHASE_C</code>: <code>false</code><br>
+                <code>TOTAL_POWER_FACTOR</code>: <code>false</code><br>
+                <code>POWER_FACTOR_PHASE_A</code>: <code>false</code><br>
+                <code>POWER_FACTOR_PHASE_B</code>: <code>false</code><br>
+                <code>POWER_FACTOR_PHASE_C</code>: <code>false</code><br>
                 <code>APPARENT_POWER_QPLUS_SUM</code>: <code>false</code><br>
                 <code>APPARENT_POWER_QPLUS_PHASE_A</code>: <code>false</code><br>
                 <code>APPARENT_POWER_QPLUS_PHASE_B</code>: <code>false</code><br>

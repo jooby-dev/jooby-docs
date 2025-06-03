@@ -24,6 +24,13 @@ There are `2` types of command direction:
             <td>Get the device status events.</td>
         </tr>
         <tr>
+            <td><code>0x03</code></td>
+            <td><code>GetEnergyDayPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDayPrevious.md#request">request</a> / <a href="./GetEnergyDayPrevious.md#response">response</a></td>
+            <td>Get the previous day energy `A+` for `4` tariffs.</td>
+        </tr>
+        <tr>
             <td><code>0x04</code></td>
             <td><code>GetDeviceType</code></td>
             <td><code>READ_ONLY</code></td>
@@ -74,9 +81,9 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x0f</code></td>
-            <td><code>GetEnergyCurrent</code></td>
+            <td><code>GetEnergy</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetEnergyCurrent.md#request">request</a> / <a href="./GetEnergyCurrent.md#response">response</a></td>
+            <td><a href="./GetEnergy.md#request">request</a> / <a href="./GetEnergy.md#response">response</a></td>
             <td>Get current energy <code>A+</code> by default or selected energy type for 4 tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
@@ -227,6 +234,20 @@ There are `2` types of command direction:
             <td>Reset for monthly max power.</td>
         </tr>
         <tr>
+            <td><code>0x39</code></td>
+            <td><code>GetCurrentStatusMeter</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetCurrentStatusMeter.md#request">request</a> / <a href="./GetCurrentStatusMeter.md#response">response</a></td>
+            <td>Get current meter status.</td>
+        </tr>
+        <tr>
+            <td><code>0x3a</code></td>
+            <td><code>GetExtendedCurrentValues</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetExtendedCurrentValues.md#request">request</a> / <a href="./GetExtendedCurrentValues.md#response">response</a></td>
+            <td>Get the temperature and supply frequency.</td>
+        </tr>
+        <tr>
             <td><code>0x3b</code></td>
             <td><code>GetDayProfile</code></td>
             <td><code>READ_ONLY</code></td>
@@ -253,6 +274,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetCriticalEvent.md#request">request</a> / <a href="./GetCriticalEvent.md#response">response</a></td>
             <td>Get device critical events.</td>
+        </tr>
+        <tr>
+            <td><code>0x50</code></td>
+            <td><code>GetExportEnergyDayPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetExportEnergyDayPrevious.md#request">request</a> / <a href="./GetExportEnergyDayPrevious.md#response">response</a></td>
+            <td>Get the previous day energy `A-` for `4` tariffs.</td>
         </tr>
         <tr>
             <td><code>0x53</code></td>

@@ -206,6 +206,13 @@ There are `2` types of command direction:
             <td>Get the maximum daily power <code>P+</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
+            <td><code>0x32</code></td>
+            <td><code>GetMonthMaxDemand</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetMonthMaxDemand.md#request">request</a> / <a href="./GetMonthMaxDemand.md#response">response</a></td>
+            <td>Get the maximum monthly power <code>P+</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
             <td><code>0x33</code></td>
             <td><code>GetEvents</code></td>
             <td><code>READ_ONLY</code></td>
@@ -295,6 +302,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetDayMaxDemandExport.md#request">request</a> / <a href="./GetDayMaxDemandExport.md#response">response</a></td>
             <td>Get the maximum daily power <code>P-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
+            <td><code>0x59</code></td>
+            <td><code>GetMonthMaxDemandExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetMonthMaxDemandExport.md#request">request</a> / <a href="./GetMonthMaxDemandExport.md#response">response</a></td>
+            <td>Get the maximum monthly power <code>P-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x5c</code></td>

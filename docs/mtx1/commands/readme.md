@@ -351,6 +351,13 @@ There are `2` types of command direction:
             <td>Get the maximum monthly power <code>P-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
+            <td><code>0x5b</code></td>
+            <td><code>GetEnergyExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyExport.md#request">request</a> / <a href="./GetEnergyExport.md#response">response</a></td>
+            <td>Get current energy <code>A-</code> for tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
             <td><code>0x5c</code></td>
             <td><code>SetCorrectDateTime</code></td>
             <td><code>READ_ONLY</code></td>

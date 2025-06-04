@@ -28,7 +28,7 @@ There are `2` types of command direction:
             <td><code>GetEnergyDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetEnergyDayPrevious.md#request">request</a> / <a href="./GetEnergyDayPrevious.md#response">response</a></td>
-            <td>Get the previous day energy `A+` for `4` tariffs.</td>
+            <td>Get the previous day energy <code>A+</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x04</code></td>
@@ -128,13 +128,18 @@ There are `2` types of command direction:
             <td><a href="./GetHalfHourDemand.md#request">request</a> / <a href="./GetHalfHourDemand.md#response">response</a></td>
             <td>Get active energy (<code>A+</code>) in half hours by date.</td>
         </tr>
+        <td><code>0x016</code></td>
+            <td><code>GetEnergyDay</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDay.md#request">request</a> / <a href="./GetEnergyDay.md#response">response</a></td>
+            <td>Get daily active energy (<code>A+</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
+        </tr>
         <tr>
             <td><code>0x17</code></td>
             <td><code>GetMonthDemand</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetMonthDemand.md#request">request</a> / <a href="./GetMonthDemand.md#response">response</a></td>
             <td>Get the monthly active energy (<code>A+</code>) for all tariffs (<code>T1</code>-<code>T4</code>).</td>
-        </tr>
         <tr>
             <td><code>0x18</code></td>
             <td><code>TurnRelayOn</code></td>
@@ -308,7 +313,7 @@ There are `2` types of command direction:
             <td><code>GetExportEnergyDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetExportEnergyDayPrevious.md#request">request</a> / <a href="./GetExportEnergyDayPrevious.md#response">response</a></td>
-            <td>Get the previous day energy `A-` for `4` tariffs.</td>
+            <td>Get the previous day active energy <code>A-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x52</code></td>

@@ -32,13 +32,13 @@ Command hex dump: `17 02 18 03`
 
 ### Format
 
-| Size  | Type    | Field                                                        |
-| ----- | ------- | ------------------------------------------------------------ |
-| `1`   | `uint8` | command id = `0x17`                                          |
-| `1`   | `uint8` | command size = `18`                                          |
-| `1`   | `uint8` | year (number of years after `2000`)                          |
-| `1`   | `uint8` | month (`1` - January ... `12` - December)                    |
-| `4*n` | `int32` | active energy `A+` for tariffs `T1`-`T4` (`1.9.x`, x=`1..4`) |
+| Size  | Type    | Field                                                         |
+| ----- | ------- | ------------------------------------------------------------- |
+| `1`   | `uint8` | command id = `0x17`                                           |
+| `1`   | `uint8` | command size = `18`                                           |
+| `1`   | `uint8` | year (number of years after `2000`)                           |
+| `1`   | `uint8` | month (`1` - January ... `12` - December)                     |
+| `4*n` | `int32` | active energy for tariffs `T1`-`T4`, `A+` (`1.9.x`, x=`1..4`) |
 
 > `n` - the number of tariffs.
 

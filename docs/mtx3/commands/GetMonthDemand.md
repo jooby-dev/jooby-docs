@@ -32,24 +32,24 @@ Command hex dump: `17 02 18 03`
 
 ### Format
 
-| Size | Type    | Field                                                                                                                          |
-| ---- | ------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `1`  | `uint8` | command id = `0x17`                                                                                                            |
-| `1`  | `uint8` | command size = `50`                                                                                                            |
-| `1`  | `uint8` | year (number of years after `2000`)                                                                                            |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)                                                                                      |
-| `4`  | `int32` | active energy (`A+`) for tariff `T1` (`1.8.1`)                                                                                 |
-| `4`  | `int32` | positive (inductive) reactive energy for tariff `T1` (`R+`, `3.8.1` for meter type `R`), (`A+R+`, `5.8.1` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T1` (`R-`, `4.8.1` for meter type `R`), (`A+R-`, `8.8.1` for meter type `G`) |
-| `4`  | `int32` | active energy (`A+`) for tariff `T2` (`1.8.2`)                                                                                 |
-| `4`  | `int32` | positive (inductive) reactive energy for tariff `T2` (`R+`, `3.8.2` for meter type `R`), (`A+R+`, `5.8.2` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T2` (`R-`, `4.8.2` for meter type `R`), (`A+R-`, `8.8.2` for meter type `G`) |
-| `4`  | `int32` | active energy (`A+`) for tariff `T3` (`1.8.3`)                                                                                 |
-| `4`  | `int32` | positive (inductive) reactive energy for tariff `T3` (`R+`, `3.8.3` for meter type `R`), (`A+R+`, `5.8.3` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T3` (`R-`, `4.8.3` for meter type `R`), (`A+R-`, `8.8.3` for meter type `G`) |
-| `4`  | `int32` | active energy (`A+`) for tariff `T4` (`1.8.4`)                                                                                 |
-| `4`  | `int32` | positive (inductive) reactive energy for tariff `T4` (`R+`, `3.8.4` for meter type `R`), (`A+R+`, `5.8.4` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T4` (`R-`, `4.8.4` for meter type `R`), (`A+R-`, `8.8.4` for meter type `G`) |
+| Size | Type    | Field                                                                                                                             |
+| ---- | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x17`                                                                                                               |
+| `1`  | `uint8` | command size = `50`                                                                                                               |
+| `1`  | `uint8` | year (number of years after `2000`)                                                                                               |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                                                                                         |
+| `4`  | `int32` | active energy for tariff `T1`, `A+` (`1.8.1`)                                                                                     |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T1`<br>`R+` (`3.8.1`) for meter type `R`<br>`A+R+` (`5.8.1`) for meter type `G`  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T1`<br>`R-` (`4.8.1`) for meter type `R`<br>`A+R-` (`8.8.1`) for meter type `G` |
+| `4`  | `int32` | active energy for tariff `T2`, `A+` (`1.8.2`)                                                                                     |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T2`<br>`R+` (`3.8.2`) for meter type `R`<br>`A+R+` (`5.8.2`) for meter type `G`  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T2`<br>`R-` (`4.8.2`) for meter type `R`<br>`A+R-` (`8.8.2`) for meter type `G` |
+| `4`  | `int32` | active energy for tariff `T3`, `A+` (`1.8.3`)                                                                                     |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T3`<br>`R+` (`3.8.3`) for meter type `R`<br>`A+R+` (`5.8.3`) for meter type `G`  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T3`<br>`R-` (`4.8.3`) for meter type `R`<br>`A+R-` (`8.8.3`) for meter type `G` |
+| `4`  | `int32` | active energy for tariff `T4`, `A+` (`1.8.4`)                                                                                     |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T4`<br>`R+` (`3.8.4`) for meter type `R`<br>`A+R+` (`5.8.4`) for meter type `G`  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T4`<br>`R-` (`4.8.4`) for meter type `R`<br>`A+R-` (`8.8.4`) for meter type `G` |
 
 ### Examples
 

@@ -1,6 +1,7 @@
 # GetMonthDemandExport
 
-Request/response to get the monthly energies (`A-`, `A-R+`, `A-R-`) for 4 tariffs (`T1`-`T4`).
+Request/response to get the monthly energies (`A-`, `A-R+`, `A-R-`) for 4 tariffs (`T1`-`T4`).<br>
+Applicable to type `G` meters.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
@@ -32,24 +33,24 @@ Command hex dump: `52 02 18 03`
 
 ### Format
 
-| Size | Type    | Field                                                                                       |
-| ---- | ------- | ------------------------------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x52`                                                                         |
-| `1`  | `uint8` | command size = `50`                                                                         |
-| `1`  | `uint8` | year (number of years after `2000`)                                                         |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)                                                   |
-| `4`  | `int32` | active energy (`A-`) for tariff `T1` (`2.8.1` for meter type `G`)                           |
-| `4`  | `int32` | positive (inductive) reactive energy (`A-R+`) for tariff `T1` (`6.8.1` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy (`A-R-`) for tariff `T1` (`7.8.1` for meter type `G`) |
-| `4`  | `int32` | active energy (`A-`) for tariff `T2` (`2.8.2` for meter type `G`)                           |
-| `4`  | `int32` | positive (inductive) reactive energy (`A-R+`) for tariff `T2` (`6.8.2` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy (`A-R-`) for tariff `T2` (`7.8.2` for meter type `G`) |
-| `4`  | `int32` | active energy (`A-`) for tariff `T3` (`2.8.3` for meter type `G`)                           |
-| `4`  | `int32` | positive (inductive) reactive energy (`A-R+`) for tariff `T3` (`6.8.3` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy (`A-R-`) for tariff `T3` (`7.8.3` for meter type `G`) |
-| `4`  | `int32` | active energy (`A-`) for tariff `T4` (`2.8.4` for meter type `G`)                           |
-| `4`  | `int32` | positive (inductive) reactive energy (`A-R+`) for tariff `T4` (`6.8.4` for meter type `G`)  |
-| `4`  | `int32` | negative (capacitive) reactive energy (`A-R-`) for tariff `T4` (`7.8.4` for meter type `G`) |
+| Size | Type    | Field                                                                   |
+| ---- | ------- | ----------------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x52`                                                     |
+| `1`  | `uint8` | command size = `50`                                                     |
+| `1`  | `uint8` | year (number of years after `2000`)                                     |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                               |
+| `4`  | `int32` | active energy for tariff `T1`, `A-` (`2.8.1`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T1`, `A-R+` (`6.8.1`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T1`, `A-R-` (`7.8.1`) |
+| `4`  | `int32` | active energy for tariff `T2`, `A-` (`2.8.2`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T2`, `A-R+` (`6.8.2`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T2`, `A-R-` (`7.8.2`) |
+| `4`  | `int32` | active energy for tariff `T3`, `A-` (`2.8.3`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T3`, `A-R+` (`6.8.3`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T3`, `A-R-` (`7.8.3`) |
+| `4`  | `int32` | active energy for tariff `T4`, `A-` (`2.8.4`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T4`, `A-R+` (`6.8.4`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T4`, `A-R-` (`7.8.4`) |
 
 ### Examples
 

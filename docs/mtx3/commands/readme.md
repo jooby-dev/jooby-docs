@@ -66,6 +66,13 @@ There are `2` types of command direction:
             <td>Set the device access key.</td>
         </tr>
         <tr>
+            <td><code>0x11</code></td>
+            <td><code>SetSeasonProfile</code></td>
+            <td><strong><code>READ_WRITE</code></strong></td>
+            <td><a href="../../mtx1/commands/SetSeasonProfile.md#request">request</a> / <a href="../../mtx1/commands/SetSeasonProfile.md#response">response</a></td>
+            <td>Set season profile information for the given tariff table.</td>
+        </tr>
+        <tr>
             <td><code>0x0d</code></td>
             <td><code>GetCurrentValues</code></td>
             <td><code>READ_ONLY</code></td>
@@ -253,6 +260,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="../../mtx1/commands/GetDayProfile.md#request">request</a> / <a href="../../mtx1/commands/GetDayProfile.md#response">response</a></td>
             <td>Get day profile information for the given tariff table.</td>
+        </tr>
+        <tr>
+            <td><code>0x3c</code></td>
+            <td><code>GetSeasonProfile</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="../../mtx1/commands/GetSeasonProfile.md#request">request</a> / <a href="../../mtx1/commands/GetSeasonProfile.md#response">response</a></td>
+            <td>Get season profile information for the given tariff table.</td>
         </tr>
         <tr>
             <td><code>0x3d</code></td>

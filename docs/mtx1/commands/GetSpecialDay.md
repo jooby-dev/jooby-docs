@@ -42,8 +42,8 @@ Command hex dump: `3d 03 00 04 01`
 | ---- | ------- | ----------------------------------------------- |
 | `1`  | `uint8` | command id = `0x3d`                             |
 | `1`  | `uint8` | command size = `4`                              |
-| `1`  | `uint8` | month                                           |
-| `1`  | `uint8` | date                                            |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)       |
+| `1`  | `uint8` | date (month day number which starts from `1`)   |
 | `1`  | `uint8` | day profile index                               |
 | `1`  | `uint8` | is it periodic or not (`0` - true, `1` - false) |
 

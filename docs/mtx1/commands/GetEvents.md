@@ -60,7 +60,7 @@ Command hex dump: `33 04 14 2 5 4`
 | `1`  | `uint8` | hours                                                                          |
 | `1`  | `uint8` | minutes                                                                        |
 | `1`  | `uint8` | seconds                                                                        |
-| `1`  | `uint8` | month                                                                          |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                                      |
 | `1`  | `uint8` | [mtx1 event id](../../mtx3/events.md)<br>[mtx3 event id](../../mtx3/events.md) |
 
 ### Examples

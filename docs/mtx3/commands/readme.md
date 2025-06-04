@@ -87,6 +87,13 @@ There are `2` types of command direction:
             <td>Get current values like voltage, power, etc.</td>
         </tr>
         <tr>
+            <td><code>0x0f</code></td>
+            <td><code>GetEnergy</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergy.md#request">request</a> / <a href="./GetEnergy.md#response">response</a></td>
+            <td>Get current energy <code>A+, R+, R-</code> for tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
             <td><code>0x10</code></td>
             <td><code>SetDayProfile</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
@@ -322,6 +329,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetOperatorParametersExt2.md#request">request</a> / <a href="./GetOperatorParametersExt2.md#response">response</a></td>
             <td>Get extended device operator parameters <code>2</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x4e</code></td>
+            <td><code>GetEnergyExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyExport.md#request">request</a> / <a href="./GetEnergyExport.md#response">response</a></td>
+            <td>Get current energy <code>A-, R+, R-</code> for tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x4f</code></td>

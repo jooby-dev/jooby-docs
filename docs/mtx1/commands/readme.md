@@ -84,7 +84,7 @@ There are `2` types of command direction:
             <td><code>GetEnergy</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetEnergy.md#request">request</a> / <a href="./GetEnergy.md#response">response</a></td>
-            <td>Get current energy <code>A+</code> by default or selected energy type for 4 tariffs (<code>T1</code>-<code>T4</code>).</td>
+            <td>Get current energy <code>A+</code> for tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x10</code></td>

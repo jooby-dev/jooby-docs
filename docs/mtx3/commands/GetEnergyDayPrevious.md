@@ -1,0 +1,172 @@
+# GetEnergyDayPrevious
+
+Request/response to get daily energies (`A+, R+, R-`) by default or selected energy type for all tariffs (`T1`-`T4`) for date.
+
+The command access level is [READ_ONLY](../basics.md#command-access-level).
+
+
+## Request
+
+### Format
+
+#### case #1 without energy type
+
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x03` |
+| `1`  | `uint8` | command size = `0`  |
+
+#### case #2 with energy type
+
+| Size | Type    | Field                       |
+| ---- | ------- | --------------------------- |
+| `1`  | `uint8` | command id = `0x03`         |
+| `1`  | `uint8` | command size = `1`          |
+| `1`  | `uint8` | [energy type](#energy-type) |
+
+### Parameters
+
+#### energy type
+
+##### meter type `R`
+
+| Energy type (x=`1`..`4`)                       | Value |
+| ---------------------------------------------- | ----- |
+| `A+` (`1.8.x`), `R+` (`3.8.x`), `R-` (`4.8.1`) | `1`   |
+
+##### meter type `G`
+
+| Energy type (`x`=`1`..`4`)                         | Value |
+| -------------------------------------------------- | ----- |
+| `A+` (`1.8.x`), `A+R+` (`5.8.x`), `A+R-` (`8.8.x`) | `1`   |
+| `A-` (`2.8.x`), `A-R+` (`6.8.x`), `A-R-` (`7.8.x`) | `2`   |
+
+### Examples
+
+#### request the previous day energy (`A+, R+, R-`) without energy type
+
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `3`   | `0x03` |
+| command size | `0`   | `0x00` |
+
+Command hex dump: `16 00`
+
+#### request the previous day energy (`A+, R+, R-`)
+
+| Field                       | Value                                          | Hex    |
+| --------------------------- | ---------------------------------------------- | ------ |
+| command id                  | `3`                                            | `0x03` |
+| command size                | `1`                                            | `0x01` |
+| [energy type](#energy-type) | `A+` (`1.8.x`), `R+` (`3.8.x`), `R-` (`4.8.1`) | `0x01` |
+
+Command hex dump: `16 01 01`
+
+
+## Response
+
+### Format
+
+#### response to request without energy type
+
+| Size | Type    | Field                                                 |
+| ---- | ------- | ----------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x16`                                   |
+| `1`  | `uint8` | command size = `51`                                   |
+| `1`  | `uint8` | year (number of years after `2000`)                   |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)             |
+| `1`  | `uint8` | date (month day number which starts from `1`)         |
+| `4`  | `int32` | active energy `A+` (`1.8.1`)                          |
+| `4`  | `int32` | positive (inductive) reactive energy `A+R+` (`5.8.1`) |
+| `4`  | `int32` | negative (capacitive) reactive `A+R-` (`8.8.1`)       |
+| `4`  | `int32` | active energy `A+` (`1.8.2`)                          |
+| `4`  | `int32` | positive (inductive) reactive energy `A+R+` (`5.8.2`) |
+| `4`  | `int32` | negative (capacitive) reactive `A+R-` (`8.8.2`)       |
+| `4`  | `int32` | active energy `A+A+` (`1.8.3`)                        |
+| `4`  | `int32` | positive (inductive) reactive energy `A+R+` (`5.8.3`) |
+| `4`  | `int32` | negative (capacitive) reactive `A+R-` (`8.8.3`)       |
+| `4`  | `int32` | active energy `A+A+` (`1.8.4`)                        |
+| `4`  | `int32` | positive (inductive) reactive energy `A+R+` (`5.8.4`) |
+| `4`  | `int32` | negative (capacitive) reactive `A+R-` (`8.8.4`)       |
+
+#### response to request with energy type
+
+| Size  | Type    | Field                                                                                                                                                                                                    |
+| ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1`   | `uint8` | command id = `0x16`                                                                                                                                                                                      |
+| `1`   | `uint8` | command size (dynamic, `4+`, max is `52`)                                                                                                                                                                |
+| `1`   | `uint8` | year (number of years after `2000`)                                                                                                                                                                      |
+| `1`   | `uint8` | month (`1` - January ... `12` - December)                                                                                                                                                                |
+| `1`   | `uint8` | date (month day number which starts from `1`)                                                                                                                                                            |
+| `1`   | `uint8` | packed energy type with tariff flags <br/>`BIT3`-`BIT0` - [energy type](#energy-type)<br/>`BIT7`-`BIT4` tariffs with corresponding energies (`BIT4` - `T1`, `BIT5` - `T2`, `BIT6` - `T3`, `BIT7` - `T4`) |
+| `4*n` | `int32` | tariff energies (only when energy is not equal `0`)                                                                                                                                                      |
+
+> `n` - the number of energies derived from packed energy type field.
+
+### Examples
+
+#### response to request without energy type
+
+| Field            | Value       | Hex        |
+| ---------------- | ----------- | ---------- |
+| command id       | `3`         | `0x03`     |
+| command size     | `51`        | `0x33`     |
+| year             | `24`        | `0x18`     |
+| month            | `3` (March) | `0x03`     |
+| date             | `22`        | `0x16`     |
+| `A+` (`1.8.1`)   | `0266f2ae`  | `40301230` |
+| `A+R+` (`5.8.1`) | `0032e064`  | `3334244`  |
+| `A+R-` (`8.8.1`) | `0000091d`  | `2333`     |
+| `A+` (`1.8.2`)   | `0020bd57`  | `2145623`  |
+| `A+R+` (`5.8.2`) | `0020bd58`  | `2145624`  |
+| `A+R-` (`8.8.2`) | `0020bd59`  | `2145625`  |
+| `A+` (`1.8.3`)   | `0020bd5a`  | `2145626`  |
+| `A+R+` (`5.8.3`) | `0020bd5b`  | `2145627`  |
+| `A+R-` (`8.8.3`) | `0020bd5c`  | `2145628`  |
+| `A+` (`1.8.4`)   | `0020bd5d`  | `2145629`  |
+| `A+R+` (`5.8.4`) | `0020bd5e`  | `2145630`  |
+| `A+R-` (`8.8.4`) | `0020bd5f`  | `2145631`  |
+
+Command hex dump:
+```
+16 33
+18 03 16
+0266f2ae 0032e064 0000091d
+0020bd57 0020bd58 0020bd59
+0020bd5a 0020bd5b 0020bd5c
+0020bd5d 0020bd5e 0020bd5f
+```
+
+#### response to request with energy type (`A+, R+, R-`)
+
+| Field                       | Value                                                                                 | Hex        |
+| --------------------------- | ------------------------------------------------------------------------------------- | ---------- |
+| command id                  | `22`                                                                                  | `0x16`     |
+| command size                | `16`                                                                                  | `0x10`     |
+| year                        | `24`                                                                                  | `0x18`     |
+| month                       | `3` (March)                                                                           | `0x03`     |
+| date                        | `22`                                                                                  | `0x16`     |
+| [energy type](#energy-type) | energy: `A-, R+, R-`<br>`T1`: `true`<br>`T2`: `false`<br>`T3`: `true`<br>`T4`: `true` | `0xd2`     |
+| `A+` (`1.8.1`)              | `0266f2ae`                                                                            | `40301230` |
+| `A+R+` (`5.8.1`)            | `0032e064`                                                                            | `3334244`  |
+| `A+R-` (`8.8.1`)            | `0000091d`                                                                            | `2333`     |
+| `A+` (`1.8.3`)              | `0020bd5a`                                                                            | `2145626`  |
+| `A+R+` (`5.8.3`)            | `0020bd5b`                                                                            | `2145627`  |
+| `A+R-` (`8.8.3`)            | `0020bd5c`                                                                            | `2145628`  |
+| `A+` (`1.8.4`)              | `0020bd5d`                                                                            | `2145629`  |
+| `A+R+` (`5.8.4`)            | `0020bd5e`                                                                            | `2145630`  |
+| `A+R-` (`8.8.4`)            | `0020bd5f`                                                                            | `2145631`  |
+
+Command hex dump:
+```
+16 28
+18 03 16 d2
+0266f2ae 0032e064 0000091d
+0020bd5a 0020bd5b 0020bd5c
+0020bd5d 0020bd5e 0020bd5f
+```
+
+
+## See also
+
+* [Access level](../basics.md#command-access-level)

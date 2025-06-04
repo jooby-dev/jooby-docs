@@ -24,6 +24,13 @@ There are `2` types of command direction:
             <td>Get the device status events.</td>
         </tr>
         <tr>
+            <td><code>0x03</code></td>
+            <td><code>GetEnergyDayPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDayPrevious.md#request">request</a> / <a href="./GetEnergyDayPrevious.md#response">response</a></td>
+            <td>Get the previous day active energy <code>A+, R+, R-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
             <td><code>0x04</code></td>
             <td><code>GetDeviceType</code></td>
             <td><code>READ_ONLY</code></td>
@@ -113,6 +120,12 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemand.md#request">request</a> / <a href="./GetHalfHourDemand.md#response">response</a></td>
             <td>Get active energy (<code>A+</code>) in half hours by date.</td>
+        </tr>
+        <td><code>0x016</code></td>
+            <td><code>GetEnergyDay</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDay.md#request">request</a> / <a href="./GetEnergyDay.md#response">response</a></td>
+            <td>Get daily active energy (<code>A+, R+, R-</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
         </tr>
         <tr>
             <td><code>0x17</code></td>
@@ -309,6 +322,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetOperatorParametersExt2.md#request">request</a> / <a href="./GetOperatorParametersExt2.md#response">response</a></td>
             <td>Get extended device operator parameters <code>2</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x50</code></td>
+            <td><code>GetExportEnergyDayPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetExportEnergyDayPrevious.md#request">request</a> / <a href="./GetExportEnergyDayPrevious.md#response">response</a></td>
+            <td>Get the previous day active energy <code>A-, R+, R-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x52</code></td>

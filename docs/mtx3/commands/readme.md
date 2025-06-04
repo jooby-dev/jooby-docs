@@ -324,6 +324,13 @@ There are `2` types of command direction:
             <td>Get extended device operator parameters <code>2</code>.</td>
         </tr>
         <tr>
+            <td><code>0x4f</code></td>
+            <td><code>GetEnergyDayExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDayExport.md#request">request</a> / <a href="./GetEnergyDayExport.md#response">response</a></td>
+            <td>Get daily energy <code>A-, R+, R-</code> for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
+        </tr>
+        <tr>
             <td><code>0x50</code></td>
             <td><code>GetExportEnergyDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>

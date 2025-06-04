@@ -309,6 +309,13 @@ There are `2` types of command direction:
             <td>Get device critical events.</td>
         </tr>
         <tr>
+            <td><code>0x4f</code></td>
+            <td><code>GetEnergyDayExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDayExport.md#request">request</a> / <a href="./GetEnergyDayExport.md#response">response</a></td>
+            <td>Get daily energy <code>A-</code> by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
+        </tr>
+        <tr>
             <td><code>0x50</code></td>
             <td><code>GetExportEnergyDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>

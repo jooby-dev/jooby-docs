@@ -414,6 +414,20 @@ There are `2` types of command direction:
             <td>Set extended device operator parameters <code>3</code>.</td>
         </tr>
         <tr>
+            <td><code>0x74</code></td>
+            <td><code>SetDemandParameters</code></td>
+            <td><strong><code>READ_WRITE</code></strong></td>
+            <td><a href="./SetDemandParameters.md#request">request</a> / <a href="./SetDemandParameters.md#response">response</a></td>
+            <td>Setup the additional archives.</td>
+        </tr>
+        <tr>
+            <td><code>0x75</code></td>
+            <td><code>GetDemandParameters</code></td>
+            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><a href="./GetDemandParameters.md#request">request</a> / <a href="./GetDemandParameters.md#response">response</a></td>
+            <td>Get the additional archives information.</td>
+        </tr>
+        <tr>
             <td><code>0x78</code></td>
             <td><code>GetDayEnergies</code></td>
             <td><code>UNENCRYPTED</code></td>

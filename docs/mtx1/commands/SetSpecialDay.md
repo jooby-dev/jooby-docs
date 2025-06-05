@@ -19,8 +19,8 @@ Supported devices:
 | `1`  | `uint8` | command size = `6`                                                                                                                                   |
 | `1`  | `uint8` | tariff table identifier <br/> `0` – table `A+`, `1` – table `A-` (for `MTX1`)</br> `0` – table `A+`, `1` – table `P+`, `2` – table `A-` (for `MTX3`) |
 | `1`  | `uint8` | special day index in a list of all tariff special days (max `26`)                                                                                    |
-| `1`  | `uint8` | month                                                                                                                                                |
-| `1`  | `uint8` | date                                                                                                                                                 |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                                                                                                            |
+| `1`  | `uint8` | date (month day number which starts from `1`)                                                                                                        |
 | `1`  | `uint8` | day profile index                                                                                                                                    |
 | `1`  | `uint8` | is it periodic or not (`0` - true, `1` - false)                                                                                                      |
 

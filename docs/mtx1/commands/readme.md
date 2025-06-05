@@ -94,6 +94,13 @@ There are `2` types of command direction:
             <td>Set day profile information for the given tariff table.</td>
         </tr>
         <tr>
+            <td><code>0x11</code></td>
+            <td><code>SetSeasonProfile</code></td>
+            <td><strong><code>READ_WRITE</code></strong></td>
+            <td><a href="./SetSeasonProfile.md#request">request</a> / <a href="./SetSeasonProfile.md#response">response</a></td>
+            <td>Set season profile information for the given tariff table.</td>
+        </tr>
+        <tr>
             <td><code>0x12</code></td>
             <td><code>SetSpecialDay</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
@@ -269,10 +276,17 @@ There are `2` types of command direction:
             <td>Get day profile information for the given tariff table.</td>
         </tr>
         <tr>
+            <td><code>0x3c</code></td>
+            <td><code>GetSeasonProfile</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetSeasonProfile.md#request">request</a> / <a href="./GetSeasonProfile.md#response">response</a></td>
+            <td>Get season profile information for the given tariff table.</td>
+        </tr>
+        <tr>
             <td><code>0x3d</code></td>
             <td><code>GetSpecialDay</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="GetSpecialDay.md#request">request</a> / <a href="GetSpecialDay.md#response">response</a></td>
+            <td><a href="./GetSpecialDay.md#request">request</a> / <a href="./GetSpecialDay.md#response">response</a></td>
             <td>Get special day information for the given tariff table.</td>
         </tr>
         <tr>

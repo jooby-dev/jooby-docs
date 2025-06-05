@@ -1,6 +1,6 @@
 # GetDemand
 
-Request/response to get energy by selected energy type for 4 tariffs (T1-T4) for date.
+Request/response to get the measurement data by selected type for date.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
@@ -14,97 +14,28 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | Size | Type     | Field                                                                         |
 | ---- | -------- | ----------------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x76`                                                           |
-| `1`  | `uint8`  | command size = `8`                                                            |
+| `1`  | `uint8`  | command size = `7`                                                            |
 | `2`  | `uint8`  | [packed date](../../types.md#packed-date)                                     |
 | `1`  | `uint8`  | [demand type](#demand-type)                                                   |
 | `2`  | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
-| `2`  | `uint16` | number of requested records                                                   |
+| `1`  | `uint8`  | number of requested records                                                   |
 | `1`  | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                       |
 
-#### request for the repeated hour during the daylight saving time change
+#### case #2: request for the repeated hour during the daylight saving time change
 
-<table>
-  <thead>
-    <tr>
-      <th>Size</th>
-      <th>Type</th>
-      <th>Field</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>uint8</td>
-      <td>command id = <code>0x76</code></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>uint8</td>
-      <td>command size = <code>8</code></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>uint8</td>
-      <td><a href="../../types.md#packed-date">packed date</a></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>uint8</td>
-      <td><a href="#demand-type">demand type</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>uint16</td>
-      <td>
-        Index of the first requested record.<br/>
-        <table>
-          <thead>
-            <tr><th>accumulation period (min)</th><th>first index</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>1</code></td><td><code>1440</code></td></tr>
-            <tr><td><code>3</code></td><td><code>480</code></td></tr>
-            <tr><td><code>5</code></td><td><code>288</code></td></tr>
-            <tr><td><code>10</code></td><td><code>144</code></td></tr>
-            <tr><td><code>15</code></td><td><code>96</code></td></tr>
-            <tr><td><code>30</code></td><td><code>48</code></td></tr>
-            <tr><td><code>60</code></td><td><code>24</code></td></tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>uint16</td>
-      <td>
-        Number of requested records.<br/>
-        <table>
-          <thead>
-            <tr><th>accumulation period (min)</th><th>number of records</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>1</code></td><td><code>61</code></td></tr>
-            <tr><td><code>3</code></td><td><code>21</code></td></tr>
-            <tr><td><code>5</code></td><td><code>13</code></td></tr>
-            <tr><td><code>10</code></td><td><code>7</code></td></tr>
-            <tr><td><code>15</code></td><td><code>5</code></td></tr>
-            <tr><td><code>30</code></td><td><code>3</code></td></tr>
-            <tr><td><code>60</code></td><td><code>2</code></td></tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>uint8</td>
-      <td>accumulation period: <code>1/3/5/10/15/30/60</code> (operatorParameters.ten)</td>
-    </tr>
-  </tbody>
-</table>
+| Size | Type     | Field                                                                                                      |
+| ---- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `1`  | `uint8`  | command id = `0x76`                                                                                        |
+| `1`  | `uint8`  | command size = `7`                                                                                         |
+| `2`  | `uint8`  | [packed date](../../types.md#packed-date)                                                                  |
+| `1`  | `uint8`  | [demand type](#demand-type)                                                                                |
+| `2`  | `uint16` | index of the first requested record ([daylight saving time parameters](#daylight- saving-time-parameters)) |
+| `1`  | `uint8`  | number of requested records ([daylight saving time parameters](#daylight- saving-time-parameters))         |
+| `1`  | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                                                    |
 
-#### Parameters
+### Parameters
 
-##### Demand type
+#### **demand type**
 
 | Value | Hex    | Demand type  (x=`1`..`4`)          |
 | ----- | ------ | ---------------------------------- |
@@ -113,7 +44,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | `64`  | `0x40` | `10`-minute voltage                |
 | `160` | `0xA0` | `1/3/5/10/15/30/60`-minute voltage |
 
-##### Valid index range
+#### **valid index range**
 
 | Accumulation Period (minutes) | Valid Index Range |
 | ----------------------------- | ----------------- |
@@ -125,6 +56,18 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | `30`                          | `0 – 48`          |
 | `60`                          | `0 – 24`          |
 
+#### **daylight saving time parameters**
+
+| Accumulation Period (minutes) | Index of the first requested record | Number of requested records |
+| ----------------------------- | ----------------------------------- | --------------------------- |
+| `1`                           | `1440`                              | `61`                        |
+| `3`                           | `480`                               | `21`                        |
+| `5`                           | `288`                               | `13`                        |
+| `10`                          | `144`                               | `7`                         |
+| `15`                          | `96`                                | `5`                         |
+| `30`                          | `48`                                | `3`                         |
+| `60`                          | `24`                                | `2`                         |
+
 ### Examples
 
 #### get A+ energy
@@ -132,65 +75,127 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | Field                                     | Value                               | Hex      |
 | ----------------------------------------- | ----------------------------------- | -------- |
 | command id                                | `118`                               | `0x76`   |
-| command size                              | `8`                                 | `0x08`   |
+| command size                              | `7`                                 | `0x07`   |
 | [packed date](../../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
 | [demand type](#demand-type)               | `A+`                                | `0x01`   |
 | index of the first requested record       | `5`                                 | `0x0005` |
-| index of the first requested record       | `10`                                | `0x000a` |
+| number of requested records               | `10`                                | `0x0a`   |
 | accumulation period                       | `15`                                | `0x0f`   |
 
-Command hex dump: `76 08 2a43 01 0005 000a 0f`
+Command hex dump: `76 07 2a43 01 0005 0a 0f`
 
+#### get A- energy for the repeated hour during the daylight saving time change
+
+| Field                                     | Value                                | Hex      |
+| ----------------------------------------- | ------------------------------------ | -------- |
+| command id                                | `118`                                | `0x76`   |
+| command size                              | `7`                                  | `0x07`   |
+| [packed date](../../types.md#packed-date) | year: `2024`, month: `5`, date: `27` | `0x30bb` |
+| [demand type](#demand-type)               | `A-`                                 | `0x02`   |
+| index of the first requested record       | `48`                                 | `0x0030` |
+| number of requested records               | `3`                                  | `0x03`   |
+| accumulation period                       | `30`                                 | `0x1e`   |
+
+Command hex dump: `76 07 30bb 02 0030 03 1e`
 
 ## Response
 
 ### Format
 
-| Size | Type    | Field                                                      |
-| ---- | ------- | ---------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x76`                                        |
-| `1`  | `uint8` | command size = `16`                                        |
-| `16` | `int32` | active energy A+ (`1.8.1` – `1.8.4`) for tariffs `T1`-`T4` |
+#### case #1
 
-#### response with energy type in request
+| Size  | Type     | Field                                                                         |
+| ----- | -------- | ----------------------------------------------------------------------------- |
+| `1`   | `uint8`  | command id = `0x76`                                                           |
+| `1`   | `uint8`  | command size = `7+`                                                           |
+| `2`   | `uint8`  | [packed date](../../types.md#packed-date)                                     |
+| `1`   | `uint8`  | [demand type](#demand-type)                                                   |
+| `2`   | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
+| `1`   | `uint8`  | number of requested records                                                   |
+| `1`   | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                       |
+| `2*n` | uint16`  | accumulated data, according to [demand type](#demand-type)                    |
 
-| Size  | Type    | Field                                                                                                                                                                                                                                        |
-| ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `1`   | `uint8` | command id = `0x0f`                                                                                                                                                                                                                          |
-| `1`   | `uint8` | command size (dynamic, `5+`, max is `17`)                                                                                                                                                                                                    |
-| `1`   | `uint8` | packed energy type with tariff flags <br/> `BIT3`-`BIT0` - energy according to OBIS code (`1` - `1.8.x`, `2` - `2.8.x`) <br/> `BIT7`-`BIT4` tariffs with corresponding energies (`BIT4` - `T1`, `BIT5` - `T2`, `BIT6` - `T3`, `BIT7` - `T4`) |
-| `4*n` | `int32` | tariff energies (only when energy is not equal `0`)                                                                                                                                                                                          |
+#### case #2
 
-> `n` - the number of energies derived from packed energy type field.
+Response with repeated hour during the daylight saving time change.
+
+| Size  | Type     | Field                                                                         |
+| ----- | -------- | ----------------------------------------------------------------------------- |
+| `1`   | `uint8`  | command id = `0x76`                                                           |
+| `1`   | `uint8`  | command size = `7+`                                                           |
+| `2`   | `uint8`  | [packed date](../../types.md#packed-date)                                     |
+| `1`   | `uint8`  | [demand type](#demand-type)                                                   |
+| `2`   | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
+| `1`   | `uint8`  | number of requested records                                                   |
+| `1`   | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                       |
+| `2*n` | [accumulated data](#accumulated-data) | accumulated data, according to [demand type](#demand-type)                    |
+| `1`   | `uint8`  | the repeated hour during the daylight saving time change                      |
+| `1`   | `uint8`  | reserved                                                                      |
+
+### Parameters
+
+#### **accumulated-data**
+
+If accumulation period is less then `60` and [demand type](#demand-type) is `A+` or `A-` then tariff included into accumulated data.
+
+<table>
+    <thead>
+        <tr>
+            <th>Bit Range</th>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>15–14</code></td>
+            <td>tariff</td>
+            <td>tariff number (<code>0–3</code>), extracted from the two most significant bits</td>
+        </tr>
+        <tr>
+            <td><code>13–0</code></td>
+            <td>accumulated energy</td>
+            <td><code>14</code>-bit value representing the actual accumulated measurement</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Examples
 
-#### default A+ energy:
+#### get A+ energy
 
-| Field        | Value      | Hex          |
-| ------------ | ---------- | ------------ |
-| command id   | `15`       | `0x0f`       |
-| command size | `16`       | `0x10`       |
-| `T1` energy  | `40301230` | `0x0266f2ae` |
-| `T2` energy  | `3334244`  | `0x0032e064` |
-| `T3` energy  | `2333`     | `0x0000091d` |
-| `T4` energy  | `2145623`  | `0x0020bd57` |
+| Field                                     | Value                               | Hex      |
+| ----------------------------------------- | ----------------------------------- | -------- |
+| command id                                | `118`                               | `0x76`   |
+| command size                              | `15`                                | `0x0f`   |
+| [packed date](../../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
+| [demand type](#demand-type)               | `A+`                                | `0x01`   |
+| index of the first requested record       | `4`                                 | `0x0004` |
+| number of requested records               | `3`                                 | `0x03`   |
+| accumulation period                       | `15`                                | `0x0f`   |
+| accumulated data `1:00 - 1:15`            | `16`                                | `0x0010` |
+| accumulated data `1:15 - 1:30`            | `18`                                | `0x0012` |
+| accumulated data `1:30 - 1:45`            | `17`                                | `0x0011` |
 
-Command hex dump: `0f 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
+Command hex dump: `76 0f 2a43 01 0004 03 0f 0010 0012 0011`
 
-#### A- energy with 3 tariffs:
+#### get A- energy for the repeated hour during the daylight saving time change
 
-| Field                  | Value      | Hex          |
-| ---------------------- | ---------- | ------------ |
-| command id             | `15`       | `0x0f`       |
-| command size           | `13`       | `0x0d`       |
-| energy type with flags |            | `0xd0`       |
-| `T1` energy            | `40301230` | `0x0266f2ae` |
-| `T2` energy            | `null`     | -            |
-| `T3` energy            | `2333`     | `0x0000091d` |
-| `T4` energy            | `2145623`  | `0x0020bd57` |
+| Field                                                    | Value                                | Hex      |
+| -------------------------------------------------------- | ------------------------------------ | -------- |
+| command id                                               | `118`                                | `0x76`   |
+| command size                                             | `13`                                 | `0x08`   |
+| [packed date](../../types.md#packed-date)                | year: `2024`, month: `5`, date: `27` | `0x30bb` |
+| [demand type](#demand-type)                              | `A-`                                 | `0x02`   |
+| index of the first requested record                      | `48`                                 | `0x0030` |
+| number of requested records                              | `3`                                  | `0x03`   |
+| accumulation period                                      | `30`                                 | `0x1e`   |
+| accumulated data `0:00 - 0:30`                           | `16`                                 | `0x0010` |
+| accumulated data `0:30 - 1:00`                           | `18`                                 | `0x0012` |
+| the repeated hour during the daylight saving time change | `3`                                  | `0x03`   |
+| reserved                                                 | `0`                                  | `0x00`   |
 
-Command hex dump: `0f 0d d0 02 66 f2 ae 00 00 09 1d 00 20 bd 57`
+Command hex dump: `76 0d 30bb 02 0030 03 1e 0010 0012 03 00`
 
 
 ## See also

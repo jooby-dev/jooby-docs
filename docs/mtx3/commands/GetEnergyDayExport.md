@@ -36,25 +36,25 @@ Command hex dump: `4f 03 18 03 16`
 
 ### Format
 
-| Size | Type    | Field                                                                 |
-| ---- | ------- | --------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x4f`                                                   |
-| `1`  | `uint8` | command size = `51`                                                   |
-| `1`  | `uint8` | year (number of years after `2000`)                                   |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)                             |
-| `1`  | `uint8` | date (month day number which starts from `1`)                         |
-| `4`  | `int32` | active energy `A-` for tariff `T1` (`2.8.1`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A-R+` for tariff `T1` (`6.8.1`) |
-| `4`  | `int32` | negative (capacitive) reactive `A-R-` for tariff `T1` (`7.8.1`)       |
-| `4`  | `int32` | active energy `A-` for tariff `T2` (`2.8.2`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A-R+` for tariff `T2` (`6.8.2`) |
-| `4`  | `int32` | negative (capacitive) reactive `A-R-` for tariff `T2` (`7.8.2`)       |
-| `4`  | `int32` | active energy `A-` for tariff `T3` (`2.8.3`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A-R+` for tariff `T3` (`6.8.3`) |
-| `4`  | `int32` | negative (capacitive) reactive `A-R-` for tariff `T3` (`7.8.3`)       |
-| `4`  | `int32` | active energy `A-` for tariff `T4` (`2.8.4`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A-R+` for tariff `T4` (`6.8.4`) |
-| `4`  | `int32` | negative (capacitive) reactive `A-R-` for tariff `T4` (`7.8.4`)       |
+| Size | Type    | Field                                                                   |
+| ---- | ------- | ----------------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x4f`                                                     |
+| `1`  | `uint8` | command size = `51`                                                     |
+| `1`  | `uint8` | year (number of years after `2000`)                                     |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                               |
+| `1`  | `uint8` | date (month day number which starts from `1`)                           |
+| `4`  | `int32` | active energy for tariff `T1`, `A-` (`2.8.1`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T1`, `A-R+` (`6.8.1`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T1`, `A-R-` (`7.8.1`) |
+| `4`  | `int32` | active energy for tariff `T2`, `A-` (`2.8.2`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T2`, `A-R+` (`6.8.2`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T2`, `A-R-` (`7.8.2`) |
+| `4`  | `int32` | active energy for tariff `T3`, `A-` (`2.8.3`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T3`,`A-R+` (`6.8.3`)   |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T3`, `A-R-` (`7.8.3`) |
+| `4`  | `int32` | active energy `A-` (`2.8.4`)                                            |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T3`, `A-R+` (`6.8.4`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T3`, `A-R-` (`7.8.4`) |
 
 
 ### Examples

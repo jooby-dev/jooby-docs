@@ -32,22 +32,22 @@ Command hex dump: `0f 00`
 
 ### Format
 
-| Size | Type    | Field                                                                 |
-| ---- | ------- | --------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x0f`                                                   |
-| `1`  | `uint8` | command size = `48`                                                   |
-| `4`  | `int32` | active energy `A+` for tariff `T1` (`1.8.1`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A+R+` for tariff `T1` (`5.8.1`) |
-| `4`  | `int32` | negative (capacitive) reactive `A+R-` for tariff `T1` (`8.8.1`)       |
-| `4`  | `int32` | active energy `A+` for tariff `T2` (`1.8.2`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A+R+` for tariff `T2` (`5.8.2`) |
-| `4`  | `int32` | negative (capacitive) reactive `A+R-` for tariff `T2` (`8.8.2`)       |
-| `4`  | `int32` | active energy `A+` for tariff `T3` (`1.8.3`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A+R+` for tariff `T3` (`5.8.3`) |
-| `4`  | `int32` | negative (capacitive) reactive `A+R-` for tariff `T3` (`8.8.3`)       |
-| `4`  | `int32` | active energy `A+` for tariff `T4` (`1.8.4`)                          |
-| `4`  | `int32` | positive (inductive) reactive energy `A+R+` for tariff `T4` (`5.8.4`) |
-| `4`  | `int32` | negative (capacitive) reactive `A+R-` for tariff `T4` (`8.8.4`)       |
+| Size | Type    | Field                                                                   |
+| ---- | ------- | ----------------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x0f`                                                     |
+| `1`  | `uint8` | command size = `48`                                                     |
+| `4`  | `int32` | active energy for tariff `T1`, `A+` (`1.8.1`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T1`, `A+R+` (`5.8.1`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T1`, `A+R-` (`8.8.1`) |
+| `4`  | `int32` | active energy for tariff `T2`, `A+` (`1.8.2`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T2`, `A+R+` (`5.8.2`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T2`, `A+R-` (`8.8.2`) |
+| `4`  | `int32` | active energy for tariff `T3`, `A+` (`1.8.3`)                           |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T3`, `A+R+` (`5.8.3`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T3`, `A+R-` (`8.8.3`) |
+| `4`  | `int32` | active energy for tariff `T4`,`A+` (`1.8.4`)                            |
+| `4`  | `int32` | positive (inductive) reactive energy for tariff `T4`, `A+R+` (`5.8.4`)  |
+| `4`  | `int32` | negative (capacitive) reactive energy for tariff `T4`, `A+R-` (`8.8.4`) |
 
 
 ### Examples

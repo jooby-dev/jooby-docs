@@ -60,14 +60,14 @@ Command hex dump: `5b 01 02`
 
 #### response to request without energy type
 
-| Size | Type    | Field                        |
-| ---- | ------- | ---------------------------- |
-| `1`  | `uint8` | command id = `0x5b`          |
-| `1`  | `uint8` | command size = `16`          |
-| `4`  | `int32` | active energy `A-` (`2.8.1`) |
-| `4`  | `int32` | active energy `A-` (`2.8.2`) |
-| `4`  | `int32` | active energy `A-` (`2.8.3`) |
-| `4`  | `int32` | active energy `A-` (`2.8.4`) |
+| Size | Type    | Field                                        |
+| ---- | ------- | -------------------------------------------- |
+| `1`  | `uint8` | command id = `0x5b`                          |
+| `1`  | `uint8` | command size = `16`                          |
+| `4`  | `int32` | active energy `A-` for tariff `T1` (`2.8.1`) |
+| `4`  | `int32` | active energy `A-` for tariff `T2` (`2.8.2`) |
+| `4`  | `int32` | active energy `A-` for tariff `T3` (`2.8.3`) |
+| `4`  | `int32` | active energy `A-` for tariff `T4` (`2.8.4`) |
 
 #### response with energy type in request
 

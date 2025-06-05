@@ -39,14 +39,14 @@ Command hex dump: `75 00`
 
 ### Parameters
 
-#### Archive channel 1
+#### archive channel 1
 
 | Value | Hex    | Archive type                                        |
 | ----- | ------ | --------------------------------------------------- |
 | `0`   | `0x00` | Do not archive                                      |
 | `160` | `0xA0` | `1/3/5/10/15/30/60`-minute voltage (`1`-month size) |
 
-#### Archive channel 2
+#### archive channel 2
 
 | Value | Hex    | Archive type                       |
 | ----- | ------ | ---------------------------------- |

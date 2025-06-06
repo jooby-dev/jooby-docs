@@ -36,7 +36,7 @@ Message hex dump: `47 00`
 | `1`  | `uint8`  | timeout for relay shutdown upon magnetic interference, seconds                                                                                              |
 | `1`  | `uint8`  | [relay set](#relay-set)                                                                                                                                     |
 | `1`  | `uint8`  | timeout for relay activation after magnetic field removal, seconds                                                                                          |
-| `1`  | `uint8`  | default PLC Phase<br>`0`, `1` - Phase A<br>`2` - Phase B<br>`3` - Phase C                                                                                   |
+| `1`  | `uint8`  | default PLC phase<br>`0`, `1` - phase A<br>`2` - phase B<br>`3` - phase C                                                                                   |
 | `4`  | `uint32` | [display settings 1](./GetOperatorParameters.md#display-settings-1)                                                                                         |
 | `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                         |
 | `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                         |
@@ -63,42 +63,42 @@ Bit mask:
 
 #### archive channel
 
-| Value | Archive type                                  |
-| ----- | --------------------------------------------- |
-| `0`   | Do not archive                                |
-| `1`   | `1/3/5/10/15/30/60`-minute `A+` Phase `A`    |
-| `2`   | `1/3/5/10/15/30/60`-minute `A+` Phase `B`    |
-| `3`   | `1/3/5/10/15/30/60`-minute `A+` Phase `C`    |
-| `4`   | `1/3/5/10/15/30/60`-minute `A-` Phase `A`    |
-| `5`   | `1/3/5/10/15/30/60`-minute `A-` Phase `B`    |
-| `6`   | `1/3/5/10/15/30/60`-minute `A-` Phase `C`    |
-| `7`   | `1/3/5/10/15/30/60`-minute `A+R+` Phase `A`  |
-| `8`   | `1/3/5/10/15/30/60`-minute `A+R+` Phase `B`  |
-| `9`   | `1/3/5/10/15/30/60`-minute `A+R+` Phase `C`  |
-| `10`  | `1/3/5/10/15/30/60`-minute `A+R-` Phase `A`  |
-| `11`  | `1/3/5/10/15/30/60`-minute `A+R-` Phase `B`  |
-| `12`  | `1/3/5/10/15/30/60`-minute `A+R-` Phase `C`  |
-| `13`  | `1/3/5/10/15/30/60`-minute `A-R+` Phase `A`  |
-| `14`  | `1/3/5/10/15/30/60`-minute `A-R+` Phase `B`  |
-| `15`  | `1/3/5/10/15/30/60`-minute `A-R+` Phase `C`  |
-| `16`  | `1/3/5/10/15/30/60`-minute `A-R-` Phase `A`  |
-| `17`  | `1/3/5/10/15/30/60`-minute `A-R-` Phase `B`  |
-| `18`  | `1/3/5/10/15/30/60`-minute `A-R-` Phase `C`  |
-| `19`  | `1/3/5/10/15/30/60`-minute `R+` Phase `A`    |
-| `20`  | `1/3/5/10/15/30/60`-minute `R+` Phase `B`    |
-| `21`  | `1/3/5/10/15/30/60`-minute `R+` Phase `C`    |
-| `22`  | `1/3/5/10/15/30/60`-minute `R-` Phase `A`    |
-| `23`  | `1/3/5/10/15/30/60`-minute `R-` Phase `B`    |
-| `24`  | `1/3/5/10/15/30/60`-minute `R-` Phase `C`    |
-| `25`  | `1/3/5/10/15/30/60`-minute voltage Phase `A` |
-| `26`  | `1/3/5/10/15/30/60`-minute voltage Phase `B` |
-| `27`  | `1/3/5/10/15/30/60`-minute voltage Phase `C` |
-| `28`  | `10`-minute voltage Phase `A`                  |
-| `29`  | `10`-minute voltage Phase `B`                  |
-| `30`  | `10`-minute voltage Phase `C`                  |
-| `31`  | `1/3/5/10/15/30/60`-minute current Phase `A`   |
-| `32`  | `1/3/5/10/15/30/60`-minute current Phase `B`   |
-| `33`  | `1/3/5/10/15/30/60`-minute current Phase `C`   |
+| Value | Archive type                                 |
+| ----- | -------------------------------------------- |
+| `0`   | Do not archive                               |
+| `1`   | `1/3/5/10/15/30/60`-minute `A+` phase `A`    |
+| `2`   | `1/3/5/10/15/30/60`-minute `A+` phase `B`    |
+| `3`   | `1/3/5/10/15/30/60`-minute `A+` phase `C`    |
+| `4`   | `1/3/5/10/15/30/60`-minute `A-` phase `A`    |
+| `5`   | `1/3/5/10/15/30/60`-minute `A-` phase `B`    |
+| `6`   | `1/3/5/10/15/30/60`-minute `A-` phase `C`    |
+| `7`   | `1/3/5/10/15/30/60`-minute `A+R+` phase `A`  |
+| `8`   | `1/3/5/10/15/30/60`-minute `A+R+` phase `B`  |
+| `9`   | `1/3/5/10/15/30/60`-minute `A+R+` phase `C`  |
+| `10`  | `1/3/5/10/15/30/60`-minute `A+R-` phase `A`  |
+| `11`  | `1/3/5/10/15/30/60`-minute `A+R-` phase `B`  |
+| `12`  | `1/3/5/10/15/30/60`-minute `A+R-` phase `C`  |
+| `13`  | `1/3/5/10/15/30/60`-minute `A-R+` phase `A`  |
+| `14`  | `1/3/5/10/15/30/60`-minute `A-R+` phase `B`  |
+| `15`  | `1/3/5/10/15/30/60`-minute `A-R+` phase `C`  |
+| `16`  | `1/3/5/10/15/30/60`-minute `A-R-` phase `A`  |
+| `17`  | `1/3/5/10/15/30/60`-minute `A-R-` phase `B`  |
+| `18`  | `1/3/5/10/15/30/60`-minute `A-R-` phase `C`  |
+| `19`  | `1/3/5/10/15/30/60`-minute `R+` phase `A`    |
+| `20`  | `1/3/5/10/15/30/60`-minute `R+` phase `B`    |
+| `21`  | `1/3/5/10/15/30/60`-minute `R+` phase `C`    |
+| `22`  | `1/3/5/10/15/30/60`-minute `R-` phase `A`    |
+| `23`  | `1/3/5/10/15/30/60`-minute `R-` phase `B`    |
+| `24`  | `1/3/5/10/15/30/60`-minute `R-` phase `C`    |
+| `25`  | `1/3/5/10/15/30/60`-minute voltage phase `A` |
+| `26`  | `1/3/5/10/15/30/60`-minute voltage phase `B` |
+| `27`  | `1/3/5/10/15/30/60`-minute voltage phase `C` |
+| `28`  | `10`-minute voltage phase `A`                |
+| `29`  | `10`-minute voltage phase `B`                |
+| `30`  | `10`-minute voltage phase `C`                |
+| `31`  | `1/3/5/10/15/30/60`-minute current phase `A` |
+| `32`  | `1/3/5/10/15/30/60`-minute current phase `B` |
+| `33`  | `1/3/5/10/15/30/60`-minute current phase `C` |
 
 ### Examples
 
@@ -146,7 +146,7 @@ Bit mask:
             <td><code>0x05</code></td>
         </tr>
         <tr>
-            <td>default PLC Phase</td>
+            <td>default PLC phase</td>
             <td><code>1</code></td>
             <td><code>0x01</code></td>
         </tr>

@@ -63,31 +63,16 @@ Command hex dump: `6f 05 2a43 01 05 0a`
 | `1`   | `uint8`                         | number of requested records                                |
 | `2*n` | [tariff energy](#tariff-energy) | accumulated data, according to [demand type](#demand-type) |
 
+> `n` - the number of energies derived from packed energy type field.
+
 ### Parameters
 
 #### **tariff energy**
 
-<table>
-    <thead>
-        <tr>
-            <th>Bit Range</th>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>15–14</code></td>
-            <td>tariff</td>
-            <td>tariff number (<code>0–3</code>), extracted from the two most significant bits</td>
-        </tr>
-        <tr>
-            <td><code>13–0</code></td>
-            <td>accumulated energy</td>
-            <td><code>14</code>-bit value representing the actual accumulated measurement</td>
-        </tr>
-    </tbody>
-</table>
+| Bit range | Field              | Description                                                        |
+| --------- | ------------------ | ------------------------------------------------------------------ |
+| `15..14`  | tariff             | tariff number `0..3`, extracted from the two most significant bits |
+| `13..0`   | accumulated energy | `14`-bit value representing the actual accumulated measurement     |
 
 ### Examples
 
@@ -101,9 +86,9 @@ Command hex dump: `6f 05 2a43 01 05 0a`
 | [demand type](#demand-type)               | `A+`                                 | `0x01`   |
 | index of the first requested record       | `4`                                  | `0x04`   |
 | number of requested records               | `3`                                  | `0x03`   |
-| accumulated data `0:00 - 0:15`            | tariff: `T2`,  accumulated data:`16` | `0x4010` |
-| accumulated data `0:15 - 0:30`            | tariff: `T2`,  accumulated data:`18` | `0x4012` |
-| accumulated data `0:30 - 0:45`            | tariff: `T4`,  accumulated data:`17` | `0xc011` |
+| accumulated data `0:00-0:15`              | tariff: `T2`,  accumulated data:`16` | `0x4010` |
+| accumulated data `0:15-0:30`              | tariff: `T2`,  accumulated data:`18` | `0x4012` |
+| accumulated data `0:30-0:45`              | tariff: `T4`,  accumulated data:`17` | `0xc011` |
 
 Command hex dump: `76 0b 2a43 01 04 03 4010 4012 c011`
 

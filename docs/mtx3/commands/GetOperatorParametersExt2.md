@@ -36,17 +36,17 @@ Message hex dump: `47 00`
 | `1`  | `uint8`  | timeout for relay shutdown upon magnetic interference, seconds                                                                                              |
 | `1`  | `uint8`  | [relay set](#relay-set)                                                                                                                                     |
 | `1`  | `uint8`  | timeout for relay activation after magnetic field removal, seconds                                                                                          |
-| `1`  | `uint8`  | default PLC Phase<br>`0`, `1` - Phase A<br>`2` - Phase B<br>`3` - Phase C                                                                                   |
+| `1`  | `uint8`  | default PLC phase<br>`0`, `1` - phase A<br>`2` - phase B<br>`3` - phase C                                                                                   |
 | `4`  | `uint32` | [display settings 1](./GetOperatorParameters.md#display-settings-1)                                                                                         |
 | `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                         |
 | `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                         |
 | `4`  | `uint32` | [display settings 4](./GetOperatorParameters.md#display-settings-4)                                                                                         |
-| `1`  | `uint8`  | [channel load profile 1](#channel-load-profile) (if enabled, it will use half of the `A+` archive space)                                                    |
-| `1`  | `uint8`  | [channel load profile 2](#channel-load-profile) (if enabled, it will use half of the `A+R+` archive space)                                                  |
-| `1`  | `uint8`  | [channel load profile 3](#channel-load-profile) (if enabled, it will use half of the `A+R-` archive space)                                                  |
-| `1`  | `uint8`  | [channel load profile 4](#channel-load-profile) (if enabled, it will use half of the `A-` archive space)                                                    |
-| `1`  | `uint8`  | [channel load profile 5](#channel-load-profile) (if enabled, it will use half of the `A-R+` archive space)                                                  |
-| `1`  | `uint8`  | [channel load profile 6](#channel-load-profile) (if enabled, it will use half of the `A-R-` archive space)                                                  |
+| `1`  | `uint8`  | [archive channel 1](#archive-channel) (if enabled, it will use half of the `A+` archive space)                                                              |
+| `1`  | `uint8`  | [archive channel 2](#archive-channel) (if enabled, it will use half of the `A+R+` archive space)                                                            |
+| `1`  | `uint8`  | [archive channel 3](#archive-channel) (if enabled, it will use half of the `A+R-` archive space)                                                            |
+| `1`  | `uint8`  | [archive channel 4](#archive-channel) (if enabled, it will use half of the `A-` archive space)                                                              |
+| `1`  | `uint8`  | [archive channel 5](#archive-channel) (if enabled, it will use half of the `A-R+` archive space)                                                            |
+| `1`  | `uint8`  | [archive channel 6](#archive-channel) (if enabled, it will use half of the `A-R-` archive space)                                                            |
 | `1`  | `uint8`  | allowed correction period, hours (`24` hours by default). If bit `7` is `0` (default is `0`), time correction crossing the half-hour boundary is forbidden. |
 
 ### Parameters
@@ -61,44 +61,44 @@ Bit mask:
 | `RELAY_ON_MAGNET_TIMEOUT` | `1` | enable relay after `timeoutRelayOn` timeout (not used) |
 | `RELAY_ON_MAGNET_AUTO`    | `2` | enable relay after removal of magnetic field           |
 
-#### Channel load profile
+#### archive channel
 
-| Value | Channel load profile, current, voltage or other                  |
-| ----- | ---------------------------------------------------------------- |
-| `0`   | Do not archive additional measurement                            |
-| `1`   | `1/3/5/10/15/30/60` minutes measurement of the `A+` Phase `A`    |
-| `2`   | `1/3/5/10/15/30/60` minutes measurement of the `A+` Phase `B`    |
-| `3`   | `1/3/5/10/15/30/60` minutes measurement of the `A+` Phase `C`    |
-| `4`   | `1/3/5/10/15/30/60` minutes measurement of the `A-` Phase `A`    |
-| `5`   | `1/3/5/10/15/30/60` minutes measurement of the `A-` Phase `B`    |
-| `6`   | `1/3/5/10/15/30/60` minutes measurement of the `A-` Phase `C`    |
-| `7`   | `1/3/5/10/15/30/60` minutes measurement of the `A+R+` Phase `A`  |
-| `8`   | `1/3/5/10/15/30/60` minutes measurement of the `A+R+` Phase `B`  |
-| `9`   | `1/3/5/10/15/30/60` minutes measurement of the `A+R+` Phase `C`  |
-| `10`  | `1/3/5/10/15/30/60` minutes measurement of the `A+R-` Phase `A`  |
-| `11`  | `1/3/5/10/15/30/60` minutes measurement of the `A+R-` Phase `B`  |
-| `12`  | `1/3/5/10/15/30/60` minutes measurement of the `A+R-` Phase `C`  |
-| `13`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R+` Phase `A`  |
-| `14`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R+` Phase `B`  |
-| `15`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R+` Phase `C`  |
-| `16`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R-` Phase `A`  |
-| `17`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R-` Phase `B`  |
-| `18`  | `1/3/5/10/15/30/60` minutes measurement of the `A-R-` Phase `C`  |
-| `19`  | `1/3/5/10/15/30/60` minutes measurement of the `R+` Phase `A`    |
-| `20`  | `1/3/5/10/15/30/60` minutes measurement of the `R+` Phase `B`    |
-| `21`  | `1/3/5/10/15/30/60` minutes measurement of the `R+` Phase `C`    |
-| `22`  | `1/3/5/10/15/30/60` minutes measurement of the `R-` Phase `A`    |
-| `23`  | `1/3/5/10/15/30/60` minutes measurement of the `R-` Phase `B`    |
-| `24`  | `1/3/5/10/15/30/60` minutes measurement of the `R-` Phase `C`    |
-| `25`  | `1/3/5/10/15/30/60` minutes measurement of the voltage Phase `A` |
-| `26`  | `1/3/5/10/15/30/60` minutes measurement of the voltage Phase `B` |
-| `27`  | `1/3/5/10/15/30/60` minutes measurement of the voltage Phase `C` |
-| `28`  | `10`minute voltage profile Phase `A`                             |
-| `29`  | `10`minute voltage profile Phase `B`                             |
-| `30`  | `10`minute voltage profile Phase `C`                             |
-| `31`  | `1/3/5/10/15/30/60`minute current profile Phase `A`              |
-| `32`  | `1/3/5/10/15/30/60`minute current profile Phase `B`              |
-| `33`  | `1/3/5/10/15/30/60`minute current profile Phase `C`              |
+| Value | Archive type                                 |
+| ----- | -------------------------------------------- |
+| `0`   | Do not archive                               |
+| `1`   | `1/3/5/10/15/30/60`-minute `A+` phase `A`    |
+| `2`   | `1/3/5/10/15/30/60`-minute `A+` phase `B`    |
+| `3`   | `1/3/5/10/15/30/60`-minute `A+` phase `C`    |
+| `4`   | `1/3/5/10/15/30/60`-minute `A-` phase `A`    |
+| `5`   | `1/3/5/10/15/30/60`-minute `A-` phase `B`    |
+| `6`   | `1/3/5/10/15/30/60`-minute `A-` phase `C`    |
+| `7`   | `1/3/5/10/15/30/60`-minute `A+R+` phase `A`  |
+| `8`   | `1/3/5/10/15/30/60`-minute `A+R+` phase `B`  |
+| `9`   | `1/3/5/10/15/30/60`-minute `A+R+` phase `C`  |
+| `10`  | `1/3/5/10/15/30/60`-minute `A+R-` phase `A`  |
+| `11`  | `1/3/5/10/15/30/60`-minute `A+R-` phase `B`  |
+| `12`  | `1/3/5/10/15/30/60`-minute `A+R-` phase `C`  |
+| `13`  | `1/3/5/10/15/30/60`-minute `A-R+` phase `A`  |
+| `14`  | `1/3/5/10/15/30/60`-minute `A-R+` phase `B`  |
+| `15`  | `1/3/5/10/15/30/60`-minute `A-R+` phase `C`  |
+| `16`  | `1/3/5/10/15/30/60`-minute `A-R-` phase `A`  |
+| `17`  | `1/3/5/10/15/30/60`-minute `A-R-` phase `B`  |
+| `18`  | `1/3/5/10/15/30/60`-minute `A-R-` phase `C`  |
+| `19`  | `1/3/5/10/15/30/60`-minute `R+` phase `A`    |
+| `20`  | `1/3/5/10/15/30/60`-minute `R+` phase `B`    |
+| `21`  | `1/3/5/10/15/30/60`-minute `R+` phase `C`    |
+| `22`  | `1/3/5/10/15/30/60`-minute `R-` phase `A`    |
+| `23`  | `1/3/5/10/15/30/60`-minute `R-` phase `B`    |
+| `24`  | `1/3/5/10/15/30/60`-minute `R-` phase `C`    |
+| `25`  | `1/3/5/10/15/30/60`-minute voltage phase `A` |
+| `26`  | `1/3/5/10/15/30/60`-minute voltage phase `B` |
+| `27`  | `1/3/5/10/15/30/60`-minute voltage phase `C` |
+| `28`  | `10`-minute voltage phase `A`                |
+| `29`  | `10`-minute voltage phase `B`                |
+| `30`  | `10`-minute voltage phase `C`                |
+| `31`  | `1/3/5/10/15/30/60`-minute current phase `A` |
+| `32`  | `1/3/5/10/15/30/60`-minute current phase `B` |
+| `33`  | `1/3/5/10/15/30/60`-minute current phase `C` |
 
 ### Examples
 
@@ -146,7 +146,7 @@ Bit mask:
             <td><code>0x05</code></td>
         </tr>
         <tr>
-            <td>default PLC Phase</td>
+            <td>default PLC phase</td>
             <td><code>1</code></td>
             <td><code>0x01</code></td>
         </tr>
@@ -299,32 +299,32 @@ Bit mask:
             <td><code>0x40000000</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 1</a></td>
+            <td><a href="#archive-channel">archive channel 1</a></td>
             <td><code>1</code></td>
             <td><code>0x01</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 2</a></td>
+            <td><a href="#archive-channel">archive channel 2</a></td>
             <td><code>2</code></td>
             <td><code>0x02</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 3</a></td>
+            <td><a href="#archive-channel">archive channel 3</a></td>
             <td><code>3</code></td>
             <td><code>0x03</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 4</a></td>
+            <td><a href="#archive-channel">archive channel 4</a></td>
             <td><code>4</code></td>
             <td><code>0x04</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 5</a></td>
+            <td><a href="#archive-channel">archive channel 5</a></td>
             <td><code>5</code></td>
             <td><code>0x05</code></td>
         </tr>
         <tr>
-            <td><a href="#channel-load-profile">channel load profile 6</a></td>
+            <td><a href="#archive-channel">archive channel 6</a></td>
             <td><code>6</code></td>
             <td><code>0x06</code></td>
         </tr>

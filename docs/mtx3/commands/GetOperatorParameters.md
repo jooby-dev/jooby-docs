@@ -123,38 +123,38 @@ Bit mask:
 
 | Name                            | Bit  | Description                                                                                                                                 |
 | ------------------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `CURRENT_IN_PHASE_A`            | `0`  | enable display of Phase A current. OBIS: `31.7.0`                                                                                           |
-| `CURRENT_IN_PHASE_B`            | `1`  | enable display of Phase B current. OBIS: `51.7.0`                                                                                           |
-| `CURRENT_IN_PHASE_C`            | `2`  | enable display of Phase C current. OBIS: `71.7.0`                                                                                           |
+| `CURRENT_IN_PHASE_A`            | `0`  | enable display of phase A current. OBIS: `31.7.0`                                                                                           |
+| `CURRENT_IN_PHASE_B`            | `1`  | enable display of phase B current. OBIS: `51.7.0`                                                                                           |
+| `CURRENT_IN_PHASE_C`            | `2`  | enable display of phase C current. OBIS: `71.7.0`                                                                                           |
 | `CURRENT_IN_NEUTRAL`            | `3`  | enable display of neutral current. OBIS: `91.7.0`                                                                                           |
-| `VOLTAGE_IN_PHASE_A`            | `4`  | enable display of Phase A voltage. OBIS: `32.7.0`                                                                                           |
-| `VOLTAGE_IN_PHASE_B`            | `5`  | enable display of Phase B voltage. OBIS: `52.7.0`                                                                                           |
-| `VOLTAGE_IN_PHASE_C`            | `6`  | enable display of Phase C voltage. OBIS: `72.7.0`                                                                                           |
+| `VOLTAGE_IN_PHASE_A`            | `4`  | enable display of phase A voltage. OBIS: `32.7.0`                                                                                           |
+| `VOLTAGE_IN_PHASE_B`            | `5`  | enable display of phase B voltage. OBIS: `52.7.0`                                                                                           |
+| `VOLTAGE_IN_PHASE_C`            | `6`  | enable display of phase C voltage. OBIS: `72.7.0`                                                                                           |
 | `BATTERY_VOLTAGE`               | `7`  | enable display of battery voltage                                                                                                           |
 | `SUPPLY_FREQUENCY`              | `8`  | enable display of supply frequency. OBIS: `14.7.0`                                                                                          |
 | `TOTAL_ACTIVE_POWER`            | `9`  | enable display of total active power across all phases - `P`, OBIS: `1.7.0` (for meter type `R`), `P±`, OBIS: `16.7.0` (for meter type `G`) |
-| `ACTIVE_POWER_PHASE_A`          | `10` | enable display of active power for Phase A - `P`, OBIS: `21.7.0` (for meter type `R`), `P±`, OBIS: `36.7.0` (for meter type `G`)            |
-| `ACTIVE_POWER_PHASE_B`          | `11` | enable display of active power for Phase B - `P`, OBIS: `41.7.0` (for meter type `R`), `P±`, OBIS: `56.7.0` (for meter type `G`)            |
-| `ACTIVE_POWER_PHASE_C`          | `12` | enable display of active power for Phase C - `P`, OBIS: `61.7.0` (for meter type `R`), `P±`, OBIS: `76.7.0` (for meter type `G`)            |
+| `ACTIVE_POWER_PHASE_A`          | `10` | enable display of active power for phase A - `P`, OBIS: `21.7.0` (for meter type `R`), `P±`, OBIS: `36.7.0` (for meter type `G`)            |
+| `ACTIVE_POWER_PHASE_B`          | `11` | enable display of active power for phase B - `P`, OBIS: `41.7.0` (for meter type `R`), `P±`, OBIS: `56.7.0` (for meter type `G`)            |
+| `ACTIVE_POWER_PHASE_C`          | `12` | enable display of active power for phase C - `P`, OBIS: `61.7.0` (for meter type `R`), `P±`, OBIS: `76.7.0` (for meter type `G`)            |
 | `TOTAL_REACTIVE_POWER_QPLUS`    | `13` | enable display of total inductive reactive power across all phases `QI+QII`, OBIS: `3.7.0`                                                  |
-| `REACTIVE_POWER_QPLUS_PHASE_A`  | `14` | enable display of total inductive reactive power for Phase A `QI+QII`, OBIS: `23.7.0`                                                       |
-| `REACTIVE_POWER_QPLUS_PHASE_B`  | `15` | enable display of total inductive reactive power for Phase B `QI+QII`, OBIS: `43.7.0`                                                       |
-| `REACTIVE_POWER_QPLUS_PHASE_C`  | `16` | enable display of total inductive reactive power for Phase C `QI+QII`, OBIS: `63.7.0`                                                       |
+| `REACTIVE_POWER_QPLUS_PHASE_A`  | `14` | enable display of total inductive reactive power for phase A `QI+QII`, OBIS: `23.7.0`                                                       |
+| `REACTIVE_POWER_QPLUS_PHASE_B`  | `15` | enable display of total inductive reactive power for phase B `QI+QII`, OBIS: `43.7.0`                                                       |
+| `REACTIVE_POWER_QPLUS_PHASE_C`  | `16` | enable display of total inductive reactive power for phase C `QI+QII`, OBIS: `63.7.0`                                                       |
 | `TOTAL_REACTIVE_POWER_QMINUS`   | `17` | enable display of total capacitive reactive power across all phases `QIII+QIV`, OBIS: `4.7.0`                                               |
-| `REACTIVE_POWER_QMINUS_PHASE_A` | `18` | enable display of total capacitive reactive power for Phase A `QIII+QIV`, OBIS: `24.7.0`                                                    |
-| `REACTIVE_POWER_QMINUS_PHASE_B` | `19` | enable display of total capacitive reactive power for Phase B `QIII+QIV`, OBIS: `44.7.0`                                                    |
-| `REACTIVE_POWER_QMINUS_PHASE_C` | `20` | enable display of total capacitive reactive power for Phase C `QIII+QIV`, OBIS: `64.7.0`                                                    |
+| `REACTIVE_POWER_QMINUS_PHASE_A` | `18` | enable display of total capacitive reactive power for phase A `QIII+QIV`, OBIS: `24.7.0`                                                    |
+| `REACTIVE_POWER_QMINUS_PHASE_B` | `19` | enable display of total capacitive reactive power for phase B `QIII+QIV`, OBIS: `44.7.0`                                                    |
+| `REACTIVE_POWER_QMINUS_PHASE_C` | `20` | enable display of total capacitive reactive power for phase C `QIII+QIV`, OBIS: `64.7.0`                                                    |
 | `TOTAL_POWER_FACTOR`            | `21` | enable display of total power factor (`cos φ`) for all phases, OBIS: `13.7.0`                                                               |
-| `POWER_FACTOR_PHASE_A`          | `22` | enable display of power factor (`cos φ`) for Phase A. OBIS: `33.7.0`                                                                        |
-| `POWER_FACTOR_PHASE_B`          | `23` | enable display of power factor (`cos φ`) for Phase A. OBIS: `53.7.0`                                                                        |
-| `POWER_FACTOR_PHASE_C`          | `24` | enable display of power factor (`cos φ`) for Phase C. OBIS: `73.7.0`                                                                        |
+| `POWER_FACTOR_PHASE_A`          | `22` | enable display of power factor (`cos φ`) for phase A. OBIS: `33.7.0`                                                                        |
+| `POWER_FACTOR_PHASE_B`          | `23` | enable display of power factor (`cos φ`) for phase A. OBIS: `53.7.0`                                                                        |
+| `POWER_FACTOR_PHASE_C`          | `24` | enable display of power factor (`cos φ`) for phase C. OBIS: `73.7.0`                                                                        |
 | `TOTAL_APPARENT_QPLUS_POWER`    | `25` | enable display of total positive apparent power across all phases, `QI+QIV`, OBIS: `9.7.0`                                                  |
-| `APPARENT_POWER_QPLUS_PHASE_A`  | `26` | enable display of positive apparent power for Phase A, `QI+QIV`, OBIS: `29.7.0`                                                             |
-| `APPARENT_POWER_QPLUS_PHASE_B`  | `27` | enable display of positive apparent power for Phase B, `QI+QIV`, OBIS: `49.7.0`                                                             |
-| `APPARENT_POWER_QPLUS_PHASE_C`  | `28` | enable display of positive apparent power for Phase C, `QI+QIV`, OBIS: `69.7.0`                                                             |
+| `APPARENT_POWER_QPLUS_PHASE_A`  | `26` | enable display of positive apparent power for phase A, `QI+QIV`, OBIS: `29.7.0`                                                             |
+| `APPARENT_POWER_QPLUS_PHASE_B`  | `27` | enable display of positive apparent power for phase B, `QI+QIV`, OBIS: `49.7.0`                                                             |
+| `APPARENT_POWER_QPLUS_PHASE_C`  | `28` | enable display of positive apparent power for phase C, `QI+QIV`, OBIS: `69.7.0`                                                             |
 | `TOTAL_APPARENT_POWER_QMINUS`   | `29` | enable display of total negative apparent power across all phases, `QII+QIII`, OBIS: `10.7.0`                                               |
-| `APPARENT_POWER_QMINUS_PHASE_A` | `30` | enable display of negative apparent power for Phase A, `QII+QIII`, OBIS: `30.7.0`                                                           |
-| `APPARENT_POWER_QMINUS_PHASE_B` | `31` | enable display of negative apparent power for Phase B, `QII+QIII`, OBIS: `50.7.0`                                                           |
+| `APPARENT_POWER_QMINUS_PHASE_A` | `30` | enable display of negative apparent power for phase A, `QII+QIII`, OBIS: `30.7.0`                                                           |
+| `APPARENT_POWER_QMINUS_PHASE_B` | `31` | enable display of negative apparent power for phase B, `QII+QIII`, OBIS: `50.7.0`                                                           |
 
 #### Display settings 3
 
@@ -162,7 +162,7 @@ Bit mask:
 
 | Name                                    | Bit  | Description                                                                                                                                               |
 | --------------------------------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `APPARENT_POWER_QMINUS_PHASE_C`         | `0`  | enable display of negative apparent power for Phase C, `QII+QIII`, OBIS: `70.7.0`                                                                         |
+| `APPARENT_POWER_QMINUS_PHASE_C`         | `0`  | enable display of negative apparent power for phase C, `QII+QIII`, OBIS: `70.7.0`                                                                         |
 | `MAX_ACTIVE_POWER_DAY_T1`               | `1`  | enable display of maximum daily active power for tariff `T1` - `\|P\|`, OBIS: `15.26.1` (for meter type `R`); `P+`, OBIS: `1.26.1` (for meter type G`)    |
 | `MAX_ACTIVE_POWER_DAY_T2`               | `2`  | enable display of maximum daily active power for tariff `T2` - `\|P\|`, OBIS: `15.26.2` (for meter type `R`); `P+`, OBIS: `1.26.2` (for meter type G`)    |
 | `MAX_ACTIVE_POWER_DAY_T3`               | `3`  | enable display of maximum daily active power for tariff `T3` - `\|P\|`, OBIS: `15.26.3` (for meter type `R`); `P+`, OBIS: `1.26.3` (for meter type G`)    |

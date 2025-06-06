@@ -17,7 +17,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `1`  | `uint8`  | timeout for relay shutdown upon magnetic interference, seconds                                                                                              |
 | `1`  | `uint8`  | [relay set](#relay-set)                                                                                                                                     |
 | `1`  | `uint8`  | timeout for relay activation after magnetic field removal, seconds                                                                                          |
-| `1`  | `uint8`  | default PLC Phase<br>`0`, `1` - Phase A<br>`2` - Phase B<br>`3` - Phase C                                                                                   |
+| `1`  | `uint8`  | default PLC phase<br>`0`, `1` - phase A<br>`2` - phase B<br>`3` - phase C                                                                                   |
 | `4`  | `uint32` | [display settings 1](./GetOperatorParameters.md#display-settings-1)                                                                                         |
 | `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                         |
 | `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                         |
@@ -79,7 +79,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
             <td><code>0x05</code></td>
         </tr>
         <tr>
-            <td>default PLC Phase</td>
+            <td>default PLC phase</td>
             <td><code>1</code></td>
             <td><code>0x01</code></td>
         </tr>

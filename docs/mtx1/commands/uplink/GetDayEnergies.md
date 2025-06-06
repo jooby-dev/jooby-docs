@@ -50,11 +50,11 @@ The command access level is [UNENCRYPTED](../basics.md#command-access-level).
 | Bit number | Name         | Description                                  |
 | ---------- | ------------ | -------------------------------------------- |
 | `0`        | `ACTIVE`     | active energy (A+)                           |
-| `1`        | `VARI`       | positive (capacitive) reactive energy (A+R+) |
-| `2`        | `VARE`       | negative (inductive) reactive energy (A+R-)  |
+| `1`        | `VARI`       | positive (inductive) reactive energy (A+R+)  |
+| `2`        | `VARE`       | negative (capacitive) reactive energy (A+R-) |
 | `3`        | `ACTIVE_EXP` | active energy (A-)                           |
-| `4`        | `VARI_EXP`   | positive (capacitive) reactive energy (A-R+) |
-| `5`        | `VARE_EXP`   | negative (inductive) reactive energy (A-R-)  |
+| `4`        | `VARI_EXP`   | positive (inductive) reactive energy (A-R+)  |
+| `5`        | `VARE_EXP`   | negative (capacitive) reactive energy (A-R-) |
 
 ### tariff flags
 

@@ -28,7 +28,7 @@ There are `2` types of command direction:
             <td><code>GetEnergyDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetEnergyDayPrevious.md#request">request</a> / <a href="./GetEnergyDayPrevious.md#response">response</a></td>
-            <td>Get the previous day energy `A+` for `4` tariffs.</td>
+            <td>Get the previous day energy <code>A+</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x04</code></td>
@@ -84,7 +84,7 @@ There are `2` types of command direction:
             <td><code>GetEnergy</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetEnergy.md#request">request</a> / <a href="./GetEnergy.md#response">response</a></td>
-            <td>Get current energy <code>A+</code> by default or selected energy type for 4 tariffs (<code>T1</code>-<code>T4</code>).</td>
+            <td>Get current energy <code>A+</code> for tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x10</code></td>
@@ -128,13 +128,18 @@ There are `2` types of command direction:
             <td><a href="./GetHalfHourDemand.md#request">request</a> / <a href="./GetHalfHourDemand.md#response">response</a></td>
             <td>Get active energy (<code>A+</code>) in half hours by date.</td>
         </tr>
+        <td><code>0x016</code></td>
+            <td><code>GetEnergyDay</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDay.md#request">request</a> / <a href="./GetEnergyDay.md#response">response</a></td>
+            <td>Get daily active energy (<code>A+</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
+        </tr>
         <tr>
             <td><code>0x17</code></td>
             <td><code>GetMonthDemand</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetMonthDemand.md#request">request</a> / <a href="./GetMonthDemand.md#response">response</a></td>
             <td>Get the monthly active energy (<code>A+</code>) for all tariffs (<code>T1</code>-<code>T4</code>).</td>
-        </tr>
         <tr>
             <td><code>0x18</code></td>
             <td><code>TurnRelayOn</code></td>
@@ -304,11 +309,18 @@ There are `2` types of command direction:
             <td>Get device critical events.</td>
         </tr>
         <tr>
+            <td><code>0x4f</code></td>
+            <td><code>GetEnergyDayExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyDayExport.md#request">request</a> / <a href="./GetEnergyDayExport.md#response">response</a></td>
+            <td>Get daily energy <code>A-</code> by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
+        </tr>
+        <tr>
             <td><code>0x50</code></td>
             <td><code>GetExportEnergyDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetExportEnergyDayPrevious.md#request">request</a> / <a href="./GetExportEnergyDayPrevious.md#response">response</a></td>
-            <td>Get the previous day energy `A-` for `4` tariffs.</td>
+            <td>Get the previous day active energy <code>A-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x52</code></td>
@@ -337,6 +349,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetMonthMaxDemandExport.md#request">request</a> / <a href="./GetMonthMaxDemandExport.md#response">response</a></td>
             <td>Get the maximum monthly power <code>P-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
+            <td><code>0x5b</code></td>
+            <td><code>GetEnergyExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetEnergyExport.md#request">request</a> / <a href="./GetEnergyExport.md#response">response</a></td>
+            <td>Get current energy <code>A-</code> for tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
             <td><code>0x5c</code></td>
@@ -393,6 +412,20 @@ There are `2` types of command direction:
             <td><strong><code>READ_WRITE</code></strong></td>
             <td><a href="./SetOperatorParametersExt3.md#request">request</a> / <a href="./SetOperatorParametersExt3.md#response">response</a></td>
             <td>Set extended device operator parameters <code>3</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x74</code></td>
+            <td><code>SetDemandParameters</code></td>
+            <td><strong><code>READ_WRITE</code></strong></td>
+            <td><a href="./SetDemandParameters.md#request">request</a> / <a href="./SetDemandParameters.md#response">response</a></td>
+            <td>Setup the additional archives.</td>
+        </tr>
+        <tr>
+            <td><code>0x75</code></td>
+            <td><code>GetDemandParameters</code></td>
+            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><a href="./GetDemandParameters.md#request">request</a> / <a href="./GetDemandParameters.md#response">response</a></td>
+            <td>Get the additional archives information.</td>
         </tr>
         <tr>
             <td><code>0x78</code></td>

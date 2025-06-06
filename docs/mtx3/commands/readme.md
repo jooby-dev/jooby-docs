@@ -422,6 +422,13 @@ There are `2` types of command direction:
             <td>Get parameters related to magnetic field detection.</td>
         </tr>
         <tr>
+            <td><code>0x6f</code></td>
+            <td><code>GetHalfHourEnergies</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="../../mtx1/commands/GetHalfHourEnergies.md#request">request</a> / <a href="../../mtx1/commands/GetHalfHourEnergies.md#response">response</a></td>
+            <td>Get energy with <code>30</code>-minute accumulation period by selected energy type for date.</td>
+        </tr>
+        <tr>
             <td><code>0x70</code></td>
             <td><code>GetBuildVersion</code></td>
             <td><code>READ_ONLY</code></td>

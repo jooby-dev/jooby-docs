@@ -393,6 +393,13 @@ There are `2` types of command direction:
             <td>Get parameters related to magnetic field detection.</td>
         </tr>
         <tr>
+            <td><code>0x6f</code></td>
+            <td><code>GetHalfHourEnergies</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetHalfHourEnergies.md#request">request</a> / <a href="./GetHalfHourEnergies.md#response">response</a></td>
+            <td>Get energy with <code>30</code>-minute accumulation period by selected energy type for date.</td>
+        </tr>
+        <tr>
             <td><code>0x70</code></td>
             <td><code>GetBuildVersion</code></td>
             <td><code>READ_ONLY</code></td>
@@ -426,6 +433,13 @@ There are `2` types of command direction:
             <td><strong><code>READ_ONLY</code></strong></td>
             <td><a href="./GetDemandParameters.md#request">request</a> / <a href="./GetDemandParameters.md#response">response</a></td>
             <td>Get the additional archives information.</td>
+        </tr>
+        <tr>
+            <td><code>0x76</code></td>
+            <td><code>GetDemand</code></td>
+            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><a href="./GetDemand.md#request">request</a> / <a href="./GetDemand.md#response">response</a></td>
+            <td>Get the measurement data by selected type for date.</td>
         </tr>
         <tr>
             <td><code>0x78</code></td>

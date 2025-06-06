@@ -20,14 +20,14 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Examples
 
-| Field                                                            | Value                                              | Hex    |
-| ---------------------------------------------------------------- | -------------------------------------------------- | ------ |
-| command id                                                       | `117`                                              | `0x75` |
-| command size                                                     | `4`                                                | `0x04` |
-| [archive channel 2](./GetDemandParameters.md##archive-channel-2) | `10`-minute voltage archive disabled               | `0x00` |
-| time interval for counting power-off events                      | `20`                                               | `0x14` |
-| [archive channel 1](./GetDemandParameters.md##archive-channel-1) | `1/3/5/10/15/30/60`-minute voltage archive enabled | `0xa0` |
-| reserved byte                                                    | `0`                                                | `0x00` |
+| Field                                                           | Value                                              | Hex    |
+| --------------------------------------------------------------- | -------------------------------------------------- | ------ |
+| command id                                                      | `117`                                              | `0x75` |
+| command size                                                    | `4`                                                | `0x04` |
+| [archive channel 2](./GetDemandParameters.md#archive-channel-2) | `10`-minute voltage archive disabled               | `0x00` |
+| time interval for counting power-off events                     | `20`                                               | `0x14` |
+| [archive channel 1](./GetDemandParameters.md#archive-channel-1) | `1/3/5/10/15/30/60`-minute voltage archive enabled | `0xa0` |
+| reserved byte                                                   | `0`                                                | `0x00` |
 
 Command hex dump: `74 04 00 14 a0 00`
 

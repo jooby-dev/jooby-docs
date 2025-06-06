@@ -61,7 +61,7 @@ Bit mask:
 | `RELAY_ON_MAGNET_TIMEOUT` | `1` | enable relay after `timeoutRelayOn` timeout (not used) |
 | `RELAY_ON_MAGNET_AUTO`    | `2` | enable relay after removal of magnetic field           |
 
-#### Archive channel
+#### archive channel
 
 | Value | Archive type                                  |
 | ----- | --------------------------------------------- |

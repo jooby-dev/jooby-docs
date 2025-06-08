@@ -34,7 +34,7 @@ There are `2` types of command direction:
             <td><code>0x04</code></td>
             <td><code>GetDeviceType</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="../../mtx1/commands/GetDeviceType.md#request">request</a> / <a href="../../mtx1/commands/GetDeviceType.md#response">response</a></td>
+            <td><a href="./GetDeviceType.md#request">request</a> / <a href="./GetDeviceType.md#response">response</a></td>
             <td>Get the device type.</td>
         </tr>
         <tr>

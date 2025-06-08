@@ -464,6 +464,13 @@ There are `2` types of command direction:
             <td>Get extended device operator parameters <code>4</code>.</td>
         </tr>
         <tr>
+            <td><code>0x76</code></td>
+            <td><code>GetDemand</code></td>
+            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><a href="./GetDemand.md#request">request</a> / <a href="./GetDemand.md#response">response</a></td>
+            <td>Get the measurement data by selected type for date.</td>
+        </tr>
+        <tr>
             <td><code>0x7a</code></td>
             <td><code>GetMeterInfo</code></td>
             <td><code>READ_ONLY</code></td>

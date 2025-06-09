@@ -28,12 +28,12 @@ Command hex dump: `04 00`
 
 ### Format
 
-| Size | Type    | Field                                            |
-| ---- | ------- | ------------------------------------------------ |
-| `1`  | `uint8` | command id = `0x04`                              |
-| `1`  | `uint8` | command size = `9`                               |
-| `8`  | `uint8` | device type (as string, e.g. `0012164721b3172c`) |
-| `1`  | `uint8` | data 2                                           |
+| Size | Type    | Field                                                  |
+| ---- | ------- | ------------------------------------------------------ |
+| `1`  | `uint8` | command id = `0x04`                                    |
+| `1`  | `uint8` | command size = `9`                                     |
+| `8`  | `uint8` | device type (as string, e.g. `0012164721b3172c`)       |
+| `1`  | `uint8` | [device type descriptor](#device-type-descriptor_data) |
 
 ### Parameters
 
@@ -41,20 +41,20 @@ Command hex dump: `04 00`
 
 Bit mask:
 
-| Name                 | Bit | Description                                              |
-| -------------------- | --- | -------------------------------------------------------- |
-| `G_TYPE`       | `0` | `0` - meter type `A`<br>`1` - meter type `G`             |
+| Name                   | Bit | Description                                              |
+| ---------------------- | --- | -------------------------------------------------------- |
+| `G_TYPE`               | `0` | `0` - meter type `A`<br>`1` - meter type `G`             |
 | `DOWNGRADED_TO_A_TYPE` | `4` | meter type `G` downgraded to meter type `A`              |
-| `METER_INFO`         | `6` | meter supports command [GetMeterInfo](./GetMeterInfo.md) |
+| `METER_INFO`           | `6` | meter supports command [GetMeterInfo](./GetMeterInfo.md) |
 
 ### Examples
 
-| Field                  | Value                                                                           | Hex                  |
-| ---------------------- | ------------------------------------------------------------------------------- | -------------------- |
-| command id             | `4`                                                                             | `0x04`               |
-| command size           | `9`                                                                             | `0x09`               |
-| device type            | `0012164721b3172c`                                                              | `0x0012164721b3172c` |
-| device type descriptor | `G_TYPE`: `true`<br>`DOWNGRADED_TO_A_TYPE`: `false`<br>`METER_INFO`: `true` | `0x41`               |
+| Field                                                  | Value                                                                       | Hex                  |
+| ------------------------------------------------------ | --------------------------------------------------------------------------- | -------------------- |
+| command id                                             | `4`                                                                         | `0x04`               |
+| command size                                           | `9`                                                                         | `0x09`               |
+| device type                                            | `0012164721b3172c`                                                          | `0x0012164721b3172c` |
+| [device type descriptor](#device-type-descriptor_data) | `G_TYPE`: `true`<br>`DOWNGRADED_TO_A_TYPE`: `false`<br>`METER_INFO`: `true` | `0x41`               |
 
 Command hex dump: `04 09 0012164721b3172c 41`
 

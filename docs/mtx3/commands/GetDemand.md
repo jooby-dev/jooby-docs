@@ -23,15 +23,15 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 #### case #2: request for the repeated hour during the daylight saving time change
 
-| Size | Type     | Field                                                                                              |
-| ---- | -------- | -------------------------------------------------------------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x76`                                                                                |
-| `1`  | `uint8`  | command size = `7`                                                                                 |
-| `2`  | `uint8`  | [packed date](../../types.md#packed-date)                                                          |
-| `1`  | `uint8`  | [demand type](#demand-type)                                                                        |
-| `2`  | `uint16` | index of the first requested record ([valid index range](#valid-index-range))                      |
-| `1`  | `uint8`  | number of requested records ([daylight saving time parameters](#daylight- saving-time-parameters)) |
-| `1`  | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                                            |
+| Size | Type     | Field                                                                         |
+| ---- | -------- | ----------------------------------------------------------------------------- |
+| `1`  | `uint8`  | command id = `0x76`                                                           |
+| `1`  | `uint8`  | command size = `7`                                                            |
+| `2`  | `uint8`  | [packed date](../../types.md#packed-date)                                     |
+| `1`  | `uint8`  | [demand type](#demand-type)                                                   |
+| `2`  | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
+| `1`  | `uint8`  | number of requested records                                                   |
+| `1`  | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                       |
 
 ### Parameters
 

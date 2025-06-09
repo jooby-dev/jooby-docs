@@ -37,53 +37,53 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 #### **demand type**
 
-| Value | Hex    | Demand type  (x=`1`..`4`)                                           |
-| ----- | ------ | ------------------------------------------------------------------- |
-| `1`   | `0x01` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A+`        |
-| `2`   | `0x02` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A+`        |
-| `3`   | `0x03` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A+`        |
-| `4`   | `0x04` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A-`        |
-| `5`   | `0x05` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A-`        |
-| `6`   | `0x06` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A-`        |
-| `7`   | `0x07` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A+R+`      |
-| `8`   | `0x08` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A+R+`      |
-| `9`   | `0x09` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A+R+`      |
-| `10`  | `0x0a` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A+R-`      |
-| `11`  | `0x0b` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A+R-`      |
-| `12`  | `0x0c` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A+R-`      |
-| `13`  | `0x0d` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A-R+`      |
-| `14`  | `0x0e` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A-R+`      |
-| `15`  | `0x0f` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A-R+`      |
-| `16`  | `0x10` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A-R-`      |
-| `17`  | `0x11` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A-R-`      |
-| `18`  | `0x12` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A-R-`      |
-| `19`  | `0x13` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `R+`        |
-| `20`  | `0x14` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `R+`        |
-| `21`  | `0x15` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `R+`        |
-| `22`  | `0x16` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `R-`        |
-| `23`  | `0x17` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `R-`        |
-| `24`  | `0x18` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `R-`        |
-| `25`  | `0x19` | `1/3/5/10/15/30/60`-minute voltage for phase `A`,                   |
-| `26`  | `0x1a` | `1/3/5/10/15/30/60`-minute voltage for phase `B`,                   |
-| `27`  | `0x1b` | `1/3/5/10/15/30/60`-minute voltage for phase `C`,                   |
-| `28`  | `0x1c` | `10`-minute voltage for phase `A`                                   |
-| `29`  | `0x1d` | `10`-minute voltage for phase `B`                                   |
-| `30`  | `0x1e` | `10`-minute voltage for phase `C`                                   |
-| `31`  | `0x1f` | `1/3/5/10/15/30/60`-minute current for phase `A`                    |
-| `32`  | `0x20` | `1/3/5/10/15/30/60`-minute current for phase `B`                    |
-| `33`  | `0x21` | `1/3/5/10/15/30/60`-minute current for phase `C`                    |
-| `129` | `0x81` | `1/3/5/10/15/30/60`-minute active energy, `А+` (`1.4.0`)            |
-| `130` | `0x82` | `1/3/5/10/15/30/60`-minute active energy, `А-` (`2.4.0`)            |
-| `131` | `0x84` | `1/3/5/10/15/30/60`-minute reactive energy `A+R+`, (3.4.0 7.4.0)    |
-| `132` | `0x88` | `1/3/5/10/15/30/60`-minute reactive energy `A+R-`, (4.4.0 8.4.0)    |
-| `144` | `0x90` | `1/3/5/10/15/30/60`-minute reactive energy `A-R+`, (5.4.0)          |
-| `160` | `0xa0` | `1/3/5/10/15/30/60`-minute reactive energy `A-R-`, (6.4.0)          |
-| `176` | `0xb0` | [archive channel 1](./GetOperatorParametersExt2.md#archive-channel) |
-| `177` | `0xb1` | [archive channel 2](./GetOperatorParametersExt2.md#archive-channel) |
-| `178` | `0xb2` | [archive channel 3](./GetOperatorParametersExt2.md#archive-channel) |
-| `179` | `0xb3` | [archive channel 4](./GetOperatorParametersExt2.md#archive-channel) |
-| `17a` | `0xb4` | [archive channel 5](./GetOperatorParametersExt2.md#archive-channel) |
-| `17b` | `0xb5` | [archive channel 6](./GetOperatorParametersExt2.md#archive-channel) |
+| Value | Hex    | Demand type  (x=`1`..`4`)                                                |
+| ----- | ------ | ------------------------------------------------------------------------ |
+| `1`   | `0x01` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A+`             |
+| `2`   | `0x02` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A+`             |
+| `3`   | `0x03` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A+`             |
+| `4`   | `0x04` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A-`             |
+| `5`   | `0x05` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A-`             |
+| `6`   | `0x06` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A-`             |
+| `7`   | `0x07` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A+R+`           |
+| `8`   | `0x08` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A+R+`           |
+| `9`   | `0x09` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A+R+`           |
+| `10`  | `0x0a` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A+R-`           |
+| `11`  | `0x0b` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A+R-`           |
+| `12`  | `0x0c` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A+R-`           |
+| `13`  | `0x0d` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A-R+`           |
+| `14`  | `0x0e` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A-R+`           |
+| `15`  | `0x0f` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A-R+`           |
+| `16`  | `0x10` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `A-R-`           |
+| `17`  | `0x11` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `A-R-`           |
+| `18`  | `0x12` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `A-R-`           |
+| `19`  | `0x13` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `R+`             |
+| `20`  | `0x14` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `R+`             |
+| `21`  | `0x15` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `R+`             |
+| `22`  | `0x16` | `1/3/5/10/15/30/60`-minute active energy for phase `A`, `R-`             |
+| `23`  | `0x17` | `1/3/5/10/15/30/60`-minute active energy for phase `B`, `R-`             |
+| `24`  | `0x18` | `1/3/5/10/15/30/60`-minute active energy for phase `C`, `R-`             |
+| `25`  | `0x19` | `1/3/5/10/15/30/60`-minute voltage for phase `A`,                        |
+| `26`  | `0x1a` | `1/3/5/10/15/30/60`-minute voltage for phase `B`,                        |
+| `27`  | `0x1b` | `1/3/5/10/15/30/60`-minute voltage for phase `C`,                        |
+| `28`  | `0x1c` | `10`-minute voltage for phase `A`                                        |
+| `29`  | `0x1d` | `10`-minute voltage for phase `B`                                        |
+| `30`  | `0x1e` | `10`-minute voltage for phase `C`                                        |
+| `31`  | `0x1f` | `1/3/5/10/15/30/60`-minute current for phase `A`                         |
+| `32`  | `0x20` | `1/3/5/10/15/30/60`-minute current for phase `B`                         |
+| `33`  | `0x21` | `1/3/5/10/15/30/60`-minute current for phase `C`                         |
+| `129` | `0x81` | `1/3/5/10/15/30/60`-minute active energy, `А+` (`1.4.0`)                 |
+| `130` | `0x82` | `1/3/5/10/15/30/60`-minute active energy, `А-` (`2.4.0`)                 |
+| `131` | `0x84` | `1/3/5/10/15/30/60`-minute reactive energy `A+R+`, (3.4.0 7.4.0)         |
+| `132` | `0x88` | `1/3/5/10/15/30/60`-minute reactive energy `A+R-`, (4.4.0 8.4.0)         |
+| `144` | `0x90` | `1/3/5/10/15/30/60`-minute reactive energy `A-R+`, (5.4.0)               |
+| `160` | `0xa0` | `1/3/5/10/15/30/60`-minute reactive energy `A-R-`, (6.4.0)               |
+| `176` | `0xb0` | [archive channel 1](./GetOperatorParametersExtended2.md#archive-channel) |
+| `177` | `0xb1` | [archive channel 2](./GetOperatorParametersExtended2.md#archive-channel) |
+| `178` | `0xb2` | [archive channel 3](./GetOperatorParametersExtended2.md#archive-channel) |
+| `179` | `0xb3` | [archive channel 4](./GetOperatorParametersExtended2.md#archive-channel) |
+| `17a` | `0xb4` | [archive channel 5](./GetOperatorParametersExtended2.md#archive-channel) |
+| `17b` | `0xb5` | [archive channel 6](./GetOperatorParametersExtended2.md#archive-channel) |
 
 #### **valid index range**
 

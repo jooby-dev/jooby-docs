@@ -1,4 +1,4 @@
-# GetExportEnergyDayPrevious
+# GetEnergyExportDayPrevious
 
 Request/response to get previous daily energy (`A-`) by default or selected energy type for all tariffs (`T1`-`T4`).
 

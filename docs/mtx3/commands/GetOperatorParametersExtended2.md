@@ -1,4 +1,4 @@
-# GetOperatorParametersExt2
+# GetOperatorParametersExtended2
 
 Request/response to get device operator extended parameters `2`.
 

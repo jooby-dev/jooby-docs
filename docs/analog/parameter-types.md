@@ -1035,7 +1035,7 @@ hardware type - `24`
 | `1`  | `uint8` | [retain](#retain)                       |
 | `1`  | `uint8` | [newest send first](#newest-send-first) |
 
-#### **qos**
+#### **QoS**
 In the case of QoS `0`, data is delivered only if the broker connection is established.
 For QoS `1` or `2`, data is delivered when the message is successfully published to the broker.
 The default QoS value is `1`.
@@ -1519,7 +1519,7 @@ Message hex dump with LRC: `04 01 33 63`
 | `1`    | `uint8`  | parameter type = `51`       |
 | `1-64` | `string` | [module info](#module-info) |
 
-##### **module info**
+#### **module info**
 
 Product identification information including the identifier of the device type
 and the revision of software NB-IoT module.
@@ -1657,10 +1657,10 @@ Device will try PIN only one time. If PIN fails device will indicate the problem
 | `Missing SIM`     | `100ms`     | `3000ms`     |
 | `Error operation` | `100ms`     | `500ms`      |
 
-#### **Missing SIM**
+#### **missing SIM**
 If SIM card is not detected or module has a problem enabling radio interface.
 
-#### **Error operation**
+#### **error operation**
 If SIM PIN is incorrect or SIM card wait for PUK code.
 
 Available from software version = `2` for:<br>
@@ -1717,7 +1717,7 @@ hardware type - `0x06` hardware version - `0x12`
 | `1`  | `uint8` | [channel type](#channel-type-values)      |
 | `1+` | `uint8` | [channel parameters](#channel-parameters) |
 
-#### **Channel type values**
+#### **channel type values**
 
 The following channel types and their respective settings are supported:
 
@@ -1728,17 +1728,17 @@ The following channel types and their respective settings are supported:
 | `3`   | Binary sensor      | [binary sensor parameters](#binary-sensor-parameters)           |
 | `4`   | Temperature sensor | [temperature sensor parameters](#temperature-sensor-parameters) |
 
-### **Channel parameters**
+### **channel parameters**
 
 Parameters for the specific channel type.
 
-#### **Binary sensor parameters**
+#### **binary sensor parameters**
 
 | Size | Type     | Field                  |
 | ---- | -------- | ---------------------- |
 | `2`  | `uint16` | active state time (ms) |
 
-#### **Temperature sensor parameters**
+#### **temperature sensor parameters**
 
 | Size | Type     | Field                                                                                           |
 | ---- | -------- | ----------------------------------------------------------------------------------------------- |

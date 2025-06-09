@@ -38,6 +38,8 @@
         "reassignable",
         "RSSI",
         "SALDO",
+        "Vare",
+        "Vari",
         "WONO"
     ]
 }

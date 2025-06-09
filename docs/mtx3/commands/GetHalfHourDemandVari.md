@@ -1,6 +1,6 @@
-# GetHalfHourDemand
+# GetHalfHourDemandVari
 
-Request/response to get active energy (`A+`) in half hours by date.
+Request/response to get reactive energy (`A+R+`) in half hours by date.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
@@ -11,7 +11,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 | Size | Type    | Field                                         |
 | ---- | ------- | --------------------------------------------- |
-| `1`  | `uint8` | command id = `0x15`                           |
+| `1`  | `uint8` | command id = `0x48`                           |
 | `1`  | `uint8` | command size = `3`                            |
 | `1`  | `uint8` | year (number of years after `2000`)           |
 | `1`  | `uint8` | month (`1` - January ... `12` - December)     |
@@ -21,13 +21,13 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 | Field        | Value                         | Hex    |
 | ------------ | ----------------------------- | ------ |
-| command id   | `21`                          | `0x15` |
+| command id   | `72`                          | `0x48` |
 | command size | `3`                           | `0x03` |
 | year         | `24` (`2000` + `24` = `2024`) | `0x18` |
 | month        | `2` (February)                | `0x02` |
 | date         | `19`                          | `0x13` |
 
-Command hex dump: `15 03 18 02 13`
+Command hex dump: `48 03 18 02 13`
 
 
 ## Response
@@ -36,25 +36,25 @@ Command hex dump: `15 03 18 02 13`
 
 #### case #1
 
-| Size | Type     | Field                                         |
-| ---- | -------- | --------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x15`                           |
-| `1`  | `uint8`  | command size = `27`                           |
-| `1`  | `uint8`  | year (number of years after `2000`)           |
-| `1`  | `uint8`  | month (`1` - January ... `12` - December)     |
-| `1`  | `uint8`  | date (month day number which starts from `1`) |
-| `48` | `uint16` | active energy `A+`                            |
+| Size | Type     | Field                                                                |
+| ---- | -------- | -------------------------------------------------------------------- |
+| `1`  | `uint8`  | command id = `0x48`                                                  |
+| `1`  | `uint8`  | command size = `27`                                                  |
+| `1`  | `uint8`  | year (number of years after `2000`)                                  |
+| `1`  | `uint8`  | month (`1` - January ... `12` - December)                            |
+| `1`  | `uint8`  | date (month day number which starts from `1`)                        |
+| `48` | `uint16` | positive (inductive) reactive energy (`A+R+`) for a half-hour period |
 
 #### case #2
 
 | Size | Type     | Field                                                                  |
 | ---- | -------- | ---------------------------------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x15`                                                    |
+| `1`  | `uint8`  | command id = `0x48`                                                    |
 | `1`  | `uint8`  | command size = `27`                                                    |
 | `1`  | `uint8`  | year (number of years after `2000`)                                    |
 | `1`  | `uint8`  | month (`1` - January ... `12` - December)                              |
 | `1`  | `uint8`  | date (month day number which starts from `1`)                          |
-| `48` | `uint16` | active energy `A+`                                                     |
+| `48` | `uint16` | positive (inductive) reactive energy (`A+R+`) for a half-hour period   |
 | `4`  | `uint16` | load data for the additional hour during the transition to winter time |
 | `1`  | `uint8`  | additional hour number                                                 |
 
@@ -70,7 +70,7 @@ The value `0xffff` means no data is provided.<br>
 
 | Field        | Value                         | Hex       |
 | ------------ | ----------------------------- | --------- |
-| command id   | `21`                          | `0x15`    |
+| command id   | `72`                          | `0x48`    |
 | command size | `99`                          | `0x63`    |
 | year         | `24` (`2000` + `24` = `2024`) | `0x18`    |
 | month        | `2` (February)                | `0x02`    |
@@ -126,7 +126,7 @@ The value `0xffff` means no data is provided.<br>
 
 Command hex dump:
 ```
-15 63
+48 63
 18 02 13
 0457 04c6 0535 05a4 0613 0682 06f1 0760 07cf 07d0 083f 08ae
 091d 098c 09fb 0a6a 0ad9 0b48 0bb7 0bb8 0c27 0c96 0d05 0d74
@@ -138,7 +138,7 @@ Command hex dump:
 
 | Field                       | Value                         | Hex      |
 | --------------------------- | ----------------------------- | -------- |
-| command id                  | `21`                          | `0x15`   |
+| command id                  | `72`                          | `0x48`   |
 | command size                | `104`                         | `0x68`   |
 | year                        | `24` (`2000` + `24` = `2024`) | `0x18`   |
 | month                       | `2` (February)                | `0x02`   |
@@ -197,7 +197,7 @@ Command hex dump:
 
 Command hex dump:
 ```
-15 68
+48 68
 18 02 13
 0457 04c6 0535 05a4 0613 0682 06f1 0760 07cf 07d0 083f 08ae
 091d 098c 09fb 0a6a 0ad9 0b48 0bb7 0bb8 0c27 0c96 0d05 0d74

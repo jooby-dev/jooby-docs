@@ -331,6 +331,20 @@ There are `2` types of command direction:
             <td>Get extended device operator parameters <code>2</code>.</td>
         </tr>
         <tr>
+            <td><code>0x48</code></td>
+            <td><code>GetHalfHourDemandVari</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetHalfHourDemandVari.md#request">request</a> / <a href="./GetHalfHourDemandVari.md#response">response</a></td>
+            <td>Get reactive energy (<code>`A+R+`</code>) in half hours by date.</td>
+        </tr>
+        <tr>
+            <td><code>0x49</code></td>
+            <td><code>GetHalfHourDemandVare</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetHalfHourDemandVare.md#request">request</a> / <a href="./GetHalfHourDemandVare.md#response">response</a></td>
+            <td>Get reactive energy (<code>`A+R-`</code>) in half hours by date.</td>
+        </tr>
+        <tr>
             <td><code>0x4e</code></td>
             <td><code>GetEnergyExport</code></td>
             <td><code>READ_ONLY</code></td>
@@ -366,6 +380,20 @@ There are `2` types of command direction:
             <td>Get active energy <code>A-</code> (<code>II</code> - <code>III</code> quadrant) in half hours by date.</td>
         </tr>
         <tr>
+            <td><code>0x54</code></td>
+            <td><code>GetHalfHourDemandVariExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetHalfHourDemandVariExport.md#request">request</a> / <a href="./GetHalfHourDemandVariExport.md#response">response</a></td>
+            <td>Get reactive energy <code>`A-R+`</code> in half hours by date.</td>
+        </tr>
+        <tr>
+            <td><code>0x55</code></td>
+            <td><code>GetHalfHourDemandVareExport</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetHalfHourDemandVareExport.md#request">request</a> / <a href="./GetHalfHourDemandVareExport.md#response">response</a></td>
+            <td>Get reactive energy <code>`A-R-`</code> in half hours by date.</td>
+        </tr>
+        <tr>
             <td><code>0x56</code></td>
             <td><code>GetCriticalEvent</code></td>
             <td><code>READ_ONLY</code></td>
@@ -385,6 +413,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetMonthMaxDemandExport.md#request">request</a> / <a href="./GetMonthMaxDemandExport.md#response">response</a></td>
             <td>Get the maximum monthly power (<code>II</code>-<code>III</code> quadrant) for all tariffs (<code>T1</code>-<code>T4</code>).</td>
+        </tr>
+        <tr>
+            <td><code>0x5a</code></td>
+            <td><code>GetHalfHourDemandChannel</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetHalfHourDemandChannel.md#request">request</a> / <a href="./GetHalfHourDemandChannel.md#response">response</a></td>
+            <td>Get half hours for the selected channel by date.</td>
         </tr>
         <tr>
             <td><code>0x5c</code></td>

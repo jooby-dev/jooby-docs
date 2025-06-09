@@ -34,7 +34,7 @@ There are `2` types of command direction:
             <td><code>0x04</code></td>
             <td><code>GetDeviceType</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="../../mtx1/commands/GetDeviceType.md#request">request</a> / <a href="../../mtx1/commands/GetDeviceType.md#response">response</a></td>
+            <td><a href="./GetDeviceType.md#request">request</a> / <a href="./GetDeviceType.md#response">response</a></td>
             <td>Get the device type.</td>
         </tr>
         <tr>
@@ -462,6 +462,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetOperatorParametersExt4.md#request">request</a> / <a href="./GetOperatorParametersExt4.md#response">response</a></td>
             <td>Get extended device operator parameters <code>4</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x76</code></td>
+            <td><code>GetDemand</code></td>
+            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><a href="./GetDemand.md#request">request</a> / <a href="./GetDemand.md#response">response</a></td>
+            <td>Get the measurement data by selected type for date.</td>
         </tr>
         <tr>
             <td><code>0x7a</code></td>

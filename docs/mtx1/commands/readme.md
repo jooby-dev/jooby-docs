@@ -129,9 +129,9 @@ There are `2` types of command direction:
             <td>Get active energy (<code>A+</code>) in half hours by date.</td>
         </tr>
         <td><code>0x016</code></td>
-            <td><code>GetEnergyDay</code></td>
+            <td><code>GetDayDemand</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetEnergyDay.md#request">request</a> / <a href="./GetEnergyDay.md#response">response</a></td>
+            <td><a href="./GetDayDemand.md#request">request</a> / <a href="./GetDayDemand.md#response">response</a></td>
             <td>Get daily active energy (<code>A+</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
         </tr>
         <tr>
@@ -240,9 +240,9 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x34</code></td>
-            <td><code>GetEventsCounter</code></td>
+            <td><code>GetEventsCounters</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetEventsCounter.md#request">request</a> / <a href="./getEventsCounter.md#response">response</a></td>
+            <td><a href="./GetEventsCounters.md#request">request</a> / <a href="./getEventsCounters.md#response">response</a></td>
             <td>Get events counters.</td>
         </tr>
         <tr>
@@ -310,16 +310,16 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x4f</code></td>
-            <td><code>GetEnergyDayExport</code></td>
+            <td><code>GetDayDemandExport</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetEnergyDayExport.md#request">request</a> / <a href="./GetEnergyDayExport.md#response">response</a></td>
+            <td><a href="./GetDayDemandExport.md#request">request</a> / <a href="./GetDayDemandExport.md#response">response</a></td>
             <td>Get daily energy <code>A-</code> by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
         </tr>
         <tr>
             <td><code>0x50</code></td>
-            <td><code>GetExportEnergyDayPrevious</code></td>
+            <td><code>GetEnergyExportDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetExportEnergyDayPrevious.md#request">request</a> / <a href="./GetExportEnergyDayPrevious.md#response">response</a></td>
+            <td><a href="./GetEnergyExportDayPrevious.md#request">request</a> / <a href="./GetEnergyExportDayPrevious.md#response">response</a></td>
             <td>Get the previous day active energy <code>A-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
@@ -408,16 +408,16 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x71</code></td>
-            <td><code>GetOperatorParametersExt3</code></td>
+            <td><code>GetOperatorParametersExtended3</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetOperatorParametersExt3.md#request">request</a> / <a href="./GetOperatorParametersExt3.md#response">response</a></td>
+            <td><a href="./GetOperatorParametersExtended3.md#request">request</a> / <a href="./GetOperatorParametersExtended3.md#response">response</a></td>
             <td>Get extended device operator parameters <code>3</code>.</td>
         </tr>
         <tr>
             <td><code>0x72</code></td>
-            <td><code>SetOperatorParametersExt3</code></td>
+            <td><code>SetOperatorParametersExtended3</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
-            <td><a href="./SetOperatorParametersExt3.md#request">request</a> / <a href="./SetOperatorParametersExt3.md#response">response</a></td>
+            <td><a href="./SetOperatorParametersExtended3.md#request">request</a> / <a href="./SetOperatorParametersExtended3.md#response">response</a></td>
             <td>Set extended device operator parameters <code>3</code>.</td>
         </tr>
         <tr>

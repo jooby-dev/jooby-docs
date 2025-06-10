@@ -1,30 +1,11 @@
-# GetOperatorParametersExt
+# SetOperatorParametersExtended
 
-Request/response to get device operator extended parameters.
+Request/response to set device operator parameters.
 
-The command access level is [READ_ONLY](../basics.md#command-access-level).
+The command access level is [READ_WRITE](../basics.md#command-access-level).
 
 
 ## Request
-
-### Format
-
-| Size | Type    | Field               |
-| ---- | ------- | ------------------- |
-| `1`  | `uint8` | command id = `0x3f` |
-| `1`  | `uint8` | command size = `0`  |
-
-### Examples
-
-| Field        | Value | Hex    |
-| ------------ | ----- | ------ |
-| command id   | `63`  | `0x3f` |
-| command size | `0`   | `0x00` |
-
-Message hex dump: `3f 00`
-
-
-## Response
 
 ### Format
 
@@ -33,23 +14,10 @@ Message hex dump: `3f 00`
 | `1`  | `uint8` | command id = `0x3f`                                                                                                    |
 | `1`  | `uint8` | command size = `9`                                                                                                     |
 | `1`  | `uint8` | timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                              |
-| `1`  | `uint8` | [define 1](#define-1)                                                                                                  |
+| `1`  | `uint8` | [define 1](./GetOperatorParametersExtended.md#define-1)                                                                |
 | `1`  | `uint8` | timeout for relay reactivation by button after deactivation due to `IMAX`, `PMAX`, `IDIFF`, or `COSFI` limits, seconds |
 | `1`  | `uint8` | timeout for relay activation upon restoration of quality voltage, seconds                                              |
 | `5`  | `uint8` | reserved bytes                                                                                                         |
-
-### Parameters
-
-#### Define 1
-
-Bit mask:
-
-| Name                        | Bit | Description                                                        |
-| --------------------------- | --- | ------------------------------------------------------------------ |
-| `RESET_DAY_MAX_POWER_KEY`   | `0` | allow daily maximum power reset by button                          |
-| `RESET_MONTH_MAX_POWER_KEY` | `1` | allow monthly maximum power reset by button                        |
-| `BLOCK_KEY_OPTOPORT`        | `2` | `0` - optoport is unlocked<br>`1` - optoport is unlocked by button |
-| `MAGNET_SCREEN_CONST`       | `5` | `1` - constant magnetic influence screen                           |
 
 ### Examples
 
@@ -61,8 +29,8 @@ Bit mask:
     </tr>
     <tr>
         <td>command id</td>
-        <td><code>63</code></td>
-        <td><code>0x3f</code></td>
+        <td><code>64</code></td>
+        <td><code>0x40</code></td>
     </tr>
     <tr>
         <td>command size</td>
@@ -76,7 +44,7 @@ Bit mask:
     </tr>
     <tr>
         <td>
-            <a href="#define-1">define 1</a>
+            <a href="./GetOperatorParameters.md#define-1">define 1</a>
         </td>
         <td>
             <code>RESET_DAY_MAX_POWER_KEY</code>: <code>false</code><br>
@@ -103,7 +71,26 @@ Bit mask:
     </tr>
 </table>
 
-Command hex dump: `3f 09 01 00 00 05 0000000000`
+Command hex dump: `40 09 01 00 00 05 0000000000`
+
+
+## Response
+
+### Format
+
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x40` |
+| `1`  | `uint8` | command size = `0`  |
+
+### Examples
+
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `31`  | `0x40` |
+| command size | `0`   | `0x00` |
+
+Command hex dump: `40 00`
 
 
 ## See also

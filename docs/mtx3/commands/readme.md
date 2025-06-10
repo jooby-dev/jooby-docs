@@ -129,9 +129,9 @@ There are `2` types of command direction:
             <td>Get active energy (<code>A+</code>) in half hours by date.</td>
         </tr>
         <td><code>0x016</code></td>
-            <td><code>GetEnergyDay</code></td>
+            <td><code>GetDayDemand</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetEnergyDay.md#request">request</a> / <a href="./GetEnergyDay.md#response">response</a></td>
+            <td><a href="./GetDayDemand.md#request">request</a> / <a href="./GetDayDemand.md#response">response</a></td>
             <td>Get daily active energy (<code>A+, R+, R-</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
         </tr>
         <tr>
@@ -241,9 +241,9 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x34</code></td>
-            <td><code>GetEventsCounter</code></td>
+            <td><code>GetEventsCounters</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="../../mtx1/commands/GetEventsCounter.md#request">request</a> / <a href="../../mtx1/commands/GetEventsCounter.md#response">response</a></td>
+            <td><a href="../../mtx1/commands/GetEventsCounters.md#request">request</a> / <a href="../../mtx1/commands/GetEventsCounters.md#response">response</a></td>
             <td>Get events counters.</td>
         </tr>
         <tr>
@@ -304,30 +304,30 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x3f</code></td>
-            <td><code>GetOperatorParametersExt</code></td>
+            <td><code>GetOperatorParametersExtended</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetOperatorParametersExt.md#request">request</a> / <a href="./GetOperatorParametersExt.md#response">response</a></td>
+            <td><a href="./GetOperatorParametersExtended.md#request">request</a> / <a href="./GetOperatorParametersExtended.md#response">response</a></td>
             <td>Get extended device operator parameters.</td>
         </tr>
         <tr>
             <td><code>0x40</code></td>
-            <td><code>SetOperatorParametersExt</code></td>
+            <td><code>SetOperatorParametersExtended</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
-            <td><a href="./SetOperatorParametersExt.md#request">request</a> / <a href="./SetOperatorParametersExt.md#response">response</a></td>
+            <td><a href="./SetOperatorParametersExtended.md#request">request</a> / <a href="./SetOperatorParametersExtended.md#response">response</a></td>
             <td>Set extended device operator parameters.</td>
         </tr>
         <tr>
             <td><code>0x45</code></td>
-            <td><code>SetOperatorParametersExt2</code></td>
+            <td><code>SetOperatorParametersExtended2</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
-            <td><a href="./SetOperatorParametersExt2.md#request">request</a> / <a href="./SetOperatorParametersExt2.md#response">response</a></td>
+            <td><a href="./SetOperatorParametersExtended2.md#request">request</a> / <a href="./SetOperatorParametersExtended2.md#response">response</a></td>
             <td>Set extended device operator parameters <code>2</code>.</td>
         </tr>
         <tr>
             <td><code>0x47</code></td>
-            <td><code>GetOperatorParametersExt2</code></td>
+            <td><code>GetOperatorParametersExtended2</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetOperatorParametersExt2.md#request">request</a> / <a href="./GetOperatorParametersExt2.md#response">response</a></td>
+            <td><a href="./GetOperatorParametersExtended2.md#request">request</a> / <a href="./GetOperatorParametersExtended2.md#response">response</a></td>
             <td>Get extended device operator parameters <code>2</code>.</td>
         </tr>
         <tr>
@@ -353,16 +353,16 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x4f</code></td>
-            <td><code>GetEnergyDayExport</code></td>
+            <td><code>GetDayDemandExport</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetEnergyDayExport.md#request">request</a> / <a href="./GetEnergyDayExport.md#response">response</a></td>
+            <td><a href="./GetDayDemandExport.md#request">request</a> / <a href="./GetDayDemandExport.md#response">response</a></td>
             <td>Get daily energy <code>A-, R+, R-</code> for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
         </tr>
         <tr>
             <td><code>0x50</code></td>
-            <td><code>GetExportEnergyDayPrevious</code></td>
+            <td><code>GetEnergyExportDayPrevious</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetExportEnergyDayPrevious.md#request">request</a> / <a href="./GetExportEnergyDayPrevious.md#response">response</a></td>
+            <td><a href="./GetEnergyExportDayPrevious.md#request">request</a> / <a href="./GetEnergyExportDayPrevious.md#response">response</a></td>
             <td>Get the previous day active energy <code>A-, R+, R-</code> for all tariffs (<code>T1</code>-<code>T4</code>).</td>
         </tr>
         <tr>
@@ -472,30 +472,30 @@ There are `2` types of command direction:
         </tr>
         <tr>
             <td><code>0x71</code></td>
-            <td><code>GetOperatorParametersExt3</code></td>
+            <td><code>GetOperatorParametersExtended3</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="../../mtx1/GetOperatorParametersExt3.md#request">request</a> / <a href="../../mtx1/commands/GetOperatorParametersExt3.md#response">response</a></td>
+            <td><a href="../../mtx1/GetOperatorParametersExtended3.md#request">request</a> / <a href="../../mtx1/commands/GetOperatorParametersExtended3.md#response">response</a></td>
             <td>Get extended device operator parameters <code>3</code>.</td>
         </tr>
         <tr>
             <td><code>0x72</code></td>
-            <td><code>SetOperatorParametersExt3</code></td>
+            <td><code>SetOperatorParametersExtended3</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
-            <td><a href="../../mtx1/SetOperatorParametersExt3.md#request">request</a> / <a href="../../mtx1/commands/SetOperatorParametersExt3.md#response">response</a></td>
+            <td><a href="../../mtx1/SetOperatorParametersExtended3.md#request">request</a> / <a href="../../mtx1/commands/SetOperatorParametersExtended3.md#response">response</a></td>
             <td>Set extended device operator parameters <code>3</code>.</td>
         </tr>
         <tr>
             <td><code>0x74</code></td>
-            <td><code>SetOperatorParametersExt4</code></td>
+            <td><code>SetOperatorParametersExtended4</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
-            <td><a href="./SetOperatorParametersExt4.md#request">request</a> / <a href="./SetOperatorParametersExt4.md#response">response</a></td>
+            <td><a href="./SetOperatorParametersExtended4.md#request">request</a> / <a href="./SetOperatorParametersExtended4.md#response">response</a></td>
             <td>Set extended device operator parameters <code>4</code>.</td>
         </tr>
         <tr>
             <td><code>0x75</code></td>
-            <td><code>GetOperatorParametersExt4</code></td>
+            <td><code>GetOperatorParametersExtended4</code></td>
             <td><code>READ_ONLY</code></td>
-            <td><a href="./GetOperatorParametersExt4.md#request">request</a> / <a href="./GetOperatorParametersExt4.md#response">response</a></td>
+            <td><a href="./GetOperatorParametersExtended4.md#request">request</a> / <a href="./GetOperatorParametersExtended4.md#response">response</a></td>
             <td>Get extended device operator parameters <code>4</code>.</td>
         </tr>
         <tr>

@@ -1,4 +1,4 @@
-# GetEnergyDayExport
+# GetDayDemandExport
 
 Request/response to get daily energy (`A-`) by default or selected energy type for all tariffs (`T1`-`T4`) for date.
 

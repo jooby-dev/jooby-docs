@@ -446,14 +446,14 @@ There are `2` types of command direction:
             <td><code>SetDemandParameters</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
             <td><a href="./SetDemandParameters.md#request">request</a> / <a href="./SetDemandParameters.md#response">response</a></td>
-            <td>Setup the additional archives.</td>
+            <td>Setup the parameters for voltage graphs and SAIDI.</td>
         </tr>
         <tr>
             <td><code>0x75</code></td>
             <td><code>GetDemandParameters</code></td>
             <td><strong><code>READ_ONLY</code></strong></td>
             <td><a href="./GetDemandParameters.md#request">request</a> / <a href="./GetDemandParameters.md#response">response</a></td>
-            <td>Get the additional archives information.</td>
+            <td>Get the parameters for voltage graphs and SAIDI</td>
         </tr>
         <tr>
             <td><code>0x76</code></td>

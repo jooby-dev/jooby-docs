@@ -1,6 +1,6 @@
 # GetDemandParameters
 
-Request/response to get the additional archives information.
+Request/response to get the parameters for voltage graphs and SAIDI.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 

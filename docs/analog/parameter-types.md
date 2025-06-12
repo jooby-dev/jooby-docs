@@ -1510,7 +1510,7 @@ hardware type - `24`
 
 Message hex dump with LRC: `04 01 33 63`
 
-### Response:
+### Response
 
 #### Format
 

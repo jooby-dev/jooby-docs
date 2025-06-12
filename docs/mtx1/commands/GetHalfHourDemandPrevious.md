@@ -56,7 +56,7 @@ Identical to [GetHalfHourDemand](./GetHalfHourDemand.md#response) response comma
 
 ### Parameters
 
-#### **active energy**
+#### active energy
 
 The value `0xffff` means no data is provided.<br>
 Otherwise each field holds tariff number (highest `2` bits) and energy (all other bits).

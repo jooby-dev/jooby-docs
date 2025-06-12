@@ -64,7 +64,7 @@ There are `2` types of command direction:
 | `0x16` | [ReadArchive](./ReadArchive.md#response)                                      | Response to the [ReadArchive](./ReadArchive.md#request) downlink command.                               |
 | `0x21` | [GetLorawanInfo](./GetLorawanInfo.md#response)                                | Response to the [GetLorawanInfo](./GetLorawanInfo.md#request) downlink command.                         |
 | `0x23` | [GetLorawanState](./GetLorawanState.md#response)                              | Response to the [GetLorawanState](./GetLorawanState.md#request) downlink command.                       |
-| `0x25` | [SetLorawanConnectionMethod](./SetLorawanConnectionMethod.md#response)        | Response to the [SetLorawanConnectionMethod](./SetLorawanConnectionMethod.md#request) downlink command. |
+| `0x25` | [SetLorawanActivationMethod](./SetLorawanActivationMethod.md#response)        | Response to the [SetLorawanActivationMethod](./SetLorawanActivationMethod.md#request) downlink command. |
 | `0x27` | [Reboot](./Reboot.md#response)                                                | Response to the [Reboot](./Reboot.md#request) downlink command.                                         |
 | `0x31` | [UpdateImageWrite](./UpdateImageWrite.md#response)                            | Response to the [UpdateImageWrite](./UpdateImageWrite.md#request) downlink command.                     |
 | `0x33` | [UpdateImageVerify](./UpdateImageVerify.md#response)                          | Response to the [UpdateImageVerify](./UpdateImageVerify.md#request) downlink command.                   |

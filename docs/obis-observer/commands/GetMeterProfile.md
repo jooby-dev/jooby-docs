@@ -44,13 +44,13 @@ Message hex dump: `66 02 03 02`
 
 #### default periods:
 
-| Field            | Value | Hex      |
-| ---------------- | ----- | -------- |
-| command id       | `103` | `0x67`   |
-| command size     | `5`   | `0x05`   |
-| request id       | `3`   | `0x03`   |
-| archive 1 period | `600` | `0x0258` |
-| archive 2 period | `45`  | `0x002d` |
+| Field              | Value | Hex      |
+| ------------------ | ----- | -------- |
+| command id         | `103` | `0x67`   |
+| command size       | `5`   | `0x05`   |
+| request id         | `3`   | `0x03`   |
+| archive `1` period | `600` | `0x0258` |
+| archive `2` period | `45`  | `0x002d` |
 
 
 Message hex dump: `67 05 03 02 58 00 2d`
@@ -59,7 +59,7 @@ Message hex dump: `67 05 03 02 58 00 2d`
 
 If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-##### Result codes:
+##### result codes:
 
 | Result code | Description                  |
 | ----------- | ---------------------------- |

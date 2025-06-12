@@ -1,6 +1,6 @@
 # GetMonthDemand
 
-Request/response to get the monthly energies (`A+`, `R+`, `R-`) for 4 tariffs (`T1`-`T4`).
+Request/response to get the monthly energies (`A+`, `R+`, `R-`) for `4` tariffs (`T1`-`T4`).
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 

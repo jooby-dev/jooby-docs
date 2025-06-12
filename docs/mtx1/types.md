@@ -25,7 +25,7 @@ Format (each line is a byte):
     </thead>
     <tbody>
         <tr>
-            <td colspan="7" align="center">Year [<code>7..0</code>]</td>
+            <td colspan="7" align="center">Year [<code>6..0</code>]</td>
             <td align="center">Month [<code>3</code>]</td>
         </tr>
         <tr>

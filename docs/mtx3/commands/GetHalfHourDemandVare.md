@@ -60,7 +60,7 @@ Command hex dump: `49 03 18 02 13`
 
 ### Parameters
 
-#### **active energy**
+#### active energy
 
 The value `0xffff` means no data is provided.<br>
 

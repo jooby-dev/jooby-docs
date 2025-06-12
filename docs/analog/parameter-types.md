@@ -57,11 +57,11 @@ Setting time parameters of operation. Applicable to all types of modules.
 | `3`  | `uint8` | [reserved](#reserved) = `0x000000` |
 | `1`  | `uint8` | [period](#period)                  |
 
-#### **reserved**
+#### reserved
 
 Obsolete parameter. This field is no longer used.
 
-#### **period**
+#### period
 
 This parameter defines the periodicity of sending data from the sensor.
 <br/>
@@ -94,7 +94,7 @@ The parameter defines the hour of the day by which the daily consumption is calc
 | `1`  | `uint8` | parameter type = `4` |
 | `1`  | `uint8` | [hour](#hour)        |
 
-#### **hour**
+#### hour
 
 The value from `0` to `23`. The default calculation hour is `0`.
 
@@ -123,7 +123,7 @@ Parameter is used to setup type of values received from device.
 | `1`  | `uint8` | parameter type = `5`    |
 | `1`  | `uint8` | [data type](#data-type) |
 
-#### **data type**
+#### data type
 
 | Value | Description                                |
 | ----- | ------------------------------------------ |
@@ -159,7 +159,7 @@ This parameter applies to all types of modules.
 | `1`  | `uint8` | parameter type = `8`            |
 | `1`  | `uint8` | [delivery type](#delivery-type) |
 
-#### **delivery type**
+#### delivery type
 
 | Value | Description                                    |
 | ----- | ---------------------------------------------- |
@@ -192,7 +192,7 @@ Parameter is used to setup activation method in LoRaWAN network.
 | `1`  | `uint8` | parameter type = `9`                              |
 | `1`  | `uint8` | [activation method type](#activation-method-type) |
 
-#### **activation method type**
+#### activation method type
 
 | Value | Description       |
 | ----- | ----------------- |
@@ -226,20 +226,20 @@ Defines battery depassivation parameters for all module types except `MTXLora`.
 | `2`  | `uint8` | [internal resistance](#internal-resistance) |
 | `2`  | `uint8` | [low voltage](#low-voltage)                 |
 
-#### **load time**
+#### load time
 
 Represents the battery load time in milliseconds.
 The first byte is the most significant byte of the number.
 The default value is `2` seconds.
 
-#### **internal resistance**
+#### internal resistance
 
 Represents the internal resistance threshold of the battery.
 When this threshold is exceeded, depassivation is enabled.
 The value is in `mOhms` and the first byte is the most significant byte of the number.
 The default value is `18432` `mOhms`.
 
-#### **low voltage**
+#### low voltage
 
 Represents the battery voltage without load.
 If the voltage drops below this threshold, depassivation is not enabled.
@@ -274,7 +274,7 @@ It applies to all module types except `MTXLora`.
 | `1`  | `uint8` | parameter type = `11`   |
 | `4`  | `uint8` | [load time](#load-time) |
 
-#### **load time**
+#### load time
 
 It is a `4`-byte value in `32768` `Hz` intervals.
 The most significant byte comes first.
@@ -305,7 +305,7 @@ This parameter set configuration of the module channels, only for universal 4-ch
 | `1`  | `uint8` | parameter type = `13`                                         |
 | `1`  | `uint8` | [channels configuration value](#channels-configuration-value) |
 
-#### **channels configuration value**
+#### channels configuration value
 
 Description: `+` enable channel, `-` disable channel
 
@@ -357,7 +357,7 @@ Parameter is used to setup `RX2` window configuration.
 | `1`  | `uint8` | [spread factor](#spread-factor) |
 | `3`  | `uint8` | [frequency](#frequency)         |
 
-#### **spread factor**
+#### spread factor
 
 The transmission speed or `Data Rate` of a LoRaWAN message, ranging from `SF7` (highest Data Rate) to `SF12` (lowest Data Rate).
 Making the spreading factor `1` step lower (from `SF10` to `SF9`) allows you to roughly send the same amount of data use half the time on air.
@@ -374,7 +374,7 @@ Lowering the spreading factor makes it more difficult for the gateway to receive
 | `5`   | `SF7B125`   |
 | `6`   | `SF7B250`   |
 
-#### **frequency**
+#### frequency
 
 `RX2` data rate frequency.
 The second receive window (RX2) uses a fixed frequency and data rate.
@@ -411,17 +411,17 @@ Parameter is used to setup absolute data for device.
 | `1`  | `uint8`     | [pulse coefficient](#pulse-coefficient)        |
 | `4`  | `uint32_be` | [pulse counter's value](#pulse-counters-value) |
 
-#### **meter value**
+#### meter value
 
 Base absolute meter value.
 <br/>
 It is a `4`-byte unsigned int BE.
 
-#### **pulse coefficient**
+#### pulse coefficient
 
 [See details](./types.md#pulse-coefficient)
 
-#### **pulse counter's value**
+#### pulse counter's value
 
 Base pulse counter's value.
 <br/>
@@ -454,7 +454,7 @@ Parameter is used to enable absolute data for device.
 | `1`  | `uint8` | parameter type = `24`                       |
 | `1`  | `uint8` | [absolute data state](#absolute-data-state) |
 
-#### **absolute data state**
+#### absolute data state
 
 | Value | Description                       |
 | ----- | --------------------------------- |
@@ -486,7 +486,7 @@ Parameter is used to set device serial number.
 | `1`  | `uint8` | parameter type = `25`           |
 | `6`  | `uint8` | [serial number](#serial-number) |
 
-#### **serial number**
+#### serial number
 
 Device serial number.
 <br/>
@@ -519,15 +519,15 @@ Parameter is used to set device geolocation.
 | `4`  | `float32` | [longitude](#longitude) |
 | `2`  | `int16`   | [altitude](#altitude)   |
 
-#### **latitude**
+#### latitude
 
 It is a `4`-byte float.
 
-#### **longitude**
+#### longitude
 
 It is a `4`-byte float.
 
-#### **altitude**
+#### altitude
 
 It is a `2`-byte int.
 
@@ -558,7 +558,7 @@ Message hex dump with LRC: `03 0b 1a 52 b8 09 42 52 b8 2d 42 17 00 74`
 | `1`  | `uint8` | parameter type = `28` |
 | `2`  | `uint8` | [interval](#interval) |
 
-#### **interval**
+#### interval
 
 The parameter is `2` bytes long and measured in seconds.
 Its value must not be less than `90` seconds.
@@ -595,23 +595,23 @@ Parameter is used to setup absolute data for device.
 | `3`  | `uint8` | [pulse coefficient](#pulse-coefficient)        |
 | `3`  | `uint8` | [pulse counter's value](#pulse-counters-value) |
 
-#### **channel index**
+#### channel index
 
 Channel index number.
 <br/>
 It is a `1`-byte unsigned int.
 
-#### **meter value**
+#### meter value
 
 Base absolute meter value.
 <br/>
 It is a `4`-byte unsigned int BE.
 
-#### **pulse coefficient**
+#### pulse coefficient
 
 [See details](./types.md#pulse-coefficient).
 
-#### **pulse counter's value**
+#### pulse counter's value
 
 Base pulse counter's value.
 <br/>
@@ -646,13 +646,13 @@ Parameter is used to enable absolute data for device.
 | `1`  | `uint8` | [channel index](#channel-index)             |
 | `1`  | `uint8` | [absolute data state](#absolute-data-state) |
 
-#### **channel index**
+#### channel index
 
 Channel index number.
 <br/>
 It is a `1`-byte unsigned int.
 
-#### **absolute data state**
+#### absolute data state
 
 | Value | Description                                    |
 | ----- | ---------------------------------------------- |
@@ -692,11 +692,11 @@ hardware type - `0x06` hardware version - `0x0a`
 | `1`  | `uint8` | [pull up time](#pull-up-time)         |
 | `1`  | `uint8` | [scan time](#scan-time)               |
 
-#### **channels bit set**
+#### channels bit set
 
 [Channels to set configuration](./types.md#channels-bit-set).
 
-#### **pull up time**
+#### pull up time
 
 Channel pull up time in microseconds.
 <br/>
@@ -704,7 +704,7 @@ Minimal value - `17` `μs`, maximum - `255` `μs`, `18` `μs` by default.
 <br/>
 It is a `1`-byte unsigned int.
 
-#### **scan time**
+#### scan time
 
 Channel scan time in microseconds `μs`.
 <br/>
@@ -744,7 +744,7 @@ hardware type - `0x06` hardware version - `0x0a`
 | `1`  | `uint8` | parameter type = `32`                   |
 | `1`  | `uint8` | [channels bit set](#channels-bit-set-1) |
 
-#### **channels bit set**
+#### channels bit set
 
 [Channels to set](./types.md#channels-bit-set).
 
@@ -791,12 +791,12 @@ The table displays the version from which this change took effect.
 | `2`  | `uint8` | [resistance start threshold](#resistance-start-threshold) |
 | `2`  | `uint8` | [resistance stop threshold](#resistance-stop-threshold)   |
 
-#### **resistance start threshold**
+#### resistance start threshold
 
 Represents the value of the internal resistance of the battery (in `mΩ`) upon exceeding which the depassivation process will be initiated.
 For WLE modules, this value is set by default to `35000` `mΩ`, and for modules using the `SX1276` transceiver, this value is set to `16000` `mΩ`.
 
-#### **resistance stop threshold**
+#### resistance stop threshold
 
 Represents the value of the internal resistance of the battery (in `mΩ`).
 If the internal resistance of the battery falls below this threshold, the depassivation process will stop.
@@ -835,18 +835,21 @@ hardware type - `24`
 | `1-64` | `string` | [password](#password)           |
 | `1`    | `uint8`  | [clean session](#clean-session) |
 
-#### **client id**
+#### client id
 unique identifier that distinguishes each MQTT client connecting to a broker and enables the broker to keep track of the client’s current state.
 allows for an empty client_id. However, this connection must have the clean session flag set to true, or the broker will reject the connection.
 Up to 64 byte. No default value
 
-#### **username**
+#### username
+
 MQTT username for client authentication and authorization. Up to 64 byte. No default value
 
-#### **password**
+#### password
+
 MQTT password for client authentication and authorization. Up to 64 byte. No default value
 
-#### **clean session**
+#### clean session
+
 If the client has requested a clean session, the sessionPresent flag will always be false, indicating there is no previous session.
 No default value
 
@@ -883,16 +886,18 @@ hardware type - `24`
 | `1-64` | `string` | [host name](#host-name) |
 | `2`    | `uint8`  | [port](#port)           |
 
-#### **host name**
+#### host name
+
 The address of the server. It can be an IP address or a domain name. No default value
 Maximum length: 64 bytes.
 
-#### **port**
+#### port
+
 Integer type. The port of the server. Range: 1–65535.
 
 ### Examples
 
-#### Connect to hivemq broker
+#### connect to HiveMQ broker
 
 | Field          | Value                | Hex                                        |
 | -------------- | -------------------- | ------------------------------------------ |
@@ -920,12 +925,13 @@ hardware type - `24`
 | `1`  | `uint8`   | parameter type = `36` |
 | `1`  | `boolean` | [enable](#ssl-enable) |
 
-#### **ssl enable**
+#### ssl enable
+
 Indicates whether to use SSL/TLS secure connection for MQTT. Accepted immediately for next connection without device reset. Default value 1
 
 ### Examples
 
-#### Use SSL/TLS TCP secure connection
+#### use SSL/TLS TCP secure connection
 
 | Field          | Value | Hex    |
 | -------------- | ----- | ------ |
@@ -952,7 +958,8 @@ hardware type - `24`
 | `1`    | `uint8`  | parameter type = `37`         |
 | `1-64` | `string` | [topic prefix](#topic-prefix) |
 
-#### **topic prefix**
+#### topic prefix
+
 topic prefix that will be used to make topic to subscribe topic_prefix/elster-<short_mac>/down and publish topic_prefix/elster-<short_mac>/up,
 where <short_mac> is lora devaddr. Accepted immediately for next pub/sub without device reset. No Default value. topics will be /elster-<short_mac>/up - /elster-<short_mac>/down.
 
@@ -987,14 +994,17 @@ hardware type - `24`
 | `1`  | `uint8` | [receive window commands count](#receive_window_commands_count) |
 | `1`  | `uint8` | [timeout](#timeout)                                             |
 
-#### **QoS**
+#### QoS
+
 QoS option for subscribing. Default value is `1`.
 
-#### **receive window commands count**
+#### receive window commands count
+
 Message count received from topic to force unsubscribe and go to standby. Default no limits.
 Set to `255` or `0` for unlimited count.
 
-#### **timeout**
+#### timeout
+
 Timeout to close receive window. Default is `20` seconds.
 If value = `0`, receive window will be set to `20` seconds.
 
@@ -1004,7 +1014,7 @@ If value = `0`, receive window will be set to `20` seconds.
 
 ### Examples
 
-#### Set receive config to subscribe with QOS=1
+#### set receive config to subscribe with QOS=1
 
 | Field                         | Value | Hex    |
 | ----------------------------- | ----- | ------ |
@@ -1035,20 +1045,23 @@ hardware type - `24`
 | `1`  | `uint8` | [retain](#retain)                       |
 | `1`  | `uint8` | [newest send first](#newest-send-first) |
 
-#### **QoS**
+#### QoS
+
 In the case of QoS `0`, data is delivered only if the broker connection is established.
 For QoS `1` or `2`, data is delivered when the message is successfully published to the broker.
 The default QoS value is `1`.
 
-#### **retain**
+#### retain
+
 use the retain flag when publishing (default value is `0`)
 
-#### **newest send first**
+#### newest send first
+
 if we have undelivered data first data will be sent from the newest to the oldest (default value is `1`)
 
 ### Examples
 
-#### Set QoS to 1 and send undelivered data from old to new
+#### set QoS to 1 and send undelivered data from old to new
 
 | Field             | Value | Hex    |
 | ----------------- | ----- | ------ |
@@ -1078,7 +1091,8 @@ hardware type - `24`
 | `1`  | `uint8` | [security level](#security-level) |
 | `1`  | `uint8` | [version](#version)               |
 
-#### **security level**
+#### security level
+
 The authentication mode.
 
 | Value | Description                                                                |
@@ -1087,7 +1101,8 @@ The authentication mode.
 | `1`   | Perform server authentication                                              |
 | `2`   | Perform server and client authentication if requested by the remote server |
 
-#### **version**
+#### version
+
 SSL version.
 
 | Value | Description                                                                                            |
@@ -1122,25 +1137,28 @@ hardware type - `24`
 
 ### Format
 
-| Size  | Type    | Field                 |
-| ----- | ------- | --------------------- |
-| 1     | `uint8` | parameter type = `41` |
-| 2     | `uint8` | [size](#size)         |
-| 2     | `uint8` | [position](#position) |
-| 0...n | `uint8` | [chunk](#chunk)       |
+| Size   | Type    | Field                 |
+| ------ | ------- | --------------------- |
+| `1`    | `uint8` | parameter type = `41` |
+| `2`    | `uint8` | [size](#size)         |
+| `2`    | `uint8` | [position](#position) |
+| `0..n` | `uint8` | [chunk](#chunk)       |
 
-#### **size**
+#### size
+
 chunk size
 
-#### **position**
+#### position
+
 chink position
 
-#### **chunk**
+#### chunk
+
 chunk of bytes
 
 ### Examples
 
-#### Write a chunk of ssl certificate
+#### write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
 | -------------- | -------- | ---------- |
@@ -1169,12 +1187,13 @@ hardware type - `24`
 | `1`  | `uint8` | parameter type = `42` |
 | `4`  | `uint8` | [crc32](#crc32)       |
 
-#### **crc32**
+#### crc32
+
 crc32 of stored cacert to verify and if crc valid write to nbiot
 
 ### Examples
 
-#### Write SSL certificate to nbiot
+#### write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
 | -------------- | ------------ | ------------ |
@@ -1203,18 +1222,21 @@ hardware type - `24`
 | `2`     | `uint8` | [position](#position) |
 | `0...n` | `uint8` | [chunk](#chunk)       |
 
-#### **size**
+#### size
+
 chunk size
 
-#### **position**
+#### position
+
 chink position
 
-#### **chunk**
+#### chunk
+
 chunk of bytes
 
 ### Examples
 
-#### Write a chunk of ssl certificate
+#### write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
 | -------------- | -------- | ---------- |
@@ -1243,12 +1265,13 @@ hardware type - `24`
 | `1`  | `uint8` | parameter type = `44` |
 | `4`  | `uint8` | [crc32](#crc32)       |
 
-#### **crc32**
+#### crc32
+
 crc32 to check if client cert write correct and set it in nbiot module
 
 ### Examples
 
-#### Write SSL certificate to nbiot
+#### write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
 | -------------- | ------------ | ------------ |
@@ -1277,18 +1300,20 @@ hardware type - `24`
 | `2`    | `uint8` | [position](#position) |
 | `0..n` | `uint8` | [chunk](#chunk)       |
 
-#### **size**
+#### size
+
 chunk size
 
-#### **position**
+#### position
+
 chink position
 
-#### **chunk**
+#### chunk
 chunk of bytes
 
 ### Examples
 
-#### Write a chunk of ssl certificate
+#### write a chunk of ssl certificate
 
 | Field          | Value    | Hex        |
 | -------------- | -------- | ---------- |
@@ -1317,12 +1342,13 @@ hardware type - `24`
 | `1`  | `uint8` | parameter type = `46` |
 | `4`  | `uint8` | [crc32](#crc32)       |
 
-#### **crc32**
+#### crc32
+
 crc32 to check if client key write correct and set it in nbiot module
 
 ### Examples
 
-#### Write SSL certificate to nbiot
+#### write SSL certificate to nbiot
 
 | Field          | Value        | Hex          |
 | -------------- | ------------ | ------------ |
@@ -1349,8 +1375,9 @@ hardware type - `24`
 | `1`    | `uint8`  | parameter type = `47`                     |
 | `1-64` | `string` | [software image url](#software-image-url) |
 
-#### **software image url**
-software image URL where the image is stored. Will use nbiot to download the image and start the update.
+#### software image url
+
+Software image URL where the image is stored. Will use nbiot to download the image and start the update.
 After the update is finished successfully device will reboot and start updating in bootloader. The device will restart and send Activate.
 If the update unsuccessful no indication will be.
 
@@ -1383,8 +1410,10 @@ hardware type - `24`
 | `1`    | `uint8`  | parameter type = `48`                                   |
 | `1-64` | `string` | [module firmware image url](#module-firmware-image-url) |
 
-#### **module firmware image url**
-module firmware image URL where the image is stored(special DFOTA image). Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module
+#### module firmware image url
+
+Module firmware image URL where the image is stored(special DFOTA image).
+Will use nbiot DFOTA over HTTP/HTTPS to download image using and start update module.
 
 ### Examples
 
@@ -1414,14 +1443,16 @@ hardware type - `24`
 | ---- | ------- | ------------------------------- |
 | `1`  | `uint8` | parameter type = `49`           |
 | `1`  | `uint8` | [data type](#data-type)         |
-| `1`  | `uint8` | [hour](#minutes-hour)           |
-| `1`  | `uint8` | [minutes](#minutes-hour)        |
+| `1`  | `uint8` | [hour](#minuteshour)            |
+| `1`  | `uint8` | [minutes](#minuteshour)         |
 | `1`  | `uint8` | [count to send](#count-to-send) |
 
-#### **minutes** **hour**
+#### minutes/hour
+
 start time from sending reporting data
 
-#### **count to send**
+#### count to send
+
 how many data samples to send
 
 ### Examples
@@ -1458,14 +1489,16 @@ hardware type - `24`
 | `1`  | `uint8` | [send event](#send-event) |
 | `1`  | `uint8` | [save event](#save-event) |
 
-#### **event id**
+#### event id
 
 One of the [event types](./basics.md#device-events).
 
-#### **send event**
+#### send event
+
 is needed to send the event in a flash
 
-#### **save event**
+#### save event
+
 is needed to store events in flash
 
 ### Examples
@@ -1519,7 +1552,7 @@ Message hex dump with LRC: `04 01 33 63`
 | `1`    | `uint8`  | parameter type = `51`       |
 | `1-64` | `string` | [module info](#module-info) |
 
-#### **module info**
+#### module info
 
 Product identification information including the identifier of the device type
 and the revision of software NB-IoT module.
@@ -1541,11 +1574,14 @@ hardware type - `24`
 | `1`    | `uint8` | [count](#count)       |
 | `0-17` | `uint8` | [bands](#bands)       |
 
-#### **count**
+#### count
+
 band count to set
 
-#### **bands**
-Currently, preferred NB-IoT bands to be searched for. if set to 0 all bands that support the module will be searched (default)
+#### bands
+
+Currently, preferred NB-IoT bands to be searched for.
+If set to `0` all bands that support the module will be searched (default).
 
 ### Examples
 
@@ -1577,9 +1613,10 @@ hardware type - `24`
 | `1`    | `uint8`  | parameter type = `53` |
 | `1-64` | `string` | [APN](#apn)           |
 
-#### **APN**
-A logical name that is used to select the GGSN or the external packet data
-network. If the string size is `0` then the APN will be "network provided APN".
+#### APN
+
+A logical name that is used to select the GGSN or the external packet data network.
+If the string size is `0` then the APN will be "network provided APN".
 After the parameter is set NB-IoT module will be reset. Option accepted immediately.
 
 ### Examples
@@ -1614,10 +1651,12 @@ hardware type - `24`
 | `1`  | `uint8` | [enable led indication](#enable-led-indication)                                       |
 | `1`  | `uint8` | [enable NB-IoT network led](#enable-nbiot-network-led) (since software version `2.1`) |
 
-#### **enable led indication**
+#### enable led indication
+
 Enable or disable led indication. The device has an internal state machine that will be indicated by LED pattern.
 
-#### **enable NB-IoT network led**
+#### enable NB-IoT network led
+
 Enable or disable NB-IoT network led indication.
 
 NB-IoT network indication description: the different durations of ON and OFF indicate different network status.
@@ -1657,10 +1696,12 @@ Device will try PIN only one time. If PIN fails device will indicate the problem
 | `Missing SIM`     | `100ms`     | `3000ms`     |
 | `Error operation` | `100ms`     | `500ms`      |
 
-#### **missing SIM**
+#### missing SIM
+
 If SIM card is not detected or module has a problem enabling radio interface.
 
-#### **error operation**
+#### error operation
+
 If SIM PIN is incorrect or SIM card wait for PUK code.
 
 Available from software version = `2` for:<br>
@@ -1676,10 +1717,12 @@ hardware type - `24`
 | `1`  | `uint8`  | [enable](#enable)     |
 | `2`  | `uint16` | [PIN](#pin)           |
 
-#### **enable**
+#### enable
+
 set to use PIN for SIM card
 
-#### **PIN**
+#### PIN
+
 `2`-byte digital PIN code (`0000` pin will be `0` in digital format)
 
 ### Examples
@@ -1701,7 +1744,7 @@ Message hex dump with LRC: `03 04 37 01 00 00 64`
 
 Parameter to set/get channel type.
 The parameter defines the type of function or sensor that a channel serves within the device.
-Each channel can be configured as one of several [types](channel-type-values).
+Each channel can be configured as one of several [channel types](#channel-type-values).
 
 Available from software version = `0x02` for:<br/>
 hardware type - `0x06` hardware version - `0x12`
@@ -1717,7 +1760,7 @@ hardware type - `0x06` hardware version - `0x12`
 | `1`  | `uint8` | [channel type](#channel-type-values)      |
 | `1+` | `uint8` | [channel parameters](#channel-parameters) |
 
-#### **channel type values**
+#### channel type values
 
 The following channel types and their respective settings are supported:
 
@@ -1728,17 +1771,17 @@ The following channel types and their respective settings are supported:
 | `3`   | Binary sensor      | [binary sensor parameters](#binary-sensor-parameters)           |
 | `4`   | Temperature sensor | [temperature sensor parameters](#temperature-sensor-parameters) |
 
-### **channel parameters**
+#### channel parameters
 
 Parameters for the specific channel type.
 
-#### **binary sensor parameters**
+#### binary sensor parameters
 
 | Size | Type     | Field                  |
 | ---- | -------- | ---------------------- |
 | `2`  | `uint16` | active state time (ms) |
 
-#### **temperature sensor parameters**
+#### temperature sensor parameters
 
 | Size | Type     | Field                                                                                           |
 | ---- | -------- | ----------------------------------------------------------------------------------------------- |
@@ -1749,7 +1792,7 @@ Parameters for the specific channel type.
 
 ### Examples
 
-#### Set channel type: channel index: 1, type: power channel
+#### set channel type: channel index: 1, type: power channel
 
 | Field          | Value | Hex    |
 | -------------- | ----- | ------ |
@@ -1762,7 +1805,7 @@ Parameters for the specific channel type.
 Message hex dump with LRC: `03 03 38 00 02 6f`
 
 
-#### Set channel type: channel: 2, type: binary sensor
+#### set channel type: channel: 2, type: binary sensor
 
 | Field                  | Value  | Hex      |
 | ---------------------- | ------ | -------- |
@@ -1775,7 +1818,7 @@ Message hex dump with LRC: `03 03 38 00 02 6f`
 
 Message hex dump with LRC: `03 05 38 01 03 13 88 f2`
 
-#### Set channel type: channel: 3, type: temperature sensor
+#### set channel type: channel: 3, type: temperature sensor
 
 | Field                           | Value | Hex    |
 | ------------------------------- | ----- | ------ |
@@ -1790,7 +1833,7 @@ Message hex dump with LRC: `03 05 38 01 03 13 88 f2`
 
 Message hex dump with LRC: `03 08 38 02 04 0e 10 02 28 05`
 
-#### Set channel type: channel: 4, type: idle
+#### set channel type: channel: 4, type: idle
 
 | Field          | Value | Hex    |
 | -------------- | ----- | ------ |

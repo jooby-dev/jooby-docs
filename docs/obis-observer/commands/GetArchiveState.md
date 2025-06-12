@@ -7,13 +7,13 @@ Request/response to get the archive state for the specific meter, including the 
 
 ### Format
 
-| Size | Type                                 | Mandatory/optional | Field                                                     |
-| ---- | ------------------------------------ | ------------------ | --------------------------------------------------------- |
-| `1`  | `uint8`                              | mandatory          | command id = `0x0f`                                       |
-| `1`  | `uint8`                              | mandatory          | command size (dynamic, `2+`)                              |
-| `1`  | [Request ID](../types.md#request-id) | mandatory          | request/response unique identifier                        |
-| `1`  | `uint8`                              | mandatory          | archive type: <br/> `1` - archive 1 <br/> `2` - archive 2 |
-| `4`  | [Meter ID](../types.md#meter-id)     | optional           | meter unique identifier                                   |
+| Size | Type                                 | Mandatory/optional | Field                                                         |
+| ---- | ------------------------------------ | ------------------ | ------------------------------------------------------------- |
+| `1`  | `uint8`                              | mandatory          | command id = `0x0f`                                           |
+| `1`  | `uint8`                              | mandatory          | command size (dynamic, `2+`)                                  |
+| `1`  | [Request ID](../types.md#request-id) | mandatory          | request/response unique identifier                            |
+| `1`  | `uint8`                              | mandatory          | archive type: <br/> `1` - archive `1` <br/> `2` - archive `2` |
+| `4`  | [Meter ID](../types.md#meter-id)     | optional           | meter unique identifier                                       |
 
 If meter id field is provided, the observer will respond with information about that specified meter.
 If meter id field is not provided, the observer will respond with information about all meters.
@@ -75,7 +75,7 @@ Message hex dump: `10 0d 02 00 00 00 51 2c 2d ea ae 2c 2f 0a f6`
 
 If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-##### Result codes:
+##### result codes:
 
 | Result code | Description          |
 | ----------- | -------------------- |

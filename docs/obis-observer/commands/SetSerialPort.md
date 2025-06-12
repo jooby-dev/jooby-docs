@@ -58,7 +58,7 @@ Message hex dump: `0a 01 20`
 
 If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-##### Result codes:
+##### result codes:
 
 | Result code | Description   |
 | ----------- | ------------- |

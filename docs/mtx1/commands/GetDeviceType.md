@@ -37,7 +37,7 @@ Command hex dump: `04 00`
 
 ### Parameters
 
-#### **device type descriptor**
+#### device type descriptor
 
 Bit mask:
 

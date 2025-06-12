@@ -21,7 +21,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Parameters
 
-#### **load profile**
+#### load profile
 
 | Value | Parameter                                                                 |
 | ----- | ------------------------------------------------------------------------- |
@@ -106,7 +106,7 @@ Command hex dump: `5a 05 01 10 18 02 13`
 
 ### Parameters
 
-#### **negative energy**
+#### negative energy
 
 The value `0xffff` means no data is provided.<br>
 

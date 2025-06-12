@@ -9,14 +9,14 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-#### case #1 without energy type
+#### case #1: without energy type
 
 | Size | Type    | Field               |
 | ---- | ------- | ------------------- |
 | `1`  | `uint8` | command id = `0x5b` |
 | `1`  | `uint8` | command size = `0`  |
 
-#### case #2 with energy type
+#### case #2: with energy type
 
 | Size | Type    | Field                       |
 | ---- | ------- | --------------------------- |
@@ -95,7 +95,7 @@ Command hex dump: `5b 01 02`
 
 Command hex dump: `5b 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
 
-#### response to request with energy type (A-)
+#### response to request with energy type (`A-`)
 
 | Field                  | Value                                                                                               | Hex          |
 | ---------------------- | --------------------------------------------------------------------------------------------------- | ------------ |

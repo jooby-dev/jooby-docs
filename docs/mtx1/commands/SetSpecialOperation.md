@@ -22,7 +22,7 @@ Supported devices:
 
 ### Parameters
 
-#### Operation parameters for operation type `0x55`
+#### operation parameters for operation type `0x55`
 
 Bit mask:
 
@@ -56,7 +56,7 @@ Command hex dump: `64 02 85 03`
 
 ### Parameters
 
-#### Magnetic and electromagnetic screens
+#### magnetic and electromagnetic screens
 
 Bit mask:
 

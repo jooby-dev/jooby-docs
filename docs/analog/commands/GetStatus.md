@@ -53,23 +53,23 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **software type**
+#### software type
 
 Software type which at the moment is always `2`.
 
-#### **software version**
+#### software version
 
 Software version of the firmware.
 
-#### **hardware type**
+#### hardware type
 
 Device type.
 
-#### **hardware version**
+#### hardware version
 
 Device type revision.
 
-#### **battery voltage**
+#### battery voltage
 
 `3` bytes that store battery voltage values under different load.
 Under low load - battery voltage under minimum load (sleep mode), value in `mV`. Typical value is about `3600` `mV`.
@@ -104,22 +104,22 @@ Voltage values bit map (each line is a byte):
     </tbody>
 </table>
 
-#### **battery internal resistance**
+#### battery internal resistance
 
 Internal resistance of the battery in `mΩ`.
 If the value of the internal resistance is `65535` `mOhm`, then the resistance is unknown.
 Max value is about `60000` `mOhm`. Typical range is about `5000..28000` `mOhm`.
 
-#### **temperature**
+#### temperature
 
 It's a signed number in degrees Celsius.
 
-#### **remaining battery capacity**
+#### remaining battery capacity
 
 It's the remaining battery capacity, where `254` is `100%`.
 A value of `255` means that the remaining battery capacity is unknown.
 
-#### **sequence number**
+#### sequence number
 
 The last unread sensor event number in `48` hours.
 This field will automatically reset after `48` hours.

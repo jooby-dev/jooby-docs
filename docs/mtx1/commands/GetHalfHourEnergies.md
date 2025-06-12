@@ -15,14 +15,14 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | ---- | ------- | ---------------------------------------------------------------- |
 | `1`  | `uint8` | command id = `0x6f`                                              |
 | `1`  | `uint8` | command size = `5`                                               |
-| `2`  | `uint8` | [packed date](../../types.md#packed-date)                        |
+| `2`  | `uint8` | [packed date](../types.md#packed-date)                           |
 | `1`  | `uint8` | [demand type](#demand-type)                                      |
 | `2`  | `uint8` | index of the first requested record (valid index range `0 – 48`) |
 | `1`  | `uint8` | number of requested records                                      |
 
 ### Parameters
 
-#### **demand type**
+#### demand type
 
 | Value | Hex    | Demand type      |
 | ----- | ------ | ---------------- |
@@ -37,14 +37,14 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 #### get A+ energy
 
-| Field                                     | Value                               | Hex      |
-| ----------------------------------------- | ----------------------------------- | -------- |
-| command id                                | `111`                               | `0x6f`   |
-| command size                              | `5`                                 | `0x05`   |
-| [packed date](../../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
-| [demand type](#demand-type)               | `A+`                                | `0x01`   |
-| index of the first requested record       | `5`                                 | `0x0005` |
-| number of requested records               | `10`                                | `0x0a`   |
+| Field                                  | Value                               | Hex      |
+| -------------------------------------- | ----------------------------------- | -------- |
+| command id                             | `111`                               | `0x6f`   |
+| command size                           | `5`                                 | `0x05`   |
+| [packed date](../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
+| [demand type](#demand-type)            | `A+`                                | `0x01`   |
+| index of the first requested record    | `5`                                 | `0x0005` |
+| number of requested records            | `10`                                | `0x0a`   |
 
 Command hex dump: `6f 05 2a43 01 05 0a`
 
@@ -57,7 +57,7 @@ Command hex dump: `6f 05 2a43 01 05 0a`
 | ----- | ------------------------------- | ---------------------------------------------------------- |
 | `1`   | `uint8`                         | command id = `0x6f`                                        |
 | `1`   | `uint8`                         | command size = `5+`                                        |
-| `2`   | `uint8`                         | [packed date](../../types.md#packed-date)                  |
+| `2`   | `uint8`                         | [packed date](../types.md#packed-date)                     |
 | `1`   | `uint8`                         | [demand type](#demand-type)                                |
 | `1`   | `uint8`                         | index of the first requested record                        |
 | `1`   | `uint8`                         | number of requested records                                |
@@ -67,7 +67,7 @@ Command hex dump: `6f 05 2a43 01 05 0a`
 
 ### Parameters
 
-#### **tariff energy**
+#### tariff energy
 
 | Bit range | Field              | Description                                                        |
 | --------- | ------------------ | ------------------------------------------------------------------ |
@@ -78,17 +78,17 @@ Command hex dump: `6f 05 2a43 01 05 0a`
 
 #### get A+ energy
 
-| Field                                     | Value                                | Hex      |
-| ----------------------------------------- | ------------------------------------ | -------- |
-| command id                                | `111`                                | `0x6f`   |
-| command size                              | `11`                                 | `0x0b`   |
-| [packed date](../../types.md#packed-date) | year: `2021`, month: `2`, date: `3`  | `0x2a43` |
-| [demand type](#demand-type)               | `A+`                                 | `0x01`   |
-| index of the first requested record       | `4`                                  | `0x04`   |
-| number of requested records               | `3`                                  | `0x03`   |
-| accumulated data `0:00-0:15`              | tariff: `T2`,  accumulated data:`16` | `0x4010` |
-| accumulated data `0:15-0:30`              | tariff: `T2`,  accumulated data:`18` | `0x4012` |
-| accumulated data `0:30-0:45`              | tariff: `T4`,  accumulated data:`17` | `0xc011` |
+| Field                                  | Value                                | Hex      |
+| -------------------------------------- | ------------------------------------ | -------- |
+| command id                             | `111`                                | `0x6f`   |
+| command size                           | `11`                                 | `0x0b`   |
+| [packed date](../types.md#packed-date) | year: `2021`, month: `2`, date: `3`  | `0x2a43` |
+| [demand type](#demand-type)            | `A+`                                 | `0x01`   |
+| index of the first requested record    | `4`                                  | `0x04`   |
+| number of requested records            | `3`                                  | `0x03`   |
+| accumulated data `0:00-0:15`           | tariff: `T2`,  accumulated data:`16` | `0x4010` |
+| accumulated data `0:15-0:30`           | tariff: `T2`,  accumulated data:`18` | `0x4012` |
+| accumulated data `0:30-0:45`           | tariff: `T4`,  accumulated data:`17` | `0xc011` |
 
 Command hex dump: `76 0b 2a43 01 04 03 4010 4012 c011`
 

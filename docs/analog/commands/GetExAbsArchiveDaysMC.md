@@ -20,17 +20,17 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
 <br/>
 [See details](../types.md#packed-date).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
-#### **days**
+#### days
 
 The number of days to get data from archive.
 
@@ -77,17 +77,17 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
 <br/>
 [See details](../types.md#packed-date).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
-#### **days**
+#### days
 
 The number of days from archive.
 

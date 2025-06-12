@@ -39,7 +39,7 @@ Command hex dump: `70 00`
 | `1`  | `uint8` | date (month day number which starts from `1`) |
 | `1`  | `uint8` | month (`1` - January ... `12` - December)     |
 | `1`  | `uint8` | year (number of years after `2000`)           |
-| `3`  | `uint8` | version information (as semver 3 numbers)     |
+| `3`  | `uint8` | version information (as semver `3` numbers)   |
 
 ### Examples
 

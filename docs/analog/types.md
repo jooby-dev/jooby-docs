@@ -363,7 +363,7 @@ Note that bit position `0` is for channel number `1`.
 If bits `0`, `1`, `2`, `3` are set - this means that values from that channels in that order are stored in the command (channels `1`, `2`, `3`, `4`).
 The data for channel at `0` position comes first, then the second, the third and so on.
 To store up to `7` channels `1` byte is required. To store up to `14` - `2` bytes and so on.
-Usually this bit set takes from `1` to `5` bytes as there are 4 channels max available.
+Usually this bit set takes from `1` to `5` bytes as there are `4` channels max available.
 
 ### Examples
 
@@ -401,7 +401,7 @@ The final sequence is `e0 20 d2 3f a4 01 4b`.
 
 # Pulse coefficient
 
-It's `1`-byte value of the pulse coefficient for a metering device, which determines the correspondence of consumed resources to 1 pulse.
+It's `1`-byte value of the pulse coefficient for a metering device, which determines the correspondence of consumed resources to `1` pulse.
 If the most significant bit is `0`, then the remaining `7` bits represent the value of the pulse coefficient,
 i.e. `0x0A` (`10`) for `10` cubic decimeters = `10` liters = `0.01` cubic meters per pulse.
 If the most significant bit is `1` then the value of pulse coefficient is determined from the table:
@@ -418,7 +418,7 @@ If the most significant bit is `1` then the value of pulse coefficient is determ
 
 
 ## string
-bytes array of uint8 code points that range in value from 0 through 255. Each code point, or character code, represents a single character.
+bytes array of uint8 code points that range in value from `0` through `255`. Each code point, or character code, represents a single character.
 
 ### Format
 

@@ -23,17 +23,17 @@ It's a command with a [two-bytes header](../../message.md#command-with-a-two-byt
 
 ### Parameters
 
-#### **date**
+#### date
 
 The command contains pulse counter of channels for this date.
 <br/>
 [See details](../../types.md#packed-date).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../../types.md#channels-bit-set).
 
-#### **channel values**
+#### channel values
 
 It's pulse counter's values for selected channels.
 <br/>

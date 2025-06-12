@@ -42,7 +42,7 @@ Message hex dump: `75 00`
 
 ### Parameters
 
-#### Display-settings
+#### display settings
 
 Bit mask:
 

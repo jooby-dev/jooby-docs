@@ -41,7 +41,7 @@ Command hex dump: `2d 00`
 
 ### Parameters
 
-#### **relay status 1**
+#### relay status 1
 
 Bit mask:
 
@@ -54,7 +54,7 @@ Bit mask:
 | `RELAY_IMAX`         | `6` | relay disabled due to maximum current              |
 | `RELAY_PMAX`         | `7` | relay disabled due to maximum power                |
 
-#### **relay status 2**
+#### relay status 2
 
 | Name                           | Bit | Description                                                                   |
 | ------------------------------ | --- | ----------------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ Bit mask:
 | `RELAY_SALDO_OFF_ON_MAX_POWER` | `4` | relay disabled due to exceeding permissible power in balance restriction mode |
 | `RELAY_HARD_ST1`               | `5` | relay enabled by hardware                                                     |
 
-#### **status 1**
+#### status 1
 
 | Name    | Bit | Description                 |
 | ------- | --- | --------------------------- |
@@ -78,7 +78,7 @@ Bit mask:
 | `MAXIA` | `6` | current above threshold     |
 | `MAXP`  | `7` | power above threshold       |
 
-#### **status 2**
+#### status 2
 
 | Name               | Bit | Description                   |
 | ------------------ | --- | ----------------------------- |
@@ -87,7 +87,7 @@ Bit mask:
 | `CLOCK_UNSET`      | `3` | clock not synchronized        |
 | `MIN_COS_FI`       | `5` | `cos φ` below threshold       |
 
-#### **status 3**
+#### status 3
 
 | Name               | Bit | Description                                     |
 | ------------------ | --- | ----------------------------------------------- |

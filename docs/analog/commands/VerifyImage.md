@@ -46,7 +46,7 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **status**
+#### status
 
 `1` - the image is correct <br/>
 `0` - the image is incorrect

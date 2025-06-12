@@ -9,14 +9,14 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-#### case #1 without energy type
+#### case #1: without energy type
 
 | Size | Type    | Field               |
 | ---- | ------- | ------------------- |
 | `1`  | `uint8` | command id = `0x03` |
 | `1`  | `uint8` | command size = `0`  |
 
-#### case #2 with energy type
+#### case #2: with energy type
 
 | Size | Type    | Field                       |
 | ---- | ------- | --------------------------- |
@@ -78,10 +78,10 @@ Command hex dump: `03 01 02`
 | `1`  | `uint8` | year (number of years after `2000`)           |
 | `1`  | `uint8` | month (`1` - January ... `12` - December)     |
 | `1`  | `uint8` | date (month day number which starts from `1`) |
-| `4`  | `int32` | active energy for tariff `T1`, `A+` (`1.8.1`)  |
-| `4`  | `int32` | active energy for tariff `T2`, `A+` (`1.8.2`)  |
-| `4`  | `int32` | active energy for tariff `T3`, `A+` (`1.8.3`)  |
-| `4`  | `int32` | active energy for tariff `T4`, `A+` (`1.8.4`)  |
+| `4`  | `int32` | active energy for tariff `T1`, `A+` (`1.8.1`) |
+| `4`  | `int32` | active energy for tariff `T2`, `A+` (`1.8.2`) |
+| `4`  | `int32` | active energy for tariff `T3`, `A+` (`1.8.3`) |
+| `4`  | `int32` | active energy for tariff `T4`, `A+` (`1.8.4`) |
 
 #### response to request with energy type
 

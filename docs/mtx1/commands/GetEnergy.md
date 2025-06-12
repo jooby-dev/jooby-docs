@@ -9,14 +9,14 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-#### case #1 without energy type
+#### case #1: without energy type
 
 | Size | Type    | Field               |
 | ---- | ------- | ------------------- |
 | `1`  | `uint8` | command id = `0x0f` |
 | `1`  | `uint8` | command size = `0`  |
 
-#### case #2 with energy type
+#### case #2: with energy type
 
 | Size | Type    | Field                       |
 | ---- | ------- | --------------------------- |
@@ -60,10 +60,10 @@ Command hex dump: `0f 01 01`
 
 #### response to request without energy type
 
-| Size | Type    | Field                                        |
-| ---- | ------- | -------------------------------------------- |
-| `1`  | `uint8` | command id = `0x0f`                          |
-| `1`  | `uint8` | command size = `16`                          |
+| Size | Type    | Field                                         |
+| ---- | ------- | --------------------------------------------- |
+| `1`  | `uint8` | command id = `0x0f`                           |
+| `1`  | `uint8` | command size = `16`                           |
 | `4`  | `int32` | active energy for tariff `T1`, `A+` (`1.8.1`) |
 | `4`  | `int32` | active energy for tariff `T2`, `A+` (`1.8.2`) |
 | `4`  | `int32` | active energy for tariff `T3`, `A+` (`1.8.3`) |
@@ -95,7 +95,7 @@ Command hex dump: `0f 01 01`
 
 Command hex dump: `0f 10 02 66 f2 ae 00 32 e0 64 00 00 09 1d 00 20 bd 57`
 
-#### response to request with energy type (A+)
+#### response to request with energy type (`A+`)
 
 | Field                  | Value                                                                                               | Hex          |
 | ---------------------- | --------------------------------------------------------------------------------------------------- | ------------ |

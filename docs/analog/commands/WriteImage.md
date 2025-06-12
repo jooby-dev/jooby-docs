@@ -20,11 +20,11 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **offset**
+#### offset
 
 The offset at which to write the image content to the device's flash memory.
 
-#### **image content**
+#### image content
 
 The image content size should be a multiple of `8`.
 <br/>
@@ -58,11 +58,11 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **offset**
+#### offset
 
 The offset at which to write the image content to the device's flash memory.
 
-#### **status**
+#### status
 
 `1` - the writing was successful <br/>
 `0` - the writing failed

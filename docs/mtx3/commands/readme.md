@@ -126,13 +126,13 @@ There are `2` types of command direction:
             <td><code>GetHalfHourDemand</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemand.md#request">request</a> / <a href="./GetHalfHourDemand.md#response">response</a></td>
-            <td>Get active energy (<code>A+</code>) in half hours by date.</td>
+            <td>Get the active energy (<code>A+</code>) in half hours by date.</td>
         </tr>
         <td><code>0x016</code></td>
             <td><code>GetDayDemand</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetDayDemand.md#request">request</a> / <a href="./GetDayDemand.md#response">response</a></td>
-            <td>Get daily active energy (<code>A+, R+, R-</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
+            <td>Get the daily active energy (<code>A+, R+, R-</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
         </tr>
         <tr>
             <td><code>0x17</code></td>
@@ -335,14 +335,14 @@ There are `2` types of command direction:
             <td><code>GetHalfHourDemandVari</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemandVari.md#request">request</a> / <a href="./GetHalfHourDemandVari.md#response">response</a></td>
-            <td>Get reactive energy (<code>`A+R+`</code>) in half hours by date.</td>
+            <td>Get the reactive energy (<code>`A+R+`</code>) in half hours by date.</td>
         </tr>
         <tr>
             <td><code>0x49</code></td>
             <td><code>GetHalfHourDemandVare</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemandVare.md#request">request</a> / <a href="./GetHalfHourDemandVare.md#response">response</a></td>
-            <td>Get reactive energy (<code>`A+R-`</code>) in half hours by date.</td>
+            <td>Get the reactive energy (<code>`A+R-`</code>) in half hours by date.</td>
         </tr>
         <tr>
             <td><code>0x4e</code></td>
@@ -377,21 +377,21 @@ There are `2` types of command direction:
             <td><code>GetHalfHourDemandExport</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemandExport.md#request">request</a> / <a href="./GetHalfHourDemandExport.md#response">response</a></td>
-            <td>Get active energy <code>A-</code> (<code>II</code> - <code>III</code> quadrant) in half hours by date.</td>
+            <td>Get the active energy <code>A-</code> (<code>II</code> - <code>III</code> quadrant) in half hours by date.</td>
         </tr>
         <tr>
             <td><code>0x54</code></td>
             <td><code>GetHalfHourDemandVariExport</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemandVariExport.md#request">request</a> / <a href="./GetHalfHourDemandVariExport.md#response">response</a></td>
-            <td>Get reactive energy <code>`A-R+`</code> in half hours by date.</td>
+            <td>Get the reactive energy <code>`A-R+`</code> in half hours by date.</td>
         </tr>
         <tr>
             <td><code>0x55</code></td>
             <td><code>GetHalfHourDemandVareExport</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemandVareExport.md#request">request</a> / <a href="./GetHalfHourDemandVareExport.md#response">response</a></td>
-            <td>Get reactive energy <code>`A-R-`</code> in half hours by date.</td>
+            <td>Get the reactive energy <code>`A-R-`</code> in half hours by date.</td>
         </tr>
         <tr>
             <td><code>0x56</code></td>

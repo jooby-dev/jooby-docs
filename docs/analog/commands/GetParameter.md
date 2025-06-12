@@ -18,7 +18,7 @@ In response, the sensor will transmit the current value of the requested paramet
 
 ### Parameters
 
-#### **parameter type**
+#### parameter type
 
 See [available parameter types](../parameter-types.md).
 
@@ -43,18 +43,18 @@ It's a mandatory confirmation to [GetParameter request](./GetParameter.md#reques
 
 | Size | Type    | Field                             |
 | ---- | ------- | --------------------------------- |
-|`1`    | `uint8` | command id = `0x04`               |
-|`1`    | `uint8` | command size (dynamic, `2+`)      |
-|`1`    | `uint8` | [parameter type](#parameter-type) |
-|`1+`   | `uint8` | [parameter data](#parameter-data) |
+| `1`  | `uint8` | command id = `0x04`               |
+| `1`  | `uint8` | command size (dynamic, `2+`)      |
+| `1`  | `uint8` | [parameter type](#parameter-type) |
+| `1+` | `uint8` | [parameter data](#parameter-data) |
 
 ### Parameters
 
-#### **parameter type**
+#### parameter type
 
 See [available parameter types](../parameter-types.md).
 
-#### **parameter data**
+#### parameter data
 
 Type-specific structures.
 

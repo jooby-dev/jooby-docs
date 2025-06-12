@@ -367,7 +367,7 @@ By default, the archive period is `15` minutes.
 
 ## Serial port parameters
 
-### **baud rate**
+### baud rate
 
 The serial port baud rate.
 
@@ -388,11 +388,11 @@ The serial port baud rate.
 | `12`  | `115200`  |
 
 
-### ***data bits***
+### data bits
 
 Serial port word length or data bits (supported: `7`, `8`)
 
-### **parity**
+### parity
 
 The serial port parity setting.
 

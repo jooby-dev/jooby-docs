@@ -52,7 +52,7 @@ Command hex dump: `39 00`
 
 ### Parameters
 
-#### Relay status
+#### relay status
 
 Bit mask:
 
@@ -65,7 +65,7 @@ Bit mask:
 | `RELAY_IMAX`         | `6` | relay turned off due to overcurrent          |
 | `RELAY_PMAX`         | `7` | relay turned off due to overpower            |
 
-#### Calibration flags
+#### calibration flags
 
 Bit mask:
 
@@ -220,5 +220,5 @@ Command hex dump: `39 1f 01001001 00000078 0000004b 00000140 00000079 0000001e 0
 ## See also
 
 * [Access level](../basics.md#command-access-level)
-* [Event status](./GetEventStatus.md#status-event-set-1)
-* [Event status 2](./GetEventStatus.md#status-event-set-2)
+* [Event status](../../mtx1/commands/GetEventStatus.md#status-event-set-1)
+* [Event status 2](../../mtx1/commands/GetEventStatus.md#status-event-set-2)

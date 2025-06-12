@@ -1,10 +1,10 @@
 # GetDayEnergies
 
-Uplink command to get day energies by 4 tariffs (T1-T4).
+Uplink command to get day energies by `4` tariffs (`T1`-`T4`).
 
 **This command can be transmitted only via Lora.**
 
-The command access level is [UNENCRYPTED](../basics.md#command-access-level).
+The command access level is [UNENCRYPTED](../../basics.md#command-access-level).
 
 
 ## Event
@@ -45,7 +45,7 @@ The command access level is [UNENCRYPTED](../basics.md#command-access-level).
 
 ### Parameters
 
-#### **energy flags**
+#### energy flags
 
 | Bit number | Name         | Description                                    |
 | ---------- | ------------ | ---------------------------------------------- |
@@ -56,7 +56,7 @@ The command access level is [UNENCRYPTED](../basics.md#command-access-level).
 | `4`        | `VARI_EXP`   | positive (inductive) reactive energy (`A-R+`)  |
 | `5`        | `VARE_EXP`   | negative (capacitive) reactive energy (`A-R-`) |
 
-#### **tariff flags**
+#### tariff flags
 
 Bit field determines non-zero energies by tariff.
 If the data for a tariff is `0` they are not transmitted, and the corresponding bit in this field will be reset to `0`.
@@ -89,5 +89,5 @@ Command hex dump: `78 0c 2a 43 11 11 00 00 10 00 00 00 20 00`
 
 ## See also
 
-* [Access level](../basics.md#command-access-level)
+* [Access level](../../basics.md#command-access-level)
 * [Packed date](../../types.md#packed-date)

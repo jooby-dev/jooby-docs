@@ -55,7 +55,7 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 

@@ -41,7 +41,7 @@ Message hex dump: `01 01 03`
 
 ### Parameters
 
-#### **version**
+#### version
 
 | Size | Type    | Field                |
 | ---- | ------- | -------------------- |

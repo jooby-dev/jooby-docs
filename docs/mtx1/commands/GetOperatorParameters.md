@@ -81,7 +81,7 @@ Command hex dump: `1e 00`
 
 ### Parameters
 
-#### Display settings for meter readings
+#### display settings for meter readings
 
 Bit mask:
 
@@ -117,7 +117,7 @@ Bit mask:
 | -                              | `30` | not used                                                                |
 | `AUTO_SCREEN_SCROLLING`        | `31` | enable automatic display scrolling (applies only to the main display)   |
 
-#### Relay set 4
+#### relay set 4
 
 Bit mask:
 
@@ -131,7 +131,7 @@ Bit mask:
 | `RELAY_ON_MAGNET_TIMEOUT` | `5` | enable relay after `timeoutRelayOn` timeout (not used) |
 | `RELAY_ON_MAGNET_AUTO`    | `6` | enable relay after removal of magnetic field           |
 
-#### Relay set 3
+#### relay set 3
 
 Bit mask:
 
@@ -143,7 +143,7 @@ Bit mask:
 | `RELAY_OFF_LIM_TARIFF_4` | `4` | disable by exceeding power consumption limit for tariff `T4` |
 | `RELAY_OFF_PF_MIN`       | `5` | disable by `cos φ`                                           |
 
-#### Relay set 2
+#### relay set 2
 
 Bit mask:
 
@@ -158,7 +158,7 @@ Bit mask:
 | `RELAY_OFF_I_LIMIT`  | `6` | disable by exceeding load current                 |
 | `RELAY_OFF_V_BAD`    | `7` | disable by poor voltage quality                   |
 
-#### Relay set 1
+#### relay set 1
 
 Bit mask:
 
@@ -173,7 +173,7 @@ Bit mask:
 | `RELAY_ON_TARIFF_4` | `6` | enable by tariff `T4`                            |
 | `RELAY_ON_V_GOOD`   | `7` | enable by restoration of good voltage quality    |
 
-#### Define 1
+#### define 1
 
 Bit mask:
 
@@ -182,7 +182,7 @@ Bit mask:
 | `BLOCK_KEY_OPTOPORT`  | `2` | `1` - optoport is unlocked by button, `0` - optoport is unlocked |
 | `MAGNET_SCREEN_CONST` | `5` | `1` - constant magnetic influence screen (`104.21.017`)          |
 
-#### Setting for displaying meter readings on additional displays
+#### setting for displaying meter readings on additional displays
 
 Bit mask:
 
@@ -194,7 +194,7 @@ Bit mask:
 | `OPTOPORT_SPEED`       | `30`     | allows display of current optoport speed (`104.21.017`)                                                 |
 | `SORT_DISPLAY_SCREENS` | `31`     | enable new display sorting                                                                              |
 
-#### Relay set 5
+#### relay set 5
 
 Bit mask:
 
@@ -224,17 +224,17 @@ Bit mask:
 | display active time                                                              | `127`    | `0x7f`       |
 | display active time for each screen                                              | `7`      | `0x07`       |
 | display settings for meter readings                                              | `?`      | `0x80003184` |
-| relay set 4                                                                      | `?`      | `0x00`       |
-| relay set 3                                                                      | `?`      | `0x00`       |
-| relay set 2                                                                      | `?`      | `0x03`       |
-| relay set 1                                                                      | `?`      | `0x03`       |
+| relay set `4`                                                                    | `?`      | `0x00`       |
+| relay set `3`                                                                    | `?`      | `0x00`       |
+| relay set `2`                                                                    | `?`      | `0x03`       |
+| relay set `1`                                                                    | `?`      | `0x03`       |
 | display type on the remote display                                               | `0`      | `0x00`       |
 | integration period for energy profiles (`ten`)                                   | `0`      | `0x00`       |
 | timeout refresh                                                                  | `240`    | `0x00f0`     |
 | allowed correction interval                                                      | `15`     | `0x0f`       |
 | timeout for relay shutdown upon magnetic interference                            | `5`      | `0x05`       |
 | timeout for relay activation after magnetic field removal                        | `5`      | `0x05`       |
-| define 1                                                                         | `?`      | `0x00`       |
+| define `1`                                                                       | `?`      | `0x00`       |
 | timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI` | `1`      | `0x01`       |
 | timeout for relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`           | `0`      | `0x00`       |
 | timeout for relay activation upon restoration of quality voltage                 | `5`      | `0x05`       |
@@ -254,7 +254,7 @@ Bit mask:
 | setting for displaying meter readings on additional displays                     | `?`      | `0x08383fff` |
 | timeout for relay deactivation based on current inequality                       | `5`      | `0x05`       |
 | timeout for relay deactivation upon detection of power with different polarities | `5`      | `0x05`       |
-| relay set 5                                                                      | `?`      | `0x00`       |
+| relay set `5`                                                                    | `?`      | `0x00`       |
 | allowed correction period                                                        | `24`     | `0x18`       |
 
 Command hex dump: `1e 4a 00040b28 00026160 0001d4c0 00007c38 00007c38 00007c38 00007c38 00 1e 01 7f 07 80003184 00 00 03 03 00 00 00f0 0f 05 05 00 01 00 05 05 37 2d 00  00 00 00 00 02 00 05 05 05  01 08383fff 05 05 00 18`

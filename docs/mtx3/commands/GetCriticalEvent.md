@@ -18,7 +18,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Parameters
 
-#### **event type**
+#### event type
 
 One of the following event types:
 

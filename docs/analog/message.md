@@ -29,7 +29,7 @@ The `LRC` is calculated by performing an XOR operation on the content of the mes
 
 Each [command](./commands/readme.md) consists of header and optional data body.
 
-There can be 3 types of headers in commands.
+There can be `3` types of headers in commands.
 
 ### Command with a one-byte header
 

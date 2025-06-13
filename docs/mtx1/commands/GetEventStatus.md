@@ -37,7 +37,7 @@ Command hex dump: `01 00`
 
 ### Parameters
 
-#### Status event set 1
+#### status event set 1
 
 Bit mask:
 
@@ -52,7 +52,7 @@ Bit mask:
 | `TIME_SET`                 | `6` | time set                                                |
 | `TIME_CORRECT`             | `7` | time correction                                         |
 
-#### Status event set 2
+#### status event set 2
 
 Bit mask:
 
@@ -68,12 +68,12 @@ Bit mask:
 
 ### Examples
 
-| Field              | Value                                                                                                                                                                                                                            | Hex    |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| command id         | `1`                                                                                                                                                                                                                              | `0x01` |
-| command size       | `2`                                                                                                                                                                                                                              | `0x02` |
-| status event set 1 | `CASE_OPEN`: `true`<br>`MAGNETIC_ON`: `false`<br>`PARAMETERS_UPDATE_REMOTE`: `true`<br>`PARAMETERS_UPDATE_LOCAL`: `false`<br>`RESTART`: `false`<br>`ERROR_ACCESS`: `false`<br>`TIME_SET`: `false`<br>`TIME_CORRECT`: `true`      | `0x85` |
-| status event set 2 | `DEVICE_FAILURE`: `false`<br>`CASE_TERMINAL_OPEN`: `false`<br>`CASE_MODULE_OPEN`: `false`<br>`TARIFF_TABLE_SET`: `false`<br>`TARIFF_TABLE_GET`: `true`<br>`PROTECTION_RESET_EM`: `false`<br>`PROTECTION_RESET_MAGNETIC`: `false` | `0x10` |
+| Field                | Value                                                                                                                                                                                                                            | Hex    |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| command id           | `1`                                                                                                                                                                                                                              | `0x01` |
+| command size         | `2`                                                                                                                                                                                                                              | `0x02` |
+| status event set `1` | `CASE_OPEN`: `true`<br>`MAGNETIC_ON`: `false`<br>`PARAMETERS_UPDATE_REMOTE`: `true`<br>`PARAMETERS_UPDATE_LOCAL`: `false`<br>`RESTART`: `false`<br>`ERROR_ACCESS`: `false`<br>`TIME_SET`: `false`<br>`TIME_CORRECT`: `true`      | `0x85` |
+| status event set `2` | `DEVICE_FAILURE`: `false`<br>`CASE_TERMINAL_OPEN`: `false`<br>`CASE_MODULE_OPEN`: `false`<br>`TARIFF_TABLE_SET`: `false`<br>`TARIFF_TABLE_GET`: `true`<br>`PROTECTION_RESET_EM`: `false`<br>`PROTECTION_RESET_MAGNETIC`: `false` | `0x10` |
 
 Command hex dump: `01 02 85 10`
 

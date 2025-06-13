@@ -32,8 +32,8 @@ Command hex dump: `3a 00`
 | ---- | -------- | ------------------- |
 | `1`  | `uint8`  | command id = `0x3a` |
 | `1`  | `uint8`  | command size = `4`  |
-| `4`  | `int16`  | temperature         |
-| `4`  | `uint16` | supply frequency    |
+| `2`  | `int16`  | temperature         |
+| `2`  | `uint16` | supply frequency    |
 
 ### Examples
 

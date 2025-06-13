@@ -21,14 +21,14 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **sequence number**
+#### sequence number
 
 It's a unique number for each time correction request.
-Use the last received [sequence number](./uplink/Time2000.md#sequence-number) + `1` as a starting point.
+Use the last received [sequence number](./GetTime2000.md#sequence-number) + `1` as a starting point.
 Then increment this value for each following request.
 It should be done to avoid double processing of the request.
 
-#### **seconds**
+#### seconds
 
 The number of seconds to correct device time.
 Use positive values to shift time to the future. Negative - to the past.
@@ -60,7 +60,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **status**
+#### status
 
 `1` - the time setting was successful <br/>
 `0` - time setting failed (the [sequence number](#sequence-number) parameter was not changed)
@@ -92,4 +92,4 @@ Message hex dump with LRC: `02 02 00 55`
 
 * [Device time management](../basics.md#device-time-management)
 * [Downlink command CorrectTime2000](../commands/CorrectTime2000.md)
-* [Uplink event Time2000](../commands/uplink/Time2000.md)
+* [Uplink event Time2000](../commands/GetTime2000.md)

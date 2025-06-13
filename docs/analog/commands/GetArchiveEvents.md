@@ -18,11 +18,11 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **start time**
+#### start time
 
 Start time in seconds to read from archive (in [time 2000](../types.md#time-2000) format).
 
-#### **events**
+#### events
 
 The number of events to get from archive.
 
@@ -63,15 +63,15 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **event time**
+#### event time
 
 Event time in [time 2000](../types.md#time-2000) format.
 
-#### **event id**
+#### event id
 
 One of the [device event](../basics.md#device-events).
 
-#### **sequence number**
+#### sequence number
 
 It's a unique number for each event.
 

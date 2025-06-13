@@ -9,7 +9,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-#### case #1 without energy type
+#### case #1: without energy type
 
 | Size | Type    | Field                                         |
 | ---- | ------- | --------------------------------------------- |
@@ -19,7 +19,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | `1`  | `uint8` | month (`1` - January ... `12` - December)     |
 | `1`  | `uint8` | date (month day number which starts from `1`) |
 
-#### case #2 with energy type
+#### case #2: with energy type
 
 | Size | Type    | Field                                         |
 | ---- | ------- | --------------------------------------------- |

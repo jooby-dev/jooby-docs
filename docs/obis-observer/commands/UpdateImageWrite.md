@@ -18,7 +18,7 @@ This command is part of update procedure.
 
 ### Parameters
 
-#### **image content**
+#### image content
 
 The image content size should be a multiple of `16`.
 <br/>
@@ -62,7 +62,7 @@ Message hex dump: `2b 01 21`
 
 If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-##### Result codes:
+##### result codes:
 
 | Result code | Description                   |
 | ----------- | ----------------------------- |

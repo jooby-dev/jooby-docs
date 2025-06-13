@@ -1,6 +1,6 @@
 # GetHalfHourDemandExport
 
-Request/response to get active energy `A-` (`II` - `III` quadrant) in half hours by date.
+Request/response to get the active energy `A-` (`II` - `III` quadrant) in half hours by date.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
@@ -60,7 +60,7 @@ Command hex dump: `53 03 18 02 13`
 
 ### Parameters
 
-#### **active energy**
+#### active energy
 
 The value `0xffff` means no data is provided.<br>
 

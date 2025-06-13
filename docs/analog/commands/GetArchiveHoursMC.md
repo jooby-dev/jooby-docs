@@ -19,19 +19,19 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
 <br/>
 [See details](../types.md#packed-date).
 
-#### **hours**
+#### hours
 
-It`s full value of pulse counter with diff for each next hours (8 hours if reporting data interval is set to 4 hours).
+It's full value of pulse counter with diff for each next hours (`8` hours if reporting data interval is set to `4` hours).
 <br/>
 [See details](../types.md#packed-hours).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
@@ -76,19 +76,19 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
 <br/>
 [See details](../types.md#packed-date).
 
-#### **hours**
+#### hours
 
-It`s full value of pulse counter with diff for each next hours (8 hours if reporting data interval is set to 4 hours).
+It's full value of pulse counter with diff for each next hours (`8` hours if reporting data interval is set to `4` hours).
 <br/>
 [See details](../types.md#packed-hours).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 

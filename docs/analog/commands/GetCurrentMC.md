@@ -51,11 +51,11 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
-#### **channel values**
+#### channel values
 
 It's pulse counter's values for selected channels.
 <br/>

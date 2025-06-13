@@ -1,6 +1,6 @@
 # GetMonthDemandExport
 
-Request/response to get the monthly energies (`A-`, `A-R+`, `A-R-`) for 4 tariffs (`T1`-`T4`).<br>
+Request/response to get the monthly energies (`A-`, `A-R+`, `A-R-`) for `4` tariffs (`T1`-`T4`).<br>
 Applicable to type `G` meters.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).

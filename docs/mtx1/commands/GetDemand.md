@@ -15,7 +15,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | ---- | -------- | ----------------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x76`                                                           |
 | `1`  | `uint8`  | command size = `7`                                                            |
-| `2`  | `uint8`  | [packed date](../../types.md#packed-date)                                     |
+| `2`  | `uint8`  | [packed date](../types.md#packed-date)                                        |
 | `1`  | `uint8`  | [demand type](#demand-type)                                                   |
 | `2`  | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
 | `1`  | `uint8`  | number of requested records                                                   |
@@ -27,7 +27,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | ---- | -------- | ----------------------------------------------------------------------------- |
 | `1`  | `uint8`  | command id = `0x76`                                                           |
 | `1`  | `uint8`  | command size = `7`                                                            |
-| `2`  | `uint8`  | [packed date](../../types.md#packed-date)                                     |
+| `2`  | `uint8`  | [packed date](../types.md#packed-date)                                        |
 | `1`  | `uint8`  | [demand type](#demand-type)                                                   |
 | `2`  | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
 | `1`  | `uint8`  | number of requested records                                                   |
@@ -35,7 +35,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Parameters
 
-#### **demand type**
+#### demand type
 
 | Value | Hex    | Demand type  (x=`1`..`4`)          |
 | ----- | ------ | ---------------------------------- |
@@ -44,7 +44,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | `64`  | `0x40` | `10`-minute voltage                |
 | `160` | `0xA0` | `1/3/5/10/15/30/60`-minute voltage |
 
-#### **valid index range**
+#### valid index range
 
 | Accumulation Period (minutes) | Valid Index Range |
 | ----------------------------- | ----------------- |
@@ -56,7 +56,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | `30`                          | `0..48`           |
 | `60`                          | `0..24`           |
 
-#### **daylight saving time parameters**
+#### daylight saving time parameters
 
 | Accumulation Period (minutes) | Index of the first requested record | Number of requested records |
 | ----------------------------- | ----------------------------------- | --------------------------- |
@@ -72,29 +72,29 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 #### get A+ energy
 
-| Field                                     | Value                               | Hex      |
-| ----------------------------------------- | ----------------------------------- | -------- |
-| command id                                | `118`                               | `0x76`   |
-| command size                              | `7`                                 | `0x07`   |
-| [packed date](../../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
-| [demand type](#demand-type)               | `A+`                                | `0x01`   |
-| index of the first requested record       | `5`                                 | `0x0005` |
-| number of requested records               | `10`                                | `0x0a`   |
-| accumulation period                       | `15`                                | `0x0f`   |
+| Field                                  | Value                               | Hex      |
+| -------------------------------------- | ----------------------------------- | -------- |
+| command id                             | `118`                               | `0x76`   |
+| command size                           | `7`                                 | `0x07`   |
+| [packed date](../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
+| [demand type](#demand-type)            | `A+`                                | `0x01`   |
+| index of the first requested record    | `5`                                 | `0x0005` |
+| number of requested records            | `10`                                | `0x0a`   |
+| accumulation period                    | `15`                                | `0x0f`   |
 
 Command hex dump: `76 07 2a43 01 0005 0a 0f`
 
 #### get A- energy for the repeated hour during the daylight saving time change
 
-| Field                                     | Value                                | Hex      |
-| ----------------------------------------- | ------------------------------------ | -------- |
-| command id                                | `118`                                | `0x76`   |
-| command size                              | `7`                                  | `0x07`   |
-| [packed date](../../types.md#packed-date) | year: `2024`, month: `5`, date: `27` | `0x30bb` |
-| [demand type](#demand-type)               | `A-`                                 | `0x02`   |
-| index of the first requested record       | `48`                                 | `0x0030` |
-| number of requested records               | `3`                                  | `0x03`   |
-| accumulation period                       | `30`                                 | `0x1e`   |
+| Field                                  | Value                                | Hex      |
+| -------------------------------------- | ------------------------------------ | -------- |
+| command id                             | `118`                                | `0x76`   |
+| command size                           | `7`                                  | `0x07`   |
+| [packed date](../types.md#packed-date) | year: `2024`, month: `5`, date: `27` | `0x30bb` |
+| [demand type](#demand-type)            | `A-`                                 | `0x02`   |
+| index of the first requested record    | `48`                                 | `0x0030` |
+| number of requested records            | `3`                                  | `0x03`   |
+| accumulation period                    | `30`                                 | `0x1e`   |
 
 Command hex dump: `76 07 30bb 02 0030 03 1e`
 
@@ -108,7 +108,7 @@ Command hex dump: `76 07 30bb 02 0030 03 1e`
 | ----- | -------- | ----------------------------------------------------------------------------- |
 | `1`   | `uint8`  | command id = `0x76`                                                           |
 | `1`   | `uint8`  | command size = `7+`                                                           |
-| `2`   | `uint8`  | [packed date](../../types.md#packed-date)                                     |
+| `2`   | `uint8`  | [packed date](../types.md#packed-date)                                        |
 | `1`   | `uint8`  | [demand type](#demand-type)                                                   |
 | `2`   | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
 | `1`   | `uint8`  | number of requested records                                                   |
@@ -116,7 +116,7 @@ Command hex dump: `76 07 30bb 02 0030 03 1e`
 | `2*n` | uint16`  | accumulated data, according to [demand type](#demand-type)                    |
 
 > `n` - the number of energies derived from packed energy type field.
->
+
 #### case #2
 
 Response with repeated hour during the daylight saving time change.
@@ -125,7 +125,7 @@ Response with repeated hour during the daylight saving time change.
 | ----- | ------------------------------------- | ----------------------------------------------------------------------------- |
 | `1`   | `uint8`                               | command id = `0x76`                                                           |
 | `1`   | `uint8`                               | command size = `7+`                                                           |
-| `2`   | `uint8`                               | [packed date](../../types.md#packed-date)                                     |
+| `2`   | `uint8`                               | [packed date](../types.md#packed-date)                                        |
 | `1`   | `uint8`                               | [demand type](#demand-type)                                                   |
 | `2`   | `uint16`                              | index of the first requested record ([valid index range](#valid-index-range)) |
 | `1`   | `uint8`                               | number of requested records                                                   |
@@ -138,7 +138,7 @@ Response with repeated hour during the daylight saving time change.
 
 ### Parameters
 
-#### **accumulated-data**
+#### accumulated data
 
 If accumulation period is less then `60` and [demand type](#demand-type) is `A+` or `A-` then tariff included into accumulated data.
 
@@ -151,18 +151,18 @@ If accumulation period is less then `60` and [demand type](#demand-type) is `A+`
 
 #### get A+ energy
 
-| Field                                     | Value                               | Hex      |
-| ----------------------------------------- | ----------------------------------- | -------- |
-| command id                                | `118`                               | `0x76`   |
-| command size                              | `15`                                | `0x0f`   |
-| [packed date](../../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
-| [demand type](#demand-type)               | `A+`                                | `0x01`   |
-| index of the first requested record       | `4`                                 | `0x0004` |
-| number of requested records               | `3`                                 | `0x03`   |
-| accumulation period                       | `15`                                | `0x0f`   |
-| accumulated data `1:00-1:15`              | `16`                                | `0x0010` |
-| accumulated data `1:15-1:30`              | `18`                                | `0x0012` |
-| accumulated data `1:30-1:45`              | `17`                                | `0x0011` |
+| Field                                  | Value                               | Hex      |
+| -------------------------------------- | ----------------------------------- | -------- |
+| command id                             | `118`                               | `0x76`   |
+| command size                           | `15`                                | `0x0f`   |
+| [packed date](../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
+| [demand type](#demand-type)            | `A+`                                | `0x01`   |
+| index of the first requested record    | `4`                                 | `0x0004` |
+| number of requested records            | `3`                                 | `0x03`   |
+| accumulation period                    | `15`                                | `0x0f`   |
+| accumulated data `1:00-1:15`           | `16`                                | `0x0010` |
+| accumulated data `1:15-1:30`           | `18`                                | `0x0012` |
+| accumulated data `1:30-1:45`           | `17`                                | `0x0011` |
 
 Command hex dump: `76 0f 2a43 01 0004 03 0f 0010 0012 0011`
 
@@ -172,7 +172,7 @@ Command hex dump: `76 0f 2a43 01 0004 03 0f 0010 0012 0011`
 | -------------------------------------------------------- | ------------------------------------ | -------- |
 | command id                                               | `118`                                | `0x76`   |
 | command size                                             | `13`                                 | `0x08`   |
-| [packed date](../../types.md#packed-date)                | year: `2024`, month: `5`, date: `27` | `0x30bb` |
+| [packed date](../types.md#packed-date)                   | year: `2024`, month: `5`, date: `27` | `0x30bb` |
 | [demand type](#demand-type)                              | `A-`                                 | `0x02`   |
 | index of the first requested record                      | `48`                                 | `0x0030` |
 | number of requested records                              | `3`                                  | `0x03`   |

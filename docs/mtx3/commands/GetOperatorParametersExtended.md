@@ -40,7 +40,7 @@ Message hex dump: `3f 00`
 
 ### Parameters
 
-#### Define 1
+#### define 1
 
 Bit mask:
 

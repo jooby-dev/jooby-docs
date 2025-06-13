@@ -22,15 +22,15 @@ It's a command with a [two-bytes header](../../message.md#command-with-a-two-byt
 
 ### Parameters
 
-#### **event id**
+#### event id
 
 One of the [event types](../../basics.md#device-events).
 
-#### **sequence number**
+#### sequence number
 
 It's the last generated event number.
 
-#### **event data**
+#### event data
 
 Event data specific for the event type.
 

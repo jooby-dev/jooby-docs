@@ -11,10 +11,10 @@
 | `0x13` | `CASE_CLOSE`               | Meter casing closed                                                                                             |
 | `0x14` | `MAGNETIC_ON`              | Magnetic influence detected                                                                                     |
 | `0x15` | `MAGNETIC_OFF`             | Magnetic influence ceased                                                                                       |
-| `0x20` | `CHANGE_ACCESS_KEY0`       | Access key level 0 changed                                                                                      |
-| `0x21` | `CHANGE_ACCESS_KEY1`       | Access key level 1 changed                                                                                      |
-| `0x22` | `CHANGE_ACCESS_KEY2`       | Access key level 2 changed                                                                                      |
-| `0x23` | `CHANGE_ACCESS_KEY3`       | Access key level 3 changed                                                                                      |
+| `0x20` | `CHANGE_ACCESS_KEY0`       | Access key level `0` changed                                                                                    |
+| `0x21` | `CHANGE_ACCESS_KEY1`       | Access key level `1` changed                                                                                    |
+| `0x22` | `CHANGE_ACCESS_KEY2`       | Access key level `2` changed                                                                                    |
+| `0x23` | `CHANGE_ACCESS_KEY3`       | Access key level `3` changed                                                                                    |
 | `0x24` | `CHANGE_PAR_LOCAL`         | Parameters changed locally                                                                                      |
 | `0x25` | `CHANGE_PAR_REMOTE`        | Parameters changed locally (Note: Original text says "locally" for both, might be an error or specific context) |
 | `0x26` | `CMD_CHANGE_TIME`          | Time changed (Correction: TIME SET)                                                                             |
@@ -30,10 +30,10 @@
 | `0x37` | `RELAY_OFF`                | Relay OFF                                                                                                       |
 | `0x38` | `RESTART`                  | Microcontroller program restart                                                                                 |
 | `0x39` | `WD_RESTART`               | WATCHDOG restart                                                                                                |
-| `0x3c` | `POWER_B_ON`               | Phase B voltage ON                                                                                              |
-| `0x3d` | `POWER_B_OFF`              | Phase B voltage OFF                                                                                             |
-| `0x3e` | `POWER_C_ON`               | Phase C voltage ON                                                                                              |
-| `0x3f` | `POWER_C_OFF`              | Phase C voltage OFF                                                                                             |
+| `0x3c` | `POWER_B_ON`               | Phase `B` voltage ON                                                                                            |
+| `0x3d` | `POWER_B_OFF`              | Phase `B` voltage OFF                                                                                           |
+| `0x3e` | `POWER_C_ON`               | Phase `C` voltage ON                                                                                            |
+| `0x3f` | `POWER_C_OFF`              | Phase `C` voltage OFF                                                                                           |
 | `0x40` | `V_MAX_OK`                 | Normal voltage restored after over-voltage                                                                      |
 | `0x41` | `V_MAX_OVER`               | Voltage above maximum voltage threshold                                                                         |
 | `0x42` | `V_MIN_OK`                 | Normal voltage restored after under-voltage                                                                     |
@@ -58,8 +58,8 @@
 | `0x55` | `CALIBRATION_FAULT`        | Calibration parameters lost                                                                                     |
 | `0x56` | `CLOCK_OK`                 | Real-time clock normal state restored                                                                           |
 | `0x57` | `CLOCK_FAULT`              | Real-time clock not set                                                                                         |
-| `0x58` | `POWER_A_OFF`              | Phase A voltage OFF                                                                                             |
-| `0x59` | `POWER_A_ON`               | Phase A voltage ON                                                                                              |
+| `0x58` | `POWER_A_OFF`              | Phase `A` voltage OFF                                                                                           |
+| `0x59` | `POWER_A_ON`               | Phase `A` voltage ON                                                                                            |
 | `0x60` | `CMD_RELAY_2_ON`           | Second relay ON command                                                                                         |
 | `0x61` | `CMD_RELAY_2_OFF`          | Second relay OFF command                                                                                        |
 | `0x62` | `CROSS_ZERO_ENT0`          | Active energy meter transition through `0` for tariff `1` upon reaching `1000000.00` `kW`                       |
@@ -89,7 +89,7 @@
 | `0x91` | `RELAY_HARD_ON`            | Relay switched ON after mechanical intervention. Relay state restored.                                          |
 | `0x93` | `RELAY_HARD_BAD_ON`        | Relay mechanically switched ON                                                                                  |
 | `0x94` | `RELAY_HARD_OFF`           | Relay switched OFF after mechanical intervention. Relay state restored.                                         |
-| `0x98` | `CHANGE_TARIFF_TBL_2`      | Tariff plan 2 changed                                                                                           |
+| `0x98` | `CHANGE_TARIFF_TBL_2`      | Tariff plan `2` changed                                                                                         |
 | `0x9c` | `SET_SALDO_PARAM`          | Balance parameters set                                                                                          |
 | `0x9d` | `POWER_OVER_RELAY_OFF`     | Relay switched OFF due to active power exceeding                                                                |
 | `0x9e` | `CROSS_ZERO_EXPORT_ENT0`   | Active energy `A-` meter transition through `0` for tariff `1` upon reaching `1000000.00` `kW`                  |

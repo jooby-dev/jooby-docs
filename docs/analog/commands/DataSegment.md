@@ -22,7 +22,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **segment flags**
+#### segment flags
 
 <table>
     <thead>
@@ -47,19 +47,19 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
     </tbody>
 </table>
 
-#### **segmentation session id**
+#### segmentation session id
 
 Represents a unique identifier for a session during which segments are collected. All segments belonging to the same message share the same `segmentationSessionId`, allowing the collector to correlate and assemble them correctly.
 
-#### **last segment**
+#### last segment
 
 It is a boolean flag which indicates that a particular segment is the last in the sequence of segments that collectively form a complete message.
 
-#### **segments number**
+#### segments number
 
 Specifies the total number of segments that make up the complete message.
 
-#### **segment index**
+#### segment index
 
 Denotes the index or position of a particular segment within the entire message.
 

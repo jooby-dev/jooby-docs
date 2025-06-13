@@ -6,20 +6,19 @@ Request/response to get the meter archive data for the specific date.
 
 ### Format
 
-| Size | Type                                 | Field                                                     |
-| ---- | ------------------------------------ | --------------------------------------------------------- |
-| `1`  | `uint8`                              | command id = `0x13`                                       |
-| `1`  | `uint8`                              | command size                                              |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                        |
-| `1`  | `uint8`                              | archive type: <br/> `1` - archive 1 <br/> `2` - archive 2 |
-| `4`  | `uint32_be`                          | index of the first record to get                          |
-| `1`  | `uint8`                              | meter unique identifier                                   |
-| `4`  | [Time 2000](../types.md#time-2000)   | The date of the archive records to read                   |
+| Size | Type                                 | Field                                                         |
+| ---- | ------------------------------------ | ------------------------------------------------------------- |
+| `1`  | `uint8`                              | command id = `0x13`                                           |
+| `1`  | `uint8`                              | command size                                                  |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                            |
+| `1`  | `uint8`                              | archive type: <br/> `1` - archive `1` <br/> `2` - archive `2` |
+| `4`  | `uint32_be`                          | index of the first record to get                              |
+| `1`  | `uint8`                              | meter unique identifier                                       |
+| `4`  | [Time 2000](../types.md#time-2000)   | The date of the archive records to read                       |
 
 
 If the index is equal to `0`, the response will include the newest archive content.
 The request with the higher index will retrieve the oldest archived content.
-
 
 ### Examples
 
@@ -50,8 +49,10 @@ Message hex dump: `13 0b 0d 02 00 00 00 00 01 2c a0 e7 02`
 | `1`  | [OBIS ID](../types.md#obis-od)       | OBIS ID `N`                                                                                                             |
 | `4`  | `float32`                            | OBIS content `N`                                                                                                        |
 
-#### Date end flag
-If a byte with the value 0 immediately follows the OBIS content, it indicates the end-of-date flag. In this case, the subsequent 4 bytes will be interpreted as the next date and time.
+#### date end flag
+
+If a byte with the value `0` immediately follows the OBIS content, it indicates the end-of-date flag.
+In this case, the subsequent `4` bytes will be interpreted as the next date and time.
 
 
 ### Examples
@@ -71,7 +72,7 @@ Message hex dump: `14 07 0d 01 08 40 76 24 dd`
 
 If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-##### Result codes:
+##### result codes:
 
 | Result code | Description          |
 | ----------- | -------------------- |

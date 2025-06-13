@@ -48,7 +48,7 @@ Command hex dump: `39 00`
 
 ### Parameters
 
-#### Relay status
+#### relay status
 
 Bit mask:
 
@@ -61,7 +61,7 @@ Bit mask:
 | `RELAY_IMAX`         | `6` | relay turned off due to overcurrent          |
 | `RELAY_PMAX`         | `7` | relay turned off due to overpower            |
 
-#### Calibration flags
+#### calibration flags
 
 Bit mask:
 

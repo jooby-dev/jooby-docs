@@ -21,7 +21,7 @@ Supported devices:
 
 ### Examples
 
-Shift device time 5 seconds forward:
+Shift device time `5` seconds forward:
 
 | Field        | Value | Hex      |
 | ------------ | ----- | -------- |
@@ -31,7 +31,7 @@ Shift device time 5 seconds forward:
 
 Command hex dump: `5c 02 00 05`
 
-Shift device time 5 seconds backward:
+Shift device time `5` seconds backward:
 
 | Field        | Value | Hex      |
 | ------------ | ----- | -------- |

@@ -48,7 +48,7 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **capabilities**
+#### capabilities
 
 LMiC capabilities bit set.
 
@@ -57,7 +57,7 @@ LMiC capabilities bit set.
 | `0` | `1` - has [multicast](https://lora-alliance.org/resource_hub/lorawan-remote-multicast-setup-specification-v1-0-0/) support                |
 | `1` | `1` - has [fragmented data](https://lora-alliance.org/resource_hub/lorawan-fragmented-data-block-transport-specification-v1-0-0/) support |
 
-#### **version**
+#### version
 
 LMiC version.
 

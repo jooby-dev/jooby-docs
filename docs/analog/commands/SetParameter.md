@@ -18,11 +18,11 @@ The sensor confirms the execution of the command with [response](#response).
 
 ### Parameters
 
-#### **parameter type**
+#### parameter type
 
 See [available parameter types](../parameter-types.md).
 
-#### **parameter data**
+#### parameter data
 
 Type-specific structures.
 
@@ -42,11 +42,11 @@ It's a mandatory confirmation to [SetParameter request](./SetParameter.md#reques
 
 ### Parameters
 
-#### **parameter type**
+#### parameter type
 
 See [available parameter types](../parameter-types.md).
 
-#### **status**
+#### status
 
 `1` - parameter setup was successful <br/>
 `0` - parameter setting failed, parameter was not changed

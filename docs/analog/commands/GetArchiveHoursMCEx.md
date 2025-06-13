@@ -22,21 +22,21 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
 <br/>
 [See details](../types.md#packed-date).
 
-#### **hour**
+#### hour
 
 It's a start hour.
 
-#### **hours**
+#### hours
 
-Count the pulse counter's value with a diff for each next hour. The hours value 0 means 1 hour.
+Count the pulse counter's value with a diff for each next hour. The hours value `0` means `1` hour.
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
@@ -84,21 +84,21 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
 <br/>
 [See details](../types.md#packed-date).
 
-#### **hour**
+#### hour
 
 It's a start hour.
 
-#### **hours**
+#### hours
 
-Count the pulse counter's full value with a diff for each next hour. The hours value 0 means 1 hour.
+Count the pulse counter's full value with a diff for each next hour. The hours value `0` means `1` hour.
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 

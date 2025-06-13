@@ -126,13 +126,13 @@ There are `2` types of command direction:
             <td><code>GetHalfHourDemand</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemand.md#request">request</a> / <a href="./GetHalfHourDemand.md#response">response</a></td>
-            <td>Get active energy (<code>A+</code>) in half hours by date.</td>
+            <td>Get the active energy (<code>A+</code>) in half hours by date.</td>
         </tr>
         <td><code>0x016</code></td>
             <td><code>GetDayDemand</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetDayDemand.md#request">request</a> / <a href="./GetDayDemand.md#response">response</a></td>
-            <td>Get daily active energy (<code>A+</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
+            <td>Get the daily active energy (<code>A+</code>) by default or selected energy type for all tariffs (<code>T1</code>-<code>T4</code>) for date.</td>
         </tr>
         <tr>
             <td><code>0x17</code></td>
@@ -202,6 +202,13 @@ There are `2` types of command direction:
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetRatePlanInfo.md#request">request</a> / <a href="./GetRatePlanInfo.md#response">response</a></td>
             <td>Get device rate plan information.</td>
+        </tr>
+        <tr>
+            <td><code>0x2d</code></td>
+            <td><code>GetExtendedCurrentValues2</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetExtendedCurrentValues2.md#request">request</a> / <a href="./GetExtendedCurrentValues2.md#response">response</a></td>
+            <td>Get additional current parameters.</td>
         </tr>
         <tr>
             <td><code>0x2e</code></td>
@@ -309,6 +316,20 @@ There are `2` types of command direction:
             <td>Get device critical events.</td>
         </tr>
         <tr>
+            <td><code>0x4a</code></td>
+            <td><code>GetDayMaxDemandPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetDayMaxDemandPrevious.md#request">request</a> / <a href="./GetDayMaxDemandPrevious.md#response">response</a></td>
+            <td>Get the maximum power of active energy (<code>`A+`</code>) for the previous day.</td>
+        </tr>
+        <tr>
+            <td><code>0x4b</code></td>
+            <td><code>GetHalfHourDemandPrevious</code></td>
+            <td><code>READ_ONLY</code></td>
+            <td><a href="./GetHalfHourDemandPrevious.md#request">request</a> / <a href="./GetHalfHourDemandPrevious.md#response">response</a></td>
+            <td>Get the active energy (`A+`) for the previous day.</td>
+        </tr>
+        <tr>
             <td><code>0x4f</code></td>
             <td><code>GetDayDemandExport</code></td>
             <td><code>READ_ONLY</code></td>
@@ -334,7 +355,7 @@ There are `2` types of command direction:
             <td><code>GetHalfHourDemandExport</code></td>
             <td><code>READ_ONLY</code></td>
             <td><a href="./GetHalfHourDemandExport.md#request">request</a> / <a href="./GetHalfHourDemandExport.md#response">response</a></td>
-            <td>Get active energy (<code>A-</code>) in half hours by date.</td>
+            <td>Get the active energy (<code>A-</code>) in half hours by date.</td>
         </tr>
         <tr>
             <td><code>0x58</code></td>
@@ -425,14 +446,14 @@ There are `2` types of command direction:
             <td><code>SetDemandParameters</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>
             <td><a href="./SetDemandParameters.md#request">request</a> / <a href="./SetDemandParameters.md#response">response</a></td>
-            <td>Setup the additional archives.</td>
+            <td>Setup the parameters for voltage graphs and SAIDI.</td>
         </tr>
         <tr>
             <td><code>0x75</code></td>
             <td><code>GetDemandParameters</code></td>
             <td><strong><code>READ_ONLY</code></strong></td>
             <td><a href="./GetDemandParameters.md#request">request</a> / <a href="./GetDemandParameters.md#response">response</a></td>
-            <td>Get the additional archives information.</td>
+            <td>Get the parameters for voltage graphs and SAIDI</td>
         </tr>
         <tr>
             <td><code>0x76</code></td>
@@ -447,6 +468,13 @@ There are `2` types of command direction:
             <td><code>UNENCRYPTED</code></td>
             <td><a href="./uplink/GetDayEnergies.md">event</a></td>
             <td>Event to get day energies by <code>4</code> tariffs (<code>T1</code>-<code>T4</code>). Can be transmitted only via Lora.</td>
+        </tr>
+        <tr>
+            <td><code>0x79</code></td>
+            <td><code>GetDayMaxPower</code></td>
+            <td><code>UNENCRYPTED</code></td>
+            <td><a href="./uplink/GetDayMaxPower.md">event</a></td>
+            <td>Event to get day max power by <code>4</code> tariffs (<code>T1</code>-<code>T4</code>). Can be transmitted only via Lora.</td>
         </tr>
         <tr>
             <td><code>0x7a</code></td>

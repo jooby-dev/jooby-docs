@@ -2,7 +2,7 @@
 
 ## Device time management
 
-A device sends its time as a 4 bytes unsigned integer value with [Time2000](./commands/uplink/Time2000.md) event.
+A device sends its time as a `4` bytes unsigned integer value with [Time2000](./commands/GetTime2000.md) event.
 The time is represented in a special [time 2000](./types.md#time-2000) format.
 This time should be corrected periodically with one of the following commands: [SetTime2000](./commands/SetTime2000.md) and [CorrectTime2000](./commands/CorrectTime2000.md).
 

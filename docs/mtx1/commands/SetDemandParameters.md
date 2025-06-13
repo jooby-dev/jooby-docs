@@ -1,6 +1,6 @@
 # SetDemandParameters
 
-Request/response to setup the additional archives.
+Request/response to setup the parameters for voltage graphs and SAIDI.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 

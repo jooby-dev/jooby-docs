@@ -37,13 +37,13 @@ Command hex dump: `05 00`
 | `1`  | `uint8` | command id = `0x05`                             |
 | `1`  | `uint8` | command size = `8`                              |
 | `3`  | `uint8` | manufacturer (as string `001a79` at the moment) |
-| `1`  | `uint8` | type                                            |
+| `1`  | `uint8` | [type](#type)                                   |
 | `1`  | `uint8` | year (number of years after `2000`)             |
 | `3`  | `uint8` | serial (as string, e.g. `1b1d6a`)               |
 
 ### Parameters
 
-#### **type**
+#### type
 
 One of the following device types:
 

@@ -18,7 +18,7 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
@@ -64,27 +64,27 @@ A response will be sent only if a binary or temperature sensor is assigned to th
 
 ### Parameters
 
-#### **channel type**
+#### channel type
 
 One of the [channel type](../parameter-types.md#channel-type-values).
 
-#### **channel status**
+#### channel status
 
-##### Idle channel status
+##### idle channel status
 
 For the idle channel no status will be sent.
 
-##### Power channel status
+##### power channel status
 
 For the power channel no status will be sent.
 
-##### Binary sensor status
+##### binary sensor status
 
 | Size | Type    | Field                                     |
 | ---- | ------- | ----------------------------------------- |
 | `1`  | `uint8` | Binary sensor status. `0` - off, `1` - on |
 
-##### Temperature sensor status
+##### temperature sensor status
 
 | Size | Type   | Field          |
 | ---- | ------ | -------------- |

@@ -42,7 +42,7 @@ There are `2` types of command direction:
 | `0x05`   | [GetArchiveHours](./GetArchiveHours.md#response)         | Response to [GetArchiveHours](./GetArchiveHours.md#request) downlink command.                                                                     |
 | `0x06`   | [GetArchiveDays](./GetArchiveDays.md#response)           | Response to [GetArchiveDays](./GetArchiveDays.md#request) downlink command.                                                                       |
 | `0x07`   | [GetCurrent](./GetCurrent.md#response)                   | Response to [GetCurrent](./GetCurrent.md#request) downlink command.                                                                               |
-| `0x09`   | [Time2000](./uplink/Time2000.md)                         | Current device time.                                                                                                                              |
+| `0x09`   | [GetTime2000](./GetTime2000.md)                          | Current device time.                                                                                                                              |
 | `0x0b`   | [GetArchiveEvents](./GetArchiveEvents.md#response)       | Response to the [GetArchiveEvents](./GetArchiveEvents.md#request) downlink command.                                                               |
 | `0x0c`   | [CorrectTime2000](./CorrectTime2000.md#response)         | Response to the [CorrectTime2000](./CorrectTime2000.md#request) downlink command.                                                                 |
 | `0x14`   | [Status](./GetStatus.md#response)                        | Response to the [GetStatus](./GetStatus.md#request) downlink command or current device status information.                                        |
@@ -68,4 +68,3 @@ There are `2` types of command direction:
 | `0x1f31` | [GetArchiveHoursMCEx](./GetArchiveHoursMCEx.md#response) | Response to the [GetArchiveDaysMC](./GetArchiveDaysMC.md#request) downlink command if requested hours more than 8.                                |
 | `0x1f32` | [GetChannelsStatus](./GetChannelsStatus.md#response)     | Response to the [GetChannelsStatus](./GetChannelsStatus.md#request) downlink command.                                                             |
 | `0x1f33` | [GetChannelsTypes](./GetChannelsTypes.md#response)       | Response to the [GetChannelsTypes](./GetChannelsTypes.md#request) downlink command.                                                               |
-

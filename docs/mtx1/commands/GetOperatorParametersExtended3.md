@@ -40,7 +40,7 @@ Message hex dump: `71 00`
 
 ### Parameters
 
-#### Relay set
+#### relay set
 
 Bit mask:
 

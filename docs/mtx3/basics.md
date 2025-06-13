@@ -2,7 +2,7 @@
 
 ## Command access level
 
-The `AccessLevel` field sets one of the 4 access levels.
+The `AccessLevel` field sets one of the `4` access levels.
 For each access level the device determines the available set of commands and its encryption key for data encryption.
 
 Available levels:
@@ -17,9 +17,9 @@ Available levels:
 
 ## Displays
 
-Each device has 4 display sets: `64` main displays and `64` additional displays.
+Each device has `4` display sets: `64` main displays and `64` additional displays.
 
-#### Display modes:
+### Display modes
 
 | Value | Screen type  | Screen range |
 | ----- | ------------ | ------------ |

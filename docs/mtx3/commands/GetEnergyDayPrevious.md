@@ -9,14 +9,14 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-#### case #1 without energy type
+#### case #1: without energy type
 
 | Size | Type    | Field               |
 | ---- | ------- | ------------------- |
 | `1`  | `uint8` | command id = `0x03` |
 | `1`  | `uint8` | command size = `0`  |
 
-#### case #2 with energy type
+#### case #2: with energy type
 
 | Size | Type    | Field                       |
 | ---- | ------- | --------------------------- |

@@ -1,6 +1,6 @@
-# GetHalfHourDemand
+# GetHalfHourDemandPrevious
 
-Request/response to get the active energy (`A+`) in half hours by date.
+Request/response to get the active energy (`A+`) for the previous day.
 
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
@@ -9,28 +9,24 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-| Size | Type    | Field                                         |
-| ---- | ------- | --------------------------------------------- |
-| `1`  | `uint8` | command id = `0x15`                           |
-| `1`  | `uint8` | command size = `3`                            |
-| `1`  | `uint8` | year (number of years after `2000`)           |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)     |
-| `1`  | `uint8` | date (month day number which starts from `1`) |
+| Size | Type    | Field               |
+| ---- | ------- | ------------------- |
+| `1`  | `uint8` | command id = `0x4b` |
+| `1`  | `uint8` | command size = `0`  |
 
 ### Examples
 
-| Field        | Value                         | Hex    |
-| ------------ | ----------------------------- | ------ |
-| command id   | `21`                          | `0x15` |
-| command size | `3`                           | `0x03` |
-| year         | `24` (`2000` + `24` = `2024`) | `0x18` |
-| month        | `2` (February)                | `0x02` |
-| date         | `19`                          | `0x13` |
+| Field        | Value | Hex    |
+| ------------ | ----- | ------ |
+| command id   | `75`  | `0x4b` |
+| command size | `0`   | `0x00` |
 
-Command hex dump: `15 03 18 02 13`
+Command hex dump: `15 00`
 
 
 ## Response
+
+Identical to [GetHalfHourDemand](./GetHalfHourDemand.md#response) response command.
 
 ### Format
 
@@ -38,7 +34,7 @@ Command hex dump: `15 03 18 02 13`
 
 | Size | Type     | Field                                         |
 | ---- | -------- | --------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x15`                           |
+| `1`  | `uint8`  | command id = `0x4b`                           |
 | `1`  | `uint8`  | command size = `27`                           |
 | `1`  | `uint8`  | year (number of years after `2000`)           |
 | `1`  | `uint8`  | month (`1` - January ... `12` - December)     |
@@ -49,7 +45,7 @@ Command hex dump: `15 03 18 02 13`
 
 | Size | Type     | Field                                                                  |
 | ---- | -------- | ---------------------------------------------------------------------- |
-| `1`  | `uint8`  | command id = `0x15`                                                    |
+| `1`  | `uint8`  | command id = `0x4b`                                                    |
 | `1`  | `uint8`  | command size = `27`                                                    |
 | `1`  | `uint8`  | year (number of years after `2000`)                                    |
 | `1`  | `uint8`  | month (`1` - January ... `12` - December)                              |
@@ -100,7 +96,7 @@ Otherwise each field holds tariff number (highest `2` bits) and energy (all othe
 
 | Field        | Value                         | Hex      |
 | ------------ | ----------------------------- | -------- |
-| command id   | `21`                          | `0x15`   |
+| command id   | `75`                          | `0x4b`   |
 | command size | `99`                          | `0x63`   |
 | year         | `24` (`2000` + `24` = `2024`) | `0x18`   |
 | month        | `2` (February)                | `0x02`   |
@@ -168,7 +164,7 @@ Command hex dump:
 
 | Field                       | Value                         | Hex      |
 | --------------------------- | ----------------------------- | -------- |
-| command id                  | `21`                          | `0x15`   |
+| command id                  | `75`                          | `0x4b`   |
 | command size                | `104`                         | `0x68`   |
 | year                        | `24` (`2000` + `24` = `2024`) | `0x18`   |
 | month                       | `2` (February)                | `0x02`   |

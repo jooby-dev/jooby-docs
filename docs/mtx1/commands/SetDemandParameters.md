@@ -22,7 +22,7 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 | Field                                                       | Value                                   | Hex    |
 | ----------------------------------------------------------- | --------------------------------------- | ------ |
-| command id                                                  | `117`                                   | `0x75` |
+| command id                                                  | `116`                                   | `0x74` |
 | command size                                                | `4`                                     | `0x04` |
 | [channel param 1](./GetDemandParameters.md#channel-param-1) | voltage profile disabled                | `0x00` |
 | time interval for counting power-off events                 | `20` minutes                            | `0x14` |

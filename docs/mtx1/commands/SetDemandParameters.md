@@ -9,25 +9,25 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 ### Format
 
-| Field        | Value   | Hex                                                             |
-| ------------ | ------- | --------------------------------------------------------------- |
-| command id   | `116`   | `0x74`                                                          |
-| command size | `4`     | `0x04`                                                          |
-| `1`          | `uint8` | [archive channel 2](./GetDemandParameters.md#archive-channel-2) |
-| `1`          | `uint8` | time interval for counting power-off events,minutes             |
-| `1`          | `uint8` | [archive channel 1](./GetDemandParameters.md#archive-channel-1) |
-| `1`          | `uint8` | reserved byte                                                   |
+| Field        | Value   | Hex                                                         |
+| ------------ | ------- | ----------------------------------------------------------- |
+| command id   | `116`   | `0x74`                                                      |
+| command size | `4`     | `0x04`                                                      |
+| `1`          | `uint8` | [channel param 1](./GetDemandParameters.md#channel-param-1) |
+| `1`          | `uint8` | time interval for counting power-off events,minutes         |
+| `1`          | `uint8` | [channel param 2](./GetDemandParameters.md#channel-param-2) |
+| `1`          | `uint8` | reserved byte                                               |
 
 ### Examples
 
-| Field                                                           | Value                                              | Hex    |
-| --------------------------------------------------------------- | -------------------------------------------------- | ------ |
-| command id                                                      | `117`                                              | `0x75` |
-| command size                                                    | `4`                                                | `0x04` |
-| [archive channel 2](./GetDemandParameters.md#archive-channel-2) | `10`-minute voltage archive disabled               | `0x00` |
-| time interval for counting power-off events                     | `20`                                               | `0x14` |
-| [archive channel 1](./GetDemandParameters.md#archive-channel-1) | `1/3/5/10/15/30/60`-minute voltage archive enabled | `0xa0` |
-| reserved byte                                                   | `0`                                                | `0x00` |
+| Field                                                       | Value                                   | Hex    |
+| ----------------------------------------------------------- | --------------------------------------- | ------ |
+| command id                                                  | `117`                                   | `0x75` |
+| command size                                                | `4`                                     | `0x04` |
+| [channel param 1](./GetDemandParameters.md#channel-param-1) | voltage profile disabled                | `0x00` |
+| time interval for counting power-off events                 | `20` minutes                            | `0x14` |
+| [channel param 2](./GetDemandParameters.md#channel-param-2) | `15/30/60`-minute phase voltage profile | `0xa0` |
+| reserved byte                                               | `0`                                     | `0x00` |
 
 Command hex dump: `74 04 00 14 a0 00`
 

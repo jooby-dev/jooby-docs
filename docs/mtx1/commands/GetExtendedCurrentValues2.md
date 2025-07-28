@@ -64,6 +64,8 @@ Bit mask:
 | `RELAY_BIPOLAR_POWER_OFF`      | `3` | relay disabled due to opposing power directions in phase and neutral          |
 | `RELAY_SALDO_OFF_ON_MAX_POWER` | `4` | relay disabled due to exceeding permissible power in balance restriction mode |
 | `RELAY_HARD_ST1`               | `5` | relay enabled by hardware                                                     |
+| `RELAY_MAGNET_OFF`             | `6` | relay turned off due to magnet interference                                   |
+| `RELAY_HARD_ST1`               | `7` | turned off due to maximum negative power                                      |
 
 #### status 1
 

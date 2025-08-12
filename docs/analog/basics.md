@@ -54,6 +54,7 @@ Archives can be requested for the latest events, the oldest events, and events s
 | `0x19` | `TEMPERATURE_SENSOR_LOW_TEMPERATURE`  | Indicates that the temperature is lower than the [low temperature threshold](./parameter-types.md#temperature-sensor-parameters). |
 | `0x1a` | `TEMPERATURE_SENSOR_HIGH_TEMPERATURE` | Indicates that the temperature is higher than the [high threshold](./parameter-types.md#temperature-sensor-parameters).           |
 
+
 ## Hardware types
 
 <table>

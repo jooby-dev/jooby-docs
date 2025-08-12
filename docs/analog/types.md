@@ -105,12 +105,12 @@ Format (each line is a byte):
     </thead>
     <tbody>
         <tr>
-            <td colspan="7" align="center">Year [<code>6..0</code>]</td>
-            <td align="center">Month [<code>3</code>]</td>
+            <td colspan="7" align="center">year [<code>6..0</code>]</td>
+            <td align="center">month [<code>3</code>]</td>
         </tr>
         <tr>
-            <td colspan="3" align="center">Month [<code>2..0</code>]</td>
-            <td colspan="5" align="center">Date [<code>4..0</code>]</td>
+            <td colspan="3" align="center">month [<code>2..0</code>]</td>
+            <td colspan="5" align="center">date [<code>4..0</code>]</td>
         </tr>
     </tbody>
 </table>
@@ -180,8 +180,8 @@ Format:
     </thead>
     <tbody>
         <tr>
-            <td colspan="3" align="center">Hours [<code>2..0</code>]</td>
-            <td colspan="5" align="center">Hour [<code>4..0</code>]</td>
+            <td colspan="3" align="center">hours [<code>2..0</code>]</td>
+            <td colspan="5" align="center">hour [<code>4..0</code>]</td>
         </tr>
     </tbody>
 </table>
@@ -243,7 +243,7 @@ Format:
             <td>magnetic influence</td>
             <td>reserved</td>
             <td>reserved</td>
-            <td colspan="5" align="center">Hour [<code>4..0</code>]</td>
+            <td colspan="5" align="center">hour [<code>4..0</code>]</td>
         </tr>
     </tbody>
 </table>
@@ -399,7 +399,7 @@ The last value `75` is simple (no extension) `0x4b`.
 The final sequence is `e0 20 d2 3f a4 01 4b`.
 
 
-# Pulse coefficient
+## Pulse coefficient
 
 It's `1`-byte value of the pulse coefficient for a metering device, which determines the correspondence of consumed resources to `1` pulse.
 If the most significant bit is `0`, then the remaining `7` bits represent the value of the pulse coefficient,
@@ -417,8 +417,9 @@ If the most significant bit is `1` then the value of pulse coefficient is determ
 | `0х86`            | `100000`       | `100`         |
 
 
-## string
-bytes array of uint8 code points that range in value from `0` through `255`. Each code point, or character code, represents a single character.
+## String
+
+Bytes array of uint8 code points that range in value from `0` through `255`. Each code point, or character code, represents a single character.
 
 ### Format
 
@@ -426,3 +427,104 @@ bytes array of uint8 code points that range in value from `0` through `255`. Eac
 | ------- | ------- |
 | `1`     | `uint8` |
 | `0...n` | `uint8` |
+
+
+## Packed battery data
+
+It's battery current, internal resistance and depassivation time packed in `7` bytes.
+Format (each line is a byte):
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="8" align="center">low voltage [<code>11..4</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">low voltage [<code>3..0</code>]</td>
+            <td colspan="4" align="center">high voltage [<code>11..8</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">high voltage [<code>7..0</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>15..8</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>7..0</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>15..8</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>7..0</code>]</td>
+        </tr>
+    </tbody>
+</table>
+
+* `low voltage` - water meter battery voltage without load, in `mV`
+* `high voltage` - water meter battery voltage under load of the depassivator circuit, in `mV`
+* `resistance` - internal battery resistance, in `mΩ`
+* `time` - time of the last depassivation, in seconds
+
+### Examples
+
+For low voltage `3600` `mV`, high voltage `3850` `mV`, resistance `18500` `mOhm` and depassivation time `400` seconds:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+            <th>hex</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="8" align="center">low voltage [<code>0b11100001</code>]</td>
+            <td align="center"><code>0xe1</code></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">low voltage [<code>0b0000</code>]</td>
+            <td colspan="4" align="center">high voltage [<code>0b1111</code>]</td>
+            <td align="center"><code>0x0f</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">high voltage [<code>0b00001010</code>]</td>
+            <td align="center"><code>0x0a</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>0b01001000</code>]</td>
+            <td align="center"><code>0x48</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>0b01000100</code>]</td>
+            <td align="center"><code>0x44</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>0b00000001</code>]</td>
+            <td align="center"><code>0x01</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>0b10010000</code>]</td>
+            <td align="center"><code>0x90</code></td>
+        </tr>
+    </tbody>
+</table>

@@ -74,10 +74,10 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | `33`  | `0x21` | `1/3/5/10/15/30/60`-minute current for phase `C`                         |
 | `129` | `0x81` | `1/3/5/10/15/30/60`-minute active energy, `А+` (`1.4.0`)                 |
 | `130` | `0x82` | `1/3/5/10/15/30/60`-minute active energy, `А-` (`2.4.0`)                 |
-| `131` | `0x84` | `1/3/5/10/15/30/60`-minute reactive energy `A+R+`, (3.4.0 7.4.0)         |
-| `132` | `0x88` | `1/3/5/10/15/30/60`-minute reactive energy `A+R-`, (4.4.0 8.4.0)         |
-| `144` | `0x90` | `1/3/5/10/15/30/60`-minute reactive energy `A-R+`, (5.4.0)               |
-| `160` | `0xa0` | `1/3/5/10/15/30/60`-minute reactive energy `A-R-`, (6.4.0)               |
+| `131` | `0x84` | `1/3/5/10/15/30/60`-minute reactive energy `A+R+` (`3.4.0`/`7.4.0`)      |
+| `132` | `0x88` | `1/3/5/10/15/30/60`-minute reactive energy `A+R-` (`4.4.0`/`8.4.0`)      |
+| `144` | `0x90` | `1/3/5/10/15/30/60`-minute reactive energy `A-R+` (`5.4.0`)              |
+| `160` | `0xa0` | `1/3/5/10/15/30/60`-minute reactive energy `A-R-` (`6.4.0`)              |
 | `176` | `0xb0` | [archive channel 1](./GetOperatorParametersExtended2.md#archive-channel) |
 | `177` | `0xb1` | [archive channel 2](./GetOperatorParametersExtended2.md#archive-channel) |
 | `178` | `0xb2` | [archive channel 3](./GetOperatorParametersExtended2.md#archive-channel) |

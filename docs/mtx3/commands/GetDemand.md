@@ -82,8 +82,8 @@ The command access level is [READ_ONLY](../basics.md#command-access-level).
 | `177` | `0xb1` | [archive channel 2](./GetOperatorParametersExtended2.md#archive-channel) |
 | `178` | `0xb2` | [archive channel 3](./GetOperatorParametersExtended2.md#archive-channel) |
 | `179` | `0xb3` | [archive channel 4](./GetOperatorParametersExtended2.md#archive-channel) |
-| `17a` | `0xb4` | [archive channel 5](./GetOperatorParametersExtended2.md#archive-channel) |
-| `17b` | `0xb5` | [archive channel 6](./GetOperatorParametersExtended2.md#archive-channel) |
+| `180` | `0xb4` | [archive channel 5](./GetOperatorParametersExtended2.md#archive-channel) |
+| `181` | `0xb5` | [archive channel 6](./GetOperatorParametersExtended2.md#archive-channel) |
 
 #### valid index range
 

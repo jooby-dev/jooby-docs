@@ -21,21 +21,21 @@ It's a command with a [one-bytes header](../../message.md#command-with-a-one-byt
 
 ### Parameters
 
-#### **date**
+#### date
 
 The command contains counter data for this date.
-<br>
+<br/>
 [See details](../../types.md#packed-date).
 
-#### **packed info of magnet influence and time**
+#### packed info of magnet influence and time
 
 The magnetic influence bit flag indicates that there was a magnet intervention during the specified day.
-<br>
+<br/>
 The command contains counter data for this time.
-<br>
+<br/>
 [See details](../../types.md#packed-magnetic-influence-and-hour).
 
-#### **counter value**
+#### counter value
 
 It's a pulse counter value for given date and time packed in `3` bytes.
 

@@ -47,16 +47,16 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **magnet influence flag**
+#### magnet influence flag
 
 The magnetic influence bit flag indicates that there was a magnet intervention.
 The flag set as one highest bit:
-<br>
+<br/>
 `0x00` - no magnetic influence
-<br>
+<br/>
 `0x80` - magnetic influence is present
 
-#### **counter value**
+#### counter value
 
 It's a pulse counter value packed in `3` bytes.
 

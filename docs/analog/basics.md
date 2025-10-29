@@ -2,7 +2,7 @@
 
 ## Device time management
 
-A device sends its time as a 4 bytes unsigned integer value with [Time2000](./commands/uplink/Time2000.md) event.
+A device sends its time as a `4` bytes unsigned integer value with [Time2000](./commands/GetTime2000.md) event.
 The time is represented in a special [time 2000](./types.md#time-2000) format.
 This time should be corrected periodically with one of the following commands: [SetTime2000](./commands/SetTime2000.md) and [CorrectTime2000](./commands/CorrectTime2000.md).
 
@@ -25,29 +25,34 @@ There is no message prioritization in the archive.
 Events are recorded in a cycle.
 Archives can be requested for the latest events, the oldest events, and events starting from a certain time.
 
-| ID     | Name                | Description                                                                       |
-| ------ | ------------------- | --------------------------------------------------------------------------------- |
-| `0x01` | `MAGNET_ON`         | The magnetic interference continues for more than 20 seconds.                     |
-| `0x02` | `MAGNET_OFF`        | Magnetic interference is removed.                                                 |
-| `0x03` | `ACTIVATE`          | The device has been activated.                                                    |
-| `0x04` | `DEACTIVATE`        | Device deactivation. Termination of frame transmission over the air.              |
-| `0x05` | `BATTERY_ALARM`     | The sensor has reset due to low battery voltage. Outdated.                        |
-| `0x06` | `CAN_OFF`           | The container has tipped over. Outdated.                                          |
-| `0x07` | `INSERT`            | Fixing the installation of the module in the gas meter.                           |
-| `0x08` | `REMOVE`            | Fixing the removal of the module from the gas meter.                              |
-| `0x09` | `COUNTER_OVER`      | The pulse counter has overflowed. The number of pulses has exceeded `4294967295`. |
-| `0x0a` | `SET_TIME`          | Setting the device time.                                                          |
-| `0x0b` | `ACTIVATE_MTX`      | Activation of the module in the electric energy meter (restart or power supply).  |
-| `0x0c` | `CONNECT`           | Connecting a plug to a 2-port module.                                             |
-| `0x0d` | `DISCONNECT`        | Disconnecting a connector from a 2-port module.                                   |
-| `0x0e` | `DEPASS_DONE`       | Device battery depassivation.                                                     |
-| `0x0f` | `OPTOLOW`           | Low signal level from photodiode (`NOVATOR`).                                     |
-| `0x10` | `OPTOFLASH`         | Photodiode overexposure (`NOVATOR`).                                              |
-| `0x11` | `MTX`               | MTX electric energy meter event.                                                  |
-| `0x12` | `JOIN_ACCEPT`       | Receiving `JOINACCEPT` from NS in OTAA mode (not implemented).                    |
-| `0x13` | `WATER_EVENT`       | Ultrasonic water meter event.                                                     |
-| `0x14` | `WATER_NO_RESPONSE` | No response from ultrasonic water meter.                                          |
-| `0x15` | `OPTOSENSOR_ERROR`  | Optical sensor error.                                                             |
+| ID     | Name                                  | Description                                                                                                                       |
+| ------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `0x01` | `MAGNET_ON`                           | The magnetic interference continues for more than 20 seconds.                                                                     |
+| `0x02` | `MAGNET_OFF`                          | Magnetic interference is removed.                                                                                                 |
+| `0x03` | `ACTIVATE`                            | The device has been activated.                                                                                                    |
+| `0x04` | `DEACTIVATE`                          | Device deactivation. Termination of frame transmission over the air.                                                              |
+| `0x05` | `BATTERY_ALARM`                       | The sensor has reset due to low battery voltage. Outdated.                                                                        |
+| `0x06` | `CAN_OFF`                             | The container has tipped over. Outdated.                                                                                          |
+| `0x07` | `INSERT`                              | Fixing the installation of the module in the gas meter.                                                                           |
+| `0x08` | `REMOVE`                              | Fixing the removal of the module from the gas meter.                                                                              |
+| `0x09` | `COUNTER_OVER`                        | The pulse counter has overflowed. The number of pulses has exceeded `4294967295`.                                                 |
+| `0x0a` | `SET_TIME`                            | Setting the device time.                                                                                                          |
+| `0x0b` | `ACTIVATE_MTX`                        | Activation of the module in the electric energy meter (restart or power supply).                                                  |
+| `0x0c` | `CONNECT`                             | Connecting a plug to a 2-port module.                                                                                             |
+| `0x0d` | `DISCONNECT`                          | Disconnecting a connector from a 2-port module.                                                                                   |
+| `0x0e` | `DEPASS_DONE`                         | Device battery depassivation.                                                                                                     |
+| `0x0f` | `OPTOLOW`                             | Low signal level from photodiode (`NOVATOR`).                                                                                     |
+| `0x10` | `OPTOFLASH`                           | Photodiode overexposure (`NOVATOR`).                                                                                              |
+| `0x11` | `MTX`                                 | MTX electric energy meter event.                                                                                                  |
+| `0x12` | `JOIN_ACCEPT`                         | Receiving `JOINACCEPT` from NS in OTAA mode (not implemented).                                                                    |
+| `0x13` | `WATER_EVENT`                         | Ultrasonic water meter event.                                                                                                     |
+| `0x14` | `WATER_NO_RESPONSE`                   | No response from ultrasonic water meter.                                                                                          |
+| `0x15` | `OPTOSENSOR_ERROR`                    | Optical sensor error.                                                                                                             |
+| `0x16` | `BINARY_SENSOR_ON`                    | Indicates that the binary sensor is in an active (on) state.                                                                      |
+| `0x17` | `BINARY_SENSOR_OFF`                   | Indicates that the binary sensor is in an inactive (off) state.                                                                   |
+| `0x18` | `TEMPERATURE_SENSOR_HYSTERESIS`       | Triggered when the temperature changes by more than ±[hysteresis °C](./parameter-types.md#temperature-sensor-parameters).         |
+| `0x19` | `TEMPERATURE_SENSOR_LOW_TEMPERATURE`  | Indicates that the temperature is lower than the [low temperature threshold](./parameter-types.md#temperature-sensor-parameters). |
+| `0x1a` | `TEMPERATURE_SENSOR_HIGH_TEMPERATURE` | Indicates that the temperature is higher than the [high threshold](./parameter-types.md#temperature-sensor-parameters).           |
 
 
 ## Hardware types
@@ -66,7 +71,7 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x01</code></td>
             <td><code>GAZI1</code></td>
             <td>
-                <code>Jooby RM GM-E</code> <br>
+                <code>Jooby RM GM-E</code> <br/>
                 <code>Jooby RM GM-M</code>
             </td>
             <td>Based on CPU <code>STM32L15x</code> (no longer in production).</td>
@@ -83,21 +88,20 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x03</code></td>
             <td><code>GAZI3</code></td>
             <td>
-                <code>Jooby RM GM-E</code> <br>
-                <code>Jooby RM GM-M</code> <br>
-                <code>Jooby RM GM-S</code> <br>
-                <code>Jooby RM GM-E_ext</code> <br>
-                <code>Jooby RM GM-M_ext</code> <br>
+                <code>Jooby RM GM-E</code> <br/>
+                <code>Jooby RM GM-M</code> <br/>
+                <code>Jooby RM GM-S</code> <br/>
+                <code>Jooby RM GM-E_ext</code> <br/>
+                <code>Jooby RM GM-M_ext</code> <br/>
                 <code>Jooby EPHIR RMS LoRaWAN GMSG10 105 EU</code>
             </td>
-            <td>Based on CPU <code>STM32L05x</code>.
-            </td>
+            <td>Based on CPU <code>STM32L05x</code>.</td>
         </tr>
         <tr>
             <td><code>0x04</code></td>
             <td><code>NOVATOR</code></td>
             <td>
-                <code>Jooby RM O-WM-N</code> <br>
+                <code>Jooby RM O-WM-N</code> <br/>
                 <code>Jooby Aquaris RMS LoRaWAN WONO10 203 EU</code>
             </td>
             <td>Based on CPU <code>STM32WLE5</code>.</td>
@@ -114,8 +118,8 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x06</code></td>
             <td><code>IMP4EU</code></td>
             <td>
-                <code>Jooby RM 4PI</code> <br>
-                <code>Jooby OMNI RM LoRaWAN 4PI 200 EU</code> <br>
+                <code>Jooby RM 4PI</code> <br/>
+                <code>Jooby OMNI RM LoRaWAN 4PI 200 EU</code> <br/>
                 <code>Jooby OMNI RM LoRaWAN 4PI 202 EU</code>
             </td>
             <td>Based on CPU <code>STM32WLE5</code>.</td>
@@ -125,7 +129,7 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>MTXLORA</code></td>
             <td></td>
             <td>
-                RM installed inside MTX meters. <br>
+                RM installed inside MTX meters. <br/>
                 Based on <code>STM32L051</code>, <code>STM32L071</code> (no longer in production) and <code>STM32WLE5</code>.
             </td>
         </tr>
@@ -159,15 +163,15 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x0c</code></td>
             <td><code>GAZIC</code></td>
             <td>
-                <code>Jooby RM GM-E</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMEL10 100 EU</code> <br>
-                <code>Jooby RM GM-M</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMME10 103 EU</code> <br>
-                <code>Jooby RM GM-E_ext</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMEL10 102 EU</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMEL10 106 EU</code> <br>
-                <code>Jooby RM GM-M_ext</code> <br>
-                <code>Jooby EPHIR RMS LoRaWAN GMME10 104 EU</code> <br>
+                <code>Jooby RM GM-E</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 100 EU</code> <br/>
+                <code>Jooby RM GM-M</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMME10 103 EU</code> <br/>
+                <code>Jooby RM GM-E_ext</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 102 EU</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMEL10 106 EU</code> <br/>
+                <code>Jooby RM GM-M_ext</code> <br/>
+                <code>Jooby EPHIR RMS LoRaWAN GMME10 104 EU</code> <br/>
                 <code>Jooby EPHIR RMS LoRaWAN GMME10 107 EU</code>
             </td>
             <td>Based on CPU <code>STM32WLE5</code>.</td>
@@ -176,9 +180,16 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td><code>0x0f</code></td>
             <td><code>IMP4AS</code></td>
             <td>
-                <code>Jooby RM 4PI</code> <br>
-                <code>Jooby OMNI RM LoRaWAN 4PI 200 AS</code> <br>
+                <code>Jooby RM 4PI</code> <br/>
+                <code>Jooby OMNI RM LoRaWAN 4PI 200 AS</code> <br/>
                 <code>Jooby OMNI RM LoRaWAN 4PI 202 AS</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>0x18</code></td>
+            <td><code>ElsterNbiotLora</code></td>
+            <td>
+                <code>Jooby EPHIR RMS NBIoT GMIT10 206 EU</code> <br/>
             </td>
         </tr>
     </tbody>

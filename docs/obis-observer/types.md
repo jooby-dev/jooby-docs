@@ -7,7 +7,7 @@ This document describes these types and structuring principles.
 
 Meter profile contains all data which we need to observe, archive and report the OBIS content:
 - archive settings
-- [reassignable table](./obis-id.md#reassignable)
+- [reassignable table](./obis-id-list.md#reassignable)
 - table of the [OBIS profiles](#obis-profile)
 
 ### Meter profile ID
@@ -20,7 +20,7 @@ A `1`-byte unique number which used to represent the specific meter profile.
 ### Meter address
 
 The string 32 characters maximum. Usually equals to the serial number of the meter.
-Only one meter with meter id `0` have empty address and works only in [single mode](./singleMultiMode.md#single-mode).
+Only one meter with meter id `0` have empty address and works only in [single mode](./single-mode.md).
 
 ### Meter profile ID
 
@@ -64,9 +64,9 @@ It should be incremented for each request to avoid double processing of the requ
 ## OBIS
 
 It's an OBIS code packed in `3-7` bytes.
-<br>
+<br/>
 OBIS code contain `1` byte number (`0`-`255`) for `6` groups: A, B, C, D, E, F.
-<br>
+<br/>
 OBIS code represents in format: `A-B*C.D.E*F`
 
 Structure of a OBIS bytes:
@@ -86,29 +86,29 @@ Structure of a OBIS bytes:
     </thead>
     <tbody>
         <tr>
-            <td colspan=4 align="center">0</td>
+            <td colspan="4" align="center">0</td>
             <td>A group flag</td>
             <td>B group flag</td>
             <td>E group flag</td>
             <td>F group flag</td>
         </tr>
         <tr>
-            <td colspan=8>A group value</td>
+            <td colspan="8">A group value</td>
         </tr>
         <tr>
-            <td colspan=8>B group value</td>
+            <td colspan="8">B group value</td>
         </tr>
         <tr>
-            <td colspan=8>C group value</td>
+            <td colspan="8">C group value</td>
         </tr>
         <tr>
-            <td colspan=8>D group value</td>
+            <td colspan="8">D group value</td>
         </tr>
         <tr>
-            <td colspan=8>E group value</td>
+            <td colspan="8">E group value</td>
         </tr>
         <tr>
-            <td colspan=8>F group value</td>
+            <td colspan="8">F group value</td>
         </tr>
     </tbody>
 </table>
@@ -367,7 +367,7 @@ By default, the archive period is `15` minutes.
 
 ## Serial port parameters
 
-### **baud rate**
+### baud rate
 
 The serial port baud rate.
 
@@ -388,11 +388,11 @@ The serial port baud rate.
 | `12`  | `115200`  |
 
 
-### ***data bits***
+### data bits
 
 Serial port word length or data bits (supported: `7`, `8`)
 
-### **parity**
+### parity
 
 The serial port parity setting.
 
@@ -413,10 +413,10 @@ The serial port parity setting.
         <tr>
             <td colspan="6"><code>0</code></td>
             <td colspan="2">
-                parity: <br>
-                <code>0</code> - none <br>
-                <code>1</code> - odd <br>
-                <code>2</code> - even <br>
+                parity: <br/>
+                <code>0</code> - none <br/>
+                <code>1</code> - odd <br/>
+                <code>2</code> - even <br/>
             </td>
         </tr>
     </tbody>

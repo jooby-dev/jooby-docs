@@ -22,7 +22,7 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **segment flags**
+#### segment flags
 
 <table>
     <thead>
@@ -47,31 +47,31 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
     </tbody>
 </table>
 
-#### **segmentation session id**
+#### segmentation session id
 
 Represents a unique identifier for a session during which segments are collected. All segments belonging to the same message share the same `segmentationSessionId`, allowing the collector to correlate and assemble them correctly.
 
-#### **last segment**
+#### last segment
 
 It is a boolean flag which indicates that a particular segment is the last in the sequence of segments that collectively form a complete message.
 
-#### **segments number**
+#### segments number
 
 Specifies the total number of segments that make up the complete message.
 
-#### **segment index**
+#### segment index
 
 Denotes the index or position of a particular segment within the entire message.
 
 ### Examples
 
-| Field                   | Value                                                                  | Bits         | Hex                |
-| ----------------------- | ---------------------------------------------------------------------- | ------------ | ------------------ |
-| command id              | `30`                                                                   |              | `0x1e`             |
-| command size            | `9`                                                                    |              | `0x09`             |
-| segmentation session id | `35`                                                                   |              | `0x23`             |
-| segment flags           | last segment: `true` <br> segments number: `1` <br> segment index: `1` | `0b10010001` | `0x91`             |
-| data                    | `23 10 10 07 00 00 00`                                                 |              | `0x23101007000000` |
+| Field                   | Value                                                                    | Bits         | Hex                |
+| ----------------------- | ------------------------------------------------------------------------ | ------------ | ------------------ |
+| command id              | `30`                                                                     |              | `0x1e`             |
+| command size            | `9`                                                                      |              | `0x09`             |
+| segmentation session id | `35`                                                                     |              | `0x23`             |
+| segment flags           | last segment: `true` <br/> segments number: `1` <br/> segment index: `1` | `0b10010001` | `0x91`             |
+| data                    | `23 10 10 07 00 00 00`                                                   |              | `0x23101007000000` |
 
 Message hex dump: `1e 09 23 91 23 10 10 07 00 00 00`
 

@@ -20,13 +20,13 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
-#### **number of values**
+#### number of values
 
 The number or records to receive from archive.
 
@@ -56,28 +56,28 @@ The response to the command for requesting the archive of daily data from the pu
 | `1*n` | `uint8`                                | [magnet influence flag](#magnet-influence-flag) |
 | `3*n` | `uint8`                                | [counter value](#counter-value)                 |
 
-> `n` - the number of day data
+> `n` - the number of day data.
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
-#### **magnet influence flag**
+#### magnet influence flag
 
 The magnetic influence bit flag indicates that there was a magnet intervention.
 The flag set as one highest bit:
-<br>
+<br/>
 `0x00` - no magnetic influence
-<br>
+<br/>
 `0x80` - magnetic influence is present
 
-#### **counter value**
+#### counter value
 
 It's a pulse counter value packed in `3` bytes.
 

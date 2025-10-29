@@ -22,17 +22,17 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
-#### **start hour**
+#### start hour
 
 Start hour for requested day pulse counter's values [`0..23`].
 
-#### **number of values**
+#### number of values
 
 The number or records to receive from archive.
 
@@ -70,28 +70,28 @@ It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-
 
 ### Parameters
 
-#### **date**
+#### date
 
 The command contains counter data for this date.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
-#### **packed info of magnet influence and time**
+#### packed info of magnet influence and time
 
 The magnetic influence bit flag indicates that there was a magnet intervention during the specified time.
-<br>
+<br/>
 The command contains counter data for this time.
-<br>
+<br/>
 [See details](../types.md#packed-magnetic-influence-and-hour).
 
-#### **counter value**
+#### counter value
 
 It's a pulse counter value for given date and time packed in `3` bytes.
 
-#### **packed info of magnet influence and diff**
+#### packed info of magnet influence and diff
 
 It's a sequence of [magnetic influence flag and diff](../types.md#packed-magnetic-influence-and-diff).
-<br>
+<br/>
 [See details](../types.md#packed-magnetic-influence-and-diff).
 
 ### Examples
@@ -103,7 +103,7 @@ It's a sequence of [magnetic influence flag and diff](../types.md#packed-magneti
 | date                             | `2023.12.23`                  | `0b0010111110010111` | `0x2f97`   |
 | magnetic influence flag and hour | magnet: `true`, time: `12:00` | `0b10001100`         | `0x8c`     |
 | counter value                    | `163`                         |                      | `0x0000a3` |
-| diff 1                           | magnet: `true`, value: `10`   | `0b1000000000001010` | `0x800a`   |
+| diff `1`                         | magnet: `true`, value: `10`   | `0b1000000000001010` | `0x800a`   |
 
 Message hex dump with LRC: `05 08 2f 97 8c 00 00 a3 80 0a 45`
 

@@ -20,14 +20,14 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **offset**
+#### offset
 
 The offset at which to write the image content to the device's flash memory.
 
-#### **image content**
+#### image content
 
 The image content size should be a multiple of `8`.
-<br>
+<br/>
 In case there is less data it should be padded with zeros.
 
 ### Examples
@@ -49,8 +49,9 @@ Message hex dump with LRC: `1f 2a 14 00 00 00 40 00 01 02 03 04 05 06 07 08 09 0
 
 | Size | Type        | Field                                  |
 | ---- | ----------- | -------------------------------------- |
-| `1`  | `31`        | `0x1f`                                 |
-| `1`  | `42`        | `0x2a`                                 |
+| `1`  | `uint8`     | extra flag = `0x1f`                    |
+| `1`  | `uint8`     | command id = `0x2a`                    |
+| `1`  | `uint8`     | command size                           |
 | `4`  | `uint32_be` | [offset](#offset) to write image block |
 | `1`  | `uint8`     | [status](#status)                      |
 
@@ -58,13 +59,13 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **offset**
+#### offset
 
 The offset at which to write the image content to the device's flash memory.
 
-#### **status**
+#### status
 
-`1` - the writing was successful <br>
+`1` - the writing was successful <br/>
 `0` - the writing failed
 
 ### Examples

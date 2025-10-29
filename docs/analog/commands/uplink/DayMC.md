@@ -23,36 +23,36 @@ It's a command with a [two-bytes header](../../message.md#command-with-a-two-byt
 
 ### Parameters
 
-#### **date**
+#### date
 
 The command contains pulse counter of channels for this date.
-<br>
+<br/>
 [See details](../../types.md#packed-date).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../../types.md#channels-bit-set).
 
-#### **channel values**
+#### channel values
 
 It's pulse counter's values for selected channels.
-<br>
+<br/>
 [See details](../../types.md#channel-values).
 
 ### Examples
 
 #### channels `2`, `4`, `6`, `8`:
 
-| Field             | Value                     | Bits                                                                    | Hex      |
-| ----------------- | ------------------------- | ----------------------------------------------------------------------- | -------- |
-| command id        | `22`                      |                                                                         | `0x16`   |
-| command size      | `9`                       |                                                                         | `0x09`   |
-| date              | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                    | `0x2f97` |
-| channels          | `2`, `4`, `6`, `8`        | `0b0000000010101010` <br> with extended bits: <br> `0b0000000110101010` | `0xaa01` |
-| channel `2` value | `12`                      |                                                                         | `0c`     |
-| channel `4` value | `131`                     | `0b0000000010000011` <br> with extended bits: <br> `0b0000000110000011` | `0x8301` |
-| channel `6` value | `8`                       |                                                                         | `08`     |
-| channel `8` value | `10`                      |                                                                         | `0a`     |
+| Field             | Value                     | Bits                                                                      | Hex      |
+| ----------------- | ------------------------- | ------------------------------------------------------------------------- | -------- |
+| command id        | `22`                      |                                                                           | `0x16`   |
+| command size      | `9`                       |                                                                           | `0x09`   |
+| date              | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                      | `0x2f97` |
+| channels          | `2`, `4`, `6`, `8`        | `0b0000000010101010` <br/> with extended bits: <br/> `0b0000000110101010` | `0xaa01` |
+| channel `2` value | `12`                      |                                                                           | `0c`     |
+| channel `4` value | `131`                     | `0b0000000010000011` <br/> with extended bits: <br/> `0b0000000110000011` | `0x8301` |
+| channel `6` value | `8`                       |                                                                           | `08`     |
+| channel `8` value | `10`                      |                                                                           | `0a`     |
 
 Message hex dump with LRC: `16 09 2f 97 aa 01 0c 83 01 08 0a d5`
 

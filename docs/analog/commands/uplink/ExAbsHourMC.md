@@ -33,39 +33,39 @@ The parameter `23` is used for this behavior.
 | `1..5` | [extended value](../../types.md#extended-value)       | channel `N` diff `1`                                |
 | `1..5` | [extended value](../../types.md#extended-value)       | channel `N` diff `2`                                |
 
-It's a command with a [two-bytes header](../../message.md#command-with-a-two-bytes-header).
+It's a command with a [three-bytes header](../../message.md#command-with-a-three-bytes-header).
 
 ### Parameters
 
-#### **date**
+#### date
 
 The command contains pulse counter of channels for this date.
-<br>
+<br/>
 [See details](../../types.md#packed-date).
 
-#### **hours**
+#### hours
 
-It`s full value of pulse counter with diff for each previous hours (8 hours if reporting data interval is set to 4 hours)
-<br>
+It's full value of pulse counter with diff for each next hours (`8` hours if reporting data interval is set to `4` hours).
+<br/>
 [See details](../../types.md#packed-hours).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../../types.md#channels-bit-set).
 
 ### Examples
 
-| Field                         | Value                     | Bits                                                                                    | Hex        |
-| ----------------------------- | ------------------------- | --------------------------------------------------------------------------------------- | ---------- |
-| extra flag                    | `31`                      |                                                                                         | `0x1f`     |
-| command id                    | `10`                      |                                                                                         | `0x0a`     |
-| command size                  | `10`                      |                                                                                         | `0x0a`     |
-| date                          | `2023.03.10 00:00:00 GMT` | `0b0010111001101010`                                                                    | `0x2e6a`   |
-| hours                         | hour: `12:00`, hours: `1` | `0b00001100`                                                                            | `0x0c`     |
-| channels                      | `1`                       | `0b00000001` <br> the same with extended bits                                           | `0x01`     |
-| channel `1` pulse coefficient | `100`                     |                                                                                         | `0x64`     |
-| channel `1` value             | `342457`                  | `0b000001010011100110111001` <br> with extended bits: <br> `0b000101001111001110111001` | `0xb9f314` |
-| channel `1` diff              | `128`                     | `0b0000000010000000` <br> with extended bits: <br> `0b0000000110000000`                 | `0x8001`   |
+| Field                         | Value                     | Bits                                                                                      | Hex        |
+| ----------------------------- | ------------------------- | ----------------------------------------------------------------------------------------- | ---------- |
+| extra flag                    | `31`                      |                                                                                           | `0x1f`     |
+| command id                    | `10`                      |                                                                                           | `0x0a`     |
+| command size                  | `10`                      |                                                                                           | `0x0a`     |
+| date                          | `2023.03.10 00:00:00 GMT` | `0b0010111001101010`                                                                      | `0x2e6a`   |
+| hours                         | hour: `12:00`, hours: `1` | `0b00001100`                                                                              | `0x0c`     |
+| channels                      | `1`                       | `0b00000001` <br/> the same with extended bits                                            | `0x01`     |
+| channel `1` pulse coefficient | `100`                     |                                                                                           | `0x64`     |
+| channel `1` value             | `342457`                  | `0b000001010011100110111001` <br/> with extended bits: <br/> `0b000101001111001110111001` | `0xb9f314` |
+| channel `1` diff              | `128`                     | `0b0000000010000000` <br/> with extended bits: <br/> `0b0000000110000000`                 | `0x8001`   |
 
 Message hex dump with LRC: `1f 0a 0a 2e 6a 0c 01 64 b9 f3 14 80 01 b8`
 

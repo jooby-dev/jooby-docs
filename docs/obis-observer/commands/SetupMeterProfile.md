@@ -21,14 +21,14 @@ Request/response to setup the meter profile.
 
 #### set double default parameters:
 
-| Field            | Value  | Hex      |
-| ---------------- | ------ | -------- |
-| command id       | `96`   | `0x60`   |
-| command size     | `5`    | `0x05`   |
-| request id       | `35`   | `0x23`   |
-| meter profile id | `2`    | `0x02`   |
-| archive 1 period | `2880` | `0x0b40` |
-| archive 2 period | `30`   | `0x001e` |
+| Field              | Value  | Hex      |
+| ------------------ | ------ | -------- |
+| command id         | `96`   | `0x60`   |
+| command size       | `5`    | `0x05`   |
+| request id         | `35`   | `0x23`   |
+| meter profile id   | `2`    | `0x02`   |
+| archive `1` period | `2880` | `0x0b40` |
+| archive `2` period | `30`   | `0x001e` |
 
 Message hex dump: `60 06 23 02 0b 40 00 1e`
 
@@ -60,7 +60,7 @@ Message hex dump: `61 01 9c`
 
 If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-##### Result codes:
+##### result codes:
 
 | Result code | Description                      |
 | ----------- | -------------------------------- |

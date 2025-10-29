@@ -20,19 +20,19 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
-#### **hours**
+#### hours
 
-It`s full value of pulse counter with diff for each previous hours (8 hours if reporting data interval is set to 4 hours)
-<br>
+It's full value of pulse counter with diff for each next hours (`8` hours if reporting data interval is set to `4` hours).
+<br/>
 [See details](../types.md#packed-hours).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
@@ -82,19 +82,19 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **start date**
+#### start date
 
 Start date for requested day pulse counter's values.
-<br>
+<br/>
 [See details](../types.md#packed-date).
 
-#### **hours**
+#### hours
 
-It`s full value of pulse counter with diff for each previous hours (8 hours if reporting data interval is set to 4 hours)
-<br>
+It's full value of pulse counter with diff for each next hours (`8` hours if reporting data interval is set to `4` hours).
+<br/>
 [See details](../types.md#packed-hours).
 
-#### **channels bit set**
+#### channels bit set
 
 [See details](../types.md#channels-bit-set).
 
@@ -102,17 +102,17 @@ It`s full value of pulse counter with diff for each previous hours (8 hours if r
 
 #### `1` channel:
 
-| Field                         | Value                     | Bits                                                                                                | Hex        |
-| ----------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------- | ---------- |
-| extra flag                    | `31`                      |                                                                                                     | `0x1f`     |
-| command id                    | `12`                      |                                                                                                     | `0x0c`     |
-| command size                  | `10`                      |                                                                                                     | `0x0a`     |
-| start date                    | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                                                | `0x2f97`   |
-| hours                         | hour: `12:00`, hours: `2` | `0b00101100`                                                                                        | `0x2c`     |
-| channels                      | `1`                       | `0b00000001`                                                                                        | `0x01`     |
-| channel `1` pulse coefficient | `100`                     | `0b10000011`                                                                                        | `0x83`     |
-| channel `1` hour `1` value    | `342457`                  | `0b00000000000001010011100110111001`<br>with extended bits:<br>`0b00000000101110011111001100010100` | `0xb9f314` |
-| channel `1` hour `1` diff     | `128`                     | `0b0000000010000000`<br>with extended bits:<br>`0b1000000000000001`                                 | `0x8001`   |
+| Field                         | Value                     | Bits                                                                                                      | Hex        |
+| ----------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------- | ---------- |
+| extra flag                    | `31`                      |                                                                                                           | `0x1f`     |
+| command id                    | `12`                      |                                                                                                           | `0x0c`     |
+| command size                  | `10`                      |                                                                                                           | `0x0a`     |
+| start date                    | `2023.12.23 00:00:00 GMT` | `0b0010111110010111`                                                                                      | `0x2f97`   |
+| hours                         | hour: `12:00`, hours: `2` | `0b00101100`                                                                                              | `0x2c`     |
+| channels                      | `1`                       | `0b00000001`                                                                                              | `0x01`     |
+| channel `1` pulse coefficient | `100`                     | `0b10000011`                                                                                              | `0x83`     |
+| channel `1` hour `1` value    | `342457`                  | `0b00000000000001010011100110111001` <br/> with extended bits: <br/> `0b00000000101110011111001100010100` | `0xb9f314` |
+| channel `1` hour `1` diff     | `128`                     | `0b0000000010000000` <br/> with extended bits: <br/> `0b1000000000000001`                                 | `0x8001`   |
 
 Message hex dump with LRC: `1f 0c 0a 2f 97 2c 01 83 b9 f3 14 80 01 85`
 

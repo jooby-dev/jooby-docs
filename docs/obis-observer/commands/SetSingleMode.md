@@ -7,12 +7,12 @@ Request to set the single or multi mode of the observer device.
 
 ### Format
 
-| Size | Type                                 | Field                                           |
-| ---- | ------------------------------------ | ----------------------------------------------- |
-| `1`  | `uint8`                              | command id = `0x0b`                             |
-| `1`  | `uint8`                              | command size                                    |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier              |
-| `1`  | `uint8`                              | Single mode: <br> `0` - multi <br> `1` - single |
+| Size | Type                                 | Field                                             |
+| ---- | ------------------------------------ | ------------------------------------------------- |
+| `1`  | `uint8`                              | command id = `0x0b`                               |
+| `1`  | `uint8`                              | command size                                      |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                |
+| `1`  | `uint8`                              | Single mode: <br/> `0` - multi <br/> `1` - single |
 
 
 ### Examples
@@ -56,7 +56,7 @@ Message hex dump: `0c 01 9c`
 
 If an error occurs, the observer will respond by sending the [Error](./uplink/Error.md) command.
 
-##### Result codes:
+##### result codes:
 
 | Result code | Description                       |
 | ----------- | --------------------------------- |

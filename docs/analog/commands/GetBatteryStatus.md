@@ -58,36 +58,36 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Parameters
 
-#### **voltage under low load**
+#### voltage under low load
 
 Voltage under minimum load (sleep mode), value in `mV`. Typical value is about `3600` `mV`.
 If the voltage value is `4095` `mV`, then the value is unknown.
 
-#### **voltage under high load**
+#### voltage under high load
 
 Voltage under load simulating transmission mode, value in `mV`. Typical value is about `3600` `mV`.
 If the voltage value is `4095` `mV`, then the value is unknown.
 
-#### **internal resistance**
+#### internal resistance
 
 Internal resistance of the battery in `mΩ`.
 If the value of the internal resistance is `65535` `mOhm`, then the resistance is unknown.
 Max value is about `60000` `mOhm`. Typical range is about `5000..28000` `mOhm`.
 
-#### **temperature**
+#### temperature
 
 It's a signed number in degrees Celsius.
 
-#### **remaining capacity**
+#### remaining capacity
 
 It's the remaining battery capacity, where `254` is `100%`.
 A value of `255` means that the remaining battery capacity is unknown.
 
-#### **overconsumption for last 24 hours**
+#### overconsumption for last 24 hours
 
-Flag is set when consumption over the last 24 hours was higher than estimated
+Flag is set when consumption over the last 24 hours was higher than estimated.
 
-#### **counter for exceeding average daily consumption**
+#### counter for exceeding average daily consumption
 
 Counter for exceeding average daily consumption.
 

@@ -105,12 +105,12 @@ Format (each line is a byte):
     </thead>
     <tbody>
         <tr>
-            <td colspan="7" align="center">Year [<code>7..0</code>]</td>
-            <td align="center">Month [<code>3</code>]</td>
+            <td colspan="7" align="center">year [<code>6..0</code>]</td>
+            <td align="center">month [<code>3</code>]</td>
         </tr>
         <tr>
-            <td colspan="3" align="center">Month [<code>2..0<code>]</td>
-            <td colspan="5" align="center">Date [<code>4..0</code>]</td>
+            <td colspan="3" align="center">month [<code>2..0</code>]</td>
+            <td colspan="5" align="center">date [<code>4..0</code>]</td>
         </tr>
     </tbody>
 </table>
@@ -118,17 +118,17 @@ Format (each line is a byte):
 ### Examples
 
 Let's pack the date `2023.12.23 00:00:00 GMT`.
-<br>
+<br/>
 In order to set the year to `2023`, we need to calculate the difference between `2000` and `2023`.
 It's `23` which is `0b10111`.
 Pad this value with zeros till the necessary size of `7` bits.
 Now it's `0b0010111` as the highest `7` bits of the first byte of the result.
-<br>
+<br/>
 The month part `12` is `0b1100`.
 The highest one bit should be placed to the position `0` of the first byte of the result. The rest `3` bits will be the highest bits of the second byte.
-<br>
+<br/>
 The day part `23` is `0b10111`. It should be placed from the start of the first byte.
-<br>
+<br/>
 Combine it all together to get `0b00101111` in the first byte and `0b10010111` in the second. The final value is `0x2f97`.
 
 The same in a table form:
@@ -152,7 +152,7 @@ The same in a table form:
             <td align="center"><code>1</code></td>
         </tr>
         <tr>
-            <td colspan="3" align="center"><code>100<code></td>
+            <td colspan="3" align="center"><code>100</code></td>
             <td colspan="5" align="center"><code>10111</code></td>
         </tr>
     </tbody>
@@ -180,8 +180,8 @@ Format:
     </thead>
     <tbody>
         <tr>
-            <td colspan="3" align="center">Hours [<code>2..0</code>]</td>
-            <td colspan="5" align="center">Hour [<code>4..0</code>]</td>
+            <td colspan="3" align="center">hours [<code>2..0</code>]</td>
+            <td colspan="5" align="center">hour [<code>4..0</code>]</td>
         </tr>
     </tbody>
 </table>
@@ -189,11 +189,11 @@ Format:
 ### Examples
 
 Let's pack the start hour `13:00` and the number of hour `2`.
-<br>
+<br/>
 Hours `2` decreased by `1` (`0b1`) becomes `0b001` to have the size of `3` bits.
-<br>
+<br/>
 Hour `13` (`0b1101`) becomes `0b01101` to have the size of `5` bits.
-<br>
+<br/>
 Combine it all together to get `0b00101101` or `0x2d`.
 
 The same in a table form:
@@ -243,7 +243,7 @@ Format:
             <td>magnetic influence</td>
             <td>reserved</td>
             <td>reserved</td>
-            <td colspan="5" align="center">Hour [<code>4..0</code>]</td>
+            <td colspan="5" align="center">hour [<code>4..0</code>]</td>
         </tr>
     </tbody>
 </table>
@@ -251,11 +251,11 @@ Format:
 ### Examples
 
 Let's pack the presence of magnetic influence and the start hour `09:00`.
-<br>
+<br/>
 The presence of magnetic influence becomes `1` as the highest bit.
-<br>
+<br/>
 Hour `09` (`0b1001`) becomes `0b01001` to have the size of `5` bits.
-<br>
+<br/>
 Combine it all together to get `0b10001001` or `0x89`.
 
 The same in a table form:
@@ -318,11 +318,11 @@ Format:
 ### Examples
 
 Let's pack the presence of magnetic influence and the hourly difference value `348`.
-<br>
+<br/>
 The presence of magnetic influence becomes `1` as the highest bit.
-<br>
+<br/>
 Value `348` (`0b101011100`) splits to two bytes `0b1` and `0b01011100`.
-<br>
+<br/>
 Combine it all together to get `0b1000000101011100` or `0x815c`.
 
 The same in a table form:
@@ -363,7 +363,7 @@ Note that bit position `0` is for channel number `1`.
 If bits `0`, `1`, `2`, `3` are set - this means that values from that channels in that order are stored in the command (channels `1`, `2`, `3`, `4`).
 The data for channel at `0` position comes first, then the second, the third and so on.
 To store up to `7` channels `1` byte is required. To store up to `14` - `2` bytes and so on.
-Usually this bit set takes from `1` to `5` bytes as there are 4 channels max available.
+Usually this bit set takes from `1` to `5` bytes as there are `4` channels max available.
 
 ### Examples
 
@@ -387,7 +387,7 @@ Each value usually is up to `32-bit` integer.
 
 The first value `131` is `0b0000000010000011` with extended bits becomes `0b0000000110000011` or `0x8301`.
 All the rest values are simple (extended bit is `0`) and take one byte each.
-<br>
+<br/>
 The final sequence is `83 01 08 0a 0c`.
 
 #### 3 channels with values `8146`, `164`, `75`
@@ -395,13 +395,13 @@ The final sequence is `83 01 08 0a 0c`.
 The first value `8146` is `0b0001111111010010` with extended bits becomes `0b0011111111010010` or `0xd23f`.
 The second value `164` is `0b0000000010100100` with extended bits becomes `0b0000000110100100` or `0xa401`.
 The last value `75` is simple (no extension) `0x4b`.
-<br>
+<br/>
 The final sequence is `e0 20 d2 3f a4 01 4b`.
 
 
-# Pulse coefficient
+## Pulse coefficient
 
-It's `1`-byte value of the pulse coefficient for a metering device, which determines the correspondence of consumed resources to 1 pulse.
+It's `1`-byte value of the pulse coefficient for a metering device, which determines the correspondence of consumed resources to `1` pulse.
 If the most significant bit is `0`, then the remaining `7` bits represent the value of the pulse coefficient,
 i.e. `0x0A` (`10`) for `10` cubic decimeters = `10` liters = `0.01` cubic meters per pulse.
 If the most significant bit is `1` then the value of pulse coefficient is determined from the table:
@@ -415,3 +415,116 @@ If the most significant bit is `1` then the value of pulse coefficient is determ
 | `0х84`            | `1000`         | `1`           |
 | `0х85`            | `10000`        | `10`          |
 | `0х86`            | `100000`       | `100`         |
+
+
+## String
+
+Bytes array of uint8 code points that range in value from `0` through `255`. Each code point, or character code, represents a single character.
+
+### Format
+
+| Size    | Type    |
+| ------- | ------- |
+| `1`     | `uint8` |
+| `0...n` | `uint8` |
+
+
+## Packed battery data
+
+It's battery current, internal resistance and depassivation time packed in `7` bytes.
+Format (each line is a byte):
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="8" align="center">low voltage [<code>11..4</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">low voltage [<code>3..0</code>]</td>
+            <td colspan="4" align="center">high voltage [<code>11..8</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">high voltage [<code>7..0</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>15..8</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>7..0</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>15..8</code>]</td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>7..0</code>]</td>
+        </tr>
+    </tbody>
+</table>
+
+* `low voltage` - water meter battery voltage without load, in `mV`
+* `high voltage` - water meter battery voltage under load of the depassivator circuit, in `mV`
+* `resistance` - internal battery resistance, in `mΩ`
+* `time` - time of the last depassivation, in seconds
+
+### Examples
+
+For low voltage `3600` `mV`, high voltage `3850` `mV`, resistance `18500` `mOhm` and depassivation time `400` seconds:
+
+<table>
+    <thead>
+        <tr>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+            <th>hex</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="8" align="center">low voltage [<code>0b11100001</code>]</td>
+            <td align="center"><code>0xe1</code></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">low voltage [<code>0b0000</code>]</td>
+            <td colspan="4" align="center">high voltage [<code>0b1111</code>]</td>
+            <td align="center"><code>0x0f</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">high voltage [<code>0b00001010</code>]</td>
+            <td align="center"><code>0x0a</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>0b01001000</code>]</td>
+            <td align="center"><code>0x48</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">resistance [<code>0b01000100</code>]</td>
+            <td align="center"><code>0x44</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>0b00000001</code>]</td>
+            <td align="center"><code>0x01</code></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">time [<code>0b10010000</code>]</td>
+            <td align="center"><code>0x90</code></td>
+        </tr>
+    </tbody>
+</table>

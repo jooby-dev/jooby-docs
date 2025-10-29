@@ -30,12 +30,12 @@ Message hex dump: `0d 01 04`
 
 ### Format
 
-| Size | Type                                 | Field                                           |
-| ---- | ------------------------------------ | ----------------------------------------------- |
-| `1`  | `uint8`                              | command id = `0x0e`                             |
-| `1`  | `uint8`                              | command size                                    |
-| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier              |
-| `1`  | `uint8`                              | Single mode: <br> `0` - multi <br> `1` - single |
+| Size | Type                                 | Field                                             |
+| ---- | ------------------------------------ | ------------------------------------------------- |
+| `1`  | `uint8`                              | command id = `0x0e`                               |
+| `1`  | `uint8`                              | command size                                      |
+| `1`  | [Request ID](../types.md#request-id) | request/response unique identifier                |
+| `1`  | `uint8`                              | Single mode: <br/> `0` - multi <br/> `1` - single |
 
 
 ### Examples

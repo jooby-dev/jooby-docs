@@ -39,7 +39,7 @@ Command hex dump: `1e 00`
 | `4`  | `uint32` | maximum power threshold for tariff `T2`, Watts                                                                                                                 |
 | `4`  | `uint32` | maximum power threshold for tariff `T3`, Watts                                                                                                                 |
 | `4`  | `uint32` | maximum power threshold for tariff `T4`, Watts                                                                                                                 |
-| `1`  | `uint8`  | reserved byte                                                                                                                                                  |
+| `1`  | `uint8`  | [serial ports set](#serial-ports-set) byte                                                                                                                     |
 | `1`  | `uint8`  | power averaging interval, in minutes                                                                                                                           |
 | `1`  | `uint8`  | start date of the monthly billing period                                                                                                                       |
 | `1`  | `uint8`  | display active time                                                                                                                                            |
@@ -204,6 +204,15 @@ Bit mask:
 | `RELAY_ON_UNEQUAL_CURRENT`  | `1` | relay on after being turned off due to unequal currents                                                   |
 | `RELAY_OFF_BIPOLAR_POWER`   | `2` | relay off when opposite polarity powers are detected in phase and neutral (only for `G` meter)            |
 | `RELAY_ON_BIPOLAR_POWER`    | `3` | relay on after being turned off due to opposite polarity powers in phase and neutral (only for `G` meter) |
+
+#### serial ports set
+
+Bit mask:
+
+| Name                 | Bit    | Description                     |
+| -------------------- | ------ | ------------------------------- |
+| `RS485/TWI SPEED`    | `0..3` | `2` - `2400`; `0`, `4` - `9600` |
+| `OPTICAL PORT SPEED` | `4..7` | `0`, `2` - `2400`; `4` - `9600` |
 
 ### Examples
 

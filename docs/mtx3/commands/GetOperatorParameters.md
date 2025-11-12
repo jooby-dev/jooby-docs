@@ -51,7 +51,7 @@ Message hex dump: `1e 00`
 | `4`  | `uint32` | [display settings 2](#display-settings-2)                                                                                                                           |
 | `4`  | `uint32` | [display settings 3](#display-settings-3)                                                                                                                           |
 | `4`  | `uint32` | [relay set](#relay-set)                                                                                                                                             |
-| `1`  | `uint8`  | [serial ports set](#serial-ports-set)                                                                                                                               |
+| `1`  | `uint8`  | [serial ports speed](#serial-ports-speed)                                                                                                                           |
 | `1`  | `uint8`  | integration period for energy profiles `A+`, `A-`, voltage VA , `0`, `30` - `30`, `1`, `3`, `5`, `10`, `15`, `60` minutes (`ten`)                                   |
 | `1`  | `uint8`  | voltage averaging interval `0`, `1`, `3`, `5`, `10`, `15`, `30`, `60` minutes to detect voltage quality                                                             |
 | `1`  | `uint8`  | reserved byte                                                                                                                                                       |
@@ -271,7 +271,7 @@ Bit mask:
 | `RELAY_OFF_SALDO`                   | `29` | disable by balance                                             |
 | `RELAY_OFF_SALDO_SOFT`              | `30` | disable by balance condition                                   |
 
-#### serial ports set
+#### serial ports speed
 
 Bit mask:
 
@@ -547,7 +547,7 @@ Bit mask:
         </tr>
         <tr>
             <td>
-                <a href="#serial-ports-set">serial ports set</a>
+                <a href="#serial-ports-speed">serial ports speed</a>
             </td>
             <td>
                 <code>plc</code>: <code>9600</code><br>

@@ -32,7 +32,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `4`  | `uint32` | [display settings 2](./GetOperatorParameters.md#display-settings-2)                                                                                                 |
 | `4`  | `uint32` | [display settings 3](./GetOperatorParameters.md#display-settings-3)                                                                                                 |
 | `4`  | `uint32` | [relay set](./GetOperatorParameters.md#relay-set)                                                                                                                   |
-| `1`  | `uint8`  | [serial ports set](./GetOperatorParameters.md#serial-ports-set)                                                                                                     |
+| `1`  | `uint8`  | [serial ports speed](./GetOperatorParameters.md#serial-ports-speed                                                                                                  |
 | `1`  | `uint8`  | integration period for energy profiles `A+`, `A-`, voltage VA , `0`, `30` - `30`, `1`, `3`, `5`, `10`, `15`, `60` minutes (`ten`)                                   |
 | `1`  | `uint8`  | voltage averaging interval `0`, `1`, `3`, `5`, `10`, `15`, `30`, `60` minutes to detect voltage quality                                                             |
 | `1`  | `uint8`  | reserved byte                                                                                                                                                       |

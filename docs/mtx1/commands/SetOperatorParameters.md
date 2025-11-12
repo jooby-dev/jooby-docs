@@ -20,7 +20,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `4`  | `uint32` | maximum power threshold for tariff `T2`, Watts                                                                                                                 |
 | `4`  | `uint32` | maximum power threshold for tariff `T3`, Watts                                                                                                                 |
 | `4`  | `uint32` | maximum power threshold for tariff `T4`, Watts                                                                                                                 |
-| `1`  | `uint8`  | [serial ports set](./GetOperatorParameters.md#serial-ports-set)                                                                                                |
+| `1`  | `uint8`  | [serial ports speed](./GetOperatorParameters.md#serial-ports-speed)                                                                                            |
 | `1`  | `uint8`  | power averaging interval, in minutes                                                                                                                           |
 | `1`  | `uint8`  | start date of the monthly billing period                                                                                                                       |
 | `1`  | `uint8`  | display active time                                                                                                                                            |

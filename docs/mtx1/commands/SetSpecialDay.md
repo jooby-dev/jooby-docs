@@ -22,7 +22,7 @@ Supported devices:
 | `1`  | `uint8` | month (`1` - January ... `12` - December)                                                                                                            |
 | `1`  | `uint8` | date (month day number which starts from `1`)                                                                                                        |
 | `1`  | `uint8` | day profile index                                                                                                                                    |
-| `1`  | `uint8` | is it periodic or not (`0` - true, `1` - false)                                                                                                      |
+| `1`  | `uint8` | year (number of years after 2000). If year is equal to 0, the date is treated as periodic (month and day are fixed)                                  |
 
 ### Examples
 
@@ -35,9 +35,9 @@ Supported devices:
 | month        | `1` (January) | `0x01` |
 | date         | `9`           | `0x09` |
 | day index    | `3`           | `0x03` |
-| is periodic  | `true`        | `0x00` |
+| year         | `6`           | `0x06` |
 
-Command hex dump: `12 06 01 05 01 09 03 00`
+Command hex dump: `12 06 01 05 01 09 03 06`
 
 
 ## Response

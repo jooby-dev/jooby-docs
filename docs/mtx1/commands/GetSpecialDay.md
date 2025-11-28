@@ -38,14 +38,14 @@ Command hex dump: `3d 03 00 04 01`
 
 ### Format
 
-| Size | Type    | Field                                           |
-| ---- | ------- | ----------------------------------------------- |
-| `1`  | `uint8` | command id = `0x3d`                             |
-| `1`  | `uint8` | command size = `4`                              |
-| `1`  | `uint8` | month (`1` - January ... `12` - December)       |
-| `1`  | `uint8` | date (month day number which starts from `1`)   |
-| `1`  | `uint8` | day profile index                               |
-| `1`  | `uint8` | is it periodic or not (`0` - true, `1` - false) |
+| Size | Type    | Field                                                                                                               |
+| ---- | ------- | ------------------------------------------------------------------------------------------------------------------- |
+| `1`  | `uint8` | command id = `0x3d`                                                                                                 |
+| `1`  | `uint8` | command size = `4`                                                                                                  |
+| `1`  | `uint8` | month (`1` - January ... `12` - December)                                                                           |
+| `1`  | `uint8` | date (month day number which starts from `1`)                                                                       |
+| `1`  | `uint8` | day profile index                                                                                                   |
+| `1`  | `uint8` | year (number of years after 2000). If year is equal to 0, the date is treated as periodic (month and day are fixed) |
 
 ### Examples
 
@@ -56,9 +56,9 @@ Command hex dump: `3d 03 00 04 01`
 | month        | `1` (January) | `0x01` |
 | date         | `9`           | `0x09` |
 | day index    | `3`           | `0x03` |
-| is periodic  | `true`        | `0x00` |
+| year         | `5`           | `0x05` |
 
-Command hex dump: `3d 04 01 09 03 00`
+Command hex dump: `3d 04 01 09 03 05`
 
 
 ## See also

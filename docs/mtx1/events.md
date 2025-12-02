@@ -17,7 +17,7 @@
 | `0x23` | `CHANGE_ACCESS_KEY3`           | Access key level `3` changed.                                                                 |
 | `0x24` | `CHANGE_PARAMETERS_LOCAL`      | Parameters changed locally.                                                                   |
 | `0x25` | `CHANGE_PARAMETERS_REMOTE`     | Parameters changed remotely.                                                                  |
-| `0x26` | `CMD_CHANGE_TIME`              | Time changed (Correction: TIME SET).                                                          |
+| `0x26` | `CMD_SET_DATETIME`             | Time set command received. Time set.                                                          |
 | `0x27` | `CMD_RELAY_ON`                 | `Relay on` command received.                                                                  |
 | `0x28` | `CMD_RELAY_OFF`                | `Relay off` command received.                                                                 |
 | `0x29` | `CHANGE_COR_TIME`              | Daylight saving time transition parameters changed.                                           |

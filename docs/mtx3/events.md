@@ -19,7 +19,7 @@
 | `0x23` | `CHANGE_ACCESS_KEY3`                | `C.027`           | Access key level `3` changed.                                                           |
 | `0x24` | `CHANGE_PARAMETERS_LOCAL`           | `C.028`           | Parameters changed locally.                                                             |
 | `0x25` | `CHANGE_PARAMETERS_REMOTE`          | `C.029`           | Parameters changed remotely.                                                            |
-| `0x26` | `CMD_CHANGE_TIME`                   | `C.030`           | Time set command received. Time set.                                                    |
+| `0x26` | `CMD_SET_DATETIME`                  | `C.030`           | Time set command received. Time set.                                                    |
 | `0x27` | `CMD_RELAY_ON`                      | `C.031`           | `Relay on` command received.                                                            |
 | `0x28` | `CMD_RELAY_OFF`                     | `C.032`           | `Relay off` command received.                                                           |
 | `0x31` | `ENERGY_REGISTER_OVERFLOW`          | `C.049`           | Energy accumulation register overflow.                                                  |

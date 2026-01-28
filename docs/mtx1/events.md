@@ -1,7 +1,7 @@
 # Events
 
 | `ID`   | `Name`                             | `Description`                                                                                 |
-|--------|------------------------------------|-----------------------------------------------------------------------------------------------|
+| ------ | ---------------------------------- | --------------------------------------------------------------------------------------------- |
 | `0x01` | `ENERGY_REGISTER_FAULT`            | Accumulative register values lost.                                                            |
 | `0x02` | `VENDOR_PAR_FAULT`                 | Factory parameter values lost.                                                                |
 | `0x03` | `OPERATOR_PARAMETERS_VALUES_FAULT` | Operator parameter values lost.                                                               |
@@ -30,10 +30,8 @@
 | `0x37` | `RELAY_OFF`                        | Relay turned off.                                                                             |
 | `0x38` | `RESTART`                          | Microcontroller program restart.                                                              |
 | `0x39` | `WATCHDOG_RESTART`                 | WATCHDOG restart.                                                                             |
-| `0x3C` | `POWER_B_ON`                       | Phase `B` voltage turned on.                                                                  |
-| `0x3D` | `POWER_B_OFF`                      | Phase `B` voltage turned off.                                                                 |
-| `0x3E` | `POWER_C_ON`                       | Phase `C` voltage turned on.                                                                  |
-| `0x3F` | `POWER_C_OFF`                      | Phase `C` voltage turned off.                                                                 |
+| `0x3a` | `COSF_OK `                         | cos(φ) restored (power factor).                                                               |
+| `0x3b` | `COSF_MIN_OVER `                   | cos(φ) below minimum cos(φ) threshold.                                                        |
 | `0x40` | `V_MAX_OK`                         | Normal voltage restored after over-voltage.                                                   |
 | `0x41` | `V_MAX_OVER`                       | Voltage above maximum voltage threshold.                                                      |
 | `0x42` | `V_MIN_OK`                         | Normal voltage restored after under-voltage.                                                  |
@@ -44,12 +42,12 @@
 | `0x47` | `T_MIN_OVER`                       | Temperature below minimum temperature threshold.                                              |
 | `0x48` | `F_MAX_OK`                         | Normal frequency restored after over-frequency.                                               |
 | `0x49` | `F_MAX_OVER`                       | Frequency above maximum grid frequency threshold.                                             |
-| `0x4A` | `F_MIN_OK`                         | Normal frequency restored after under-frequency.                                              |
-| `0x4B` | `F_MIN_OVER`                       | Frequency below minimum grid frequency threshold.                                             |
-| `0x4C` | `I_MAX_OK`                         | Permissible current restored after over-current.                                              |
-| `0x4D` | `I_MAX_OVER`                       | Current above maximum current threshold.                                                      |
-| `0x4E` | `P_MAX_OK`                         | Permissible power consumption restored after over-power.                                      |
-| `0x4F` | `P_MAX_OVER`                       | Power consumption above maximum power threshold.                                              |
+| `0x4a` | `F_MIN_OK`                         | Normal frequency restored after under-frequency.                                              |
+| `0x4b` | `F_MIN_OVER`                       | Frequency below minimum grid frequency threshold.                                             |
+| `0x4c` | `I_MAX_OK`                         | Permissible current restored after over-current.                                              |
+| `0x4d` | `I_MAX_OVER`                       | Current above maximum current threshold.                                                      |
+| `0x4e` | `P_MAX_OK`                         | Permissible power consumption restored after over-power.                                      |
+| `0x4f` | `P_MAX_OVER`                       | Power consumption above maximum power threshold.                                              |
 | `0x50` | `POWER_SALDO_OK`                   | No power excess in credit mode.                                                               |
 | `0x51` | `POWER_SALDO_OVER`                 | Power exceeded in credit mode.                                                                |
 | `0x52` | `BATTERY_OK`                       | Normal battery voltage restored.                                                              |
@@ -80,39 +78,38 @@
 | `0x77` | `WINTER_SUMMER_FAULT`              | Winter/summer time transition parameter values lost.                                          |
 | `0x78` | `SALDO_EN_FAULT`                   | Energy values for balance calculation lost.                                                   |
 | `0x79` | `TIME_CORRECT`                     | Time correction.                                                                              |
-| `0x7A` | `CASE_TERMINAL_BOX_OPENED`         | Terminal box opened.                                                                          |
-| `0x7B` | `CASE_TERMINAL_BOX_CLOSED`         | Terminal box closed.                                                                          |
-| `0x7C` | `CASE_MODULE_OPENED`               | Meter module compartment opened.                                                              |
-| `0x7D` | `CASE_MODULE_CLOSED`               | Meter module compartment closed.                                                              |
-| `0x7E` | `POWER_GOOD_DIO`                   | POWER_GOOD signal missing.                                                                    |
+| `0x7a` | `CASE_TERMINAL_BOX_OPENED`         | Terminal box opened.                                                                          |
+| `0x7b` | `CASE_TERMINAL_BOX_CLOSED`         | Terminal box closed.                                                                          |
+| `0x7c` | `CASE_MODULE_OPENED`               | Meter module compartment opened.                                                              |
+| `0x7d` | `CASE_MODULE_CLOSED`               | Meter module compartment closed.                                                              |
 | `0x90` | `RELAY_HARD_BAD_OFF`               | Relay mechanically switched OFF.                                                              |
 | `0x91` | `RELAY_HARD_ON`                    | Relay switched ON after mechanical intervention. Relay state restored.                        |
 | `0x93` | `RELAY_HARD_BAD_ON`                | Relay mechanically switched ON.                                                               |
 | `0x94` | `RELAY_HARD_OFF`                   | Relay switched OFF after mechanical intervention. Relay state restored.                       |
 | `0x98` | `CHANGE_TARIFF_TABLE_2`            | Tariff plan `2` changed.                                                                      |
-| `0x9C` | `SET_SALDO_PARAM`                  | Balance parameters set.                                                                       |
-| `0x9D` | `POWER_OVER_RELAY_OFF`             | Relay switched OFF due to active power exceeding.                                             |
-| `0x9E` | `CROSS_ZERO_EXPORT_EN_T1`          | Active energy `A-` meter transition through `0` for tariff `1` upon reaching `1000000.00` kW. |
-| `0x9F` | `CROSS_ZERO_EXPORT_EN_T2`          | Active energy `A-` meter transition through `0` for tariff `2` upon reaching `1000000.00` kW. |
-| `0xA0` | `CROSS_ZERO_EXPORT_EN_T3`          | Active energy `A-` meter transition through `0` for tariff `3` upon reaching `1000000.00` kW. |
-| `0xA1` | `CROSS_ZERO_EXPORT_EN_T4`          | Active energy `A-` meter transition through `0` for tariff `4` upon reaching `1000000.00` kW. |
-| `0xA2` | `TIME_CORRECT_NEW`                 | Time correction. Reserved event - do not use.                                                 |
-| `0xB0` | `EM_MAGNETIC_INFLUENCE_ON`         | Electromagnetic influence detected.                                                           |
-| `0xB1` | `EM_MAGNETIC_INFLUENCE_OFF`        | Electromagnetic influence ceased.                                                             |
-| `0xB2` | `CURRENT_UNEQUAL_FAULT`            | Current inequality detected.                                                                  |
-| `0xB3` | `CURRENT_UNEQUAL_OK`               | Current inequality absent.                                                                    |
-| `0xB4` | `BIPOLAR_POWER_FAULT`              | Bipolar power detected in phase and neutral.                                                  |
-| `0xB5` | `BIPOLAR_POWER_OK`                 | Bipolar power in phase and neutral not detected.                                              |
-| `0xB6` | `RESET_EM_FLAG`                    | Electromagnetic influence flag reset.                                                         |
-| `0xB7` | `RESET_MAGNET_FLAG`                | Magnetic influence flag reset.                                                                |
-| `0xB9` | `CHANGE_PARAMETERS_CHANNEL`        | Load profile parameter changed.                                                               |
-| `0xBA` | `RELAY_OFF_BAD_SALDO`              | Relay switched OFF due to consumption limit in credit mode.                                   |
-| `0xE0` | `SET_DEMAND_EN_1MIN`               | `1`-minute energy (voltage) load profiles recording mode set.                                 |
-| `0xE1` | `SET_DEMAND_EN_3MIN`               | `3`-minute energy (voltage) load profiles recording mode set.                                 |
-| `0xE2` | `SET_DEMAND_EN_5MIN`               | `5`-minute energy (voltage) load profiles recording mode set.                                 |
-| `0xE3` | `SET_DEMAND_EN_10MIN`              | `10`-minute energy (voltage) load profiles recording mode set.                                |
-| `0xE4` | `SET_DEMAND_EN_15MIN`              | `15`-minute energy (voltage) load profiles recording mode set.                                |
-| `0xE5` | `SET_DEMAND_EN_30MIN`              | `30`-minute energy (voltage) load profiles recording mode set.                                |
-| `0xE6` | `SET_DEMAND_EN_60MIN`              | `60`-minute energy (voltage) load profiles recording mode set.                                |
-| `0xE7` | `P_MAX_A_MINUS_OK`                 | Recovery of permissible generated power `P-` after being too high.                            |
-| `0xE8` | `P_MAX_A_MINUS_OVER`               | Generated power `P-` exceeds the maximum power threshold.                                     |
+| `0x9c` | `SET_SALDO_PARAM`                  | Balance parameters set.                                                                       |
+| `0x9d` | `POWER_OVER_RELAY_OFF`             | Relay switched OFF due to active power exceeding.                                             |
+| `0x9e` | `CROSS_ZERO_EXPORT_EN_T1`          | Active energy `A-` meter transition through `0` for tariff `1` upon reaching `1000000.00` kW. |
+| `0x9f` | `CROSS_ZERO_EXPORT_EN_T2`          | Active energy `A-` meter transition through `0` for tariff `2` upon reaching `1000000.00` kW. |
+| `0xa0` | `CROSS_ZERO_EXPORT_EN_T3`          | Active energy `A-` meter transition through `0` for tariff `3` upon reaching `1000000.00` kW. |
+| `0xa1` | `CROSS_ZERO_EXPORT_EN_T4`          | Active energy `A-` meter transition through `0` for tariff `4` upon reaching `1000000.00` kW. |
+| `0xa2` | `TIME_CORRECT_NEW`                 | Time correction. Reserved event - do not use.                                                 |
+| `0xb0` | `EM_MAGNETIC_INFLUENCE_ON`         | Electromagnetic influence detected.                                                           |
+| `0xb1` | `EM_MAGNETIC_INFLUENCE_OFF`        | Electromagnetic influence ceased.                                                             |
+| `0xb2` | `CURRENT_UNEQUAL_FAULT`            | Current inequality detected.                                                                  |
+| `0xb3` | `CURRENT_UNEQUAL_OK`               | Current inequality absent.                                                                    |
+| `0xb4` | `BIPOLAR_POWER_FAULT`              | Bipolar power detected in phase and neutral.                                                  |
+| `0xb5` | `BIPOLAR_POWER_OK`                 | Bipolar power in phase and neutral not detected.                                              |
+| `0xb6` | `RESET_EM_FLAG`                    | Electromagnetic influence flag reset.                                                         |
+| `0xb7` | `RESET_MAGNET_FLAG`                | Magnetic influence flag reset.                                                                |
+| `0xb9` | `CHANGE_PARAMETERS_CHANNEL`        | Load profile parameter changed.                                                               |
+| `0xba` | `RELAY_OFF_BAD_SALDO`              | Relay switched OFF due to consumption limit in credit mode.                                   |
+| `0xe0` | `SET_DEMAND_EN_1MIN`               | `1`-minute energy (voltage) load profiles recording mode set.                                 |
+| `0xe1` | `SET_DEMAND_EN_3MIN`               | `3`-minute energy (voltage) load profiles recording mode set.                                 |
+| `0xe2` | `SET_DEMAND_EN_5MIN`               | `5`-minute energy (voltage) load profiles recording mode set.                                 |
+| `0xe3` | `SET_DEMAND_EN_10MIN`              | `10`-minute energy (voltage) load profiles recording mode set.                                |
+| `0xe4` | `SET_DEMAND_EN_15MIN`              | `15`-minute energy (voltage) load profiles recording mode set.                                |
+| `0xe5` | `SET_DEMAND_EN_30MIN`              | `30`-minute energy (voltage) load profiles recording mode set.                                |
+| `0xe6` | `SET_DEMAND_EN_60MIN`              | `60`-minute energy (voltage) load profiles recording mode set.                                |
+| `0xe7` | `P_MAX_A_MINUS_OK`                 | Recovery of permissible generated power `P-` after being too high.                            |
+| `0xe8` | `P_MAX_A_MINUS_OVER`               | Generated power `P-` exceeds the maximum power threshold.                                     |

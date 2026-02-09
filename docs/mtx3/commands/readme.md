@@ -480,7 +480,7 @@ There are `2` types of command direction:
         <tr>
             <td><code>0x73</code></td>
             <td><code>GetQuality</code></td>
-            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><strong><code>READ_ONLY</code></td>
             <td><a href="./GetQuality.md#request">request</a> / <a href="./GetQuality.md#response">response</a></td>
             <td>Get voltage quality information.</td>
         </tr>
@@ -501,7 +501,7 @@ There are `2` types of command direction:
         <tr>
             <td><code>0x76</code></td>
             <td><code>GetDemand</code></td>
-            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><strong><code>READ_ONLY</code></td>
             <td><a href="./GetDemand.md#request">request</a> / <a href="./GetDemand.md#response">response</a></td>
             <td>Get the measurement data by selected type for date.</td>
         </tr>

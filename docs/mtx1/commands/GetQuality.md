@@ -42,11 +42,11 @@ Command hex dump: `73 02 18 02`
 | `1`  | `uint8`  | command size = `16`                                                                                                                                 |
 | `1`  | `uint8`  | year (number of years after `2000`)                                                                                                                 |
 | `1`  | `uint8`  | month (`1` - January ... `12` - December)                                                                                                           |
-| `4`  | `uint32` | Total duration of power outages during the month that are greater than or equal to [powerOffTrackingInterval](./SetDemandParameters.md), in minutes |
-| `2`  | `uint16` | Number of power outages during the month that are greater than or equal to [powerOffTrackingInterval](./SetDemandParameters.md)                     |
-| `4`  | `uint32` | Total duration of power outages during the month that are less than [powerOffTrackingInterval](./SetDemandParameters.md), in minutes                |
-| `2`  | `uint16` | Number of power outages during the month that are less than [powerOffTrackingInterval](./SetDemandParameters.md)                                    |
-| `2`  | `uint16` | Total duration of poor voltage quality on phase A during the month, in minutes                                                                      |
+| `4`  | `uint32` | total duration of power outages during the month that are greater than or equal to [powerOffTrackingInterval](./SetDemandParameters.md), in minutes |
+| `2`  | `uint16` | number of power outages during the month that are greater than or equal to [powerOffTrackingInterval](./SetDemandParameters.md)                     |
+| `4`  | `uint32` | total duration of power outages during the month that are less than [powerOffTrackingInterval](./SetDemandParameters.md), in minutes                |
+| `2`  | `uint16` | number of power outages during the month that are less than [powerOffTrackingInterval](./SetDemandParameters.md)                                    |
+| `2`  | `uint16` | total duration of poor voltage quality on phase A during the month, in minutes                                                                      |
 
 ### Examples
 

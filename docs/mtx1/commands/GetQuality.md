@@ -1,0 +1,71 @@
+# GetQuality
+
+Request/response to get voltage quality information.
+
+The command access level is [READ_ONLY](../basics.md#command-access-level).
+
+Supported devices:
+- MTX1
+- MTX3
+
+
+## Request
+
+### Format
+
+| Size | Type    | Field                                     |
+| ---- | ------- | ----------------------------------------- |
+| `1`  | `uint8` | command id = `0x73`                       |
+| `1`  | `uint8` | command size = `2`                        |
+| `1`  | `uint8` | year (number of years after `2000`)       |
+| `1`  | `uint8` | month (`1` - January ... `12` - December) |
+
+### Examples
+
+| Field        | Value                         | Hex    |
+| ------------ | ----------------------------- | ------ |
+| command id   | `115`                         | `0x73` |
+| command size | `2`                           | `0x02` |
+| year         | `24` (`2000` + `24` = `2024`) | `0x18` |
+| month        | `2` (February)                | `0x02` |
+
+Command hex dump: `73 02 18 02`
+
+
+## Response
+
+### Format
+
+| Size | Type     | Field                                                                                                                                               |
+| ---- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `1`  | `uint8`  | command id = `0x73`                                                                                                                                 |
+| `1`  | `uint8`  | command size = `16`                                                                                                                                 |
+| `1`  | `uint8`  | year (number of years after `2000`)                                                                                                                 |
+| `1`  | `uint8`  | month (`1` - January ... `12` - December)                                                                                                           |
+| `4`  | `uint32` | total duration of power outages during the month that are greater than or equal to [powerOffTrackingInterval](./SetDemandParameters.md), in minutes |
+| `2`  | `uint16` | number of power outages during the month that are greater than or equal to [powerOffTrackingInterval](./SetDemandParameters.md)                     |
+| `4`  | `uint32` | total duration of power outages during the month that are less than [powerOffTrackingInterval](./SetDemandParameters.md), in minutes                |
+| `2`  | `uint16` | number of power outages during the month that are less than [powerOffTrackingInterval](./SetDemandParameters.md)                                    |
+| `2`  | `uint16` | total duration of poor voltage quality on phase A during the month, in minutes                                                                      |
+
+### Examples
+
+| Field                   | Value    | Hex          |
+| ----------------------- | -------- | ------------ |
+| command id              | `115`    | `0x73`       |
+| command size            | `16`     | `0x10`       |
+| year                    | `26`     | `0x1a`       |
+| month                   | `1`      | `0x01`       |
+| powerOffSaidiMinutes    | `565316` | `0x0008a044` |
+| powerOffSaidiCount      | `3`      | `0x0003`     |
+| powerOffMaidiMinutes    | `0`      | `0x00000000` |
+| powerOffMaifiCount      | `3`      | `0x0003`     |
+| badVoltagePhaseAMinutes | `34`     | `0x0022`     |
+
+Command hex dump: `73 10 1a 01 0008a044 0003 00000000 0003 0022`
+
+
+## See also
+
+* [Access level](../basics.md#command-access-level)
+* [Power-off tracking interval](./SetDemandParameters.md)

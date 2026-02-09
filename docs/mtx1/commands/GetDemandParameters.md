@@ -33,7 +33,7 @@ Command hex dump: `75 00`
 | `1`  | `uint8` | command id = `0x75`                                  |
 | `1`  | `uint8` | command size = `4`                                   |
 | `1`  | `uint8` | [channel param 1](#channel-param-1)                  |
-| `1`  | `uint8` | time interval for counting power-off events, minutes |
+| `1`  | `uint8` | power-off tracking interval, minutes                 |
 | `1`  | `uint8` | [channel param 2](#channel-param-2)                  |
 | `1`  | `uint8` | reserved byte                                        |
 
@@ -60,7 +60,7 @@ Command hex dump: `75 00`
 | command id                                  | `117`                                   | `0x75` |
 | command size                                | `4`                                     | `0x04` |
 | [channel param 1](#channel-param-1)         | voltage profile disabled                | `0x00` |
-| time interval for counting power-off events | `20` minutes                            | `0x14` |
+| power-off tracking interval, minutes        | `20` minutes                            | `0x14` |
 | [channel param 2](#channel-param-2)         | `15/30/60`-minute phase voltage profile | `0xa0` |
 | reserved byte                               | `0`                                     | `0x00` |
 

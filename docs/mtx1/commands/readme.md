@@ -435,6 +435,13 @@ There are `2` types of command direction:
             <td>Set extended device operator parameters <code>3</code>.</td>
         </tr>
         <tr>
+            <td><code>0x73</code></td>
+            <td><code>GetQuality</code></td>
+            <td><strong><code>READ_ONLY</code></strong></td>
+            <td><a href="./GetQuality.md#request">request</a> / <a href="./GetQuality.md#response">response</a></td>
+            <td>Get voltage quality information.</td>
+        </tr>
+        <tr>
             <td><code>0x74</code></td>
             <td><code>SetDemandParameters</code></td>
             <td><strong><code>READ_WRITE</code></strong></td>

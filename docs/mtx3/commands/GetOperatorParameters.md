@@ -55,7 +55,7 @@ Message hex dump: `1e 00`
 | `1`  | `uint8`  | integration period for energy profiles `A+`, `A-`, voltage VA , `0`, `30` - `30`, `1`, `3`, `5`, `10`, `15`, `60` minutes (`ten`)                                   |
 | `1`  | `uint8`  | voltage averaging interval `0`, `1`, `3`, `5`, `10`, `15`, `30`, `60` minutes to detect voltage quality                                                             |
 | `1`  | `uint8`  | reserved byte                                                                                                                                                       |
-| `1`  | `uint8`  | interval for tracking power off events, in minutes                                                                                                                  |
+| `1`  | `uint8`  | power-off tracking interval, minutes                                                                                                                                |
 | `1`  | `uint8`  | reserved byte                                                                                                                                                       |
 | `1`  | `uint8`  | timeout for relay deactivation due to poor voltage, seconds                                                                                                         |
 | `1`  | `unt8`   | maximum threshold for the frequency of the grid voltage                                                                                                             |
@@ -566,7 +566,7 @@ Bit mask:
             <td><code>0x1e</code></td>
         </tr>
         <tr>
-            <td>interval for tracking power off events, in minutes</td>
+            <td>power-off tracking interval, minutes</td>
             <td><code>3</code></td>
             <td><code>0x03</code></td>
         </tr>

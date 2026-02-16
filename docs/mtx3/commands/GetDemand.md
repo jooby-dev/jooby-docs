@@ -163,7 +163,7 @@ Command hex dump: `76 07 30bb 02 0030 03 1e`
 Response with repeated hour during the daylight saving time change.
 
 | Size  | Type     | Field                                                                         |
-|-------|----------|-------------------------------------------------------------------------------|
+| ----- | -------- | ----------------------------------------------------------------------------- |
 | `1`   | `uint8`  | command id = `0x76`                                                           |
 | `1`   | `uint8`  | command size = `7+`                                                           |
 | `2`   | `uint8`  | [packed date](../../mtx1/types.md#packed-date)                                |

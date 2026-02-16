@@ -72,7 +72,7 @@ Command hex dump: `6f 05 2a43 01 05 0a`
 | `15..14`  | tariff             | tariff number `0..3`, extracted from the two most significant bits |
 | `13..0`   | accumulated energy | `14`-bit value representing the actual accumulated measurement     |
 
-An tariff energy value of `0xffff` indicates that no data is available because the meter was turned off.<br>
+An tariff energy value of `0xffff` indicates that no data is available because the meter was turned off.
 
 ### Examples
 

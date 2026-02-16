@@ -154,7 +154,7 @@ Command hex dump: `76 07 30bb 02 0030 03 1e`
 | `2`   | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
 | `1`   | `uint8`  | number of requested records                                                   |
 | `1`   | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                       |
-| `2*n` | uint16`  | accumulated data, according to [demand type](#demand-type)                    |
+| `2*n` | `uint16` | accumulated data, according to [demand type](#demand-type)                    |
 
 > `n` - the number of energies derived from packed energy type field.
 
@@ -162,31 +162,20 @@ Command hex dump: `76 07 30bb 02 0030 03 1e`
 
 Response with repeated hour during the daylight saving time change.
 
-| Size  | Type                                  | Field                                                                         |
-| ----- | ------------------------------------- | ----------------------------------------------------------------------------- |
-| `1`   | `uint8`                               | command id = `0x76`                                                           |
-| `1`   | `uint8`                               | command size = `7+`                                                           |
-| `2`   | `uint8`                               | [packed date](../../mtx1/types.md#packed-date)                                |
-| `1`   | `uint8`                               | [demand type](#demand-type)                                                   |
-| `2`   | `uint16`                              | index of the first requested record ([valid index range](#valid-index-range)) |
-| `1`   | `uint8`                               | number of requested records                                                   |
-| `1`   | `uint8`                               | accumulation period `1/3/5/10/15/30/60`                                       |
-| `2*n` | [accumulated data](#accumulated-data) | accumulated data, according to [demand type](#demand-type)                    |
-| `1`   | `uint8`                               | the repeated hour during the daylight saving time change                      |
-| `1`   | `uint8`                               | reserved                                                                      |
+| Size  | Type     | Field                                                                         |
+|-------|----------|-------------------------------------------------------------------------------|
+| `1`   | `uint8`  | command id = `0x76`                                                           |
+| `1`   | `uint8`  | command size = `7+`                                                           |
+| `2`   | `uint8`  | [packed date](../../mtx1/types.md#packed-date)                                |
+| `1`   | `uint8`  | [demand type](#demand-type)                                                   |
+| `2`   | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
+| `1`   | `uint8`  | number of requested records                                                   |
+| `1`   | `uint8`  | accumulation period `1/3/5/10/15/30/60`                                       |
+| `2*n` | `uint16` | accumulated data, according to [demand type](#demand-type)                    |
+| `1`   | `uint8`  | the repeated hour during the daylight saving time change                      |
+| `1`   | `uint8`  | reserved                                                                      |
 
 > `n` - the number of records derived from packed [demand type](#demand-type) field.
-
-### Parameters
-
-#### accumulated-data
-
-If accumulation period is less then `60` and [demand type](#demand-type) is `A+` or `A-` then tariff included into accumulated data.
-
-| Bit range | Field              | Description                                                        |
-| --------- | ------------------ | ------------------------------------------------------------------ |
-| `15..14`  | tariff             | tariff number `0..3`, extracted from the two most significant bits |
-| `13..0`   | accumulated energy | `14`-bit value representing the actual accumulated measurement     |
 
 ### Examples
 

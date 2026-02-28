@@ -36,7 +36,7 @@ Command hex dump: `39 00`
 | `4`  | `uint32` | duration of poor voltage during the accounting period, seconds                           |
 | `4`  | `uint32` | duration of maximum current during the accounting period, seconds                        |
 | `4`  | `uint32` | duration of maximum power during the accounting period, seconds                          |
-| `4`  | `uint32` | reserved                                                                                 |
+| `4`  | `uint32` | duration of current imbalance during the calculation period, seconds                     |
 | `4`  | `uint32` | duration of frequency deviation from normal during the accounting period, seconds        |
 | `1`  | `uint8`  | [relay status](#relay-status)                                                            |
 | `1`  | `uint8`  | [event status](./GetEventStatus.md#status-event-set-1)                                   |

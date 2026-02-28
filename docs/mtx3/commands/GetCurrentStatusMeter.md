@@ -38,7 +38,9 @@ Command hex dump: `39 00`
 | `4`  | `uint32` | duration of poor voltage for phase `C` during the accounting period, seconds             |
 | `4`  | `uint32` | duration of maximum current during the accounting period, seconds                        |
 | `4`  | `uint32` | duration of maximum power during the accounting period, seconds                          |
-| `4`  | `uint32` | reserved                                                                                 |
+| `1`  | `uint8`  | [relay status 2](#relay-status-2)                                                        |
+| `1`  | `uint8`  | reserved                                                                                 |
+| `4`  | `uint16` | reserved                                                                                 |
 | `4`  | `uint32` | duration of frequency deviation from normal during the accounting period, seconds        |
 | `1`  | `uint8`  | [relay status](#relay-status)                                                            |
 | `1`  | `uint8`  | [event status](../../mtx1/commands/GetEventStatus.md#status-event-set-1)                 |
@@ -56,14 +58,30 @@ Command hex dump: `39 00`
 
 Bit mask:
 
-| Name                 | Bit | Description                                  |
-| -------------------- | --- | -------------------------------------------- |
-| `RELAY_STATE`        | `0` | current relay state<br>`0` - off<br>`1` - on |
-| `RELAY_UBAD`         | `1` | relay turned off due to poor voltage         |
-| `RELAY_UNEQ_CURRENT` | `4` | relay switched off due to unequal currents   |
-| `RELAY_OFF_CENTER`   | `5` | relay switched off from the control center   |
-| `RELAY_IMAX`         | `6` | relay turned off due to overcurrent          |
-| `RELAY_PMAX`         | `7` | relay turned off due to overpower            |
+| Name                           | Bit | Description                                                                   |
+| ------------------------------ | --- | ----------------------------------------------------------------------------- |
+| `RELAY_STATE`                  | `0` | current relay state<br>`0` - off<br>`1` - on                                  |
+| `RELAY_UBAD`                   | `1` | relay turned off due to poor voltage quality                                  |
+| `RELAY_SALDO_OFF_ON_MAX_POWER` | `4` | relay disabled due to exceeding permissible power in balance restriction mode |
+| `RELAY_OFF_CENTER`             | `5` | relay switched off from the control center                                    |
+| `RELAY_IMAX`                   | `6` | relay disabled due to maximum current                                         |
+| `RELAY_PMAX`                   | `7` | relay disabled due to maximum power                                           |
+
+#### relay status 2
+
+Bit mask:
+
+| Name                   | Bit | Description                                 |
+| ---------------------- | --- | ------------------------------------------- |
+| `RELAY_COSFI`          | `0` | relay disabled due to `cos φ`               |
+| `RELAY_SALDO_OFF_FLAG` | `1` | relay disabled due to balance               |
+| `RELAY_MAGNET_OFF`     | `2` | relay turned off due to magnet interference |
+| `RELAY_HARD_STATE_1`   | `3` | relay hardware state                        |
+| `RELAY_HARD_STATE_2`   | `4` | relay hardware state                        |
+| `RELAY_HARD_STATE_3`   | `5` | relay hardware state                        |
+| `RELAY_PMAX_MINUS`     | `6` | turned off due to maximum negative power    |
+| `RELAY_VAR_MAX`        | `7` | turned off due to maximum reactive power    |
+
 
 #### calibration flags
 

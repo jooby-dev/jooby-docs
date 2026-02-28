@@ -158,10 +158,11 @@ Bit mask:
 
 Bit mask:
 
-| Name                  | Bit | Description                                                      |
-| --------------------- | --- | ---------------------------------------------------------------- |
-| `BLOCK_KEY_OPTOPORT`  | `2` | `1` - optoport is unlocked by button, `0` - optoport is unlocked |
-| `MAGNET_SCREEN_CONST` | `5` | `1` - constant magnetic influence screen (`104.21.017`)          |
+| Name                   | Bit | Description                                                                                                                                                                                                                       |
+| ---------------------- | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BLOCK_KEY_OPTOPORT`   | `2` | `1` - optoport is unlocked by button, `0` - optoport is unlocked                                                                                                                                                                  |
+| `MAGNET_SCREEN_CONST`  | `5` | `1` - constant magnetic influence screen (`104.21.017`)                                                                                                                                                                           |
+| `POWER_AVERAGING_TYPE` | `7` | `0` - fixed-window averaging if the averaging interval equals the integration period; otherwise, a sliding window is used<br>`1` - averaging with a sliding `1`-minute window and an power averaging interval (`18.09.23.0.0.15`) |
 
 #### setting for displaying meter readings on additional displays
 

@@ -45,7 +45,7 @@ It is also sent by the sensor without a request once a day.
 | `1`  | `uint8`  | [hardware version](#hardware-version)                                 |
 | `3`  | `uint8`  | [battery voltage](#battery-voltage) in `mV`                           |
 | `2`  | `uint16` | [battery internal resistance](#battery-internal-resistance) in `mΩ`   |
-| `1`  | `uint8`  | [temperature](#temperature) in degrees Celsius                        |
+| `1`  | `int8`   | [temperature](#temperature) in degrees Celsius                        |
 | `1`  | `uint8`  | [remaining battery capacity](#remaining-battery-capacity) in percents |
 | `1`  | `uint8`  | [sequence number](#sequence-number)                                   |
 

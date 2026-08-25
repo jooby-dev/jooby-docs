@@ -107,7 +107,7 @@ Command hex dump: `77 07 30bb 02 0030 03 1e`
 | `2`   | `uint16` | index of the first requested record ([valid index range](#valid-index-range)) |
 | `1`   | `uint8`  | number of requested records                                                   |
 | `1`   | `uint8`  | accumulation period `15/30/60`                                                |
-| `4*n` | uint16`  | accumulated data, according to [demand type](#demand-type)                    |
+| `4*n` | `uint32` | accumulated data, according to [demand type](#demand-type)                    |
 
 > `n` - the number of energies derived from packed energy type field.
 
@@ -138,7 +138,7 @@ Response with repeated hour during the daylight saving time change.
 
 | Field                                  | Value                               | Hex          |
 | -------------------------------------- | ----------------------------------- | ------------ |
-| command id                             | `117`                               | `0x77`       |
+| command id                             | `119`                               | `0x77`       |
 | command size                           | `19`                                | `0x13`       |
 | [packed date](../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43`     |
 | [demand type](#demand-type)            | `A+`                                | `0x01`       |
@@ -149,7 +149,7 @@ Response with repeated hour during the daylight saving time change.
 | accumulated data `1:15-1:30`           | `34`                                | `0x00000022` |
 | accumulated data `1:30-1:45`           | `51`                                | `0x00000033` |
 
-Command hex dump: `77 13 2a43 01 0004 03 0f 00000010 00000032 00000033`
+Command hex dump: `77 13 2a43 01 0004 03 0f 00000010 00000022 00000033`
 
 #### get A- energy for the repeated hour during the daylight saving time change
 
@@ -167,7 +167,7 @@ Command hex dump: `77 13 2a43 01 0004 03 0f 00000010 00000032 00000033`
 | the repeated hour during the daylight saving time change | `3`                                  | `0x03`       |
 | reserved                                                 | `15`                                 | `0xff`       |
 
-Command hex dump: `77 11 30bb 02 0030 03 1e 00000010 00000012 03 ff`
+Command hex dump: `77 11 30bb 02 0030 03 1e 00000010 00000022 03 ff`
 
 
 ## See also

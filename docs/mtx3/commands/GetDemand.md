@@ -212,7 +212,7 @@ Command hex dump: `76 0d 2a43 01 0004 03 0f 0010 0012 0011`
 | the repeated hour during the daylight saving time change | `3`                                  | `0x03`   |
 | reserved                                                 | `15`                                 | `0xff`   |
 
-Command hex dump: `76 0d 30bb 02 0030 03 1e 00000010 00000022 03 ff`
+Command hex dump: `76 0d 30bb 02 0030 03 1e 0010 0012 03 ff`
 
 
 ## See also

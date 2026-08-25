@@ -154,7 +154,7 @@ If accumulation period is less then `60` and [demand type](#demand-type) is `A+`
 | Field                                  | Value                               | Hex      |
 | -------------------------------------- | ----------------------------------- | -------- |
 | command id                             | `118`                               | `0x76`   |
-| command size                           | `15`                                | `0x0f`   |
+| command size                           | `13`                                | `0x0d`   |
 | [packed date](../types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
 | [demand type](#demand-type)            | `A+`                                | `0x01`   |
 | index of the first requested record    | `4`                                 | `0x0004` |
@@ -164,7 +164,7 @@ If accumulation period is less then `60` and [demand type](#demand-type) is `A+`
 | accumulated data `1:15-1:30`           | `18`                                | `0x0012` |
 | accumulated data `1:30-1:45`           | `17`                                | `0x0011` |
 
-Command hex dump: `76 0f 2a43 01 0004 03 0f 0010 0012 0011`
+Command hex dump: `76 0d 2a43 01 0004 03 0f 0010 0012 0011`
 
 #### get A- energy for the repeated hour during the daylight saving time change
 

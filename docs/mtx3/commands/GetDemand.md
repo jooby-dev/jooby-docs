@@ -184,7 +184,7 @@ Response with repeated hour during the daylight saving time change.
 | Field                                          | Value                               | Hex      |
 | ---------------------------------------------- | ----------------------------------- | -------- |
 | command id                                     | `118`                               | `0x76`   |
-| command size                                   | `15`                                | `0x0f`   |
+| command size                                   | `13`                                | `0x0d`   |
 | [packed date](../../mtx1/types.md#packed-date) | year: `2021`, month: `2`, date: `3` | `0x2a43` |
 | [demand type](#demand-type)                    | active energy for phase `A`, `A+`   | `0x01`   |
 | index of the first requested record            | `4`                                 | `0x0004` |
@@ -194,7 +194,7 @@ Response with repeated hour during the daylight saving time change.
 | accumulated data `1:15-1:30`                   | `18`                                | `0x0012` |
 | accumulated data `1:30-1:45`                   | `17`                                | `0x0011` |
 
-Command hex dump: `76 0f 2a43 01 0004 03 0f 0010 0012 0011`
+Command hex dump: `76 0d 2a43 01 0004 03 0f 0010 0012 0011`
 
 #### get A- energy for the repeated hour during the daylight saving time change
 
@@ -212,7 +212,7 @@ Command hex dump: `76 0f 2a43 01 0004 03 0f 0010 0012 0011`
 | the repeated hour during the daylight saving time change | `3`                                  | `0x03`   |
 | reserved                                                 | `15`                                 | `0xff`   |
 
-Command hex dump: `76 0d 30bb 02 0030 03 1e 0010 0012 03 ff`
+Command hex dump: `76 0d 30bb 02 0030 03 1e 00000010 00000022 03 ff`
 
 
 ## See also

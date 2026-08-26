@@ -506,6 +506,13 @@ There are `2` types of command direction:
             <td>Get the measurement data by selected type for date.</td>
         </tr>
         <tr>
+            <td><code>0x77</code></td>
+            <td><code>GetDemandCumulative</code></td>
+            <td><strong><code>READ_ONLY</code></td>
+            <td><a href="./GetDemandCumulative.md#request">request</a> / <a href="./GetDemandCumulative.md#response">response</a></td>
+            <td>Get the cumulative measurement data by selected type for date.</td>
+        </tr>
+        <tr>
             <td><code>0x7a</code></td>
             <td><code>GetMeterInfo</code></td>
             <td><code>READ_ONLY</code></td>

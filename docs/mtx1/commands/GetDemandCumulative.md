@@ -124,7 +124,7 @@ Response with repeated hour during the daylight saving time change.
 | `2`   | `uint16`         | index of the first requested record ([valid index range](#valid-index-range)) |
 | `1`   | `uint8`          | number of requested records                                                   |
 | `1`   | `uint8`          | accumulation period `15/30/60`                                                |
-| `4*n` | accumulated-data | accumulated data, according to [demand type](#demand-type)                    |
+| `4*n` | `uint32`         | accumulated data, according to [demand type](#demand-type)                    |
 | `1`   | `uint8`          | the repeated hour during the daylight saving time change                      |
 | `1`   | `uint8`          | reserved                                                                      |
 

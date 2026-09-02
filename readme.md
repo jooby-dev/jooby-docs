@@ -1,6 +1,6 @@
 # Jooby message documentation
 
-At the moment there are two classes of devices:
+At the moment the following classes of devices are documented:
 
 - [Analog](./docs/analog/readme.md)
 - [MTX1](./docs/mtx1/readme.md)

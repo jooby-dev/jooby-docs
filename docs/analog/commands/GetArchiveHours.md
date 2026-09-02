@@ -34,7 +34,7 @@ Start hour for requested day pulse counter's values [`0..23`].
 
 #### number of values
 
-The number or records to receive from archive.
+The number of records to receive from archive.
 
 ### Examples
 

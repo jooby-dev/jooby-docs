@@ -1,7 +1,7 @@
 # DataSegment
 
 Transfer data by breaking it into segments.
-This command is currently used only in module with [hardware type](../basics.md#hardware-types) `MTXLora`.
+This command is currently used only in modules with [hardware type](../basics.md#hardware-types) `MTXLORA`.
 This command could be used as uplink or downlink command. The module can send `DataSegment` command as the response to the request or
 without any request.
 

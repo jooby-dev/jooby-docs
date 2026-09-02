@@ -3,7 +3,7 @@
 Transmits the sequence number of the last device event and the status bits.
 
 This command will be added to all commands that the device transmits without a request,
-except for the [GetStatus](../GetStatus.md) command, since the data is inside the command.
+except for [GetStatus](../GetStatus.md): that command already includes the event sequence number, so `LastEvent` is not appended.
 The status bits may differ for different device types.
 
 
@@ -37,7 +37,7 @@ It depends on the device [hardware type](../../basics.md#hardware-types).
 | ------ | -------- | --------------------------------------------------------------------------- |
 | `0`    | `BAT`    | `1` - the battery voltage has dropped below the set threshold               |
 | `1`    | `MAGNET` | `1` - there is a magnetic field influence                                   |
-| `2`    | `BUTTON` | `0` - button is pressed <br/> `1` - button is release (device is unmounted) |
+| `2`    | `BUTTON` | `0` - button is pressed <br/> `1` - button is released (device is unmounted) |
 | `3`    | `DOWN`   | `1` - the device has detected a loss of connection to the server            |
 | `4..7` | `RES`    | reserved for future use                                                     |
 
@@ -76,7 +76,7 @@ It depends on the device [hardware type](../../basics.md#hardware-types).
 | `5`     | `CHN1`   | `1` - the second channel is not active                           |
 | `6`     | `CHN2`   | `1` - the third channel is not active                            |
 | `7`     | `EXTEND` | always `1`                                                       |
-| `8`     | `CHN3`   | `1` - the forth channel is not active                            |
+| `8`     | `CHN3`   | `1` - the fourth channel is not active                           |
 | `9..14` | `RES`    | reserved for future use                                          |
 
 ##### for `MTXLORA` devices (`2` bytes):

@@ -81,7 +81,7 @@ Message hex dump with LRC: `18 06 0f 83 01 08 0a 0c c8`
 
 | Field             | Value | Bits         | Hex    |
 | ----------------- | ----- | ------------ | ------ |
-| command id        | `12`  |              | `0x18` |
+| command id        | `24`  |              | `0x18` |
 | command size      | `2`   |              | `0x02` |
 | channels          | `3`   | `0b00000100` | `0x04` |
 | channel `3` value | `50`  |              | `0x32` |
@@ -92,8 +92,8 @@ Message hex dump with LRC: `18 02 04 32 79`
 
 | Field              | Value          | Bits                                                                      | Hex      |
 | ------------------ | -------------- | ------------------------------------------------------------------------- | -------- |
-| command id         | `12`           |                                                                           | `0x18`   |
-| command size       | `2`            |                                                                           | `0x07`   |
+| command id         | `24`           |                                                                           | `0x18`   |
+| command size       | `7`            |                                                                           | `0x07`   |
 | channels           | `6`, `7`, `13` | `0b0001000001100000` <br/> with extended bits: <br/> `0b0010000011100000` | `0xe020` |
 | channel `6` value  | `8146`         | `0b0001111111010010` <br/> with extended bits: <br/> `0b0011111111010010` | `0xd23f` |
 | channel `7` value  | `164`          | `0b0000000010100100` <br/> with extended bits: <br/> `0b0000000110100100` | `0xa401` |

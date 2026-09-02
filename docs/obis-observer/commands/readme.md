@@ -39,12 +39,14 @@ There are `2` types of command direction:
 | `0x64` | [GetMeterProfileIdList](./GetMeterProfileIdList.md#request)           | Get the list of the meter profile id.                                          |
 | `0x66` | [GetMeterProfile](./GetMeterProfile.md#request)                       | Request/response to get the meter profile related information                  |
 | `0x70` | [SetupMeter](./SetupMeter.md#request)                                 | Request to setup meter. Setup meter id and address...                          |
-| `0x72` | [RemoveMeter](./RemoveMeter.md#request)                               | Request to to remove specific meter.                                           |
+| `0x72` | [RemoveMeter](./RemoveMeter.md#request)                               | Request to remove specific meter.                                              |
 | `0x74` | [GetMeterIdList](./GetMeterIdList.md#request)                         | Get the list of the meter id.                                                  |
 | `0x76` | [GetMeterId](./GetMeterId.md#request)                                 | Request to get the meter id by the meter address.                              |
 | `0x78` | [GetMeterInfo](./GetMeterInfo.md#request)                             | Request to get the meter info, like address and meter profile id.              |
 | `0x7a` | [GetMeterDate](./GetMeterDate.md#request)                             | Request to get the current date and time on the meter.                         |
 | `0x81` | [GetMeterReadoutState](./GetMeterReadoutState.md#request)             | Request to get readout state from the specific meter.                          |
+| `0x90` | [GetSettingsMemory](./GetSettingsMemory.md#request)                   | Request to read a block of observer settings memory.                           |
+| `0x92` | [ResetSettings](./ResetSettings.md#request)                           | Request to reset observer device settings.                                     |
 
 
 ## Uplink commands
@@ -89,6 +91,8 @@ There are `2` types of command direction:
 | `0x79` | [GetMeterInfo](./GetMeterInfo.md#response)                                    | Response to the [GetMeterInfo](./GetMeterInfo.md#request) downlink command.                             |
 | `0x7b` | [GetMeterDate](./GetMeterDate.md#response)                                    | Response to the [GetMeterDate](./GetMeterDate.md#request) downlink command.                             |
 | `0x82` | [GetMeterReadoutState](./GetMeterReadoutState.md#response)                    | Response to the [GetMeterReadoutState](./GetMeterReadoutState.md#request) downlink command.             |
+| `0x91` | [GetSettingsMemory](./GetSettingsMemory.md#response)                          | Response to the [GetSettingsMemory](./GetSettingsMemory.md#request) downlink command.                   |
+| `0x93` | [ResetSettings](./ResetSettings.md#response)                                  | Response to the [ResetSettings](./ResetSettings.md#request) downlink command.                           |
 | `0xfe` | [Error](./uplink/Error.md)                                                    | Response to the command with error.                                                                     |
 
 

@@ -66,7 +66,7 @@ Command hex dump: `73 02 18 02`
 | badVoltagePhaseBMinutes | `0`      | `0x0000`     |
 | badVoltagePhaseCMinutes | `0`      | `0x0000`     |
 
-Command hex dump: `73 20 1a 01 0008a044 0003 00000000 0003 0022 0000 0000`
+Command hex dump: `73 14 1a 01 0008a044 0003 00000000 0003 0022 0000 0000`
 
 
 ## See also

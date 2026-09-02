@@ -33,8 +33,8 @@ Archives can be requested for the latest events, the oldest events, and events s
 | `0x04` | `DEACTIVATE`                          | Device deactivation. Termination of frame transmission over the air.                                                              |
 | `0x05` | `BATTERY_ALARM`                       | The sensor has reset due to low battery voltage. Outdated.                                                                        |
 | `0x06` | `CAN_OFF`                             | The container has tipped over. Outdated.                                                                                          |
-| `0x07` | `INSERT`                              | Fixing the installation of the module in the gas meter.                                                                           |
-| `0x08` | `REMOVE`                              | Fixing the removal of the module from the gas meter.                                                                              |
+| `0x07` | `INSERT`                              | The module was installed in the gas meter.                                                                                        |
+| `0x08` | `REMOVE`                              | The module was removed from the gas meter.                                                                                        |
 | `0x09` | `COUNTER_OVER`                        | The pulse counter has overflowed. The number of pulses has exceeded `4294967295`.                                                 |
 | `0x0a` | `SET_TIME`                            | Setting the device time.                                                                                                          |
 | `0x0b` | `ACTIVATE_MTX`                        | Activation of the module in the electric energy meter (restart or power supply).                                                  |
@@ -177,6 +177,18 @@ Archives can be requested for the latest events, the oldest events, and events s
             <td>Based on CPU <code>STM32WLE5</code>.</td>
         </tr>
         <tr>
+            <td><code>0x0d</code></td>
+            <td><code>US_WATER</code></td>
+            <td></td>
+            <td>RM installed inside ultrasound water meters. Based on CPU <code>STM32WLE5</code>.</td>
+        </tr>
+        <tr>
+            <td><code>0x0e</code></td>
+            <td><code>PLC2LORA</code></td>
+            <td></td>
+            <td>RM installed inside MTX meters. Supports both LoRa and PLC.</td>
+        </tr>
+        <tr>
             <td><code>0x0f</code></td>
             <td><code>IMP4AS</code></td>
             <td>
@@ -184,6 +196,18 @@ Archives can be requested for the latest events, the oldest events, and events s
                 <code>Jooby OMNI RM LoRaWAN 4PI 200 AS</code> <br/>
                 <code>Jooby OMNI RM LoRaWAN 4PI 202 AS</code>
             </td>
+        </tr>
+        <tr>
+            <td><code>0x14</code></td>
+            <td><code>PLC2</code></td>
+            <td></td>
+            <td>RM installed inside MTX meters.</td>
+        </tr>
+        <tr>
+            <td><code>0x15</code></td>
+            <td><code>LORA</code></td>
+            <td></td>
+            <td>RM installed inside MTX meters.</td>
         </tr>
         <tr>
             <td><code>0x18</code></td>

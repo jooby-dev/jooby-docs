@@ -10,7 +10,7 @@ The command to request sensor current time.
 | Size | Type    | Field               |
 | ---- | ------- | ------------------- |
 | `1`  | `uint8` | command id = `0x09` |
-| `1`  | `uint8` | command size = `9`  |
+| `1`  | `uint8` | command size = `0`  |
 
 It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
 
@@ -27,8 +27,7 @@ Message hex dump with LRC: `09 00 5c`
 ## Response
 
 It's a mandatory confirmation to [GetTime2000 request](./GetTime2000.md#request).
-It is sent immediately after device power on.
-After it a device sends it periodically (once per 24 hours).
+It is also sent immediately after device power on, and then periodically (once per `24` hours) without a request.
 
 ### Format
 

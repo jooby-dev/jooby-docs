@@ -50,7 +50,7 @@ It's a mandatory confirmation to [GetBatteryStatus request](./GetBatteryStatus.m
 | `2`  | `uint16` | [voltage under high load](#voltage-under-high-load) in `mV`                                         |
 | `2`  | `uint16` | [internal resistance](#internal-resistance) in `mΩ`                                                 |
 | `1`  | `int8`   | [temperature](#temperature) in degrees Celsius                                                      |
-| `1`  | `uint8`  | [remaining capacity](#remaining-capacity) in percents                                               |
+| `1`  | `uint8`  | [remaining capacity](#remaining-capacity)                                                               |
 | `1`  | `uint8`  | [overconsumption for last 24 hours](#overconsumption-for-last-24-hours)                             |
 | `2`  | `uint16` | [counter for exceeding average daily consumption](#counter-for-exceeding-average-daily-consumption) |
 

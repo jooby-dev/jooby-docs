@@ -63,7 +63,8 @@ Message hex dump with LRC: `1f 30 05 2f 97 0c 02 01 c8`
 
 | Size   | Type                                         | Field                                            |
 | ------ | -------------------------------------------- | ------------------------------------------------ |
-| `1`    | `uint8`                                      | command id = `0x1a`                              |
+| `1`    | `uint8`                                      | extra flag = `0x1f`                              |
+| `1`    | `uint8`                                      | command id = `0x30`                              |
 | `1`    | `uint8`                                      | command size (dynamic, `6+`)                     |
 | `2`    | [packed date](../types.md#packed-date)       | [start date](#start-date)                        |
 | `1`    | `uint8`                                      | [hour](#hour)                                    |
@@ -80,7 +81,7 @@ Message hex dump with LRC: `1f 30 05 2f 97 0c 02 01 c8`
 | `0..5` | [extended value](../types.md#extended-value) | channel `N` hour `H` diff                        |
 | `0..5` | [extended value](../types.md#extended-value) | channel `N` hour `H` diff                        |
 
-It's a command with a [two-bytes header](../message.md#command-with-a-two-bytes-header).
+It's a command with a [three-bytes header](../message.md#command-with-a-three-bytes-header).
 
 ### Parameters
 

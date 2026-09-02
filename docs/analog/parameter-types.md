@@ -215,7 +215,7 @@ Message hex dump with LRC: `03 02 09 01 5c`
 
 ## Battery depassivation info
 
-Defines battery depassivation parameters for all module types except `MTXLora`.
+Defines battery depassivation parameters for all module types except `MTXLORA`.
 
 ### Format
 
@@ -265,7 +265,7 @@ Message hex dump with LRC: `03 07 0a 00 64 0c 96 00 e9 4c`
 ## Battery minimal load time
 
 This parameter is related to the minimum necessary active time of the battery per day to prevent battery deactivation.
-It applies to all module types except `MTXLora`.
+It applies to all module types except `MTXLORA`.
 
 ### Format
 
@@ -360,7 +360,7 @@ Parameter is used to setup `RX2` window configuration.
 #### spread factor
 
 The transmission speed or `Data Rate` of a LoRaWAN message, ranging from `SF7` (highest Data Rate) to `SF12` (lowest Data Rate).
-Making the spreading factor `1` step lower (from `SF10` to `SF9`) allows you to roughly send the same amount of data use half the time on air.
+Making the spreading factor `1` step lower (from `SF10` to `SF9`) allows you to roughly send the same amount of data using half the time on air.
 Lowering the spreading factor makes it more difficult for the gateway to receive a transmission, as it will be more sensitive to noise.
 [More info.](https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/)
 

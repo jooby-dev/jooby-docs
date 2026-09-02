@@ -28,14 +28,14 @@ Start date for requested day pulse counter's values.
 
 #### number of values
 
-The number or records to receive from archive.
+The number of records to receive from archive.
 
 ### Examples
 
 | Field            | Value                     | Bits                 | Hex      |
 | ---------------- | ------------------------- | -------------------- | -------- |
 | command id       | `6`                       |                      | `0x06`   |
-| command size     | `6`                       |                      | `0x06`   |
+| command size     | `3`                       |                      | `0x03`   |
 | start date       | `2023.03.10 00:00:00 GMT` | `0b0010111001101010` | `0x2e6a` |
 | number of values | `1`                       |                      | `0x01`   |
 

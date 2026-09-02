@@ -51,14 +51,14 @@ It's a command with a [three-bytes header](../message.md#command-with-a-three-by
 
 ### Examples
 
-| Field        | Value                                    | Hex                        |
-| ------------ | ---------------------------------------- | -------------------------- |
-| extra flag   | `31`                                     | `0x1f`                     |
-| command id   | `42`                                     | `0x07`                     |
-| command size | `11`                                     | `0x0b`                     |
-| status       | volume data (forward: `3`, reverse: `4`) | `0x0B21020000000300000004` |
+| Field            | Value                                    | Hex                        |
+| ---------------- | ---------------------------------------- | -------------------------- |
+| extra flag       | `31`                                     | `0x1f`                     |
+| command id       | `7`                                      | `0x07`                     |
+| command size     | `11`                                     | `0x0b`                     |
+| water frame data | volume data (forward: `3`, reverse: `4`) | `0x0B21020000000300000004` |
 
-Message hex dump with LRC: `1f 07 0b 21 02 00 00 00 03 00 00 00 04`
+Message hex dump with LRC: `1f 07 0b 0b 21 02 00 00 00 03 00 00 00 04 69`
 
 
 ## See also

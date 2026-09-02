@@ -187,3 +187,26 @@ Response arguments:
 | `2`  | `uint16` | battery level low, in `V`      | `0.001`    | `0..4095`  | `0`     |
 | `2`  | `uint16` | resistance, in `mΩ`            | `1`        | `0..65535` | `0`     |
 | `2`  | `uint16` | depassivation time, in seconds | `1`        | `0..65535` | `0`     |
+
+
+### Get_DepassivationConfig
+
+Request size `3`, function `WaterMeter` (`0x22`), attribute `0x18` - `0x032218`.
+
+Response arguments (little-endian):
+
+| Size | Type     | Field                                                                  | Range        | Default |
+| ---- | -------- | ---------------------------------------------------------------------- | ------------ | ------- |
+| `2`  | `uint16` | start threshold, in `mΩ` (depassivation starts above this resistance)  | `1000..65535` | `35000` |
+| `2`  | `uint16` | stop threshold, in `mΩ` (depassivation stops below this resistance)    | `1000..65535` | `25000` |
+
+Response example `24000` / `20000`: `0x072218c05d204e`.
+
+
+### Set_DepassivationConfig
+
+Request size `7`, function `WaterMeter` (`0x22`), attribute `0x19` - body is the same two little-endian `uint16` thresholds as [Get_DepassivationConfig](#get_depassivationconfig).
+
+Example `24000` / `20000`: `0x072219c05d204e`.
+
+Empty response (no arguments): `0x032219`.

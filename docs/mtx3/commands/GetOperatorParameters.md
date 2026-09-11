@@ -284,11 +284,11 @@ Bit mask:
 
 Bit mask:
 
-| Name                         | Bit | Description                                                                                                                                                            |
-| ---------------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `TRANSFORMATION_RATIO`       | `0` | perform measurements using ratio transformation                                                                                                                        |
-| `METER_TYPE_R`               | `4` | `R` type meter                                                                                                                                                         |
-| `ACCUMULATE_BY_R_PLUS_MINUS` | `7` | reactive energy accumulation type<br>`false` - reactive energy accumulation by quadrants `Q1`, `Q2`, `Q3`, `Q4`<br>`true` - reactive energy accumulation by `R+`, `R-` |
+| Name                      | Bit | Description                                                                                                                                                            |
+| ------------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `TRANSFORMATION_RATIO`    | `0` | perform measurements using ratio transformation                                                                                                                        |
+| `METER_TYPE_R`            | `4` | `R` type meter                                                                                                                                                         |
+| `ACCUMULATE_BY_QUADRANTS` | `7` | reactive energy accumulation type<br>`false` - reactive energy accumulation by `R+`, `R-`<br>`true` - reactive energy accumulation by quadrants `Q1`, `Q2`, `Q3`, `Q4` |
 
 ### Examples
 

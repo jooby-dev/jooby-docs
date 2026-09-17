@@ -459,9 +459,9 @@ There are `2` types of command direction:
         <tr>
             <td><code>0x6f</code></td>
             <td><code>GetHalfHourEnergies</code></td>
-            <td><code>READ_ONLY</code></td>
+            <td><code>UNENCRYPTED</code></td>
             <td><a href="../../mtx1/commands/GetHalfHourEnergies.md#request">request</a> / <a href="../../mtx1/commands/GetHalfHourEnergies.md#response">response</a></td>
-            <td>Get energy with <code>30</code>-minute accumulation period by selected energy type for date.</td>
+            <td>Get energy with <code>30</code>-minute accumulation period by selected energy type for date. Can be transmitted only via Lora.</td>
         </tr>
         <tr>
             <td><code>0x71</code></td>

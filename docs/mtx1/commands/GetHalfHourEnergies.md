@@ -2,6 +2,8 @@
 
 Request/response to get energy with 30-minute accumulation period by selected energy type for date.
 
+**This command can be transmitted only via Lora.**
+
 The command access level is [READ_ONLY](../basics.md#command-access-level).
 
 

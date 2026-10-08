@@ -44,6 +44,10 @@ Command body structures for [SetParameter](./commands/SetParameter.md).
 * [NB-IoT LED Indication](#nb-iot-led-indication)
 * [NB-IoT SIM](#nb-iot-sim)
 * [Channel type](#channel-type)
+* [Time synchronization period via MAC](#time-synchronization-period-via-mac)
+* [Keep LoRa connection on removal](#keep-lora-connection-on-removal)
+* [NB-IoT NTP server](#nb-iot-ntp-server)
+* [Activate module](#activate-module)
 
 ## Reporting data interval
 
@@ -1844,3 +1848,144 @@ Message hex dump with LRC: `03 08 38 02 04 0e 10 02 28 05`
 | channel type   | `0`   | `0x00` |
 
 Message hex dump with LRC: `03 03 38 03 00 6e`
+
+
+## Time synchronization period via MAC
+
+Time synchronization period in seconds via MAC commands.
+
+### Format
+
+| Size | Type     | Field                                         |
+| ---- | -------- | --------------------------------------------- |
+| `1`  | `uint8`  | parameter type = `58`                         |
+| `4`  | `uint32` | [period](#mac-synchronization-period)         |
+
+#### mac synchronization period
+
+Period in seconds.
+<br/>
+It is a `4`-byte unsigned integer.
+
+### Examples
+
+#### set `time synchronization period via MAC` to `1440` seconds:
+
+| Field          | Value  | Hex          |
+| -------------- | ------ | ------------ |
+| command id     | `3`    | `0x03`       |
+| command size   | `5`    | `0x05`       |
+| parameter type | `58`   | `0x3a`       |
+| period         | `1440` | `0x000005a0` |
+
+Message hex dump with LRC: `03 05 3a 00 00 05 a0 cc`
+
+
+## Keep LoRa connection on removal
+
+Keep the LoRa connection even after the module is removed.
+
+### Format
+
+| Size | Type    | Field                                      |
+| ---- | ------- | ------------------------------------------ |
+| `1`  | `uint8` | parameter type = `59`                      |
+| `1`  | `uint8` | [value](#keep-connection)                  |
+
+#### keep connection
+
+| Value | Description                                        |
+| ----- | -------------------------------------------------- |
+| `0`   | drop the LoRa connection after removal             |
+| `1`   | keep the LoRa connection even after being removed  |
+
+### Examples
+
+#### keep the LoRa connection after removal:
+
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `2`   | `0x02` |
+| parameter type | `59`  | `0x3b` |
+| value          | `1`   | `0x01` |
+
+Message hex dump with LRC: `03 02 3b 01 6e`
+
+
+## NB-IoT NTP server
+
+Set the NTP server.
+The module synchronizes the local time with Coordinated Universal Time (UTC) via the NTP server if a synchronization period is set.
+
+### Format
+
+| Size | Type     | Field                     |
+| ---- | -------- | ------------------------- |
+| `1`  | `uint8`  | parameter type = `60`     |
+| `1+` | `string` | [server](#ntp-server)     |
+| `2`  | `uint16` | [port](#ntp-server-port)  |
+
+#### ntp server
+
+NTP server address. It can be an IP address or a domain name.
+<br/>
+Length-prefixed string: `1` byte length followed by the characters.
+
+#### ntp server port
+
+NTP server port.
+<br/>
+It is a `2`-byte unsigned integer. Range: `1`–`65535`.
+
+### Examples
+
+#### set NTP server to `162.159.200.1` port `123`:
+
+| Field          | Value           | Hex                            |
+| -------------- | --------------- | ------------------------------ |
+| command id     | `3`             | `0x03`                         |
+| command size   | `17`            | `0x11`                         |
+| parameter type | `60`            | `0x3c`                         |
+| size           | `13`            | `0x0d`                         |
+| server         | `162.159.200.1` | `0x3136322e3135392e3230302e31` |
+| port           | `123`           | `0x007b`                       |
+
+Message hex dump with LRC: `03 11 3c 0d 31 36 32 2e 31 35 39 2e 32 30 30 2e 31 00 7b 28`
+
+
+## Activate module
+
+Activate or deactivate the module.
+
+Available for 4PU IP68:<br/>
+hardware type - `0x06` hardware version - `0x0f`
+
+[Hardware types](./basics.md#hardware-types)
+
+### Format
+
+| Size | Type    | Field                                |
+| ---- | ------- | ------------------------------------ |
+| `1`  | `uint8` | parameter type = `61`                |
+| `1`  | `uint8` | [enable](#module-activation)         |
+
+#### module activation
+
+| Value | Description       |
+| ----- | ----------------- |
+| `0`   | deactivate module |
+| `1`   | activate module   |
+
+### Examples
+
+#### activate the module:
+
+| Field          | Value | Hex    |
+| -------------- | ----- | ------ |
+| command id     | `3`   | `0x03` |
+| command size   | `2`   | `0x02` |
+| parameter type | `61`  | `0x3d` |
+| enable         | `1`   | `0x01` |
+
+Message hex dump with LRC: `03 02 3d 01 68`

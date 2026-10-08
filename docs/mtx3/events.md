@@ -146,7 +146,10 @@
 | `0xb1` | `EM_MAGNETIC_INFLUENCE_OFF`            | `C.176`           | Alternating magnetic field influence ended.                                             |
 | `0xb2` | `RESET_EM_FLAG`                        | `C.177`           | Electromagnetic impact screen reset.                                                    |
 | `0xb3` | `RESET_MAGNETIC_FLAG`                  | `C.178`           | Magnetic impact screen reset.                                                           |
-| `0xba` | `RELAY_OFF_BAD_SALDO`                  |                   | Relay switched OFF due to consumption limit in credit mode.                             |
+| `0xba` | `RELAY_OFF_BAD_SALDO`                  | `C.186`           | Relay switched OFF due to consumption limit in credit mode.                             |
+| `0xbb` | `RELAY_OFF_REACTIVE_POWER_OVER`        | `C.187`           | Relay switched OFF due to exceeding the reactive power limit.                           |
+| `0xbc` | `SET_SALDO_ZERO`                       | `C.188`           | Balance reset to zero remotely.                                                         |
+| `0xbd` | `RELAY_OFF_MAX_POWER_SALDO`            | `C.189`           | Relay switched OFF due to exceeding the active power consumption limit in credit mode.  |
 | `0xe0` | `SET_DEMAND_EN_1_MIN`                  | `C.224`           | `1`-minute energy, voltage load profiles recording mode set.                            |
 | `0xe1` | `SET_DEMAND_EN_3_MIN`                  | `C.225`           | `3`-minute energy, voltage load profiles recording mode set.                            |
 | `0xe2` | `SET_DEMAND_EN_5_MIN`                  | `C.226`           | `5`-minute energy, voltage load profiles recording mode set.                            |

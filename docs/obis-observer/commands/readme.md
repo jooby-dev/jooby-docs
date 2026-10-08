@@ -15,8 +15,8 @@ There are `2` types of command direction:
 | `0x05` | [GetObserverUptime](./GetObserverUptime.md#request)                   | Request to get uptime in seconds of the observer device.                       |
 | `0x07` | [GetSerialPort](./GetSerialPort.md#request)                           | Request to get serial port settings.                                           |
 | `0x09` | [SetSerialPort](./SetSerialPort.md#request)                           | Request to set serial port parameters.                                         |
-| `0x0b` | [SetSingleMode](./SetSingleMode.md#request)                           | Request to set the single or multi mode of the observer device.                |
-| `0x0d` | [GetSingleMode](./GetSingleMode.md#request)                           | Request to get the current mode (single or multi mode) of the observer device. |
+| `0x0b` | [SetObserverSingleMode](./SetObserverSingleMode.md#request)           | Request to set the single or multi mode of the observer device.                |
+| `0x0d` | [GetObserverSingleMode](./GetObserverSingleMode.md#request)           | Request to get the current mode (single or multi mode) of the observer device. |
 | `0x0f` | [GetArchiveState](./GetArchiveState.md#request)                       | Request to get archive state.                                                  |
 | `0x11` | [ReadMeterArchive](./ReadMeterArchive.md#request)                     | Request to read the meter archive.                                             |
 | `0x13` | [ReadMeterArchiveWithDate](./ReadMeterArchiveWithDate.md#request)     | Request to read the meter archive for the specific date.                       |
@@ -58,8 +58,8 @@ There are `2` types of command direction:
 | `0x06` | [GetObserverUptime](./GetObserverUptime.md#response)                          | Response to the [GetObserverUptime](./GetObserverUptime.md#request) downlink command.                   |
 | `0x08` | [GetSerialPort](./GetSerialPort.md#response)                                  | Response to the [GetSerialPort](./GetSerialPort.md#request) downlink command.                           |
 | `0x0a` | [SetSerialPort](./SetSerialPort.md#response)                                  | Response to the [SetSerialPort](./SetSerialPort.md#request) downlink command.                           |
-| `0x0c` | [SetSingleMode](./SetSingleMode.md#response)                                  | Response to the [SetSingleMode](./SetSingleMode.md#request) downlink command.                           |
-| `0x0e` | [GetSingleMode](./GetSingleMode.md#request)                                   | Response to the [GetSingleMode](./GetSingleMode.md#request) downlink command.                           |
+| `0x0c` | [SetObserverSingleMode](./SetObserverSingleMode.md#response)                  | Response to the [SetObserverSingleMode](./SetObserverSingleMode.md#request) downlink command.           |
+| `0x0e` | [GetObserverSingleMode](./GetObserverSingleMode.md#request)                   | Response to the [GetObserverSingleMode](./GetObserverSingleMode.md#request) downlink command.           |
 | `0x10` | [GetArchiveState](./GetArchiveState.md#response)                              | Response to the [GetArchiveState](./GetArchiveState.md#request) downlink command.                       |
 | `0x12` | [ReadMeterArchive](./ReadMeterArchive.md#response)                            | Response to the [ReadMeterArchive](./ReadMeterArchive.md#request) downlink command.                     |
 | `0x14` | [ReadMeterArchiveWithDate](./ReadMeterArchiveWithDate.md#response)            | Response to the [ReadMeterArchiveWithDate](./ReadMeterArchiveWithDate.md#request) downlink command.     |

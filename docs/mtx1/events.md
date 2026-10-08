@@ -104,6 +104,8 @@
 | `0xb7` | `RESET_MAGNET_FLAG`                | Magnetic influence flag reset.                                                                |
 | `0xb9` | `CHANGE_PARAMETERS_CHANNEL`        | Load profile parameter changed.                                                               |
 | `0xba` | `RELAY_OFF_BAD_SALDO`              | Relay switched OFF due to consumption limit in credit mode.                                   |
+| `0xbc` | `SET_SALDO_ZERO`                   | Balance reset to zero remotely.                                                               |
+| `0xbd` | `RELAY_OFF_MAX_POWER_SALDO`        | Relay switched OFF due to exceeding the active power consumption limit in credit mode.        |
 | `0xe0` | `SET_DEMAND_EN_1MIN`               | `1`-minute energy (voltage) load profiles recording mode set.                                 |
 | `0xe1` | `SET_DEMAND_EN_3MIN`               | `3`-minute energy (voltage) load profiles recording mode set.                                 |
 | `0xe2` | `SET_DEMAND_EN_5MIN`               | `5`-minute energy (voltage) load profiles recording mode set.                                 |

@@ -44,7 +44,7 @@ Bit mask:
 | Name                   | Bit | Description                                              |
 | ---------------------- | --- | -------------------------------------------------------- |
 | `G_TYPE`               | `0` | `0` - meter type `A`<br>`1` - meter type `G`             |
-| `DOWNGRADED_TO_A_TYPE` | `4` | meter type `G` downgraded to meter type `A`              |
+| `DOWNGRADED_TO_A_TYPE` | `4` | `0` - meter type `G` downgraded to meter type `A`        |
 | `METER_INFO`           | `6` | meter supports command [GetMeterInfo](./GetMeterInfo.md) |
 
 ### Examples

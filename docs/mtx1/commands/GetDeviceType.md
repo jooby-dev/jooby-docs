@@ -41,11 +41,11 @@ Command hex dump: `04 00`
 
 Bit mask:
 
-| Name                   | Bit | Description                                              |
-| ---------------------- | --- | -------------------------------------------------------- |
-| `G_TYPE`               | `0` | `0` - meter type `A`<br>`1` - meter type `G`             |
-| `DOWNGRADED_TO_A_TYPE` | `4` | `0` - meter type `G` downgraded to meter type `A`        |
-| `METER_INFO`           | `6` | meter supports command [GetMeterInfo](./GetMeterInfo.md) |
+| Name                   | Bit | Description                                                                                                   |
+| ---------------------- | --- | ------------------------------------------------------------------------------------------------------------- |
+| `G_TYPE`               | `0` | `0` - meter type `A`<br>`1` - meter type `G`                                                                  |
+| `DOWNGRADED_TO_A_TYPE` | `4` | `0` - meter type `G` downgraded to meter type `A`<br>`1` - meter type `G` is not downgraded to meter type `A` |
+| `METER_INFO`           | `6` | meter supports command [GetMeterInfo](./GetMeterInfo.md)                                                      |
 
 ### Examples
 
@@ -54,9 +54,9 @@ Bit mask:
 | command id                                        | `4`                                                                         | `0x04`               |
 | command size                                      | `9`                                                                         | `0x09`               |
 | device type                                       | `0012164721b3172c`                                                          | `0x0012164721b3172c` |
-| [device type descriptor](#device-type-descriptor) | `G_TYPE`: `true`<br>`DOWNGRADED_TO_A_TYPE`: `false`<br>`METER_INFO`: `true` | `0x41`               |
+| [device type descriptor](#device-type-descriptor) | `G_TYPE`: `true`<br>`DOWNGRADED_TO_A_TYPE`: `false`<br>`METER_INFO`: `true` | `0x51`               |
 
-Command hex dump: `04 09 0012164721b3172c 41`
+Command hex dump: `04 09 0012164721b3172c 51`
 
 
 ## See also

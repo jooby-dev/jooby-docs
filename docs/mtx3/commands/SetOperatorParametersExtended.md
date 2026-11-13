@@ -19,7 +19,14 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 | `1`  | `uint8` | timeout for relay activation upon restoration of quality voltage, seconds                                              |
 | `5`  | `uint8` | reserved bytes                                                                                                         |
 
+`BLOCK_KEY_OPTOPORT` in `define1` is a boolean flag.
+Writing `true` sets both bits `2` and `3` (mask `0x0c`); writing `false` clears both bits.
+Both bits are written to support devices that use either bit.
+With all other `define1` flags clear, the byte is `0x0c` for `true` and `0x00` for `false`.
+
 ### Examples
+
+#### Optoport always unlocked
 
 <table>
     <tr>
@@ -49,7 +56,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
         <td>
             <code>RESET_DAY_MAX_POWER_KEY</code>: <code>false</code><br>
             <code>RESET_MONTH_MAX_POWER_KEY</code>: <code>false</code><br>
-            <code>BLOCK_KEY_OPTOPORT_MASK</code>: <code>0</code><br>
+            <code>BLOCK_KEY_OPTOPORT</code>: <code>false</code><br>
             <code>MAGNET_SCREEN_CONST</code>: <code>false</code><br>
         </td>
         <td><code>0x00</code></td>
@@ -72,6 +79,13 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 </table>
 
 Command hex dump: `40 09 01 00 00 05 0000000000`
+
+#### Optoport unlocked by button
+
+With `BLOCK_KEY_OPTOPORT: true` and all other `define1` flags `false`, the `define1` byte is `0x0c`.
+All other parameters are the same as in the previous example.
+
+Command hex dump: `40 09 01 0c 00 05 0000000000`
 
 
 ## Response

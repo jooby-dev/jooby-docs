@@ -44,14 +44,21 @@ Message hex dump: `3f 00`
 
 Bit mask:
 
-| Name                        | Bit    | Description                                                                                                   |
-| --------------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
-| `RESET_DAY_MAX_POWER_KEY`   | `0`    | allow daily maximum power reset by button                                                                     |
-| `RESET_MONTH_MAX_POWER_KEY` | `1`    | allow monthly maximum power reset by button                                                                   |
-| `BLOCK_KEY_OPTOPORT_MASK`   | `2..3` | optoport mode after applying the mask:<br>`0` - always unlocked<br>non-zero - unlocked by pressing the button |
-| `MAGNET_SCREEN_CONST`       | `5`    | `1` - constant magnetic influence screen                                                                      |
+| Name                        | Bit    | Description                                                                                   |
+| --------------------------- | ------ | --------------------------------------------------------------------------------------------- |
+| `RESET_DAY_MAX_POWER_KEY`   | `0`    | allow daily maximum power reset by button                                                     |
+| `RESET_MONTH_MAX_POWER_KEY` | `1`    | allow monthly maximum power reset by button                                                   |
+| `BLOCK_KEY_OPTOPORT`        | `2..3` | `false` - optoport is always unlocked<br>`true` - optoport is unlocked by pressing the button |
+| `MAGNET_SCREEN_CONST`       | `5`    | `1` - constant magnetic influence screen                                                      |
+
+`BLOCK_KEY_OPTOPORT` is a boolean flag with mask `0x0c` (bits `2` and `3`).
+When reading, either bit set (`0x04`, `0x08`, or `0x0c` after applying the mask) means `true`; both bits clear means `false`.
+When setting parameters, `true` sets both bits and `false` clears both bits. This supports devices that use either bit.
+With all other `define1` flags clear, the byte is `0x0c` for `true` and `0x00` for `false`.
 
 ### Examples
+
+#### Optoport always unlocked
 
 <table>
     <tr>
@@ -81,7 +88,7 @@ Bit mask:
         <td>
             <code>RESET_DAY_MAX_POWER_KEY</code>: <code>false</code><br>
             <code>RESET_MONTH_MAX_POWER_KEY</code>: <code>false</code><br>
-            <code>BLOCK_KEY_OPTOPORT_MASK</code>: <code>0</code><br>
+            <code>BLOCK_KEY_OPTOPORT</code>: <code>false</code><br>
             <code>MAGNET_SCREEN_CONST</code>: <code>false</code><br>
         </td>
         <td><code>0x00</code></td>
@@ -104,6 +111,13 @@ Bit mask:
 </table>
 
 Command hex dump: `3f 09 01 00 00 05 0000000000`
+
+#### Optoport unlocked by button
+
+With `BLOCK_KEY_OPTOPORT: true` and all other `define1` flags `false`, the `define1` byte is `0x0c`.
+All other parameters are the same as in the previous example.
+
+Command hex dump: `3f 09 01 0c 00 05 0000000000`
 
 
 ## See also

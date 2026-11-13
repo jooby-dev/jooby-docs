@@ -44,12 +44,12 @@ Message hex dump: `3f 00`
 
 Bit mask:
 
-| Name                        | Bit | Description                                                        |
-| --------------------------- | --- | ------------------------------------------------------------------ |
-| `RESET_DAY_MAX_POWER_KEY`   | `0` | allow daily maximum power reset by button                          |
-| `RESET_MONTH_MAX_POWER_KEY` | `1` | allow monthly maximum power reset by button                        |
-| `BLOCK_KEY_OPTOPORT`        | `2` | `0` - optoport is unlocked<br>`1` - optoport is unlocked by button |
-| `MAGNET_SCREEN_CONST`       | `5` | `1` - constant magnetic influence screen                           |
+| Name                        | Bit    | Description                                                                                                   |
+| --------------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
+| `RESET_DAY_MAX_POWER_KEY`   | `0`    | allow daily maximum power reset by button                                                                     |
+| `RESET_MONTH_MAX_POWER_KEY` | `1`    | allow monthly maximum power reset by button                                                                   |
+| `BLOCK_KEY_OPTOPORT_MASK`   | `2..3` | optoport mode after applying the mask:<br>`0` - always unlocked<br>non-zero - unlocked by pressing the button |
+| `MAGNET_SCREEN_CONST`       | `5`    | `1` - constant magnetic influence screen                                                                      |
 
 ### Examples
 
@@ -67,7 +67,7 @@ Bit mask:
     <tr>
         <td>command size</td>
         <td><code>9</code></td>
-        <td><code>0x9</code></td>
+        <td><code>0x09</code></td>
     </tr>
     <tr>
         <td>timeout for automatic relay activation based on <code>IMAX</code>, <code>PMAX</code>, <code>IDIFF</code>, <code>COSFI</code>, minutes</td>
@@ -81,7 +81,7 @@ Bit mask:
         <td>
             <code>RESET_DAY_MAX_POWER_KEY</code>: <code>false</code><br>
             <code>RESET_MONTH_MAX_POWER_KEY</code>: <code>false</code><br>
-            <code>BLOCK_KEY_OPTOPORT</code>: <code>false</code><br>
+            <code>BLOCK_KEY_OPTOPORT_MASK</code>: <code>0</code><br>
             <code>MAGNET_SCREEN_CONST</code>: <code>false</code><br>
         </td>
         <td><code>0x00</code></td>

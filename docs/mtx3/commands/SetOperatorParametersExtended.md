@@ -11,7 +11,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
 
 | Size | Type    | Field                                                                                                                  |
 | ---- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `1`  | `uint8` | command id = `0x3f`                                                                                                    |
+| `1`  | `uint8` | command id = `0x40`                                                                                                    |
 | `1`  | `uint8` | command size = `9`                                                                                                     |
 | `1`  | `uint8` | timeout for automatic relay activation based on `IMAX`, `PMAX`, `IDIFF`, `COSFI`, minutes                              |
 | `1`  | `uint8` | [define 1](./GetOperatorParametersExtended.md#define-1)                                                                |
@@ -35,7 +35,7 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
     <tr>
         <td>command size</td>
         <td><code>9</code></td>
-        <td><code>0x9</code></td>
+        <td><code>0x09</code></td>
     </tr>
     <tr>
         <td>timeout for automatic relay activation based on <code>IMAX</code>, <code>PMAX</code>, <code>IDIFF</code>, <code>COSFI</code>, minutes</td>
@@ -44,12 +44,12 @@ The command access level is [READ_WRITE](../basics.md#command-access-level).
     </tr>
     <tr>
         <td>
-            <a href="./GetOperatorParameters.md#define-1">define 1</a>
+            <a href="./GetOperatorParametersExtended.md#define-1">define 1</a>
         </td>
         <td>
             <code>RESET_DAY_MAX_POWER_KEY</code>: <code>false</code><br>
             <code>RESET_MONTH_MAX_POWER_KEY</code>: <code>false</code><br>
-            <code>BLOCK_KEY_OPTOPORT</code>: <code>false</code><br>
+            <code>BLOCK_KEY_OPTOPORT_MASK</code>: <code>0</code><br>
             <code>MAGNET_SCREEN_CONST</code>: <code>false</code><br>
         </td>
         <td><code>0x00</code></td>
@@ -87,7 +87,7 @@ Command hex dump: `40 09 01 00 00 05 0000000000`
 
 | Field        | Value | Hex    |
 | ------------ | ----- | ------ |
-| command id   | `31`  | `0x40` |
+| command id   | `64`  | `0x40` |
 | command size | `0`   | `0x00` |
 
 Command hex dump: `40 00`
